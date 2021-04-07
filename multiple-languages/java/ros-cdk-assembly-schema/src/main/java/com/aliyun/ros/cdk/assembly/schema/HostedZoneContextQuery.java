@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to hosted zone context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.269Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.HostedZoneContextQuery")
 @software.amazon.jsii.Jsii.Proxy(HostedZoneContextQuery.Jsii$Proxy.class)
 public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -33,7 +33,10 @@ public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * The VPC ID to that the private zone must be associated with  If you provide VPC ID and privateZone is false, this will return no results and raise an error.
+     * The VPC ID to that the private zone must be associated with.
+     * <p>
+     * If you provide VPC ID and privateZone is false, this will return no results
+     * and raise an error.
      * <p>
      * Default: - Required if privateZone=true
      */
@@ -99,7 +102,9 @@ public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link HostedZoneContextQuery#getVpcId}
-         * @param vpcId The VPC ID to that the private zone must be associated with  If you provide VPC ID and privateZone is false, this will return no results and raise an error.
+         * @param vpcId The VPC ID to that the private zone must be associated with.
+         *              If you provide VPC ID and privateZone is false, this will return no results
+         *              and raise an error.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {

@@ -11,22 +11,22 @@ export interface OrderProps {
     /**
      * Property productCode: Product code for the resource.
      */
-    readonly productCode: string;
+    readonly productCode: string | ros.IResolvable;
 
     /**
      * Property skuCode: Sku code for the resource.
      */
-    readonly skuCode: string;
+    readonly skuCode: string | ros.IResolvable;
 
     /**
      * Property chargeType: The resource charge type. Default value is Prepaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * Property duration: Duration of the resource. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * Property preference: Customized parameters.
@@ -36,12 +36,12 @@ export interface OrderProps {
     /**
      * Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property quantity: Resource number. Default value is 1
      */
-    readonly quantity?: number;
+    readonly quantity?: number | ros.IResolvable;
 }
 
 /**
@@ -57,7 +57,7 @@ export class Order extends ros.Resource {
     /**
      * Attribute OrderId: Order ID of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MarketPlace::Order`.

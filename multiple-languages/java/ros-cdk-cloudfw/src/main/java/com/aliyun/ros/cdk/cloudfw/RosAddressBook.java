@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * A ROS template type:  `ALIYUN::CLOUDFW::AddressBook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.860Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosAddressBook")
 public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupUuid() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupUuid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupUuid() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupUuid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", java.util.Objects.requireNonNull(value, "description is required"));
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", java.util.Objects.requireNonNull(value, "description is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGroupType() {
-        return software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGroupName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupName", java.util.Objects.requireNonNull(value, "groupName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGroupType() {
+        return software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAddressList() {
-        return software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGroupType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupType", java.util.Objects.requireNonNull(value, "groupType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAddressList() {
+        return software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAddressList(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "addressList", value);
+    }
+
+    /**
+     */
+    public void setAddressList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "addressList", value);
     }
 
@@ -129,13 +153,19 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "regionId", value);
+    }
+
+    /**
+     */
+    public void setRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "regionId", value);
     }
 
@@ -159,13 +189,19 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTagRelation() {
-        return software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTagRelation() {
+        return software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTagRelation(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tagRelation", value);
+    }
+
+    /**
+     */
+    public void setTagRelation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "tagRelation", value);
     }
     /**
@@ -178,14 +214,14 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getTagKey() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTagKey() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getTagValue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTagValue() {
             return null;
         }
 
@@ -201,8 +237,8 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagListProperty> {
-            private java.lang.String tagKey;
-            private java.lang.String tagValue;
+            private java.lang.Object tagKey;
+            private java.lang.Object tagValue;
 
             /**
              * Sets the value of {@link TagListProperty#getTagKey}
@@ -216,12 +252,34 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TagListProperty#getTagKey}
+             * @param tagKey the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tagKey(com.aliyun.ros.cdk.core.IResolvable tagKey) {
+                this.tagKey = tagKey;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TagListProperty#getTagValue}
              * @param tagValue the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder tagValue(java.lang.String tagValue) {
+                this.tagValue = tagValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagListProperty#getTagValue}
+             * @param tagValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tagValue(com.aliyun.ros.cdk.core.IResolvable tagValue) {
                 this.tagValue = tagValue;
                 return this;
             }
@@ -244,8 +302,8 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagListProperty {
-            private final java.lang.String tagKey;
-            private final java.lang.String tagValue;
+            private final java.lang.Object tagKey;
+            private final java.lang.Object tagValue;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -253,26 +311,26 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.tagValue = software.amazon.jsii.Kernel.get(this, "tagValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tagValue = software.amazon.jsii.Kernel.get(this, "tagValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String tagKey, final java.lang.String tagValue) {
+            protected Jsii$Proxy(final java.lang.Object tagKey, final java.lang.Object tagValue) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.tagKey = tagKey;
                 this.tagValue = tagValue;
             }
 
             @Override
-            public final java.lang.String getTagKey() {
+            public final java.lang.Object getTagKey() {
                 return this.tagKey;
             }
 
             @Override
-            public final java.lang.String getTagValue() {
+            public final java.lang.Object getTagValue() {
                 return this.tagValue;
             }
 
@@ -353,12 +411,28 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param groupName This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param groupName This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.props.groupName(groupName);
             return this;
         }
@@ -371,12 +445,28 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             this.props.groupType(groupType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param groupType This parameter is required.
+         */
+        public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.props.groupType(groupType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param addressList This parameter is required.
          */
         public Builder addressList(final java.lang.String addressList) {
+            this.props.addressList(addressList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param addressList This parameter is required.
+         */
+        public Builder addressList(final com.aliyun.ros.cdk.core.IResolvable addressList) {
             this.props.addressList(addressList);
             return this;
         }
@@ -406,6 +496,14 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
             this.props.regionId(regionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param regionId This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -429,6 +527,14 @@ public class RosAddressBook extends com.aliyun.ros.cdk.core.RosResource {
          * @param tagRelation This parameter is required.
          */
         public Builder tagRelation(final java.lang.String tagRelation) {
+            this.props.tagRelation(tagRelation);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tagRelation This parameter is required.
+         */
+        public Builder tagRelation(final com.aliyun.ros.cdk.core.IResolvable tagRelation) {
             this.props.tagRelation(tagRelation);
             return this;
         }

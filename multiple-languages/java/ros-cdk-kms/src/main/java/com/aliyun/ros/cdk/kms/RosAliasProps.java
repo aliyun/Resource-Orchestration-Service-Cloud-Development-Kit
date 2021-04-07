@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.671Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RosAliasProps.Jsii$Proxy.class)
 public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAliasName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAliasName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getKeyId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getKeyId();
 
     /**
      * @return a {@link Builder} of {@link RosAliasProps}
@@ -26,8 +26,8 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAliasProps> {
-        private java.lang.String aliasName;
-        private java.lang.String keyId;
+        private java.lang.Object aliasName;
+        private java.lang.Object keyId;
 
         /**
          * Sets the value of {@link RosAliasProps#getAliasName}
@@ -40,11 +40,31 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAliasProps#getAliasName}
+         * @param aliasName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aliasName(com.aliyun.ros.cdk.core.IResolvable aliasName) {
+            this.aliasName = aliasName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAliasProps#getKeyId}
          * @param keyId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder keyId(java.lang.String keyId) {
+            this.keyId = keyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAliasProps#getKeyId}
+         * @param keyId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder keyId(com.aliyun.ros.cdk.core.IResolvable keyId) {
             this.keyId = keyId;
             return this;
         }
@@ -65,8 +85,8 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAliasProps {
-        private final java.lang.String aliasName;
-        private final java.lang.String keyId;
+        private final java.lang.Object aliasName;
+        private final java.lang.Object keyId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +94,26 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aliasName = software.amazon.jsii.Kernel.get(this, "aliasName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.keyId = software.amazon.jsii.Kernel.get(this, "keyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.aliasName = software.amazon.jsii.Kernel.get(this, "aliasName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keyId = software.amazon.jsii.Kernel.get(this, "keyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aliasName, final java.lang.String keyId) {
+        protected Jsii$Proxy(final java.lang.Object aliasName, final java.lang.Object keyId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aliasName = java.util.Objects.requireNonNull(aliasName, "aliasName is required");
             this.keyId = java.util.Objects.requireNonNull(keyId, "keyId is required");
         }
 
         @Override
-        public final java.lang.String getAliasName() {
+        public final java.lang.Object getAliasName() {
             return this.aliasName;
         }
 
         @Override
-        public final java.lang.String getKeyId() {
+        public final java.lang.Object getKeyId() {
             return this.keyId;
         }
 

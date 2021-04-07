@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::DeployGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.DeployGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeployGroupProps.Jsii$Proxy.class)
 public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property appId: Application ID.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAppId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAppId();
 
     /**
+     * Property groupName: Group name, maximum length of 64.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      * @return a {@link Builder} of {@link DeployGroupProps}
@@ -26,12 +28,12 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link DeployGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeployGroupProps> {
-        private java.lang.String appId;
-        private java.lang.String groupName;
+        private java.lang.Object appId;
+        private java.lang.Object groupName;
 
         /**
          * Sets the value of {@link DeployGroupProps#getAppId}
-         * @param appId the value to be set. This parameter is required.
+         * @param appId Property appId: Application ID. This parameter is required.
          * @return {@code this}
          */
         public Builder appId(java.lang.String appId) {
@@ -40,11 +42,31 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link DeployGroupProps#getAppId}
+         * @param appId Property appId: Application ID. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder appId(com.aliyun.ros.cdk.core.IResolvable appId) {
+            this.appId = appId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeployGroupProps#getGroupName}
-         * @param groupName the value to be set. This parameter is required.
+         * @param groupName Property groupName: Group name, maximum length of 64. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DeployGroupProps#getGroupName}
+         * @param groupName Property groupName: Group name, maximum length of 64. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.groupName = groupName;
             return this;
         }
@@ -65,8 +87,8 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeployGroupProps {
-        private final java.lang.String appId;
-        private final java.lang.String groupName;
+        private final java.lang.Object appId;
+        private final java.lang.Object groupName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.appId = software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.appId = software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String appId, final java.lang.String groupName) {
+        protected Jsii$Proxy(final java.lang.Object appId, final java.lang.Object groupName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.appId = java.util.Objects.requireNonNull(appId, "appId is required");
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
         }
 
         @Override
-        public final java.lang.String getAppId() {
+        public final java.lang.Object getAppId() {
             return this.appId;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 

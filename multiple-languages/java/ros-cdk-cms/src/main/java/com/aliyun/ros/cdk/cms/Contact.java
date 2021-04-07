@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::Contact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.237Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.Contact")
 public class Contact extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::Contact`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Contact(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.ContactProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::Contact`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Contact(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.ContactProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ContactName: The name of the alarm contact.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactName() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactName() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.Contact> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,16 +90,20 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property channels: undefined.
+         * <p>
          * @return {@code this}
-         * @param channels This parameter is required.
+         * @param channels Property channels: undefined. This parameter is required.
          */
         public Builder channels(final com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty channels) {
             this.props.channels(channels);
             return this;
         }
         /**
+         * Property channels: undefined.
+         * <p>
          * @return {@code this}
-         * @param channels This parameter is required.
+         * @param channels Property channels: undefined. This parameter is required.
          */
         public Builder channels(final com.aliyun.ros.cdk.core.IResolvable channels) {
             this.props.channels(channels);
@@ -98,19 +111,43 @@ public class Contact extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property contactName: The name of the alarm contact.
+         * <p>
          * @return {@code this}
-         * @param contactName This parameter is required.
+         * @param contactName Property contactName: The name of the alarm contact. This parameter is required.
          */
         public Builder contactName(final java.lang.String contactName) {
             this.props.contactName(contactName);
             return this;
         }
+        /**
+         * Property contactName: The name of the alarm contact.
+         * <p>
+         * @return {@code this}
+         * @param contactName Property contactName: The name of the alarm contact. This parameter is required.
+         */
+        public Builder contactName(final com.aliyun.ros.cdk.core.IResolvable contactName) {
+            this.props.contactName(contactName);
+            return this;
+        }
 
         /**
+         * Property describe: The description of the alert contact.
+         * <p>
          * @return {@code this}
-         * @param describe This parameter is required.
+         * @param describe Property describe: The description of the alert contact. This parameter is required.
          */
         public Builder describe(final java.lang.String describe) {
+            this.props.describe(describe);
+            return this;
+        }
+        /**
+         * Property describe: The description of the alert contact.
+         * <p>
+         * @return {@code this}
+         * @param describe Property describe: The description of the alert contact. This parameter is required.
+         */
+        public Builder describe(final com.aliyun.ros.cdk.core.IResolvable describe) {
             this.props.describe(describe);
             return this;
         }

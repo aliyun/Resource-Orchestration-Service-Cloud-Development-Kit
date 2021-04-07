@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::LogConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.LogConfigProps")
 @software.amazon.jsii.Jsii.Proxy(LogConfigProps.Jsii$Proxy.class)
 public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property slsLogStore: Logstore name of SLS.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSlsLogStore();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSlsLogStore();
 
     /**
+     * Property slsProject: Project name of SLS.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSlsProject();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSlsProject();
 
     /**
      * @return a {@link Builder} of {@link LogConfigProps}
@@ -26,12 +28,12 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link LogConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogConfigProps> {
-        private java.lang.String slsLogStore;
-        private java.lang.String slsProject;
+        private java.lang.Object slsLogStore;
+        private java.lang.Object slsProject;
 
         /**
          * Sets the value of {@link LogConfigProps#getSlsLogStore}
-         * @param slsLogStore the value to be set. This parameter is required.
+         * @param slsLogStore Property slsLogStore: Logstore name of SLS. This parameter is required.
          * @return {@code this}
          */
         public Builder slsLogStore(java.lang.String slsLogStore) {
@@ -40,11 +42,31 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogConfigProps#getSlsLogStore}
+         * @param slsLogStore Property slsLogStore: Logstore name of SLS. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder slsLogStore(com.aliyun.ros.cdk.core.IResolvable slsLogStore) {
+            this.slsLogStore = slsLogStore;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogConfigProps#getSlsProject}
-         * @param slsProject the value to be set. This parameter is required.
+         * @param slsProject Property slsProject: Project name of SLS. This parameter is required.
          * @return {@code this}
          */
         public Builder slsProject(java.lang.String slsProject) {
+            this.slsProject = slsProject;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LogConfigProps#getSlsProject}
+         * @param slsProject Property slsProject: Project name of SLS. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder slsProject(com.aliyun.ros.cdk.core.IResolvable slsProject) {
             this.slsProject = slsProject;
             return this;
         }
@@ -65,8 +87,8 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogConfigProps {
-        private final java.lang.String slsLogStore;
-        private final java.lang.String slsProject;
+        private final java.lang.Object slsLogStore;
+        private final java.lang.Object slsProject;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.slsLogStore = software.amazon.jsii.Kernel.get(this, "slsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slsProject = software.amazon.jsii.Kernel.get(this, "slsProject", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.slsLogStore = software.amazon.jsii.Kernel.get(this, "slsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slsProject = software.amazon.jsii.Kernel.get(this, "slsProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String slsLogStore, final java.lang.String slsProject) {
+        protected Jsii$Proxy(final java.lang.Object slsLogStore, final java.lang.Object slsProject) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.slsLogStore = java.util.Objects.requireNonNull(slsLogStore, "slsLogStore is required");
             this.slsProject = java.util.Objects.requireNonNull(slsProject, "slsProject is required");
         }
 
         @Override
-        public final java.lang.String getSlsLogStore() {
+        public final java.lang.Object getSlsLogStore() {
             return this.slsLogStore;
         }
 
         @Override
-        public final java.lang.String getSlsProject() {
+        public final java.lang.Object getSlsProject() {
             return this.slsProject;
         }
 

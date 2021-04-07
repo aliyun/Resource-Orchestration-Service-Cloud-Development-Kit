@@ -3,88 +3,130 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(NatGatewayProps.Jsii$Proxy.class)
 public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property vpcId: The VPC id to create NAT gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
+     * Property vSwitchId: The VSwitch id to create NAT gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
+     * Property autoPay: Specifies whether to enable automatic payment.
+     * <p>
+     * Default is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
+     * <p>
+     * Default value is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
     /**
+     * Property deletionProtection: Whether to enable deletion protection.
+     * <p>
+     * Default to False.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
     /**
+     * Property description: Description of the NAT gateway, [2, 256] characters.
+     * <p>
+     * Do not fill or empty, the default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property duration: The subscription duration.
+     * <p>
+     * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
+     * Property instanceChargeType: The billing method.
+     * <p>
+     * The default value is PostPaid (which means pay-as-you-go).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
+     * Property internetChargeType: The billing method for the NAT gateway.
+     * <p>
+     * Valid values:
+     * PayBySpec: billed on a pay-by-specification basis.
+     * PayByLcu: billed on a pay-by-LCU basis.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNatGatewayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNatGatewayName() {
         return null;
     }
 
     /**
+     * Property natType: The type of the NAT gateway.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Enhanced: enhanced NAT gateway.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNatType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNatType() {
         return null;
     }
 
     /**
+     * Property pricingCycle: Price cycle of the resource.
+     * <p>
+     * This property has no default value.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property spec: NAT gateway specification.
+     * <p>
+     * Now support 'Small|Middle|Large|XLarge.1'
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to natgateway.
+     * <p>
+     * Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
         return null;
     }
 
@@ -98,24 +140,24 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NatGatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NatGatewayProps> {
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
         private java.lang.Object autoPay;
         private java.lang.Object deletionForce;
         private java.lang.Object deletionProtection;
-        private java.lang.String description;
-        private java.lang.Number duration;
-        private java.lang.String instanceChargeType;
-        private java.lang.String internetChargeType;
-        private java.lang.String natGatewayName;
-        private java.lang.String natType;
-        private java.lang.String pricingCycle;
-        private java.lang.String spec;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object description;
+        private java.lang.Object duration;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object natGatewayName;
+        private java.lang.Object natType;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object spec;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
          * Sets the value of {@link NatGatewayProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
+         * @param vpcId Property vpcId: The VPC id to create NAT gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -124,8 +166,18 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getVpcId}
+         * @param vpcId Property vpcId: The VPC id to create NAT gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getVSwitchId}
-         * @param vSwitchId the value to be set. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The VSwitch id to create NAT gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -134,8 +186,19 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The VSwitch id to create NAT gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Default is false.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -145,7 +208,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Default is false.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -155,7 +219,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(java.lang.Boolean deletionForce) {
@@ -165,7 +230,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
@@ -175,7 +241,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
+         *                           Default to False.
          * @return {@code this}
          */
         public Builder deletionProtection(java.lang.Boolean deletionProtection) {
@@ -185,7 +252,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
+         *                           Default to False.
          * @return {@code this}
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
@@ -195,7 +263,8 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NatGatewayProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the NAT gateway, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -204,8 +273,20 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getDescription}
+         * @param description Property description: Description of the NAT gateway, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getDuration}
-         * @param duration the value to be set.
+         * @param duration Property duration: The subscription duration.
+         *                 While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
@@ -214,8 +295,20 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getDuration}
+         * @param duration Property duration: The subscription duration.
+         *                 While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getInstanceChargeType}
-         * @param instanceChargeType the value to be set.
+         * @param instanceChargeType Property instanceChargeType: The billing method.
+         *                           The default value is PostPaid (which means pay-as-you-go).
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -224,8 +317,22 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getInstanceChargeType}
+         * @param instanceChargeType Property instanceChargeType: The billing method.
+         *                           The default value is PostPaid (which means pay-as-you-go).
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway.
+         *                           Valid values:
+         *                           PayBySpec: billed on a pay-by-specification basis.
+         *                           PayByLcu: billed on a pay-by-LCU basis.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -234,8 +341,21 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: The billing method for the NAT gateway.
+         *                           Valid values:
+         *                           PayBySpec: billed on a pay-by-specification basis.
+         *                           PayByLcu: billed on a pay-by-LCU basis.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getNatGatewayName}
-         * @param natGatewayName the value to be set.
+         * @param natGatewayName Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder natGatewayName(java.lang.String natGatewayName) {
@@ -244,8 +364,23 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getNatGatewayName}
+         * @param natGatewayName Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder natGatewayName(com.aliyun.ros.cdk.core.IResolvable natGatewayName) {
+            this.natGatewayName = natGatewayName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getNatType}
-         * @param natType the value to be set.
+         * @param natType Property natType: The type of the NAT gateway.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>Enhanced: enhanced NAT gateway.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder natType(java.lang.String natType) {
@@ -254,8 +389,24 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getNatType}
+         * @param natType Property natType: The type of the NAT gateway.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>Enhanced: enhanced NAT gateway.</li>
+         *                </ul>
+         * @return {@code this}
+         */
+        public Builder natType(com.aliyun.ros.cdk.core.IResolvable natType) {
+            this.natType = natType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -264,8 +415,20 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getSpec}
-         * @param spec the value to be set.
+         * @param spec Property spec: NAT gateway specification.
+         *             Now support 'Small|Middle|Large|XLarge.1'
          * @return {@code this}
          */
         public Builder spec(java.lang.String spec) {
@@ -274,13 +437,25 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NatGatewayProps#getSpec}
+         * @param spec Property spec: NAT gateway specification.
+         *             Now support 'Small|Middle|Large|XLarge.1'
+         * @return {@code this}
+         */
+        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
+            this.spec = spec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NatGatewayProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to natgateway.
+         *             Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)tags;
             return this;
         }
 
@@ -300,20 +475,20 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NatGatewayProps {
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object autoPay;
         private final java.lang.Object deletionForce;
         private final java.lang.Object deletionProtection;
-        private final java.lang.String description;
-        private final java.lang.Number duration;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String natGatewayName;
-        private final java.lang.String natType;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String spec;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object description;
+        private final java.lang.Object duration;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object natGatewayName;
+        private final java.lang.Object natType;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object spec;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -321,27 +496,27 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.Object autoPay, final java.lang.Object deletionForce, final java.lang.Object deletionProtection, final java.lang.String description, final java.lang.Number duration, final java.lang.String instanceChargeType, final java.lang.String internetChargeType, final java.lang.String natGatewayName, final java.lang.String natType, final java.lang.String pricingCycle, final java.lang.String spec, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object autoPay, final java.lang.Object deletionForce, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object duration, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object natGatewayName, final java.lang.Object natType, final java.lang.Object pricingCycle, final java.lang.Object spec, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
@@ -356,16 +531,16 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.natType = natType;
             this.pricingCycle = pricingCycle;
             this.spec = spec;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -385,47 +560,47 @@ public interface NatGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getNatGatewayName() {
+        public final java.lang.Object getNatGatewayName() {
             return this.natGatewayName;
         }
 
         @Override
-        public final java.lang.String getNatType() {
+        public final java.lang.Object getNatType() {
             return this.natType;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getSpec() {
+        public final java.lang.Object getSpec() {
             return this.spec;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
             return this.tags;
         }
 

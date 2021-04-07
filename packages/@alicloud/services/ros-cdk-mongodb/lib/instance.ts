@@ -11,17 +11,17 @@ export interface InstanceProps {
     /**
      * Property dbInstanceClass: MongoDB instance supported instance type, make sure it should be correct.
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * Property dbInstanceStorage: Database instance storage size. MongoDB is [5,3000], increased every 10 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -31,87 +31,99 @@ export interface InstanceProps {
     /**
      * Property backupId: Specific backup set Id.
      */
-    readonly backupId?: string;
+    readonly backupId?: string | ros.IResolvable;
 
     /**
      * Property businessInfo: The business information. It is an additional parameter.
      */
-    readonly businessInfo?: string;
+    readonly businessInfo?: string | ros.IResolvable;
 
     /**
      * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * Property couponNo: The coupon code. Default value:youhuiquan_promotion_option_id_for_blank.
      */
-    readonly couponNo?: string;
+    readonly couponNo?: string | ros.IResolvable;
 
     /**
      * Property databaseNames: The name of the database.
      */
-    readonly databaseNames?: string;
+    readonly databaseNames?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
      */
-    readonly readonlyReplicas?: number;
+    readonly readonlyReplicas?: number | ros.IResolvable;
 
     /**
      * Property replicationFactor: The number of nodes in the replica set. Allowed values: [3, 5, 7], default to 3.
      */
-    readonly replicationFactor?: number;
+    readonly replicationFactor?: number | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    readonly restoreTime?: string;
+    readonly restoreTime?: string | ros.IResolvable;
+
+    /**
+     * Property securityGroupId: The ID of the ECS security group.
+     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
+     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    readonly srcDbInstanceId?: string;
+    readonly srcDbInstanceId?: string | ros.IResolvable;
 
     /**
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 
     /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -123,12 +135,12 @@ export interface InstanceProps {
     /**
      * Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -144,27 +156,27 @@ export class Instance extends ros.Resource {
     /**
      * Attribute ConnectionURI: Connection uri.
      */
-    public readonly attrConnectionUri: any;
+    public readonly attrConnectionUri: ros.IResolvable;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Attribute ReplicaSetName: Name of replica set
      */
-    public readonly attrReplicaSetName: any;
+    public readonly attrReplicaSetName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MONGODB::Instance`.
@@ -177,30 +189,32 @@ export class Instance extends ros.Resource {
         super(scope, id);
 
         const rosInstance = new RosInstance(this, id,  {
-            couponNo: props.couponNo,
             businessInfo: props.businessInfo,
+            resourceGroupId: props.resourceGroupId,
+            autoRenew: props.autoRenew,
+            securityIpArray: props.securityIpArray,
+            backupId: props.backupId,
+            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
+            restoreTime: props.restoreTime,
+            networkType: props.networkType,
+            dbInstanceStorage: props.dbInstanceStorage,
+            tags: props.tags,
+            dbInstanceDescription: props.dbInstanceDescription,
+            couponNo: props.couponNo,
             engineVersion: props.engineVersion ? props.engineVersion : '3.4',
             readonlyReplicas: props.readonlyReplicas,
-            resourceGroupId: props.resourceGroupId,
             replicationFactor: props.replicationFactor,
             zoneId: props.zoneId,
             dbInstanceClass: props.dbInstanceClass,
-            autoRenew: props.autoRenew,
+            securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             period: props.period ? props.period : 1,
-            securityIpArray: props.securityIpArray,
-            backupId: props.backupId,
             vpcPasswordFree: props.vpcPasswordFree,
-            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
             accountPassword: props.accountPassword,
-            restoreTime: props.restoreTime,
             vpcId: props.vpcId,
             chargeType: props.chargeType ? props.chargeType : 'PostPaid',
-            networkType: props.networkType,
-            dbInstanceStorage: props.dbInstanceStorage,
             databaseNames: props.databaseNames,
             srcDbInstanceId: props.srcDbInstanceId,
-            dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrConnectionUri = rosInstance.attrConnectionUri;

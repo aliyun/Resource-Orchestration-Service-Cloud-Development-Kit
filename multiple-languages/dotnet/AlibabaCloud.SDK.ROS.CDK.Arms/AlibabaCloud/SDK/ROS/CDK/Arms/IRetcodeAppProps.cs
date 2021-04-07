@@ -12,15 +12,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-        string RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RegionId
         {
             get;
         }
 
         /// <summary>Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.</summary>
-        [JsiiProperty(name: "retcodeAppName", typeJson: "{\"primitive\":\"string\"}")]
-        string RetcodeAppName
+        [JsiiProperty(name: "retcodeAppName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RetcodeAppName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
         /// </remarks>
-        [JsiiProperty(name: "retcodeAppType", typeJson: "{\"primitive\":\"string\"}")]
-        string RetcodeAppType
+        [JsiiProperty(name: "retcodeAppType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RetcodeAppType
         {
             get;
         }
@@ -47,27 +47,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             /// <remarks>
             /// Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
             /// </remarks>
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.</summary>
-            [JsiiProperty(name: "retcodeAppName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RetcodeAppName
+            [JsiiProperty(name: "retcodeAppName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RetcodeAppName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property retcodeAppType: The type of the application for which you want to create the browser monitoring job.</summary>
             /// <remarks>
             /// Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
             /// </remarks>
-            [JsiiProperty(name: "retcodeAppType", typeJson: "{\"primitive\":\"string\"}")]
-            public string RetcodeAppType
+            [JsiiProperty(name: "retcodeAppType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RetcodeAppType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

@@ -15,7 +15,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             get;
         }
 
-        /// <summary>Filters to apply to the VPC&#xD; &#xD; Filter parameters are the same as passed to DescribeVpcs.</summary>
+        /// <summary>Filters to apply to the VPC.</summary>
+        /// <remarks>
+        /// Filter parameters are the same as passed to DescribeVpcs.
+        /// </remarks>
         [JsiiProperty(name: "filter", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}")]
         System.Collections.Generic.IDictionary<string, string> Filter
         {
@@ -29,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             get;
         }
 
-        /// <summary>Whether to populate the subnetGroups field of the {@link VpcContextResponse},&#xD; which contains potentially asymmetric subnet groups.</summary>
+        /// <summary>Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.</summary>
         /// <remarks>
         /// <strong>Default</strong>: false
         /// </remarks>
@@ -48,7 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// If not provided, we'll look at the ros-cdk:subnet-name tag.
         /// If the subnet does not have the specified tag,
         /// we'll use its type as the name.
-        /// 
+        ///
         /// <strong>Default</strong>: 'ros-cdk:subnet-name'
         /// </remarks>
         [JsiiProperty(name: "subnetGroupNameTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
@@ -76,7 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
                 get => GetInstanceProperty<string>()!;
             }
 
-            /// <summary>Filters to apply to the VPC&#xD; &#xD; Filter parameters are the same as passed to DescribeVpcs.</summary>
+            /// <summary>Filters to apply to the VPC.</summary>
+            /// <remarks>
+            /// Filter parameters are the same as passed to DescribeVpcs.
+            /// </remarks>
             [JsiiProperty(name: "filter", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}")]
             public System.Collections.Generic.IDictionary<string, string> Filter
             {
@@ -90,7 +96,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
                 get => GetInstanceProperty<string>()!;
             }
 
-            /// <summary>Whether to populate the subnetGroups field of the {@link VpcContextResponse},&#xD; which contains potentially asymmetric subnet groups.</summary>
+            /// <summary>Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.</summary>
             /// <remarks>
             /// <strong>Default</strong>: false
             /// </remarks>
@@ -106,7 +112,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             /// If not provided, we'll look at the ros-cdk:subnet-name tag.
             /// If the subnet does not have the specified tag,
             /// we'll use its type as the name.
-            /// 
+            ///
             /// <strong>Default</strong>: 'ros-cdk:subnet-name'
             /// </remarks>
             [JsiiOptional]

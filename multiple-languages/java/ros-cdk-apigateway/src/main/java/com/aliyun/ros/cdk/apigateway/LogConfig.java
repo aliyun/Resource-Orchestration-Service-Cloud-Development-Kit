@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::LogConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.661Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.LogConfig")
 public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::LogConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public LogConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.LogConfigProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::LogConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public LogConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.LogConfigProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SlsLogStore: Logstore name of SLS.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSlsLogStore() {
-        return software.amazon.jsii.Kernel.get(this, "attrSlsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSlsLogStore() {
+        return software.amazon.jsii.Kernel.get(this, "attrSlsLogStore", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute SlsProject: Project name of SLS.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSlsProject() {
-        return software.amazon.jsii.Kernel.get(this, "attrSlsProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSlsProject() {
+        return software.amazon.jsii.Kernel.get(this, "attrSlsProject", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.LogConfig> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,19 +97,43 @@ public class LogConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property slsLogStore: Logstore name of SLS.
+         * <p>
          * @return {@code this}
-         * @param slsLogStore This parameter is required.
+         * @param slsLogStore Property slsLogStore: Logstore name of SLS. This parameter is required.
          */
         public Builder slsLogStore(final java.lang.String slsLogStore) {
             this.props.slsLogStore(slsLogStore);
             return this;
         }
+        /**
+         * Property slsLogStore: Logstore name of SLS.
+         * <p>
+         * @return {@code this}
+         * @param slsLogStore Property slsLogStore: Logstore name of SLS. This parameter is required.
+         */
+        public Builder slsLogStore(final com.aliyun.ros.cdk.core.IResolvable slsLogStore) {
+            this.props.slsLogStore(slsLogStore);
+            return this;
+        }
 
         /**
+         * Property slsProject: Project name of SLS.
+         * <p>
          * @return {@code this}
-         * @param slsProject This parameter is required.
+         * @param slsProject Property slsProject: Project name of SLS. This parameter is required.
          */
         public Builder slsProject(final java.lang.String slsProject) {
+            this.props.slsProject(slsProject);
+            return this;
+        }
+        /**
+         * Property slsProject: Project name of SLS.
+         * <p>
+         * @return {@code this}
+         * @param slsProject Property slsProject: Project name of SLS. This parameter is required.
+         */
+        public Builder slsProject(final com.aliyun.ros.cdk.core.IResolvable slsProject) {
             this.props.slsProject(slsProject);
             return this;
         }

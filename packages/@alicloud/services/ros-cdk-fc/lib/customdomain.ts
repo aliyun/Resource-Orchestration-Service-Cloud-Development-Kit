@@ -11,17 +11,17 @@ export interface CustomDomainProps {
     /**
      * Property domainName: domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * Property protocol: HTTP or HTTP,HTTPS
      */
-    readonly protocol: string;
+    readonly protocol: string | ros.IResolvable;
 
     /**
      * Property apiVersion: api version
      */
-    readonly apiVersion?: string;
+    readonly apiVersion?: string | ros.IResolvable;
 
     /**
      * Property certConfig: certificate info
@@ -47,12 +47,12 @@ export class CustomDomain extends ros.Resource {
     /**
      * Attribute Domain: The domain with protocol.
      */
-    public readonly attrDomain: any;
+    public readonly attrDomain: ros.IResolvable;
 
     /**
      * Attribute DomainName: The domain name
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::CustomDomain`.

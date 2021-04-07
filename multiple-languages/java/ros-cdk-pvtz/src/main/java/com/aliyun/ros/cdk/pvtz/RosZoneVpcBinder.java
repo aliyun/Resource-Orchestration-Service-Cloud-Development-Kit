@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS template type:  `ALIYUN::PVTZ::ZoneVpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.194Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.848Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneVpcBinder")
 public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -42,21 +42,27 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
 
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcs() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcs", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
     }
@@ -81,13 +87,19 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setZoneId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
     }
     /**
@@ -100,12 +112,12 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRegionId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
         /**
          * @return a {@link Builder} of {@link VpcsProperty}
@@ -119,8 +131,8 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcsProperty> {
-            private java.lang.String regionId;
-            private java.lang.String vpcId;
+            private java.lang.Object regionId;
+            private java.lang.Object vpcId;
 
             /**
              * Sets the value of {@link VpcsProperty#getRegionId}
@@ -134,12 +146,34 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VpcsProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VpcsProperty#getVpcId}
              * @param vpcId the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vpcId(java.lang.String vpcId) {
+                this.vpcId = vpcId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcsProperty#getVpcId}
+             * @param vpcId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
                 this.vpcId = vpcId;
                 return this;
             }
@@ -162,8 +196,8 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcsProperty {
-            private final java.lang.String regionId;
-            private final java.lang.String vpcId;
+            private final java.lang.Object regionId;
+            private final java.lang.Object vpcId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -171,26 +205,26 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String regionId, final java.lang.String vpcId) {
+            protected Jsii$Proxy(final java.lang.Object regionId, final java.lang.Object vpcId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.regionId = java.util.Objects.requireNonNull(regionId, "regionId is required");
                 this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
             }
 
             @Override
-            public final java.lang.String getRegionId() {
+            public final java.lang.Object getRegionId() {
                 return this.regionId;
             }
 
             @Override
-            public final java.lang.String getVpcId() {
+            public final java.lang.Object getVpcId() {
                 return this.vpcId;
             }
 
@@ -281,6 +315,14 @@ public class RosZoneVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
          * @param zoneId This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }

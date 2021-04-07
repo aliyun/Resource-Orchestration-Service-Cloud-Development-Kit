@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Attribute</strong>: SlsLogStore: Logstore name of SLS
         /// </remarks>
-        [JsiiProperty(name: "attrSlsLogStore", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSlsLogStore
+        [JsiiProperty(name: "attrSlsLogStore", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSlsLogStore
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SlsProject: Project name of SLS
         /// </remarks>
-        [JsiiProperty(name: "attrSlsProject", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSlsProject
+        [JsiiProperty(name: "attrSlsProject", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSlsProject
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,20 +78,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: slsLogStore: Logstore name of SLS
         /// </remarks>
-        [JsiiProperty(name: "slsLogStore", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SlsLogStore
+        [JsiiProperty(name: "slsLogStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SlsLogStore
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: slsProject: Project name of SLS
         /// </remarks>
-        [JsiiProperty(name: "slsProject", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SlsProject
+        [JsiiProperty(name: "slsProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SlsProject
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

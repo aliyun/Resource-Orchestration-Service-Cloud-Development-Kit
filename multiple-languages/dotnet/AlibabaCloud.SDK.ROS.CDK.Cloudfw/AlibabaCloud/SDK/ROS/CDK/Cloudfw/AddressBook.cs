@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         }
 
         /// <summary>Attribute GroupUuid: After a successful return to the address book to add unique identification ID.</summary>
-        [JsiiProperty(name: "attrGroupUuid", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupUuid
+        [JsiiProperty(name: "attrGroupUuid", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupUuid
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

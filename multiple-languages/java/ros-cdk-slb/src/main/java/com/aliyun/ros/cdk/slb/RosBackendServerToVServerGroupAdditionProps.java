@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.386Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerToVServerGroupAdditionProps.Jsii$Proxy.class)
 public interface RosBackendServerToVServerGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVServerGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVServerGroupId();
 
     /**
      * @return a {@link Builder} of {@link RosBackendServerToVServerGroupAdditionProps}
@@ -27,7 +27,7 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBackendServerToVServerGroupAdditionProps> {
         private java.lang.Object backendServers;
-        private java.lang.String vServerGroupId;
+        private java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link RosBackendServerToVServerGroupAdditionProps#getBackendServers}
@@ -60,6 +60,16 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
         }
 
         /**
+         * Sets the value of {@link RosBackendServerToVServerGroupAdditionProps#getVServerGroupId}
+         * @param vServerGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vServerGroupId(com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
+            this.vServerGroupId = vServerGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosBackendServerToVServerGroupAdditionProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -76,7 +86,7 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBackendServerToVServerGroupAdditionProps {
         private final java.lang.Object backendServers;
-        private final java.lang.String vServerGroupId;
+        private final java.lang.Object vServerGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +95,13 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object backendServers, final java.lang.String vServerGroupId) {
+        protected Jsii$Proxy(final java.lang.Object backendServers, final java.lang.Object vServerGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backendServers = java.util.Objects.requireNonNull(backendServers, "backendServers is required");
             this.vServerGroupId = java.util.Objects.requireNonNull(vServerGroupId, "vServerGroupId is required");
@@ -103,7 +113,7 @@ public interface RosBackendServerToVServerGroupAdditionProps extends software.am
         }
 
         @Override
-        public final java.lang.String getVServerGroupId() {
+        public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
 

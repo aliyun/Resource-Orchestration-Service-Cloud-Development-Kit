@@ -9,23 +9,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     public interface IDBInstanceParameterGroupProps
     {
         /// <summary>Property dbInstanceId: Database InstanceId to update properties.</summary>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbInstanceId
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbInstanceId
         {
             get;
         }
 
         /// <summary>Property parameters: Parameters to update for selected database instance.</summary>
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup.ParametersProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup.ParametersProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object Parameters
         {
             get;
         }
 
         /// <summary>Property forcerestart: whether restart database instance.</summary>
-        [JsiiProperty(name: "forcerestart", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "forcerestart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Forcerestart
+        object? Forcerestart
         {
             get
             {
@@ -42,14 +42,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <summary>Property dbInstanceId: Database InstanceId to update properties.</summary>
-            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbInstanceId
+            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property parameters: Parameters to update for selected database instance.</summary>
-            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup.ParametersProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup.ParametersProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Parameters
             {
                 get => GetInstanceProperty<object>()!;
@@ -57,10 +57,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
             /// <summary>Property forcerestart: whether restart database instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "forcerestart", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Forcerestart
+            [JsiiProperty(name: "forcerestart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Forcerestart
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

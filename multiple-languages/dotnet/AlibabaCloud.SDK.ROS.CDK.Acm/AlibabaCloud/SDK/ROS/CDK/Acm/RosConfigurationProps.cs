@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <remarks>
         /// <strong>Property</strong>: content: The contents of the configuration
         /// </remarks>
-        [JsiiProperty(name: "content", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Content
+        [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Content
         {
             get;
             set;
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
         /// The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
         /// </remarks>
-        [JsiiProperty(name: "dataId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DataId
+        [JsiiProperty(name: "dataId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DataId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <remarks>
         /// <strong>Property</strong>: namespaceId: ID of namespace
         /// </remarks>
-        [JsiiProperty(name: "namespaceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string NamespaceId
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object NamespaceId
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <strong>Property</strong>: appName: Configuration application name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "appName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AppName
+        [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AppName
         {
             get;
             set;
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <strong>Property</strong>: desc: Configuration description explains
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "desc", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Desc
+        [JsiiProperty(name: "desc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Desc
         {
             get;
             set;
@@ -68,8 +68,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// <strong>Property</strong>: group: Group
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "group", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Group
+        [JsiiProperty(name: "group", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Group
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
         /// text, json, xml, yaml, text/html, properties
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Type
         {
             get;
             set;

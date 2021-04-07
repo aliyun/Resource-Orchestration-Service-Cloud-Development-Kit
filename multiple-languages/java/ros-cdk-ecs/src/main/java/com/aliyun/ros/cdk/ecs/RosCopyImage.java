@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.279Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCopyImage")
 public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestinationRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestinationRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDestinationRegionId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destinationRegionId", java.util.Objects.requireNonNull(value, "destinationRegionId is required"));
+    }
+
+    /**
+     */
+    public void setDestinationRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "destinationRegionId", java.util.Objects.requireNonNull(value, "destinationRegionId is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getImageId() {
-        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getImageId() {
+        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationDescription() {
-        return software.amazon.jsii.Kernel.get(this, "destinationDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageId", java.util.Objects.requireNonNull(value, "imageId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationDescription() {
+        return software.amazon.jsii.Kernel.get(this, "destinationDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationImageName() {
-        return software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationImageName() {
+        return software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDestinationImageName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destinationImageName", value);
+    }
+
+    /**
+     */
+    public void setDestinationImageName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "destinationImageName", value);
     }
 
@@ -129,13 +153,19 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKmsKeyId() {
-        return software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
+        return software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setKmsKeyId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "kmsKeyId", value);
+    }
+
+    /**
+     */
+    public void setKmsKeyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "kmsKeyId", value);
     }
 
@@ -166,14 +196,14 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getKey() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKey() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getValue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
             return null;
         }
 
@@ -189,8 +219,8 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagProperty> {
-            private java.lang.String key;
-            private java.lang.String value;
+            private java.lang.Object key;
+            private java.lang.Object value;
 
             /**
              * Sets the value of {@link TagProperty#getKey}
@@ -204,12 +234,34 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TagProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TagProperty#getValue}
              * @param value the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
                 this.value = value;
                 return this;
             }
@@ -232,8 +284,8 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagProperty {
-            private final java.lang.String key;
-            private final java.lang.String value;
+            private final java.lang.Object key;
+            private final java.lang.Object value;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -241,26 +293,26 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String key, final java.lang.String value) {
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.key = key;
                 this.value = value;
             }
 
             @Override
-            public final java.lang.String getKey() {
+            public final java.lang.Object getKey() {
                 return this.key;
             }
 
             @Override
-            public final java.lang.String getValue() {
+            public final java.lang.Object getValue() {
                 return this.value;
             }
 
@@ -341,12 +393,28 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationRegionId(destinationRegionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationRegionId This parameter is required.
+         */
+        public Builder destinationRegionId(final com.aliyun.ros.cdk.core.IResolvable destinationRegionId) {
+            this.props.destinationRegionId(destinationRegionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param imageId This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageId This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
             return this;
         }
@@ -359,12 +427,28 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationDescription(destinationDescription);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationDescription This parameter is required.
+         */
+        public Builder destinationDescription(final com.aliyun.ros.cdk.core.IResolvable destinationDescription) {
+            this.props.destinationDescription(destinationDescription);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationImageName This parameter is required.
          */
         public Builder destinationImageName(final java.lang.String destinationImageName) {
+            this.props.destinationImageName(destinationImageName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationImageName This parameter is required.
+         */
+        public Builder destinationImageName(final com.aliyun.ros.cdk.core.IResolvable destinationImageName) {
             this.props.destinationImageName(destinationImageName);
             return this;
         }
@@ -391,6 +475,14 @@ public class RosCopyImage extends com.aliyun.ros.cdk.core.RosResource {
          * @param kmsKeyId This parameter is required.
          */
         public Builder kmsKeyId(final java.lang.String kmsKeyId) {
+            this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kmsKeyId This parameter is required.
+         */
+        public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
             return this;
         }

@@ -11,62 +11,62 @@ export interface DomainProps {
     /**
      * Property domainName: Domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * Property instanceId: Instance id
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property isAccessProduct: Is there a seven-layer agency before WAF
      */
-    readonly isAccessProduct: string;
+    readonly isAccessProduct: string | ros.IResolvable;
 
     /**
      * Property sourceIps: Back to source IP configuration
      */
-    readonly sourceIps: string[];
+    readonly sourceIps: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property clusterType: Cluster type
      */
-    readonly clusterType?: string;
+    readonly clusterType?: string | ros.IResolvable;
 
     /**
      * Property connectionTime: Connection timeout
      */
-    readonly connectionTime?: number;
+    readonly connectionTime?: number | ros.IResolvable;
 
     /**
      * Property http2Port: Http2 port configuration
      */
-    readonly http2Port?: string[];
+    readonly http2Port?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property httpPort: Http port configuration
      */
-    readonly httpPort?: string[];
+    readonly httpPort?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property httpsPort: Https port configuration
      */
-    readonly httpsPort?: string[];
+    readonly httpsPort?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property httpsRedirect: Https forced redirect configuration
      */
-    readonly httpsRedirect?: string;
+    readonly httpsRedirect?: string | ros.IResolvable;
 
     /**
      * Property httpToUserIp: Http back to source
      */
-    readonly httpToUserIp?: string;
+    readonly httpToUserIp?: string | ros.IResolvable;
 
     /**
      * Property loadBalancing: Load balancing configuration
      */
-    readonly loadBalancing?: string;
+    readonly loadBalancing?: string | ros.IResolvable;
 
     /**
      * Property logHeaders: Domain traffic tagging
@@ -76,17 +76,17 @@ export interface DomainProps {
     /**
      * Property readTime: Read connection timeout period
      */
-    readonly readTime?: number;
+    readonly readTime?: number | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group Id
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property writeTime: Write connection timeout period
      */
-    readonly writeTime?: number;
+    readonly writeTime?: number | ros.IResolvable;
 }
 
 /**
@@ -102,77 +102,77 @@ export class Domain extends ros.Resource {
     /**
      * Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: any;
+    public readonly attrClusterType: ros.IResolvable;
 
     /**
      * Attribute Cname: CNAME assigned by WAF instance
      */
-    public readonly attrCname: any;
+    public readonly attrCname: ros.IResolvable;
 
     /**
      * Attribute DomainName: Domain name
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * Attribute Http2Port: Http2 port configuration
      */
-    public readonly attrHttp2Port: any;
+    public readonly attrHttp2Port: ros.IResolvable;
 
     /**
      * Attribute HttpPort: Http port configuration
      */
-    public readonly attrHttpPort: any;
+    public readonly attrHttpPort: ros.IResolvable;
 
     /**
      * Attribute HttpToUserIp: Http back to source
      */
-    public readonly attrHttpToUserIp: any;
+    public readonly attrHttpToUserIp: ros.IResolvable;
 
     /**
      * Attribute HttpsPort: Https port configuration
      */
-    public readonly attrHttpsPort: any;
+    public readonly attrHttpsPort: ros.IResolvable;
 
     /**
      * Attribute HttpsRedirect: Https forced redirect configuration
      */
-    public readonly attrHttpsRedirect: any;
+    public readonly attrHttpsRedirect: ros.IResolvable;
 
     /**
      * Attribute InstanceId: Instance id
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute IsAccessProduct: Is there a seven-layer agency before WAF
      */
-    public readonly attrIsAccessProduct: any;
+    public readonly attrIsAccessProduct: ros.IResolvable;
 
     /**
      * Attribute LoadBalancing: Load balancing configuration
      */
-    public readonly attrLoadBalancing: any;
+    public readonly attrLoadBalancing: ros.IResolvable;
 
     /**
      * Attribute LogHeaders: Domain traffic tagging
      */
-    public readonly attrLogHeaders: any;
+    public readonly attrLogHeaders: ros.IResolvable;
 
     /**
      * Attribute ResourceGroupId: Resource group Id
      */
-    public readonly attrResourceGroupId: any;
+    public readonly attrResourceGroupId: ros.IResolvable;
 
     /**
      * Attribute SourceIps: Back to source IP configuration
      */
-    public readonly attrSourceIps: any;
+    public readonly attrSourceIps: ros.IResolvable;
 
     /**
      * Attribute Version: Optimistic lock version
      */
-    public readonly attrVersion: any;
+    public readonly attrVersion: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::WAF::Domain`.

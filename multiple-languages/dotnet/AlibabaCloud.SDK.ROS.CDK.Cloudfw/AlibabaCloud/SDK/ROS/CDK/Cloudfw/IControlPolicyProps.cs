@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// drop: rejected
         /// log: Observation
         /// </remarks>
-        [JsiiProperty(name: "aclAction", typeJson: "{\"primitive\":\"string\"}")]
-        string AclAction
+        [JsiiProperty(name: "aclAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AclAction
         {
             get;
         }
@@ -25,15 +25,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
         /// NOTE ANY indicates that the policy is applied to all types of applications.
         /// </remarks>
-        [JsiiProperty(name: "applicationName", typeJson: "{\"primitive\":\"string\"}")]
-        string ApplicationName
+        [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ApplicationName
         {
             get;
         }
 
         /// <summary>Property description: Security access control policy description information.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-        string Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Description
         {
             get;
         }
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
         /// When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
         /// </remarks>
-        [JsiiProperty(name: "destination", typeJson: "{\"primitive\":\"string\"}")]
-        string Destination
+        [JsiiProperty(name: "destination", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Destination
         {
             get;
         }
@@ -58,8 +58,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// domain: The purpose domain
         /// location: The purpose area
         /// </remarks>
-        [JsiiProperty(name: "destinationType", typeJson: "{\"primitive\":\"string\"}")]
-        string DestinationType
+        [JsiiProperty(name: "destinationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DestinationType
         {
             get;
         }
@@ -69,8 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// in: internal and external traffic access control
         /// out: within the flow of external access control
         /// </remarks>
-        [JsiiProperty(name: "direction", typeJson: "{\"primitive\":\"string\"}")]
-        string Direction
+        [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Direction
         {
             get;
         }
@@ -80,8 +80,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// Priority number increments sequentially from 1, lower the priority number, the higher the priority.
         /// Description -1 indicates the lowest priority.
         /// </remarks>
-        [JsiiProperty(name: "newOrder", typeJson: "{\"primitive\":\"number\"}")]
-        double NewOrder
+        [JsiiProperty(name: "newOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NewOrder
         {
             get;
         }
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// Can be set to ANY when you are not sure of the specific protocol type.
         /// Allowed values: ANY, TCP, UDP, ICMP
         /// </remarks>
-        [JsiiProperty(name: "proto", typeJson: "{\"primitive\":\"string\"}")]
-        string Proto
+        [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Proto
         {
             get;
         }
@@ -103,8 +103,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// When SourceType as a group, Source name for the source address book. For example: db_group
         /// When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
         /// </remarks>
-        [JsiiProperty(name: "source", typeJson: "{\"primitive\":\"string\"}")]
-        string Source
+        [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Source
         {
             get;
         }
@@ -115,8 +115,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// group: source address book
         /// location: the source area
         /// </remarks>
-        [JsiiProperty(name: "sourceType", typeJson: "{\"primitive\":\"string\"}")]
-        string SourceType
+        [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SourceType
         {
             get;
         }
@@ -125,9 +125,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// Note When DestPortType to port, set the item.
         /// </remarks>
-        [JsiiProperty(name: "destPort", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestPort
+        object? DestPort
         {
             get
             {
@@ -139,9 +139,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// Description DestPortType is group, set the item.
         /// </remarks>
-        [JsiiProperty(name: "destPortGroup", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destPortGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestPortGroup
+        object? DestPortGroup
         {
             get
             {
@@ -154,9 +154,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// port: Port
         /// group: port address book
         /// </remarks>
-        [JsiiProperty(name: "destPortType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destPortType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestPortType
+        object? DestPortType
         {
             get
             {
@@ -168,9 +168,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// Default to cn-hangzhou.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RegionId
+        object? RegionId
         {
             get
             {
@@ -192,10 +192,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// drop: rejected
             /// log: Observation
             /// </remarks>
-            [JsiiProperty(name: "aclAction", typeJson: "{\"primitive\":\"string\"}")]
-            public string AclAction
+            [JsiiProperty(name: "aclAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AclAction
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property applicationName: Application types supported by the security policy.</summary>
@@ -203,17 +203,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
             /// NOTE ANY indicates that the policy is applied to all types of applications.
             /// </remarks>
-            [JsiiProperty(name: "applicationName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ApplicationName
+            [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ApplicationName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Security access control policy description information.</summary>
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-            public string Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Description
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property destination: Security Access Control destination address policy.</summary>
@@ -223,10 +223,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
             /// When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
             /// </remarks>
-            [JsiiProperty(name: "destination", typeJson: "{\"primitive\":\"string\"}")]
-            public string Destination
+            [JsiiProperty(name: "destination", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Destination
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property destinationType: Security Access Control destination address type of policy.</summary>
@@ -236,10 +236,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// domain: The purpose domain
             /// location: The purpose area
             /// </remarks>
-            [JsiiProperty(name: "destinationType", typeJson: "{\"primitive\":\"string\"}")]
-            public string DestinationType
+            [JsiiProperty(name: "destinationType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DestinationType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property direction: Security access control traffic direction policies.</summary>
@@ -247,10 +247,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// in: internal and external traffic access control
             /// out: within the flow of external access control
             /// </remarks>
-            [JsiiProperty(name: "direction", typeJson: "{\"primitive\":\"string\"}")]
-            public string Direction
+            [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Direction
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property newOrder: Security access control priority policy in force.</summary>
@@ -258,10 +258,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Priority number increments sequentially from 1, lower the priority number, the higher the priority.
             /// Description -1 indicates the lowest priority.
             /// </remarks>
-            [JsiiProperty(name: "newOrder", typeJson: "{\"primitive\":\"number\"}")]
-            public double NewOrder
+            [JsiiProperty(name: "newOrder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NewOrder
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property proto: The type of security protocol for traffic access in the security access control policy.</summary>
@@ -269,10 +269,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Can be set to ANY when you are not sure of the specific protocol type.
             /// Allowed values: ANY, TCP, UDP, ICMP
             /// </remarks>
-            [JsiiProperty(name: "proto", typeJson: "{\"primitive\":\"string\"}")]
-            public string Proto
+            [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Proto
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property source: Security access control source address policy.</summary>
@@ -281,10 +281,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// When SourceType as a group, Source name for the source address book. For example: db_group
             /// When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
             /// </remarks>
-            [JsiiProperty(name: "source", typeJson: "{\"primitive\":\"string\"}")]
-            public string Source
+            [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Source
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property sourceType: Security access control source address type of policy.</summary>
@@ -293,10 +293,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// group: source address book
             /// location: the source area
             /// </remarks>
-            [JsiiProperty(name: "sourceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string SourceType
+            [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SourceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property destPort: Security access control policy access traffic destination port.</summary>
@@ -304,10 +304,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Note When DestPortType to port, set the item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destPort", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestPort
+            [JsiiProperty(name: "destPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestPort
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destPortGroup: Security access control policy access traffic destination port address book name.</summary>
@@ -315,10 +315,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Description DestPortType is group, set the item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destPortGroup", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestPortGroup
+            [JsiiProperty(name: "destPortGroup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestPortGroup
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destPortType: Security access control policy access destination port traffic type.</summary>
@@ -327,10 +327,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// group: port address book
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destPortType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestPortType
+            [JsiiProperty(name: "destPortType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestPortType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property regionId: Region ID.</summary>
@@ -338,10 +338,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Default to cn-hangzhou.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RegionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

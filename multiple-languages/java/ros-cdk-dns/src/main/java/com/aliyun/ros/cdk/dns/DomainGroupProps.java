@@ -3,14 +3,15 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::DomainGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.449Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DomainGroupProps.Jsii$Proxy.class)
 public interface DomainGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupName: Domain name group name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      * @return a {@link Builder} of {@link DomainGroupProps}
@@ -22,14 +23,24 @@ public interface DomainGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link DomainGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainGroupProps> {
-        private java.lang.String groupName;
+        private java.lang.Object groupName;
 
         /**
          * Sets the value of {@link DomainGroupProps#getGroupName}
-         * @param groupName the value to be set. This parameter is required.
+         * @param groupName Property groupName: Domain name group name. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainGroupProps#getGroupName}
+         * @param groupName Property groupName: Domain name group name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.groupName = groupName;
             return this;
         }
@@ -50,7 +61,7 @@ public interface DomainGroupProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DomainGroupProps {
-        private final java.lang.String groupName;
+        private final java.lang.Object groupName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -58,19 +69,19 @@ public interface DomainGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName) {
+        protected Jsii$Proxy(final java.lang.Object groupName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 

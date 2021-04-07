@@ -37,11 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<bool>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Construct), new System.Type[]{typeof(object)}, new object[]{x})!;
         }
 
-        /// <summary>Perform final modifications before synthesis&#xD; &#xD; This method can be implemented by derived constructs in order to perform&#xD; final changes before synthesis.</summary>
+        /// <summary>Perform final modifications before synthesis.</summary>
         /// <remarks>
-        /// prepare() will be called after child
+        /// This method can be implemented by derived constructs in order to perform
+        /// final changes before synthesis. prepare() will be called after child
         /// constructs have been prepared.
-        /// 
+        ///
         /// This is an advanced framework feature. Only use this if you
         /// understand the implications.
         /// </remarks>
@@ -75,11 +76,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<string[]>(new System.Type[]{}, new object[]{})!;
         }
 
-        /// <summary>Perform final modifications before synthesis&#xD; &#xD; This method can be implemented by derived constructs in order to perform&#xD; final changes before synthesis.</summary>
+        /// <summary>Perform final modifications before synthesis.</summary>
         /// <remarks>
-        /// prepare() will be called after child
+        /// This method can be implemented by derived constructs in order to perform
+        /// final changes before synthesis. prepare() will be called after child
         /// constructs have been prepared.
-        /// 
+        ///
         /// This is an advanced framework feature. Only use this if you
         /// understand the implications.
         /// </remarks>

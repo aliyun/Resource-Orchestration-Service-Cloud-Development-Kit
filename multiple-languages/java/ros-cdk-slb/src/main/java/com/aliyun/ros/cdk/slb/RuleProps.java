@@ -3,20 +3,26 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.097Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+     * <p>
+     * Valid value:
+     * 1-65535
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort();
 
     /**
+     * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
+     * Property ruleList: The forwarding rules to add.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleList();
 
@@ -30,13 +36,15 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RuleProps> {
-        private java.lang.Number listenerPort;
-        private java.lang.String loadBalancerId;
+        private java.lang.Object listenerPort;
+        private java.lang.Object loadBalancerId;
         private java.lang.Object ruleList;
 
         /**
          * Sets the value of {@link RuleProps#getListenerPort}
-         * @param listenerPort the value to be set. This parameter is required.
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         *                     Valid value:
+         *                     1-65535
          * @return {@code this}
          */
         public Builder listenerPort(java.lang.Number listenerPort) {
@@ -45,8 +53,20 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RuleProps#getListenerPort}
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         *                     Valid value:
+         *                     1-65535
+         * @return {@code this}
+         */
+        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RuleProps#getLoadBalancerId}
-         * @param loadBalancerId the value to be set. This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
          * @return {@code this}
          */
         public Builder loadBalancerId(java.lang.String loadBalancerId) {
@@ -55,8 +75,18 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RuleProps#getLoadBalancerId}
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RuleProps#getRuleList}
-         * @param ruleList the value to be set. This parameter is required.
+         * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          * @return {@code this}
          */
         public Builder ruleList(com.aliyun.ros.cdk.core.IResolvable ruleList) {
@@ -66,7 +96,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getRuleList}
-         * @param ruleList the value to be set. This parameter is required.
+         * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          * @return {@code this}
          */
         public Builder ruleList(java.util.List<? extends java.lang.Object> ruleList) {
@@ -90,8 +120,8 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RuleProps {
-        private final java.lang.Number listenerPort;
-        private final java.lang.String loadBalancerId;
+        private final java.lang.Object listenerPort;
+        private final java.lang.Object loadBalancerId;
         private final java.lang.Object ruleList;
 
         /**
@@ -100,15 +130,15 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ruleList = software.amazon.jsii.Kernel.get(this, "ruleList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number listenerPort, final java.lang.String loadBalancerId, final java.lang.Object ruleList) {
+        protected Jsii$Proxy(final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object ruleList) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.listenerPort = java.util.Objects.requireNonNull(listenerPort, "listenerPort is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
@@ -116,12 +146,12 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getListenerPort() {
+        public final java.lang.Object getListenerPort() {
             return this.listenerPort;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 

@@ -14,9 +14,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// The default value is -1, which means no effect.
         /// It is recommended to quote the same value with WaitCondition.Count.
         /// </remarks>
-        [JsiiProperty(name: "count", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Count
+        object? Count
         {
             get
             {
@@ -27,14 +27,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <summary>Property mode: If set to Increment, all old signals will be deleted before update.</summary>
         /// <remarks>
         /// In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances.
-        /// 
+        ///
         /// If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count.
-        /// 
+        ///
         /// Default to Full.
         /// </remarks>
-        [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Mode
+        object? Mode
         {
             get
             {
@@ -57,25 +57,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// It is recommended to quote the same value with WaitCondition.Count.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "count", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Count
+            [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Count
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property mode: If set to Increment, all old signals will be deleted before update.</summary>
             /// <remarks>
             /// In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances.
-            /// 
+            ///
             /// If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count.
-            /// 
+            ///
             /// Default to Full.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Mode
+            [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Mode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

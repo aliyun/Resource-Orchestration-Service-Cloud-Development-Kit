@@ -12,29 +12,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         /// <remarks>
         /// If you specify with your own image, make sure the system disk size bigger than image size.
         /// </remarks>
-        [JsiiProperty(name: "dataDiskSize", typeJson: "{\"primitive\":\"number\"}")]
-        double DataDiskSize
+        [JsiiProperty(name: "dataDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DataDiskSize
         {
             get;
         }
 
         /// <summary>Property ensRegionId: ENS Region Id.</summary>
-        [JsiiProperty(name: "ensRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        string EnsRegionId
+        [JsiiProperty(name: "ensRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object EnsRegionId
         {
             get;
         }
 
         /// <summary>Property imageId: Image ID to create ens instance.</summary>
-        [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}")]
-        string ImageId
+        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ImageId
         {
             get;
         }
 
         /// <summary>Property instanceType: ENS instance supported instance type, make sure it should be correct.</summary>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceType
         {
             get;
         }
@@ -43,30 +43,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         /// <remarks>
         /// Unit is month, it could be from 1 to 9 or 12. Default value is 1.
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}")]
-        double Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Period
         {
             get;
         }
 
         /// <summary>Property quantity: number of instances to create.</summary>
-        [JsiiProperty(name: "quantity", typeJson: "{\"primitive\":\"number\"}")]
-        double Quantity
+        [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Quantity
         {
             get;
         }
 
         /// <summary>Property systemDiskSize: Disk size of the system disk.</summary>
-        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"primitive\":\"number\"}")]
-        double SystemDiskSize
+        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SystemDiskSize
         {
             get;
         }
 
         /// <summary>Property autoRenew: Whether renew the fee automatically?it could be True,FalseDefault value is False.</summary>
-        [JsiiProperty(name: "autoRenew", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoRenew
+        object? AutoRenew
         {
             get
             {
@@ -78,9 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         /// <remarks>
         /// it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
         /// </remarks>
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? AutoRenewPeriod
+        object? AutoRenewPeriod
         {
             get
             {
@@ -89,9 +89,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property hostName: The hostname of the instance.</summary>
-        [JsiiProperty(name: "hostName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "hostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? HostName
+        object? HostName
         {
             get
             {
@@ -100,9 +100,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property instanceName: Instance name.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceName
+        object? InstanceName
         {
             get
             {
@@ -111,9 +111,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property internetChargeType: Instance Charge type.it could be 95BandwidthByMonth, PayByBandwidth4thMonth.</summary>
-        [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InternetChargeType
+        object? InternetChargeType
         {
             get
             {
@@ -122,9 +122,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property ipType: ip type, It could be ipv4Andipv6,ipv4,ipv6.default value isi pv4.</summary>
-        [JsiiProperty(name: "ipType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IpType
+        object? IpType
         {
             get
             {
@@ -133,9 +133,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property keyPairName: SSH key pair name.</summary>
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? KeyPairName
+        object? KeyPairName
         {
             get
             {
@@ -147,9 +147,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         /// <remarks>
         /// Must contain at least 3 types of special character, lower character, upper character, number.
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Password
+        object? Password
         {
             get
             {
@@ -158,9 +158,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property paymentType: Payment Type.only support value Subscription.</summary>
-        [JsiiProperty(name: "paymentType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "paymentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PaymentType
+        object? PaymentType
         {
             get
             {
@@ -169,9 +169,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property privateIpAddress: Private IP for the instance created.</summary>
-        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PrivateIpAddress
+        object? PrivateIpAddress
         {
             get
             {
@@ -197,9 +197,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         /// <remarks>
         /// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
         /// </remarks>
-        [JsiiProperty(name: "userData", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? UserData
+        object? UserData
         {
             get
             {
@@ -208,9 +208,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <summary>Property vSwitchId: The vSwitch Id to create ens instance.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -230,63 +230,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             /// <remarks>
             /// If you specify with your own image, make sure the system disk size bigger than image size.
             /// </remarks>
-            [JsiiProperty(name: "dataDiskSize", typeJson: "{\"primitive\":\"number\"}")]
-            public double DataDiskSize
+            [JsiiProperty(name: "dataDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DataDiskSize
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property ensRegionId: ENS Region Id.</summary>
-            [JsiiProperty(name: "ensRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string EnsRegionId
+            [JsiiProperty(name: "ensRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object EnsRegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property imageId: Image ID to create ens instance.</summary>
-            [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ImageId
+            [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ImageId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceType: ENS instance supported instance type, make sure it should be correct.</summary>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceType
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property period: Prepaid time period.</summary>
             /// <remarks>
             /// Unit is month, it could be from 1 to 9 or 12. Default value is 1.
             /// </remarks>
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}")]
-            public double Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Period
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property quantity: number of instances to create.</summary>
-            [JsiiProperty(name: "quantity", typeJson: "{\"primitive\":\"number\"}")]
-            public double Quantity
+            [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Quantity
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property systemDiskSize: Disk size of the system disk.</summary>
-            [JsiiProperty(name: "systemDiskSize", typeJson: "{\"primitive\":\"number\"}")]
-            public double SystemDiskSize
+            [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SystemDiskSize
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property autoRenew: Whether renew the fee automatically?it could be True,FalseDefault value is False.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "autoRenew", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoRenew
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property autoRenewPeriod: The time period of auto renew.</summary>
@@ -294,50 +294,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             /// it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? AutoRenewPeriod
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property hostName: The hostname of the instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "hostName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? HostName
+            [JsiiProperty(name: "hostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HostName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceName: Instance name.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property internetChargeType: Instance Charge type.it could be 95BandwidthByMonth, PayByBandwidth4thMonth.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InternetChargeType
+            [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InternetChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ipType: ip type, It could be ipv4Andipv6,ipv4,ipv6.default value isi pv4.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "ipType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IpType
+            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property keyPairName: SSH key pair name.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? KeyPairName
+            [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KeyPairName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property password: Password of created ens instance.</summary>
@@ -345,26 +345,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             /// Must contain at least 3 types of special character, lower character, upper character, number.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Password
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property paymentType: Payment Type.only support value Subscription.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "paymentType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PaymentType
+            [JsiiProperty(name: "paymentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PaymentType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateIpAddress: Private IP for the instance created.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PrivateIpAddress
+            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIpAddress
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property uniqueSuffix: Specifies whether to automatically append sequential suffixes to the hostnames specified by the HostName parameter and instance names specified by the InstanceName parameter when you create multiple instances at a time.</summary>
@@ -383,18 +383,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
             /// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "userData", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? UserData
+            [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UserData
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchId: The vSwitch Id to create ens instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

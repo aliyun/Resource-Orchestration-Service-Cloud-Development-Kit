@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Represents a RosTemplate condition, for resources which must be conditionally created and&#xD; the determination must be made at deploy time.</summary>
+    /// <summary>Represents a RosTemplate condition, for resources which must be conditionally created and the determination must be made at deploy time.</summary>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosCondition), fullyQualifiedName: "@alicloud/ros-cdk-core.RosCondition", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosConditionProps\"}}]")]
     public class RosCondition : AlibabaCloud.SDK.ROS.CDK.Core.RosElement, AlibabaCloud.SDK.ROS.CDK.Core.IRosConditionExpression, AlibabaCloud.SDK.ROS.CDK.Core.IResolvable
     {

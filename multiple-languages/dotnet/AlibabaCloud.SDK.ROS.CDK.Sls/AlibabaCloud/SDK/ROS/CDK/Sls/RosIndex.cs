@@ -75,10 +75,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logstoreName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LogstoreName
+        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LogstoreName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -88,10 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ProjectName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -144,12 +144,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <remarks>
             /// <strong></strong>: &<>/:\n\t\r )).
-            /// 
+            ///
             /// <strong>Property</strong>: delimiter: Delimiter. Default to (( , '";=()[]{}?
             /// </remarks>
-            [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Delimiter
+            object? Delimiter
             {
                 get
                 {
@@ -198,14 +198,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
                 /// <remarks>
                 /// <strong></strong>: &<>/:\n\t\r )).
-                /// 
+                ///
                 /// <strong>Property</strong>: delimiter: Delimiter. Default to (( , '";=()[]{}?
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Delimiter
+                [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Delimiter
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -247,12 +247,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <remarks>
             /// <strong></strong>: &<>/:\n\t\r )).
-            /// 
+            ///
             /// <strong>Property</strong>: delimiter: Delimiter. Default to (( , '";=()[]{}?
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Delimiter
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Delimiter
             {
                 get;
                 set;
@@ -275,8 +275,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Json key name. It can be nested by dot(.), such as k1.k2.k3.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Name
             {
                 get;
             }
@@ -284,8 +284,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Json key type. Allowed types: text, long, double. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
             {
                 get;
             }
@@ -293,9 +293,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: alias: Json key alias.
             /// </remarks>
-            [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Alias
+            object? Alias
             {
                 get
                 {
@@ -326,29 +326,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: name: Json key name. It can be nested by dot(.), such as k1.k2.k3.
                 /// </remarks>
-                [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-                public string Name
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Name
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: type: Json key type. Allowed types: text, long, double. Default to text.
                 /// </remarks>
-                [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-                public string Type
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: alias: Json key alias.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Alias
+                [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Alias
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -370,8 +370,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Json key name. It can be nested by dot(.), such as k1.k2.k3.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Name
             {
                 get;
                 set;
@@ -380,8 +380,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Json key type. Allowed types: text, long, double. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Type
             {
                 get;
                 set;
@@ -391,8 +391,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: alias: Json key alias.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Alias
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Alias
             {
                 get;
                 set;
@@ -415,8 +415,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Key name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Name
             {
                 get;
             }
@@ -424,8 +424,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Key type. Allowed types: text, long, double, json. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
             {
                 get;
             }
@@ -433,9 +433,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: alias: Key alias.
             /// </remarks>
-            [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Alias
+            object? Alias
             {
                 get
                 {
@@ -458,12 +458,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <remarks>
             /// <strong></strong>: &<>/:\n\t\r )).
-            /// 
+            ///
             /// <strong>Property</strong>: delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?
             /// </remarks>
-            [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Delimiter
+            object? Delimiter
             {
                 get
                 {
@@ -520,29 +520,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: name: Key name.
                 /// </remarks>
-                [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-                public string Name
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Name
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: type: Key type. Allowed types: text, long, double, json. Default to text.
                 /// </remarks>
-                [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-                public string Type
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: alias: Key alias.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Alias
+                [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Alias
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -557,14 +557,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
                 /// <remarks>
                 /// <strong></strong>: &<>/:\n\t\r )).
-                /// 
+                ///
                 /// <strong>Property</strong>: delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Delimiter
+                [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Delimiter
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -606,8 +606,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Key name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Name
             {
                 get;
                 set;
@@ -616,8 +616,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type: Key type. Allowed types: text, long, double, json. Default to text.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Type
             {
                 get;
                 set;
@@ -627,8 +627,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: alias: Key alias.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "alias", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Alias
+            [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Alias
             {
                 get;
                 set;
@@ -647,12 +647,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <remarks>
             /// <strong></strong>: &<>/:\n\t\r )).
-            /// 
+            ///
             /// <strong>Property</strong>: delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "delimiter", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Delimiter
+            [JsiiProperty(name: "delimiter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Delimiter
             {
                 get;
                 set;

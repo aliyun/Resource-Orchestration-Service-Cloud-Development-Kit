@@ -3,22 +3,29 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::RetcodeApp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.728Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RetcodeAppProps")
 @software.amazon.jsii.Jsii.Proxy(RetcodeAppProps.Jsii$Proxy.class)
 public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property regionId: Region ID.
+     * <p>
+     * Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
 
     /**
+     * Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppName();
 
     /**
+     * Property retcodeAppType: The type of the application for which you want to create the browser monitoring job.
+     * <p>
+     * Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppType();
 
     /**
      * @return a {@link Builder} of {@link RetcodeAppProps}
@@ -30,13 +37,14 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RetcodeAppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RetcodeAppProps> {
-        private java.lang.String regionId;
-        private java.lang.String retcodeAppName;
-        private java.lang.String retcodeAppType;
+        private java.lang.Object regionId;
+        private java.lang.Object retcodeAppName;
+        private java.lang.Object retcodeAppType;
 
         /**
          * Sets the value of {@link RetcodeAppProps#getRegionId}
-         * @param regionId the value to be set. This parameter is required.
+         * @param regionId Property regionId: Region ID. This parameter is required.
+         *                 Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
@@ -45,8 +53,19 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RetcodeAppProps#getRegionId}
+         * @param regionId Property regionId: Region ID. This parameter is required.
+         *                 Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RetcodeAppProps#getRetcodeAppName}
-         * @param retcodeAppName the value to be set. This parameter is required.
+         * @param retcodeAppName Property retcodeAppName: The name of the application for which you want to create the browser monitoring job. This parameter is required.
          * @return {@code this}
          */
         public Builder retcodeAppName(java.lang.String retcodeAppName) {
@@ -55,11 +74,33 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RetcodeAppProps#getRetcodeAppName}
+         * @param retcodeAppName Property retcodeAppName: The name of the application for which you want to create the browser monitoring job. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder retcodeAppName(com.aliyun.ros.cdk.core.IResolvable retcodeAppName) {
+            this.retcodeAppName = retcodeAppName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RetcodeAppProps#getRetcodeAppType}
-         * @param retcodeAppType the value to be set. This parameter is required.
+         * @param retcodeAppType Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. This parameter is required.
+         *                       Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
          * @return {@code this}
          */
         public Builder retcodeAppType(java.lang.String retcodeAppType) {
+            this.retcodeAppType = retcodeAppType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RetcodeAppProps#getRetcodeAppType}
+         * @param retcodeAppType Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. This parameter is required.
+         *                       Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
+         * @return {@code this}
+         */
+        public Builder retcodeAppType(com.aliyun.ros.cdk.core.IResolvable retcodeAppType) {
             this.retcodeAppType = retcodeAppType;
             return this;
         }
@@ -80,9 +121,9 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RetcodeAppProps {
-        private final java.lang.String regionId;
-        private final java.lang.String retcodeAppName;
-        private final java.lang.String retcodeAppType;
+        private final java.lang.Object regionId;
+        private final java.lang.Object retcodeAppName;
+        private final java.lang.Object retcodeAppType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +131,15 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.retcodeAppName = software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.retcodeAppType = software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.retcodeAppName = software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.retcodeAppType = software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String regionId, final java.lang.String retcodeAppName, final java.lang.String retcodeAppType) {
+        protected Jsii$Proxy(final java.lang.Object regionId, final java.lang.Object retcodeAppName, final java.lang.Object retcodeAppType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.regionId = java.util.Objects.requireNonNull(regionId, "regionId is required");
             this.retcodeAppName = java.util.Objects.requireNonNull(retcodeAppName, "retcodeAppName is required");
@@ -106,17 +147,17 @@ public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 
         @Override
-        public final java.lang.String getRetcodeAppName() {
+        public final java.lang.Object getRetcodeAppName() {
             return this.retcodeAppName;
         }
 
         @Override
-        public final java.lang.String getRetcodeAppType() {
+        public final java.lang.Object getRetcodeAppType() {
             return this.retcodeAppType;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::ManagedPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.ManagedPolicy")
 public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::ManagedPolicy`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ManagedPolicy(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicyProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::ManagedPolicy`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ManagedPolicy(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.ManagedPolicyProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPolicyName() {
-        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPolicyName() {
+        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.ManagedPolicy> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,34 +90,62 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property policyName: Specifies the authorization policy name, containing up to 128 characters.
+         * <p>
          * @return {@code this}
-         * @param policyName This parameter is required.
+         * @param policyName Property policyName: Specifies the authorization policy name, containing up to 128 characters. This parameter is required.
          */
         public Builder policyName(final java.lang.String policyName) {
             this.props.policyName(policyName);
             return this;
         }
+        /**
+         * Property policyName: Specifies the authorization policy name, containing up to 128 characters.
+         * <p>
+         * @return {@code this}
+         * @param policyName Property policyName: Specifies the authorization policy name, containing up to 128 characters. This parameter is required.
+         */
+        public Builder policyName(final com.aliyun.ros.cdk.core.IResolvable policyName) {
+            this.props.policyName(policyName);
+            return this;
+        }
 
         /**
+         * Property description: Specifies the authorization policy description, containing up to 1024 characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Specifies the authorization policy description, containing up to 1024 characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Specifies the authorization policy description, containing up to 1024 characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Specifies the authorization policy description, containing up to 1024 characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property groups: The names of groups to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param groups This parameter is required.
+         * @param groups Property groups: The names of groups to attach to this policy. This parameter is required.
          */
         public Builder groups(final java.util.List<? extends java.lang.Object> groups) {
             this.props.groups(groups);
             return this;
         }
         /**
+         * Property groups: The names of groups to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param groups This parameter is required.
+         * @param groups Property groups: The names of groups to attach to this policy. This parameter is required.
          */
         public Builder groups(final com.aliyun.ros.cdk.core.IResolvable groups) {
             this.props.groups(groups);
@@ -116,16 +153,20 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property policyDocument: A policy document that describes what actions are allowed on which resources.
+         * <p>
          * @return {@code this}
-         * @param policyDocument This parameter is required.
+         * @param policyDocument Property policyDocument: A policy document that describes what actions are allowed on which resources. This parameter is required.
          */
         public Builder policyDocument(final com.aliyun.ros.cdk.core.IResolvable policyDocument) {
             this.props.policyDocument(policyDocument);
             return this;
         }
         /**
+         * Property policyDocument: A policy document that describes what actions are allowed on which resources.
+         * <p>
          * @return {@code this}
-         * @param policyDocument This parameter is required.
+         * @param policyDocument Property policyDocument: A policy document that describes what actions are allowed on which resources. This parameter is required.
          */
         public Builder policyDocument(final com.aliyun.ros.cdk.ram.RosManagedPolicy.PolicyDocumentProperty policyDocument) {
             this.props.policyDocument(policyDocument);
@@ -133,16 +174,24 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources.
+         * <p>
+         * If it is specified, PolicyDocument will be ignored.
+         * <p>
          * @return {@code this}
-         * @param policyDocumentUnchecked This parameter is required.
+         * @param policyDocumentUnchecked Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources. This parameter is required.
          */
         public Builder policyDocumentUnchecked(final com.aliyun.ros.cdk.core.IResolvable policyDocumentUnchecked) {
             this.props.policyDocumentUnchecked(policyDocumentUnchecked);
             return this;
         }
         /**
+         * Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources.
+         * <p>
+         * If it is specified, PolicyDocument will be ignored.
+         * <p>
          * @return {@code this}
-         * @param policyDocumentUnchecked This parameter is required.
+         * @param policyDocumentUnchecked Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources. This parameter is required.
          */
         public Builder policyDocumentUnchecked(final java.util.Map<java.lang.String, ? extends java.lang.Object> policyDocumentUnchecked) {
             this.props.policyDocumentUnchecked(policyDocumentUnchecked);
@@ -150,16 +199,20 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property roles: The names of roles to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param roles This parameter is required.
+         * @param roles Property roles: The names of roles to attach to this policy. This parameter is required.
          */
         public Builder roles(final java.util.List<? extends java.lang.Object> roles) {
             this.props.roles(roles);
             return this;
         }
         /**
+         * Property roles: The names of roles to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param roles This parameter is required.
+         * @param roles Property roles: The names of roles to attach to this policy. This parameter is required.
          */
         public Builder roles(final com.aliyun.ros.cdk.core.IResolvable roles) {
             this.props.roles(roles);
@@ -167,16 +220,20 @@ public class ManagedPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property users: The names of users to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param users This parameter is required.
+         * @param users Property users: The names of users to attach to this policy. This parameter is required.
          */
         public Builder users(final java.util.List<? extends java.lang.Object> users) {
             this.props.users(users);
             return this;
         }
         /**
+         * Property users: The names of users to attach to this policy.
+         * <p>
          * @return {@code this}
-         * @param users This parameter is required.
+         * @param users Property users: The names of users to attach to this policy. This parameter is required.
          */
         public Builder users(final com.aliyun.ros.cdk.core.IResolvable users) {
             this.props.users(users);

@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <summary>Attribute Arn: ARN.</summary>
-        [JsiiProperty(name: "attrArn", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArn
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SAMLProviderName: IdP Name.</summary>
-        [JsiiProperty(name: "attrSamlProviderName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSamlProviderName
+        [JsiiProperty(name: "attrSamlProviderName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSamlProviderName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

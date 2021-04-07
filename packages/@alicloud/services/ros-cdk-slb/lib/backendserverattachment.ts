@@ -11,12 +11,12 @@ export interface BackendServerAttachmentProps {
     /**
      * Property loadBalancerId: The id of load balancer.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * Property backendServerList: The comma delimited instance id list.If the property "BackendServers" is setting, this property will be ignored.
      */
-    readonly backendServerList?: string[];
+    readonly backendServerList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -42,12 +42,12 @@ export class BackendServerAttachment extends ros.Resource {
     /**
      * Attribute BackendServers: The collection of attached backend server.
      */
-    public readonly attrBackendServers: any;
+    public readonly attrBackendServers: ros.IResolvable;
 
     /**
      * Attribute LoadBalancerId: The id of load balancer.
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::BackendServerAttachment`.

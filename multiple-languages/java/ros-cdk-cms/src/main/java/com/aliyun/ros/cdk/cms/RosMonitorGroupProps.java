@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.290Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.942Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosMonitorGroupProps.Jsii$Proxy.class)
 public interface RosMonitorGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getContactGroups() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContactGroups() {
         return null;
     }
 
@@ -28,8 +28,8 @@ public interface RosMonitorGroupProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosMonitorGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMonitorGroupProps> {
-        private java.lang.String groupName;
-        private java.lang.String contactGroups;
+        private java.lang.Object groupName;
+        private java.lang.Object contactGroups;
 
         /**
          * Sets the value of {@link RosMonitorGroupProps#getGroupName}
@@ -42,11 +42,31 @@ public interface RosMonitorGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosMonitorGroupProps#getGroupName}
+         * @param groupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMonitorGroupProps#getContactGroups}
          * @param contactGroups the value to be set.
          * @return {@code this}
          */
         public Builder contactGroups(java.lang.String contactGroups) {
+            this.contactGroups = contactGroups;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupProps#getContactGroups}
+         * @param contactGroups the value to be set.
+         * @return {@code this}
+         */
+        public Builder contactGroups(com.aliyun.ros.cdk.core.IResolvable contactGroups) {
             this.contactGroups = contactGroups;
             return this;
         }
@@ -67,8 +87,8 @@ public interface RosMonitorGroupProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMonitorGroupProps {
-        private final java.lang.String groupName;
-        private final java.lang.String contactGroups;
+        private final java.lang.Object groupName;
+        private final java.lang.Object contactGroups;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -76,26 +96,26 @@ public interface RosMonitorGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.contactGroups = software.amazon.jsii.Kernel.get(this, "contactGroups", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contactGroups = software.amazon.jsii.Kernel.get(this, "contactGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName, final java.lang.String contactGroups) {
+        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object contactGroups) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
             this.contactGroups = contactGroups;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getContactGroups() {
+        public final java.lang.Object getContactGroups() {
             return this.contactGroups;
         }
 

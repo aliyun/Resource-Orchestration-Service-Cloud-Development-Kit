@@ -3,24 +3,27 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.252Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitoringAgentProcessProps")
 @software.amazon.jsii.Jsii.Proxy(MonitoringAgentProcessProps.Jsii$Proxy.class)
 public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
+     * Property processName: The name of the process.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProcessName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProcessName() {
         return null;
     }
 
     /**
+     * Property processUser: The user who launched the process.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProcessUser() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProcessUser() {
         return null;
     }
 
@@ -34,13 +37,13 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link MonitoringAgentProcessProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MonitoringAgentProcessProps> {
-        private java.lang.String instanceId;
-        private java.lang.String processName;
-        private java.lang.String processUser;
+        private java.lang.Object instanceId;
+        private java.lang.Object processName;
+        private java.lang.Object processUser;
 
         /**
          * Sets the value of {@link MonitoringAgentProcessProps#getInstanceId}
-         * @param instanceId the value to be set. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -49,8 +52,18 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link MonitoringAgentProcessProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MonitoringAgentProcessProps#getProcessName}
-         * @param processName the value to be set.
+         * @param processName Property processName: The name of the process.
          * @return {@code this}
          */
         public Builder processName(java.lang.String processName) {
@@ -59,11 +72,31 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link MonitoringAgentProcessProps#getProcessName}
+         * @param processName Property processName: The name of the process.
+         * @return {@code this}
+         */
+        public Builder processName(com.aliyun.ros.cdk.core.IResolvable processName) {
+            this.processName = processName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MonitoringAgentProcessProps#getProcessUser}
-         * @param processUser the value to be set.
+         * @param processUser Property processUser: The user who launched the process.
          * @return {@code this}
          */
         public Builder processUser(java.lang.String processUser) {
+            this.processUser = processUser;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MonitoringAgentProcessProps#getProcessUser}
+         * @param processUser Property processUser: The user who launched the process.
+         * @return {@code this}
+         */
+        public Builder processUser(com.aliyun.ros.cdk.core.IResolvable processUser) {
             this.processUser = processUser;
             return this;
         }
@@ -84,9 +117,9 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MonitoringAgentProcessProps {
-        private final java.lang.String instanceId;
-        private final java.lang.String processName;
-        private final java.lang.String processUser;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object processName;
+        private final java.lang.Object processUser;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -94,15 +127,15 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.processName = software.amazon.jsii.Kernel.get(this, "processName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.processUser = software.amazon.jsii.Kernel.get(this, "processUser", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.processName = software.amazon.jsii.Kernel.get(this, "processName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.processUser = software.amazon.jsii.Kernel.get(this, "processUser", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceId, final java.lang.String processName, final java.lang.String processUser) {
+        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object processName, final java.lang.Object processUser) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
             this.processName = processName;
@@ -110,17 +143,17 @@ public interface MonitoringAgentProcessProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getProcessName() {
+        public final java.lang.Object getProcessName() {
             return this.processName;
         }
 
         @Override
-        public final java.lang.String getProcessUser() {
+        public final java.lang.Object getProcessUser() {
             return this.processUser;
         }
 

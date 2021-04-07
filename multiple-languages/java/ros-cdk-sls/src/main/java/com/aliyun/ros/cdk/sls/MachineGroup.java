@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  `ALIYUN::SLS::MachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.402Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.108Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.MachineGroup")
 public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public MachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sls.MachineGroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public MachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sls.MachineGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public MachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -52,15 +64,17 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute GroupName: GroupName of SLS.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ProjectName: ProjectName of SLS.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -69,8 +83,8 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sls.MachineGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -78,8 +92,8 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -97,52 +111,112 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupAttribute: Group attribute, default is null.
+         * <p>
+         * The object value is groupToic and externalName
+         * <p>
          * @return {@code this}
-         * @param groupAttribute This parameter is required.
+         * @param groupAttribute Property groupAttribute: Group attribute, default is null. This parameter is required.
          */
         public Builder groupAttribute(final java.lang.String groupAttribute) {
             this.props().groupAttribute(groupAttribute);
             return this;
         }
+        /**
+         * Property groupAttribute: Group attribute, default is null.
+         * <p>
+         * The object value is groupToic and externalName
+         * <p>
+         * @return {@code this}
+         * @param groupAttribute Property groupAttribute: Group attribute, default is null. This parameter is required.
+         */
+        public Builder groupAttribute(final com.aliyun.ros.cdk.core.IResolvable groupAttribute) {
+            this.props().groupAttribute(groupAttribute);
+            return this;
+        }
 
         /**
+         * Property groupName: Display name of the group name, the Project only.
+         * <p>
+         * [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+         * <p>
          * @return {@code this}
-         * @param groupName This parameter is required.
+         * @param groupName Property groupName: Display name of the group name, the Project only. This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
             this.props().groupName(groupName);
             return this;
         }
+        /**
+         * Property groupName: Display name of the group name, the Project only.
+         * <p>
+         * [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: Display name of the group name, the Project only. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props().groupName(groupName);
+            return this;
+        }
 
         /**
+         * Property groupType: MachineGroup type, the value is empty or Armory.
+         * <p>
          * @return {@code this}
-         * @param groupType This parameter is required.
+         * @param groupType Property groupType: MachineGroup type, the value is empty or Armory. This parameter is required.
          */
         public Builder groupType(final java.lang.String groupType) {
             this.props().groupType(groupType);
             return this;
         }
+        /**
+         * Property groupType: MachineGroup type, the value is empty or Armory.
+         * <p>
+         * @return {@code this}
+         * @param groupType Property groupType: MachineGroup type, the value is empty or Armory. This parameter is required.
+         */
+        public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.props().groupType(groupType);
+            return this;
+        }
 
         /**
+         * Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.
+         * <p>
          * @return {@code this}
-         * @param machineIdentifyType This parameter is required.
+         * @param machineIdentifyType Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'. This parameter is required.
          */
         public Builder machineIdentifyType(final java.lang.String machineIdentifyType) {
             this.props().machineIdentifyType(machineIdentifyType);
             return this;
         }
+        /**
+         * Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.
+         * <p>
+         * @return {@code this}
+         * @param machineIdentifyType Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'. This parameter is required.
+         */
+        public Builder machineIdentifyType(final com.aliyun.ros.cdk.core.IResolvable machineIdentifyType) {
+            this.props().machineIdentifyType(machineIdentifyType);
+            return this;
+        }
 
         /**
+         * Property machineList: The machine tag, the value is ip or userdefined-id.
+         * <p>
          * @return {@code this}
-         * @param machineList This parameter is required.
+         * @param machineList Property machineList: The machine tag, the value is ip or userdefined-id. This parameter is required.
          */
         public Builder machineList(final java.util.List<? extends java.lang.Object> machineList) {
             this.props().machineList(machineList);
             return this;
         }
         /**
+         * Property machineList: The machine tag, the value is ip or userdefined-id.
+         * <p>
          * @return {@code this}
-         * @param machineList This parameter is required.
+         * @param machineList Property machineList: The machine tag, the value is ip or userdefined-id. This parameter is required.
          */
         public Builder machineList(final com.aliyun.ros.cdk.core.IResolvable machineList) {
             this.props().machineList(machineList);
@@ -150,10 +224,22 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property projectName: MachineGroup created in project.
+         * <p>
          * @return {@code this}
-         * @param projectName This parameter is required.
+         * @param projectName Property projectName: MachineGroup created in project. This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
+            this.props().projectName(projectName);
+            return this;
+        }
+        /**
+         * Property projectName: MachineGroup created in project.
+         * <p>
+         * @return {@code this}
+         * @param projectName Property projectName: MachineGroup created in project. This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props().projectName(projectName);
             return this;
         }

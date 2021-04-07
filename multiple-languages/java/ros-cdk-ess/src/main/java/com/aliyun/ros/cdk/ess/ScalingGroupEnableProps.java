@@ -3,42 +3,56 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupEnableProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupEnableProps.Jsii$Proxy.class)
 public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property scalingGroupId: The id of operated scaling group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
+     * Property instanceIds: The id list of ECS instance which will be attached.
+     * <p>
+     * Max support 1000 instances.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceIds() {
         return null;
     }
 
     /**
+     * Property removeInstanceIds: The id list of ECS instance which will be removed.
+     * <p>
+     * Max support 1000 instances.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRemoveInstanceIds() {
         return null;
     }
 
     /**
+     * Property scalingConfigurationId: The id of scaling configuration which will be activate.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingConfigurationId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingConfigurationId() {
         return null;
     }
 
     /**
+     * Property scalingRuleAris: A list of scaling rule aris which will be executed.
+     * <p>
+     * Max support 10 scaling rule aris.
+     * When creating the resource, all the scaling rule aris in the list will be executed.
+     * When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleAris() {
         return null;
     }
 
     /**
+     * Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getScalingRuleArisExecuteVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleArisExecuteVersion() {
         return null;
     }
 
@@ -52,16 +66,16 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link ScalingGroupEnableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupEnableProps> {
-        private java.lang.String scalingGroupId;
+        private java.lang.Object scalingGroupId;
         private java.lang.Object instanceIds;
         private java.lang.Object removeInstanceIds;
-        private java.lang.String scalingConfigurationId;
+        private java.lang.Object scalingConfigurationId;
         private java.lang.Object scalingRuleAris;
-        private java.lang.Number scalingRuleArisExecuteVersion;
+        private java.lang.Object scalingRuleArisExecuteVersion;
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getScalingGroupId}
-         * @param scalingGroupId the value to be set. This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: The id of operated scaling group. This parameter is required.
          * @return {@code this}
          */
         public Builder scalingGroupId(java.lang.String scalingGroupId) {
@@ -70,8 +84,19 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ScalingGroupEnableProps#getScalingGroupId}
+         * @param scalingGroupId Property scalingGroupId: The id of operated scaling group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupEnableProps#getInstanceIds}
-         * @param instanceIds the value to be set.
+         * @param instanceIds Property instanceIds: The id list of ECS instance which will be attached.
+         *                    Max support 1000 instances.
          * @return {@code this}
          */
         public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
@@ -81,7 +106,8 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getInstanceIds}
-         * @param instanceIds the value to be set.
+         * @param instanceIds Property instanceIds: The id list of ECS instance which will be attached.
+         *                    Max support 1000 instances.
          * @return {@code this}
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
@@ -91,7 +117,8 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getRemoveInstanceIds}
-         * @param removeInstanceIds the value to be set.
+         * @param removeInstanceIds Property removeInstanceIds: The id list of ECS instance which will be removed.
+         *                          Max support 1000 instances.
          * @return {@code this}
          */
         public Builder removeInstanceIds(java.util.List<? extends java.lang.Object> removeInstanceIds) {
@@ -101,7 +128,8 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getRemoveInstanceIds}
-         * @param removeInstanceIds the value to be set.
+         * @param removeInstanceIds Property removeInstanceIds: The id list of ECS instance which will be removed.
+         *                          Max support 1000 instances.
          * @return {@code this}
          */
         public Builder removeInstanceIds(com.aliyun.ros.cdk.core.IResolvable removeInstanceIds) {
@@ -111,7 +139,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getScalingConfigurationId}
-         * @param scalingConfigurationId the value to be set.
+         * @param scalingConfigurationId Property scalingConfigurationId: The id of scaling configuration which will be activate.
          * @return {@code this}
          */
         public Builder scalingConfigurationId(java.lang.String scalingConfigurationId) {
@@ -120,8 +148,21 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ScalingGroupEnableProps#getScalingConfigurationId}
+         * @param scalingConfigurationId Property scalingConfigurationId: The id of scaling configuration which will be activate.
+         * @return {@code this}
+         */
+        public Builder scalingConfigurationId(com.aliyun.ros.cdk.core.IResolvable scalingConfigurationId) {
+            this.scalingConfigurationId = scalingConfigurationId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupEnableProps#getScalingRuleAris}
-         * @param scalingRuleAris the value to be set.
+         * @param scalingRuleAris Property scalingRuleAris: A list of scaling rule aris which will be executed.
+         *                        Max support 10 scaling rule aris.
+         *                        When creating the resource, all the scaling rule aris in the list will be executed.
+         *                        When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
          * @return {@code this}
          */
         public Builder scalingRuleAris(java.util.List<? extends java.lang.Object> scalingRuleAris) {
@@ -131,7 +172,10 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getScalingRuleAris}
-         * @param scalingRuleAris the value to be set.
+         * @param scalingRuleAris Property scalingRuleAris: A list of scaling rule aris which will be executed.
+         *                        Max support 10 scaling rule aris.
+         *                        When creating the resource, all the scaling rule aris in the list will be executed.
+         *                        When updating the resource, none of scaling rule aris in the list will be executed, unless ScalingRuleArisExecuteVersion is changed.
          * @return {@code this}
          */
         public Builder scalingRuleAris(com.aliyun.ros.cdk.core.IResolvable scalingRuleAris) {
@@ -141,10 +185,20 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ScalingGroupEnableProps#getScalingRuleArisExecuteVersion}
-         * @param scalingRuleArisExecuteVersion the value to be set.
+         * @param scalingRuleArisExecuteVersion Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
          * @return {@code this}
          */
         public Builder scalingRuleArisExecuteVersion(java.lang.Number scalingRuleArisExecuteVersion) {
+            this.scalingRuleArisExecuteVersion = scalingRuleArisExecuteVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupEnableProps#getScalingRuleArisExecuteVersion}
+         * @param scalingRuleArisExecuteVersion Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
+         * @return {@code this}
+         */
+        public Builder scalingRuleArisExecuteVersion(com.aliyun.ros.cdk.core.IResolvable scalingRuleArisExecuteVersion) {
             this.scalingRuleArisExecuteVersion = scalingRuleArisExecuteVersion;
             return this;
         }
@@ -165,12 +219,12 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupEnableProps {
-        private final java.lang.String scalingGroupId;
+        private final java.lang.Object scalingGroupId;
         private final java.lang.Object instanceIds;
         private final java.lang.Object removeInstanceIds;
-        private final java.lang.String scalingConfigurationId;
+        private final java.lang.Object scalingConfigurationId;
         private final java.lang.Object scalingRuleAris;
-        private final java.lang.Number scalingRuleArisExecuteVersion;
+        private final java.lang.Object scalingRuleArisExecuteVersion;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -178,18 +232,18 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removeInstanceIds = software.amazon.jsii.Kernel.get(this, "removeInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.scalingConfigurationId = software.amazon.jsii.Kernel.get(this, "scalingConfigurationId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.scalingConfigurationId = software.amazon.jsii.Kernel.get(this, "scalingConfigurationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingRuleAris = software.amazon.jsii.Kernel.get(this, "scalingRuleAris", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.scalingRuleArisExecuteVersion = software.amazon.jsii.Kernel.get(this, "scalingRuleArisExecuteVersion", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.scalingRuleArisExecuteVersion = software.amazon.jsii.Kernel.get(this, "scalingRuleArisExecuteVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String scalingGroupId, final java.lang.Object instanceIds, final java.lang.Object removeInstanceIds, final java.lang.String scalingConfigurationId, final java.lang.Object scalingRuleAris, final java.lang.Number scalingRuleArisExecuteVersion) {
+        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object instanceIds, final java.lang.Object removeInstanceIds, final java.lang.Object scalingConfigurationId, final java.lang.Object scalingRuleAris, final java.lang.Object scalingRuleArisExecuteVersion) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
             this.instanceIds = instanceIds;
@@ -200,7 +254,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getScalingGroupId() {
+        public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
         }
 
@@ -215,7 +269,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getScalingConfigurationId() {
+        public final java.lang.Object getScalingConfigurationId() {
             return this.scalingConfigurationId;
         }
 
@@ -225,7 +279,7 @@ public interface ScalingGroupEnableProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.Number getScalingRuleArisExecuteVersion() {
+        public final java.lang.Object getScalingRuleArisExecuteVersion() {
             return this.scalingRuleArisExecuteVersion;
         }
 

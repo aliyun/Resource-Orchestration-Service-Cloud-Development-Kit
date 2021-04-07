@@ -11,33 +11,33 @@ export interface InstanceEndpointAclPolicyProps {
     /**
      * Property entry: The IP address range that is allowed to access the instance.
      */
-    readonly entry: string;
+    readonly entry: string | ros.IResolvable;
 
     /**
      * Property instanceId: The ID of the instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property comment: The description of the entry.
      */
-    readonly comment?: string;
+    readonly comment?: string | ros.IResolvable;
 
     /**
      * Property endpointType: The type of the endpoint.
      */
-    readonly endpointType?: string;
+    readonly endpointType?: string | ros.IResolvable;
 
     /**
      * Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid
      * values: Registry and Chart.
      */
-    readonly moduleName?: string;
+    readonly moduleName?: string | ros.IResolvable;
 
     /**
      * Property regionId: Region ID of instance. Default is current region.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 }
 
 /**
@@ -53,12 +53,12 @@ export class InstanceEndpointAclPolicy extends ros.Resource {
     /**
      * Attribute Entry: The IP address range that is allowed to access the instance.
      */
-    public readonly attrEntry: any;
+    public readonly attrEntry: ros.IResolvable;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.

@@ -3,22 +3,27 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.350Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.038Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.NamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(NamespaceProps.Jsii$Proxy.class)
 public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property namespaceId: Namespace ID.
+     * <p>
+     * Format: "regionId:logicalId" or "logicalId"
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceId();
 
     /**
+     * Property namespaceName: Namespace name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespaceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceName();
 
     /**
+     * Property namespaceDescription: Namespace description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNamespaceDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceDescription() {
         return null;
     }
 
@@ -32,13 +37,14 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NamespaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NamespaceProps> {
-        private java.lang.String namespaceId;
-        private java.lang.String namespaceName;
-        private java.lang.String namespaceDescription;
+        private java.lang.Object namespaceId;
+        private java.lang.Object namespaceName;
+        private java.lang.Object namespaceDescription;
 
         /**
          * Sets the value of {@link NamespaceProps#getNamespaceId}
-         * @param namespaceId the value to be set. This parameter is required.
+         * @param namespaceId Property namespaceId: Namespace ID. This parameter is required.
+         *                    Format: "regionId:logicalId" or "logicalId"
          * @return {@code this}
          */
         public Builder namespaceId(java.lang.String namespaceId) {
@@ -47,8 +53,19 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NamespaceProps#getNamespaceId}
+         * @param namespaceId Property namespaceId: Namespace ID. This parameter is required.
+         *                    Format: "regionId:logicalId" or "logicalId"
+         * @return {@code this}
+         */
+        public Builder namespaceId(com.aliyun.ros.cdk.core.IResolvable namespaceId) {
+            this.namespaceId = namespaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NamespaceProps#getNamespaceName}
-         * @param namespaceName the value to be set. This parameter is required.
+         * @param namespaceName Property namespaceName: Namespace name. This parameter is required.
          * @return {@code this}
          */
         public Builder namespaceName(java.lang.String namespaceName) {
@@ -57,11 +74,31 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NamespaceProps#getNamespaceName}
+         * @param namespaceName Property namespaceName: Namespace name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder namespaceName(com.aliyun.ros.cdk.core.IResolvable namespaceName) {
+            this.namespaceName = namespaceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NamespaceProps#getNamespaceDescription}
-         * @param namespaceDescription the value to be set.
+         * @param namespaceDescription Property namespaceDescription: Namespace description.
          * @return {@code this}
          */
         public Builder namespaceDescription(java.lang.String namespaceDescription) {
+            this.namespaceDescription = namespaceDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NamespaceProps#getNamespaceDescription}
+         * @param namespaceDescription Property namespaceDescription: Namespace description.
+         * @return {@code this}
+         */
+        public Builder namespaceDescription(com.aliyun.ros.cdk.core.IResolvable namespaceDescription) {
             this.namespaceDescription = namespaceDescription;
             return this;
         }
@@ -82,9 +119,9 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NamespaceProps {
-        private final java.lang.String namespaceId;
-        private final java.lang.String namespaceName;
-        private final java.lang.String namespaceDescription;
+        private final java.lang.Object namespaceId;
+        private final java.lang.Object namespaceName;
+        private final java.lang.Object namespaceDescription;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +129,15 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.namespaceName = software.amazon.jsii.Kernel.get(this, "namespaceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.namespaceDescription = software.amazon.jsii.Kernel.get(this, "namespaceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceName = software.amazon.jsii.Kernel.get(this, "namespaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceDescription = software.amazon.jsii.Kernel.get(this, "namespaceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String namespaceId, final java.lang.String namespaceName, final java.lang.String namespaceDescription) {
+        protected Jsii$Proxy(final java.lang.Object namespaceId, final java.lang.Object namespaceName, final java.lang.Object namespaceDescription) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.namespaceId = java.util.Objects.requireNonNull(namespaceId, "namespaceId is required");
             this.namespaceName = java.util.Objects.requireNonNull(namespaceName, "namespaceName is required");
@@ -108,17 +145,17 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getNamespaceId() {
+        public final java.lang.Object getNamespaceId() {
             return this.namespaceId;
         }
 
         @Override
-        public final java.lang.String getNamespaceName() {
+        public final java.lang.Object getNamespaceName() {
             return this.namespaceName;
         }
 
         @Override
-        public final java.lang.String getNamespaceDescription() {
+        public final java.lang.Object getNamespaceDescription() {
             return this.namespaceDescription;
         }
 

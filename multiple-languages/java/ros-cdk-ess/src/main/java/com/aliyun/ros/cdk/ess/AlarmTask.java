@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::AlarmTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTask")
 public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ESS::AlarmTask`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AlarmTask(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.AlarmTaskProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ESS::AlarmTask`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AlarmTask(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.AlarmTaskProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AlarmTaskId: The alarm task ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAlarmTaskId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAlarmTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAlarmTaskId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAlarmTaskId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ess.AlarmTask> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,70 +90,146 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property alarmAction: Alarm Actions.
+         * <p>
          * @return {@code this}
-         * @param alarmAction This parameter is required.
+         * @param alarmAction Property alarmAction: Alarm Actions. This parameter is required.
          */
-        public Builder alarmAction(final java.util.List<java.lang.String> alarmAction) {
+        public Builder alarmAction(final com.aliyun.ros.cdk.core.IResolvable alarmAction) {
+            this.props.alarmAction(alarmAction);
+            return this;
+        }
+        /**
+         * Property alarmAction: Alarm Actions.
+         * <p>
+         * @return {@code this}
+         * @param alarmAction Property alarmAction: Alarm Actions. This parameter is required.
+         */
+        public Builder alarmAction(final java.util.List<? extends java.lang.Object> alarmAction) {
             this.props.alarmAction(alarmAction);
             return this;
         }
 
         /**
+         * Property metricName: Metric Name.
+         * <p>
          * @return {@code this}
-         * @param metricName This parameter is required.
+         * @param metricName Property metricName: Metric Name. This parameter is required.
          */
         public Builder metricName(final java.lang.String metricName) {
             this.props.metricName(metricName);
             return this;
         }
+        /**
+         * Property metricName: Metric Name.
+         * <p>
+         * @return {@code this}
+         * @param metricName Property metricName: Metric Name. This parameter is required.
+         */
+        public Builder metricName(final com.aliyun.ros.cdk.core.IResolvable metricName) {
+            this.props.metricName(metricName);
+            return this;
+        }
 
         /**
+         * Property scalingGroupId: The ID of the scaling group.
+         * <p>
          * @return {@code this}
-         * @param scalingGroupId This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: The ID of the scaling group. This parameter is required.
          */
         public Builder scalingGroupId(final java.lang.String scalingGroupId) {
             this.props.scalingGroupId(scalingGroupId);
             return this;
         }
+        /**
+         * Property scalingGroupId: The ID of the scaling group.
+         * <p>
+         * @return {@code this}
+         * @param scalingGroupId Property scalingGroupId: The ID of the scaling group. This parameter is required.
+         */
+        public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
 
         /**
+         * Property threshold: Threshold.
+         * <p>
          * @return {@code this}
-         * @param threshold This parameter is required.
+         * @param threshold Property threshold: Threshold. This parameter is required.
          */
         public Builder threshold(final java.lang.Number threshold) {
             this.props.threshold(threshold);
             return this;
         }
+        /**
+         * Property threshold: Threshold.
+         * <p>
+         * @return {@code this}
+         * @param threshold Property threshold: Threshold. This parameter is required.
+         */
+        public Builder threshold(final com.aliyun.ros.cdk.core.IResolvable threshold) {
+            this.props.threshold(threshold);
+            return this;
+        }
 
         /**
+         * Property comparisonOperator: Comparison Operator.
+         * <p>
          * @return {@code this}
-         * @param comparisonOperator This parameter is required.
+         * @param comparisonOperator Property comparisonOperator: Comparison Operator. This parameter is required.
          */
         public Builder comparisonOperator(final java.lang.String comparisonOperator) {
             this.props.comparisonOperator(comparisonOperator);
             return this;
         }
+        /**
+         * Property comparisonOperator: Comparison Operator.
+         * <p>
+         * @return {@code this}
+         * @param comparisonOperator Property comparisonOperator: Comparison Operator. This parameter is required.
+         */
+        public Builder comparisonOperator(final com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
+            this.props.comparisonOperator(comparisonOperator);
+            return this;
+        }
 
         /**
+         * Property description: Description.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property dimensions: Dimensions.
+         * <p>
          * @return {@code this}
-         * @param dimensions This parameter is required.
+         * @param dimensions Property dimensions: Dimensions. This parameter is required.
          */
         public Builder dimensions(final com.aliyun.ros.cdk.core.IResolvable dimensions) {
             this.props.dimensions(dimensions);
             return this;
         }
         /**
+         * Property dimensions: Dimensions.
+         * <p>
          * @return {@code this}
-         * @param dimensions This parameter is required.
+         * @param dimensions Property dimensions: Dimensions. This parameter is required.
          */
         public Builder dimensions(final java.util.List<? extends java.lang.Object> dimensions) {
             this.props.dimensions(dimensions);
@@ -152,55 +237,127 @@ public class AlarmTask extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property evaluationCount: Evaluation Count.
+         * <p>
          * @return {@code this}
-         * @param evaluationCount This parameter is required.
+         * @param evaluationCount Property evaluationCount: Evaluation Count. This parameter is required.
          */
         public Builder evaluationCount(final java.lang.Number evaluationCount) {
             this.props.evaluationCount(evaluationCount);
             return this;
         }
+        /**
+         * Property evaluationCount: Evaluation Count.
+         * <p>
+         * @return {@code this}
+         * @param evaluationCount Property evaluationCount: Evaluation Count. This parameter is required.
+         */
+        public Builder evaluationCount(final com.aliyun.ros.cdk.core.IResolvable evaluationCount) {
+            this.props.evaluationCount(evaluationCount);
+            return this;
+        }
 
         /**
+         * Property groupId: Group Id.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: Group Id. This parameter is required.
          */
         public Builder groupId(final java.lang.Number groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: Group Id.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: Group Id. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property metricType: Metric Type.
+         * <p>
          * @return {@code this}
-         * @param metricType This parameter is required.
+         * @param metricType Property metricType: Metric Type. This parameter is required.
          */
         public Builder metricType(final java.lang.String metricType) {
             this.props.metricType(metricType);
             return this;
         }
+        /**
+         * Property metricType: Metric Type.
+         * <p>
+         * @return {@code this}
+         * @param metricType Property metricType: Metric Type. This parameter is required.
+         */
+        public Builder metricType(final com.aliyun.ros.cdk.core.IResolvable metricType) {
+            this.props.metricType(metricType);
+            return this;
+        }
 
         /**
+         * Property name: Name.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: Name. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
+        /**
+         * Property name: Name.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: Name. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
+         * Property period: Period.
+         * <p>
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param period Property period: Period. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
+        /**
+         * Property period: Period.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Period. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
+         * Property statistics: Statistics.
+         * <p>
          * @return {@code this}
-         * @param statistics This parameter is required.
+         * @param statistics Property statistics: Statistics. This parameter is required.
          */
         public Builder statistics(final java.lang.String statistics) {
+            this.props.statistics(statistics);
+            return this;
+        }
+        /**
+         * Property statistics: Statistics.
+         * <p>
+         * @return {@code this}
+         * @param statistics Property statistics: Statistics. This parameter is required.
+         */
+        public Builder statistics(final com.aliyun.ros.cdk.core.IResolvable statistics) {
             this.props.statistics(statistics);
             return this;
         }

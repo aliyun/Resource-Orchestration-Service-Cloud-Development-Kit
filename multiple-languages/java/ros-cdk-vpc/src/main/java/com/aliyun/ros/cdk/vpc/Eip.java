@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Eip")
 public class Eip extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::EIP`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public Eip(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.vpc.EIPProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::EIP`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public Eip(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.vpc.EIPProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::EIP`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public Eip(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -52,21 +64,26 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC.
+     * <p>
+     * Returned only for VPC elastic IP addresses.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllocationId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllocationId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllocationId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute EipAddress: IP address of created EIP.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEipAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrEipAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEipAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrEipAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute OrderId: Order ID of prepaid EIP instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -75,8 +92,8 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.Eip> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -84,8 +101,8 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -103,16 +120,24 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoPay: Automatic Payment.
+         * <p>
+         * Default is false.
+         * <p>
          * @return {@code this}
-         * @param autoPay This parameter is required.
+         * @param autoPay Property autoPay: Automatic Payment. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props().autoPay(autoPay);
             return this;
         }
         /**
+         * Property autoPay: Automatic Payment.
+         * <p>
+         * Default is false.
+         * <p>
          * @return {@code this}
-         * @param autoPay This parameter is required.
+         * @param autoPay Property autoPay: Automatic Payment. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props().autoPay(autoPay);
@@ -120,25 +145,49 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property bandwidth: Bandwidth for the output network.
+         * <p>
+         * Default is 5MB.
+         * <p>
          * @return {@code this}
-         * @param bandwidth This parameter is required.
+         * @param bandwidth Property bandwidth: Bandwidth for the output network. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props().bandwidth(bandwidth);
             return this;
         }
+        /**
+         * Property bandwidth: Bandwidth for the output network.
+         * <p>
+         * Default is 5MB.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: Bandwidth for the output network. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props().bandwidth(bandwidth);
+            return this;
+        }
 
         /**
+         * Property deletionProtection: Whether to enable deletion protection.
+         * <p>
+         * Default to False.
+         * <p>
          * @return {@code this}
-         * @param deletionProtection This parameter is required.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection. This parameter is required.
          */
         public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
             this.props().deletionProtection(deletionProtection);
             return this;
         }
         /**
+         * Property deletionProtection: Whether to enable deletion protection.
+         * <p>
+         * Default to False.
+         * <p>
          * @return {@code this}
-         * @param deletionProtection This parameter is required.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection. This parameter is required.
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props().deletionProtection(deletionProtection);
@@ -146,91 +195,237 @@ public class Eip extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: Optional.
+         * <p>
+         * The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Optional. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
+        /**
+         * Property description: Optional.
+         * <p>
+         * The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Optional. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props().description(description);
+            return this;
+        }
 
         /**
+         * Property instanceChargeType: The resource charge type.
+         * <p>
+         * Default value is Postpaid
+         * <p>
          * @return {@code this}
-         * @param instanceChargeType This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The resource charge type. This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
             this.props().instanceChargeType(instanceChargeType);
             return this;
         }
+        /**
+         * Property instanceChargeType: The resource charge type.
+         * <p>
+         * Default value is Postpaid
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: The resource charge type. This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props().instanceChargeType(instanceChargeType);
+            return this;
+        }
 
         /**
+         * Property internetChargeType: The network charge type.
+         * <p>
+         * Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
+         * <p>
          * @return {@code this}
-         * @param internetChargeType This parameter is required.
+         * @param internetChargeType Property internetChargeType: The network charge type. This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
             this.props().internetChargeType(internetChargeType);
             return this;
         }
+        /**
+         * Property internetChargeType: The network charge type.
+         * <p>
+         * Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
+         * <p>
+         * @return {@code this}
+         * @param internetChargeType Property internetChargeType: The network charge type. This parameter is required.
+         */
+        public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.props().internetChargeType(internetChargeType);
+            return this;
+        }
 
         /**
+         * Property isp: ISP tag for finance cloud region.
+         * <p>
+         * only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+         * <p>
          * @return {@code this}
-         * @param isp This parameter is required.
+         * @param isp Property isp: ISP tag for finance cloud region. This parameter is required.
          */
         public Builder isp(final java.lang.String isp) {
             this.props().isp(isp);
             return this;
         }
+        /**
+         * Property isp: ISP tag for finance cloud region.
+         * <p>
+         * only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+         * <p>
+         * @return {@code this}
+         * @param isp Property isp: ISP tag for finance cloud region. This parameter is required.
+         */
+        public Builder isp(final com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.props().isp(isp);
+            return this;
+        }
 
         /**
+         * Property name: The name of the EIP.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the EIP. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props().name(name);
             return this;
         }
+        /**
+         * Property name: The name of the EIP.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the EIP. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props().name(name);
+            return this;
+        }
 
         /**
+         * Property netmode: The network type.
+         * <p>
+         * Valid value: public (public network).
+         * <p>
          * @return {@code this}
-         * @param netmode This parameter is required.
+         * @param netmode Property netmode: The network type. This parameter is required.
          */
         public Builder netmode(final java.lang.String netmode) {
             this.props().netmode(netmode);
             return this;
         }
+        /**
+         * Property netmode: The network type.
+         * <p>
+         * Valid value: public (public network).
+         * <p>
+         * @return {@code this}
+         * @param netmode Property netmode: The network type. This parameter is required.
+         */
+        public Builder netmode(final com.aliyun.ros.cdk.core.IResolvable netmode) {
+            this.props().netmode(netmode);
+            return this;
+        }
 
         /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36.
+         * While choose pay by year, it could be from 1 to 3.
+         * <p>
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param period Property period: Prepaid time period. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props().period(period);
             return this;
         }
+        /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36.
+         * While choose pay by year, it could be from 1 to 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid time period. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props().period(period);
+            return this;
+        }
 
         /**
+         * Property pricingCycle: Price cycle of the resource.
+         * <p>
+         * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
          * @return {@code this}
-         * @param pricingCycle This parameter is required.
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
          */
         public Builder pricingCycle(final java.lang.String pricingCycle) {
             this.props().pricingCycle(pricingCycle);
             return this;
         }
+        /**
+         * Property pricingCycle: Price cycle of the resource.
+         * <p>
+         * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
+         * @return {@code this}
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.props().pricingCycle(pricingCycle);
+            return this;
+        }
 
         /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
          * @return {@code this}
-         * @param resourceGroupId This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);
             return this;
         }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to eip.
+         * <p>
+         * Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tags to attach to eip. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
             this.props().tags(tags);
             return this;
         }

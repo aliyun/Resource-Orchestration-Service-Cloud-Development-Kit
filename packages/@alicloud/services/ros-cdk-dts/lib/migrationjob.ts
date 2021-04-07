@@ -13,7 +13,7 @@ export interface MigrationJobProps {
      * small, medium, large and so on.
      * Various specifications of the reference data migration test performance specifications
      */
-    readonly migrationJobClass: string;
+    readonly migrationJobClass: string | ros.IResolvable;
 
     /**
      * Property destinationEndpoint: Migration target configuration
@@ -23,7 +23,7 @@ export interface MigrationJobProps {
     /**
      * Property migrationJobName: Migrating job name
      */
-    readonly migrationJobName?: string;
+    readonly migrationJobName?: string | ros.IResolvable;
 
     /**
      * Property migrationMode: Migration mode
@@ -54,7 +54,7 @@ export class MigrationJob extends ros.Resource {
     /**
      * Attribute MigrationJobId: Migration tasks task ID
      */
-    public readonly attrMigrationJobId: any;
+    public readonly attrMigrationJobId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DTS::MigrationJob`.

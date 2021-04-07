@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute AppId: The id of the created APP.</summary>
-        [JsiiProperty(name: "attrAppId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppId
+        [JsiiProperty(name: "attrAppId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AppKey: The key of the APP.</summary>
-        [JsiiProperty(name: "attrAppKey", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppKey
+        [JsiiProperty(name: "attrAppKey", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppKey
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AppSecret: The secret of the APP.</summary>
-        [JsiiProperty(name: "attrAppSecret", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppSecret
+        [JsiiProperty(name: "attrAppSecret", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppSecret
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Tags: Tags of app.</summary>
-        [JsiiProperty(name: "attrTags", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTags
+        [JsiiProperty(name: "attrTags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTags
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

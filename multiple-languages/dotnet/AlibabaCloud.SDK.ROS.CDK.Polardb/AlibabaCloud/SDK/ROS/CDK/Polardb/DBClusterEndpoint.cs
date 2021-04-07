@@ -33,27 +33,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Attribute Addresses: The address items of the db cluster endpoint.</summary>
-        [JsiiProperty(name: "attrAddresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAddresses
+        [JsiiProperty(name: "attrAddresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAddresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ConnectionString: The first connection string of the db cluster endpoint.</summary>
-        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionString
+        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DBEndpointId: DB cluster endpoint ID.</summary>
         /// <remarks>
         /// E.g. pe-xxxxxxxx.
         /// </remarks>
-        [JsiiProperty(name: "attrDbEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbEndpointId
+        [JsiiProperty(name: "attrDbEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

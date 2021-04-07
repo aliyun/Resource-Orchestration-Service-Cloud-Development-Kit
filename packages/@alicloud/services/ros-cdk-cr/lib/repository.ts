@@ -11,27 +11,32 @@ export interface RepositoryProps {
     /**
      * Property repoName: the name of the repo
      */
-    readonly repoName: string;
+    readonly repoName: string | ros.IResolvable;
 
     /**
      * Property repoNamespace: the namespace the repo belongs to
      */
-    readonly repoNamespace: string;
+    readonly repoNamespace: string | ros.IResolvable;
 
     /**
      * Property repoType: repository visibility, public or private
      */
-    readonly repoType: string;
+    readonly repoType: string | ros.IResolvable;
 
     /**
      * Property summary: description or something alike
      */
-    readonly summary: string;
+    readonly summary: string | ros.IResolvable;
 
     /**
      * Property detail: detailed configuration in markdown format
      */
-    readonly detail?: string;
+    readonly detail?: string | ros.IResolvable;
+
+    /**
+     * Property repoSource: Code Source message.
+     */
+    readonly repoSource?: RosRepository.RepoSourceProperty | ros.IResolvable;
 }
 
 /**
@@ -47,7 +52,7 @@ export class Repository extends ros.Resource {
     /**
      * Attribute RepoId: The repo id
      */
-    public readonly attrRepoId: any;
+    public readonly attrRepoId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CR::Repository`.
@@ -65,6 +70,7 @@ export class Repository extends ros.Resource {
             repoName: props.repoName,
             summary: props.summary,
             detail: props.detail,
+            repoSource: props.repoSource,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRepository;
         this.attrRepoId = rosRepository.attrRepoId;

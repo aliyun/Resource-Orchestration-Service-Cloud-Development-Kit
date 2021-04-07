@@ -11,19 +11,19 @@ export interface ZoneProps {
     /**
      * Property zoneName: Zone name
      */
-    readonly zoneName: string;
+    readonly zoneName: string | ros.IResolvable;
 
     /**
      * Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
      */
-    readonly proxyPattern?: string;
+    readonly proxyPattern?: string | ros.IResolvable;
 
     /**
      * Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
-    readonly remark?: string;
+    readonly remark?: string | ros.IResolvable;
 }
 
 /**
@@ -39,7 +39,12 @@ export class Zone extends ros.Resource {
     /**
      * Attribute ZoneId: Zone ID
      */
-    public readonly attrZoneId: any;
+    public readonly attrZoneId: ros.IResolvable;
+
+    /**
+     * Attribute ZoneName: Zone name
+     */
+    public readonly attrZoneName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
@@ -58,5 +63,6 @@ export class Zone extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
         this.attrZoneId = rosZone.attrZoneId;
+        this.attrZoneName = rosZone.attrZoneName;
     }
 }

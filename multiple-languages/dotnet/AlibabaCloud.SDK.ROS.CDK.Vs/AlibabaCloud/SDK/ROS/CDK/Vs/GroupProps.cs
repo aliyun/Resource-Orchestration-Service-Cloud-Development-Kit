@@ -14,16 +14,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// Value: gb28181, rtmp
         /// </remarks>
-        [JsiiProperty(name: "inProtocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InProtocol
+        [JsiiProperty(name: "inProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InProtocol
         {
             get;
             set;
         }
 
         /// <summary>Property name: Space name.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -33,16 +33,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// Value: flv, hls, rtmp
         /// </remarks>
-        [JsiiProperty(name: "outProtocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string OutProtocol
+        [JsiiProperty(name: "outProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object OutProtocol
         {
             get;
             set;
         }
 
         /// <summary>Property playDomain: Use of the domain name space broadcast stream.</summary>
-        [JsiiProperty(name: "playDomain", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string PlayDomain
+        [JsiiProperty(name: "playDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object PlayDomain
         {
             get;
             set;
@@ -52,16 +52,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// (Only access to the space rtmp)
         /// </remarks>
-        [JsiiProperty(name: "pushDomain", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string PushDomain
+        [JsiiProperty(name: "pushDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object PushDomain
         {
             get;
             set;
         }
 
         /// <summary>Property region: Space belongs to the region, as a service center.</summary>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Region
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Region
         {
             get;
             set;
@@ -69,8 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
 
         /// <summary>Property app: Application name space used, the default live.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "app", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? App
+        [JsiiProperty(name: "app", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? App
         {
             get;
             set;
@@ -78,8 +78,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
 
         /// <summary>Property callback: Updating the space callback device / flow state.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "callback", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Callback
+        [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Callback
         {
             get;
             set;
@@ -87,8 +87,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
 
         /// <summary>Property description: Space description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;

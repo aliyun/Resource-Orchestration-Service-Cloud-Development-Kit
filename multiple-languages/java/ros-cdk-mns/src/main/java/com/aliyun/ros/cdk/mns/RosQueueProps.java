@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Queue`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosQueueProps")
 @software.amazon.jsii.Jsii.Proxy(RosQueueProps.Jsii$Proxy.class)
 public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getQueueName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getQueueName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDelaySeconds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDelaySeconds() {
         return null;
     }
 
@@ -26,25 +26,25 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaximumMessageSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaximumMessageSize() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMessageRetentionPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMessageRetentionPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPollingWaitSeconds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPollingWaitSeconds() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getVisibilityTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVisibilityTimeout() {
         return null;
     }
 
@@ -58,13 +58,13 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosQueueProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosQueueProps> {
-        private java.lang.String queueName;
-        private java.lang.Number delaySeconds;
+        private java.lang.Object queueName;
+        private java.lang.Object delaySeconds;
         private java.lang.Object loggingEnabled;
-        private java.lang.Number maximumMessageSize;
-        private java.lang.Number messageRetentionPeriod;
-        private java.lang.Number pollingWaitSeconds;
-        private java.lang.Number visibilityTimeout;
+        private java.lang.Object maximumMessageSize;
+        private java.lang.Object messageRetentionPeriod;
+        private java.lang.Object pollingWaitSeconds;
+        private java.lang.Object visibilityTimeout;
 
         /**
          * Sets the value of {@link RosQueueProps#getQueueName}
@@ -77,11 +77,31 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosQueueProps#getQueueName}
+         * @param queueName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder queueName(com.aliyun.ros.cdk.core.IResolvable queueName) {
+            this.queueName = queueName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosQueueProps#getDelaySeconds}
          * @param delaySeconds the value to be set.
          * @return {@code this}
          */
         public Builder delaySeconds(java.lang.Number delaySeconds) {
+            this.delaySeconds = delaySeconds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosQueueProps#getDelaySeconds}
+         * @param delaySeconds the value to be set.
+         * @return {@code this}
+         */
+        public Builder delaySeconds(com.aliyun.ros.cdk.core.IResolvable delaySeconds) {
             this.delaySeconds = delaySeconds;
             return this;
         }
@@ -117,11 +137,31 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosQueueProps#getMaximumMessageSize}
+         * @param maximumMessageSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder maximumMessageSize(com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
+            this.maximumMessageSize = maximumMessageSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosQueueProps#getMessageRetentionPeriod}
          * @param messageRetentionPeriod the value to be set.
          * @return {@code this}
          */
         public Builder messageRetentionPeriod(java.lang.Number messageRetentionPeriod) {
+            this.messageRetentionPeriod = messageRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosQueueProps#getMessageRetentionPeriod}
+         * @param messageRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder messageRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable messageRetentionPeriod) {
             this.messageRetentionPeriod = messageRetentionPeriod;
             return this;
         }
@@ -137,11 +177,31 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosQueueProps#getPollingWaitSeconds}
+         * @param pollingWaitSeconds the value to be set.
+         * @return {@code this}
+         */
+        public Builder pollingWaitSeconds(com.aliyun.ros.cdk.core.IResolvable pollingWaitSeconds) {
+            this.pollingWaitSeconds = pollingWaitSeconds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosQueueProps#getVisibilityTimeout}
          * @param visibilityTimeout the value to be set.
          * @return {@code this}
          */
         public Builder visibilityTimeout(java.lang.Number visibilityTimeout) {
+            this.visibilityTimeout = visibilityTimeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosQueueProps#getVisibilityTimeout}
+         * @param visibilityTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder visibilityTimeout(com.aliyun.ros.cdk.core.IResolvable visibilityTimeout) {
             this.visibilityTimeout = visibilityTimeout;
             return this;
         }
@@ -162,13 +222,13 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosQueueProps {
-        private final java.lang.String queueName;
-        private final java.lang.Number delaySeconds;
+        private final java.lang.Object queueName;
+        private final java.lang.Object delaySeconds;
         private final java.lang.Object loggingEnabled;
-        private final java.lang.Number maximumMessageSize;
-        private final java.lang.Number messageRetentionPeriod;
-        private final java.lang.Number pollingWaitSeconds;
-        private final java.lang.Number visibilityTimeout;
+        private final java.lang.Object maximumMessageSize;
+        private final java.lang.Object messageRetentionPeriod;
+        private final java.lang.Object pollingWaitSeconds;
+        private final java.lang.Object visibilityTimeout;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -176,19 +236,19 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.queueName = software.amazon.jsii.Kernel.get(this, "queueName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.delaySeconds = software.amazon.jsii.Kernel.get(this, "delaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.queueName = software.amazon.jsii.Kernel.get(this, "queueName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.delaySeconds = software.amazon.jsii.Kernel.get(this, "delaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingEnabled = software.amazon.jsii.Kernel.get(this, "loggingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.messageRetentionPeriod = software.amazon.jsii.Kernel.get(this, "messageRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pollingWaitSeconds = software.amazon.jsii.Kernel.get(this, "pollingWaitSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.visibilityTimeout = software.amazon.jsii.Kernel.get(this, "visibilityTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.messageRetentionPeriod = software.amazon.jsii.Kernel.get(this, "messageRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pollingWaitSeconds = software.amazon.jsii.Kernel.get(this, "pollingWaitSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.visibilityTimeout = software.amazon.jsii.Kernel.get(this, "visibilityTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String queueName, final java.lang.Number delaySeconds, final java.lang.Object loggingEnabled, final java.lang.Number maximumMessageSize, final java.lang.Number messageRetentionPeriod, final java.lang.Number pollingWaitSeconds, final java.lang.Number visibilityTimeout) {
+        protected Jsii$Proxy(final java.lang.Object queueName, final java.lang.Object delaySeconds, final java.lang.Object loggingEnabled, final java.lang.Object maximumMessageSize, final java.lang.Object messageRetentionPeriod, final java.lang.Object pollingWaitSeconds, final java.lang.Object visibilityTimeout) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.queueName = java.util.Objects.requireNonNull(queueName, "queueName is required");
             this.delaySeconds = delaySeconds;
@@ -200,12 +260,12 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getQueueName() {
+        public final java.lang.Object getQueueName() {
             return this.queueName;
         }
 
         @Override
-        public final java.lang.Number getDelaySeconds() {
+        public final java.lang.Object getDelaySeconds() {
             return this.delaySeconds;
         }
 
@@ -215,22 +275,22 @@ public interface RosQueueProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getMaximumMessageSize() {
+        public final java.lang.Object getMaximumMessageSize() {
             return this.maximumMessageSize;
         }
 
         @Override
-        public final java.lang.Number getMessageRetentionPeriod() {
+        public final java.lang.Object getMessageRetentionPeriod() {
             return this.messageRetentionPeriod;
         }
 
         @Override
-        public final java.lang.Number getPollingWaitSeconds() {
+        public final java.lang.Object getPollingWaitSeconds() {
             return this.pollingWaitSeconds;
         }
 
         @Override
-        public final java.lang.Number getVisibilityTimeout() {
+        public final java.lang.Object getVisibilityTimeout() {
             return this.visibilityTimeout;
         }
 

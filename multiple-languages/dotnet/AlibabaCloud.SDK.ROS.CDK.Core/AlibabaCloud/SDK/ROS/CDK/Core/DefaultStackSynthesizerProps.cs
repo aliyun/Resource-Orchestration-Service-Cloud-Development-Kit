@@ -8,7 +8,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiByValue(fqn: "@alicloud/ros-cdk-core.DefaultStackSynthesizerProps")]
     public class DefaultStackSynthesizerProps : AlibabaCloud.SDK.ROS.CDK.Core.IDefaultStackSynthesizerProps
     {
-        /// <summary>Qualifier to disambiguate multiple environments in the same account&#xD; &#xD; You can use this and leave the other naming properties empty if you have deployed&#xD; the bootstrap environment with standard names but only differnet qualifiers.</summary>
+        /// <summary>Qualifier to disambiguate multiple environments in the same account.</summary>
+        /// <remarks>
+        /// You can use this and leave the other naming properties empty if you have deployed
+        /// the bootstrap environment with standard names but only differnet qualifiers.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
         public string? Qualifier

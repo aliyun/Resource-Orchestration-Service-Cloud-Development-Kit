@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.191Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBNodesProps.Jsii$Proxy.class)
 public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getAmount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAmount();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
      * @return a {@link Builder} of {@link RosDBNodesProps}
@@ -26,8 +26,8 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDBNodesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBNodesProps> {
-        private java.lang.Number amount;
-        private java.lang.String dbClusterId;
+        private java.lang.Object amount;
+        private java.lang.Object dbClusterId;
 
         /**
          * Sets the value of {@link RosDBNodesProps#getAmount}
@@ -40,11 +40,31 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDBNodesProps#getAmount}
+         * @param amount the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder amount(com.aliyun.ros.cdk.core.IResolvable amount) {
+            this.amount = amount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBNodesProps#getDbClusterId}
          * @param dbClusterId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getDbClusterId}
+         * @param dbClusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.dbClusterId = dbClusterId;
             return this;
         }
@@ -65,8 +85,8 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBNodesProps {
-        private final java.lang.Number amount;
-        private final java.lang.String dbClusterId;
+        private final java.lang.Object amount;
+        private final java.lang.Object dbClusterId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +94,26 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.amount = software.amazon.jsii.Kernel.get(this, "amount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.amount = software.amazon.jsii.Kernel.get(this, "amount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number amount, final java.lang.String dbClusterId) {
+        protected Jsii$Proxy(final java.lang.Object amount, final java.lang.Object dbClusterId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.amount = java.util.Objects.requireNonNull(amount, "amount is required");
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
         }
 
         @Override
-        public final java.lang.Number getAmount() {
+        public final java.lang.Object getAmount() {
             return this.amount;
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 

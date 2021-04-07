@@ -3,106 +3,172 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.379Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.058Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBackendServerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBackendServerPort();
 
     /**
+     * Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second).
+     * <p>
+     * If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
+     * Property listenerPort: Port for front listener.
+     * <p>
+     * Range from 0 to 65535.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort();
 
     /**
+     * Property loadBalancerId: The id of load balancer to create listener.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
+     * Property protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
+     * Property aclId: The ID of the access control list associated with the listener to be created.
+     * <p>
+     * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclId() {
         return null;
     }
 
     /**
+     * Property aclStatus: Indicates whether to enable access control.
+     * <p>
+     * Valid values: on | off. Default value: off
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclStatus() {
         return null;
     }
 
     /**
+     * Property aclType: The access control type: * white: Indicates a whitelist.
+     * <p>
+     * Only requests from IP addresses or CIDR blocks in the selected access control lists are forwarded. This applies to scenarios in which an application only allows access from specific IP addresses.
+     * Enabling a whitelist poses some risks to your services.
+     * After a whitelist is enabled, only the IP addresses in the list can access the listener.
+     * If you enable a whitelist without adding any IP addresses in the list, no requests are forwarded.
+     * <p>
+     * <ul>
+     * <li>black: Indicates a blacklist. Requests from IP addresses or CIDR blocks in the selected access control lists are not forwarded (that is, they are blocked). This applies to scenarios in which an application only denies access from specific IP addresses.
+     * If you enable a blacklist without adding any IP addresses in the list, all requests are forwarded.</li>
+     * </ul>
+     * <p>
+     * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclType() {
         return null;
     }
 
     /**
+     * Property caCertificateId: CA server certificate id, for https listener only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCaCertificateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificateId() {
         return null;
     }
 
     /**
+     * Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property healthCheck: The properties of health checking setting.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheck() {
         return null;
     }
 
     /**
+     * Property httpConfig: Config for http protocol.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHttpConfig() {
         return null;
     }
 
     /**
+     * Property idleTimeout: Specify the idle connection timeout in seconds.
+     * <p>
+     * Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIdleTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIdleTimeout() {
         return null;
     }
 
     /**
+     * Property masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterSlaveServerGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSlaveServerGroupId() {
         return null;
     }
 
     /**
+     * Property persistence: The properties of persistence.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPersistence() {
         return null;
     }
 
     /**
+     * Property portRange: Port range, only supports TCP or UDP listener.
+     * <p>
+     * ListenerPort should be 0 when PortRange is specified.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRequestTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPortRange() {
         return null;
     }
 
     /**
+     * Property requestTimeout: Specify the request timeout in seconds.
+     * <p>
+     * Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScheduler() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRequestTimeout() {
         return null;
     }
 
     /**
+     * Property scheduler: The scheduling algorithm.
+     * <p>
+     * Valid values:
+     * wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+     * wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+     * rr: Requests are distributed to backend servers in sequence.
+     * sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+     * tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+     * Default: wrr
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServerCertificateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScheduler() {
         return null;
     }
 
     /**
+     * Property serverCertificateId: Server certificate id, for https listener only, this properties is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVServerGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerCertificateId() {
+        return null;
+    }
+
+    /**
+     * Property vServerGroupId: The id of the VServerGroup which use in listener.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVServerGroupId() {
         return null;
     }
 
@@ -116,28 +182,30 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ListenerProps> {
-        private java.lang.Number backendServerPort;
-        private java.lang.Number bandwidth;
-        private java.lang.Number listenerPort;
-        private java.lang.String loadBalancerId;
-        private java.lang.String protocol;
-        private java.lang.String aclId;
-        private java.lang.String aclStatus;
-        private java.lang.String aclType;
-        private java.lang.String caCertificateId;
+        private java.lang.Object backendServerPort;
+        private java.lang.Object bandwidth;
+        private java.lang.Object listenerPort;
+        private java.lang.Object loadBalancerId;
+        private java.lang.Object protocol;
+        private java.lang.Object aclId;
+        private java.lang.Object aclStatus;
+        private java.lang.Object aclType;
+        private java.lang.Object caCertificateId;
+        private java.lang.Object description;
         private java.lang.Object healthCheck;
         private java.lang.Object httpConfig;
-        private java.lang.Number idleTimeout;
-        private java.lang.String masterSlaveServerGroupId;
+        private java.lang.Object idleTimeout;
+        private java.lang.Object masterSlaveServerGroupId;
         private java.lang.Object persistence;
-        private java.lang.Number requestTimeout;
-        private java.lang.String scheduler;
-        private java.lang.String serverCertificateId;
-        private java.lang.String vServerGroupId;
+        private java.lang.Object portRange;
+        private java.lang.Object requestTimeout;
+        private java.lang.Object scheduler;
+        private java.lang.Object serverCertificateId;
+        private java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link ListenerProps#getBackendServerPort}
-         * @param backendServerPort the value to be set. This parameter is required.
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
          * @return {@code this}
          */
         public Builder backendServerPort(java.lang.Number backendServerPort) {
@@ -146,8 +214,19 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getBackendServerPort}
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder backendServerPort(com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
+            this.backendServerPort = backendServerPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getBandwidth}
-         * @param bandwidth the value to be set. This parameter is required.
+         * @param bandwidth Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). This parameter is required.
+         *                  If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -156,8 +235,20 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). This parameter is required.
+         *                  If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getListenerPort}
-         * @param listenerPort the value to be set. This parameter is required.
+         * @param listenerPort Property listenerPort: Port for front listener. This parameter is required.
+         *                     Range from 0 to 65535.
          * @return {@code this}
          */
         public Builder listenerPort(java.lang.Number listenerPort) {
@@ -166,8 +257,19 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getListenerPort}
+         * @param listenerPort Property listenerPort: Port for front listener. This parameter is required.
+         *                     Range from 0 to 65535.
+         * @return {@code this}
+         */
+        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getLoadBalancerId}
-         * @param loadBalancerId the value to be set. This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The id of load balancer to create listener. This parameter is required.
          * @return {@code this}
          */
         public Builder loadBalancerId(java.lang.String loadBalancerId) {
@@ -176,8 +278,18 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getLoadBalancerId}
+         * @param loadBalancerId Property loadBalancerId: The id of load balancer to create listener. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getProtocol}
-         * @param protocol the value to be set. This parameter is required.
+         * @param protocol Property protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp. This parameter is required.
          * @return {@code this}
          */
         public Builder protocol(java.lang.String protocol) {
@@ -186,8 +298,19 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getProtocol}
+         * @param protocol Property protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.protocol = protocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getAclId}
-         * @param aclId the value to be set.
+         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created.
+         *              If the value of the AclStatus parameter is on, this parameter is required.
          * @return {@code this}
          */
         public Builder aclId(java.lang.String aclId) {
@@ -196,8 +319,20 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getAclId}
+         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created.
+         *              If the value of the AclStatus parameter is on, this parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclId(com.aliyun.ros.cdk.core.IResolvable aclId) {
+            this.aclId = aclId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getAclStatus}
-         * @param aclStatus the value to be set.
+         * @param aclStatus Property aclStatus: Indicates whether to enable access control.
+         *                  Valid values: on | off. Default value: off
          * @return {@code this}
          */
         public Builder aclStatus(java.lang.String aclStatus) {
@@ -206,8 +341,30 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getAclStatus}
+         * @param aclStatus Property aclStatus: Indicates whether to enable access control.
+         *                  Valid values: on | off. Default value: off
+         * @return {@code this}
+         */
+        public Builder aclStatus(com.aliyun.ros.cdk.core.IResolvable aclStatus) {
+            this.aclStatus = aclStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getAclType}
-         * @param aclType the value to be set.
+         * @param aclType Property aclType: The access control type: * white: Indicates a whitelist.
+         *                Only requests from IP addresses or CIDR blocks in the selected access control lists are forwarded. This applies to scenarios in which an application only allows access from specific IP addresses.
+         *                Enabling a whitelist poses some risks to your services.
+         *                After a whitelist is enabled, only the IP addresses in the list can access the listener.
+         *                If you enable a whitelist without adding any IP addresses in the list, no requests are forwarded.
+         *                <p>
+         *                <ul>
+         *                <li>black: Indicates a blacklist. Requests from IP addresses or CIDR blocks in the selected access control lists are not forwarded (that is, they are blocked). This applies to scenarios in which an application only denies access from specific IP addresses.
+         *                If you enable a blacklist without adding any IP addresses in the list, all requests are forwarded.</li>
+         *                </ul>
+         *                <p>
+         *                If the value of the AclStatus parameter is on, this parameter is required.
          * @return {@code this}
          */
         public Builder aclType(java.lang.String aclType) {
@@ -216,8 +373,29 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getAclType}
+         * @param aclType Property aclType: The access control type: * white: Indicates a whitelist.
+         *                Only requests from IP addresses or CIDR blocks in the selected access control lists are forwarded. This applies to scenarios in which an application only allows access from specific IP addresses.
+         *                Enabling a whitelist poses some risks to your services.
+         *                After a whitelist is enabled, only the IP addresses in the list can access the listener.
+         *                If you enable a whitelist without adding any IP addresses in the list, no requests are forwarded.
+         *                <p>
+         *                <ul>
+         *                <li>black: Indicates a blacklist. Requests from IP addresses or CIDR blocks in the selected access control lists are not forwarded (that is, they are blocked). This applies to scenarios in which an application only denies access from specific IP addresses.
+         *                If you enable a blacklist without adding any IP addresses in the list, all requests are forwarded.</li>
+         *                </ul>
+         *                <p>
+         *                If the value of the AclStatus parameter is on, this parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclType(com.aliyun.ros.cdk.core.IResolvable aclType) {
+            this.aclType = aclType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getCaCertificateId}
-         * @param caCertificateId the value to be set.
+         * @param caCertificateId Property caCertificateId: CA server certificate id, for https listener only.
          * @return {@code this}
          */
         public Builder caCertificateId(java.lang.String caCertificateId) {
@@ -226,8 +404,38 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getCaCertificateId}
+         * @param caCertificateId Property caCertificateId: CA server certificate id, for https listener only.
+         * @return {@code this}
+         */
+        public Builder caCertificateId(com.aliyun.ros.cdk.core.IResolvable caCertificateId) {
+            this.caCertificateId = caCertificateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getDescription}
+         * @param description Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+         * @return {@code this}
+         */
+        public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getDescription}
+         * @param description Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getHealthCheck}
-         * @param healthCheck the value to be set.
+         * @param healthCheck Property healthCheck: The properties of health checking setting.
          * @return {@code this}
          */
         public Builder healthCheck(com.aliyun.ros.cdk.core.IResolvable healthCheck) {
@@ -237,7 +445,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getHealthCheck}
-         * @param healthCheck the value to be set.
+         * @param healthCheck Property healthCheck: The properties of health checking setting.
          * @return {@code this}
          */
         public Builder healthCheck(com.aliyun.ros.cdk.slb.RosListener.HealthCheckProperty healthCheck) {
@@ -247,7 +455,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getHttpConfig}
-         * @param httpConfig the value to be set.
+         * @param httpConfig Property httpConfig: Config for http protocol.
          * @return {@code this}
          */
         public Builder httpConfig(com.aliyun.ros.cdk.core.IResolvable httpConfig) {
@@ -257,7 +465,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getHttpConfig}
-         * @param httpConfig the value to be set.
+         * @param httpConfig Property httpConfig: Config for http protocol.
          * @return {@code this}
          */
         public Builder httpConfig(com.aliyun.ros.cdk.slb.RosListener.HttpConfigProperty httpConfig) {
@@ -267,7 +475,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getIdleTimeout}
-         * @param idleTimeout the value to be set.
+         * @param idleTimeout Property idleTimeout: Specify the idle connection timeout in seconds.
+         *                    Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
          * @return {@code this}
          */
         public Builder idleTimeout(java.lang.Number idleTimeout) {
@@ -276,8 +485,19 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getIdleTimeout}
+         * @param idleTimeout Property idleTimeout: Specify the idle connection timeout in seconds.
+         *                    Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
+         * @return {@code this}
+         */
+        public Builder idleTimeout(com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
+            this.idleTimeout = idleTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getMasterSlaveServerGroupId}
-         * @param masterSlaveServerGroupId the value to be set.
+         * @param masterSlaveServerGroupId Property masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
          * @return {@code this}
          */
         public Builder masterSlaveServerGroupId(java.lang.String masterSlaveServerGroupId) {
@@ -286,8 +506,18 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getMasterSlaveServerGroupId}
+         * @param masterSlaveServerGroupId Property masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
+         * @return {@code this}
+         */
+        public Builder masterSlaveServerGroupId(com.aliyun.ros.cdk.core.IResolvable masterSlaveServerGroupId) {
+            this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getPersistence}
-         * @param persistence the value to be set.
+         * @param persistence Property persistence: The properties of persistence.
          * @return {@code this}
          */
         public Builder persistence(com.aliyun.ros.cdk.core.IResolvable persistence) {
@@ -297,7 +527,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getPersistence}
-         * @param persistence the value to be set.
+         * @param persistence Property persistence: The properties of persistence.
          * @return {@code this}
          */
         public Builder persistence(com.aliyun.ros.cdk.slb.RosListener.PersistenceProperty persistence) {
@@ -306,8 +536,31 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getPortRange}
+         * @param portRange Property portRange: Port range, only supports TCP or UDP listener.
+         *                  ListenerPort should be 0 when PortRange is specified.
+         * @return {@code this}
+         */
+        public Builder portRange(com.aliyun.ros.cdk.core.IResolvable portRange) {
+            this.portRange = portRange;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getPortRange}
+         * @param portRange Property portRange: Port range, only supports TCP or UDP listener.
+         *                  ListenerPort should be 0 when PortRange is specified.
+         * @return {@code this}
+         */
+        public Builder portRange(java.util.List<? extends java.lang.Object> portRange) {
+            this.portRange = portRange;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getRequestTimeout}
-         * @param requestTimeout the value to be set.
+         * @param requestTimeout Property requestTimeout: Specify the request timeout in seconds.
+         *                       Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
          * @return {@code this}
          */
         public Builder requestTimeout(java.lang.Number requestTimeout) {
@@ -316,8 +569,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getRequestTimeout}
+         * @param requestTimeout Property requestTimeout: Specify the request timeout in seconds.
+         *                       Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
+         * @return {@code this}
+         */
+        public Builder requestTimeout(com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
+            this.requestTimeout = requestTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getScheduler}
-         * @param scheduler the value to be set.
+         * @param scheduler Property scheduler: The scheduling algorithm.
+         *                  Valid values:
+         *                  wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+         *                  wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+         *                  rr: Requests are distributed to backend servers in sequence.
+         *                  sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+         *                  tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+         *                  Default: wrr
          * @return {@code this}
          */
         public Builder scheduler(java.lang.String scheduler) {
@@ -326,8 +597,25 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getScheduler}
+         * @param scheduler Property scheduler: The scheduling algorithm.
+         *                  Valid values:
+         *                  wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+         *                  wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+         *                  rr: Requests are distributed to backend servers in sequence.
+         *                  sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+         *                  tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+         *                  Default: wrr
+         * @return {@code this}
+         */
+        public Builder scheduler(com.aliyun.ros.cdk.core.IResolvable scheduler) {
+            this.scheduler = scheduler;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getServerCertificateId}
-         * @param serverCertificateId the value to be set.
+         * @param serverCertificateId Property serverCertificateId: Server certificate id, for https listener only, this properties is required.
          * @return {@code this}
          */
         public Builder serverCertificateId(java.lang.String serverCertificateId) {
@@ -336,11 +624,31 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getServerCertificateId}
+         * @param serverCertificateId Property serverCertificateId: Server certificate id, for https listener only, this properties is required.
+         * @return {@code this}
+         */
+        public Builder serverCertificateId(com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
+            this.serverCertificateId = serverCertificateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getVServerGroupId}
-         * @param vServerGroupId the value to be set.
+         * @param vServerGroupId Property vServerGroupId: The id of the VServerGroup which use in listener.
          * @return {@code this}
          */
         public Builder vServerGroupId(java.lang.String vServerGroupId) {
+            this.vServerGroupId = vServerGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getVServerGroupId}
+         * @param vServerGroupId Property vServerGroupId: The id of the VServerGroup which use in listener.
+         * @return {@code this}
+         */
+        public Builder vServerGroupId(com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
             this.vServerGroupId = vServerGroupId;
             return this;
         }
@@ -352,7 +660,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ListenerProps build() {
-            return new Jsii$Proxy(backendServerPort, bandwidth, listenerPort, loadBalancerId, protocol, aclId, aclStatus, aclType, caCertificateId, healthCheck, httpConfig, idleTimeout, masterSlaveServerGroupId, persistence, requestTimeout, scheduler, serverCertificateId, vServerGroupId);
+            return new Jsii$Proxy(backendServerPort, bandwidth, listenerPort, loadBalancerId, protocol, aclId, aclStatus, aclType, caCertificateId, description, healthCheck, httpConfig, idleTimeout, masterSlaveServerGroupId, persistence, portRange, requestTimeout, scheduler, serverCertificateId, vServerGroupId);
         }
     }
 
@@ -361,24 +669,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ListenerProps {
-        private final java.lang.Number backendServerPort;
-        private final java.lang.Number bandwidth;
-        private final java.lang.Number listenerPort;
-        private final java.lang.String loadBalancerId;
-        private final java.lang.String protocol;
-        private final java.lang.String aclId;
-        private final java.lang.String aclStatus;
-        private final java.lang.String aclType;
-        private final java.lang.String caCertificateId;
+        private final java.lang.Object backendServerPort;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object listenerPort;
+        private final java.lang.Object loadBalancerId;
+        private final java.lang.Object protocol;
+        private final java.lang.Object aclId;
+        private final java.lang.Object aclStatus;
+        private final java.lang.Object aclType;
+        private final java.lang.Object caCertificateId;
+        private final java.lang.Object description;
         private final java.lang.Object healthCheck;
         private final java.lang.Object httpConfig;
-        private final java.lang.Number idleTimeout;
-        private final java.lang.String masterSlaveServerGroupId;
+        private final java.lang.Object idleTimeout;
+        private final java.lang.Object masterSlaveServerGroupId;
         private final java.lang.Object persistence;
-        private final java.lang.Number requestTimeout;
-        private final java.lang.String scheduler;
-        private final java.lang.String serverCertificateId;
-        private final java.lang.String vServerGroupId;
+        private final java.lang.Object portRange;
+        private final java.lang.Object requestTimeout;
+        private final java.lang.Object scheduler;
+        private final java.lang.Object serverCertificateId;
+        private final java.lang.Object vServerGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -386,30 +696,32 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheck = software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.masterSlaveServerGroupId = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterSlaveServerGroupId = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.persistence = software.amazon.jsii.Kernel.get(this, "persistence", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number backendServerPort, final java.lang.Number bandwidth, final java.lang.Number listenerPort, final java.lang.String loadBalancerId, final java.lang.String protocol, final java.lang.String aclId, final java.lang.String aclStatus, final java.lang.String aclType, final java.lang.String caCertificateId, final java.lang.Object healthCheck, final java.lang.Object httpConfig, final java.lang.Number idleTimeout, final java.lang.String masterSlaveServerGroupId, final java.lang.Object persistence, final java.lang.Number requestTimeout, final java.lang.String scheduler, final java.lang.String serverCertificateId, final java.lang.String vServerGroupId) {
+        protected Jsii$Proxy(final java.lang.Object backendServerPort, final java.lang.Object bandwidth, final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object protocol, final java.lang.Object aclId, final java.lang.Object aclStatus, final java.lang.Object aclType, final java.lang.Object caCertificateId, final java.lang.Object description, final java.lang.Object healthCheck, final java.lang.Object httpConfig, final java.lang.Object idleTimeout, final java.lang.Object masterSlaveServerGroupId, final java.lang.Object persistence, final java.lang.Object portRange, final java.lang.Object requestTimeout, final java.lang.Object scheduler, final java.lang.Object serverCertificateId, final java.lang.Object vServerGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backendServerPort = java.util.Objects.requireNonNull(backendServerPort, "backendServerPort is required");
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
@@ -420,11 +732,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.aclStatus = aclStatus;
             this.aclType = aclType;
             this.caCertificateId = caCertificateId;
+            this.description = description;
             this.healthCheck = healthCheck;
             this.httpConfig = httpConfig;
             this.idleTimeout = idleTimeout;
             this.masterSlaveServerGroupId = masterSlaveServerGroupId;
             this.persistence = persistence;
+            this.portRange = portRange;
             this.requestTimeout = requestTimeout;
             this.scheduler = scheduler;
             this.serverCertificateId = serverCertificateId;
@@ -432,48 +746,53 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getBackendServerPort() {
+        public final java.lang.Object getBackendServerPort() {
             return this.backendServerPort;
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.Number getListenerPort() {
+        public final java.lang.Object getListenerPort() {
             return this.listenerPort;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
         @Override
-        public final java.lang.String getProtocol() {
+        public final java.lang.Object getProtocol() {
             return this.protocol;
         }
 
         @Override
-        public final java.lang.String getAclId() {
+        public final java.lang.Object getAclId() {
             return this.aclId;
         }
 
         @Override
-        public final java.lang.String getAclStatus() {
+        public final java.lang.Object getAclStatus() {
             return this.aclStatus;
         }
 
         @Override
-        public final java.lang.String getAclType() {
+        public final java.lang.Object getAclType() {
             return this.aclType;
         }
 
         @Override
-        public final java.lang.String getCaCertificateId() {
+        public final java.lang.Object getCaCertificateId() {
             return this.caCertificateId;
+        }
+
+        @Override
+        public final java.lang.Object getDescription() {
+            return this.description;
         }
 
         @Override
@@ -487,12 +806,12 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getIdleTimeout() {
+        public final java.lang.Object getIdleTimeout() {
             return this.idleTimeout;
         }
 
         @Override
-        public final java.lang.String getMasterSlaveServerGroupId() {
+        public final java.lang.Object getMasterSlaveServerGroupId() {
             return this.masterSlaveServerGroupId;
         }
 
@@ -502,22 +821,27 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getRequestTimeout() {
+        public final java.lang.Object getPortRange() {
+            return this.portRange;
+        }
+
+        @Override
+        public final java.lang.Object getRequestTimeout() {
             return this.requestTimeout;
         }
 
         @Override
-        public final java.lang.String getScheduler() {
+        public final java.lang.Object getScheduler() {
             return this.scheduler;
         }
 
         @Override
-        public final java.lang.String getServerCertificateId() {
+        public final java.lang.Object getServerCertificateId() {
             return this.serverCertificateId;
         }
 
         @Override
-        public final java.lang.String getVServerGroupId() {
+        public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
 
@@ -544,6 +868,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getCaCertificateId() != null) {
                 data.set("caCertificateId", om.valueToTree(this.getCaCertificateId()));
             }
+            if (this.getDescription() != null) {
+                data.set("description", om.valueToTree(this.getDescription()));
+            }
             if (this.getHealthCheck() != null) {
                 data.set("healthCheck", om.valueToTree(this.getHealthCheck()));
             }
@@ -558,6 +885,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPersistence() != null) {
                 data.set("persistence", om.valueToTree(this.getPersistence()));
+            }
+            if (this.getPortRange() != null) {
+                data.set("portRange", om.valueToTree(this.getPortRange()));
             }
             if (this.getRequestTimeout() != null) {
                 data.set("requestTimeout", om.valueToTree(this.getRequestTimeout()));
@@ -598,11 +928,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.aclStatus != null ? !this.aclStatus.equals(that.aclStatus) : that.aclStatus != null) return false;
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.healthCheck != null ? !this.healthCheck.equals(that.healthCheck) : that.healthCheck != null) return false;
             if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.masterSlaveServerGroupId != null ? !this.masterSlaveServerGroupId.equals(that.masterSlaveServerGroupId) : that.masterSlaveServerGroupId != null) return false;
             if (this.persistence != null ? !this.persistence.equals(that.persistence) : that.persistence != null) return false;
+            if (this.portRange != null ? !this.portRange.equals(that.portRange) : that.portRange != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverCertificateId != null ? !this.serverCertificateId.equals(that.serverCertificateId) : that.serverCertificateId != null) return false;
@@ -620,11 +952,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.aclStatus != null ? this.aclStatus.hashCode() : 0);
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.healthCheck != null ? this.healthCheck.hashCode() : 0);
             result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.masterSlaveServerGroupId != null ? this.masterSlaveServerGroupId.hashCode() : 0);
             result = 31 * result + (this.persistence != null ? this.persistence.hashCode() : 0);
+            result = 31 * result + (this.portRange != null ? this.portRange.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverCertificateId != null ? this.serverCertificateId.hashCode() : 0);

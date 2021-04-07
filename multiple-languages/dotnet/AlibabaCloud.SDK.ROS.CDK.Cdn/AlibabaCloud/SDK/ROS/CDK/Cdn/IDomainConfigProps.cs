@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     public interface IDomainConfigProps
     {
         /// <summary>Property domainNames: Your accelerated domain name, separated by commas in English.</summary>
-        [JsiiProperty(name: "domainNames", typeJson: "{\"primitive\":\"string\"}")]
-        string DomainNames
+        [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DomainNames
         {
             get;
         }
 
         /// <summary>Property functions: function list, please refer to the CDN documentation for details.</summary>
-        [JsiiProperty(name: "functions", typeJson: "{\"primitive\":\"string\"}")]
-        string Functions
+        [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Functions
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <summary>Property domainNames: Your accelerated domain name, separated by commas in English.</summary>
-            [JsiiProperty(name: "domainNames", typeJson: "{\"primitive\":\"string\"}")]
-            public string DomainNames
+            [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DomainNames
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property functions: function list, please refer to the CDN documentation for details.</summary>
-            [JsiiProperty(name: "functions", typeJson: "{\"primitive\":\"string\"}")]
-            public string Functions
+            [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Functions
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

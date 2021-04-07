@@ -12,7 +12,7 @@ export interface ACLProps {
      * Property name: Access control name.
      * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -28,7 +28,7 @@ export class Acl extends ros.Resource {
     /**
      * Attribute AclId: Access control set ID.
      */
-    public readonly attrAclId: any;
+    public readonly attrAclId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::ACL`.

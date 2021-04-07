@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// 4: transactional message
         /// 5: scheduled/delayed message
         /// </remarks>
-        [JsiiProperty(name: "messageType", typeJson: "{\"primitive\":\"number\"}")]
-        double MessageType
+        [JsiiProperty(name: "messageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object MessageType
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
         /// If no namespaces are available in the instance, the topic name must be unique both in the instance and across instances.
         /// </remarks>
-        [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-        string Topic
+        [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Topic
         {
             get;
         }
@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// 4: Write operation is prohibited.
         /// 2: Read operation is prohibited.
         /// </remarks>
-        [JsiiProperty(name: "perm", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "perm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Perm
+        object? Perm
         {
             get
             {
@@ -63,9 +63,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <remarks>
         /// <strong>Property</strong>: remark: The remarks on the request. This parameter can be left blank.
         /// </remarks>
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Remark
+        object? Remark
         {
             get
             {
@@ -84,10 +84,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -98,10 +98,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// 4: transactional message
             /// 5: scheduled/delayed message
             /// </remarks>
-            [JsiiProperty(name: "messageType", typeJson: "{\"primitive\":\"number\"}")]
-            public double MessageType
+            [JsiiProperty(name: "messageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object MessageType
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -111,10 +111,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
             /// If no namespaces are available in the instance, the topic name must be unique both in the instance and across instances.
             /// </remarks>
-            [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-            public string Topic
+            [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Topic
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -124,20 +124,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// 2: Read operation is prohibited.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "perm", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Perm
+            [JsiiProperty(name: "perm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Perm
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: remark: The remarks on the request. This parameter can be left blank.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Remark
+            [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Remark
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

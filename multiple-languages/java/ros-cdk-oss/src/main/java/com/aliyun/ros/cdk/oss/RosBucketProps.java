@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.770Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketProps.Jsii$Proxy.class)
 public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBucketName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBucketName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccessControl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessControl() {
         return null;
     }
 
@@ -62,13 +62,13 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getStorageClass() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageClass() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return null;
     }
 
@@ -88,8 +88,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosBucketProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBucketProps> {
-        private java.lang.String bucketName;
-        private java.lang.String accessControl;
+        private java.lang.Object bucketName;
+        private java.lang.Object accessControl;
         private java.lang.Object corsConfiguration;
         private java.lang.Object deletionForce;
         private java.lang.Object lifecycleConfiguration;
@@ -97,8 +97,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         private java.lang.Object policy;
         private java.lang.Object refererConfiguration;
         private java.lang.Object serverSideEncryptionConfiguration;
-        private java.lang.String storageClass;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private java.lang.Object storageClass;
+        private java.util.Map<java.lang.String, java.lang.Object> tags;
         private java.lang.Object websiteConfiguration;
 
         /**
@@ -107,6 +107,16 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder bucketName(java.lang.String bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getBucketName}
+         * @param bucketName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bucketName(com.aliyun.ros.cdk.core.IResolvable bucketName) {
             this.bucketName = bucketName;
             return this;
         }
@@ -122,12 +132,12 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosBucketProps#getCorsConfiguration}
-         * @param corsConfiguration the value to be set.
+         * Sets the value of {@link RosBucketProps#getAccessControl}
+         * @param accessControl the value to be set.
          * @return {@code this}
          */
-        public Builder corsConfiguration(com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
-            this.corsConfiguration = corsConfiguration;
+        public Builder accessControl(com.aliyun.ros.cdk.core.IResolvable accessControl) {
+            this.accessControl = accessControl;
             return this;
         }
 
@@ -137,6 +147,16 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder corsConfiguration(com.aliyun.ros.cdk.core.IResolvable corsConfiguration) {
+            this.corsConfiguration = corsConfiguration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getCorsConfiguration}
+         * @param corsConfiguration the value to be set.
+         * @return {@code this}
+         */
+        public Builder corsConfiguration(com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
             this.corsConfiguration = corsConfiguration;
             return this;
         }
@@ -272,13 +292,23 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosBucketProps#getStorageClass}
+         * @param storageClass the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageClass(com.aliyun.ros.cdk.core.IResolvable storageClass) {
+            this.storageClass = storageClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosBucketProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             return this;
         }
 
@@ -318,8 +348,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBucketProps {
-        private final java.lang.String bucketName;
-        private final java.lang.String accessControl;
+        private final java.lang.Object bucketName;
+        private final java.lang.Object accessControl;
         private final java.lang.Object corsConfiguration;
         private final java.lang.Object deletionForce;
         private final java.lang.Object lifecycleConfiguration;
@@ -327,8 +357,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object policy;
         private final java.lang.Object refererConfiguration;
         private final java.lang.Object serverSideEncryptionConfiguration;
-        private final java.lang.String storageClass;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private final java.lang.Object storageClass;
+        private final java.util.Map<java.lang.String, java.lang.Object> tags;
         private final java.lang.Object websiteConfiguration;
 
         /**
@@ -337,8 +367,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.corsConfiguration = software.amazon.jsii.Kernel.get(this, "corsConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lifecycleConfiguration = software.amazon.jsii.Kernel.get(this, "lifecycleConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -346,8 +376,8 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.refererConfiguration = software.amazon.jsii.Kernel.get(this, "refererConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverSideEncryptionConfiguration = software.amazon.jsii.Kernel.get(this, "serverSideEncryptionConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
+            this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.websiteConfiguration = software.amazon.jsii.Kernel.get(this, "websiteConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -355,7 +385,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String bucketName, final java.lang.String accessControl, final java.lang.Object corsConfiguration, final java.lang.Object deletionForce, final java.lang.Object lifecycleConfiguration, final java.lang.Object loggingConfiguration, final java.lang.Object policy, final java.lang.Object refererConfiguration, final java.lang.Object serverSideEncryptionConfiguration, final java.lang.String storageClass, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.Object websiteConfiguration) {
+        protected Jsii$Proxy(final java.lang.Object bucketName, final java.lang.Object accessControl, final java.lang.Object corsConfiguration, final java.lang.Object deletionForce, final java.lang.Object lifecycleConfiguration, final java.lang.Object loggingConfiguration, final java.lang.Object policy, final java.lang.Object refererConfiguration, final java.lang.Object serverSideEncryptionConfiguration, final java.lang.Object storageClass, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object websiteConfiguration) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bucketName = java.util.Objects.requireNonNull(bucketName, "bucketName is required");
             this.accessControl = accessControl;
@@ -367,17 +397,17 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.refererConfiguration = refererConfiguration;
             this.serverSideEncryptionConfiguration = serverSideEncryptionConfiguration;
             this.storageClass = storageClass;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             this.websiteConfiguration = websiteConfiguration;
         }
 
         @Override
-        public final java.lang.String getBucketName() {
+        public final java.lang.Object getBucketName() {
             return this.bucketName;
         }
 
         @Override
-        public final java.lang.String getAccessControl() {
+        public final java.lang.Object getAccessControl() {
             return this.accessControl;
         }
 
@@ -417,12 +447,12 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getStorageClass() {
+        public final java.lang.Object getStorageClass() {
             return this.storageClass;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
 

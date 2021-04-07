@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
     public class TrailProps : AlibabaCloud.SDK.ROS.CDK.Actiontrail.ITrailProps
     {
         /// <summary>Property name: The name of the trail to be created, which must be unique for an account.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -22,16 +22,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// <remarks>
         /// Ensure that this is an existing OSS bucket.
         /// </remarks>
-        [JsiiProperty(name: "ossBucketName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string OssBucketName
+        [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object OssBucketName
         {
             get;
             set;
         }
 
         /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
-        [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RoleName
+        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RoleName
         {
             get;
             set;
@@ -42,8 +42,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// Valid values: Read, Write, and All. Default value: Write.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "eventRw", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EventRw
+        [JsiiProperty(name: "eventRw", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EventRw
         {
             get;
             set;
@@ -54,8 +54,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// This parameter can be left empty.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? OssKeyPrefix
+        [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? OssKeyPrefix
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 
         /// <summary>Property slsProjectArn: The unique ARN of the Log Service project.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "slsProjectArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SlsProjectArn
+        [JsiiProperty(name: "slsProjectArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SlsProjectArn
         {
             get;
             set;
@@ -72,8 +72,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 
         /// <summary>Property slsWriteRoleArn: The unique ARN of the Log Service role.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SlsWriteRoleArn
+        [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SlsWriteRoleArn
         {
             get;
             set;

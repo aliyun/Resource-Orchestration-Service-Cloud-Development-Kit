@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     /// Can be used to delay evaluation of a certain value in case, for example,
     /// that it requires some context or late-bound data. Can also be used to
     /// mark values that need special processing at document rendering time.
-    /// 
+    ///
     /// Tokens can be embedded into strings while retaining their original
     /// semantics.
     /// </remarks>
@@ -51,11 +51,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<double>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Token), new System.Type[]{typeof(object)}, new object[]{@value})!;
         }
 
-        /// <summary>Return a reversible string representation of this token&#xD; &#xD; If the Token is initialized with a literal, the stringified value of the&#xD; literal is returned.</summary>
+        /// <summary>Return a reversible string representation of this token.</summary>
         /// <remarks>
-        /// Otherwise, a special quoted string representation
+        /// If the Token is initialized with a literal, the stringified value of the
+        /// literal is returned. Otherwise, a special quoted string representation
         /// of the Token is returned that can be embedded into other strings.
-        /// 
+        ///
         /// Strings with quoted Tokens in them can be restored back into
         /// complex values with the Tokens restored by calling <c>resolve()</c>
         /// on the string.
@@ -66,8 +67,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Token), new System.Type[]{typeof(object), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IEncodingOptions)}, new object?[]{@value, options})!;
         }
 
-        /// <summary>Returns true if obj represents an unresolved value&#xD; &#xD; One of these must be true:&#xD; &#xD; - `obj` is an IResolvable&#xD; - `obj` is a string containing at least one encoded `IResolvable`&#xD; - `obj` is either an encoded number or list&#xD; &#xD; This does NOT recurse into lists or objects to see if they&#xD; containing resolvables.</summary>
+        /// <summary>Returns true if obj represents an unresolved value.</summary>
         /// <param name="obj">The object to test.</param>
+        /// <remarks>
+        /// One of these must be true:
+        ///
+        /// <list type="bullet">
+        /// <description><c>obj</c> is an IResolvable</description>
+        /// <description><c>obj</c> is a string containing at least one encoded <c>IResolvable</c></description>
+        /// <description><c>obj</c> is either an encoded number or list</description>
+        /// </list>
+        ///
+        /// This does NOT recurse into lists or objects to see if they
+        /// containing resolvables.
+        /// </remarks>
         [JsiiMethod(name: "isUnresolved", returnsJson: "{\"type\":{\"primitive\":\"boolean\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The object to test.\"},\"name\":\"obj\",\"type\":{\"primitive\":\"any\"}}]")]
         public static bool IsUnresolved(object obj)
         {

@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute InternetBandwidthId: Purchase of public network bandwidth.</summary>
-        [JsiiProperty(name: "attrInternetBandwidthId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInternetBandwidthId
+        [JsiiProperty(name: "attrInternetBandwidthId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetBandwidthId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

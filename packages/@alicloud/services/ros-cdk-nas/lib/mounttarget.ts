@@ -11,32 +11,32 @@ export interface MountTargetProps {
     /**
      * Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * Property fileSystemId: File system ID
      */
-    readonly fileSystemId: string;
+    readonly fileSystemId: string | ros.IResolvable;
 
     /**
      * Property networkType: Network type, including Vpc and Classic networks.
      */
-    readonly networkType: string;
+    readonly networkType: string | ros.IResolvable;
 
     /**
      * Property status: Status, including Active and Inactive
      */
-    readonly status?: string;
+    readonly status?: string | ros.IResolvable;
 
     /**
      * Property vpcId: VPC network ID
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -52,7 +52,7 @@ export class MountTarget extends ros.Resource {
     /**
      * Attribute MountTargetDomain: Mount point domain name
      */
-    public readonly attrMountTargetDomain: any;
+    public readonly attrMountTargetDomain: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::NAS::MountTarget`.

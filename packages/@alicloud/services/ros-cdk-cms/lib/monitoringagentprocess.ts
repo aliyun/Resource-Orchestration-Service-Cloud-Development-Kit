@@ -11,17 +11,17 @@ export interface MonitoringAgentProcessProps {
     /**
      * Property instanceId: The ID of the instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property processName: The name of the process.
      */
-    readonly processName?: string;
+    readonly processName?: string | ros.IResolvable;
 
     /**
      * Property processUser: The user who launched the process.
      */
-    readonly processUser?: string;
+    readonly processUser?: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class MonitoringAgentProcess extends ros.Resource {
     /**
      * Attribute Id: The process ID.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.

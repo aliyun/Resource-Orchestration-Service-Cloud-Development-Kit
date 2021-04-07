@@ -11,12 +11,12 @@ export interface TriggerProps {
     /**
      * Property functionName: Function name.
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * Property serviceName: Service name.
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property triggerConfig: Event source specific trigger configuration. The value is different according to trigger type.
@@ -27,31 +27,31 @@ export interface TriggerProps {
      * Property triggerName: Trigger name.
      * Example : "image_resize"
      */
-    readonly triggerName: string;
+    readonly triggerName: string | ros.IResolvable;
 
     /**
      * Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted.
      * Example : "oss"
      */
-    readonly triggerType: string;
+    readonly triggerType: string | ros.IResolvable;
 
     /**
      * Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
      * Example : "acs:ram::1234567890:role/fc-test"
      */
-    readonly invocationRole?: string;
+    readonly invocationRole?: string | ros.IResolvable;
 
     /**
      * Property qualifier: service version or alias.
      * Example : "LATEST"
      */
-    readonly qualifier?: string;
+    readonly qualifier?: string | ros.IResolvable;
 
     /**
      * Property sourceArn: The Aliyun Resource Name (ARN) of event source. This is optional for some triggers.
      * Example : "acs:oss:cn-shanghai:12345:mybucket"
      */
-    readonly sourceArn?: string;
+    readonly sourceArn?: string | ros.IResolvable;
 }
 
 /**
@@ -67,22 +67,22 @@ export class Trigger extends ros.Resource {
     /**
      * Attribute FunctionName: Function name.
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
 
     /**
      * Attribute ServiceName: Service name.
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Attribute TriggerId: The trigger ID.
      */
-    public readonly attrTriggerId: any;
+    public readonly attrTriggerId: ros.IResolvable;
 
     /**
      * Attribute TriggerName: Trigger name.
      */
-    public readonly attrTriggerName: any;
+    public readonly attrTriggerName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::Trigger`.

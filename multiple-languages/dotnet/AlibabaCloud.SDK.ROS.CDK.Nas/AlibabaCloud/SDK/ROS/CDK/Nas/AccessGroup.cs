@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <summary>Attribute AccessGroupName: Permission group name.</summary>
-        [JsiiProperty(name: "attrAccessGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccessGroupName
+        [JsiiProperty(name: "attrAccessGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccessGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

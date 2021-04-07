@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// <strong>Attribute</strong>: AccountName: The name of the account.
         /// </remarks>
-        [JsiiProperty(name: "attrAccountName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccountName
+        [JsiiProperty(name: "attrAccountName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccountName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: The name of the instance.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -73,10 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
         /// in length.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AccountName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -84,15 +84,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong></strong>: ), number signs (#), dollar signs ($), percent signs (%), carets (^),
         /// ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
         /// hyphens (-), and equal signs (=).
-        /// 
+        ///
         /// <strong>Property</strong>: accountPassword: The password of the account. The password can be 8 to 32 characters in length and
         /// must contain at least three types of the following characters: uppercase letters,
         /// lowercase letters, digits, and special characters. Special characters include ! at signs (
         /// </remarks>
-        [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AccountPassword
+        [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AccountPassword
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance for which you want to create the account.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -120,10 +120,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// It can be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AccountDescription
+        [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AccountDescription
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -138,10 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// the standard edition in Redis 4.0.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AccountPrivilege
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -149,10 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: accountType: The type of the account. Set this parameter to Normal.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AccountType
+        [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AccountType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

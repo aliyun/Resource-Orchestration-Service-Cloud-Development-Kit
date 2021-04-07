@@ -10,32 +10,32 @@ export interface RosAcceleratorProps {
     /**
      * @Property duration: The Duration of the GA instance
      */
-    readonly duration: string;
+    readonly duration: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle: The PricingCycle of the GA instance.
      */
-    readonly pricingCycle: string;
+    readonly pricingCycle: string | ros.IResolvable;
 
     /**
      * @Property spec: The instance type of the GA instance
      */
-    readonly spec: string;
+    readonly spec: string | ros.IResolvable;
 
     /**
      * @Property acceleratorName: The Name of the GA instance
      */
-    readonly acceleratorName?: string;
+    readonly acceleratorName?: string | ros.IResolvable;
 
     /**
      * @Property autoPay: The AutoPay of the GA instance.
      */
-    readonly autoPay?: string;
+    readonly autoPay?: string | ros.IResolvable;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    readonly autoUseCoupon?: string;
+    readonly autoUseCoupon?: string | ros.IResolvable;
 }
 
 /**
@@ -100,47 +100,47 @@ export class RosAccelerator extends ros.RosResource {
     /**
      * @Attribute AcceleratorId: The ID of the GA instance to query.
      */
-    public readonly attrAcceleratorId: any;
+    public readonly attrAcceleratorId: ros.IResolvable;
 
     /**
      * @Attribute AcceleratorName: The Name of the GA instance
      */
-    public readonly attrAcceleratorName: any;
+    public readonly attrAcceleratorName: ros.IResolvable;
 
     /**
      * @Attribute AutoPay: The AutoPay of the GA instance.
      */
-    public readonly attrAutoPay: any;
+    public readonly attrAutoPay: ros.IResolvable;
 
     /**
      * @Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    public readonly attrAutoUseCoupon: any;
+    public readonly attrAutoUseCoupon: ros.IResolvable;
 
     /**
      * @Attribute Duration: The Duration of the GA instance
      */
-    public readonly attrDuration: any;
+    public readonly attrDuration: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The OrderId of the GA instance
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute PaymentType: The Payment Typethe GA instance
      */
-    public readonly attrPaymentType: any;
+    public readonly attrPaymentType: ros.IResolvable;
 
     /**
      * @Attribute PricingCycle: The PricingCycle of the GA instance.
      */
-    public readonly attrPricingCycle: any;
+    public readonly attrPricingCycle: ros.IResolvable;
 
     /**
      * @Attribute Spec: The instance type of the GA instance
      */
-    public readonly attrSpec: any;
+    public readonly attrSpec: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -148,32 +148,32 @@ export class RosAccelerator extends ros.RosResource {
     /**
      * @Property duration: The Duration of the GA instance
      */
-    public duration: string;
+    public duration: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle: The PricingCycle of the GA instance.
      */
-    public pricingCycle: string;
+    public pricingCycle: string | ros.IResolvable;
 
     /**
      * @Property spec: The instance type of the GA instance
      */
-    public spec: string;
+    public spec: string | ros.IResolvable;
 
     /**
      * @Property acceleratorName: The Name of the GA instance
      */
-    public acceleratorName: string | undefined;
+    public acceleratorName: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoPay: The AutoPay of the GA instance.
      */
-    public autoPay: string | undefined;
+    public autoPay: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    public autoUseCoupon: string | undefined;
+    public autoUseCoupon: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GA::Accelerator`.
@@ -184,15 +184,15 @@ export class RosAccelerator extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAcceleratorProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccelerator.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAcceleratorId = ros.Token.asString(this.getAtt('AcceleratorId'));
-        this.attrAcceleratorName = ros.Token.asString(this.getAtt('AcceleratorName'));
-        this.attrAutoPay = ros.Token.asString(this.getAtt('AutoPay'));
-        this.attrAutoUseCoupon = ros.Token.asString(this.getAtt('AutoUseCoupon'));
-        this.attrDuration = ros.Token.asString(this.getAtt('Duration'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPaymentType = ros.Token.asString(this.getAtt('PaymentType'));
-        this.attrPricingCycle = ros.Token.asString(this.getAtt('PricingCycle'));
-        this.attrSpec = ros.Token.asString(this.getAtt('Spec'));
+        this.attrAcceleratorId = this.getAtt('AcceleratorId');
+        this.attrAcceleratorName = this.getAtt('AcceleratorName');
+        this.attrAutoPay = this.getAtt('AutoPay');
+        this.attrAutoUseCoupon = this.getAtt('AutoUseCoupon');
+        this.attrDuration = this.getAtt('Duration');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrPricingCycle = this.getAtt('PricingCycle');
+        this.attrSpec = this.getAtt('Spec');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.duration = props.duration;
@@ -227,62 +227,62 @@ export interface RosBandwidthPackageProps {
     /**
      * @Property bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * @Property type: The type of the bandwidth plan
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * @Property autoPay: The AutoPay of the bandwidth
      */
-    readonly autoPay?: string;
+    readonly autoPay?: string | ros.IResolvable;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
-    readonly autoUseCoupon?: string;
+    readonly autoUseCoupon?: string | ros.IResolvable;
 
     /**
      * @Property bandwidthType: the bandwidth BandwidthType of the bandwidth
      */
-    readonly bandwidthType?: string;
+    readonly bandwidthType?: string | ros.IResolvable;
 
     /**
      * @Property billingType: The BillingType of the bandwidth
      */
-    readonly billingType?: string;
+    readonly billingType?: string | ros.IResolvable;
 
     /**
      * @Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
-    readonly cbnGeographicRegionIdA?: string;
+    readonly cbnGeographicRegionIdA?: string | ros.IResolvable;
 
     /**
      * @Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
-    readonly cbnGeographicRegionIdB?: string;
+    readonly cbnGeographicRegionIdB?: string | ros.IResolvable;
 
     /**
      * @Property chargeType: The ChargeType of the bandwidth
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property duration:
      */
-    readonly duration?: string;
+    readonly duration?: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle:
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property ratio: The Ratio of the bandwidth
      */
-    readonly ratio?: string;
+    readonly ratio?: string | ros.IResolvable;
 }
 
 /**
@@ -358,67 +358,67 @@ export class RosBandwidthPackage extends ros.RosResource {
     /**
      * @Attribute AutoPay: The AutoPay of the bandwidth
      */
-    public readonly attrAutoPay: any;
+    public readonly attrAutoPay: ros.IResolvable;
 
     /**
      * @Attribute AutoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
-    public readonly attrAutoUseCoupon: any;
+    public readonly attrAutoUseCoupon: ros.IResolvable;
 
     /**
      * @Attribute Bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    public readonly attrBandwidth: any;
+    public readonly attrBandwidth: ros.IResolvable;
 
     /**
      * @Attribute BandwidthPackageId: The Resource ID of the bandwidth
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
      * @Attribute BandwidthPackageName: The Resource name of the bandwidth
      */
-    public readonly attrBandwidthPackageName: any;
+    public readonly attrBandwidthPackageName: ros.IResolvable;
 
     /**
      * @Attribute BandwidthType: the bandwidth BandwidthType of the bandwidth
      */
-    public readonly attrBandwidthType: any;
+    public readonly attrBandwidthType: ros.IResolvable;
 
     /**
      * @Attribute BillingType: The BillingType of the bandwidth
      */
-    public readonly attrBillingType: any;
+    public readonly attrBillingType: ros.IResolvable;
 
     /**
      * @Attribute CbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
-    public readonly attrCbnGeographicRegionIdA: any;
+    public readonly attrCbnGeographicRegionIdA: ros.IResolvable;
 
     /**
      * @Attribute CbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
-    public readonly attrCbnGeographicRegionIdB: any;
+    public readonly attrCbnGeographicRegionIdB: ros.IResolvable;
 
     /**
      * @Attribute ChargeType: The ChargeType of the bandwidth
      */
-    public readonly attrChargeType: any;
+    public readonly attrChargeType: ros.IResolvable;
 
     /**
      * @Attribute PaymentType: The Payment Type of the bandwidth
      */
-    public readonly attrPaymentType: any;
+    public readonly attrPaymentType: ros.IResolvable;
 
     /**
      * @Attribute Ratio: The Ratio of the bandwidth
      */
-    public readonly attrRatio: any;
+    public readonly attrRatio: ros.IResolvable;
 
     /**
      * @Attribute Type: The type of the bandwidth plan
      */
-    public readonly attrType: any;
+    public readonly attrType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -426,62 +426,62 @@ export class RosBandwidthPackage extends ros.RosResource {
     /**
      * @Property bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    public bandwidth: number;
+    public bandwidth: number | ros.IResolvable;
 
     /**
      * @Property type: The type of the bandwidth plan
      */
-    public type: string;
+    public type: string | ros.IResolvable;
 
     /**
      * @Property autoPay: The AutoPay of the bandwidth
      */
-    public autoPay: string | undefined;
+    public autoPay: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
-    public autoUseCoupon: string | undefined;
+    public autoUseCoupon: string | ros.IResolvable | undefined;
 
     /**
      * @Property bandwidthType: the bandwidth BandwidthType of the bandwidth
      */
-    public bandwidthType: string | undefined;
+    public bandwidthType: string | ros.IResolvable | undefined;
 
     /**
      * @Property billingType: The BillingType of the bandwidth
      */
-    public billingType: string | undefined;
+    public billingType: string | ros.IResolvable | undefined;
 
     /**
      * @Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
-    public cbnGeographicRegionIdA: string | undefined;
+    public cbnGeographicRegionIdA: string | ros.IResolvable | undefined;
 
     /**
      * @Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
-    public cbnGeographicRegionIdB: string | undefined;
+    public cbnGeographicRegionIdB: string | ros.IResolvable | undefined;
 
     /**
      * @Property chargeType: The ChargeType of the bandwidth
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property duration:
      */
-    public duration: string | undefined;
+    public duration: string | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle:
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property ratio: The Ratio of the bandwidth
      */
-    public ratio: string | undefined;
+    public ratio: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackage`.
@@ -492,19 +492,19 @@ export class RosBandwidthPackage extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAutoPay = ros.Token.asString(this.getAtt('AutoPay'));
-        this.attrAutoUseCoupon = ros.Token.asString(this.getAtt('AutoUseCoupon'));
-        this.attrBandwidth = ros.Token.asString(this.getAtt('Bandwidth'));
-        this.attrBandwidthPackageId = ros.Token.asString(this.getAtt('BandwidthPackageId'));
-        this.attrBandwidthPackageName = ros.Token.asString(this.getAtt('BandwidthPackageName'));
-        this.attrBandwidthType = ros.Token.asString(this.getAtt('BandwidthType'));
-        this.attrBillingType = ros.Token.asString(this.getAtt('BillingType'));
-        this.attrCbnGeographicRegionIdA = ros.Token.asString(this.getAtt('CbnGeographicRegionIdA'));
-        this.attrCbnGeographicRegionIdB = ros.Token.asString(this.getAtt('CbnGeographicRegionIdB'));
-        this.attrChargeType = ros.Token.asString(this.getAtt('ChargeType'));
-        this.attrPaymentType = ros.Token.asString(this.getAtt('PaymentType'));
-        this.attrRatio = ros.Token.asString(this.getAtt('Ratio'));
-        this.attrType = ros.Token.asString(this.getAtt('Type'));
+        this.attrAutoPay = this.getAtt('AutoPay');
+        this.attrAutoUseCoupon = this.getAtt('AutoUseCoupon');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
+        this.attrBandwidthPackageName = this.getAtt('BandwidthPackageName');
+        this.attrBandwidthType = this.getAtt('BandwidthType');
+        this.attrBillingType = this.getAtt('BillingType');
+        this.attrCbnGeographicRegionIdA = this.getAtt('CbnGeographicRegionIdA');
+        this.attrCbnGeographicRegionIdB = this.getAtt('CbnGeographicRegionIdB');
+        this.attrChargeType = this.getAtt('ChargeType');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrRatio = this.getAtt('Ratio');
+        this.attrType = this.getAtt('Type');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
@@ -552,12 +552,12 @@ export interface RosBandwidthPackageAcceleratorAdditionProps {
      * @Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
      * plan.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property bandwidthPackageId: The ID of the bandwidth package to associate.
      */
-    readonly bandwidthPackageId: string;
+    readonly bandwidthPackageId: string | ros.IResolvable;
 }
 
 /**
@@ -613,12 +613,12 @@ export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
     /**
      * @Attribute AcceleratorId: The ID of the Global Accelerator instance
      */
-    public readonly attrAcceleratorId: any;
+    public readonly attrAcceleratorId: ros.IResolvable;
 
     /**
      * @Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -627,12 +627,12 @@ export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
      * @Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
      * plan.
      */
-    public acceleratorId: string;
+    public acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property bandwidthPackageId: The ID of the bandwidth package to associate.
      */
-    public bandwidthPackageId: string;
+    public bandwidthPackageId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
@@ -643,8 +643,8 @@ export class RosBandwidthPackageAcceleratorAddition extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBandwidthPackageAcceleratorAdditionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBandwidthPackageAcceleratorAddition.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAcceleratorId = ros.Token.asString(this.getAtt('AcceleratorId'));
-        this.attrBandwidthPackageId = ros.Token.asString(this.getAtt('BandwidthPackageId'));
+        this.attrAcceleratorId = this.getAtt('AcceleratorId');
+        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.acceleratorId = props.acceleratorId;
@@ -671,7 +671,7 @@ export interface RosEndpointGroupProps {
     /**
      * @Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property endpointConfigurations:
@@ -681,32 +681,32 @@ export interface RosEndpointGroupProps {
     /**
      * @Property endpointGroupRegion: The region ID of the endpoint group.
      */
-    readonly endpointGroupRegion: string;
+    readonly endpointGroupRegion: string | ros.IResolvable;
 
     /**
      * @Property listenerId: The ID of the listener to be associated with the endpoint group.
      */
-    readonly listenerId: string;
+    readonly listenerId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the endpoint group.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
-    readonly healthCheckIntervalSeconds?: number;
+    readonly healthCheckIntervalSeconds?: number | ros.IResolvable;
 
     /**
      * @Property healthCheckPath: The path set as the destination on the targets for health checks.
      */
-    readonly healthCheckPath?: string;
+    readonly healthCheckPath?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckPort: The port that is used to connect with the targets for health checks.
      */
-    readonly healthCheckPort?: number;
+    readonly healthCheckPort?: number | ros.IResolvable;
 
     /**
      * @Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
@@ -714,23 +714,23 @@ export interface RosEndpointGroupProps {
      * http: HTTP protocol
      * https: HTTPS protocol
      */
-    readonly healthCheckProtocol?: string;
+    readonly healthCheckProtocol?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the endpoint group.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
      */
-    readonly thresholdCount?: number;
+    readonly thresholdCount?: number | ros.IResolvable;
 
     /**
      * @Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with
      * multiple endpoint groups.
      */
-    readonly trafficPercentage?: number;
+    readonly trafficPercentage?: number | ros.IResolvable;
 }
 
 /**
@@ -821,7 +821,7 @@ export class RosEndpointGroup extends ros.RosResource {
     /**
      * @Attribute EndpointGroupId: The ID of the endpoint group.
      */
-    public readonly attrEndpointGroupId: any;
+    public readonly attrEndpointGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -829,7 +829,7 @@ export class RosEndpointGroup extends ros.RosResource {
     /**
      * @Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
      */
-    public acceleratorId: string;
+    public acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property endpointConfigurations:
@@ -839,32 +839,32 @@ export class RosEndpointGroup extends ros.RosResource {
     /**
      * @Property endpointGroupRegion: The region ID of the endpoint group.
      */
-    public endpointGroupRegion: string;
+    public endpointGroupRegion: string | ros.IResolvable;
 
     /**
      * @Property listenerId: The ID of the listener to be associated with the endpoint group.
      */
-    public listenerId: string;
+    public listenerId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the endpoint group.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
-    public healthCheckIntervalSeconds: number | undefined;
+    public healthCheckIntervalSeconds: number | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckPath: The path set as the destination on the targets for health checks.
      */
-    public healthCheckPath: string | undefined;
+    public healthCheckPath: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckPort: The port that is used to connect with the targets for health checks.
      */
-    public healthCheckPort: number | undefined;
+    public healthCheckPort: number | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
@@ -872,23 +872,23 @@ export class RosEndpointGroup extends ros.RosResource {
      * http: HTTP protocol
      * https: HTTPS protocol
      */
-    public healthCheckProtocol: string | undefined;
+    public healthCheckProtocol: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the endpoint group.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
      */
-    public thresholdCount: number | undefined;
+    public thresholdCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with
      * multiple endpoint groups.
      */
-    public trafficPercentage: number | undefined;
+    public trafficPercentage: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GA::EndpointGroup`.
@@ -899,7 +899,7 @@ export class RosEndpointGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosEndpointGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosEndpointGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrEndpointGroupId = ros.Token.asString(this.getAtt('EndpointGroupId'));
+        this.attrEndpointGroupId = this.getAtt('EndpointGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.acceleratorId = props.acceleratorId;
@@ -951,15 +951,15 @@ export namespace RosEndpointGroup {
      * Domain: custom domain name
      *
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property endpoint: The IP address or domain name of endpoint in the endpoint group.
          */
-        readonly endpoint: string;
+        readonly endpoint: string | ros.IResolvable;
         /**
          * @Property weight: The weight of endpoint N in the endpoint group.
          */
-        readonly weight: number;
+        readonly weight: number | ros.IResolvable;
     }
 }
 /**
@@ -1012,7 +1012,7 @@ export interface RosIpSetsProps {
     /**
      * @Property acceleratorId: The ID of the GA instance.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 }
 
 /**
@@ -1075,17 +1075,17 @@ export class RosIpSets extends ros.RosResource {
     /**
      * @Attribute AccelerateRegionIds: The ID list of the accelerate region.
      */
-    public readonly attrAccelerateRegionIds: any;
+    public readonly attrAccelerateRegionIds: ros.IResolvable;
 
     /**
      * @Attribute IpSetIds: The ID list of the ip set.
      */
-    public readonly attrIpSetIds: any;
+    public readonly attrIpSetIds: ros.IResolvable;
 
     /**
      * @Attribute IpVersions: The IP version list of the accelerate region.
      */
-    public readonly attrIpVersions: any;
+    public readonly attrIpVersions: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1098,7 +1098,7 @@ export class RosIpSets extends ros.RosResource {
     /**
      * @Property acceleratorId: The ID of the GA instance.
      */
-    public acceleratorId: string;
+    public acceleratorId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::IpSets`.
@@ -1109,9 +1109,9 @@ export class RosIpSets extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosIpSetsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosIpSets.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccelerateRegionIds = ros.Token.asString(this.getAtt('AccelerateRegionIds'));
-        this.attrIpSetIds = ros.Token.asString(this.getAtt('IpSetIds'));
-        this.attrIpVersions = ros.Token.asString(this.getAtt('IpVersions'));
+        this.attrAccelerateRegionIds = this.getAtt('AccelerateRegionIds');
+        this.attrIpSetIds = this.getAtt('IpSetIds');
+        this.attrIpVersions = this.getAtt('IpVersions');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accelerateRegion = props.accelerateRegion;
@@ -1138,7 +1138,7 @@ export namespace RosIpSets {
         /**
          * @Property ipVersion: IP version. Valid values: IPv4, IPv6
          */
-        readonly ipVersion?: string;
+        readonly ipVersion?: string | ros.IResolvable;
         /**
          * @Property bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
      * Note
@@ -1146,11 +1146,11 @@ export namespace RosIpSets {
      * The total bandwidth for all regions must not exceed the amount included in your basic
      * bandwidth plan.
          */
-        readonly bandwidth: number;
+        readonly bandwidth: number | ros.IResolvable;
         /**
          * @Property accelerateRegionId: The ID of the region where traffic is to be accelerated.
          */
-        readonly accelerateRegionId: string;
+        readonly accelerateRegionId: string | ros.IResolvable;
     }
 }
 /**
@@ -1210,7 +1210,7 @@ export interface RosListenerProps {
     /**
      * @Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property portRanges:
@@ -1222,7 +1222,7 @@ export interface RosListenerProps {
      * tcp: TCP protocol
      * udp: UDP protocol
      */
-    readonly protocol: string;
+    readonly protocol: string | ros.IResolvable;
 
     /**
      * @Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -1232,19 +1232,19 @@ export interface RosListenerProps {
      * If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
      * a specific source (client) IP address are always routed to the same endpoint.
      */
-    readonly clientAffinity?: string;
+    readonly clientAffinity?: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the listener.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -1328,7 +1328,7 @@ export class RosListener extends ros.RosResource {
     /**
      * @Attribute ListenerId: The ID of the listener.
      */
-    public readonly attrListenerId: any;
+    public readonly attrListenerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1336,7 +1336,7 @@ export class RosListener extends ros.RosResource {
     /**
      * @Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
      */
-    public acceleratorId: string;
+    public acceleratorId: string | ros.IResolvable;
 
     /**
      * @Property portRanges:
@@ -1348,7 +1348,7 @@ export class RosListener extends ros.RosResource {
      * tcp: TCP protocol
      * udp: UDP protocol
      */
-    public protocol: string;
+    public protocol: string | ros.IResolvable;
 
     /**
      * @Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -1358,19 +1358,19 @@ export class RosListener extends ros.RosResource {
      * If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
      * a specific source (client) IP address are always routed to the same endpoint.
      */
-    public clientAffinity: string | undefined;
+    public clientAffinity: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the listener.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GA::Listener`.
@@ -1381,7 +1381,7 @@ export class RosListener extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosListenerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosListener.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrListenerId = ros.Token.asString(this.getAtt('ListenerId'));
+        this.attrListenerId = this.getAtt('ListenerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.acceleratorId = props.acceleratorId;
@@ -1417,12 +1417,12 @@ export namespace RosListener {
          * @Property fromPort: The first listening port of the port range specified for receiving and forwarding
      * requests to endpoints.
          */
-        readonly fromPort: number;
+        readonly fromPort: number | ros.IResolvable;
         /**
          * @Property toPort: The last listening port of the port range specified for receiving and forwarding requests
      * to endpoints.
          */
-        readonly toPort: number;
+        readonly toPort: number | ros.IResolvable;
     }
 }
 /**

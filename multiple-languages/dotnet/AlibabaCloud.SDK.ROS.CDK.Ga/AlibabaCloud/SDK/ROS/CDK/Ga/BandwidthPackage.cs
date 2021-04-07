@@ -33,94 +33,94 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Attribute AutoPay: The AutoPay of the bandwidth.</summary>
-        [JsiiProperty(name: "attrAutoPay", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoPay
+        [JsiiProperty(name: "attrAutoPay", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoPay
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AutoUseCoupon: The AutoUseCoupon  of the bandwidth.</summary>
-        [JsiiProperty(name: "attrAutoUseCoupon", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoUseCoupon
+        [JsiiProperty(name: "attrAutoUseCoupon", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoUseCoupon
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Bandwidth: The bandwidth provided by the bandwidth plan.</summary>
-        [JsiiProperty(name: "attrBandwidth", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBandwidth
+        [JsiiProperty(name: "attrBandwidth", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidth
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute BandwidthPackageId: The Resource ID of the bandwidth.</summary>
-        [JsiiProperty(name: "attrBandwidthPackageId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBandwidthPackageId
+        [JsiiProperty(name: "attrBandwidthPackageId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidthPackageId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute BandwidthPackageName: The Resource name of the bandwidth.</summary>
-        [JsiiProperty(name: "attrBandwidthPackageName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBandwidthPackageName
+        [JsiiProperty(name: "attrBandwidthPackageName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidthPackageName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute BandwidthType: the bandwidth BandwidthType of the bandwidth.</summary>
-        [JsiiProperty(name: "attrBandwidthType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBandwidthType
+        [JsiiProperty(name: "attrBandwidthType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidthType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute BillingType: The BillingType of the bandwidth.</summary>
-        [JsiiProperty(name: "attrBillingType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBillingType
+        [JsiiProperty(name: "attrBillingType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBillingType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute CbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth.</summary>
-        [JsiiProperty(name: "attrCbnGeographicRegionIdA", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCbnGeographicRegionIdA
+        [JsiiProperty(name: "attrCbnGeographicRegionIdA", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCbnGeographicRegionIdA
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute CbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth.</summary>
-        [JsiiProperty(name: "attrCbnGeographicRegionIdB", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCbnGeographicRegionIdB
+        [JsiiProperty(name: "attrCbnGeographicRegionIdB", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCbnGeographicRegionIdB
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ChargeType: The ChargeType of the bandwidth.</summary>
-        [JsiiProperty(name: "attrChargeType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrChargeType
+        [JsiiProperty(name: "attrChargeType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChargeType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PaymentType: The Payment Type of the bandwidth.</summary>
-        [JsiiProperty(name: "attrPaymentType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPaymentType
+        [JsiiProperty(name: "attrPaymentType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPaymentType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Ratio: The Ratio of the bandwidth.</summary>
-        [JsiiProperty(name: "attrRatio", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRatio
+        [JsiiProperty(name: "attrRatio", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRatio
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Type: The type of the bandwidth plan.</summary>
-        [JsiiProperty(name: "attrType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrType
+        [JsiiProperty(name: "attrType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

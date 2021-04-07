@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS resource type:  `ALIYUN::SAE::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.350Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.038Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Namespace")
 public class Namespace extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAE::Namespace`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Namespace(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sae.NamespaceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAE::Namespace`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Namespace(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sae.NamespaceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute NamespaceId: Namespace ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNamespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNamespaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNamespaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sae.Namespace> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,68 @@ public class Namespace extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property namespaceId: Namespace ID.
+         * <p>
+         * Format: "regionId:logicalId" or "logicalId"
+         * <p>
          * @return {@code this}
-         * @param namespaceId This parameter is required.
+         * @param namespaceId Property namespaceId: Namespace ID. This parameter is required.
          */
         public Builder namespaceId(final java.lang.String namespaceId) {
             this.props.namespaceId(namespaceId);
             return this;
         }
+        /**
+         * Property namespaceId: Namespace ID.
+         * <p>
+         * Format: "regionId:logicalId" or "logicalId"
+         * <p>
+         * @return {@code this}
+         * @param namespaceId Property namespaceId: Namespace ID. This parameter is required.
+         */
+        public Builder namespaceId(final com.aliyun.ros.cdk.core.IResolvable namespaceId) {
+            this.props.namespaceId(namespaceId);
+            return this;
+        }
 
         /**
+         * Property namespaceName: Namespace name.
+         * <p>
          * @return {@code this}
-         * @param namespaceName This parameter is required.
+         * @param namespaceName Property namespaceName: Namespace name. This parameter is required.
          */
         public Builder namespaceName(final java.lang.String namespaceName) {
             this.props.namespaceName(namespaceName);
             return this;
         }
+        /**
+         * Property namespaceName: Namespace name.
+         * <p>
+         * @return {@code this}
+         * @param namespaceName Property namespaceName: Namespace name. This parameter is required.
+         */
+        public Builder namespaceName(final com.aliyun.ros.cdk.core.IResolvable namespaceName) {
+            this.props.namespaceName(namespaceName);
+            return this;
+        }
 
         /**
+         * Property namespaceDescription: Namespace description.
+         * <p>
          * @return {@code this}
-         * @param namespaceDescription This parameter is required.
+         * @param namespaceDescription Property namespaceDescription: Namespace description. This parameter is required.
          */
         public Builder namespaceDescription(final java.lang.String namespaceDescription) {
+            this.props.namespaceDescription(namespaceDescription);
+            return this;
+        }
+        /**
+         * Property namespaceDescription: Namespace description.
+         * <p>
+         * @return {@code this}
+         * @param namespaceDescription Property namespaceDescription: Namespace description. This parameter is required.
+         */
+        public Builder namespaceDescription(final com.aliyun.ros.cdk.core.IResolvable namespaceDescription) {
             this.props.namespaceDescription(namespaceDescription);
             return this;
         }

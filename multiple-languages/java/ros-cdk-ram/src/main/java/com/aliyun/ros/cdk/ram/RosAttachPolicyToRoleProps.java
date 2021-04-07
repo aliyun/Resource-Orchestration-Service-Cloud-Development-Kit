@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::AttachPolicyToRole`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.201Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosAttachPolicyToRoleProps")
 @software.amazon.jsii.Jsii.Proxy(RosAttachPolicyToRoleProps.Jsii$Proxy.class)
 public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPolicyName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPolicyType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPolicyType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRoleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRoleName();
 
     /**
      * @return a {@link Builder} of {@link RosAttachPolicyToRoleProps}
@@ -30,9 +30,9 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosAttachPolicyToRoleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAttachPolicyToRoleProps> {
-        private java.lang.String policyName;
-        private java.lang.String policyType;
-        private java.lang.String roleName;
+        private java.lang.Object policyName;
+        private java.lang.Object policyType;
+        private java.lang.Object roleName;
 
         /**
          * Sets the value of {@link RosAttachPolicyToRoleProps#getPolicyName}
@@ -40,6 +40,16 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
          * @return {@code this}
          */
         public Builder policyName(java.lang.String policyName) {
+            this.policyName = policyName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAttachPolicyToRoleProps#getPolicyName}
+         * @param policyName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder policyName(com.aliyun.ros.cdk.core.IResolvable policyName) {
             this.policyName = policyName;
             return this;
         }
@@ -55,11 +65,31 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosAttachPolicyToRoleProps#getPolicyType}
+         * @param policyType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder policyType(com.aliyun.ros.cdk.core.IResolvable policyType) {
+            this.policyType = policyType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAttachPolicyToRoleProps#getRoleName}
          * @param roleName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder roleName(java.lang.String roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAttachPolicyToRoleProps#getRoleName}
+         * @param roleName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.roleName = roleName;
             return this;
         }
@@ -80,9 +110,9 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAttachPolicyToRoleProps {
-        private final java.lang.String policyName;
-        private final java.lang.String policyType;
-        private final java.lang.String roleName;
+        private final java.lang.Object policyName;
+        private final java.lang.Object policyType;
+        private final java.lang.Object roleName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +120,15 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.policyType = software.amazon.jsii.Kernel.get(this, "policyType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policyType = software.amazon.jsii.Kernel.get(this, "policyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String policyName, final java.lang.String policyType, final java.lang.String roleName) {
+        protected Jsii$Proxy(final java.lang.Object policyName, final java.lang.Object policyType, final java.lang.Object roleName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
             this.policyType = java.util.Objects.requireNonNull(policyType, "policyType is required");
@@ -106,17 +136,17 @@ public interface RosAttachPolicyToRoleProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getPolicyName() {
+        public final java.lang.Object getPolicyName() {
             return this.policyName;
         }
 
         @Override
-        public final java.lang.String getPolicyType() {
+        public final java.lang.Object getPolicyType() {
             return this.policyType;
         }
 
         @Override
-        public final java.lang.String getRoleName() {
+        public final java.lang.Object getRoleName() {
             return this.roleName;
         }
 

@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: cronExpression: Cron expression.
         /// </remarks>
-        [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}")]
-        string CronExpression
+        [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CronExpression
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: flowName: Flow name.
         /// </remarks>
-        [JsiiProperty(name: "flowName", typeJson: "{\"primitive\":\"string\"}")]
-        string FlowName
+        [JsiiProperty(name: "flowName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object FlowName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: scheduleName: Schedule name.
         /// </remarks>
-        [JsiiProperty(name: "scheduleName", typeJson: "{\"primitive\":\"string\"}")]
-        string ScheduleName
+        [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ScheduleName
         {
             get;
         }
@@ -38,9 +38,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: description: Description of the schedule.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: payload: Payload.
         /// </remarks>
-        [JsiiProperty(name: "payload", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Payload
+        object? Payload
         {
             get
             {
@@ -85,38 +85,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             /// <remarks>
             /// <strong>Property</strong>: cronExpression: Cron expression.
             /// </remarks>
-            [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}")]
-            public string CronExpression
+            [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CronExpression
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: flowName: Flow name.
             /// </remarks>
-            [JsiiProperty(name: "flowName", typeJson: "{\"primitive\":\"string\"}")]
-            public string FlowName
+            [JsiiProperty(name: "flowName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object FlowName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: scheduleName: Schedule name.
             /// </remarks>
-            [JsiiProperty(name: "scheduleName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ScheduleName
+            [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ScheduleName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: description: Description of the schedule.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -133,10 +133,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             /// <strong>Property</strong>: payload: Payload.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "payload", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Payload
+            [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Payload
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

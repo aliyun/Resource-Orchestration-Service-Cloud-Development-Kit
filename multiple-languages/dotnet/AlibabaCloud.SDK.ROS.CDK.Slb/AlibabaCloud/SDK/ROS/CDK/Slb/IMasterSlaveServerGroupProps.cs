@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     public interface IMasterSlaveServerGroupProps
     {
         /// <summary>Property loadBalancerId: The ID of the Server Load Balancer instance.</summary>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LoadBalancerId
         {
             get;
         }
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Property masterSlaveServerGroupName: The name of the active/standby server group.</summary>
-        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MasterSlaveServerGroupName
+        object? MasterSlaveServerGroupName
         {
             get
             {
@@ -45,10 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <summary>Property loadBalancerId: The ID of the Server Load Balancer instance.</summary>
-            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-            public string LoadBalancerId
+            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LoadBalancerId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property masterSlaveBackendServers: A list of active/standby server group.</summary>
@@ -63,10 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
             /// <summary>Property masterSlaveServerGroupName: The name of the active/standby server group.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MasterSlaveServerGroupName
+            [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterSlaveServerGroupName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

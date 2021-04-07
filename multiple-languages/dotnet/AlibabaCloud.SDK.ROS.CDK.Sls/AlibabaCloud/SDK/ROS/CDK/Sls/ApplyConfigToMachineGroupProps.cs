@@ -10,8 +10,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
     {
         /// <summary>Property configName: Apply config to the config name.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "configName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ConfigName
+        [JsiiProperty(name: "configName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ConfigName
         {
             get;
             set;
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
         /// <summary>Property groupName: Apply config to the group name.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? GroupName
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
         /// <summary>Property projectName: Apply config to the project name.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProjectName
         {
             get;
             set;

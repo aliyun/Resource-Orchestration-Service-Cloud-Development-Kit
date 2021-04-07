@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.552Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,26 +44,32 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
-        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFunctionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrFunctionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFunctionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrFunctionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,8 +87,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getHandler() {
-        return software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFunctionName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "functionName", java.util.Objects.requireNonNull(value, "functionName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getHandler() {
+        return software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuntime() {
-        return software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHandler(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "handler", java.util.Objects.requireNonNull(value, "handler is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuntime() {
+        return software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +135,25 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRuntime(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "runtime", java.util.Objects.requireNonNull(value, "runtime is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setServiceName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serviceName", java.util.Objects.requireNonNull(value, "serviceName is required"));
+    }
+
+    /**
+     */
+    public void setServiceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serviceName", java.util.Objects.requireNonNull(value, "serviceName is required"));
     }
 
@@ -147,13 +177,19 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getCaPort() {
-        return software.amazon.jsii.Kernel.get(this, "caPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCaPort() {
+        return software.amazon.jsii.Kernel.get(this, "caPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCaPort(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "caPort", value);
+    }
+
+    /**
+     */
+    public void setCaPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "caPort", value);
     }
 
@@ -195,13 +231,19 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -225,8 +267,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInitializationTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "initializationTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInitializationTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "initializationTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -237,8 +279,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInitializer() {
-        return software.amazon.jsii.Kernel.get(this, "initializer", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInitializationTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "initializationTimeout", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInitializer() {
+        return software.amazon.jsii.Kernel.get(this, "initializer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -249,8 +297,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInstanceConcurrency() {
-        return software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInitializer(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "initializer", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConcurrency() {
+        return software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -261,8 +315,32 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getMemorySize() {
-        return software.amazon.jsii.Kernel.get(this, "memorySize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInstanceConcurrency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceConcurrency", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMemorySize() {
+        return software.amazon.jsii.Kernel.get(this, "memorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -273,13 +351,25 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMemorySize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "memorySize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTimeout(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "timeout", value);
+    }
+
+    /**
+     */
+    public void setTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "timeout", value);
     }
     /**
@@ -299,14 +389,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getMaxAsyncEventAgeInSeconds() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxAsyncEventAgeInSeconds() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getMaxAsyncRetryAttempts() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxAsyncRetryAttempts() {
             return null;
         }
 
@@ -323,8 +413,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AsyncConfigurationProperty> {
             private java.lang.Object destination;
-            private java.lang.Number maxAsyncEventAgeInSeconds;
-            private java.lang.Number maxAsyncRetryAttempts;
+            private java.lang.Object maxAsyncEventAgeInSeconds;
+            private java.lang.Object maxAsyncRetryAttempts;
 
             /**
              * Sets the value of {@link AsyncConfigurationProperty#getDestination}
@@ -360,12 +450,34 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AsyncConfigurationProperty#getMaxAsyncEventAgeInSeconds}
+             * @param maxAsyncEventAgeInSeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxAsyncEventAgeInSeconds(com.aliyun.ros.cdk.core.IResolvable maxAsyncEventAgeInSeconds) {
+                this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AsyncConfigurationProperty#getMaxAsyncRetryAttempts}
              * @param maxAsyncRetryAttempts the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder maxAsyncRetryAttempts(java.lang.Number maxAsyncRetryAttempts) {
+                this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AsyncConfigurationProperty#getMaxAsyncRetryAttempts}
+             * @param maxAsyncRetryAttempts the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxAsyncRetryAttempts(com.aliyun.ros.cdk.core.IResolvable maxAsyncRetryAttempts) {
                 this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
                 return this;
             }
@@ -389,8 +501,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AsyncConfigurationProperty {
             private final java.lang.Object destination;
-            private final java.lang.Number maxAsyncEventAgeInSeconds;
-            private final java.lang.Number maxAsyncRetryAttempts;
+            private final java.lang.Object maxAsyncEventAgeInSeconds;
+            private final java.lang.Object maxAsyncRetryAttempts;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -399,14 +511,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.destination = software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.maxAsyncEventAgeInSeconds = software.amazon.jsii.Kernel.get(this, "maxAsyncEventAgeInSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.maxAsyncRetryAttempts = software.amazon.jsii.Kernel.get(this, "maxAsyncRetryAttempts", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.maxAsyncEventAgeInSeconds = software.amazon.jsii.Kernel.get(this, "maxAsyncEventAgeInSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxAsyncRetryAttempts = software.amazon.jsii.Kernel.get(this, "maxAsyncRetryAttempts", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object destination, final java.lang.Number maxAsyncEventAgeInSeconds, final java.lang.Number maxAsyncRetryAttempts) {
+            protected Jsii$Proxy(final java.lang.Object destination, final java.lang.Object maxAsyncEventAgeInSeconds, final java.lang.Object maxAsyncRetryAttempts) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.destination = destination;
                 this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
@@ -419,12 +531,12 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Number getMaxAsyncEventAgeInSeconds() {
+            public final java.lang.Object getMaxAsyncEventAgeInSeconds() {
                 return this.maxAsyncEventAgeInSeconds;
             }
 
             @Override
-            public final java.lang.Number getMaxAsyncRetryAttempts() {
+            public final java.lang.Object getMaxAsyncRetryAttempts() {
                 return this.maxAsyncRetryAttempts;
             }
 
@@ -485,28 +597,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOssBucketName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOssBucketName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOssObjectName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOssObjectName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSourceCode() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSourceCode() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getZipFile() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getZipFile() {
             return null;
         }
 
@@ -522,10 +634,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CodeProperty> {
-            private java.lang.String ossBucketName;
-            private java.lang.String ossObjectName;
-            private java.lang.String sourceCode;
-            private java.lang.String zipFile;
+            private java.lang.Object ossBucketName;
+            private java.lang.Object ossObjectName;
+            private java.lang.Object sourceCode;
+            private java.lang.Object zipFile;
 
             /**
              * Sets the value of {@link CodeProperty#getOssBucketName}
@@ -534,6 +646,17 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder ossBucketName(java.lang.String ossBucketName) {
+                this.ossBucketName = ossBucketName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CodeProperty#getOssBucketName}
+             * @param ossBucketName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ossBucketName(com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
                 this.ossBucketName = ossBucketName;
                 return this;
             }
@@ -550,6 +673,17 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CodeProperty#getOssObjectName}
+             * @param ossObjectName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ossObjectName(com.aliyun.ros.cdk.core.IResolvable ossObjectName) {
+                this.ossObjectName = ossObjectName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CodeProperty#getSourceCode}
              * @param sourceCode the value to be set.
              * @return {@code this}
@@ -561,12 +695,34 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CodeProperty#getSourceCode}
+             * @param sourceCode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sourceCode(com.aliyun.ros.cdk.core.IResolvable sourceCode) {
+                this.sourceCode = sourceCode;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CodeProperty#getZipFile}
              * @param zipFile the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder zipFile(java.lang.String zipFile) {
+                this.zipFile = zipFile;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CodeProperty#getZipFile}
+             * @param zipFile the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder zipFile(com.aliyun.ros.cdk.core.IResolvable zipFile) {
                 this.zipFile = zipFile;
                 return this;
             }
@@ -589,10 +745,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CodeProperty {
-            private final java.lang.String ossBucketName;
-            private final java.lang.String ossObjectName;
-            private final java.lang.String sourceCode;
-            private final java.lang.String zipFile;
+            private final java.lang.Object ossBucketName;
+            private final java.lang.Object ossObjectName;
+            private final java.lang.Object sourceCode;
+            private final java.lang.Object zipFile;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -600,16 +756,16 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.ossObjectName = software.amazon.jsii.Kernel.get(this, "ossObjectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.sourceCode = software.amazon.jsii.Kernel.get(this, "sourceCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.zipFile = software.amazon.jsii.Kernel.get(this, "zipFile", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ossObjectName = software.amazon.jsii.Kernel.get(this, "ossObjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sourceCode = software.amazon.jsii.Kernel.get(this, "sourceCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.zipFile = software.amazon.jsii.Kernel.get(this, "zipFile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String ossBucketName, final java.lang.String ossObjectName, final java.lang.String sourceCode, final java.lang.String zipFile) {
+            protected Jsii$Proxy(final java.lang.Object ossBucketName, final java.lang.Object ossObjectName, final java.lang.Object sourceCode, final java.lang.Object zipFile) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.ossBucketName = ossBucketName;
                 this.ossObjectName = ossObjectName;
@@ -618,22 +774,22 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getOssBucketName() {
+            public final java.lang.Object getOssBucketName() {
                 return this.ossBucketName;
             }
 
             @Override
-            public final java.lang.String getOssObjectName() {
+            public final java.lang.Object getOssObjectName() {
                 return this.ossObjectName;
             }
 
             @Override
-            public final java.lang.String getSourceCode() {
+            public final java.lang.Object getSourceCode() {
                 return this.sourceCode;
             }
 
             @Override
-            public final java.lang.String getZipFile() {
+            public final java.lang.Object getZipFile() {
                 return this.zipFile;
             }
 
@@ -699,19 +855,26 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getImage();
+        @org.jetbrains.annotations.NotNull java.lang.Object getImage();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getArgs() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAccelerationType() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getCommand() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArgs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommand() {
             return null;
         }
 
@@ -727,9 +890,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CustomContainerConfigProperty> {
-            private java.lang.String image;
-            private java.lang.String args;
-            private java.lang.String command;
+            private java.lang.Object image;
+            private java.lang.Object accelerationType;
+            private java.lang.Object args;
+            private java.lang.Object command;
 
             /**
              * Sets the value of {@link CustomContainerConfigProperty#getImage}
@@ -743,12 +907,56 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CustomContainerConfigProperty#getImage}
+             * @param image the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder image(com.aliyun.ros.cdk.core.IResolvable image) {
+                this.image = image;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getAccelerationType}
+             * @param accelerationType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accelerationType(java.lang.String accelerationType) {
+                this.accelerationType = accelerationType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getAccelerationType}
+             * @param accelerationType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accelerationType(com.aliyun.ros.cdk.core.IResolvable accelerationType) {
+                this.accelerationType = accelerationType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CustomContainerConfigProperty#getArgs}
              * @param args the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder args(java.lang.String args) {
+                this.args = args;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getArgs}
+             * @param args the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder args(com.aliyun.ros.cdk.core.IResolvable args) {
                 this.args = args;
                 return this;
             }
@@ -765,6 +973,17 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CustomContainerConfigProperty#getCommand}
+             * @param command the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link CustomContainerConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -772,7 +991,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CustomContainerConfigProperty build() {
-                return new Jsii$Proxy(image, args, command);
+                return new Jsii$Proxy(image, accelerationType, args, command);
             }
         }
 
@@ -782,9 +1001,10 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomContainerConfigProperty {
-            private final java.lang.String image;
-            private final java.lang.String args;
-            private final java.lang.String command;
+            private final java.lang.Object image;
+            private final java.lang.Object accelerationType;
+            private final java.lang.Object args;
+            private final java.lang.Object command;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -792,33 +1012,40 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.image = software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.args = software.amazon.jsii.Kernel.get(this, "args", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.image = software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.accelerationType = software.amazon.jsii.Kernel.get(this, "accelerationType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.args = software.amazon.jsii.Kernel.get(this, "args", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String image, final java.lang.String args, final java.lang.String command) {
+            protected Jsii$Proxy(final java.lang.Object image, final java.lang.Object accelerationType, final java.lang.Object args, final java.lang.Object command) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.image = java.util.Objects.requireNonNull(image, "image is required");
+                this.accelerationType = accelerationType;
                 this.args = args;
                 this.command = command;
             }
 
             @Override
-            public final java.lang.String getImage() {
+            public final java.lang.Object getImage() {
                 return this.image;
             }
 
             @Override
-            public final java.lang.String getArgs() {
+            public final java.lang.Object getAccelerationType() {
+                return this.accelerationType;
+            }
+
+            @Override
+            public final java.lang.Object getArgs() {
                 return this.args;
             }
 
             @Override
-            public final java.lang.String getCommand() {
+            public final java.lang.Object getCommand() {
                 return this.command;
             }
 
@@ -829,6 +1056,9 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("image", om.valueToTree(this.getImage()));
+                if (this.getAccelerationType() != null) {
+                    data.set("accelerationType", om.valueToTree(this.getAccelerationType()));
+                }
                 if (this.getArgs() != null) {
                     data.set("args", om.valueToTree(this.getArgs()));
                 }
@@ -854,6 +1084,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 CustomContainerConfigProperty.Jsii$Proxy that = (CustomContainerConfigProperty.Jsii$Proxy) o;
 
                 if (!image.equals(that.image)) return false;
+                if (this.accelerationType != null ? !this.accelerationType.equals(that.accelerationType) : that.accelerationType != null) return false;
                 if (this.args != null ? !this.args.equals(that.args) : that.args != null) return false;
                 return this.command != null ? this.command.equals(that.command) : that.command == null;
             }
@@ -861,6 +1092,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.image.hashCode();
+                result = 31 * result + (this.accelerationType != null ? this.accelerationType.hashCode() : 0);
                 result = 31 * result + (this.args != null ? this.args.hashCode() : 0);
                 result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
                 return result;
@@ -877,14 +1109,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOnFailure() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOnFailure() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOnSuccess() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOnSuccess() {
             return null;
         }
 
@@ -900,8 +1132,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DestinationProperty> {
-            private java.lang.String onFailure;
-            private java.lang.String onSuccess;
+            private java.lang.Object onFailure;
+            private java.lang.Object onSuccess;
 
             /**
              * Sets the value of {@link DestinationProperty#getOnFailure}
@@ -915,12 +1147,34 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationProperty#getOnFailure}
+             * @param onFailure the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder onFailure(com.aliyun.ros.cdk.core.IResolvable onFailure) {
+                this.onFailure = onFailure;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationProperty#getOnSuccess}
              * @param onSuccess the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder onSuccess(java.lang.String onSuccess) {
+                this.onSuccess = onSuccess;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationProperty#getOnSuccess}
+             * @param onSuccess the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder onSuccess(com.aliyun.ros.cdk.core.IResolvable onSuccess) {
                 this.onSuccess = onSuccess;
                 return this;
             }
@@ -943,8 +1197,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DestinationProperty {
-            private final java.lang.String onFailure;
-            private final java.lang.String onSuccess;
+            private final java.lang.Object onFailure;
+            private final java.lang.Object onSuccess;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -952,26 +1206,26 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.onFailure = software.amazon.jsii.Kernel.get(this, "onFailure", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.onSuccess = software.amazon.jsii.Kernel.get(this, "onSuccess", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.onFailure = software.amazon.jsii.Kernel.get(this, "onFailure", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.onSuccess = software.amazon.jsii.Kernel.get(this, "onSuccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String onFailure, final java.lang.String onSuccess) {
+            protected Jsii$Proxy(final java.lang.Object onFailure, final java.lang.Object onSuccess) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.onFailure = onFailure;
                 this.onSuccess = onSuccess;
             }
 
             @Override
-            public final java.lang.String getOnFailure() {
+            public final java.lang.Object getOnFailure() {
                 return this.onFailure;
             }
 
             @Override
-            public final java.lang.String getOnSuccess() {
+            public final java.lang.Object getOnSuccess() {
                 return this.onSuccess;
             }
 
@@ -1052,12 +1306,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.functionName(functionName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param functionName This parameter is required.
+         */
+        public Builder functionName(final com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param handler This parameter is required.
          */
         public Builder handler(final java.lang.String handler) {
+            this.props.handler(handler);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param handler This parameter is required.
+         */
+        public Builder handler(final com.aliyun.ros.cdk.core.IResolvable handler) {
             this.props.handler(handler);
             return this;
         }
@@ -1070,12 +1340,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.runtime(runtime);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param runtime This parameter is required.
+         */
+        public Builder runtime(final com.aliyun.ros.cdk.core.IResolvable runtime) {
+            this.props.runtime(runtime);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param serviceName This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serviceName This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
@@ -1102,6 +1388,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          * @param caPort This parameter is required.
          */
         public Builder caPort(final java.lang.Number caPort) {
+            this.props.caPort(caPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param caPort This parameter is required.
+         */
+        public Builder caPort(final com.aliyun.ros.cdk.core.IResolvable caPort) {
             this.props.caPort(caPort);
             return this;
         }
@@ -1148,6 +1442,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1174,12 +1476,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.initializationTimeout(initializationTimeout);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param initializationTimeout This parameter is required.
+         */
+        public Builder initializationTimeout(final com.aliyun.ros.cdk.core.IResolvable initializationTimeout) {
+            this.props.initializationTimeout(initializationTimeout);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param initializer This parameter is required.
          */
         public Builder initializer(final java.lang.String initializer) {
+            this.props.initializer(initializer);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param initializer This parameter is required.
+         */
+        public Builder initializer(final com.aliyun.ros.cdk.core.IResolvable initializer) {
             this.props.initializer(initializer);
             return this;
         }
@@ -1192,6 +1510,31 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceConcurrency(instanceConcurrency);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceConcurrency This parameter is required.
+         */
+        public Builder instanceConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
+            this.props.instanceConcurrency(instanceConcurrency);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1201,12 +1544,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             this.props.memorySize(memorySize);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param memorySize This parameter is required.
+         */
+        public Builder memorySize(final com.aliyun.ros.cdk.core.IResolvable memorySize) {
+            this.props.memorySize(memorySize);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param timeout This parameter is required.
          */
         public Builder timeout(final java.lang.Number timeout) {
+            this.props.timeout(timeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param timeout This parameter is required.
+         */
+        public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
             this.props.timeout(timeout);
             return this;
         }

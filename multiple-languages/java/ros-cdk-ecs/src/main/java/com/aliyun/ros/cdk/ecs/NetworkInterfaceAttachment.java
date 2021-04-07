@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::NetworkInterfaceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.578Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceAttachment")
 public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public NetworkInterfaceAttachment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.NetworkInterfaceAttachmentProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public NetworkInterfaceAttachment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.NetworkInterfaceAttachmentProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
+     * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTrunkNetworkInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTrunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTrunkNetworkInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTrunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.NetworkInterfaceAttachment> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,28 +97,64 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
+         * Property instanceId: ECS instance id.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: ECS instance id. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: ECS instance id.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: ECS instance id. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property networkInterfaceId: Network interface id.
+         * <p>
          * @return {@code this}
-         * @param networkInterfaceId This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
          */
         public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * Property networkInterfaceId: Network interface id.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
+         * Property trunkNetworkInstanceId: undefined.
+         * <p>
          * @return {@code this}
-         * @param trunkNetworkInstanceId This parameter is required.
+         * @param trunkNetworkInstanceId Property trunkNetworkInstanceId: undefined. This parameter is required.
          */
         public Builder trunkNetworkInstanceId(final java.lang.String trunkNetworkInstanceId) {
+            this.props.trunkNetworkInstanceId(trunkNetworkInstanceId);
+            return this;
+        }
+        /**
+         * Property trunkNetworkInstanceId: undefined.
+         * <p>
+         * @return {@code this}
+         * @param trunkNetworkInstanceId Property trunkNetworkInstanceId: undefined. This parameter is required.
+         */
+        public Builder trunkNetworkInstanceId(final com.aliyun.ros.cdk.core.IResolvable trunkNetworkInstanceId) {
             this.props.trunkNetworkInstanceId(trunkNetworkInstanceId);
             return this;
         }

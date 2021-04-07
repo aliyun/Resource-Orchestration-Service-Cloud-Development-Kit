@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteList")
 public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbClusterId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
+    }
+
+    /**
+     */
+    public void setDbClusterId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSecurityIps() {
-        return software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSecurityIps() {
+        return software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDbClusterIpArrayName() {
-        return software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSecurityIps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityIps", java.util.Objects.requireNonNull(value, "securityIps is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterIpArrayName() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbClusterIpArrayName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterIpArrayName", value);
+    }
+
+    /**
+     */
+    public void setDbClusterIpArrayName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbClusterIpArrayName", value);
     }
 
@@ -131,6 +149,14 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbClusterId This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -140,12 +166,28 @@ public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosReso
             this.props.securityIps(securityIps);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param securityIps This parameter is required.
+         */
+        public Builder securityIps(final com.aliyun.ros.cdk.core.IResolvable securityIps) {
+            this.props.securityIps(securityIps);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbClusterIpArrayName This parameter is required.
          */
         public Builder dbClusterIpArrayName(final java.lang.String dbClusterIpArrayName) {
+            this.props.dbClusterIpArrayName(dbClusterIpArrayName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbClusterIpArrayName This parameter is required.
+         */
+        public Builder dbClusterIpArrayName(final com.aliyun.ros.cdk.core.IResolvable dbClusterIpArrayName) {
             this.props.dbClusterIpArrayName(dbClusterIpArrayName);
             return this;
         }

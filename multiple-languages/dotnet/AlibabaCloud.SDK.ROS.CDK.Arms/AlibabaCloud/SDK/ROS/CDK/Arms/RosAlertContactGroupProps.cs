@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: contactGroupName: The name of the alert contact group that you want to create.
         /// </remarks>
-        [JsiiProperty(name: "contactGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ContactGroupName
+        [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ContactGroupName
         {
             get;
             set;
@@ -23,7 +23,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: contactIds: The list of alert contact ID.
         /// </remarks>
-        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
         public object ContactIds
         {
             get;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <strong>Property</strong>: proxyUserId: Internal parameters
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "proxyUserId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProxyUserId
+        [JsiiProperty(name: "proxyUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProxyUserId
         {
             get;
             set;
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <strong>Property</strong>: regionId: Region ID. Default to region of stack.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RegionId
         {
             get;
             set;

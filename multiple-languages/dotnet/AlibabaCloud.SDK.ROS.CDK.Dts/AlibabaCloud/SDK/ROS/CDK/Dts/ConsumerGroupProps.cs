@@ -11,32 +11,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
     public class ConsumerGroupProps : AlibabaCloud.SDK.ROS.CDK.Dts.IConsumerGroupProps
     {
         /// <summary>Property consumerGroupName: Consumer group name.</summary>
-        [JsiiProperty(name: "consumerGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ConsumerGroupName
+        [JsiiProperty(name: "consumerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ConsumerGroupName
         {
             get;
             set;
         }
 
         /// <summary>Property consumerGroupPassword: Password of consumer group.</summary>
-        [JsiiProperty(name: "consumerGroupPassword", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ConsumerGroupPassword
+        [JsiiProperty(name: "consumerGroupPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ConsumerGroupPassword
         {
             get;
             set;
         }
 
         /// <summary>Property consumerGroupUserName: User name of consumer group.</summary>
-        [JsiiProperty(name: "consumerGroupUserName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ConsumerGroupUserName
+        [JsiiProperty(name: "consumerGroupUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ConsumerGroupUserName
         {
             get;
             set;
         }
 
         /// <summary>Property subscriptionInstanceId: Subscription instance ID.</summary>
-        [JsiiProperty(name: "subscriptionInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SubscriptionInstanceId
+        [JsiiProperty(name: "subscriptionInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SubscriptionInstanceId
         {
             get;
             set;

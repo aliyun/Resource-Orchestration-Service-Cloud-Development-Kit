@@ -11,32 +11,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     public class AccountPrivilegeProps : AlibabaCloud.SDK.ROS.CDK.Rds.IAccountPrivilegeProps
     {
         /// <summary>Property accountName: RDS account name.</summary>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccountName
         {
             get;
             set;
         }
 
         /// <summary>Property accountPrivilege: RDS account privilege.</summary>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccountPrivilege
         {
             get;
             set;
         }
 
         /// <summary>Property dbInstanceId: RDS instance ID.</summary>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbInstanceId
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbInstanceId
         {
             get;
             set;
         }
 
         /// <summary>Property dbName: RDS database name.</summary>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbName
         {
             get;
             set;

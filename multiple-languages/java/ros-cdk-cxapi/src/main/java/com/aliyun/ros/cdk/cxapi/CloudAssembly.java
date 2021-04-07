@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Represents a deployable cloud application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.872Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.281Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudAssembly")
 public class CloudAssembly extends software.amazon.jsii.JsiiObject {
 
@@ -44,13 +44,12 @@ public class CloudAssembly extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * (deprecated) Returns a ROS stack artifact by name from this assembly.
+     * Returns a ROS stack artifact by name from this assembly.
      * <p>
-     * @deprecated renamed to `getStackByName` (or `getStackArtifact(id)`)
+     * Deprecated renamed to 'getStackByName' (or 'getStackArtifact(id)')
+     * <p>
      * @param stackName This parameter is required.
      */
-    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
-    @Deprecated
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cxapi.RosStackArtifact getStack(final @org.jetbrains.annotations.NotNull java.lang.String stackName) {
         return software.amazon.jsii.Kernel.call(this, "getStack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.RosStackArtifact.class), new Object[] { java.util.Objects.requireNonNull(stackName, "stackName is required") });
     }
@@ -58,8 +57,11 @@ public class CloudAssembly extends software.amazon.jsii.JsiiObject {
     /**
      * Returns a ROS stack artifact from this assembly.
      * <p>
-     * @return a `RosStackArtifact` object.
-     * @param artifactId the artifact id of the stack (can be obtained through `stack.artifactId`). This parameter is required.
+     * Param artifactId the artifact id of the stack (can be obtained through 'stack.artifactId').
+     * Throws if there is no stack artifact with that id
+     * Returns a 'RosStackArtifact' object.
+     * <p>
+     * @param artifactId This parameter is required.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cxapi.RosStackArtifact getStackArtifact(final @org.jetbrains.annotations.NotNull java.lang.String artifactId) {
         return software.amazon.jsii.Kernel.call(this, "getStackArtifact", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.RosStackArtifact.class), new Object[] { java.util.Objects.requireNonNull(artifactId, "artifactId is required") });
@@ -70,8 +72,13 @@ public class CloudAssembly extends software.amazon.jsii.JsiiObject {
      * <p>
      * Will only search the current assembly.
      * <p>
-     * @return a `RosStackArtifact` object.
-     * @param stackName the name of the ROS stack. This parameter is required.
+     * Param stackName the name of the ROS stack.
+     * Throws if there is no stack artifact by that name
+     * Throws if there is more than one stack with the same stack name. You can
+     * use 'getStackArtifact - stack.artifactId' instead.
+     * Returns a 'RosStackArtifact' object.
+     * <p>
+     * @param stackName This parameter is required.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cxapi.RosStackArtifact getStackByName(final @org.jetbrains.annotations.NotNull java.lang.String stackName) {
         return software.amazon.jsii.Kernel.call(this, "getStackByName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.RosStackArtifact.class), new Object[] { java.util.Objects.requireNonNull(stackName, "stackName is required") });
@@ -80,7 +87,8 @@ public class CloudAssembly extends software.amazon.jsii.JsiiObject {
     /**
      * Returns the tree metadata artifact from this assembly.
      * <p>
-     * @return a `TreeCloudArtifact` object if there is one defined in the manifest, `undefined` otherwise.
+     * Throws if there is no metadata artifact by that name
+     * Returns a 'TreeCloudArtifact' object if there is one defined in the manifest, 'undefined' otherwise.
      */
     public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cxapi.TreeCloudArtifact tree() {
         return software.amazon.jsii.Kernel.call(this, "tree", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.TreeCloudArtifact.class));
@@ -89,8 +97,10 @@ public class CloudAssembly extends software.amazon.jsii.JsiiObject {
     /**
      * Attempts to find an artifact with a specific identity.
      * <p>
-     * @return A `CloudArtifact` object or `undefined` if the artifact does not exist in this assembly.
-     * @param id The artifact ID. This parameter is required.
+     * Returns A 'CloudArtifact' object or 'undefined' if the artifact does not exist in this assembly.
+     * Param id The artifact ID
+     * <p>
+     * @param id This parameter is required.
      */
     public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cxapi.CloudArtifact tryGetArtifact(final @org.jetbrains.annotations.NotNull java.lang.String id) {
         return software.amazon.jsii.Kernel.call(this, "tryGetArtifact", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.CloudArtifact.class), new Object[] { java.util.Objects.requireNonNull(id, "id is required") });

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * A ROS template type:  `ALIYUN::GWS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.600Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getClusterType() {
-        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getClusterType() {
+        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setClusterType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "clusterType", java.util.Objects.requireNonNull(value, "clusterType is required"));
+    }
+
+    /**
+     */
+    public void setClusterType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "clusterType", java.util.Objects.requireNonNull(value, "clusterType is required"));
     }
 
@@ -81,8 +87,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getVpcId() {
-        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +99,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVpcId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", java.util.Objects.requireNonNull(value, "vpcId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
     }
 
@@ -111,25 +129,31 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty value) {
-        software.amazon.jsii.Kernel.set(this, "policy", value);
-    }
-
-    /**
-     */
     public void setPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "policy", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty value) {
+        software.amazon.jsii.Kernel.set(this, "policy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
+    }
+
+    /**
+     */
+    public void setVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
     }
     /**
@@ -142,22 +166,22 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getClipboard();
+        @org.jetbrains.annotations.NotNull java.lang.Object getClipboard();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getLocalDrive();
+        @org.jetbrains.annotations.NotNull java.lang.Object getLocalDrive();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getUsbRedirect();
+        @org.jetbrains.annotations.NotNull java.lang.Object getUsbRedirect();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getWatermark();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWatermark();
 
         /**
          * @return a {@link Builder} of {@link PolicyProperty}
@@ -171,10 +195,10 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyProperty> {
-            private java.lang.String clipboard;
-            private java.lang.String localDrive;
-            private java.lang.String usbRedirect;
-            private java.lang.String watermark;
+            private java.lang.Object clipboard;
+            private java.lang.Object localDrive;
+            private java.lang.Object usbRedirect;
+            private java.lang.Object watermark;
 
             /**
              * Sets the value of {@link PolicyProperty#getClipboard}
@@ -183,6 +207,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder clipboard(java.lang.String clipboard) {
+                this.clipboard = clipboard;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyProperty#getClipboard}
+             * @param clipboard the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder clipboard(com.aliyun.ros.cdk.core.IResolvable clipboard) {
                 this.clipboard = clipboard;
                 return this;
             }
@@ -199,6 +234,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PolicyProperty#getLocalDrive}
+             * @param localDrive the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder localDrive(com.aliyun.ros.cdk.core.IResolvable localDrive) {
+                this.localDrive = localDrive;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PolicyProperty#getUsbRedirect}
              * @param usbRedirect the value to be set. This parameter is required.
              * @return {@code this}
@@ -210,12 +256,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PolicyProperty#getUsbRedirect}
+             * @param usbRedirect the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder usbRedirect(com.aliyun.ros.cdk.core.IResolvable usbRedirect) {
+                this.usbRedirect = usbRedirect;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PolicyProperty#getWatermark}
              * @param watermark the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder watermark(java.lang.String watermark) {
+                this.watermark = watermark;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyProperty#getWatermark}
+             * @param watermark the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder watermark(com.aliyun.ros.cdk.core.IResolvable watermark) {
                 this.watermark = watermark;
                 return this;
             }
@@ -238,10 +306,10 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyProperty {
-            private final java.lang.String clipboard;
-            private final java.lang.String localDrive;
-            private final java.lang.String usbRedirect;
-            private final java.lang.String watermark;
+            private final java.lang.Object clipboard;
+            private final java.lang.Object localDrive;
+            private final java.lang.Object usbRedirect;
+            private final java.lang.Object watermark;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -249,16 +317,16 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.clipboard = software.amazon.jsii.Kernel.get(this, "clipboard", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.localDrive = software.amazon.jsii.Kernel.get(this, "localDrive", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.usbRedirect = software.amazon.jsii.Kernel.get(this, "usbRedirect", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.watermark = software.amazon.jsii.Kernel.get(this, "watermark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.clipboard = software.amazon.jsii.Kernel.get(this, "clipboard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.localDrive = software.amazon.jsii.Kernel.get(this, "localDrive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.usbRedirect = software.amazon.jsii.Kernel.get(this, "usbRedirect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.watermark = software.amazon.jsii.Kernel.get(this, "watermark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String clipboard, final java.lang.String localDrive, final java.lang.String usbRedirect, final java.lang.String watermark) {
+            protected Jsii$Proxy(final java.lang.Object clipboard, final java.lang.Object localDrive, final java.lang.Object usbRedirect, final java.lang.Object watermark) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.clipboard = java.util.Objects.requireNonNull(clipboard, "clipboard is required");
                 this.localDrive = java.util.Objects.requireNonNull(localDrive, "localDrive is required");
@@ -267,22 +335,22 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getClipboard() {
+            public final java.lang.Object getClipboard() {
                 return this.clipboard;
             }
 
             @Override
-            public final java.lang.String getLocalDrive() {
+            public final java.lang.Object getLocalDrive() {
                 return this.localDrive;
             }
 
             @Override
-            public final java.lang.String getUsbRedirect() {
+            public final java.lang.Object getUsbRedirect() {
                 return this.usbRedirect;
             }
 
             @Override
-            public final java.lang.String getWatermark() {
+            public final java.lang.Object getWatermark() {
                 return this.watermark;
             }
 
@@ -365,12 +433,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.clusterType(clusterType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param clusterType This parameter is required.
+         */
+        public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.props.clusterType(clusterType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param vpcId This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
@@ -383,12 +467,20 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param policy This parameter is required.
          */
-        public Builder policy(final com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
             this.props.policy(policy);
             return this;
         }
@@ -396,7 +488,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param policy This parameter is required.
          */
-        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+        public Builder policy(final com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
             this.props.policy(policy);
             return this;
         }
@@ -406,6 +498,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @param vSwitchId This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }

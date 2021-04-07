@@ -3,174 +3,251 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.494Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property scalingGroupId: Scaling group id to create the scaling configuration.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
+     * Property deploymentSetId: Deployment set ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
         return null;
     }
 
     /**
+     * Property diskMappings: Disk mappings to attach to instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskMappings() {
         return null;
     }
 
     /**
+     * Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHpcClusterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
         return null;
     }
 
     /**
+     * Property imageId: Image ID to create ecs instance .
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
     }
 
     /**
+     * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
     /**
+     * Property instanceName: The name of the instance launched from the current scaling configuration.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
+     * Property instanceType: ecs supported instance type.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
     }
 
     /**
+     * Property instanceTypes: ecs supported instance types.
+     * <p>
+     * Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceTypes() {
         return null;
     }
 
     /**
+     * Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
+     * <p>
+     * The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
+     * Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
+     * <p>
+     * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+     * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
     /**
+     * Property ioOptimized: The 'optimized' instance can provide better IO performance.
+     * <p>
+     * Support 'none' and 'optimized' only, default is 'none'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIoOptimized() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
         return null;
     }
 
     /**
+     * Property keyPairName: SSH key pair name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
+     * Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
+     * <p>
+     * When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPasswordInherit() {
         return null;
     }
 
     /**
+     * Property ramRoleName: Instance RAM role name.
+     * <p>
+     * The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property scalingConfigurationName: Name of created scaling configuration.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingConfigurationName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingConfigurationName() {
         return null;
     }
 
     /**
+     * Property securityGroupId: Security Group to create ecs instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
+     * Property spotPriceLimit: Set the hourly maximum price for the instance.
+     * <p>
+     * Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSpotPriceLimit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
 
     /**
+     * Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
+     * <p>
+     * The parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.
+     * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+     * At most 50 items can be specified.
+     * Key
+     * ecs instance type
+     * Value
+     * Supports a maximum of 3 decimal places.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimitForInstanceType() {
         return null;
     }
 
     /**
+     * Property spotStrategy: Preemption strategy for post-paid instances.
+     * <p>
+     * It takes effect when the parameter InstanceChargeType takes the value of PostPaid. Ranges:
+     * NoSpot: Normal pay-per-use instance
+     * SpotWithPriceLimit: Set a preemptive instance of the cap price
+     * SpotAsPriceGo: System automatic bidding, following the current market actual price
+     * Default: NoSpot.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
         return null;
     }
 
     /**
+     * Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskAutoSnapshotPolicyId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
         return null;
     }
 
     /**
+     * Property systemDiskCategory: Category of system disk.
+     * <p>
+     * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
 
     /**
+     * Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskPerformanceLevel() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
         return null;
     }
 
     /**
+     * Property systemDiskSize: Size of system disk.
+     * <p>
+     * Unit is GB.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return null;
     }
 
     /**
+     * Property tagList: The tags of an instance in list format.
+     * <p>
+     * Do not use with Tags at the same time.
+     * You should input the information of the tag with the format of Key-Value list, such as [{"Key":"key1","Value":"value1"}, ...].
+     * At most 20 tags can be specified.
+     * Key
+     * It can be up to 64 characters in length.
+     * Cannot begin with aliyun.
+     * Cannot begin with http:// or https://.
+     * Cannot be a null string.
+     * Value
+     * It can be up to 128 characters in length.
+     * Cannot begin with aliyun.
+     * Cannot begin with http:// or https://.
+     * Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"&lt;resource_name&gt;<em>stack</em>&lt;stack_id&gt;") if possible.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTagList() {
         return null;
     }
 
     /**
+     * Property userData: User data to pass to instance.
+     * <p>
+     * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserData() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
 
@@ -184,38 +261,38 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link ScalingConfigurationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingConfigurationProps> {
-        private java.lang.String scalingGroupId;
-        private java.lang.String deploymentSetId;
+        private java.lang.Object scalingGroupId;
+        private java.lang.Object deploymentSetId;
         private java.lang.Object diskMappings;
-        private java.lang.String hpcClusterId;
-        private java.lang.String imageId;
-        private java.lang.String instanceId;
-        private java.lang.String instanceName;
-        private java.lang.String instanceType;
+        private java.lang.Object hpcClusterId;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceId;
+        private java.lang.Object instanceName;
+        private java.lang.Object instanceType;
         private java.lang.Object instanceTypes;
-        private java.lang.String internetChargeType;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.Number internetMaxBandwidthOut;
-        private java.lang.String ioOptimized;
-        private java.lang.String keyPairName;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object internetMaxBandwidthOut;
+        private java.lang.Object ioOptimized;
+        private java.lang.Object keyPairName;
         private java.lang.Object passwordInherit;
-        private java.lang.String ramRoleName;
-        private java.lang.String resourceGroupId;
-        private java.lang.String scalingConfigurationName;
-        private java.lang.String securityGroupId;
-        private java.lang.Number spotPriceLimit;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object scalingConfigurationName;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object spotPriceLimit;
         private java.lang.Object spotPriceLimitForInstanceType;
-        private java.lang.String spotStrategy;
-        private java.lang.String systemDiskAutoSnapshotPolicyId;
-        private java.lang.String systemDiskCategory;
-        private java.lang.String systemDiskPerformanceLevel;
-        private java.lang.Number systemDiskSize;
+        private java.lang.Object spotStrategy;
+        private java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private java.lang.Object systemDiskCategory;
+        private java.lang.Object systemDiskPerformanceLevel;
+        private java.lang.Object systemDiskSize;
         private java.lang.Object tagList;
-        private java.lang.String userData;
+        private java.lang.Object userData;
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getScalingGroupId}
-         * @param scalingGroupId the value to be set. This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: Scaling group id to create the scaling configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder scalingGroupId(java.lang.String scalingGroupId) {
@@ -224,8 +301,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getScalingGroupId}
+         * @param scalingGroupId Property scalingGroupId: Scaling group id to create the scaling configuration. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getDeploymentSetId}
-         * @param deploymentSetId the value to be set.
+         * @param deploymentSetId Property deploymentSetId: Deployment set ID.
          * @return {@code this}
          */
         public Builder deploymentSetId(java.lang.String deploymentSetId) {
@@ -234,8 +321,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getDeploymentSetId}
+         * @param deploymentSetId Property deploymentSetId: Deployment set ID.
+         * @return {@code this}
+         */
+        public Builder deploymentSetId(com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.deploymentSetId = deploymentSetId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getDiskMappings}
-         * @param diskMappings the value to be set.
+         * @param diskMappings Property diskMappings: Disk mappings to attach to instance.
          * @return {@code this}
          */
         public Builder diskMappings(com.aliyun.ros.cdk.core.IResolvable diskMappings) {
@@ -245,7 +342,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getDiskMappings}
-         * @param diskMappings the value to be set.
+         * @param diskMappings Property diskMappings: Disk mappings to attach to instance.
          * @return {@code this}
          */
         public Builder diskMappings(java.util.List<? extends java.lang.Object> diskMappings) {
@@ -255,7 +352,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getHpcClusterId}
-         * @param hpcClusterId the value to be set.
+         * @param hpcClusterId Property hpcClusterId: The HPC cluster ID to which the instance belongs.
          * @return {@code this}
          */
         public Builder hpcClusterId(java.lang.String hpcClusterId) {
@@ -264,8 +361,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getHpcClusterId}
+         * @param hpcClusterId Property hpcClusterId: The HPC cluster ID to which the instance belongs.
+         * @return {@code this}
+         */
+        public Builder hpcClusterId(com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
+            this.hpcClusterId = hpcClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getImageId}
-         * @param imageId the value to be set.
+         * @param imageId Property imageId: Image ID to create ecs instance .
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -274,8 +381,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getImageId}
+         * @param imageId Property imageId: Image ID to create ecs instance .
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceId}
-         * @param instanceId the value to be set.
+         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -284,8 +401,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInstanceId}
+         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceName}
-         * @param instanceName the value to be set.
+         * @param instanceName Property instanceName: The name of the instance launched from the current scaling configuration.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -294,8 +421,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInstanceName}
+         * @param instanceName Property instanceName: The name of the instance launched from the current scaling configuration.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceType}
-         * @param instanceType the value to be set.
+         * @param instanceType Property instanceType: ecs supported instance type.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
@@ -304,8 +441,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInstanceType}
+         * @param instanceType Property instanceType: ecs supported instance type.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceTypes}
-         * @param instanceTypes the value to be set.
+         * @param instanceTypes Property instanceTypes: ecs supported instance types.
+         *                      Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
          * @return {@code this}
          */
         public Builder instanceTypes(java.util.List<? extends java.lang.Object> instanceTypes) {
@@ -315,7 +463,8 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceTypes}
-         * @param instanceTypes the value to be set.
+         * @param instanceTypes Property instanceTypes: ecs supported instance types.
+         *                      Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
          * @return {@code this}
          */
         public Builder instanceTypes(com.aliyun.ros.cdk.core.IResolvable instanceTypes) {
@@ -325,7 +474,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -334,8 +483,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn the value to be set.
+         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
+         *                               The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
@@ -344,8 +504,21 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second).
+         *                               The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut the value to be set.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
+         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         *                                The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
@@ -354,8 +527,21 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getInternetMaxBandwidthOut}
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
+         *                                The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
+         *                                The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getIoOptimized}
-         * @param ioOptimized the value to be set.
+         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         *                    Support 'none' and 'optimized' only, default is 'none'.
          * @return {@code this}
          */
         public Builder ioOptimized(java.lang.String ioOptimized) {
@@ -364,8 +550,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getIoOptimized}
+         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         *                    Support 'none' and 'optimized' only, default is 'none'.
+         * @return {@code this}
+         */
+        public Builder ioOptimized(com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
+            this.ioOptimized = ioOptimized;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getKeyPairName}
-         * @param keyPairName the value to be set.
+         * @param keyPairName Property keyPairName: SSH key pair name.
          * @return {@code this}
          */
         public Builder keyPairName(java.lang.String keyPairName) {
@@ -374,8 +571,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getKeyPairName}
+         * @param keyPairName Property keyPairName: SSH key pair name.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getPasswordInherit}
-         * @param passwordInherit the value to be set.
+         * @param passwordInherit Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
+         *                        When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
          * @return {@code this}
          */
         public Builder passwordInherit(java.lang.Boolean passwordInherit) {
@@ -385,7 +593,8 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getPasswordInherit}
-         * @param passwordInherit the value to be set.
+         * @param passwordInherit Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
+         *                        When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
          * @return {@code this}
          */
         public Builder passwordInherit(com.aliyun.ros.cdk.core.IResolvable passwordInherit) {
@@ -395,7 +604,8 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getRamRoleName}
-         * @param ramRoleName the value to be set.
+         * @param ramRoleName Property ramRoleName: Instance RAM role name.
+         *                    The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
          * @return {@code this}
          */
         public Builder ramRoleName(java.lang.String ramRoleName) {
@@ -404,8 +614,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getRamRoleName}
+         * @param ramRoleName Property ramRoleName: Instance RAM role name.
+         *                    The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -414,8 +635,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getScalingConfigurationName}
-         * @param scalingConfigurationName the value to be set.
+         * @param scalingConfigurationName Property scalingConfigurationName: Name of created scaling configuration.
          * @return {@code this}
          */
         public Builder scalingConfigurationName(java.lang.String scalingConfigurationName) {
@@ -424,8 +655,18 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getScalingConfigurationName}
+         * @param scalingConfigurationName Property scalingConfigurationName: Name of created scaling configuration.
+         * @return {@code this}
+         */
+        public Builder scalingConfigurationName(com.aliyun.ros.cdk.core.IResolvable scalingConfigurationName) {
+            this.scalingConfigurationName = scalingConfigurationName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set.
+         * @param securityGroupId Property securityGroupId: Security Group to create ecs instance.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
@@ -434,8 +675,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: Security Group to create ecs instance.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSpotPriceLimit}
-         * @param spotPriceLimit the value to be set.
+         * @param spotPriceLimit Property spotPriceLimit: Set the hourly maximum price for the instance.
+         *                       Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
          * @return {@code this}
          */
         public Builder spotPriceLimit(java.lang.Number spotPriceLimit) {
@@ -444,8 +696,26 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSpotPriceLimit}
+         * @param spotPriceLimit Property spotPriceLimit: Set the hourly maximum price for the instance.
+         *                       Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
+         * @return {@code this}
+         */
+        public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
+            this.spotPriceLimit = spotPriceLimit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSpotPriceLimitForInstanceType}
-         * @param spotPriceLimitForInstanceType the value to be set.
+         * @param spotPriceLimitForInstanceType Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
+         *                                      The parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.
+         *                                      You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+         *                                      At most 50 items can be specified.
+         *                                      Key
+         *                                      ecs instance type
+         *                                      Value
+         *                                      Supports a maximum of 3 decimal places.
          * @return {@code this}
          */
         public Builder spotPriceLimitForInstanceType(com.aliyun.ros.cdk.core.IResolvable spotPriceLimitForInstanceType) {
@@ -455,7 +725,14 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getSpotPriceLimitForInstanceType}
-         * @param spotPriceLimitForInstanceType the value to be set.
+         * @param spotPriceLimitForInstanceType Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
+         *                                      The parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.
+         *                                      You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+         *                                      At most 50 items can be specified.
+         *                                      Key
+         *                                      ecs instance type
+         *                                      Value
+         *                                      Supports a maximum of 3 decimal places.
          * @return {@code this}
          */
         public Builder spotPriceLimitForInstanceType(java.util.Map<java.lang.String, ? extends java.lang.Object> spotPriceLimitForInstanceType) {
@@ -465,7 +742,12 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getSpotStrategy}
-         * @param spotStrategy the value to be set.
+         * @param spotStrategy Property spotStrategy: Preemption strategy for post-paid instances.
+         *                     It takes effect when the parameter InstanceChargeType takes the value of PostPaid. Ranges:
+         *                     NoSpot: Normal pay-per-use instance
+         *                     SpotWithPriceLimit: Set a preemptive instance of the cap price
+         *                     SpotAsPriceGo: System automatic bidding, following the current market actual price
+         *                     Default: NoSpot.
          * @return {@code this}
          */
         public Builder spotStrategy(java.lang.String spotStrategy) {
@@ -474,8 +756,23 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSpotStrategy}
+         * @param spotStrategy Property spotStrategy: Preemption strategy for post-paid instances.
+         *                     It takes effect when the parameter InstanceChargeType takes the value of PostPaid. Ranges:
+         *                     NoSpot: Normal pay-per-use instance
+         *                     SpotWithPriceLimit: Set a preemptive instance of the cap price
+         *                     SpotAsPriceGo: System automatic bidding, following the current market actual price
+         *                     Default: NoSpot.
+         * @return {@code this}
+         */
+        public Builder spotStrategy(com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
+            this.spotStrategy = spotStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskAutoSnapshotPolicyId}
-         * @param systemDiskAutoSnapshotPolicyId the value to be set.
+         * @param systemDiskAutoSnapshotPolicyId Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
          * @return {@code this}
          */
         public Builder systemDiskAutoSnapshotPolicyId(java.lang.String systemDiskAutoSnapshotPolicyId) {
@@ -484,8 +781,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSystemDiskAutoSnapshotPolicyId}
+         * @param systemDiskAutoSnapshotPolicyId Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
+         * @return {@code this}
+         */
+        public Builder systemDiskAutoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable systemDiskAutoSnapshotPolicyId) {
+            this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskCategory}
-         * @param systemDiskCategory the value to be set.
+         * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
+         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -494,8 +802,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSystemDiskCategory}
+         * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
+         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * @return {@code this}
+         */
+        public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
+            this.systemDiskCategory = systemDiskCategory;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskPerformanceLevel}
-         * @param systemDiskPerformanceLevel the value to be set.
+         * @param systemDiskPerformanceLevel Property systemDiskPerformanceLevel: The performance level of an ESSD.
          * @return {@code this}
          */
         public Builder systemDiskPerformanceLevel(java.lang.String systemDiskPerformanceLevel) {
@@ -504,8 +823,19 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSystemDiskPerformanceLevel}
+         * @param systemDiskPerformanceLevel Property systemDiskPerformanceLevel: The performance level of an ESSD.
+         * @return {@code this}
+         */
+        public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskSize}
-         * @param systemDiskSize the value to be set.
+         * @param systemDiskSize Property systemDiskSize: Size of system disk.
+         *                       Unit is GB.
          * @return {@code this}
          */
         public Builder systemDiskSize(java.lang.Number systemDiskSize) {
@@ -514,8 +844,32 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getSystemDiskSize}
+         * @param systemDiskSize Property systemDiskSize: Size of system disk.
+         *                       Unit is GB.
+         * @return {@code this}
+         */
+        public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getTagList}
-         * @param tagList the value to be set.
+         * @param tagList Property tagList: The tags of an instance in list format.
+         *                Do not use with Tags at the same time.
+         *                You should input the information of the tag with the format of Key-Value list, such as [{"Key":"key1","Value":"value1"}, ...].
+         *                At most 20 tags can be specified.
+         *                Key
+         *                It can be up to 64 characters in length.
+         *                Cannot begin with aliyun.
+         *                Cannot begin with http:// or https://.
+         *                Cannot be a null string.
+         *                Value
+         *                It can be up to 128 characters in length.
+         *                Cannot begin with aliyun.
+         *                Cannot begin with http:// or https://.
+         *                Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"&lt;resource_name&gt;<em>stack</em>&lt;stack_id&gt;") if possible.
          * @return {@code this}
          */
         public Builder tagList(com.aliyun.ros.cdk.core.IResolvable tagList) {
@@ -525,7 +879,20 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getTagList}
-         * @param tagList the value to be set.
+         * @param tagList Property tagList: The tags of an instance in list format.
+         *                Do not use with Tags at the same time.
+         *                You should input the information of the tag with the format of Key-Value list, such as [{"Key":"key1","Value":"value1"}, ...].
+         *                At most 20 tags can be specified.
+         *                Key
+         *                It can be up to 64 characters in length.
+         *                Cannot begin with aliyun.
+         *                Cannot begin with http:// or https://.
+         *                Cannot be a null string.
+         *                Value
+         *                It can be up to 128 characters in length.
+         *                Cannot begin with aliyun.
+         *                Cannot begin with http:// or https://.
+         *                Can be a null string.If less then 20 tags are specified, ros will add a tag(Key: "ros-aliyun-created", Value:"&lt;resource_name&gt;<em>stack</em>&lt;stack_id&gt;") if possible.
          * @return {@code this}
          */
         public Builder tagList(java.util.List<? extends java.lang.Object> tagList) {
@@ -535,10 +902,22 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getUserData}
-         * @param userData the value to be set.
+         * @param userData Property userData: User data to pass to instance.
+         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
          * @return {@code this}
          */
         public Builder userData(java.lang.String userData) {
+            this.userData = userData;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getUserData}
+         * @param userData Property userData: User data to pass to instance.
+         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+         * @return {@code this}
+         */
+        public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
             this.userData = userData;
             return this;
         }
@@ -559,34 +938,34 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingConfigurationProps {
-        private final java.lang.String scalingGroupId;
-        private final java.lang.String deploymentSetId;
+        private final java.lang.Object scalingGroupId;
+        private final java.lang.Object deploymentSetId;
         private final java.lang.Object diskMappings;
-        private final java.lang.String hpcClusterId;
-        private final java.lang.String imageId;
-        private final java.lang.String instanceId;
-        private final java.lang.String instanceName;
-        private final java.lang.String instanceType;
+        private final java.lang.Object hpcClusterId;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object instanceType;
         private final java.lang.Object instanceTypes;
-        private final java.lang.String internetChargeType;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.Number internetMaxBandwidthOut;
-        private final java.lang.String ioOptimized;
-        private final java.lang.String keyPairName;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object internetMaxBandwidthOut;
+        private final java.lang.Object ioOptimized;
+        private final java.lang.Object keyPairName;
         private final java.lang.Object passwordInherit;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String scalingConfigurationName;
-        private final java.lang.String securityGroupId;
-        private final java.lang.Number spotPriceLimit;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object scalingConfigurationName;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotPriceLimitForInstanceType;
-        private final java.lang.String spotStrategy;
-        private final java.lang.String systemDiskAutoSnapshotPolicyId;
-        private final java.lang.String systemDiskCategory;
-        private final java.lang.String systemDiskPerformanceLevel;
-        private final java.lang.Number systemDiskSize;
+        private final java.lang.Object spotStrategy;
+        private final java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskPerformanceLevel;
+        private final java.lang.Object systemDiskSize;
         private final java.lang.Object tagList;
-        private final java.lang.String userData;
+        private final java.lang.Object userData;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -594,40 +973,40 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceTypes = software.amazon.jsii.Kernel.get(this, "instanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scalingConfigurationName = software.amazon.jsii.Kernel.get(this, "scalingConfigurationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingConfigurationName = software.amazon.jsii.Kernel.get(this, "scalingConfigurationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimitForInstanceType = software.amazon.jsii.Kernel.get(this, "spotPriceLimitForInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tagList = software.amazon.jsii.Kernel.get(this, "tagList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String scalingGroupId, final java.lang.String deploymentSetId, final java.lang.Object diskMappings, final java.lang.String hpcClusterId, final java.lang.String imageId, final java.lang.String instanceId, final java.lang.String instanceName, final java.lang.String instanceType, final java.lang.Object instanceTypes, final java.lang.String internetChargeType, final java.lang.Number internetMaxBandwidthIn, final java.lang.Number internetMaxBandwidthOut, final java.lang.String ioOptimized, final java.lang.String keyPairName, final java.lang.Object passwordInherit, final java.lang.String ramRoleName, final java.lang.String resourceGroupId, final java.lang.String scalingConfigurationName, final java.lang.String securityGroupId, final java.lang.Number spotPriceLimit, final java.lang.Object spotPriceLimitForInstanceType, final java.lang.String spotStrategy, final java.lang.String systemDiskAutoSnapshotPolicyId, final java.lang.String systemDiskCategory, final java.lang.String systemDiskPerformanceLevel, final java.lang.Number systemDiskSize, final java.lang.Object tagList, final java.lang.String userData) {
+        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object deploymentSetId, final java.lang.Object diskMappings, final java.lang.Object hpcClusterId, final java.lang.Object imageId, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object instanceTypes, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object passwordInherit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object scalingConfigurationName, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotPriceLimitForInstanceType, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.lang.Object tagList, final java.lang.Object userData) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
             this.deploymentSetId = deploymentSetId;
@@ -660,12 +1039,12 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getScalingGroupId() {
+        public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
         }
 
         @Override
-        public final java.lang.String getDeploymentSetId() {
+        public final java.lang.Object getDeploymentSetId() {
             return this.deploymentSetId;
         }
 
@@ -675,27 +1054,27 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getHpcClusterId() {
+        public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
@@ -705,27 +1084,27 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthOut() {
+        public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
 
         @Override
-        public final java.lang.String getIoOptimized() {
+        public final java.lang.Object getIoOptimized() {
             return this.ioOptimized;
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
@@ -735,27 +1114,27 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getScalingConfigurationName() {
+        public final java.lang.Object getScalingConfigurationName() {
             return this.scalingConfigurationName;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.Number getSpotPriceLimit() {
+        public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
 
@@ -765,27 +1144,27 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getSpotStrategy() {
+        public final java.lang.Object getSpotStrategy() {
             return this.spotStrategy;
         }
 
         @Override
-        public final java.lang.String getSystemDiskAutoSnapshotPolicyId() {
+        public final java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
             return this.systemDiskAutoSnapshotPolicyId;
         }
 
         @Override
-        public final java.lang.String getSystemDiskCategory() {
+        public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
 
         @Override
-        public final java.lang.String getSystemDiskPerformanceLevel() {
+        public final java.lang.Object getSystemDiskPerformanceLevel() {
             return this.systemDiskPerformanceLevel;
         }
 
         @Override
-        public final java.lang.Number getSystemDiskSize() {
+        public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
 
@@ -795,7 +1174,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getUserData() {
+        public final java.lang.Object getUserData() {
             return this.userData;
         }
 

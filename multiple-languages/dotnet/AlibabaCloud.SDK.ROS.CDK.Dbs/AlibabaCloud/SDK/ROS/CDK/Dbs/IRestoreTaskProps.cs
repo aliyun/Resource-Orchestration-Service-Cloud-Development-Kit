@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
     public interface IRestoreTaskProps
     {
         /// <summary>Property backupPlanId: The ID of the backup plan.</summary>
-        [JsiiProperty(name: "backupPlanId", typeJson: "{\"primitive\":\"string\"}")]
-        string BackupPlanId
+        [JsiiProperty(name: "backupPlanId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object BackupPlanId
         {
             get;
         }
@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <summary>Property destinationEndpointInstanceType: The location of the database.</summary>
         /// <remarks>
         /// Valid values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>rds</description>
         /// <description>ecs</description>
@@ -31,15 +31,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <description>dg: the database is directly connected through IP Address: Port.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-        string DestinationEndpointInstanceType
+        [JsiiProperty(name: "destinationEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DestinationEndpointInstanceType
         {
             get;
         }
 
         /// <summary>Property restoreTaskName: The name of the restoration task.</summary>
-        [JsiiProperty(name: "restoreTaskName", typeJson: "{\"primitive\":\"string\"}")]
-        string RestoreTaskName
+        [JsiiProperty(name: "restoreTaskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RestoreTaskName
         {
             get;
         }
@@ -48,9 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// NoteDestinationEndpointInstanceType if you set this parameter to agent, this parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "backupGatewayId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "backupGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? BackupGatewayId
+        object? BackupGatewayId
         {
             get
             {
@@ -59,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <summary>Property backupSetId: The ID of the full backup set used for restoration, which is mutually exclusive to RestoreTime.</summary>
-        [JsiiProperty(name: "backupSetId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "backupSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? BackupSetId
+        object? BackupSetId
         {
             get
             {
@@ -73,9 +73,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// Note When the database type is PostgreSQL or MongoDB, this parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointDatabaseName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointDatabaseName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointDatabaseName
+        object? DestinationEndpointDatabaseName
         {
             get
             {
@@ -87,9 +87,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// NoteDestinationEndpointInstanceType if the value is RDS, ECS, DDS, or Express, this parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointInstanceId
+        object? DestinationEndpointInstanceId
         {
             get
             {
@@ -101,9 +101,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// NoteDestinationEndpointInstanceType is express, agent, or other. This parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointIp
+        object? DestinationEndpointIp
         {
             get
             {
@@ -115,9 +115,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// Note This parameter is required if the database type is Oracle.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointOracleSid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointOracleSid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointOracleSid
+        object? DestinationEndpointOracleSid
         {
             get
             {
@@ -130,9 +130,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// Note You must specify this parameter when the database type is Redis, or the database location
         /// is agent and the database type is MSSQL.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointPassword
+        object? DestinationEndpointPassword
         {
             get
             {
@@ -144,9 +144,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// NoteDestinationEndpointInstanceType is in the format of express, agent, other, or ECS. This parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? DestinationEndpointPort
+        object? DestinationEndpointPort
         {
             get
             {
@@ -158,9 +158,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// NoteDestinationEndpointInstanceType for RDS, ECS, DDS, Express, or Agent, this parameter is required.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointRegion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointRegion
+        object? DestinationEndpointRegion
         {
             get
             {
@@ -173,9 +173,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// Note You must specify this parameter when the database type is Redis, or the database location
         /// is agent and the database type is MSSQL.
         /// </remarks>
-        [JsiiProperty(name: "destinationEndpointUserName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "destinationEndpointUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DestinationEndpointUserName
+        object? DestinationEndpointUserName
         {
             get
             {
@@ -189,9 +189,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// failure: The object with the same name fails (default).
         /// renamenew: renames an object with the same name.
         /// </remarks>
-        [JsiiProperty(name: "duplicateConflict", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "duplicateConflict", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DuplicateConflict
+        object? DuplicateConflict
         {
             get
             {
@@ -200,9 +200,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <summary>Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.</summary>
-        [JsiiProperty(name: "restoreDir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "restoreDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RestoreDir
+        object? RestoreDir
         {
             get
             {
@@ -211,9 +211,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <summary>Property restoreHome: Database Program Directory.</summary>
-        [JsiiProperty(name: "restoreHome", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "restoreHome", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RestoreHome
+        object? RestoreHome
         {
             get
             {
@@ -225,9 +225,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
         /// </remarks>
-        [JsiiProperty(name: "restoreObjects", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "restoreObjects", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RestoreObjects
+        object? RestoreObjects
         {
             get
             {
@@ -239,9 +239,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         /// <remarks>
         /// Set the value to 1554560477000.
         /// </remarks>
-        [JsiiProperty(name: "restoreTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? RestoreTime
+        object? RestoreTime
         {
             get
             {
@@ -269,16 +269,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             }
 
             /// <summary>Property backupPlanId: The ID of the backup plan.</summary>
-            [JsiiProperty(name: "backupPlanId", typeJson: "{\"primitive\":\"string\"}")]
-            public string BackupPlanId
+            [JsiiProperty(name: "backupPlanId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BackupPlanId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property destinationEndpointInstanceType: The location of the database.</summary>
             /// <remarks>
             /// Valid values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>rds</description>
             /// <description>ecs</description>
@@ -291,17 +291,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// <description>dg: the database is directly connected through IP Address: Port.</description>
             /// </list>
             /// </remarks>
-            [JsiiProperty(name: "destinationEndpointInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string DestinationEndpointInstanceType
+            [JsiiProperty(name: "destinationEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DestinationEndpointInstanceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property restoreTaskName: The name of the restoration task.</summary>
-            [JsiiProperty(name: "restoreTaskName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RestoreTaskName
+            [JsiiProperty(name: "restoreTaskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RestoreTaskName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property backupGatewayId: The ID of the backup gateway.</summary>
@@ -309,18 +309,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// NoteDestinationEndpointInstanceType if you set this parameter to agent, this parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "backupGatewayId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? BackupGatewayId
+            [JsiiProperty(name: "backupGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackupGatewayId
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property backupSetId: The ID of the full backup set used for restoration, which is mutually exclusive to RestoreTime.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "backupSetId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? BackupSetId
+            [JsiiProperty(name: "backupSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackupSetId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointDatabaseName: The name of the RDS database.</summary>
@@ -328,10 +328,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// Note When the database type is PostgreSQL or MongoDB, this parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointDatabaseName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointDatabaseName
+            [JsiiProperty(name: "destinationEndpointDatabaseName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointDatabaseName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointInstanceId: The ID of the ApsaraDB RDS instance to query.</summary>
@@ -339,10 +339,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// NoteDestinationEndpointInstanceType if the value is RDS, ECS, DDS, or Express, this parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointInstanceId
+            [JsiiProperty(name: "destinationEndpointInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointIp: The endpoint used to connect to the database.</summary>
@@ -350,10 +350,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// NoteDestinationEndpointInstanceType is express, agent, or other. This parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointIp
+            [JsiiProperty(name: "destinationEndpointIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointIp
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointOracleSid: The SID of the Oracle instance.</summary>
@@ -361,10 +361,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// Note This parameter is required if the database type is Oracle.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointOracleSid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointOracleSid
+            [JsiiProperty(name: "destinationEndpointOracleSid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointOracleSid
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointPassword: The password that is used to log on to the RDS instance.</summary>
@@ -373,10 +373,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// is agent and the database type is MSSQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointPassword
+            [JsiiProperty(name: "destinationEndpointPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointPassword
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointPort: The port that is used to access the database of the primary MySQL server.</summary>
@@ -384,10 +384,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// NoteDestinationEndpointInstanceType is in the format of express, agent, other, or ECS. This parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? DestinationEndpointPort
+            [JsiiProperty(name: "destinationEndpointPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointPort
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointRegion: The region of the database.</summary>
@@ -395,10 +395,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// NoteDestinationEndpointInstanceType for RDS, ECS, DDS, Express, or Agent, this parameter is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointRegion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointRegion
+            [JsiiProperty(name: "destinationEndpointRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointRegion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property destinationEndpointUserName: The database account.</summary>
@@ -407,10 +407,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// is agent and the database type is MSSQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "destinationEndpointUserName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DestinationEndpointUserName
+            [JsiiProperty(name: "destinationEndpointUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DestinationEndpointUserName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property duplicateConflict: The handling method for conflicts between objects with the same name.</summary>
@@ -420,26 +420,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// renamenew: renames an object with the same name.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "duplicateConflict", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DuplicateConflict
+            [JsiiProperty(name: "duplicateConflict", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DuplicateConflict
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "restoreDir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RestoreDir
+            [JsiiProperty(name: "restoreDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestoreDir
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restoreHome: Database Program Directory.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "restoreHome", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RestoreHome
+            [JsiiProperty(name: "restoreHome", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestoreHome
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restoreObjects: Restore an object.</summary>
@@ -447,10 +447,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "restoreObjects", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RestoreObjects
+            [JsiiProperty(name: "restoreObjects", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestoreObjects
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restoreTime: The time when the fault is restored.</summary>
@@ -458,10 +458,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             /// Set the value to 1554560477000.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "restoreTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? RestoreTime
+            [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestoreTime
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property startTask: Start restore task after creating a recovery task.</summary>

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosMasterSlaveServerGroupProps.Jsii$Proxy.class)
 public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
      */
@@ -18,7 +18,7 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterSlaveServerGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSlaveServerGroupName() {
         return null;
     }
 
@@ -32,9 +32,9 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
      * A builder for {@link RosMasterSlaveServerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMasterSlaveServerGroupProps> {
-        private java.lang.String loadBalancerId;
+        private java.lang.Object loadBalancerId;
         private java.lang.Object masterSlaveBackendServers;
-        private java.lang.String masterSlaveServerGroupName;
+        private java.lang.Object masterSlaveServerGroupName;
 
         /**
          * Sets the value of {@link RosMasterSlaveServerGroupProps#getLoadBalancerId}
@@ -42,6 +42,16 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
          * @return {@code this}
          */
         public Builder loadBalancerId(java.lang.String loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMasterSlaveServerGroupProps#getLoadBalancerId}
+         * @param loadBalancerId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
             return this;
         }
@@ -77,6 +87,16 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosMasterSlaveServerGroupProps#getMasterSlaveServerGroupName}
+         * @param masterSlaveServerGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterSlaveServerGroupName(com.aliyun.ros.cdk.core.IResolvable masterSlaveServerGroupName) {
+            this.masterSlaveServerGroupName = masterSlaveServerGroupName;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosMasterSlaveServerGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -92,9 +112,9 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMasterSlaveServerGroupProps {
-        private final java.lang.String loadBalancerId;
+        private final java.lang.Object loadBalancerId;
         private final java.lang.Object masterSlaveBackendServers;
-        private final java.lang.String masterSlaveServerGroupName;
+        private final java.lang.Object masterSlaveServerGroupName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,15 +122,15 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterSlaveBackendServers = software.amazon.jsii.Kernel.get(this, "masterSlaveBackendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.masterSlaveServerGroupName = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.masterSlaveServerGroupName = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String loadBalancerId, final java.lang.Object masterSlaveBackendServers, final java.lang.String masterSlaveServerGroupName) {
+        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object masterSlaveBackendServers, final java.lang.Object masterSlaveServerGroupName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
             this.masterSlaveBackendServers = java.util.Objects.requireNonNull(masterSlaveBackendServers, "masterSlaveBackendServers is required");
@@ -118,7 +138,7 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
@@ -128,7 +148,7 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
         }
 
         @Override
-        public final java.lang.String getMasterSlaveServerGroupName() {
+        public final java.lang.Object getMasterSlaveServerGroupName() {
             return this.masterSlaveServerGroupName;
         }
 

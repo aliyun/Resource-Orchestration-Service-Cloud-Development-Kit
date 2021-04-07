@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosMetricRuleTargetsProps.Jsii$Proxy.class)
 public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRuleId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRuleId();
 
     /**
      */
@@ -26,7 +26,7 @@ public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosMetricRuleTargetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMetricRuleTargetsProps> {
-        private java.lang.String ruleId;
+        private java.lang.Object ruleId;
         private java.lang.Object targets;
 
         /**
@@ -35,6 +35,16 @@ public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder ruleId(java.lang.String ruleId) {
+            this.ruleId = ruleId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMetricRuleTargetsProps#getRuleId}
+         * @param ruleId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ruleId(com.aliyun.ros.cdk.core.IResolvable ruleId) {
             this.ruleId = ruleId;
             return this;
         }
@@ -75,7 +85,7 @@ public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMetricRuleTargetsProps {
-        private final java.lang.String ruleId;
+        private final java.lang.Object ruleId;
         private final java.lang.Object targets;
 
         /**
@@ -84,21 +94,21 @@ public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ruleId = software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ruleId = software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.targets = software.amazon.jsii.Kernel.get(this, "targets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ruleId, final java.lang.Object targets) {
+        protected Jsii$Proxy(final java.lang.Object ruleId, final java.lang.Object targets) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ruleId = java.util.Objects.requireNonNull(ruleId, "ruleId is required");
             this.targets = java.util.Objects.requireNonNull(targets, "targets is required");
         }
 
         @Override
-        public final java.lang.String getRuleId() {
+        public final java.lang.Object getRuleId() {
             return this.ruleId;
         }
 

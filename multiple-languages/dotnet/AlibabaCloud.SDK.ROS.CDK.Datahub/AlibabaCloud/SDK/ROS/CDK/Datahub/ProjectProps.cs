@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
     public class ProjectProps : AlibabaCloud.SDK.ROS.CDK.Datahub.IProjectProps
     {
         /// <summary>Property comment: The comment of project.</summary>
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Comment
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Comment
         {
             get;
             set;
@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProjectName
         {
             get;
             set;

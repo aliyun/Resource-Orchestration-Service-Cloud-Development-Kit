@@ -11,7 +11,7 @@ export interface DBClusterAccessWhiteListProps {
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. Each
@@ -22,14 +22,14 @@ export interface DBClusterAccessWhiteListProps {
      * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
      * ranges from 1 to 32.
      */
-    readonly securityIps: string;
+    readonly securityIps: string | ros.IResolvable;
 
     /**
      * Property dbClusterIpArrayName: The name of the IP address whitelist group. If you do not specify this parameter,
      * the Default whitelist group is modified by default.
      * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
      */
-    readonly dbClusterIpArrayName?: string;
+    readonly dbClusterIpArrayName?: string | ros.IResolvable;
 }
 
 /**
@@ -45,7 +45,7 @@ export class DBClusterAccessWhiteList extends ros.Resource {
     /**
      * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    public readonly attrDbClusterId: any;
+    public readonly attrDbClusterId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterAccessWhiteList`.

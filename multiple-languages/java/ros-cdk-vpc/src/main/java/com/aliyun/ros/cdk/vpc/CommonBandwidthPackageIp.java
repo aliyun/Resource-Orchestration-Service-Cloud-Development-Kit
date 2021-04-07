@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::CommonBandwidthPackageIp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.141Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackageIp")
 public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackageIp`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CommonBandwidthPackageIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.CommonBandwidthPackageIpProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackageIp`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CommonBandwidthPackageIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.CommonBandwidthPackageIpProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllocationIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllocationIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllocationIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllocationIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute IpAddresses: All eip addresses of common bandwidth package.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.CommonBandwidthPackageIp> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,25 +97,41 @@ public class CommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
+         * <p>
          * @return {@code this}
-         * @param bandwidthPackageId This parameter is required.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
             this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }
+        /**
+         * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
+            return this;
+        }
 
         /**
+         * Property eips: List of eip associated with the Internet Shared Bandwidth instance.
+         * <p>
          * @return {@code this}
-         * @param eips This parameter is required.
+         * @param eips Property eips: List of eip associated with the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder eips(final com.aliyun.ros.cdk.core.IResolvable eips) {
             this.props.eips(eips);
             return this;
         }
         /**
+         * Property eips: List of eip associated with the Internet Shared Bandwidth instance.
+         * <p>
          * @return {@code this}
-         * @param eips This parameter is required.
+         * @param eips Property eips: List of eip associated with the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder eips(final java.util.List<? extends java.lang.Object> eips) {
             this.props.eips(eips);

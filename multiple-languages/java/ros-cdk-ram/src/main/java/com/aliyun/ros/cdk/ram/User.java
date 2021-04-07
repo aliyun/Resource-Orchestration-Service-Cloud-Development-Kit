@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.210Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.User")
 public class User extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::User`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public User(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.UserProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::User`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public User(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.UserProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,27 +49,31 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CreateDate: Create date of ram user.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute LastLoginDate: Last login date of ram user.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLastLoginDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrLastLoginDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLastLoginDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrLastLoginDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute UserId: Id of ram user.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute UserName: Name of ram user.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -70,8 +82,8 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.User> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -79,8 +91,8 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -99,52 +111,104 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property userName: Specifies the user name, containing up to 64 characters.
+         * <p>
          * @return {@code this}
-         * @param userName This parameter is required.
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
          */
         public Builder userName(final java.lang.String userName) {
             this.props.userName(userName);
             return this;
         }
+        /**
+         * Property userName: Specifies the user name, containing up to 64 characters.
+         * <p>
+         * @return {@code this}
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
+         */
+        public Builder userName(final com.aliyun.ros.cdk.core.IResolvable userName) {
+            this.props.userName(userName);
+            return this;
+        }
 
         /**
+         * Property comments: Comments of ram user.
+         * <p>
          * @return {@code this}
-         * @param comments This parameter is required.
+         * @param comments Property comments: Comments of ram user. This parameter is required.
          */
         public Builder comments(final java.lang.String comments) {
             this.props.comments(comments);
             return this;
         }
+        /**
+         * Property comments: Comments of ram user.
+         * <p>
+         * @return {@code this}
+         * @param comments Property comments: Comments of ram user. This parameter is required.
+         */
+        public Builder comments(final com.aliyun.ros.cdk.core.IResolvable comments) {
+            this.props.comments(comments);
+            return this;
+        }
 
         /**
+         * Property displayName: Display name, up to 128 characters or Chinese characters.
+         * <p>
          * @return {@code this}
-         * @param displayName This parameter is required.
+         * @param displayName Property displayName: Display name, up to 128 characters or Chinese characters. This parameter is required.
          */
         public Builder displayName(final java.lang.String displayName) {
             this.props.displayName(displayName);
             return this;
         }
+        /**
+         * Property displayName: Display name, up to 128 characters or Chinese characters.
+         * <p>
+         * @return {@code this}
+         * @param displayName Property displayName: Display name, up to 128 characters or Chinese characters. This parameter is required.
+         */
+        public Builder displayName(final com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.props.displayName(displayName);
+            return this;
+        }
 
         /**
+         * Property email: Email of ram user.
+         * <p>
          * @return {@code this}
-         * @param email This parameter is required.
+         * @param email Property email: Email of ram user. This parameter is required.
          */
         public Builder email(final java.lang.String email) {
             this.props.email(email);
             return this;
         }
+        /**
+         * Property email: Email of ram user.
+         * <p>
+         * @return {@code this}
+         * @param email Property email: Email of ram user. This parameter is required.
+         */
+        public Builder email(final com.aliyun.ros.cdk.core.IResolvable email) {
+            this.props.email(email);
+            return this;
+        }
 
         /**
+         * Property groups: A name of a group to which you want to add the user.
+         * <p>
          * @return {@code this}
-         * @param groups This parameter is required.
+         * @param groups Property groups: A name of a group to which you want to add the user. This parameter is required.
          */
         public Builder groups(final java.util.List<? extends java.lang.Object> groups) {
             this.props.groups(groups);
             return this;
         }
         /**
+         * Property groups: A name of a group to which you want to add the user.
+         * <p>
          * @return {@code this}
-         * @param groups This parameter is required.
+         * @param groups Property groups: A name of a group to which you want to add the user. This parameter is required.
          */
         public Builder groups(final com.aliyun.ros.cdk.core.IResolvable groups) {
             this.props.groups(groups);
@@ -152,16 +216,20 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
+         * <p>
          * @return {@code this}
-         * @param loginProfile This parameter is required.
+         * @param loginProfile Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console. This parameter is required.
          */
         public Builder loginProfile(final com.aliyun.ros.cdk.core.IResolvable loginProfile) {
             this.props.loginProfile(loginProfile);
             return this;
         }
         /**
+         * Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
+         * <p>
          * @return {@code this}
-         * @param loginProfile This parameter is required.
+         * @param loginProfile Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console. This parameter is required.
          */
         public Builder loginProfile(final com.aliyun.ros.cdk.ram.RosUser.LoginProfileProperty loginProfile) {
             this.props.loginProfile(loginProfile);
@@ -169,25 +237,41 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property mobilePhone: Phone number of ram user.
+         * <p>
          * @return {@code this}
-         * @param mobilePhone This parameter is required.
+         * @param mobilePhone Property mobilePhone: Phone number of ram user. This parameter is required.
          */
         public Builder mobilePhone(final java.lang.String mobilePhone) {
             this.props.mobilePhone(mobilePhone);
             return this;
         }
+        /**
+         * Property mobilePhone: Phone number of ram user.
+         * <p>
+         * @return {@code this}
+         * @param mobilePhone Property mobilePhone: Phone number of ram user. This parameter is required.
+         */
+        public Builder mobilePhone(final com.aliyun.ros.cdk.core.IResolvable mobilePhone) {
+            this.props.mobilePhone(mobilePhone);
+            return this;
+        }
 
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final com.aliyun.ros.cdk.core.IResolvable policies) {
             this.props.policies(policies);
             return this;
         }
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final java.util.List<? extends java.lang.Object> policies) {
             this.props.policies(policies);

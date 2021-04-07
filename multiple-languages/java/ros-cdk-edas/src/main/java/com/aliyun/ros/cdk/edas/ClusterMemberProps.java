@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::ClusterMember`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.425Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.ClusterMemberProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterMemberProps.Jsii$Proxy.class)
 public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property clusterId: Cluster ID to import ECS instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterId();
 
     /**
+     * Property instanceIds: ECS instance ID list to import.
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getInstanceIds();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
+     * Property password: Password ECS hosts need to import (ECS settings can continue to use purchased).
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPassword();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPassword();
 
     /**
      * @return a {@link Builder} of {@link ClusterMemberProps}
@@ -30,13 +33,13 @@ public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ClusterMemberProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ClusterMemberProps> {
-        private java.lang.String clusterId;
-        private java.util.List<java.lang.String> instanceIds;
-        private java.lang.String password;
+        private java.lang.Object clusterId;
+        private java.lang.Object instanceIds;
+        private java.lang.Object password;
 
         /**
          * Sets the value of {@link ClusterMemberProps#getClusterId}
-         * @param clusterId the value to be set. This parameter is required.
+         * @param clusterId Property clusterId: Cluster ID to import ECS instance. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterId(java.lang.String clusterId) {
@@ -45,21 +48,51 @@ public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link ClusterMemberProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * Sets the value of {@link ClusterMemberProps#getClusterId}
+         * @param clusterId Property clusterId: Cluster ID to import ECS instance. This parameter is required.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<java.lang.String> instanceIds) {
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterMemberProps#getInstanceIds}
+         * @param instanceIds Property instanceIds: ECS instance ID list to import. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.instanceIds = instanceIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterMemberProps#getInstanceIds}
+         * @param instanceIds Property instanceIds: ECS instance ID list to import. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
 
         /**
          * Sets the value of {@link ClusterMemberProps#getPassword}
-         * @param password the value to be set. This parameter is required.
+         * @param password Property password: Password ECS hosts need to import (ECS settings can continue to use purchased). This parameter is required.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterMemberProps#getPassword}
+         * @param password Property password: Password ECS hosts need to import (ECS settings can continue to use purchased). This parameter is required.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
             this.password = password;
             return this;
         }
@@ -80,9 +113,9 @@ public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ClusterMemberProps {
-        private final java.lang.String clusterId;
-        private final java.util.List<java.lang.String> instanceIds;
-        private final java.lang.String password;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object instanceIds;
+        private final java.lang.Object password;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +123,15 @@ public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterId, final java.util.List<java.lang.String> instanceIds, final java.lang.String password) {
+        protected Jsii$Proxy(final java.lang.Object clusterId, final java.lang.Object instanceIds, final java.lang.Object password) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
@@ -106,17 +139,17 @@ public interface ClusterMemberProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getClusterId() {
+        public final java.lang.Object getClusterId() {
             return this.clusterId;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getInstanceIds() {
+        public final java.lang.Object getInstanceIds() {
             return this.instanceIds;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 

@@ -16,17 +16,17 @@ export interface SignatureBindingProps {
     /**
      * Property groupId: The id of group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property signatureId: The id of the Signature.
      */
-    readonly signatureId: string;
+    readonly signatureId: string | ros.IResolvable;
 
     /**
      * Property stageName: Bind signature in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 }
 
 /**

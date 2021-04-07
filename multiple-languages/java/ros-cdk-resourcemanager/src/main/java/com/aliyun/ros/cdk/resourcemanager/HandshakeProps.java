@@ -3,22 +3,27 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Handshake`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.HandshakeProps")
 @software.amazon.jsii.Jsii.Proxy(HandshakeProps.Jsii$Proxy.class)
 public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property targetEntity: Invited account ID or login email.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTargetEntity();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTargetEntity();
 
     /**
+     * Property targetType: Type of account being invited.
+     * <p>
+     * Valid values: Account, Email
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTargetType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTargetType();
 
     /**
+     * Property note: Remarks.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNote() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNote() {
         return null;
     }
 
@@ -32,13 +37,13 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link HandshakeProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<HandshakeProps> {
-        private java.lang.String targetEntity;
-        private java.lang.String targetType;
-        private java.lang.String note;
+        private java.lang.Object targetEntity;
+        private java.lang.Object targetType;
+        private java.lang.Object note;
 
         /**
          * Sets the value of {@link HandshakeProps#getTargetEntity}
-         * @param targetEntity the value to be set. This parameter is required.
+         * @param targetEntity Property targetEntity: Invited account ID or login email. This parameter is required.
          * @return {@code this}
          */
         public Builder targetEntity(java.lang.String targetEntity) {
@@ -47,8 +52,19 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link HandshakeProps#getTargetEntity}
+         * @param targetEntity Property targetEntity: Invited account ID or login email. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder targetEntity(com.aliyun.ros.cdk.core.IResolvable targetEntity) {
+            this.targetEntity = targetEntity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link HandshakeProps#getTargetType}
-         * @param targetType the value to be set. This parameter is required.
+         * @param targetType Property targetType: Type of account being invited. This parameter is required.
+         *                   Valid values: Account, Email
          * @return {@code this}
          */
         public Builder targetType(java.lang.String targetType) {
@@ -57,11 +73,32 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link HandshakeProps#getTargetType}
+         * @param targetType Property targetType: Type of account being invited. This parameter is required.
+         *                   Valid values: Account, Email
+         * @return {@code this}
+         */
+        public Builder targetType(com.aliyun.ros.cdk.core.IResolvable targetType) {
+            this.targetType = targetType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link HandshakeProps#getNote}
-         * @param note the value to be set.
+         * @param note Property note: Remarks.
          * @return {@code this}
          */
         public Builder note(java.lang.String note) {
+            this.note = note;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link HandshakeProps#getNote}
+         * @param note Property note: Remarks.
+         * @return {@code this}
+         */
+        public Builder note(com.aliyun.ros.cdk.core.IResolvable note) {
             this.note = note;
             return this;
         }
@@ -82,9 +119,9 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HandshakeProps {
-        private final java.lang.String targetEntity;
-        private final java.lang.String targetType;
-        private final java.lang.String note;
+        private final java.lang.Object targetEntity;
+        private final java.lang.Object targetType;
+        private final java.lang.Object note;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +129,15 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.targetEntity = software.amazon.jsii.Kernel.get(this, "targetEntity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetType = software.amazon.jsii.Kernel.get(this, "targetType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.note = software.amazon.jsii.Kernel.get(this, "note", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.targetEntity = software.amazon.jsii.Kernel.get(this, "targetEntity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetType = software.amazon.jsii.Kernel.get(this, "targetType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.note = software.amazon.jsii.Kernel.get(this, "note", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String targetEntity, final java.lang.String targetType, final java.lang.String note) {
+        protected Jsii$Proxy(final java.lang.Object targetEntity, final java.lang.Object targetType, final java.lang.Object note) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.targetEntity = java.util.Objects.requireNonNull(targetEntity, "targetEntity is required");
             this.targetType = java.util.Objects.requireNonNull(targetType, "targetType is required");
@@ -108,17 +145,17 @@ public interface HandshakeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTargetEntity() {
+        public final java.lang.Object getTargetEntity() {
             return this.targetEntity;
         }
 
         @Override
-        public final java.lang.String getTargetType() {
+        public final java.lang.Object getTargetType() {
             return this.targetType;
         }
 
         @Override
-        public final java.lang.String getNote() {
+        public final java.lang.Object getNote() {
             return this.note;
         }
 

@@ -8,7 +8,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiInterface(nativeType: typeof(IStackSynthesizer), fullyQualifiedName: "@alicloud/ros-cdk-core.IStackSynthesizer")]
     public interface IStackSynthesizer
     {
-        /// <summary>Bind to the stack this environment is going to be used on&#xD; &#xD; Must be called before any of the other methods are called.</summary>
+        /// <summary>Bind to the stack this environment is going to be used on.</summary>
+        /// <remarks>
+        /// Must be called before any of the other methods are called.
+        /// </remarks>
         [JsiiMethod(name: "bind", parametersJson: "[{\"name\":\"stack\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}}]")]
         void Bind(AlibabaCloud.SDK.ROS.CDK.Core.Stack stack);
         /// <summary>(experimental) Synthesize all artifacts required for the stack into the session.</summary>
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             {
             }
 
-            /// <summary>Bind to the stack this environment is going to be used on&#xD; &#xD; Must be called before any of the other methods are called.</summary>
+            /// <summary>Bind to the stack this environment is going to be used on.</summary>
+            /// <remarks>
+            /// Must be called before any of the other methods are called.
+            /// </remarks>
             [JsiiMethod(name: "bind", parametersJson: "[{\"name\":\"stack\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}}]")]
             public void Bind(AlibabaCloud.SDK.ROS.CDK.Core.Stack stack)
             {

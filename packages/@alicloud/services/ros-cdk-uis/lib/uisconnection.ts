@@ -11,17 +11,17 @@ export interface UisConnectionProps {
     /**
      * Property uisNodeId: Node instance ID.
      */
-    readonly uisNodeId: string;
+    readonly uisNodeId: string | ros.IResolvable;
 
     /**
      * Property uisProtocol: The protocol name used by the software and server. The default value is SSLVPN.
      */
-    readonly uisProtocol: string;
+    readonly uisProtocol: string | ros.IResolvable;
 
     /**
      * Property description: A description of the tunnel connection.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property greConfig: The config for GRE. Item can be overwritten, but removed.
@@ -31,7 +31,7 @@ export interface UisConnectionProps {
     /**
      * Property name: The name of the tunnel connection.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property sslConfig: The config for SSLVPN.
@@ -52,7 +52,7 @@ export class UisConnection extends ros.Resource {
     /**
      * Attribute UisConnectionId: ID of the VPN server. This ID does not distinguish between protocols.
      */
-    public readonly attrUisConnectionId: any;
+    public readonly attrUisConnectionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::UIS::UisConnection`.

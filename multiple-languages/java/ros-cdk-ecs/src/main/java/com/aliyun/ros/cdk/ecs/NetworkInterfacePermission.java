@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::NetworkInterfacePermission`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.246Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfacePermission")
 public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfacePermission`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public NetworkInterfacePermission(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.NetworkInterfacePermissionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfacePermission`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public NetworkInterfacePermission(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.NetworkInterfacePermissionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
+     * Attribute NetworkInterfacePermissionId: the network interface permission id.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfacePermissionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfacePermissionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfacePermissionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfacePermissionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.NetworkInterfacePermission> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,64 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
+         * Property accountId: the account id.
+         * <p>
          * @return {@code this}
-         * @param accountId This parameter is required.
+         * @param accountId Property accountId: the account id. This parameter is required.
          */
         public Builder accountId(final java.lang.String accountId) {
             this.props.accountId(accountId);
             return this;
         }
+        /**
+         * Property accountId: the account id.
+         * <p>
+         * @return {@code this}
+         * @param accountId Property accountId: the account id. This parameter is required.
+         */
+        public Builder accountId(final com.aliyun.ros.cdk.core.IResolvable accountId) {
+            this.props.accountId(accountId);
+            return this;
+        }
 
         /**
+         * Property networkInterfaceId: Network interface id.
+         * <p>
          * @return {@code this}
-         * @param networkInterfaceId This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
          */
         public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * Property networkInterfaceId: Network interface id.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
+         * Property permission: the permission.
+         * <p>
          * @return {@code this}
-         * @param permission This parameter is required.
+         * @param permission Property permission: the permission. This parameter is required.
          */
         public Builder permission(final java.lang.String permission) {
+            this.props.permission(permission);
+            return this;
+        }
+        /**
+         * Property permission: the permission.
+         * <p>
+         * @return {@code this}
+         * @param permission Property permission: the permission. This parameter is required.
+         */
+        public Builder permission(final com.aliyun.ros.cdk.core.IResolvable permission) {
             this.props.permission(permission);
             return this;
         }

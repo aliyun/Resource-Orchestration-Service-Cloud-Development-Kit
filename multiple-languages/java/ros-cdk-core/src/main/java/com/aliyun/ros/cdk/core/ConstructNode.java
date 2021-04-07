@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents the construct node in the scope tree.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.890Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ConstructNode")
 public class ConstructNode extends software.amazon.jsii.JsiiObject {
 
@@ -62,7 +62,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Invokes "validate" on all constructs in the tree (depth-first, pre-order) and returns the list of all errors.
+     * Invokes "validate" on all constructs in the tree (depth-first, pre-order) and returns the list of all errors.
      * <p>
      * An empty list indicates that there are no errors.
      * <p>
@@ -164,7 +164,9 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Return a direct child by id  Throws an error if the child is not found.
+     * Return a direct child by id.
+     * <p>
+     * Throws an error if the child is not found.
      * <p>
      * @return Child with the given id.
      * @param id Identifier of direct child. This parameter is required.
@@ -248,7 +250,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Returns true if this construct or the scopes in which it is defined are locked.
+     * Returns true if this construct or the scopes in which it is defined are locked.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getLocked() {
         return software.amazon.jsii.Kernel.get(this, "locked", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
@@ -282,7 +284,9 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     /**
      * All parent scopes of this construct.
      * <p>
-     * @return a list of parent scopes. The last element in the list will alwaysbe the current construct and the first element will be the root of thetree.
+     * @return a list of parent scopes. The last element in the list will always
+     * be the current construct and the first element will be the root of the
+     * tree.
      */
     public @org.jetbrains.annotations.NotNull java.util.List<com.aliyun.ros.cdk.core.IConstruct> getScopes() {
         return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "scopes", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IConstruct.class))));

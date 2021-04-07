@@ -10,17 +10,17 @@ export interface RosAccessGroupProps {
     /**
      * @Property accessGroupName: Permission group name
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property accessGroupType: Permission group type, including the Vpc and Classic types
      */
-    readonly accessGroupType: string;
+    readonly accessGroupType: string | ros.IResolvable;
 
     /**
      * @Property description: Permission group description. It is the same as the permission group name by default.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -90,7 +90,7 @@ export class RosAccessGroup extends ros.RosResource {
     /**
      * @Attribute AccessGroupName: Permission group name
      */
-    public readonly attrAccessGroupName: any;
+    public readonly attrAccessGroupName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -98,17 +98,17 @@ export class RosAccessGroup extends ros.RosResource {
     /**
      * @Property accessGroupName: Permission group name
      */
-    public accessGroupName: string;
+    public accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property accessGroupType: Permission group type, including the Vpc and Classic types
      */
-    public accessGroupType: string;
+    public accessGroupType: string | ros.IResolvable;
 
     /**
      * @Property description: Permission group description. It is the same as the permission group name by default.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::NAS::AccessGroup`.
@@ -119,7 +119,7 @@ export class RosAccessGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccessGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccessGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccessGroupName = ros.Token.asString(this.getAtt('AccessGroupName'));
+        this.attrAccessGroupName = this.getAtt('AccessGroupName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accessGroupName = props.accessGroupName;
@@ -148,27 +148,27 @@ export interface RosAccessRuleProps {
     /**
      * @Property accessGroupName: Permission group name
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property sourceCidrIp: Address or address segment
      */
-    readonly sourceCidrIp: string;
+    readonly sourceCidrIp: string | ros.IResolvable;
 
     /**
      * @Property priority: Priority level. Range: 1-100. Default value: 1
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * @Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
-    readonly rwAccessType?: string;
+    readonly rwAccessType?: string | ros.IResolvable;
 
     /**
      * @Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
      */
-    readonly userAccessType?: string;
+    readonly userAccessType?: string | ros.IResolvable;
 }
 
 /**
@@ -249,7 +249,7 @@ export class RosAccessRule extends ros.RosResource {
     /**
      * @Attribute AccessRuleId: Rule serial number
      */
-    public readonly attrAccessRuleId: any;
+    public readonly attrAccessRuleId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -257,27 +257,27 @@ export class RosAccessRule extends ros.RosResource {
     /**
      * @Property accessGroupName: Permission group name
      */
-    public accessGroupName: string;
+    public accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property sourceCidrIp: Address or address segment
      */
-    public sourceCidrIp: string;
+    public sourceCidrIp: string | ros.IResolvable;
 
     /**
      * @Property priority: Priority level. Range: 1-100. Default value: 1
      */
-    public priority: number | undefined;
+    public priority: number | ros.IResolvable | undefined;
 
     /**
      * @Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
-    public rwAccessType: string | undefined;
+    public rwAccessType: string | ros.IResolvable | undefined;
 
     /**
      * @Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
      */
-    public userAccessType: string | undefined;
+    public userAccessType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::NAS::AccessRule`.
@@ -288,7 +288,7 @@ export class RosAccessRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccessRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccessRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccessRuleId = ros.Token.asString(this.getAtt('AccessRuleId'));
+        this.attrAccessRuleId = this.getAtt('AccessRuleId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accessGroupName = props.accessGroupName;
@@ -321,29 +321,29 @@ export interface RosFileSystemProps {
     /**
      * @Property protocolType: Type of protocol used. Currently includes the NFS type and the SMB type
      */
-    readonly protocolType: string;
+    readonly protocolType: string | ros.IResolvable;
 
     /**
      * @Property storageType: The file system type. Currently includes the Performance type and the Capacity type
      */
-    readonly storageType: string;
+    readonly storageType: string | ros.IResolvable;
 
     /**
      * @Property bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
      */
-    readonly bandwidth?: number;
+    readonly bandwidth?: number | ros.IResolvable;
 
     /**
      * @Property capacity: File system capacity, the unit is GB. Required and valid when FileSystemType=extreme or cpfs.
      */
-    readonly capacity?: number;
+    readonly capacity?: number | ros.IResolvable;
 
     /**
      * @Property chargeType: Type of payment:
      * PayAsYouGo (pay as you go)
      * Subscription
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property deletionForce: Whether delete all mount targets on the file system and then delete file system. Default is false
@@ -353,45 +353,50 @@ export interface RosFileSystemProps {
     /**
      * @Property description: File system description (space characters are not allowed)
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property duration: The period of subscription in months. Required and valid when ChargeType is Subscription.
      * When the annual and monthly subscription instance expires without renewal, the instance will automatically expire and be released.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * @Property encryptType: Specifies whether to encrypt data. You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
      * 0: specifies that no encryption is applied to data on the file system.
      * 1: specifies that encryption is applied to data on the file system.
      */
-    readonly encryptType?: number;
+    readonly encryptType?: number | ros.IResolvable;
 
     /**
      * @Property fileSystemType: File system type. Allowed values: standard, extreme, cpfs
      */
-    readonly fileSystemType?: string;
+    readonly fileSystemType?: string | ros.IResolvable;
 
     /**
      * @Property snapshotId: Snapshot ID.
      */
-    readonly snapshotId?: string;
+    readonly snapshotId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to filesystem. Max support 20 tags to add during create filesystem. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosFileSystem.TagsProperty[];
 
     /**
      * @Property vpcId: Vpc ID.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: Zone ID.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -432,6 +437,14 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosFileSystem_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosFileSystemProps"');
 }
 
@@ -460,6 +473,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
       EncryptType: ros.numberToRosTemplate(properties.encryptType),
       FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      Tags: ros.listMapper(rosFileSystemTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -483,7 +497,7 @@ export class RosFileSystem extends ros.RosResource {
     /**
      * @Attribute FileSystemId: ID of the file system created
      */
-    public readonly attrFileSystemId: any;
+    public readonly attrFileSystemId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -491,29 +505,29 @@ export class RosFileSystem extends ros.RosResource {
     /**
      * @Property protocolType: Type of protocol used. Currently includes the NFS type and the SMB type
      */
-    public protocolType: string;
+    public protocolType: string | ros.IResolvable;
 
     /**
      * @Property storageType: The file system type. Currently includes the Performance type and the Capacity type
      */
-    public storageType: string;
+    public storageType: string | ros.IResolvable;
 
     /**
      * @Property bandwidth: Maximum file system throughput, unit is MB/s. Required and valid only when FileSystemType=cpfs.
      */
-    public bandwidth: number | undefined;
+    public bandwidth: number | ros.IResolvable | undefined;
 
     /**
      * @Property capacity: File system capacity, the unit is GB. Required and valid when FileSystemType=extreme or cpfs.
      */
-    public capacity: number | undefined;
+    public capacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property chargeType: Type of payment:
      * PayAsYouGo (pay as you go)
      * Subscription
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property deletionForce: Whether delete all mount targets on the file system and then delete file system. Default is false
@@ -523,45 +537,50 @@ export class RosFileSystem extends ros.RosResource {
     /**
      * @Property description: File system description (space characters are not allowed)
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property duration: The period of subscription in months. Required and valid when ChargeType is Subscription.
      * When the annual and monthly subscription instance expires without renewal, the instance will automatically expire and be released.
      */
-    public duration: number | undefined;
+    public duration: number | ros.IResolvable | undefined;
 
     /**
      * @Property encryptType: Specifies whether to encrypt data. You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
      * 0: specifies that no encryption is applied to data on the file system.
      * 1: specifies that encryption is applied to data on the file system.
      */
-    public encryptType: number | undefined;
+    public encryptType: number | ros.IResolvable | undefined;
 
     /**
      * @Property fileSystemType: File system type. Allowed values: standard, extreme, cpfs
      */
-    public fileSystemType: string | undefined;
+    public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
      * @Property snapshotId: Snapshot ID.
      */
-    public snapshotId: string | undefined;
+    public snapshotId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to filesystem. Max support 20 tags to add during create filesystem. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosFileSystem.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: Vpc ID.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: Zone ID.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::NAS::FileSystem`.
@@ -572,7 +591,7 @@ export class RosFileSystem extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosFileSystemProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFileSystem.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrFileSystemId = ros.Token.asString(this.getAtt('FileSystemId'));
+        this.attrFileSystemId = this.getAtt('FileSystemId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.protocolType = props.protocolType;
@@ -586,6 +605,7 @@ export class RosFileSystem extends ros.RosResource {
         this.encryptType = props.encryptType;
         this.fileSystemType = props.fileSystemType;
         this.snapshotId = props.snapshotId;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -605,6 +625,7 @@ export class RosFileSystem extends ros.RosResource {
             encryptType: this.encryptType,
             fileSystemType: this.fileSystemType,
             snapshotId: this.snapshotId,
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
@@ -615,6 +636,54 @@ export class RosFileSystem extends ros.RosResource {
     }
 }
 
+export namespace RosFileSystem {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFileSystem_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::FileSystem.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::FileSystem.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosFileSystemTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFileSystem_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::NAS::MountTarget`
  */
@@ -623,32 +692,32 @@ export interface RosMountTargetProps {
     /**
      * @Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property fileSystemId: File system ID
      */
-    readonly fileSystemId: string;
+    readonly fileSystemId: string | ros.IResolvable;
 
     /**
      * @Property networkType: Network type, including Vpc and Classic networks.
      */
-    readonly networkType: string;
+    readonly networkType: string | ros.IResolvable;
 
     /**
      * @Property status: Status, including Active and Inactive
      */
-    readonly status?: string;
+    readonly status?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC network ID
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -725,7 +794,7 @@ export class RosMountTarget extends ros.RosResource {
     /**
      * @Attribute MountTargetDomain: Mount point domain name
      */
-    public readonly attrMountTargetDomain: any;
+    public readonly attrMountTargetDomain: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -733,32 +802,32 @@ export class RosMountTarget extends ros.RosResource {
     /**
      * @Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
      */
-    public accessGroupName: string;
+    public accessGroupName: string | ros.IResolvable;
 
     /**
      * @Property fileSystemId: File system ID
      */
-    public fileSystemId: string;
+    public fileSystemId: string | ros.IResolvable;
 
     /**
      * @Property networkType: Network type, including Vpc and Classic networks.
      */
-    public networkType: string;
+    public networkType: string | ros.IResolvable;
 
     /**
      * @Property status: Status, including Active and Inactive
      */
-    public status: string | undefined;
+    public status: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: VPC network ID
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::NAS::MountTarget`.
@@ -769,7 +838,7 @@ export class RosMountTarget extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMountTargetProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMountTarget.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMountTargetDomain = ros.Token.asString(this.getAtt('MountTargetDomain'));
+        this.attrMountTargetDomain = this.getAtt('MountTargetDomain');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accessGroupName = props.accessGroupName;

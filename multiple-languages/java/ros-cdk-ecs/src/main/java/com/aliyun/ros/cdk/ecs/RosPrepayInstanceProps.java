@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::PrepayInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosPrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrepayInstanceProps.Jsii$Proxy.class)
 public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getImageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMaxAmount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMaxAmount();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMinAmount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMinAmount();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getPeriod();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPeriod();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPeriodType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPeriodType();
 
     /**
      */
@@ -46,25 +46,25 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDedicatedHostId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -76,43 +76,43 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHostName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHpcClusterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
@@ -124,13 +124,13 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
@@ -142,91 +142,91 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityEnhancementStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityEnhancementStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDiskName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDiskName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskPerformanceLevel() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserData() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -240,45 +240,45 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosPrepayInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPrepayInstanceProps> {
-        private java.lang.String imageId;
-        private java.lang.String instanceType;
-        private java.lang.Number maxAmount;
-        private java.lang.Number minAmount;
-        private java.lang.Number period;
-        private java.lang.String periodType;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceType;
+        private java.lang.Object maxAmount;
+        private java.lang.Object minAmount;
+        private java.lang.Object period;
+        private java.lang.Object periodType;
         private java.lang.Object allocatePublicIp;
         private java.lang.Object autoRenew;
-        private java.lang.Number autoRenewPeriod;
-        private java.lang.String dedicatedHostId;
-        private java.lang.String deploymentSetId;
-        private java.lang.String description;
+        private java.lang.Object autoRenewPeriod;
+        private java.lang.Object dedicatedHostId;
+        private java.lang.Object deploymentSetId;
+        private java.lang.Object description;
         private java.lang.Object diskMappings;
-        private java.lang.String hostName;
-        private java.lang.String hpcClusterId;
-        private java.lang.String instanceChargeType;
-        private java.lang.String instanceName;
-        private java.lang.String internetChargeType;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.Number internetMaxBandwidthOut;
+        private java.lang.Object hostName;
+        private java.lang.Object hpcClusterId;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object instanceName;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object internetMaxBandwidthOut;
         private java.lang.Object ioOptimized;
-        private java.lang.String keyPairName;
-        private java.lang.String password;
+        private java.lang.Object keyPairName;
+        private java.lang.Object password;
         private java.lang.Object passwordInherit;
-        private java.lang.String periodUnit;
-        private java.lang.String privateIpAddress;
-        private java.lang.String ramRoleName;
-        private java.lang.String securityEnhancementStrategy;
-        private java.lang.String securityGroupId;
-        private java.lang.String systemDiskCategory;
-        private java.lang.String systemDiskDescription;
-        private java.lang.String systemDiskDiskName;
-        private java.lang.String systemDiskPerformanceLevel;
-        private java.lang.Number systemDiskSize;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String userData;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object periodUnit;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object securityEnhancementStrategy;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object systemDiskCategory;
+        private java.lang.Object systemDiskDescription;
+        private java.lang.Object systemDiskDiskName;
+        private java.lang.Object systemDiskPerformanceLevel;
+        private java.lang.Object systemDiskSize;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> tags;
+        private java.lang.Object userData;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosPrepayInstanceProps#getImageId}
@@ -286,6 +286,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getImageId}
+         * @param imageId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.imageId = imageId;
             return this;
         }
@@ -301,11 +311,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInstanceType}
+         * @param instanceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getMaxAmount}
          * @param maxAmount the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder maxAmount(java.lang.Number maxAmount) {
+            this.maxAmount = maxAmount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getMaxAmount}
+         * @param maxAmount the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder maxAmount(com.aliyun.ros.cdk.core.IResolvable maxAmount) {
             this.maxAmount = maxAmount;
             return this;
         }
@@ -321,6 +351,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getMinAmount}
+         * @param minAmount the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder minAmount(com.aliyun.ros.cdk.core.IResolvable minAmount) {
+            this.minAmount = minAmount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getPeriod}
          * @param period the value to be set. This parameter is required.
          * @return {@code this}
@@ -331,11 +371,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getPeriod}
+         * @param period the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getPeriodType}
          * @param periodType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder periodType(java.lang.String periodType) {
+            this.periodType = periodType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getPeriodType}
+         * @param periodType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder periodType(com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.periodType = periodType;
             return this;
         }
@@ -391,11 +451,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getDedicatedHostId}
          * @param dedicatedHostId the value to be set.
          * @return {@code this}
          */
         public Builder dedicatedHostId(java.lang.String dedicatedHostId) {
+            this.dedicatedHostId = dedicatedHostId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getDedicatedHostId}
+         * @param dedicatedHostId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
             this.dedicatedHostId = dedicatedHostId;
             return this;
         }
@@ -411,11 +491,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getDeploymentSetId}
+         * @param deploymentSetId the value to be set.
+         * @return {@code this}
+         */
+        public Builder deploymentSetId(com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.deploymentSetId = deploymentSetId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -451,11 +551,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getHostName}
+         * @param hostName the value to be set.
+         * @return {@code this}
+         */
+        public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getHpcClusterId}
          * @param hpcClusterId the value to be set.
          * @return {@code this}
          */
         public Builder hpcClusterId(java.lang.String hpcClusterId) {
+            this.hpcClusterId = hpcClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getHpcClusterId}
+         * @param hpcClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder hpcClusterId(com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.hpcClusterId = hpcClusterId;
             return this;
         }
@@ -471,11 +591,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getInstanceName}
          * @param instanceName the value to be set.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInstanceName}
+         * @param instanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
             return this;
         }
@@ -491,6 +631,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInternetChargeType}
+         * @param internetChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn the value to be set.
          * @return {@code this}
@@ -501,11 +651,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut the value to be set.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
+            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getInternetMaxBandwidthOut}
+         * @param internetMaxBandwidthOut the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
             this.internetMaxBandwidthOut = internetMaxBandwidthOut;
             return this;
         }
@@ -541,11 +711,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getKeyPairName}
+         * @param keyPairName the value to be set.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getPassword}
          * @param password the value to be set.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
             this.password = password;
             return this;
         }
@@ -581,11 +771,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getPrivateIpAddress}
          * @param privateIpAddress the value to be set.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             return this;
         }
@@ -601,11 +811,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getRamRoleName}
+         * @param ramRoleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getSecurityEnhancementStrategy}
          * @param securityEnhancementStrategy the value to be set.
          * @return {@code this}
          */
         public Builder securityEnhancementStrategy(java.lang.String securityEnhancementStrategy) {
+            this.securityEnhancementStrategy = securityEnhancementStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSecurityEnhancementStrategy}
+         * @param securityEnhancementStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityEnhancementStrategy(com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
             this.securityEnhancementStrategy = securityEnhancementStrategy;
             return this;
         }
@@ -621,11 +851,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskCategory}
          * @param systemDiskCategory the value to be set.
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
+            this.systemDiskCategory = systemDiskCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskCategory}
+         * @param systemDiskCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
             this.systemDiskCategory = systemDiskCategory;
             return this;
         }
@@ -641,11 +891,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskDescription}
+         * @param systemDiskDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDescription(com.aliyun.ros.cdk.core.IResolvable systemDiskDescription) {
+            this.systemDiskDescription = systemDiskDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskDiskName}
          * @param systemDiskDiskName the value to be set.
          * @return {@code this}
          */
         public Builder systemDiskDiskName(java.lang.String systemDiskDiskName) {
+            this.systemDiskDiskName = systemDiskDiskName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskDiskName}
+         * @param systemDiskDiskName the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDiskName(com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
             this.systemDiskDiskName = systemDiskDiskName;
             return this;
         }
@@ -661,6 +931,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskPerformanceLevel}
+         * @param systemDiskPerformanceLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskSize}
          * @param systemDiskSize the value to be set.
          * @return {@code this}
@@ -671,13 +951,23 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getSystemDiskSize}
+         * @param systemDiskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty>)tags;
             return this;
         }
 
@@ -687,6 +977,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
          * @return {@code this}
          */
         public Builder userData(java.lang.String userData) {
+            this.userData = userData;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getUserData}
+         * @param userData the value to be set.
+         * @return {@code this}
+         */
+        public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
             this.userData = userData;
             return this;
         }
@@ -702,6 +1002,16 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
@@ -712,11 +1022,31 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosPrepayInstanceProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayInstanceProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayInstanceProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -737,45 +1067,45 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosPrepayInstanceProps {
-        private final java.lang.String imageId;
-        private final java.lang.String instanceType;
-        private final java.lang.Number maxAmount;
-        private final java.lang.Number minAmount;
-        private final java.lang.Number period;
-        private final java.lang.String periodType;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object maxAmount;
+        private final java.lang.Object minAmount;
+        private final java.lang.Object period;
+        private final java.lang.Object periodType;
         private final java.lang.Object allocatePublicIp;
         private final java.lang.Object autoRenew;
-        private final java.lang.Number autoRenewPeriod;
-        private final java.lang.String dedicatedHostId;
-        private final java.lang.String deploymentSetId;
-        private final java.lang.String description;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object dedicatedHostId;
+        private final java.lang.Object deploymentSetId;
+        private final java.lang.Object description;
         private final java.lang.Object diskMappings;
-        private final java.lang.String hostName;
-        private final java.lang.String hpcClusterId;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String instanceName;
-        private final java.lang.String internetChargeType;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.Number internetMaxBandwidthOut;
+        private final java.lang.Object hostName;
+        private final java.lang.Object hpcClusterId;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object internetMaxBandwidthOut;
         private final java.lang.Object ioOptimized;
-        private final java.lang.String keyPairName;
-        private final java.lang.String password;
+        private final java.lang.Object keyPairName;
+        private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
-        private final java.lang.String periodUnit;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String securityEnhancementStrategy;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String systemDiskCategory;
-        private final java.lang.String systemDiskDescription;
-        private final java.lang.String systemDiskDiskName;
-        private final java.lang.String systemDiskPerformanceLevel;
-        private final java.lang.Number systemDiskSize;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String userData;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object securityEnhancementStrategy;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskDescription;
+        private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskPerformanceLevel;
+        private final java.lang.Object systemDiskSize;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> tags;
+        private final java.lang.Object userData;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -783,52 +1113,52 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maxAmount = software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.minAmount = software.amazon.jsii.Kernel.get(this, "minAmount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxAmount = software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minAmount = software.amazon.jsii.Kernel.get(this, "minAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicIp = software.amazon.jsii.Kernel.get(this, "allocatePublicIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty.class)));
+            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String imageId, final java.lang.String instanceType, final java.lang.Number maxAmount, final java.lang.Number minAmount, final java.lang.Number period, final java.lang.String periodType, final java.lang.Object allocatePublicIp, final java.lang.Object autoRenew, final java.lang.Number autoRenewPeriod, final java.lang.String dedicatedHostId, final java.lang.String deploymentSetId, final java.lang.String description, final java.lang.Object diskMappings, final java.lang.String hostName, final java.lang.String hpcClusterId, final java.lang.String instanceChargeType, final java.lang.String instanceName, final java.lang.String internetChargeType, final java.lang.Number internetMaxBandwidthIn, final java.lang.Number internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.String keyPairName, final java.lang.String password, final java.lang.Object passwordInherit, final java.lang.String periodUnit, final java.lang.String privateIpAddress, final java.lang.String ramRoleName, final java.lang.String securityEnhancementStrategy, final java.lang.String securityGroupId, final java.lang.String systemDiskCategory, final java.lang.String systemDiskDescription, final java.lang.String systemDiskDiskName, final java.lang.String systemDiskPerformanceLevel, final java.lang.Number systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String userData, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object maxAmount, final java.lang.Object minAmount, final java.lang.Object period, final java.lang.Object periodType, final java.lang.Object allocatePublicIp, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object dedicatedHostId, final java.lang.Object deploymentSetId, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object hostName, final java.lang.Object hpcClusterId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object password, final java.lang.Object passwordInherit, final java.lang.Object periodUnit, final java.lang.Object privateIpAddress, final java.lang.Object ramRoleName, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> tags, final java.lang.Object userData, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
             this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
@@ -864,7 +1194,7 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.systemDiskDiskName = systemDiskDiskName;
             this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
             this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty>)tags;
             this.userData = userData;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
@@ -872,32 +1202,32 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.Number getMaxAmount() {
+        public final java.lang.Object getMaxAmount() {
             return this.maxAmount;
         }
 
         @Override
-        public final java.lang.Number getMinAmount() {
+        public final java.lang.Object getMinAmount() {
             return this.minAmount;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodType() {
+        public final java.lang.Object getPeriodType() {
             return this.periodType;
         }
 
@@ -912,22 +1242,22 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.Number getAutoRenewPeriod() {
+        public final java.lang.Object getAutoRenewPeriod() {
             return this.autoRenewPeriod;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostId() {
+        public final java.lang.Object getDedicatedHostId() {
             return this.dedicatedHostId;
         }
 
         @Override
-        public final java.lang.String getDeploymentSetId() {
+        public final java.lang.Object getDeploymentSetId() {
             return this.deploymentSetId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -937,37 +1267,37 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getHostName() {
+        public final java.lang.Object getHostName() {
             return this.hostName;
         }
 
         @Override
-        public final java.lang.String getHpcClusterId() {
+        public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthOut() {
+        public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
 
@@ -977,12 +1307,12 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
@@ -992,77 +1322,77 @@ public interface RosPrepayInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getPeriodUnit() {
+        public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getSecurityEnhancementStrategy() {
+        public final java.lang.Object getSecurityEnhancementStrategy() {
             return this.securityEnhancementStrategy;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSystemDiskCategory() {
+        public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDescription() {
+        public final java.lang.Object getSystemDiskDescription() {
             return this.systemDiskDescription;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDiskName() {
+        public final java.lang.Object getSystemDiskDiskName() {
             return this.systemDiskDiskName;
         }
 
         @Override
-        public final java.lang.String getSystemDiskPerformanceLevel() {
+        public final java.lang.Object getSystemDiskPerformanceLevel() {
             return this.systemDiskPerformanceLevel;
         }
 
         @Override
-        public final java.lang.Number getSystemDiskSize() {
+        public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstance.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getUserData() {
+        public final java.lang.Object getUserData() {
             return this.userData;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

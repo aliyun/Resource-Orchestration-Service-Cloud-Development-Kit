@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public interface IManagedPolicyProps
     {
         /// <summary>Property policyName: Specifies the authorization policy name, containing up to 128 characters.</summary>
-        [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-        string PolicyName
+        [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PolicyName
         {
             get;
         }
 
         /// <summary>Property description: Specifies the authorization policy description, containing up to 1024 characters.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -93,18 +93,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <summary>Property policyName: Specifies the authorization policy name, containing up to 128 characters.</summary>
-            [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-            public string PolicyName
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PolicyName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Specifies the authorization policy description, containing up to 1024 characters.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property groups: The names of groups to attach to this policy.</summary>

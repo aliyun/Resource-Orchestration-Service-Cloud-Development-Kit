@@ -14,12 +14,17 @@ export interface ProjectProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosProject.TagsProperty[];
 }
 
 /**
@@ -35,7 +40,7 @@ export class Project extends ros.Resource {
     /**
      * Attribute Name: Project name.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Project`.
@@ -49,6 +54,7 @@ export class Project extends ros.Resource {
 
         const rosProject = new RosProject(this, id,  {
             description: props.description,
+            tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosProject;

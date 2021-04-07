@@ -11,32 +11,32 @@ export interface AliasProps {
     /**
      * Property aliasName: Alias name
      */
-    readonly aliasName: string;
+    readonly aliasName: string | ros.IResolvable;
 
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property additionalVersion: Additional version
      */
-    readonly additionalVersion?: string;
+    readonly additionalVersion?: string | ros.IResolvable;
 
     /**
      * Property additionalWeight: Traffic weight of additional version. From 0 to 100.
      */
-    readonly additionalWeight?: number;
+    readonly additionalWeight?: number | ros.IResolvable;
 
     /**
      * Property description: Version description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property versionId: Version ID
      */
-    readonly versionId?: string;
+    readonly versionId?: string | ros.IResolvable;
 }
 
 /**
@@ -52,17 +52,17 @@ export class Alias extends ros.Resource {
     /**
      * Attribute AliasName: The alias name
      */
-    public readonly attrAliasName: any;
+    public readonly attrAliasName: ros.IResolvable;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: any;
+    public readonly attrVersionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::Alias`.

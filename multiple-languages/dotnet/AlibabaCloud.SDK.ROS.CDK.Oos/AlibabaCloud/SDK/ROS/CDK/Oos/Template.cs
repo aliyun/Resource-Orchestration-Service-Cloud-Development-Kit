@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <summary>Attribute ExecutionPolicy: Execution Policy.</summary>
-        [JsiiProperty(name: "attrExecutionPolicy", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrExecutionPolicy
+        [JsiiProperty(name: "attrExecutionPolicy", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExecutionPolicy
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TemplateId: Template ID.</summary>
-        [JsiiProperty(name: "attrTemplateId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTemplateId
+        [JsiiProperty(name: "attrTemplateId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTemplateId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TemplateName: Template Name.</summary>
-        [JsiiProperty(name: "attrTemplateName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTemplateName
+        [JsiiProperty(name: "attrTemplateName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTemplateName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

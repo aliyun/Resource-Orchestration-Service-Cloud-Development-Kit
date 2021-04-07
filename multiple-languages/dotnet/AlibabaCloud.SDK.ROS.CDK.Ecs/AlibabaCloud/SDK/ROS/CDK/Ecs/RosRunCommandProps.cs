@@ -18,8 +18,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
         /// Each custom parameter key cannot exceed 64 bytes.
         /// </remarks>
-        [JsiiProperty(name: "commandContent", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CommandContent
+        [JsiiProperty(name: "commandContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CommandContent
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: The instance id list. Select up to 20 instances at a time.Instances status must be running.
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object InstanceIds
         {
             get;
             set;
@@ -41,8 +41,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// RunPowerShellScript: PowerShell scripts for Windows instances
         /// RunShellScript: shell scripts for Linux instances
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Type
         {
             get;
             set;
@@ -55,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "contentEncoding", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ContentEncoding
+        [JsiiProperty(name: "contentEncoding", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ContentEncoding
         {
             get;
             set;
@@ -66,8 +66,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: description: The description of the script, which supports all character sets. It can be up to 512 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -90,8 +90,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// The parameter value follows the cron expression. For more information, see Configure scheduled commands.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "frequency", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Frequency
+        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Frequency
         {
             get;
             set;
@@ -115,8 +115,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;
@@ -158,8 +158,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: 60.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Timeout
         {
             get;
             set;
@@ -172,8 +172,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "workingDir", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? WorkingDir
+        [JsiiProperty(name: "workingDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? WorkingDir
         {
             get;
             set;

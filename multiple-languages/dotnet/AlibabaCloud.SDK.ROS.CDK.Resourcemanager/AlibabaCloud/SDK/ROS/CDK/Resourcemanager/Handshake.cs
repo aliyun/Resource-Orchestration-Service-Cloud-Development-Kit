@@ -33,55 +33,55 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Attribute HandshakeId: This ID of Resource Manager handshake.</summary>
-        [JsiiProperty(name: "attrHandshakeId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHandshakeId
+        [JsiiProperty(name: "attrHandshakeId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHandshakeId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MasterAccountId: Resource account master account ID.</summary>
-        [JsiiProperty(name: "attrMasterAccountId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterAccountId
+        [JsiiProperty(name: "attrMasterAccountId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterAccountId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MasterAccountName: The name of the main account of the resource directory.</summary>
-        [JsiiProperty(name: "attrMasterAccountName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterAccountName
+        [JsiiProperty(name: "attrMasterAccountName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterAccountName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Note: Remarks.</summary>
-        [JsiiProperty(name: "attrNote", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNote
+        [JsiiProperty(name: "attrNote", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNote
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ResourceDirectoryId: Resource directory ID.</summary>
-        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrResourceDirectoryId
+        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceDirectoryId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TargetEntity: Invited account ID or login email.</summary>
-        [JsiiProperty(name: "attrTargetEntity", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTargetEntity
+        [JsiiProperty(name: "attrTargetEntity", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTargetEntity
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TargetType: Type of account being invited.</summary>
         /// <remarks>
         /// Valid values: Account, Email
         /// </remarks>
-        [JsiiProperty(name: "attrTargetType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTargetType
+        [JsiiProperty(name: "attrTargetType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTargetType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

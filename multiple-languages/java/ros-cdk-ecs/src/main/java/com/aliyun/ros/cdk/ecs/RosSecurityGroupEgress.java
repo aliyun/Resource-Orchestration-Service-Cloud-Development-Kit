@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.367Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupEgress")
 public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -48,14 +48,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -63,8 +63,8 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getIpProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getPortRange() {
-        return software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIpProtocol(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipProtocol", java.util.Objects.requireNonNull(value, "ipProtocol is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPortRange() {
+        return software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPortRange(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "portRange", java.util.Objects.requireNonNull(value, "portRange is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestCidrIp() {
-        return software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestCidrIp() {
+        return software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestCidrIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destCidrIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +147,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestGroupOwnerId() {
-        return software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerId() {
+        return software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +165,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getIpv6DestCidrIp() {
-        return software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestGroupOwnerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destGroupOwnerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +183,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNicType() {
-        return software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIpv6DestCidrIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6DestCidrIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNicType() {
+        return software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +201,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPolicy() {
-        return software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNicType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "nicType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +219,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
-        return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "policy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
+        return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,13 +237,25 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPriority(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "priority", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
     }
 
@@ -227,12 +293,28 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.ipProtocol(ipProtocol);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ipProtocol This parameter is required.
+         */
+        public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
+            this.props.ipProtocol(ipProtocol);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param portRange This parameter is required.
          */
         public Builder portRange(final java.lang.String portRange) {
+            this.props.portRange(portRange);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param portRange This parameter is required.
+         */
+        public Builder portRange(final com.aliyun.ros.cdk.core.IResolvable portRange) {
             this.props.portRange(portRange);
             return this;
         }
@@ -245,12 +327,28 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destCidrIp This parameter is required.
          */
         public Builder destCidrIp(final java.lang.String destCidrIp) {
+            this.props.destCidrIp(destCidrIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destCidrIp This parameter is required.
+         */
+        public Builder destCidrIp(final com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
             this.props.destCidrIp(destCidrIp);
             return this;
         }
@@ -263,12 +361,28 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.destGroupId(destGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destGroupId This parameter is required.
+         */
+        public Builder destGroupId(final com.aliyun.ros.cdk.core.IResolvable destGroupId) {
+            this.props.destGroupId(destGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destGroupOwnerId This parameter is required.
          */
         public Builder destGroupOwnerId(final java.lang.String destGroupOwnerId) {
+            this.props.destGroupOwnerId(destGroupOwnerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destGroupOwnerId This parameter is required.
+         */
+        public Builder destGroupOwnerId(final com.aliyun.ros.cdk.core.IResolvable destGroupOwnerId) {
             this.props.destGroupOwnerId(destGroupOwnerId);
             return this;
         }
@@ -281,12 +395,28 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.ipv6DestCidrIp(ipv6DestCidrIp);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ipv6DestCidrIp This parameter is required.
+         */
+        public Builder ipv6DestCidrIp(final com.aliyun.ros.cdk.core.IResolvable ipv6DestCidrIp) {
+            this.props.ipv6DestCidrIp(ipv6DestCidrIp);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param nicType This parameter is required.
          */
         public Builder nicType(final java.lang.String nicType) {
+            this.props.nicType(nicType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nicType This parameter is required.
+         */
+        public Builder nicType(final com.aliyun.ros.cdk.core.IResolvable nicType) {
             this.props.nicType(nicType);
             return this;
         }
@@ -299,6 +429,14 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.policy(policy);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param policy This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.props.policy(policy);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -308,12 +446,28 @@ public class RosSecurityGroupEgress extends com.aliyun.ros.cdk.core.RosResource 
             this.props.priority(priority);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param priority This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param securityGroupId This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }

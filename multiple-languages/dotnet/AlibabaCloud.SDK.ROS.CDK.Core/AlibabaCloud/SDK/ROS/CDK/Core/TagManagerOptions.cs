@@ -8,8 +8,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiByValue(fqn: "@alicloud/ros-cdk-core.TagManagerOptions")]
     public class TagManagerOptions : AlibabaCloud.SDK.ROS.CDK.Core.ITagManagerOptions
     {
-        /// <summary>The name of the property in ROS for these tags&#xD; &#xD; Normally this is `tags`, but Cognito UserPool uses UserPoolTags.</summary>
+        /// <summary>The name of the property in ROS for these tags.</summary>
         /// <remarks>
+        /// Normally this is <c>tags</c>, but Cognito UserPool uses UserPoolTags
+        ///
         /// <strong>Default</strong>: "tags"
         /// </remarks>
         [JsiiOptional]

@@ -3,54 +3,60 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.453Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCommonBandwidthPackageProps.Jsii$Proxy.class)
 public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIsp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRatio() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRatio() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZone() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
         return null;
     }
 
@@ -64,14 +70,15 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
      * A builder for {@link RosCommonBandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCommonBandwidthPackageProps> {
-        private java.lang.Number bandwidth;
-        private java.lang.String description;
-        private java.lang.String internetChargeType;
-        private java.lang.String isp;
-        private java.lang.String name;
-        private java.lang.Number ratio;
-        private java.lang.String resourceGroupId;
-        private java.lang.String zone;
+        private java.lang.Object bandwidth;
+        private java.lang.Object description;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object isp;
+        private java.lang.Object name;
+        private java.lang.Object ratio;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags;
+        private java.lang.Object zone;
 
         /**
          * Sets the value of {@link RosCommonBandwidthPackageProps#getBandwidth}
@@ -79,6 +86,16 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getBandwidth}
+         * @param bandwidth the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.bandwidth = bandwidth;
             return this;
         }
@@ -94,11 +111,31 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommonBandwidthPackageProps#getInternetChargeType}
          * @param internetChargeType the value to be set.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getInternetChargeType}
+         * @param internetChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.internetChargeType = internetChargeType;
             return this;
         }
@@ -114,11 +151,31 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getIsp}
+         * @param isp the value to be set.
+         * @return {@code this}
+         */
+        public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommonBandwidthPackageProps#getName}
          * @param name the value to be set.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -134,12 +191,43 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getRatio}
+         * @param ratio the value to be set.
+         * @return {@code this}
+         */
+        public Builder ratio(com.aliyun.ros.cdk.core.IResolvable ratio) {
+            this.ratio = ratio;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommonBandwidthPackageProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty>)tags;
             return this;
         }
 
@@ -154,13 +242,23 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosCommonBandwidthPackageProps#getZone}
+         * @param zone the value to be set.
+         * @return {@code this}
+         */
+        public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosCommonBandwidthPackageProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosCommonBandwidthPackageProps build() {
-            return new Jsii$Proxy(bandwidth, description, internetChargeType, isp, name, ratio, resourceGroupId, zone);
+            return new Jsii$Proxy(bandwidth, description, internetChargeType, isp, name, ratio, resourceGroupId, tags, zone);
         }
     }
 
@@ -169,14 +267,15 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCommonBandwidthPackageProps {
-        private final java.lang.Number bandwidth;
-        private final java.lang.String description;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String isp;
-        private final java.lang.String name;
-        private final java.lang.Number ratio;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String zone;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object description;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object isp;
+        private final java.lang.Object name;
+        private final java.lang.Object ratio;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags;
+        private final java.lang.Object zone;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -184,20 +283,22 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ratio = software.amazon.jsii.Kernel.get(this, "ratio", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ratio = software.amazon.jsii.Kernel.get(this, "ratio", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty.class)));
+            this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number bandwidth, final java.lang.String description, final java.lang.String internetChargeType, final java.lang.String isp, final java.lang.String name, final java.lang.Number ratio, final java.lang.String resourceGroupId, final java.lang.String zone) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object description, final java.lang.Object internetChargeType, final java.lang.Object isp, final java.lang.Object name, final java.lang.Object ratio, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags, final java.lang.Object zone) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
             this.description = description;
@@ -206,46 +307,52 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             this.name = name;
             this.ratio = ratio;
             this.resourceGroupId = resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty>)tags;
             this.zone = zone;
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getIsp() {
+        public final java.lang.Object getIsp() {
             return this.isp;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getRatio() {
+        public final java.lang.Object getRatio() {
             return this.ratio;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getZone() {
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getZone() {
             return this.zone;
         }
 
@@ -273,6 +380,9 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getZone() != null) {
                 data.set("zone", om.valueToTree(this.getZone()));
@@ -302,6 +412,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.ratio != null ? !this.ratio.equals(that.ratio) : that.ratio != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.zone != null ? this.zone.equals(that.zone) : that.zone == null;
         }
 
@@ -314,6 +425,7 @@ public interface RosCommonBandwidthPackageProps extends software.amazon.jsii.Jsi
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.ratio != null ? this.ratio.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
             return result;
         }

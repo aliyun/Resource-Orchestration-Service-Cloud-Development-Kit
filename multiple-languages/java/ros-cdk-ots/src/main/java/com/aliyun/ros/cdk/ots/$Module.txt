@@ -1,8 +1,10 @@
 @alicloud/ros-cdk-ots.Instance=com.aliyun.ros.cdk.ots.Instance
 @alicloud/ros-cdk-ots.InstanceProps=com.aliyun.ros.cdk.ots.InstanceProps
 @alicloud/ros-cdk-ots.RosInstance=com.aliyun.ros.cdk.ots.RosInstance
+@alicloud/ros-cdk-ots.RosInstance.TagsProperty=com.aliyun.ros.cdk.ots.RosInstance$TagsProperty
 @alicloud/ros-cdk-ots.RosInstanceProps=com.aliyun.ros.cdk.ots.RosInstanceProps
 @alicloud/ros-cdk-ots.RosSearchIndex=com.aliyun.ros.cdk.ots.RosSearchIndex
+@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$FieldSchemasProperty
 @alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$FieldSortProperty
 @alicloud/ros-cdk-ots.RosSearchIndex.GeoDistanceSortProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$GeoDistanceSortProperty
 @alicloud/ros-cdk-ots.RosSearchIndex.IndexSettingProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$IndexSettingProperty
@@ -10,6 +12,7 @@
 @alicloud/ros-cdk-ots.RosSearchIndex.PrimaryKeySortProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$PrimaryKeySortProperty
 @alicloud/ros-cdk-ots.RosSearchIndex.ScoreSortProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$ScoreSortProperty
 @alicloud/ros-cdk-ots.RosSearchIndex.SortersProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$SortersProperty
+@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty=com.aliyun.ros.cdk.ots.RosSearchIndex$SubFieldSchemasProperty
 @alicloud/ros-cdk-ots.RosSearchIndexProps=com.aliyun.ros.cdk.ots.RosSearchIndexProps
 @alicloud/ros-cdk-ots.RosTable=com.aliyun.ros.cdk.ots.RosTable
 @alicloud/ros-cdk-ots.RosTable.ColumnsProperty=com.aliyun.ros.cdk.ots.RosTable$ColumnsProperty

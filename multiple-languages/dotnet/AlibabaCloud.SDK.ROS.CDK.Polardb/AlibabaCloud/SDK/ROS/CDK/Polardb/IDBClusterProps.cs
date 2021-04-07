@@ -12,15 +12,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// For more information, see Specifications and pricing.
         /// </remarks>
-        [JsiiProperty(name: "dbNodeClass", typeJson: "{\"primitive\":\"string\"}")]
-        string DbNodeClass
+        [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbNodeClass
         {
             get;
         }
 
         /// <summary>Property dbType: Database type, value: MySQL PostgreSQL Oracle.</summary>
-        [JsiiProperty(name: "dbType", typeJson: "{\"primitive\":\"string\"}")]
-        string DbType
+        [JsiiProperty(name: "dbType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbType
         {
             get;
         }
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// PostgreSQL: 11
         /// Oracle: 11
         /// </remarks>
-        [JsiiProperty(name: "dbVersion", typeJson: "{\"primitive\":\"string\"}")]
-        string DbVersion
+        [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbVersion
         {
             get;
         }
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Postpaid: pay-as-you-go
         /// Prepaid: subscription
         /// </remarks>
-        [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}")]
-        string PayType
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PayType
         {
             get;
         }
@@ -54,9 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
         /// </remarks>
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? AutoRenewPeriod
+        object? AutoRenewPeriod
         {
             get
             {
@@ -71,9 +71,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
         /// Note: This parameter takes effect only when the value of DBType is MySQL.
         /// </remarks>
-        [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? BackupRetentionPolicyOnClusterDeletion
+        object? BackupRetentionPolicyOnClusterDeletion
         {
             get
             {
@@ -93,9 +93,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
         /// If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
         /// </remarks>
-        [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? CloneDataPoint
+        object? CloneDataPoint
         {
             get
             {
@@ -107,9 +107,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Currently, only VPC is supported. Default value: VPC.
         /// </remarks>
-        [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ClusterNetworkType
+        object? ClusterNetworkType
         {
             get
             {
@@ -121,9 +121,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// The value could be Normal (standard version).
         /// </remarks>
-        [JsiiProperty(name: "creationCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? CreationCategory
+        object? CreationCategory
         {
             get
             {
@@ -145,9 +145,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
         /// When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
         /// </remarks>
-        [JsiiProperty(name: "creationOption", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "creationOption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? CreationOption
+        object? CreationOption
         {
             get
             {
@@ -163,9 +163,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// It cannot start with http:// or https://.
         /// It must be 2 to 256 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DbClusterDescription
+        object? DbClusterDescription
         {
             get
             {
@@ -190,9 +190,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Other pickable value range is from -12:00 to +13:00, for example, 00:00.
         /// Note: This parameter takes effect only when DBType is MySQL.
         /// </remarks>
-        [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DefaultTimeZone
+        object? DefaultTimeZone
         {
             get
             {
@@ -204,9 +204,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Note: This parameter is required when the CreationOption is CreateGdnStandby.
         /// </remarks>
-        [JsiiProperty(name: "gdnId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "gdnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GdnId
+        object? GdnId
         {
             get
             {
@@ -218,9 +218,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Note: This parameter takes effect only when the value of DBType is MySQL.
         /// </remarks>
-        [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? LowerCaseTableNames
+        object? LowerCaseTableNames
         {
             get
             {
@@ -232,9 +232,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
         /// </remarks>
-        [JsiiProperty(name: "maintainTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "maintainTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MaintainTime
+        object? MaintainTime
         {
             get
             {
@@ -246,9 +246,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Period
+        object? Period
         {
             get
             {
@@ -265,9 +265,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// but only sends an SMS message three days before the cluster expires to remind you
         /// that the cluster is not renewed.
         /// </remarks>
-        [JsiiProperty(name: "renewalStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "renewalStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RenewalStatus
+        object? RenewalStatus
         {
             get
             {
@@ -276,9 +276,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -290,9 +290,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// You can add up to three security groups to a cluster.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? SecurityGroupIds
+        object? SecurityGroupIds
         {
             get
             {
@@ -301,9 +301,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Property securityIpList: The whitelist of the Apsara PolarDB cluster.</summary>
-        [JsiiProperty(name: "securityIpList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityIpList
+        object? SecurityIpList
         {
             get
             {
@@ -317,9 +317,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
         /// This parameter is required if the CreationOption parameter is not set to Normal.
         /// </remarks>
-        [JsiiProperty(name: "sourceResourceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SourceResourceId
+        object? SourceResourceId
         {
             get
             {
@@ -331,9 +331,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty[]? Tags
         {
             get
             {
@@ -359,9 +359,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Property vpcId: The ID of the VPC to connect to.</summary>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VpcId
+        object? VpcId
         {
             get
             {
@@ -370,9 +370,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Property vSwitchId: The ID of the VSwitch to connect to.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -384,9 +384,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// You can call the DescribeRegions operation to query available zones.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ZoneId
+        object? ZoneId
         {
             get
             {
@@ -406,17 +406,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// <remarks>
             /// For more information, see Specifications and pricing.
             /// </remarks>
-            [JsiiProperty(name: "dbNodeClass", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbNodeClass
+            [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbNodeClass
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbType: Database type, value: MySQL PostgreSQL Oracle.</summary>
-            [JsiiProperty(name: "dbType", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbType
+            [JsiiProperty(name: "dbType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbVersion: The version of the database.</summary>
@@ -426,10 +426,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// PostgreSQL: 11
             /// Oracle: 11
             /// </remarks>
-            [JsiiProperty(name: "dbVersion", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbVersion
+            [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbVersion
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property payType: The billing method of the cluster.</summary>
@@ -438,10 +438,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Postpaid: pay-as-you-go
             /// Prepaid: subscription
             /// </remarks>
-            [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}")]
-            public string PayType
+            [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PayType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property autoRenewPeriod: Set the cluster auto renewal time.</summary>
@@ -449,10 +449,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? AutoRenewPeriod
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently.</summary>
@@ -463,10 +463,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note: This parameter takes effect only when the value of DBType is MySQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? BackupRetentionPolicyOnClusterDeletion
+            [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackupRetentionPolicyOnClusterDeletion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property cloneDataPoint: The time point of data to be cloned.</summary>
@@ -482,10 +482,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? CloneDataPoint
+            [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloneDataPoint
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property clusterNetworkType: The network type of the cluster.</summary>
@@ -493,10 +493,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Currently, only VPC is supported. Default value: VPC.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ClusterNetworkType
+            [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ClusterNetworkType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property creationCategory: Cluster series.</summary>
@@ -504,10 +504,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// The value could be Normal (standard version).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "creationCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? CreationCategory
+            [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreationCategory
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property creationOption: The method for creating an ApsaraDB for POLARDB cluster.</summary>
@@ -525,10 +525,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "creationOption", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? CreationOption
+            [JsiiProperty(name: "creationOption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CreationOption
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dbClusterDescription: The description of the cluster.</summary>
@@ -540,10 +540,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// It must be 2 to 256 characters in length.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DbClusterDescription
+            [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbClusterDescription
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dbClusterParameters: Modifies the parameters of a the PolarDB cluster.</summary>
@@ -561,10 +561,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note: This parameter takes effect only when DBType is MySQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DefaultTimeZone
+            [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DefaultTimeZone
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property gdnId: The ID of the Global Database Network (GDN).</summary>
@@ -572,10 +572,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note: This parameter is required when the CreationOption is CreateGdnStandby.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "gdnId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GdnId
+            [JsiiProperty(name: "gdnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GdnId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows: 1: Not case sensitive0: case sensitive The default value is 1.</summary>
@@ -583,10 +583,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note: This parameter takes effect only when the value of DBType is MySQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? LowerCaseTableNames
+            [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LowerCaseTableNames
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property maintainTime: The maintainable time of the cluster: Format: HH: mmZ- HH: mmZ.</summary>
@@ -594,10 +594,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maintainTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MaintainTime
+            [JsiiProperty(name: "maintainTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaintainTime
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property period: The subscription period of the cluster in month.</summary>
@@ -605,10 +605,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property renewalStatus: The auto renewal status of the cluster Valid values: AutoRenewal: automatically renews the cluster.</summary>
@@ -621,18 +621,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// that the cluster is not renewed.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "renewalStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RenewalStatus
+            [JsiiProperty(name: "renewalStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RenewalStatus
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityGroupIds: The ID of the security group.</summary>
@@ -640,18 +640,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// You can add up to three security groups to a cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? SecurityGroupIds
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecurityGroupIds
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityIpList: The whitelist of the Apsara PolarDB cluster.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "securityIpList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityIpList
+            [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityIpList
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.</summary>
@@ -661,10 +661,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// This parameter is required if the CreationOption parameter is not set to Normal.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sourceResourceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SourceResourceId
+            [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SourceResourceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to instance.</summary>
@@ -672,10 +672,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty[]?>();
             }
 
             /// <summary>Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).</summary>
@@ -694,18 +694,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
             /// <summary>Property vpcId: The ID of the VPC to connect to.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchId: The ID of the VSwitch to connect to.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property zoneId: The zone ID of the cluster.</summary>
@@ -713,10 +713,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// You can call the DescribeRegions operation to query available zones.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

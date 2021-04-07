@@ -11,7 +11,7 @@ export interface AccessKeyProps {
     /**
      * Property userName: Specifies the user name, containing up to 64 characters.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 }
 
 /**
@@ -27,17 +27,17 @@ export class AccessKey extends ros.Resource {
     /**
      * Attribute AccessKeyId: Id of access key.
      */
-    public readonly attrAccessKeyId: any;
+    public readonly attrAccessKeyId: ros.IResolvable;
 
     /**
      * Attribute AccessKeySecret: Secret of access key.
      */
-    public readonly attrAccessKeySecret: any;
+    public readonly attrAccessKeySecret: ros.IResolvable;
 
     /**
      * Attribute Status: Status of access key.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::AccessKey`.

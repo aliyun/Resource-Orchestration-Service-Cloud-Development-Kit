@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Attribute</strong>: ListenerPortsAndProtocol: The collection of listener.
         /// </remarks>
-        [JsiiProperty(name: "attrListenerPortsAndProtocol", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerPortsAndProtocol
+        [JsiiProperty(name: "attrListenerPortsAndProtocol", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerPortsAndProtocol
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: LoadBalancerId: The id of load balancer
         /// </remarks>
-        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLoadBalancerId
+        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLoadBalancerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,20 +71,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: backendServerPort: Backend server can listen on ports from 1 to 65535.
         /// </remarks>
-        [JsiiProperty(name: "backendServerPort", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double BackendServerPort
+        [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BackendServerPort
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
         /// </remarks>
-        [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Bandwidth
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Bandwidth
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -96,32 +96,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: listenerPort: Port for front listener. Range from 1 to 65535.
+        /// <strong>Property</strong>: listenerPort: Port for front listener. Range from 0 to 65535.
         /// </remarks>
-        [JsiiProperty(name: "listenerPort", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double ListenerPort
+        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ListenerPort
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The id of load balancer to create listener.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LoadBalancerId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp.
         /// </remarks>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Protocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// If the value of the AclStatus parameter is on, this parameter is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AclId
+        [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AclId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -142,10 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// Valid values: on | off. Default value: off
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aclStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AclStatus
+        [JsiiProperty(name: "aclStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AclStatus
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -157,14 +157,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// If you enable a whitelist without adding any IP addresses in the list, no requests are forwarded.
         /// * black: Indicates a blacklist. Requests from IP addresses or CIDR blocks in the selected access control lists are not forwarded (that is, they are blocked). This applies to scenarios in which an application only denies access from specific IP addresses.
         /// If you enable a blacklist without adding any IP addresses in the list, all requests are forwarded.
-        /// 
+        ///
         /// If the value of the AclStatus parameter is on, this parameter is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aclType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AclType
+        [JsiiProperty(name: "aclType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AclType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -172,10 +172,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: caCertificateId: CA server certificate id, for https listener only.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "caCertificateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? CaCertificateId
+        [JsiiProperty(name: "caCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CaCertificateId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
+        {
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -205,10 +216,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: idleTimeout: Specify the idle connection timeout in seconds. Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "idleTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? IdleTimeout
+        [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? IdleTimeout
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -216,10 +227,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "masterSlaveServerGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MasterSlaveServerGroupId
+        [JsiiProperty(name: "masterSlaveServerGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MasterSlaveServerGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -235,24 +246,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
+        /// <strong>Property</strong>: portRange: Port range, only supports TCP or UDP listener. ListenerPort should be 0 when PortRange is specified.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "requestTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? RequestTimeout
+        [JsiiProperty(name: "portRange", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.PortRangeProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? PortRange
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scheduler: The scheduler algorithm. Support 'wrr' or 'wlc' only, default is 'wrr'
+        /// <strong>Property</strong>: requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "scheduler", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Scheduler
+        [JsiiProperty(name: "requestTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RequestTimeout
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: scheduler: The scheduling algorithm. Valid values:
+        /// wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+        /// wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+        /// rr: Requests are distributed to backend servers in sequence.
+        /// sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+        /// tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+        /// Default: wrr
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "scheduler", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Scheduler
+        {
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -260,10 +288,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: serverCertificateId: Server certificate id, for https listener only, this properties is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ServerCertificateId
+        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ServerCertificateId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -271,10 +299,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: vServerGroupId: The id of the VServerGroup which use in listener.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vServerGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VServerGroupId
+        [JsiiProperty(name: "vServerGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VServerGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IHealthCheckProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosListener.HealthCheckProperty")]
@@ -283,9 +311,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: domain: The domain of health check target.
             /// </remarks>
-            [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Domain
+            object? Domain
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+            /// </remarks>
+            [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? HealthCheckType
             {
                 get
                 {
@@ -296,9 +337,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: healthyThreshold: The number of consecutive health checks successes required,before identified the backend server in Healthy status.
             /// </remarks>
-            [JsiiProperty(name: "healthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "healthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? HealthyThreshold
+            object? HealthyThreshold
             {
                 get
                 {
@@ -309,9 +350,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: httpCode: The expect status of health check result. Any answer other than referred status within the timeout period is considered unhealthy.
             /// </remarks>
-            [JsiiProperty(name: "httpCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "httpCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? HttpCode
+            object? HttpCode
             {
                 get
                 {
@@ -322,9 +363,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: interval: The approximate interval, unit in seconds, between health checks of an backend server.
             /// </remarks>
-            [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Interval
+            object? Interval
             {
                 get
                 {
@@ -335,9 +376,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: port: The port being checked. The range of valid ports is 0 through 65535.
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Port
+            object? Port
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
+            /// Currently only valid for http or https protocol.
+            /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
+            /// </remarks>
+            [JsiiProperty(name: "switch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Switch
             {
                 get
                 {
@@ -348,9 +404,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: timeout: The amount of time, in seconds, during which no response means a failed health check.
             /// </remarks>
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Timeout
+            object? Timeout
             {
                 get
                 {
@@ -361,9 +417,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
             /// </remarks>
-            [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? UnhealthyThreshold
+            object? UnhealthyThreshold
             {
                 get
                 {
@@ -374,9 +430,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: uri: The url of health check target.
             /// </remarks>
-            [JsiiProperty(name: "uri", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Uri
+            object? Uri
             {
                 get
                 {
@@ -395,80 +451,102 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// <strong>Property</strong>: domain: The domain of health check target.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Domain
+                [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Domain
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HealthCheckType
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: healthyThreshold: The number of consecutive health checks successes required,before identified the backend server in Healthy status.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "healthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? HealthyThreshold
+                [JsiiProperty(name: "healthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HealthyThreshold
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: httpCode: The expect status of health check result. Any answer other than referred status within the timeout period is considered unhealthy.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "httpCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? HttpCode
+                [JsiiProperty(name: "httpCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HttpCode
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: interval: The approximate interval, unit in seconds, between health checks of an backend server.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Interval
+                [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Interval
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: port: The port being checked. The range of valid ports is 0 through 65535.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Port
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Port
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
+                /// Currently only valid for http or https protocol.
+                /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "switch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Switch
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: timeout: The amount of time, in seconds, during which no response means a failed health check.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Timeout
+                [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Timeout
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? UnhealthyThreshold
+                [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? UnhealthyThreshold
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: uri: The url of health check target.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "uri", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Uri
+                [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Uri
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -479,8 +557,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: domain: The domain of health check target.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Domain
+            [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Domain
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HealthCheckType
             {
                 get;
                 set;
@@ -490,8 +579,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: healthyThreshold: The number of consecutive health checks successes required,before identified the backend server in Healthy status.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "healthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? HealthyThreshold
+            [JsiiProperty(name: "healthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HealthyThreshold
             {
                 get;
                 set;
@@ -501,8 +590,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: httpCode: The expect status of health check result. Any answer other than referred status within the timeout period is considered unhealthy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "httpCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? HttpCode
+            [JsiiProperty(name: "httpCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HttpCode
             {
                 get;
                 set;
@@ -512,8 +601,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: interval: The approximate interval, unit in seconds, between health checks of an backend server.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Interval
+            [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Interval
             {
                 get;
                 set;
@@ -523,8 +612,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: port: The port being checked. The range of valid ports is 0 through 65535.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Port
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: switch: Whether to enable health check. Valid value: on, off.
+            /// Currently only valid for http or https protocol.
+            /// If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "switch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Switch
             {
                 get;
                 set;
@@ -534,8 +636,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: timeout: The amount of time, in seconds, during which no response means a failed health check.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Timeout
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Timeout
             {
                 get;
                 set;
@@ -545,8 +647,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? UnhealthyThreshold
+            [JsiiProperty(name: "unhealthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? UnhealthyThreshold
             {
                 get;
                 set;
@@ -556,8 +658,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: uri: The url of health check target.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "uri", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Uri
+            [JsiiProperty(name: "uri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Uri
             {
                 get;
                 set;
@@ -570,9 +672,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: forwardPort: HTTP to HTTPS listening forwarding port.
             /// Default value: 443.
             /// </remarks>
-            [JsiiProperty(name: "forwardPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "forwardPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? ForwardPort
+            object? ForwardPort
             {
                 get
                 {
@@ -584,9 +686,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: listenerForward: Whether to enable HTTP to HTTPS forwarding.
             /// Valid values: on | off. Default value: off.
             /// </remarks>
-            [JsiiProperty(name: "listenerForward", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "listenerForward", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ListenerForward
+            object? ListenerForward
             {
                 get
                 {
@@ -606,10 +708,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// Default value: 443.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "forwardPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? ForwardPort
+                [JsiiProperty(name: "forwardPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ForwardPort
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -617,10 +719,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// Valid values: on | off. Default value: off.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "listenerForward", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ListenerForward
+                [JsiiProperty(name: "listenerForward", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ListenerForward
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -632,8 +734,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// Default value: 443.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "forwardPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? ForwardPort
+            [JsiiProperty(name: "forwardPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ForwardPort
             {
                 get;
                 set;
@@ -644,8 +746,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// Valid values: on | off. Default value: off.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "listenerForward", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ListenerForward
+            [JsiiProperty(name: "listenerForward", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ListenerForward
             {
                 get;
                 set;
@@ -657,9 +759,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: cookie: The type of session persistence.
             /// </remarks>
-            [JsiiProperty(name: "cookie", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Cookie
+            object? Cookie
             {
                 get
                 {
@@ -670,9 +772,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: cookieTimeout: The timeout for cookie setting, in seconds. It only take effect while StickySession is setting to 'on' and StickySessionType is setting to 'insert'.
             /// </remarks>
-            [JsiiProperty(name: "cookieTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? CookieTimeout
+            object? CookieTimeout
             {
                 get
                 {
@@ -683,9 +785,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: persistenceTimeout: The timeout number of persistence, in seconds.
             /// </remarks>
-            [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? PersistenceTimeout
+            object? PersistenceTimeout
             {
                 get
                 {
@@ -696,9 +798,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: stickySession: The switch of session persistence. Support 'on' and 'off'.
             /// </remarks>
-            [JsiiProperty(name: "stickySession", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "stickySession", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? StickySession
+            object? StickySession
             {
                 get
                 {
@@ -709,9 +811,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: stickySessionType: The type of session persistence. Depends on parameter StickySession, if it is set to off, this parameter will be ignored.
             /// </remarks>
-            [JsiiProperty(name: "stickySessionType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? StickySessionType
+            object? StickySessionType
             {
                 get
                 {
@@ -722,9 +824,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: xForwardedFor: Use 'X-Forwarded-For' to get real ip of accessor. On for open, off for close.
             /// </remarks>
-            [JsiiProperty(name: "xForwardedFor", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "xForwardedFor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? XForwardedFor
+            object? XForwardedFor
             {
                 get
                 {
@@ -735,9 +837,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: xForwardedForProto: Optional. Indicates whether to use the X-Forwarded-Proto header field to obtainthe listening protocol used by the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
             /// </remarks>
-            [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? XForwardedForProto
+            object? XForwardedForProto
             {
                 get
                 {
@@ -748,9 +850,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: xForwardedForSlbid: Optional. Indicates whether to use the SLB-ID header field to obtain the SLB instance ID. Valid values: on | off. Default value: off If you do not set this parameter, the default value is used.
             /// </remarks>
-            [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? XForwardedForSlbid
+            object? XForwardedForSlbid
             {
                 get
                 {
@@ -761,9 +863,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: xForwardedForSlbip: Optional. Indicates whether to use the SLB-IP header field to obtainthe real IP address of a client request.Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
             /// </remarks>
-            [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? XForwardedForSlbip
+            object? XForwardedForSlbip
             {
                 get
                 {
@@ -782,90 +884,90 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// <strong>Property</strong>: cookie: The type of session persistence.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "cookie", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Cookie
+                [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Cookie
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: cookieTimeout: The timeout for cookie setting, in seconds. It only take effect while StickySession is setting to 'on' and StickySessionType is setting to 'insert'.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "cookieTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? CookieTimeout
+                [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CookieTimeout
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: persistenceTimeout: The timeout number of persistence, in seconds.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? PersistenceTimeout
+                [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PersistenceTimeout
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: stickySession: The switch of session persistence. Support 'on' and 'off'.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "stickySession", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? StickySession
+                [JsiiProperty(name: "stickySession", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StickySession
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: stickySessionType: The type of session persistence. Depends on parameter StickySession, if it is set to off, this parameter will be ignored.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "stickySessionType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? StickySessionType
+                [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StickySessionType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: xForwardedFor: Use 'X-Forwarded-For' to get real ip of accessor. On for open, off for close.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "xForwardedFor", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? XForwardedFor
+                [JsiiProperty(name: "xForwardedFor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedFor
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: xForwardedForProto: Optional. Indicates whether to use the X-Forwarded-Proto header field to obtainthe listening protocol used by the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? XForwardedForProto
+                [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedForProto
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: xForwardedForSlbid: Optional. Indicates whether to use the SLB-ID header field to obtain the SLB instance ID. Valid values: on | off. Default value: off If you do not set this parameter, the default value is used.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? XForwardedForSlbid
+                [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedForSlbid
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: xForwardedForSlbip: Optional. Indicates whether to use the SLB-IP header field to obtainthe real IP address of a client request.Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? XForwardedForSlbip
+                [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedForSlbip
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -876,8 +978,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: cookie: The type of session persistence.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cookie", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Cookie
+            [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Cookie
             {
                 get;
                 set;
@@ -887,8 +989,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: cookieTimeout: The timeout for cookie setting, in seconds. It only take effect while StickySession is setting to 'on' and StickySessionType is setting to 'insert'.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cookieTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? CookieTimeout
+            [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CookieTimeout
             {
                 get;
                 set;
@@ -898,8 +1000,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: persistenceTimeout: The timeout number of persistence, in seconds.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? PersistenceTimeout
+            [JsiiProperty(name: "persistenceTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PersistenceTimeout
             {
                 get;
                 set;
@@ -909,8 +1011,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: stickySession: The switch of session persistence. Support 'on' and 'off'.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stickySession", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? StickySession
+            [JsiiProperty(name: "stickySession", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? StickySession
             {
                 get;
                 set;
@@ -920,8 +1022,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: stickySessionType: The type of session persistence. Depends on parameter StickySession, if it is set to off, this parameter will be ignored.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "stickySessionType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? StickySessionType
+            [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? StickySessionType
             {
                 get;
                 set;
@@ -931,8 +1033,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: xForwardedFor: Use 'X-Forwarded-For' to get real ip of accessor. On for open, off for close.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "xForwardedFor", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? XForwardedFor
+            [JsiiProperty(name: "xForwardedFor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? XForwardedFor
             {
                 get;
                 set;
@@ -942,8 +1044,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: xForwardedForProto: Optional. Indicates whether to use the X-Forwarded-Proto header field to obtainthe listening protocol used by the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? XForwardedForProto
+            [JsiiProperty(name: "xForwardedForProto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? XForwardedForProto
             {
                 get;
                 set;
@@ -953,8 +1055,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: xForwardedForSlbid: Optional. Indicates whether to use the SLB-ID header field to obtain the SLB instance ID. Valid values: on | off. Default value: off If you do not set this parameter, the default value is used.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? XForwardedForSlbid
+            [JsiiProperty(name: "xForwardedForSlbid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? XForwardedForSlbid
             {
                 get;
                 set;
@@ -964,8 +1066,80 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: xForwardedForSlbip: Optional. Indicates whether to use the SLB-IP header field to obtainthe real IP address of a client request.Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? XForwardedForSlbip
+            [JsiiProperty(name: "xForwardedForSlbip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? XForwardedForSlbip
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IPortRangeProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosListener.PortRangeProperty")]
+        public interface IPortRangeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: endPort: End port, from 1 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "endPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object EndPort
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: startPort: Start port, from 1 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "startPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object StartPort
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IPortRangeProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosListener.PortRangeProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.IPortRangeProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: endPort: End port, from 1 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "endPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object EndPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: startPort: Start port, from 1 to 65535.
+                /// </remarks>
+                [JsiiProperty(name: "startPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object StartPort
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosListener.PortRangeProperty")]
+        public class PortRangeProperty : AlibabaCloud.SDK.ROS.CDK.Slb.RosListener.IPortRangeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: endPort: End port, from 1 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "endPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object EndPort
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: startPort: Start port, from 1 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "startPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object StartPort
             {
                 get;
                 set;

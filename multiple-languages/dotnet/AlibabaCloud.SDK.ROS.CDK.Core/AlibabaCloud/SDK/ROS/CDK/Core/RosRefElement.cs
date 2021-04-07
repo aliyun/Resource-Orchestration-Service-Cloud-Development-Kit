@@ -4,7 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Base class for referenceable template constructs which are not Resources&#xD; &#xD; These constructs are things like Conditions and Parameters, can be&#xD; referenced by taking the `.ref` attribute.&#xD; &#xD; Resource constructs do not inherit from RosRefElement because they have their&#xD; own, more specific types returned from the .ref attribute. Also, some&#xD; resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).</summary>
+    /// <summary>Base class for referenceable template constructs which are not Resources.</summary>
+    /// <remarks>
+    /// These constructs are things like Conditions and Parameters, can be
+    /// referenced by taking the <c>.ref</c> attribute.
+    ///
+    /// Resource constructs do not inherit from RosRefElement because they have their
+    /// own, more specific types returned from the .ref attribute. Also, some
+    /// resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosRefElement), fullyQualifiedName: "@alicloud/ros-cdk-core.RosRefElement", parametersJson: "[{\"docs\":{\"summary\":\"The parent construct.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}}]")]
     public abstract class RosRefElement : AlibabaCloud.SDK.ROS.CDK.Core.RosElement
     {
@@ -42,7 +50,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<string>()!;
         }
 
-        /// <summary>Base class for referenceable template constructs which are not Resources&#xD; &#xD; These constructs are things like Conditions and Parameters, can be&#xD; referenced by taking the `.ref` attribute.&#xD; &#xD; Resource constructs do not inherit from RosRefElement because they have their&#xD; own, more specific types returned from the .ref attribute. Also, some&#xD; resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).</summary>
+        /// <summary>Base class for referenceable template constructs which are not Resources.</summary>
+        /// <remarks>
+        /// These constructs are things like Conditions and Parameters, can be
+        /// referenced by taking the <c>.ref</c> attribute.
+        ///
+        /// Resource constructs do not inherit from RosRefElement because they have their
+        /// own, more specific types returned from the .ref attribute. Also, some
+        /// resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosRefElement), fullyQualifiedName: "@alicloud/ros-cdk-core.RosRefElement")]
         new internal sealed class _Proxy : AlibabaCloud.SDK.ROS.CDK.Core.RosRefElement
         {

@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     public interface IDBNodesProps
     {
         /// <summary>Property amount: Number of nodes to be added to cluster.</summary>
-        [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}")]
-        double Amount
+        [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Amount
         {
             get;
         }
 
         /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.</summary>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbClusterId
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <summary>Property amount: Number of nodes to be added to cluster.</summary>
-            [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}")]
-            public double Amount
+            [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Amount
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.</summary>
-            [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbClusterId
+            [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

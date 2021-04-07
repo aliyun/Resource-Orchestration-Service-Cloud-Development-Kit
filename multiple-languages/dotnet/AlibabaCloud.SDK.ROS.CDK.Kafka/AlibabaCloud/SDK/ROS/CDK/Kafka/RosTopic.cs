@@ -48,19 +48,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// <strong>Attribute</strong>: InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
         /// You can call the GetInstanceList operation to query instances.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Topic: Topic name.
         /// </remarks>
-        [JsiiProperty(name: "attrTopic", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopic
+        [JsiiProperty(name: "attrTopic", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopic
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// <strong>Property</strong>: instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
         /// You can call the GetInstanceList operation to query instances.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// The value can only contain letters, digits, hyphens (-), and underscores (_).
         /// The value must be 3 to 64 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Remark
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Remark
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -107,10 +107,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// if it contains more characters.
         /// The name cannot be modified after being created.
         /// </remarks>
-        [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Topic
+        [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Topic
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -121,10 +121,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// risk of data skew.Note:For special requirements,submit a ticket.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "partitionNum", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? PartitionNum
+        [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PartitionNum
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

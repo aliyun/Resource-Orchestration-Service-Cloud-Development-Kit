@@ -11,7 +11,7 @@ export interface NamespaceProps {
     /**
      * Property name: Namespace name
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -27,12 +27,12 @@ export class Namespace extends ros.Resource {
     /**
      * Attribute Endpoint: Endpoint
      */
-    public readonly attrEndpoint: any;
+    public readonly attrEndpoint: ros.IResolvable;
 
     /**
      * Attribute NamespaceId: ID namespace
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ACM::Namespace`.

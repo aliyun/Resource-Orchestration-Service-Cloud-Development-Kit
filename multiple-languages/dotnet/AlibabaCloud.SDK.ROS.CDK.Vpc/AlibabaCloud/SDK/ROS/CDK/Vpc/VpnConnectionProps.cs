@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public class VpnConnectionProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IVpnConnectionProps
     {
         /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
-        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CustomerGatewayId
+        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CustomerGatewayId
         {
             get;
             set;
@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
         /// </remarks>
-        [JsiiProperty(name: "localSubnet", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LocalSubnet
+        [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LocalSubnet
         {
             get;
             set;
@@ -33,16 +33,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
         /// </remarks>
-        [JsiiProperty(name: "remoteSubnet", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RemoteSubnet
+        [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RemoteSubnet
         {
             get;
             set;
         }
 
         /// <summary>Property vpnGatewayId: ID of the VPN gateway.</summary>
-        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VpnGatewayId
+        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VpnGatewayId
         {
             get;
             set;
@@ -94,8 +94,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;

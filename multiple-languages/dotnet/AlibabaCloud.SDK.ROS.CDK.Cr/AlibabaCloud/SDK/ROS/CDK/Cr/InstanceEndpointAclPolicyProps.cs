@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     public class InstanceEndpointAclPolicyProps : AlibabaCloud.SDK.ROS.CDK.Cr.IInstanceEndpointAclPolicyProps
     {
         /// <summary>Property entry: The IP address range that is allowed to access the instance.</summary>
-        [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Entry
+        [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Entry
         {
             get;
             set;
         }
 
         /// <summary>Property instanceId: The ID of the instance.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceId
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 
         /// <summary>Property comment: The description of the entry.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Comment
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Comment
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 
         /// <summary>Property endpointType: The type of the endpoint.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "endpointType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EndpointType
+        [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EndpointType
         {
             get;
             set;
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// values: Registry and Chart.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "moduleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ModuleName
+        [JsiiProperty(name: "moduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ModuleName
         {
             get;
             set;
@@ -62,8 +62,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// Default is current region.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RegionId
         {
             get;
             set;

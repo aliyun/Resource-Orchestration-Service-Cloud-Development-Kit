@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::EIPAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.143Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPAssociation")
 public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::EIPAssociation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public EIPAssociation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.EIPAssociationProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::EIPAssociation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public EIPAssociation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.EIPAssociationProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,19 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC.
+     * <p>
+     * Returned only for VPC elastic IP addresses.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllocationId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllocationId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllocationId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute EipAddress: IP address of created EIP.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEipAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrEipAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEipAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrEipAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +70,8 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.EIPAssociation> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +79,8 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,37 +99,101 @@ public class EIPAssociation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property allocationId: EIP instance id to bind.
+         * <p>
          * @return {@code this}
-         * @param allocationId This parameter is required.
+         * @param allocationId Property allocationId: EIP instance id to bind. This parameter is required.
          */
         public Builder allocationId(final java.lang.String allocationId) {
             this.props.allocationId(allocationId);
             return this;
         }
+        /**
+         * Property allocationId: EIP instance id to bind.
+         * <p>
+         * @return {@code this}
+         * @param allocationId Property allocationId: EIP instance id to bind. This parameter is required.
+         */
+        public Builder allocationId(final com.aliyun.ros.cdk.core.IResolvable allocationId) {
+            this.props.allocationId(allocationId);
+            return this;
+        }
 
         /**
+         * Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property mode: The mode of association.
+         * <p>
+         * Valid values:
+         * NAT(Default): NAT mode.
+         * BINDED: Cut-through mode.
+         * MULTI_BINDED: Multi-EIP to ENI mode.
+         * This is required only when the value of InstanceType is NetworkInterface.
+         * <p>
          * @return {@code this}
-         * @param mode This parameter is required.
+         * @param mode Property mode: The mode of association. This parameter is required.
          */
         public Builder mode(final java.lang.String mode) {
             this.props.mode(mode);
             return this;
         }
+        /**
+         * Property mode: The mode of association.
+         * <p>
+         * Valid values:
+         * NAT(Default): NAT mode.
+         * BINDED: Cut-through mode.
+         * MULTI_BINDED: Multi-EIP to ENI mode.
+         * This is required only when the value of InstanceType is NetworkInterface.
+         * <p>
+         * @return {@code this}
+         * @param mode Property mode: The mode of association. This parameter is required.
+         */
+        public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.props.mode(mode);
+            return this;
+        }
 
         /**
+         * Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
+         * <p>
+         * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
+         * <p>
          * @return {@code this}
-         * @param privateIpAddress This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: An IP address in the CIDR block of the VSwitch. This parameter is required.
          */
         public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
+         * <p>
+         * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: An IP address in the CIDR block of the VSwitch. This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
             return this;
         }

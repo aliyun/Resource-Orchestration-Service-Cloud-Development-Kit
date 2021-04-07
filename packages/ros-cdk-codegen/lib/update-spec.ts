@@ -66,10 +66,6 @@ export function specGenerator() {
                 case 'list':
                   Property.Type = 'List';
                   if (Schema) {
-                    if (propertyName === 'Tags') {
-                      Property.ItemType = 'Tag';
-                      continue;
-                    }
                     if (Schema['*']['Schema']) {
                       Property.ItemType = propertyName;
                       queueNext[`${type}.${propertyName}`] = Schema['*']['Schema'];
@@ -78,22 +74,15 @@ export function specGenerator() {
                         Properties: Schema,
                       };
                     } else if (Schema['*']['Type'] === 'map') {
-                      Property.PrimitiveItemType = 'Any';
+                      Property.PrimitiveItemType = 'AnyDict';
                     } else {
-                      Property.PrimitiveItemType = initialToUpperCase(
-                        Schema['*']['Type'] === 'integer' ? 'number' : Schema['*']['Type'],
-                      );
+                      Property.PrimitiveItemType = initialToUpperCase(Schema['*']['Type']);
                     }
                   } else {
                     Property.PrimitiveItemType = 'Any';
                   }
                   break;
                 case 'map':
-                  if (propertyName === 'Tags') {
-                    Property.ItemType = 'Tag';
-                    Property.Type = 'List';
-                    continue;
-                  }
                   if (Schema) {
                     Property.Type = propertyName;
                     queueNext[`${type}.${propertyName}`] = Schema;

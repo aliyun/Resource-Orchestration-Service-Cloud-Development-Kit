@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <summary>Attribute FileSystemId: ID of the file system created.</summary>
-        [JsiiProperty(name: "attrFileSystemId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFileSystemId
+        [JsiiProperty(name: "attrFileSystemId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFileSystemId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

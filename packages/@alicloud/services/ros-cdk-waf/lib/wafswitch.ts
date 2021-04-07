@@ -11,27 +11,27 @@ export interface WafSwitchProps {
     /**
      * Property domain: Domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property serviceOn: Web attack protection switch, the value of:
      * 0: closed.
      * 1: indicate on.
      */
-    readonly serviceOn: number;
+    readonly serviceOn: number | ros.IResolvable;
 
     /**
      * Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    readonly region?: string;
+    readonly region?: string | ros.IResolvable;
 }
 
 /**

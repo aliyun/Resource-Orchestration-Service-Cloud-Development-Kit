@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Attribute</strong>: Arns: The ARN list of targets
         /// </remarks>
-        [JsiiProperty(name: "attrArns", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArns
+        [JsiiProperty(name: "attrArns", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArns
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Ids: The ID list of targets
         /// </remarks>
-        [JsiiProperty(name: "attrIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIds
+        [JsiiProperty(name: "attrIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,10 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: ruleId: The ID of the alert rule.
         /// </remarks>
-        [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string RuleId
+        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object RuleId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -109,8 +109,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// {Resource name}: the name of a queue if the resource type is queues, or the name of
             /// a topic if the type is topics.
             /// </remarks>
-            [JsiiProperty(name: "arn", typeJson: "{\"primitive\":\"string\"}")]
-            string Arn
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Arn
             {
                 get;
             }
@@ -118,8 +118,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
-            string Id
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Id
             {
                 get;
             }
@@ -130,9 +130,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// WARN
             /// CRITICAL
             /// </remarks>
-            [JsiiProperty(name: "level", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "level", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Level
+            object? Level
             {
                 get
                 {
@@ -159,19 +159,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// {Resource name}: the name of a queue if the resource type is queues, or the name of
                 /// a topic if the type is topics.
                 /// </remarks>
-                [JsiiProperty(name: "arn", typeJson: "{\"primitive\":\"string\"}")]
-                public string Arn
+                [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Arn
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
                 /// </remarks>
-                [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
-                public string Id
+                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Id
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -181,10 +181,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// CRITICAL
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "level", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Level
+                [JsiiProperty(name: "level", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Level
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -205,8 +205,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// {Resource name}: the name of a queue if the resource type is queues, or the name of
             /// a topic if the type is topics.
             /// </remarks>
-            [JsiiProperty(name: "arn", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Arn
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Arn
             {
                 get;
                 set;
@@ -215,8 +215,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Id
+            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Id
             {
                 get;
                 set;
@@ -229,8 +229,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// CRITICAL
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "level", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Level
+            [JsiiProperty(name: "level", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Level
             {
                 get;
                 set;

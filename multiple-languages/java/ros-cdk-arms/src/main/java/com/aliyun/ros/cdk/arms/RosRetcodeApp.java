@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS template type:  `ALIYUN::ARMS::RetcodeApp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.174Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosRetcodeApp")
 public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPid() {
-        return software.amazon.jsii.Kernel.get(this, "attrPid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPid() {
+        return software.amazon.jsii.Kernel.get(this, "attrPid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppName() {
-        return software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "regionId", java.util.Objects.requireNonNull(value, "regionId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppName() {
+        return software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +99,25 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppType() {
-        return software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRetcodeAppName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "retcodeAppName", java.util.Objects.requireNonNull(value, "retcodeAppName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppType() {
+        return software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRetcodeAppType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "retcodeAppType", java.util.Objects.requireNonNull(value, "retcodeAppType is required"));
+    }
+
+    /**
+     */
+    public void setRetcodeAppType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "retcodeAppType", java.util.Objects.requireNonNull(value, "retcodeAppType is required"));
     }
 
@@ -137,6 +155,14 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
             this.props.regionId(regionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param regionId This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -146,12 +172,28 @@ public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
             this.props.retcodeAppName(retcodeAppName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param retcodeAppName This parameter is required.
+         */
+        public Builder retcodeAppName(final com.aliyun.ros.cdk.core.IResolvable retcodeAppName) {
+            this.props.retcodeAppName(retcodeAppName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param retcodeAppType This parameter is required.
          */
         public Builder retcodeAppType(final java.lang.String retcodeAppType) {
+            this.props.retcodeAppType(retcodeAppType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param retcodeAppType This parameter is required.
+         */
+        public Builder retcodeAppType(final com.aliyun.ros.cdk.core.IResolvable retcodeAppType) {
             this.props.retcodeAppType(retcodeAppType);
             return this;
         }

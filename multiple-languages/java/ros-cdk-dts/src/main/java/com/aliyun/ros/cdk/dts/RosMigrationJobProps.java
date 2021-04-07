@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::MigrationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.467Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.106Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosMigrationJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosMigrationJobProps.Jsii$Proxy.class)
 public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getMigrationJobClass();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMigrationJobClass();
 
     /**
      */
@@ -20,7 +20,7 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMigrationJobName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMigrationJobName() {
         return null;
     }
 
@@ -52,9 +52,9 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosMigrationJobProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMigrationJobProps> {
-        private java.lang.String migrationJobClass;
+        private java.lang.Object migrationJobClass;
         private java.lang.Object destinationEndpoint;
-        private java.lang.String migrationJobName;
+        private java.lang.Object migrationJobName;
         private java.lang.Object migrationMode;
         private java.lang.Object migrationObject;
         private java.lang.Object sourceEndpoint;
@@ -65,6 +65,16 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder migrationJobClass(java.lang.String migrationJobClass) {
+            this.migrationJobClass = migrationJobClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMigrationJobProps#getMigrationJobClass}
+         * @param migrationJobClass the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder migrationJobClass(com.aliyun.ros.cdk.core.IResolvable migrationJobClass) {
             this.migrationJobClass = migrationJobClass;
             return this;
         }
@@ -95,6 +105,16 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder migrationJobName(java.lang.String migrationJobName) {
+            this.migrationJobName = migrationJobName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMigrationJobProps#getMigrationJobName}
+         * @param migrationJobName the value to be set.
+         * @return {@code this}
+         */
+        public Builder migrationJobName(com.aliyun.ros.cdk.core.IResolvable migrationJobName) {
             this.migrationJobName = migrationJobName;
             return this;
         }
@@ -175,9 +195,9 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMigrationJobProps {
-        private final java.lang.String migrationJobClass;
+        private final java.lang.Object migrationJobClass;
         private final java.lang.Object destinationEndpoint;
-        private final java.lang.String migrationJobName;
+        private final java.lang.Object migrationJobName;
         private final java.lang.Object migrationMode;
         private final java.lang.Object migrationObject;
         private final java.lang.Object sourceEndpoint;
@@ -188,9 +208,9 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.migrationJobClass = software.amazon.jsii.Kernel.get(this, "migrationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.migrationJobClass = software.amazon.jsii.Kernel.get(this, "migrationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destinationEndpoint = software.amazon.jsii.Kernel.get(this, "destinationEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.migrationJobName = software.amazon.jsii.Kernel.get(this, "migrationJobName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.migrationJobName = software.amazon.jsii.Kernel.get(this, "migrationJobName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.migrationMode = software.amazon.jsii.Kernel.get(this, "migrationMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.migrationObject = software.amazon.jsii.Kernel.get(this, "migrationObject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpoint = software.amazon.jsii.Kernel.get(this, "sourceEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -199,7 +219,7 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String migrationJobClass, final java.lang.Object destinationEndpoint, final java.lang.String migrationJobName, final java.lang.Object migrationMode, final java.lang.Object migrationObject, final java.lang.Object sourceEndpoint) {
+        protected Jsii$Proxy(final java.lang.Object migrationJobClass, final java.lang.Object destinationEndpoint, final java.lang.Object migrationJobName, final java.lang.Object migrationMode, final java.lang.Object migrationObject, final java.lang.Object sourceEndpoint) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.migrationJobClass = java.util.Objects.requireNonNull(migrationJobClass, "migrationJobClass is required");
             this.destinationEndpoint = destinationEndpoint;
@@ -210,7 +230,7 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getMigrationJobClass() {
+        public final java.lang.Object getMigrationJobClass() {
             return this.migrationJobClass;
         }
 
@@ -220,7 +240,7 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getMigrationJobName() {
+        public final java.lang.Object getMigrationJobName() {
             return this.migrationJobName;
         }
 

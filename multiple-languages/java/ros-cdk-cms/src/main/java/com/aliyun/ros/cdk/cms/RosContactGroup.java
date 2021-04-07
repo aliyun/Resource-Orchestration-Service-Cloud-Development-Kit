@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::ContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.923Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContactGroup")
 public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,8 +55,8 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getContactGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -67,25 +67,43 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getContactNames() {
-        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "contactNames", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
+    public void setContactGroupName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "contactGroupName", java.util.Objects.requireNonNull(value, "contactGroupName is required"));
     }
 
     /**
      */
-    public void setContactNames(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.NotNull java.lang.Object getContactNames() {
+        return software.amazon.jsii.Kernel.get(this, "contactNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContactNames(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "contactNames", java.util.Objects.requireNonNull(value, "contactNames is required"));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDescribe() {
-        return software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setContactNames(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "contactNames", java.util.Objects.requireNonNull(value, "contactNames is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDescribe() {
+        return software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescribe(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "describe", java.util.Objects.requireNonNull(value, "describe is required"));
+    }
+
+    /**
+     */
+    public void setDescribe(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "describe", java.util.Objects.requireNonNull(value, "describe is required"));
     }
 
@@ -131,12 +149,28 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.contactGroupName(contactGroupName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param contactGroupName This parameter is required.
+         */
+        public Builder contactGroupName(final com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
+            this.props.contactGroupName(contactGroupName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param contactNames This parameter is required.
          */
-        public Builder contactNames(final java.util.List<java.lang.String> contactNames) {
+        public Builder contactNames(final com.aliyun.ros.cdk.core.IResolvable contactNames) {
+            this.props.contactNames(contactNames);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param contactNames This parameter is required.
+         */
+        public Builder contactNames(final java.util.List<? extends java.lang.Object> contactNames) {
             this.props.contactNames(contactNames);
             return this;
         }
@@ -146,6 +180,14 @@ public class RosContactGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @param describe This parameter is required.
          */
         public Builder describe(final java.lang.String describe) {
+            this.props.describe(describe);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param describe This parameter is required.
+         */
+        public Builder describe(final com.aliyun.ros.cdk.core.IResolvable describe) {
             this.props.describe(describe);
             return this;
         }

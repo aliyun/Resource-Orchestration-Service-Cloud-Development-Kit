@@ -10,13 +10,13 @@ export interface RosQueueProps {
     /**
      * @Property queueName: Queue name
      */
-    readonly queueName: string;
+    readonly queueName: string | ros.IResolvable;
 
     /**
      * @Property delaySeconds: It is measured in seconds. All messages sent to the queue can be consumed until the DelaySeconds expires.
      * An integer between 0 and 604800 (7 days). The default value is 0
      */
-    readonly delaySeconds?: number;
+    readonly delaySeconds?: number | ros.IResolvable;
 
     /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
@@ -28,25 +28,25 @@ export interface RosQueueProps {
      * @Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes.
      * An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
      */
-    readonly maximumMessageSize?: number;
+    readonly maximumMessageSize?: number | ros.IResolvable;
 
     /**
      * @Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
      * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
      */
-    readonly messageRetentionPeriod?: number;
+    readonly messageRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue. Measured in seconds.
      * An integer between 0 and 30 seconds. The default value is 0 (seconds)
      */
-    readonly pollingWaitSeconds?: number;
+    readonly pollingWaitSeconds?: number | ros.IResolvable;
 
     /**
      * @Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds.
      * An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
      */
-    readonly visibilityTimeout?: number;
+    readonly visibilityTimeout?: number | ros.IResolvable;
 }
 
 /**
@@ -153,12 +153,17 @@ export class RosQueue extends ros.RosResource {
     /**
      * @Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
      */
-    public readonly attrArnWithSlash: any;
+    public readonly attrArnWithSlash: ros.IResolvable;
+
+    /**
+     * @Attribute QueueName: Queue name
+     */
+    public readonly attrQueueName: ros.IResolvable;
 
     /**
      * @Attribute QueueUrl: URL of created queue
      */
-    public readonly attrQueueUrl: any;
+    public readonly attrQueueUrl: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -166,13 +171,13 @@ export class RosQueue extends ros.RosResource {
     /**
      * @Property queueName: Queue name
      */
-    public queueName: string;
+    public queueName: string | ros.IResolvable;
 
     /**
      * @Property delaySeconds: It is measured in seconds. All messages sent to the queue can be consumed until the DelaySeconds expires.
      * An integer between 0 and 604800 (7 days). The default value is 0
      */
-    public delaySeconds: number | undefined;
+    public delaySeconds: number | ros.IResolvable | undefined;
 
     /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
@@ -184,25 +189,25 @@ export class RosQueue extends ros.RosResource {
      * @Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes.
      * An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
      */
-    public maximumMessageSize: number | undefined;
+    public maximumMessageSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
      * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
      */
-    public messageRetentionPeriod: number | undefined;
+    public messageRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue. Measured in seconds.
      * An integer between 0 and 30 seconds. The default value is 0 (seconds)
      */
-    public pollingWaitSeconds: number | undefined;
+    public pollingWaitSeconds: number | ros.IResolvable | undefined;
 
     /**
      * @Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. Measured in seconds.
      * An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
      */
-    public visibilityTimeout: number | undefined;
+    public visibilityTimeout: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MNS::Queue`.
@@ -213,8 +218,9 @@ export class RosQueue extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosQueueProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosQueue.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArnWithSlash = ros.Token.asString(this.getAtt('ARN.WithSlash'));
-        this.attrQueueUrl = ros.Token.asString(this.getAtt('QueueUrl'));
+        this.attrArnWithSlash = this.getAtt('ARN.WithSlash');
+        this.attrQueueName = this.getAtt('QueueName');
+        this.attrQueueUrl = this.getAtt('QueueUrl');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.queueName = props.queueName;
@@ -256,35 +262,35 @@ export interface RosSubscriptionProps {
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
-    readonly endpoint: string;
+    readonly endpoint: string | ros.IResolvable;
 
     /**
      * @Property subscriptionName: Subscription name
      */
-    readonly subscriptionName: string;
+    readonly subscriptionName: string | ros.IResolvable;
 
     /**
      * @Property topicName: Topic name
      */
-    readonly topicName: string;
+    readonly topicName: string | ros.IResolvable;
 
     /**
      * @Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
      * The value is a string of no more than 16 characters. The default value is no message filter.
      */
-    readonly filterTag?: string;
+    readonly filterTag?: string | ros.IResolvable;
 
     /**
      * @Property notifyContentFormat: Format of the message content pushed to the endpoint.
      * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
      */
-    readonly notifyContentFormat?: string;
+    readonly notifyContentFormat?: string | ros.IResolvable;
 
     /**
      * @Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
      * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
      */
-    readonly notifyStrategy?: string;
+    readonly notifyStrategy?: string | ros.IResolvable;
 }
 
 /**
@@ -380,9 +386,19 @@ export class RosSubscription extends ros.RosResource {
      */
 
     /**
+     * @Attribute SubscriptionName: Subscription name
+     */
+    public readonly attrSubscriptionName: ros.IResolvable;
+
+    /**
      * @Attribute SubscriptionUrl: URL of created subscription
      */
-    public readonly attrSubscriptionUrl: any;
+    public readonly attrSubscriptionUrl: ros.IResolvable;
+
+    /**
+     * @Attribute TopicName: Topic name
+     */
+    public readonly attrTopicName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -395,35 +411,35 @@ export class RosSubscription extends ros.RosResource {
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
-    public endpoint: string;
+    public endpoint: string | ros.IResolvable;
 
     /**
      * @Property subscriptionName: Subscription name
      */
-    public subscriptionName: string;
+    public subscriptionName: string | ros.IResolvable;
 
     /**
      * @Property topicName: Topic name
      */
-    public topicName: string;
+    public topicName: string | ros.IResolvable;
 
     /**
      * @Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
      * The value is a string of no more than 16 characters. The default value is no message filter.
      */
-    public filterTag: string | undefined;
+    public filterTag: string | ros.IResolvable | undefined;
 
     /**
      * @Property notifyContentFormat: Format of the message content pushed to the endpoint.
      * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
      */
-    public notifyContentFormat: string | undefined;
+    public notifyContentFormat: string | ros.IResolvable | undefined;
 
     /**
      * @Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
      * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
      */
-    public notifyStrategy: string | undefined;
+    public notifyStrategy: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MNS::Subscription`.
@@ -434,7 +450,9 @@ export class RosSubscription extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSubscriptionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSubscription.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSubscriptionUrl = ros.Token.asString(this.getAtt('SubscriptionUrl'));
+        this.attrSubscriptionName = this.getAtt('SubscriptionName');
+        this.attrSubscriptionUrl = this.getAtt('SubscriptionUrl');
+        this.attrTopicName = this.getAtt('TopicName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.endpoint = props.endpoint;
@@ -469,7 +487,7 @@ export interface RosTopicProps {
     /**
      * @Property topicName: Topic name
      */
-    readonly topicName: string;
+    readonly topicName: string | ros.IResolvable;
 
     /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
@@ -481,7 +499,7 @@ export interface RosTopicProps {
      * @Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
-    readonly maximumMessageSize?: number;
+    readonly maximumMessageSize?: number | ros.IResolvable;
 }
 
 /**
@@ -552,17 +570,17 @@ export class RosTopic extends ros.RosResource {
     /**
      * @Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
      */
-    public readonly attrArnWithSlash: any;
+    public readonly attrArnWithSlash: ros.IResolvable;
 
     /**
      * @Attribute TopicName: Topic name
      */
-    public readonly attrTopicName: any;
+    public readonly attrTopicName: ros.IResolvable;
 
     /**
      * @Attribute TopicUrl: URL of created topic
      */
-    public readonly attrTopicUrl: any;
+    public readonly attrTopicUrl: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -570,7 +588,7 @@ export class RosTopic extends ros.RosResource {
     /**
      * @Property topicName: Topic name
      */
-    public topicName: string;
+    public topicName: string | ros.IResolvable;
 
     /**
      * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
@@ -582,7 +600,7 @@ export class RosTopic extends ros.RosResource {
      * @Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
-    public maximumMessageSize: number | undefined;
+    public maximumMessageSize: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MNS::Topic`.
@@ -593,9 +611,9 @@ export class RosTopic extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTopicProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTopic.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArnWithSlash = ros.Token.asString(this.getAtt('ARN.WithSlash'));
-        this.attrTopicName = ros.Token.asString(this.getAtt('TopicName'));
-        this.attrTopicUrl = ros.Token.asString(this.getAtt('TopicUrl'));
+        this.attrArnWithSlash = this.getAtt('ARN.WithSlash');
+        this.attrTopicName = this.getAtt('TopicName');
+        this.attrTopicUrl = this.getAtt('TopicUrl');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.topicName = props.topicName;

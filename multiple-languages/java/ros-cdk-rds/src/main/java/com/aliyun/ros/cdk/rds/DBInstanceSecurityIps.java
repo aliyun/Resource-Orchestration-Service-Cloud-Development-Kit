@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::DBInstanceSecurityIps`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceSecurityIps")
 public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBInstanceSecurityIps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceSecurityIpsProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBInstanceSecurityIps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceSecurityIpsProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SecurityIps: The security ips of selected database instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.rds.DBInstanceSecurityIps> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,68 @@ public class DBInstanceSecurityIps extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbInstanceId: Database instance id to update security ips.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceId This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Database instance id to update security ips. This parameter is required.
          */
         public Builder dbInstanceId(final java.lang.String dbInstanceId) {
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
+        /**
+         * Property dbInstanceId: Database instance id to update security ips.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceId Property dbInstanceId: Database instance id to update security ips. This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
 
         /**
+         * Property dbInstanceIpArrayAttribute: Security ips to add or remove.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceIpArrayAttribute This parameter is required.
+         * @param dbInstanceIpArrayAttribute Property dbInstanceIpArrayAttribute: Security ips to add or remove. This parameter is required.
          */
         public Builder dbInstanceIpArrayAttribute(final java.lang.String dbInstanceIpArrayAttribute) {
             this.props.dbInstanceIpArrayAttribute(dbInstanceIpArrayAttribute);
             return this;
         }
+        /**
+         * Property dbInstanceIpArrayAttribute: Security ips to add or remove.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceIpArrayAttribute Property dbInstanceIpArrayAttribute: Security ips to add or remove. This parameter is required.
+         */
+        public Builder dbInstanceIpArrayAttribute(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayAttribute) {
+            this.props.dbInstanceIpArrayAttribute(dbInstanceIpArrayAttribute);
+            return this;
+        }
 
         /**
+         * Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'.
+         * <p>
+         * Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceIpArrayName This parameter is required.
+         * @param dbInstanceIpArrayName Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. This parameter is required.
          */
         public Builder dbInstanceIpArrayName(final java.lang.String dbInstanceIpArrayName) {
+            this.props.dbInstanceIpArrayName(dbInstanceIpArrayName);
+            return this;
+        }
+        /**
+         * Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'.
+         * <p>
+         * Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceIpArrayName Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. This parameter is required.
+         */
+        public Builder dbInstanceIpArrayName(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayName) {
             this.props.dbInstanceIpArrayName(dbInstanceIpArrayName);
             return this;
         }

@@ -9,4 +9,5 @@
 @alicloud/ros-cdk-cr.RosNamespace=com.aliyun.ros.cdk.cr.RosNamespace
 @alicloud/ros-cdk-cr.RosNamespaceProps=com.aliyun.ros.cdk.cr.RosNamespaceProps
 @alicloud/ros-cdk-cr.RosRepository=com.aliyun.ros.cdk.cr.RosRepository
+@alicloud/ros-cdk-cr.RosRepository.RepoSourceProperty=com.aliyun.ros.cdk.cr.RosRepository$RepoSourceProperty
 @alicloud/ros-cdk-cr.RosRepositoryProps=com.aliyun.ros.cdk.cr.RosRepositoryProps

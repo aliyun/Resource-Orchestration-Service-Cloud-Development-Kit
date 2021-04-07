@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: domain: The domain name.
         /// </remarks>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-        string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Domain
         {
             get;
         }
@@ -21,8 +21,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
         /// 1-65535
         /// </remarks>
-        [JsiiProperty(name: "listenerPort", typeJson: "{\"primitive\":\"number\"}")]
-        double ListenerPort
+        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ListenerPort
         {
             get;
         }
@@ -30,8 +30,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The ID of Server Load Balancer instance.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LoadBalancerId
         {
             get;
         }
@@ -39,8 +39,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: serverCertificateId: The ID of the certificate corresponding to the domain name.
         /// </remarks>
-        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"primitive\":\"string\"}")]
-        string ServerCertificateId
+        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServerCertificateId
         {
             get;
         }
@@ -56,38 +56,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: domain: The domain name.
             /// </remarks>
-            [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-            public string Domain
+            [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Domain
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
             /// 1-65535
             /// </remarks>
-            [JsiiProperty(name: "listenerPort", typeJson: "{\"primitive\":\"number\"}")]
-            public double ListenerPort
+            [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ListenerPort
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: loadBalancerId: The ID of Server Load Balancer instance.
             /// </remarks>
-            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-            public string LoadBalancerId
+            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LoadBalancerId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: serverCertificateId: The ID of the certificate corresponding to the domain name.
             /// </remarks>
-            [JsiiProperty(name: "serverCertificateId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ServerCertificateId
+            [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServerCertificateId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * A ROS resource type:  `ALIYUN::WAF::WafSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.554Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.260Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.WafSwitch")
 public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::WAF::WafSwitch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public WafSwitch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.waf.WafSwitchProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::WAF::WafSwitch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public WafSwitch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.waf.WafSwitchProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.waf.WafSwitch> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,37 +83,101 @@ public class WafSwitch extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property domain: Domain name.
+         * <p>
          * @return {@code this}
-         * @param domain This parameter is required.
+         * @param domain Property domain: Domain name. This parameter is required.
          */
         public Builder domain(final java.lang.String domain) {
             this.props.domain(domain);
             return this;
         }
+        /**
+         * Property domain: Domain name.
+         * <p>
+         * @return {@code this}
+         * @param domain Property domain: Domain name. This parameter is required.
+         */
+        public Builder domain(final com.aliyun.ros.cdk.core.IResolvable domain) {
+            this.props.domain(domain);
+            return this;
+        }
 
         /**
+         * Property instanceId: WAF instance ID.
+         * <p>
+         * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: WAF instance ID. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: WAF instance ID.
+         * <p>
+         * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: WAF instance ID. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property serviceOn: Web attack protection switch, the value of: 0: closed.
+         * <p>
+         * 1: indicate on.
+         * <p>
          * @return {@code this}
-         * @param serviceOn This parameter is required.
+         * @param serviceOn Property serviceOn: Web attack protection switch, the value of: 0: closed. This parameter is required.
          */
         public Builder serviceOn(final java.lang.Number serviceOn) {
             this.props.serviceOn(serviceOn);
             return this;
         }
+        /**
+         * Property serviceOn: Web attack protection switch, the value of: 0: closed.
+         * <p>
+         * 1: indicate on.
+         * <p>
+         * @return {@code this}
+         * @param serviceOn Property serviceOn: Web attack protection switch, the value of: 0: closed. This parameter is required.
+         */
+        public Builder serviceOn(final com.aliyun.ros.cdk.core.IResolvable serviceOn) {
+            this.props.serviceOn(serviceOn);
+            return this;
+        }
 
         /**
+         * Property region: Examples of areas where the WAF.
+         * <p>
+         * Value:
+         * cn: China mainland (default)
+         * cn-hongkong: China HongKong and other overseas
+         * <p>
          * @return {@code this}
-         * @param region This parameter is required.
+         * @param region Property region: Examples of areas where the WAF. This parameter is required.
          */
         public Builder region(final java.lang.String region) {
+            this.props.region(region);
+            return this;
+        }
+        /**
+         * Property region: Examples of areas where the WAF.
+         * <p>
+         * Value:
+         * cn: China mainland (default)
+         * cn-hongkong: China HongKong and other overseas
+         * <p>
+         * @return {@code this}
+         * @param region Property region: Examples of areas where the WAF. This parameter is required.
+         */
+        public Builder region(final com.aliyun.ros.cdk.core.IResolvable region) {
             this.props.region(region);
             return this;
         }

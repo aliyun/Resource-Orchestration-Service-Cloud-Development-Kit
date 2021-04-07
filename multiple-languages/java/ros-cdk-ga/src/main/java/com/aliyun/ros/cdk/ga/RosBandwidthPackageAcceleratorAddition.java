@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.001Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackageAcceleratorAddition")
 public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.c
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAcceleratorId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAcceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAcceleratorId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAcceleratorId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrBandwidthPackageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.c
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId() {
-        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId() {
+        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,13 +73,25 @@ public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.c
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAcceleratorId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "acceleratorId", java.util.Objects.requireNonNull(value, "acceleratorId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setBandwidthPackageId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", java.util.Objects.requireNonNull(value, "bandwidthPackageId is required"));
+    }
+
+    /**
+     */
+    public void setBandwidthPackageId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", java.util.Objects.requireNonNull(value, "bandwidthPackageId is required"));
     }
 
@@ -125,12 +137,28 @@ public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.c
             this.props.acceleratorId(acceleratorId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param acceleratorId This parameter is required.
+         */
+        public Builder acceleratorId(final com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.props.acceleratorId(acceleratorId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param bandwidthPackageId This parameter is required.
          */
         public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidthPackageId This parameter is required.
+         */
+        public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
             this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }

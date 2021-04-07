@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS resource type:  `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.VpcBinder")
 public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::VpcBinder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public VpcBinder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.VpcBinderProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::VpcBinder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public VpcBinder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.VpcBinderProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Domains: The domain names used to access the OTS instance in the VPC.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomains() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomains", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomains() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomains", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEndpoints() {
-        return software.amazon.jsii.Kernel.get(this, "attrEndpoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEndpoints() {
+        return software.amazon.jsii.Kernel.get(this, "attrEndpoints", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ots.VpcBinder> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,25 +97,41 @@ public class VpcBinder extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceName: Instance name.
+         * <p>
          * @return {@code this}
-         * @param instanceName This parameter is required.
+         * @param instanceName Property instanceName: Instance name. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * Property instanceName: Instance name.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: Instance name. This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
+         * Property vpcs: Vpc binding configuration.
+         * <p>
          * @return {@code this}
-         * @param vpcs This parameter is required.
+         * @param vpcs Property vpcs: Vpc binding configuration. This parameter is required.
          */
         public Builder vpcs(final com.aliyun.ros.cdk.core.IResolvable vpcs) {
             this.props.vpcs(vpcs);
             return this;
         }
         /**
+         * Property vpcs: Vpc binding configuration.
+         * <p>
          * @return {@code this}
-         * @param vpcs This parameter is required.
+         * @param vpcs Property vpcs: Vpc binding configuration. This parameter is required.
          */
         public Builder vpcs(final java.util.List<? extends java.lang.Object> vpcs) {
             this.props.vpcs(vpcs);

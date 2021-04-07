@@ -34,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <remarks>
         /// If this field has values, it means that the
         /// cloud assembly is not complete and should not be deployed.
-        /// 
+        ///
         /// <strong>Default</strong>: - no missing context.
         /// </remarks>
         [JsiiOptional]

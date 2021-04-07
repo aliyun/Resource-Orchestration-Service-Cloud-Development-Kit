@@ -3,108 +3,210 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingRuleProps.Jsii$Proxy.class)
 public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property scalingGroupId: ID of the scaling group of a scaling rule.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
+     * Property adjustmentType: Adjustment mode of a scaling rule.
+     * <p>
+     * Optional values:
+     * <p>
+     * <ul>
+     * <li>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</li>
+     * <li>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</li>
+     * <li>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAdjustmentType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentType() {
         return null;
     }
 
     /**
+     * Property adjustmentValue: Adjusted value of a scaling rule.
+     * <p>
+     * Value range:
+     * <p>
+     * <ul>
+     * <li>QuantityChangeInCapacity: [-500, 500]</li>
+     * <li>PercentChangeInCapacity: [-100, 10000]</li>
+     * <li>TotalCapacity: [0, 1000]</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAdjustmentValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentValue() {
         return null;
     }
 
     /**
+     * Property cooldown: Cool-down time of a scaling rule.
+     * <p>
+     * Value range: [0, 86,400], in seconds. The default value is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCooldown() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCooldown() {
         return null;
     }
 
     /**
+     * Property disableScaleIn: Specifies whether to disable scale-in.
+     * <p>
+     * This parameter is applicable only to target tracking scaling rules.
+     * Default value: false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDisableScaleIn() {
         return null;
     }
 
     /**
+     * Property estimatedInstanceWarmup: The warm-up period of the ECS instances.
+     * <p>
+     * This parameter is applicable to target tracking scaling rules and step scaling rules. The system adds ECS instances that are in the warm-up state to the scaling group, but does not report monitoring data during the warm-up period to CloudMonitor.
+     * Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
+     * Valid values: 0 to 86400. Unit: seconds. Default value: 300.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getEstimatedInstanceWarmup() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEstimatedInstanceWarmup() {
         return null;
     }
 
     /**
+     * Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
+     * <p>
+     * Default value: the same as the value of MaxSize
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInitialMaxSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitialMaxSize() {
         return null;
     }
 
     /**
+     * Property metricName: The predefined metric to monitor.
+     * <p>
+     * This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
+     * Valid values of a target tracking scaling rule:
+     * <p>
+     * <ul>
+     * <li>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</li>
+     * <li>ClassicInternetTx: the average public network outbound traffic over the classic network</li>
+     * <li>VpcInternetRx: the average public network inbound traffic over the VPC</li>
+     * <li>VpcInternetTx: the average public network outbound traffic over the VPC</li>
+     * <li>IntranetRx: the average internal network inbound traffic</li>
+     * <li>IntranetTx: the average internal network outbound traffic
+     * Valid values of a predictive scaling rule:</li>
+     * <li>CpuUtilization: the average CPU utilization</li>
+     * <li>IntranetRx: the average internal network inbound traffic</li>
+     * <li>IntranetTx: the average internal network outbound traffic</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMetricName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMetricName() {
         return null;
     }
 
     /**
+     * Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule.
+     * <p>
+     * This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMinAdjustmentMagnitude() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinAdjustmentMagnitude() {
         return null;
     }
 
     /**
+     * Property predictiveScalingMode: The mode of the predictive scaling rule.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>PredictAndScale: generates forecasts and creates forecast tasks.</li>
+     * <li>PredictOnly: generates forecasts but does not create forecast tasks.
+     * Default value: PredictAndScale</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPredictiveScalingMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveScalingMode() {
         return null;
     }
 
     /**
+     * Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time.
+     * <p>
+     * By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
+     * Default value: 0
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveTaskBufferTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveTaskBufferTime() {
         return null;
     }
 
     /**
+     * Property predictiveValueBehavior: The action taken on the predicted maximum value.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>MaxOverridePredictiveValue: uses the initial maximum capacity as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.
+     * <p>
+     * <ul>
+     * <li>PredictiveValueOverrideMax: uses the predicted value as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.</li>
+     * <li>PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
+     * Default value: MaxOverridePredictiveValue</li>
+     * </ul></li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPredictiveValueBehavior() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBehavior() {
         return null;
     }
 
     /**
+     * Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.
+     * <p>
+     * When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
+     * Default value: 0
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveValueBuffer() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBuffer() {
         return null;
     }
 
     /**
+     * Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+     * <p>
+     * It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleName() {
         return null;
     }
 
     /**
+     * Property scalingRuleType: The type of the scaling rule.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>SimpleScalingRule: scales ECS instances based on the values of AdjustmentType and AdjustmentValue.</li>
+     * <li>TargetTrackingScalingRule: dynamically calculates the number of ECS instances to be adjusted and tries to keep the value of a predefined monitoring metric close to TargetValue.</li>
+     * <li>StepScalingRule: scales ECS instances in steps based on specified thresholds and metric values.</li>
+     * <li>PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
+     * If this parameter value is not specified, the default value is SimpleScalingRule.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleType() {
         return null;
     }
 
     /**
+     * Property stepAdjustment:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStepAdjustment() {
         return null;
     }
 
     /**
+     * Property targetValue: The target value of a metric.
+     * <p>
+     * This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTargetValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetValue() {
         return null;
     }
 
@@ -118,27 +220,27 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link ScalingRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingRuleProps> {
-        private java.lang.String scalingGroupId;
-        private java.lang.String adjustmentType;
-        private java.lang.Number adjustmentValue;
-        private java.lang.Number cooldown;
+        private java.lang.Object scalingGroupId;
+        private java.lang.Object adjustmentType;
+        private java.lang.Object adjustmentValue;
+        private java.lang.Object cooldown;
         private java.lang.Object disableScaleIn;
-        private java.lang.Number estimatedInstanceWarmup;
-        private java.lang.Number initialMaxSize;
-        private java.lang.String metricName;
-        private java.lang.Number minAdjustmentMagnitude;
-        private java.lang.String predictiveScalingMode;
-        private java.lang.Number predictiveTaskBufferTime;
-        private java.lang.String predictiveValueBehavior;
-        private java.lang.Number predictiveValueBuffer;
-        private java.lang.String scalingRuleName;
-        private java.lang.String scalingRuleType;
+        private java.lang.Object estimatedInstanceWarmup;
+        private java.lang.Object initialMaxSize;
+        private java.lang.Object metricName;
+        private java.lang.Object minAdjustmentMagnitude;
+        private java.lang.Object predictiveScalingMode;
+        private java.lang.Object predictiveTaskBufferTime;
+        private java.lang.Object predictiveValueBehavior;
+        private java.lang.Object predictiveValueBuffer;
+        private java.lang.Object scalingRuleName;
+        private java.lang.Object scalingRuleType;
         private java.lang.Object stepAdjustment;
-        private java.lang.Number targetValue;
+        private java.lang.Object targetValue;
 
         /**
          * Sets the value of {@link ScalingRuleProps#getScalingGroupId}
-         * @param scalingGroupId the value to be set. This parameter is required.
+         * @param scalingGroupId Property scalingGroupId: ID of the scaling group of a scaling rule. This parameter is required.
          * @return {@code this}
          */
         public Builder scalingGroupId(java.lang.String scalingGroupId) {
@@ -147,8 +249,25 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getScalingGroupId}
+         * @param scalingGroupId Property scalingGroupId: ID of the scaling group of a scaling rule. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getAdjustmentType}
-         * @param adjustmentType the value to be set.
+         * @param adjustmentType Property adjustmentType: Adjustment mode of a scaling rule.
+         *                       Optional values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</li>
+         *                       <li>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</li>
+         *                       <li>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder adjustmentType(java.lang.String adjustmentType) {
@@ -157,8 +276,32 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getAdjustmentType}
+         * @param adjustmentType Property adjustmentType: Adjustment mode of a scaling rule.
+         *                       Optional values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</li>
+         *                       <li>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</li>
+         *                       <li>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder adjustmentType(com.aliyun.ros.cdk.core.IResolvable adjustmentType) {
+            this.adjustmentType = adjustmentType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getAdjustmentValue}
-         * @param adjustmentValue the value to be set.
+         * @param adjustmentValue Property adjustmentValue: Adjusted value of a scaling rule.
+         *                        Value range:
+         *                        <p>
+         *                        <ul>
+         *                        <li>QuantityChangeInCapacity: [-500, 500]</li>
+         *                        <li>PercentChangeInCapacity: [-100, 10000]</li>
+         *                        <li>TotalCapacity: [0, 1000]</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder adjustmentValue(java.lang.Number adjustmentValue) {
@@ -167,8 +310,26 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getAdjustmentValue}
+         * @param adjustmentValue Property adjustmentValue: Adjusted value of a scaling rule.
+         *                        Value range:
+         *                        <p>
+         *                        <ul>
+         *                        <li>QuantityChangeInCapacity: [-500, 500]</li>
+         *                        <li>PercentChangeInCapacity: [-100, 10000]</li>
+         *                        <li>TotalCapacity: [0, 1000]</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder adjustmentValue(com.aliyun.ros.cdk.core.IResolvable adjustmentValue) {
+            this.adjustmentValue = adjustmentValue;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getCooldown}
-         * @param cooldown the value to be set.
+         * @param cooldown Property cooldown: Cool-down time of a scaling rule.
+         *                 Value range: [0, 86,400], in seconds. The default value is empty.
          * @return {@code this}
          */
         public Builder cooldown(java.lang.Number cooldown) {
@@ -177,8 +338,21 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getCooldown}
+         * @param cooldown Property cooldown: Cool-down time of a scaling rule.
+         *                 Value range: [0, 86,400], in seconds. The default value is empty.
+         * @return {@code this}
+         */
+        public Builder cooldown(com.aliyun.ros.cdk.core.IResolvable cooldown) {
+            this.cooldown = cooldown;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getDisableScaleIn}
-         * @param disableScaleIn the value to be set.
+         * @param disableScaleIn Property disableScaleIn: Specifies whether to disable scale-in.
+         *                       This parameter is applicable only to target tracking scaling rules.
+         *                       Default value: false
          * @return {@code this}
          */
         public Builder disableScaleIn(java.lang.Boolean disableScaleIn) {
@@ -188,7 +362,9 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ScalingRuleProps#getDisableScaleIn}
-         * @param disableScaleIn the value to be set.
+         * @param disableScaleIn Property disableScaleIn: Specifies whether to disable scale-in.
+         *                       This parameter is applicable only to target tracking scaling rules.
+         *                       Default value: false
          * @return {@code this}
          */
         public Builder disableScaleIn(com.aliyun.ros.cdk.core.IResolvable disableScaleIn) {
@@ -198,7 +374,10 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ScalingRuleProps#getEstimatedInstanceWarmup}
-         * @param estimatedInstanceWarmup the value to be set.
+         * @param estimatedInstanceWarmup Property estimatedInstanceWarmup: The warm-up period of the ECS instances.
+         *                                This parameter is applicable to target tracking scaling rules and step scaling rules. The system adds ECS instances that are in the warm-up state to the scaling group, but does not report monitoring data during the warm-up period to CloudMonitor.
+         *                                Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
+         *                                Valid values: 0 to 86400. Unit: seconds. Default value: 300.
          * @return {@code this}
          */
         public Builder estimatedInstanceWarmup(java.lang.Number estimatedInstanceWarmup) {
@@ -207,8 +386,22 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getEstimatedInstanceWarmup}
+         * @param estimatedInstanceWarmup Property estimatedInstanceWarmup: The warm-up period of the ECS instances.
+         *                                This parameter is applicable to target tracking scaling rules and step scaling rules. The system adds ECS instances that are in the warm-up state to the scaling group, but does not report monitoring data during the warm-up period to CloudMonitor.
+         *                                Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
+         *                                Valid values: 0 to 86400. Unit: seconds. Default value: 300.
+         * @return {@code this}
+         */
+        public Builder estimatedInstanceWarmup(com.aliyun.ros.cdk.core.IResolvable estimatedInstanceWarmup) {
+            this.estimatedInstanceWarmup = estimatedInstanceWarmup;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getInitialMaxSize}
-         * @param initialMaxSize the value to be set.
+         * @param initialMaxSize Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
+         *                       Default value: the same as the value of MaxSize
          * @return {@code this}
          */
         public Builder initialMaxSize(java.lang.Number initialMaxSize) {
@@ -217,8 +410,34 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getInitialMaxSize}
+         * @param initialMaxSize Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
+         *                       Default value: the same as the value of MaxSize
+         * @return {@code this}
+         */
+        public Builder initialMaxSize(com.aliyun.ros.cdk.core.IResolvable initialMaxSize) {
+            this.initialMaxSize = initialMaxSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getMetricName}
-         * @param metricName the value to be set.
+         * @param metricName Property metricName: The predefined metric to monitor.
+         *                   This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
+         *                   Valid values of a target tracking scaling rule:
+         *                   <p>
+         *                   <ul>
+         *                   <li>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</li>
+         *                   <li>ClassicInternetTx: the average public network outbound traffic over the classic network</li>
+         *                   <li>VpcInternetRx: the average public network inbound traffic over the VPC</li>
+         *                   <li>VpcInternetTx: the average public network outbound traffic over the VPC</li>
+         *                   <li>IntranetRx: the average internal network inbound traffic</li>
+         *                   <li>IntranetTx: the average internal network outbound traffic
+         *                   Valid values of a predictive scaling rule:</li>
+         *                   <li>CpuUtilization: the average CPU utilization</li>
+         *                   <li>IntranetRx: the average internal network inbound traffic</li>
+         *                   <li>IntranetTx: the average internal network outbound traffic</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder metricName(java.lang.String metricName) {
@@ -227,8 +446,34 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getMetricName}
+         * @param metricName Property metricName: The predefined metric to monitor.
+         *                   This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
+         *                   Valid values of a target tracking scaling rule:
+         *                   <p>
+         *                   <ul>
+         *                   <li>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</li>
+         *                   <li>ClassicInternetTx: the average public network outbound traffic over the classic network</li>
+         *                   <li>VpcInternetRx: the average public network inbound traffic over the VPC</li>
+         *                   <li>VpcInternetTx: the average public network outbound traffic over the VPC</li>
+         *                   <li>IntranetRx: the average internal network inbound traffic</li>
+         *                   <li>IntranetTx: the average internal network outbound traffic
+         *                   Valid values of a predictive scaling rule:</li>
+         *                   <li>CpuUtilization: the average CPU utilization</li>
+         *                   <li>IntranetRx: the average internal network inbound traffic</li>
+         *                   <li>IntranetTx: the average internal network outbound traffic</li>
+         *                   </ul>
+         * @return {@code this}
+         */
+        public Builder metricName(com.aliyun.ros.cdk.core.IResolvable metricName) {
+            this.metricName = metricName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getMinAdjustmentMagnitude}
-         * @param minAdjustmentMagnitude the value to be set.
+         * @param minAdjustmentMagnitude Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule.
+         *                               This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
          * @return {@code this}
          */
         public Builder minAdjustmentMagnitude(java.lang.Number minAdjustmentMagnitude) {
@@ -237,8 +482,26 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getMinAdjustmentMagnitude}
+         * @param minAdjustmentMagnitude Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule.
+         *                               This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
+         * @return {@code this}
+         */
+        public Builder minAdjustmentMagnitude(com.aliyun.ros.cdk.core.IResolvable minAdjustmentMagnitude) {
+            this.minAdjustmentMagnitude = minAdjustmentMagnitude;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getPredictiveScalingMode}
-         * @param predictiveScalingMode the value to be set.
+         * @param predictiveScalingMode Property predictiveScalingMode: The mode of the predictive scaling rule.
+         *                              Valid values:
+         *                              <p>
+         *                              <ul>
+         *                              <li>PredictAndScale: generates forecasts and creates forecast tasks.</li>
+         *                              <li>PredictOnly: generates forecasts but does not create forecast tasks.
+         *                              Default value: PredictAndScale</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder predictiveScalingMode(java.lang.String predictiveScalingMode) {
@@ -247,8 +510,27 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getPredictiveScalingMode}
+         * @param predictiveScalingMode Property predictiveScalingMode: The mode of the predictive scaling rule.
+         *                              Valid values:
+         *                              <p>
+         *                              <ul>
+         *                              <li>PredictAndScale: generates forecasts and creates forecast tasks.</li>
+         *                              <li>PredictOnly: generates forecasts but does not create forecast tasks.
+         *                              Default value: PredictAndScale</li>
+         *                              </ul>
+         * @return {@code this}
+         */
+        public Builder predictiveScalingMode(com.aliyun.ros.cdk.core.IResolvable predictiveScalingMode) {
+            this.predictiveScalingMode = predictiveScalingMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getPredictiveTaskBufferTime}
-         * @param predictiveTaskBufferTime the value to be set.
+         * @param predictiveTaskBufferTime Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time.
+         *                                 By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
+         *                                 Default value: 0
          * @return {@code this}
          */
         public Builder predictiveTaskBufferTime(java.lang.Number predictiveTaskBufferTime) {
@@ -257,8 +539,31 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getPredictiveTaskBufferTime}
+         * @param predictiveTaskBufferTime Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time.
+         *                                 By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
+         *                                 Default value: 0
+         * @return {@code this}
+         */
+        public Builder predictiveTaskBufferTime(com.aliyun.ros.cdk.core.IResolvable predictiveTaskBufferTime) {
+            this.predictiveTaskBufferTime = predictiveTaskBufferTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getPredictiveValueBehavior}
-         * @param predictiveValueBehavior the value to be set.
+         * @param predictiveValueBehavior Property predictiveValueBehavior: The action taken on the predicted maximum value.
+         *                                Valid values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>MaxOverridePredictiveValue: uses the initial maximum capacity as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.
+         *                                <p>
+         *                                <ul>
+         *                                <li>PredictiveValueOverrideMax: uses the predicted value as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.</li>
+         *                                <li>PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
+         *                                Default value: MaxOverridePredictiveValue</li>
+         *                                </ul></li>
+         *                                </ul>
          * @return {@code this}
          */
         public Builder predictiveValueBehavior(java.lang.String predictiveValueBehavior) {
@@ -267,8 +572,31 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getPredictiveValueBehavior}
+         * @param predictiveValueBehavior Property predictiveValueBehavior: The action taken on the predicted maximum value.
+         *                                Valid values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>MaxOverridePredictiveValue: uses the initial maximum capacity as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.
+         *                                <p>
+         *                                <ul>
+         *                                <li>PredictiveValueOverrideMax: uses the predicted value as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.</li>
+         *                                <li>PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
+         *                                Default value: MaxOverridePredictiveValue</li>
+         *                                </ul></li>
+         *                                </ul>
+         * @return {@code this}
+         */
+        public Builder predictiveValueBehavior(com.aliyun.ros.cdk.core.IResolvable predictiveValueBehavior) {
+            this.predictiveValueBehavior = predictiveValueBehavior;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getPredictiveValueBuffer}
-         * @param predictiveValueBuffer the value to be set.
+         * @param predictiveValueBuffer Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.
+         *                              When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
+         *                              Default value: 0
          * @return {@code this}
          */
         public Builder predictiveValueBuffer(java.lang.Number predictiveValueBuffer) {
@@ -277,8 +605,21 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getPredictiveValueBuffer}
+         * @param predictiveValueBuffer Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.
+         *                              When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
+         *                              Default value: 0
+         * @return {@code this}
+         */
+        public Builder predictiveValueBuffer(com.aliyun.ros.cdk.core.IResolvable predictiveValueBuffer) {
+            this.predictiveValueBuffer = predictiveValueBuffer;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getScalingRuleName}
-         * @param scalingRuleName the value to be set.
+         * @param scalingRuleName Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+         *                        It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
          * @return {@code this}
          */
         public Builder scalingRuleName(java.lang.String scalingRuleName) {
@@ -287,8 +628,28 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getScalingRuleName}
+         * @param scalingRuleName Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+         *                        It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+         * @return {@code this}
+         */
+        public Builder scalingRuleName(com.aliyun.ros.cdk.core.IResolvable scalingRuleName) {
+            this.scalingRuleName = scalingRuleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getScalingRuleType}
-         * @param scalingRuleType the value to be set.
+         * @param scalingRuleType Property scalingRuleType: The type of the scaling rule.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>SimpleScalingRule: scales ECS instances based on the values of AdjustmentType and AdjustmentValue.</li>
+         *                        <li>TargetTrackingScalingRule: dynamically calculates the number of ECS instances to be adjusted and tries to keep the value of a predefined monitoring metric close to TargetValue.</li>
+         *                        <li>StepScalingRule: scales ECS instances in steps based on specified thresholds and metric values.</li>
+         *                        <li>PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
+         *                        If this parameter value is not specified, the default value is SimpleScalingRule.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder scalingRuleType(java.lang.String scalingRuleType) {
@@ -297,8 +658,27 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ScalingRuleProps#getScalingRuleType}
+         * @param scalingRuleType Property scalingRuleType: The type of the scaling rule.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>SimpleScalingRule: scales ECS instances based on the values of AdjustmentType and AdjustmentValue.</li>
+         *                        <li>TargetTrackingScalingRule: dynamically calculates the number of ECS instances to be adjusted and tries to keep the value of a predefined monitoring metric close to TargetValue.</li>
+         *                        <li>StepScalingRule: scales ECS instances in steps based on specified thresholds and metric values.</li>
+         *                        <li>PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
+         *                        If this parameter value is not specified, the default value is SimpleScalingRule.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder scalingRuleType(com.aliyun.ros.cdk.core.IResolvable scalingRuleType) {
+            this.scalingRuleType = scalingRuleType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingRuleProps#getStepAdjustment}
-         * @param stepAdjustment the value to be set.
+         * @param stepAdjustment Property stepAdjustment:.
          * @return {@code this}
          */
         public Builder stepAdjustment(com.aliyun.ros.cdk.core.IResolvable stepAdjustment) {
@@ -308,7 +688,7 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ScalingRuleProps#getStepAdjustment}
-         * @param stepAdjustment the value to be set.
+         * @param stepAdjustment Property stepAdjustment:.
          * @return {@code this}
          */
         public Builder stepAdjustment(java.util.List<? extends java.lang.Object> stepAdjustment) {
@@ -318,10 +698,22 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ScalingRuleProps#getTargetValue}
-         * @param targetValue the value to be set.
+         * @param targetValue Property targetValue: The target value of a metric.
+         *                    This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
          * @return {@code this}
          */
         public Builder targetValue(java.lang.Number targetValue) {
+            this.targetValue = targetValue;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingRuleProps#getTargetValue}
+         * @param targetValue Property targetValue: The target value of a metric.
+         *                    This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
+         * @return {@code this}
+         */
+        public Builder targetValue(com.aliyun.ros.cdk.core.IResolvable targetValue) {
             this.targetValue = targetValue;
             return this;
         }
@@ -342,23 +734,23 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingRuleProps {
-        private final java.lang.String scalingGroupId;
-        private final java.lang.String adjustmentType;
-        private final java.lang.Number adjustmentValue;
-        private final java.lang.Number cooldown;
+        private final java.lang.Object scalingGroupId;
+        private final java.lang.Object adjustmentType;
+        private final java.lang.Object adjustmentValue;
+        private final java.lang.Object cooldown;
         private final java.lang.Object disableScaleIn;
-        private final java.lang.Number estimatedInstanceWarmup;
-        private final java.lang.Number initialMaxSize;
-        private final java.lang.String metricName;
-        private final java.lang.Number minAdjustmentMagnitude;
-        private final java.lang.String predictiveScalingMode;
-        private final java.lang.Number predictiveTaskBufferTime;
-        private final java.lang.String predictiveValueBehavior;
-        private final java.lang.Number predictiveValueBuffer;
-        private final java.lang.String scalingRuleName;
-        private final java.lang.String scalingRuleType;
+        private final java.lang.Object estimatedInstanceWarmup;
+        private final java.lang.Object initialMaxSize;
+        private final java.lang.Object metricName;
+        private final java.lang.Object minAdjustmentMagnitude;
+        private final java.lang.Object predictiveScalingMode;
+        private final java.lang.Object predictiveTaskBufferTime;
+        private final java.lang.Object predictiveValueBehavior;
+        private final java.lang.Object predictiveValueBuffer;
+        private final java.lang.Object scalingRuleName;
+        private final java.lang.Object scalingRuleType;
         private final java.lang.Object stepAdjustment;
-        private final java.lang.Number targetValue;
+        private final java.lang.Object targetValue;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -366,29 +758,29 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adjustmentType = software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adjustmentValue = software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.cooldown = software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adjustmentType = software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adjustmentValue = software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cooldown = software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableScaleIn = software.amazon.jsii.Kernel.get(this, "disableScaleIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.estimatedInstanceWarmup = software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.initialMaxSize = software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.minAdjustmentMagnitude = software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.predictiveScalingMode = software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.predictiveTaskBufferTime = software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.predictiveValueBehavior = software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.predictiveValueBuffer = software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.scalingRuleName = software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scalingRuleType = software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.estimatedInstanceWarmup = software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.initialMaxSize = software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minAdjustmentMagnitude = software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveScalingMode = software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveTaskBufferTime = software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveValueBehavior = software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveValueBuffer = software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingRuleName = software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingRuleType = software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stepAdjustment = software.amazon.jsii.Kernel.get(this, "stepAdjustment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.targetValue = software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.targetValue = software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String scalingGroupId, final java.lang.String adjustmentType, final java.lang.Number adjustmentValue, final java.lang.Number cooldown, final java.lang.Object disableScaleIn, final java.lang.Number estimatedInstanceWarmup, final java.lang.Number initialMaxSize, final java.lang.String metricName, final java.lang.Number minAdjustmentMagnitude, final java.lang.String predictiveScalingMode, final java.lang.Number predictiveTaskBufferTime, final java.lang.String predictiveValueBehavior, final java.lang.Number predictiveValueBuffer, final java.lang.String scalingRuleName, final java.lang.String scalingRuleType, final java.lang.Object stepAdjustment, final java.lang.Number targetValue) {
+        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object adjustmentType, final java.lang.Object adjustmentValue, final java.lang.Object cooldown, final java.lang.Object disableScaleIn, final java.lang.Object estimatedInstanceWarmup, final java.lang.Object initialMaxSize, final java.lang.Object metricName, final java.lang.Object minAdjustmentMagnitude, final java.lang.Object predictiveScalingMode, final java.lang.Object predictiveTaskBufferTime, final java.lang.Object predictiveValueBehavior, final java.lang.Object predictiveValueBuffer, final java.lang.Object scalingRuleName, final java.lang.Object scalingRuleType, final java.lang.Object stepAdjustment, final java.lang.Object targetValue) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
             this.adjustmentType = adjustmentType;
@@ -410,22 +802,22 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getScalingGroupId() {
+        public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
         }
 
         @Override
-        public final java.lang.String getAdjustmentType() {
+        public final java.lang.Object getAdjustmentType() {
             return this.adjustmentType;
         }
 
         @Override
-        public final java.lang.Number getAdjustmentValue() {
+        public final java.lang.Object getAdjustmentValue() {
             return this.adjustmentValue;
         }
 
         @Override
-        public final java.lang.Number getCooldown() {
+        public final java.lang.Object getCooldown() {
             return this.cooldown;
         }
 
@@ -435,52 +827,52 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getEstimatedInstanceWarmup() {
+        public final java.lang.Object getEstimatedInstanceWarmup() {
             return this.estimatedInstanceWarmup;
         }
 
         @Override
-        public final java.lang.Number getInitialMaxSize() {
+        public final java.lang.Object getInitialMaxSize() {
             return this.initialMaxSize;
         }
 
         @Override
-        public final java.lang.String getMetricName() {
+        public final java.lang.Object getMetricName() {
             return this.metricName;
         }
 
         @Override
-        public final java.lang.Number getMinAdjustmentMagnitude() {
+        public final java.lang.Object getMinAdjustmentMagnitude() {
             return this.minAdjustmentMagnitude;
         }
 
         @Override
-        public final java.lang.String getPredictiveScalingMode() {
+        public final java.lang.Object getPredictiveScalingMode() {
             return this.predictiveScalingMode;
         }
 
         @Override
-        public final java.lang.Number getPredictiveTaskBufferTime() {
+        public final java.lang.Object getPredictiveTaskBufferTime() {
             return this.predictiveTaskBufferTime;
         }
 
         @Override
-        public final java.lang.String getPredictiveValueBehavior() {
+        public final java.lang.Object getPredictiveValueBehavior() {
             return this.predictiveValueBehavior;
         }
 
         @Override
-        public final java.lang.Number getPredictiveValueBuffer() {
+        public final java.lang.Object getPredictiveValueBuffer() {
             return this.predictiveValueBuffer;
         }
 
         @Override
-        public final java.lang.String getScalingRuleName() {
+        public final java.lang.Object getScalingRuleName() {
             return this.scalingRuleName;
         }
 
         @Override
-        public final java.lang.String getScalingRuleType() {
+        public final java.lang.Object getScalingRuleType() {
             return this.scalingRuleType;
         }
 
@@ -490,7 +882,7 @@ public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getTargetValue() {
+        public final java.lang.Object getTargetValue() {
             return this.targetValue;
         }
 

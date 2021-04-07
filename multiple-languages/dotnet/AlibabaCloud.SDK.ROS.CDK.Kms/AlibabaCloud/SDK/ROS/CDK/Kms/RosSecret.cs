@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <remarks>
         /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
         /// </remarks>
-        [JsiiProperty(name: "attrArn", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArn
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SecretName: The name of the secret.
         /// </remarks>
-        [JsiiProperty(name: "attrSecretName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecretName
+        [JsiiProperty(name: "attrSecretName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecretName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -79,20 +79,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <strong>Property</strong>: secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
         /// value and stores it in the initial version.
         /// </remarks>
-        [JsiiProperty(name: "secretData", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SecretData
+        [JsiiProperty(name: "secretData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SecretData
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: secretName: The name of the secret.
         /// </remarks>
-        [JsiiProperty(name: "secretName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SecretName
+        [JsiiProperty(name: "secretName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SecretName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <strong>Property</strong>: versionId: The version number of the initial version. Version numbers are unique in each secret
         /// object.
         /// </remarks>
-        [JsiiProperty(name: "versionId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string VersionId
+        [JsiiProperty(name: "versionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object VersionId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -111,10 +111,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <strong>Property</strong>: description: The description of the secret.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -125,10 +125,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// Note The KMS CMK must be a symmetric key.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "encryptionKeyId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EncryptionKeyId
+        [JsiiProperty(name: "encryptionKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EncryptionKeyId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -149,10 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <strong>Property</strong>: recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recoveryWindowInDays", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? RecoveryWindowInDays
+        [JsiiProperty(name: "recoveryWindowInDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RecoveryWindowInDays
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -162,10 +162,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// binary
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "secretDataType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SecretDataType
+        [JsiiProperty(name: "secretDataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecretDataType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -173,10 +173,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// <strong>Property</strong>: versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "versionStages", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? VersionStages
+        [JsiiProperty(name: "versionStages", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? VersionStages
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

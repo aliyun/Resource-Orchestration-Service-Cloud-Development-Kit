@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.173Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CopyImage")
 public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::CopyImage`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CopyImage(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.CopyImageProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::CopyImage`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CopyImage(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.CopyImageProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ImageId: ID of the source custom image.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.CopyImage> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,52 +90,104 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property destinationRegionId: ID of the region to where the destination custom image belongs.
+         * <p>
          * @return {@code this}
-         * @param destinationRegionId This parameter is required.
+         * @param destinationRegionId Property destinationRegionId: ID of the region to where the destination custom image belongs. This parameter is required.
          */
         public Builder destinationRegionId(final java.lang.String destinationRegionId) {
             this.props.destinationRegionId(destinationRegionId);
             return this;
         }
+        /**
+         * Property destinationRegionId: ID of the region to where the destination custom image belongs.
+         * <p>
+         * @return {@code this}
+         * @param destinationRegionId Property destinationRegionId: ID of the region to where the destination custom image belongs. This parameter is required.
+         */
+        public Builder destinationRegionId(final com.aliyun.ros.cdk.core.IResolvable destinationRegionId) {
+            this.props.destinationRegionId(destinationRegionId);
+            return this;
+        }
 
         /**
+         * Property imageId: ID of the source custom image.
+         * <p>
          * @return {@code this}
-         * @param imageId This parameter is required.
+         * @param imageId Property imageId: ID of the source custom image. This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
             this.props.imageId(imageId);
             return this;
         }
+        /**
+         * Property imageId: ID of the source custom image.
+         * <p>
+         * @return {@code this}
+         * @param imageId Property imageId: ID of the source custom image. This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
 
         /**
+         * Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+         * <p>
          * @return {@code this}
-         * @param destinationDescription This parameter is required.
+         * @param destinationDescription Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null. This parameter is required.
          */
         public Builder destinationDescription(final java.lang.String destinationDescription) {
             this.props.destinationDescription(destinationDescription);
             return this;
         }
+        /**
+         * Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+         * <p>
+         * @return {@code this}
+         * @param destinationDescription Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null. This parameter is required.
+         */
+        public Builder destinationDescription(final com.aliyun.ros.cdk.core.IResolvable destinationDescription) {
+            this.props.destinationDescription(destinationDescription);
+            return this;
+        }
 
         /**
+         * Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
+         * <p>
          * @return {@code this}
-         * @param destinationImageName This parameter is required.
+         * @param destinationImageName Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null. This parameter is required.
          */
         public Builder destinationImageName(final java.lang.String destinationImageName) {
             this.props.destinationImageName(destinationImageName);
             return this;
         }
+        /**
+         * Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
+         * <p>
+         * @return {@code this}
+         * @param destinationImageName Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null. This parameter is required.
+         */
+        public Builder destinationImageName(final com.aliyun.ros.cdk.core.IResolvable destinationImageName) {
+            this.props.destinationImageName(destinationImageName);
+            return this;
+        }
 
         /**
+         * Property encrypted: Whether to encrypt the image.
+         * <p>
          * @return {@code this}
-         * @param encrypted This parameter is required.
+         * @param encrypted Property encrypted: Whether to encrypt the image. This parameter is required.
          */
         public Builder encrypted(final java.lang.Boolean encrypted) {
             this.props.encrypted(encrypted);
             return this;
         }
         /**
+         * Property encrypted: Whether to encrypt the image.
+         * <p>
          * @return {@code this}
-         * @param encrypted This parameter is required.
+         * @param encrypted Property encrypted: Whether to encrypt the image. This parameter is required.
          */
         public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.props.encrypted(encrypted);
@@ -134,25 +195,41 @@ public class CopyImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property kmsKeyId: The ID of the key used to encrypt the image.
+         * <p>
          * @return {@code this}
-         * @param kmsKeyId This parameter is required.
+         * @param kmsKeyId Property kmsKeyId: The ID of the key used to encrypt the image. This parameter is required.
          */
         public Builder kmsKeyId(final java.lang.String kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
             return this;
         }
+        /**
+         * Property kmsKeyId: The ID of the key used to encrypt the image.
+         * <p>
+         * @return {@code this}
+         * @param kmsKeyId Property kmsKeyId: The ID of the key used to encrypt the image. This parameter is required.
+         */
+        public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
+            this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
 
         /**
+         * Property tag:.
+         * <p>
          * @return {@code this}
-         * @param tag This parameter is required.
+         * @param tag Property tag:. This parameter is required.
          */
         public Builder tag(final com.aliyun.ros.cdk.core.IResolvable tag) {
             this.props.tag(tag);
             return this;
         }
         /**
+         * Property tag:.
+         * <p>
          * @return {@code this}
-         * @param tag This parameter is required.
+         * @param tag Property tag:. This parameter is required.
          */
         public Builder tag(final java.util.List<? extends java.lang.Object> tag) {
             this.props.tag(tag);

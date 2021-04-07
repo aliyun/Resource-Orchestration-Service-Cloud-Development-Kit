@@ -4,11 +4,11 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>An abstract application modeling unit consisting of Stacks that should be&#xD; deployed together.</summary>
+    /// <summary>An abstract application modeling unit consisting of Stacks that should be deployed together.</summary>
     /// <remarks>
     /// Derive a subclass of 'Stage' and use it to model a single instance of your
     /// application.
-    /// 
+    ///
     /// You can then instantiate your subclass multiple times to model multiple
     /// copies of your application which should be be deployed to different
     /// environments.
@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// If called
         /// on a nested stage, returns its parent.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiMethod(name: "of", returnsJson: "{\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Stage\"}}", parametersJson: "[{\"name\":\"construct\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}}]")]
@@ -68,13 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IStageSynthesisOptions)}, new object?[]{options})!;
         }
 
-        /// <summary>(experimental) Artifact ID of the assembly if it is a nested stage.</summary>
+        /// <summary>(experimental) Artifact ID of the assembly if it is a nested stage. The root stage app will return an empty string.</summary>
         /// <remarks>
-        /// The root stage app
-        /// will return an empty string.
-        /// 
         /// Derived from the construct path.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiProperty(name: "artifactId", typeJson: "{\"primitive\":\"string\"}")]
@@ -87,7 +84,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// Based on names of the parent stages separated by
         /// hypens.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}")]
@@ -101,7 +98,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <list type="bullet">
         /// <description></description>
         /// </list>
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiOptional]

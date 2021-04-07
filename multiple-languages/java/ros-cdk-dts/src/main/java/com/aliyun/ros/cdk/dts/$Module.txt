@@ -1,5 +1,9 @@
+@alicloud/ros-cdk-dts.ConsumerGroup=com.aliyun.ros.cdk.dts.ConsumerGroup
+@alicloud/ros-cdk-dts.ConsumerGroupProps=com.aliyun.ros.cdk.dts.ConsumerGroupProps
 @alicloud/ros-cdk-dts.MigrationJob=com.aliyun.ros.cdk.dts.MigrationJob
 @alicloud/ros-cdk-dts.MigrationJobProps=com.aliyun.ros.cdk.dts.MigrationJobProps
+@alicloud/ros-cdk-dts.RosConsumerGroup=com.aliyun.ros.cdk.dts.RosConsumerGroup
+@alicloud/ros-cdk-dts.RosConsumerGroupProps=com.aliyun.ros.cdk.dts.RosConsumerGroupProps
 @alicloud/ros-cdk-dts.RosMigrationJob=com.aliyun.ros.cdk.dts.RosMigrationJob
 @alicloud/ros-cdk-dts.RosMigrationJob.ColumnExcludesProperty=com.aliyun.ros.cdk.dts.RosMigrationJob$ColumnExcludesProperty
 @alicloud/ros-cdk-dts.RosMigrationJob.ColumnIncludesProperty=com.aliyun.ros.cdk.dts.RosMigrationJob$ColumnIncludesProperty
@@ -10,6 +14,15 @@
 @alicloud/ros-cdk-dts.RosMigrationJob.TableExcludesProperty=com.aliyun.ros.cdk.dts.RosMigrationJob$TableExcludesProperty
 @alicloud/ros-cdk-dts.RosMigrationJob.TableIncludesProperty=com.aliyun.ros.cdk.dts.RosMigrationJob$TableIncludesProperty
 @alicloud/ros-cdk-dts.RosMigrationJobProps=com.aliyun.ros.cdk.dts.RosMigrationJobProps
+@alicloud/ros-cdk-dts.RosSubscriptionInstance=com.aliyun.ros.cdk.dts.RosSubscriptionInstance
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.ConfigurationProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$ConfigurationProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.SourceEndpointProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SourceEndpointProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionDataTypeProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionDataTypeProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionInstanceProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionInstanceProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.SubscriptionObjectProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$SubscriptionObjectProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableExcludesProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$TableExcludesProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstance.TableIncludesProperty=com.aliyun.ros.cdk.dts.RosSubscriptionInstance$TableIncludesProperty
+@alicloud/ros-cdk-dts.RosSubscriptionInstanceProps=com.aliyun.ros.cdk.dts.RosSubscriptionInstanceProps
 @alicloud/ros-cdk-dts.RosSynchronizationJob=com.aliyun.ros.cdk.dts.RosSynchronizationJob
 @alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnExcludesProperty=com.aliyun.ros.cdk.dts.RosSynchronizationJob$ColumnExcludesProperty
 @alicloud/ros-cdk-dts.RosSynchronizationJob.ColumnIncludesProperty=com.aliyun.ros.cdk.dts.RosSynchronizationJob$ColumnIncludesProperty
@@ -19,5 +32,7 @@
 @alicloud/ros-cdk-dts.RosSynchronizationJob.TableExcludesProperty=com.aliyun.ros.cdk.dts.RosSynchronizationJob$TableExcludesProperty
 @alicloud/ros-cdk-dts.RosSynchronizationJob.TableIncludesProperty=com.aliyun.ros.cdk.dts.RosSynchronizationJob$TableIncludesProperty
 @alicloud/ros-cdk-dts.RosSynchronizationJobProps=com.aliyun.ros.cdk.dts.RosSynchronizationJobProps
+@alicloud/ros-cdk-dts.SubscriptionInstance=com.aliyun.ros.cdk.dts.SubscriptionInstance
+@alicloud/ros-cdk-dts.SubscriptionInstanceProps=com.aliyun.ros.cdk.dts.SubscriptionInstanceProps
 @alicloud/ros-cdk-dts.SynchronizationJob=com.aliyun.ros.cdk.dts.SynchronizationJob
 @alicloud/ros-cdk-dts.SynchronizationJobProps=com.aliyun.ros.cdk.dts.SynchronizationJobProps

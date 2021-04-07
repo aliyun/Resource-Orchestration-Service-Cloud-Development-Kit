@@ -11,7 +11,7 @@ export interface ScalingGroupEnableProps {
     /**
      * Property scalingGroupId: The id of operated scaling group.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
@@ -26,7 +26,7 @@ export interface ScalingGroupEnableProps {
     /**
      * Property scalingConfigurationId: The id of scaling configuration which will be activate.
      */
-    readonly scalingConfigurationId?: string;
+    readonly scalingConfigurationId?: string | ros.IResolvable;
 
     /**
      * Property scalingRuleAris: A list of scaling rule aris which will be executed. Max support 10 scaling rule aris.
@@ -38,7 +38,7 @@ export interface ScalingGroupEnableProps {
     /**
      * Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
      */
-    readonly scalingRuleArisExecuteVersion?: number;
+    readonly scalingRuleArisExecuteVersion?: number | ros.IResolvable;
 }
 
 /**
@@ -54,42 +54,42 @@ export class ScalingGroupEnable extends ros.Resource {
     /**
      * Attribute LifecycleState: The scaling group status
      */
-    public readonly attrLifecycleState: any;
+    public readonly attrLifecycleState: ros.IResolvable;
 
     /**
      * Attribute ScalingGroupId: The scaling group id
      */
-    public readonly attrScalingGroupId: any;
+    public readonly attrScalingGroupId: ros.IResolvable;
 
     /**
      * Attribute ScalingInstanceDetails: Detail information of auto created scaling instances
      */
-    public readonly attrScalingInstanceDetails: any;
+    public readonly attrScalingInstanceDetails: ros.IResolvable;
 
     /**
      * Attribute ScalingInstances: The auto created scaling instances
      */
-    public readonly attrScalingInstances: any;
+    public readonly attrScalingInstances: ros.IResolvable;
 
     /**
      * Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteErrorInfo: any;
+    public readonly attrScalingRuleArisExecuteErrorInfo: ros.IResolvable;
 
     /**
      * Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesAdded: any;
+    public readonly attrScalingRuleArisExecuteResultInstancesAdded: ros.IResolvable;
 
     /**
      * Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: any;
+    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: ros.IResolvable;
 
     /**
      * Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: any;
+    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingGroupEnable`.

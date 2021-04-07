@@ -47,52 +47,61 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// <strong>Attribute</strong>: ConnectionDomain: Connection domain of created instance.
         /// </remarks>
-        [JsiiProperty(name: "attrConnectionDomain", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionDomain
+        [JsiiProperty(name: "attrConnectionDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionDomain
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InstanceId: Instance id for created redis instance.
+        /// <strong>Attribute</strong>: InstanceClass: Redis instance type.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceClass", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceClass
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: InstanceId: Instance id of created redis instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: InstanceName: Name of created redis instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: OrderId: Order Id of created instance.
         /// </remarks>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Port: Port of created instance.
         /// </remarks>
-        [JsiiProperty(name: "attrPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPort
+        [JsiiProperty(name: "attrPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
-        /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -117,10 +126,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "capacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Capacity
+        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Capacity
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -128,10 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EngineVersion
+        [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EngineVersion
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -139,10 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: evictionPolicy: The eviction policy of cache data storage.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "evictionPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EvictionPolicy
+        [JsiiProperty(name: "evictionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EvictionPolicy
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -150,10 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? InstanceClass
+        [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceClass
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -183,10 +192,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -194,10 +203,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Password
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -205,10 +214,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -216,10 +225,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecurityGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -230,10 +239,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// Update: updates the SSL certificate.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sslEnabled", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SslEnabled
+        [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SslEnabled
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
 
@@ -241,10 +261,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: vpcId: The VPC id to create ecs instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VpcId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -265,10 +285,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: vSwitchId: The vSwitch Id to create ecs instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VSwitchId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -276,10 +296,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <strong>Property</strong>: zoneId: The zone id of input region.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IBackupPolicyProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.BackupPolicyProperty")]
@@ -288,8 +308,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// <remarks>
             /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
             /// </remarks>
-            [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"primitive\":\"string\"}")]
-            string PreferredBackupPeriod
+            [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object PreferredBackupPeriod
             {
                 get;
             }
@@ -297,8 +317,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// <remarks>
             /// <strong>Property</strong>: preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
             /// </remarks>
-            [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"primitive\":\"string\"}")]
-            string PreferredBackupTime
+            [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object PreferredBackupTime
             {
                 get;
             }
@@ -308,9 +328,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// 1, means open.
             /// 0, which means off, the default value.
             /// </remarks>
-            [JsiiProperty(name: "enableBackupLog", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "enableBackupLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? EnableBackupLog
+            object? EnableBackupLog
             {
                 get
                 {
@@ -328,19 +348,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// <remarks>
                 /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
                 /// </remarks>
-                [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"primitive\":\"string\"}")]
-                public string PreferredBackupPeriod
+                [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object PreferredBackupPeriod
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
                 /// </remarks>
-                [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"primitive\":\"string\"}")]
-                public string PreferredBackupTime
+                [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object PreferredBackupTime
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -349,10 +369,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// 0, which means off, the default value.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "enableBackupLog", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? EnableBackupLog
+                [JsiiProperty(name: "enableBackupLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableBackupLog
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -364,8 +384,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// <remarks>
             /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
             /// </remarks>
-            [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string PreferredBackupPeriod
+            [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object PreferredBackupPeriod
             {
                 get;
                 set;
@@ -374,8 +394,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// <remarks>
             /// <strong>Property</strong>: preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
             /// </remarks>
-            [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string PreferredBackupTime
+            [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object PreferredBackupTime
             {
                 get;
                 set;
@@ -387,8 +407,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// 0, which means off, the default value.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "enableBackupLog", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? EnableBackupLog
+            [JsiiProperty(name: "enableBackupLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? EnableBackupLog
             {
                 get;
                 set;
@@ -402,9 +422,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// - Private: internal network.
             /// - Public: public network.
             /// </remarks>
-            [JsiiProperty(name: "ipType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? IpType
+            object? IpType
             {
                 get
                 {
@@ -413,14 +433,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint. 
-            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
-            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
+            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
+            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
+            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
             /// The prefix can be 8 to 64 characters in length.
             /// </remarks>
-            [JsiiProperty(name: "newConnectionString", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? NewConnectionString
+            object? NewConnectionString
             {
                 get
                 {
@@ -429,12 +449,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The service port of the instance. 
+            /// <strong>Property</strong>: port: The service port of the instance.
             /// Valid values: 1024 to 65535.
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Port
+            object? Port
             {
                 get
                 {
@@ -455,34 +475,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 /// - Public: public network.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "ipType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? IpType
+                [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint. 
-                /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
-                /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
+                /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
+                /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
+                /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
                 /// The prefix can be 8 to 64 characters in length.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "newConnectionString", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? NewConnectionString
+                [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NewConnectionString
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: The service port of the instance. 
+                /// <strong>Property</strong>: port: The service port of the instance.
                 /// Valid values: 1024 to 65535.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Port
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Port
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -495,34 +515,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// - Public: public network.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? IpType
+            [JsiiProperty(name: "ipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? IpType
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint. 
-            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
-            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
+            /// <strong>Property</strong>: newConnectionString: The prefix of the new endpoint.
+            /// The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format.
+            /// The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits.
             /// The prefix can be 8 to 64 characters in length.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "newConnectionString", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? NewConnectionString
+            [JsiiProperty(name: "newConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NewConnectionString
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: port: The service port of the instance. 
+            /// <strong>Property</strong>: port: The service port of the instance.
             /// Valid values: 1024 to 65535.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Port
             {
                 get;
                 set;
@@ -532,14 +552,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         public interface IInstanceMaintainTimeProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window. 
-            /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-            /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00, 
+            /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window.
+            /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+            /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00,
             /// you must set this parameter to 18:00Z.
             /// </remarks>
-            [JsiiProperty(name: "maintainEndTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "maintainEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? MaintainEndTime
+            object? MaintainEndTime
             {
                 get
                 {
@@ -548,14 +568,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window. 
-            /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-            /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00, 
+            /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window.
+            /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+            /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00,
             /// you must set this parameter to 17:00Z.
             /// </remarks>
-            [JsiiProperty(name: "maintainStartTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "maintainStartTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? MaintainStartTime
+            object? MaintainStartTime
             {
                 get
                 {
@@ -571,29 +591,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window. 
-                /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-                /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00, 
+                /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window.
+                /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+                /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00,
                 /// you must set this parameter to 18:00Z.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "maintainEndTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? MaintainEndTime
+                [JsiiProperty(name: "maintainEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MaintainEndTime
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window. 
-                /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-                /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00, 
+                /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window.
+                /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+                /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00,
                 /// you must set this parameter to 17:00Z.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "maintainStartTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? MaintainStartTime
+                [JsiiProperty(name: "maintainStartTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MaintainStartTime
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -601,28 +621,106 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         public class InstanceMaintainTimeProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.IInstanceMaintainTimeProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window. 
-            /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-            /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00, 
+            /// <strong>Property</strong>: maintainEndTime: The end time of the maintenance window.
+            /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+            /// The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00,
             /// you must set this parameter to 18:00Z.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maintainEndTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? MaintainEndTime
+            [JsiiProperty(name: "maintainEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? MaintainEndTime
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window. 
-            /// Specify the time in the ISO 8601 standard in the HH:mmZ format. 
-            /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00, 
+            /// <strong>Property</strong>: maintainStartTime: The start time of the maintenance window.
+            /// Specify the time in the ISO 8601 standard in the HH:mmZ format.
+            /// The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00,
             /// you must set this parameter to 17:00Z.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maintainStartTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? MaintainStartTime
+            [JsiiProperty(name: "maintainStartTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? MaintainStartTime
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Value
             {
                 get;
                 set;

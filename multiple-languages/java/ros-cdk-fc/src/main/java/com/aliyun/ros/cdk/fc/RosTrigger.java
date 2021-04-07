@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Trigger`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.956Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosTrigger")
 public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,26 +44,26 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTriggerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTriggerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTriggerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTriggerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTriggerName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTriggerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTriggerName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTriggerName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,8 +81,8 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +93,25 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFunctionName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "functionName", java.util.Objects.requireNonNull(value, "functionName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setServiceName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serviceName", java.util.Objects.requireNonNull(value, "serviceName is required"));
+    }
+
+    /**
+     */
+    public void setServiceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serviceName", java.util.Objects.requireNonNull(value, "serviceName is required"));
     }
 
@@ -123,8 +135,8 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTriggerName() {
-        return software.amazon.jsii.Kernel.get(this, "triggerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTriggerName() {
+        return software.amazon.jsii.Kernel.get(this, "triggerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +147,14 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTriggerType() {
-        return software.amazon.jsii.Kernel.get(this, "triggerType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTriggerName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "triggerName", java.util.Objects.requireNonNull(value, "triggerName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTriggerType() {
+        return software.amazon.jsii.Kernel.get(this, "triggerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +165,14 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInvocationRole() {
-        return software.amazon.jsii.Kernel.get(this, "invocationRole", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTriggerType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "triggerType", java.util.Objects.requireNonNull(value, "triggerType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInvocationRole() {
+        return software.amazon.jsii.Kernel.get(this, "invocationRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +183,14 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getQualifier() {
-        return software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInvocationRole(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "invocationRole", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getQualifier() {
+        return software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,13 +201,25 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSourceArn() {
-        return software.amazon.jsii.Kernel.get(this, "sourceArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setQualifier(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "qualifier", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSourceArn() {
+        return software.amazon.jsii.Kernel.get(this, "sourceArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSourceArn(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sourceArn", value);
+    }
+
+    /**
+     */
+    public void setSourceArn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceArn", value);
     }
 
@@ -215,12 +257,28 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
             this.props.functionName(functionName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param functionName This parameter is required.
+         */
+        public Builder functionName(final com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param serviceName This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serviceName This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
@@ -250,12 +308,28 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
             this.props.triggerName(triggerName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param triggerName This parameter is required.
+         */
+        public Builder triggerName(final com.aliyun.ros.cdk.core.IResolvable triggerName) {
+            this.props.triggerName(triggerName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param triggerType This parameter is required.
          */
         public Builder triggerType(final java.lang.String triggerType) {
+            this.props.triggerType(triggerType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param triggerType This parameter is required.
+         */
+        public Builder triggerType(final com.aliyun.ros.cdk.core.IResolvable triggerType) {
             this.props.triggerType(triggerType);
             return this;
         }
@@ -268,6 +342,14 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
             this.props.invocationRole(invocationRole);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param invocationRole This parameter is required.
+         */
+        public Builder invocationRole(final com.aliyun.ros.cdk.core.IResolvable invocationRole) {
+            this.props.invocationRole(invocationRole);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -277,12 +359,28 @@ public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
             this.props.qualifier(qualifier);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param qualifier This parameter is required.
+         */
+        public Builder qualifier(final com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param sourceArn This parameter is required.
          */
         public Builder sourceArn(final java.lang.String sourceArn) {
+            this.props.sourceArn(sourceArn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceArn This parameter is required.
+         */
+        public Builder sourceArn(final com.aliyun.ros.cdk.core.IResolvable sourceArn) {
             this.props.sourceArn(sourceArn);
             return this;
         }

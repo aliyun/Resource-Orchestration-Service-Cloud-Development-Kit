@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * A ROS resource type:  `ALIYUN::FNF::Flow`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.964Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.566Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FNF::Flow`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Flow(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fnf.FlowProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FNF::Flow`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Flow(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fnf.FlowProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,27 +49,31 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CreatedTime: Flow creation time.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreatedTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreatedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreatedTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreatedTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Id: The unique ID of the flow.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
-        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrId() {
+        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute LastModifiedTime: The most recently modified time of the flow.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLastModifiedTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrLastModifiedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLastModifiedTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrLastModifiedTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Name: The name of the flow created.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -70,8 +82,8 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fnf.Flow> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -79,8 +91,8 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -99,46 +111,114 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property definition: The definition of the created flow following the FDL syntax standard.
+         * <p>
          * @return {@code this}
-         * @param definition This parameter is required.
+         * @param definition Property definition: The definition of the created flow following the FDL syntax standard. This parameter is required.
          */
         public Builder definition(final java.lang.String definition) {
             this.props.definition(definition);
             return this;
         }
+        /**
+         * Property definition: The definition of the created flow following the FDL syntax standard.
+         * <p>
+         * @return {@code this}
+         * @param definition Property definition: The definition of the created flow following the FDL syntax standard. This parameter is required.
+         */
+        public Builder definition(final com.aliyun.ros.cdk.core.IResolvable definition) {
+            this.props.definition(definition);
+            return this;
+        }
 
         /**
+         * Property name: The name of the flow created.
+         * <p>
+         * This name is unique under the account.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the flow created. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
+        /**
+         * Property name: The name of the flow created.
+         * <p>
+         * This name is unique under the account.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the flow created. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
+         * Property description: Create a description of the flow.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Create a description of the flow. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Create a description of the flow.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Create a description of the flow. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property requestId: The specified Request ID for this request.
+         * <p>
+         * If not specified, our system will help you generate a random one.
+         * <p>
          * @return {@code this}
-         * @param requestId This parameter is required.
+         * @param requestId Property requestId: The specified Request ID for this request. This parameter is required.
          */
         public Builder requestId(final java.lang.String requestId) {
             this.props.requestId(requestId);
             return this;
         }
+        /**
+         * Property requestId: The specified Request ID for this request.
+         * <p>
+         * If not specified, our system will help you generate a random one.
+         * <p>
+         * @return {@code this}
+         * @param requestId Property requestId: The specified Request ID for this request. This parameter is required.
+         */
+        public Builder requestId(final com.aliyun.ros.cdk.core.IResolvable requestId) {
+            this.props.requestId(requestId);
+            return this;
+        }
 
         /**
+         * Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
+         * <p>
          * @return {@code this}
-         * @param roleArn This parameter is required.
+         * @param roleArn Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution. This parameter is required.
          */
         public Builder roleArn(final java.lang.String roleArn) {
+            this.props.roleArn(roleArn);
+            return this;
+        }
+        /**
+         * Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
+         * <p>
+         * @return {@code this}
+         * @param roleArn Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution. This parameter is required.
+         */
+        public Builder roleArn(final com.aliyun.ros.cdk.core.IResolvable roleArn) {
             this.props.roleArn(roleArn);
             return this;
         }

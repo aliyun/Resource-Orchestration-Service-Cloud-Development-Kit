@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SynchronizationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.475Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSynchronizationJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosSynchronizationJobProps.Jsii$Proxy.class)
 public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestRegion();
 
     /**
      */
@@ -22,11 +22,11 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceRegion();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSynchronizationJobClass();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSynchronizationJobClass();
 
     /**
      */
@@ -36,19 +36,19 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
@@ -66,13 +66,13 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTopology() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTopology() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getUsedTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
     }
 
@@ -87,28 +87,18 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSynchronizationJobProps> {
         private java.lang.Object destinationEndpoint;
-        private java.lang.String destRegion;
+        private java.lang.Object destRegion;
         private java.lang.Object sourceEndpoint;
-        private java.lang.String sourceRegion;
-        private java.lang.String synchronizationJobClass;
+        private java.lang.Object sourceRegion;
+        private java.lang.Object synchronizationJobClass;
         private java.lang.Object dataInitialization;
-        private java.lang.String networkType;
-        private java.lang.String payType;
-        private java.lang.String period;
+        private java.lang.Object networkType;
+        private java.lang.Object payType;
+        private java.lang.Object period;
         private java.lang.Object structureInitialization;
         private java.lang.Object synchronizationObjects;
-        private java.lang.String topology;
-        private java.lang.Number usedTime;
-
-        /**
-         * Sets the value of {@link RosSynchronizationJobProps#getDestinationEndpoint}
-         * @param destinationEndpoint the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder destinationEndpoint(com.aliyun.ros.cdk.dts.RosSynchronizationJob.DestinationEndpointProperty destinationEndpoint) {
-            this.destinationEndpoint = destinationEndpoint;
-            return this;
-        }
+        private java.lang.Object topology;
+        private java.lang.Object usedTime;
 
         /**
          * Sets the value of {@link RosSynchronizationJobProps#getDestinationEndpoint}
@@ -121,11 +111,31 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSynchronizationJobProps#getDestinationEndpoint}
+         * @param destinationEndpoint the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationEndpoint(com.aliyun.ros.cdk.dts.RosSynchronizationJob.DestinationEndpointProperty destinationEndpoint) {
+            this.destinationEndpoint = destinationEndpoint;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSynchronizationJobProps#getDestRegion}
          * @param destRegion the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder destRegion(java.lang.String destRegion) {
+            this.destRegion = destRegion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSynchronizationJobProps#getDestRegion}
+         * @param destRegion the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destRegion(com.aliyun.ros.cdk.core.IResolvable destRegion) {
             this.destRegion = destRegion;
             return this;
         }
@@ -161,11 +171,31 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSynchronizationJobProps#getSourceRegion}
+         * @param sourceRegion the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceRegion(com.aliyun.ros.cdk.core.IResolvable sourceRegion) {
+            this.sourceRegion = sourceRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSynchronizationJobProps#getSynchronizationJobClass}
          * @param synchronizationJobClass the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder synchronizationJobClass(java.lang.String synchronizationJobClass) {
+            this.synchronizationJobClass = synchronizationJobClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSynchronizationJobProps#getSynchronizationJobClass}
+         * @param synchronizationJobClass the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder synchronizationJobClass(com.aliyun.ros.cdk.core.IResolvable synchronizationJobClass) {
             this.synchronizationJobClass = synchronizationJobClass;
             return this;
         }
@@ -201,6 +231,16 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSynchronizationJobProps#getNetworkType}
+         * @param networkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSynchronizationJobProps#getPayType}
          * @param payType the value to be set.
          * @return {@code this}
@@ -211,11 +251,31 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSynchronizationJobProps#getPayType}
+         * @param payType the value to be set.
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSynchronizationJobProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSynchronizationJobProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -271,11 +331,31 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSynchronizationJobProps#getTopology}
+         * @param topology the value to be set.
+         * @return {@code this}
+         */
+        public Builder topology(com.aliyun.ros.cdk.core.IResolvable topology) {
+            this.topology = topology;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSynchronizationJobProps#getUsedTime}
          * @param usedTime the value to be set.
          * @return {@code this}
          */
         public Builder usedTime(java.lang.Number usedTime) {
+            this.usedTime = usedTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSynchronizationJobProps#getUsedTime}
+         * @param usedTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {
             this.usedTime = usedTime;
             return this;
         }
@@ -297,18 +377,18 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSynchronizationJobProps {
         private final java.lang.Object destinationEndpoint;
-        private final java.lang.String destRegion;
+        private final java.lang.Object destRegion;
         private final java.lang.Object sourceEndpoint;
-        private final java.lang.String sourceRegion;
-        private final java.lang.String synchronizationJobClass;
+        private final java.lang.Object sourceRegion;
+        private final java.lang.Object synchronizationJobClass;
         private final java.lang.Object dataInitialization;
-        private final java.lang.String networkType;
-        private final java.lang.String payType;
-        private final java.lang.String period;
+        private final java.lang.Object networkType;
+        private final java.lang.Object payType;
+        private final java.lang.Object period;
         private final java.lang.Object structureInitialization;
         private final java.lang.Object synchronizationObjects;
-        private final java.lang.String topology;
-        private final java.lang.Number usedTime;
+        private final java.lang.Object topology;
+        private final java.lang.Object usedTime;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -317,24 +397,24 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.destinationEndpoint = software.amazon.jsii.Kernel.get(this, "destinationEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.destRegion = software.amazon.jsii.Kernel.get(this, "destRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.destRegion = software.amazon.jsii.Kernel.get(this, "destRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpoint = software.amazon.jsii.Kernel.get(this, "sourceEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.sourceRegion = software.amazon.jsii.Kernel.get(this, "sourceRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.synchronizationJobClass = software.amazon.jsii.Kernel.get(this, "synchronizationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sourceRegion = software.amazon.jsii.Kernel.get(this, "sourceRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.synchronizationJobClass = software.amazon.jsii.Kernel.get(this, "synchronizationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dataInitialization = software.amazon.jsii.Kernel.get(this, "dataInitialization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.structureInitialization = software.amazon.jsii.Kernel.get(this, "structureInitialization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.synchronizationObjects = software.amazon.jsii.Kernel.get(this, "synchronizationObjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.topology = software.amazon.jsii.Kernel.get(this, "topology", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.topology = software.amazon.jsii.Kernel.get(this, "topology", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object destinationEndpoint, final java.lang.String destRegion, final java.lang.Object sourceEndpoint, final java.lang.String sourceRegion, final java.lang.String synchronizationJobClass, final java.lang.Object dataInitialization, final java.lang.String networkType, final java.lang.String payType, final java.lang.String period, final java.lang.Object structureInitialization, final java.lang.Object synchronizationObjects, final java.lang.String topology, final java.lang.Number usedTime) {
+        protected Jsii$Proxy(final java.lang.Object destinationEndpoint, final java.lang.Object destRegion, final java.lang.Object sourceEndpoint, final java.lang.Object sourceRegion, final java.lang.Object synchronizationJobClass, final java.lang.Object dataInitialization, final java.lang.Object networkType, final java.lang.Object payType, final java.lang.Object period, final java.lang.Object structureInitialization, final java.lang.Object synchronizationObjects, final java.lang.Object topology, final java.lang.Object usedTime) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.destinationEndpoint = java.util.Objects.requireNonNull(destinationEndpoint, "destinationEndpoint is required");
             this.destRegion = java.util.Objects.requireNonNull(destRegion, "destRegion is required");
@@ -357,7 +437,7 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getDestRegion() {
+        public final java.lang.Object getDestRegion() {
             return this.destRegion;
         }
 
@@ -367,12 +447,12 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getSourceRegion() {
+        public final java.lang.Object getSourceRegion() {
             return this.sourceRegion;
         }
 
         @Override
-        public final java.lang.String getSynchronizationJobClass() {
+        public final java.lang.Object getSynchronizationJobClass() {
             return this.synchronizationJobClass;
         }
 
@@ -382,17 +462,17 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
         @Override
-        public final java.lang.String getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
@@ -407,12 +487,12 @@ public interface RosSynchronizationJobProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getTopology() {
+        public final java.lang.Object getTopology() {
             return this.topology;
         }
 
         @Override
-        public final java.lang.Number getUsedTime() {
+        public final java.lang.Object getUsedTime() {
             return this.usedTime;
         }
 

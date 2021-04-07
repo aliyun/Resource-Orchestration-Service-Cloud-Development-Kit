@@ -11,32 +11,32 @@ export interface AlertContactProps {
     /**
      * Property contactName: The name of the alert contact that you want to create.
      */
-    readonly contactName: string;
+    readonly contactName: string | ros.IResolvable;
 
     /**
      * Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
      */
-    readonly dingRobotWebhookUrl?: string;
+    readonly dingRobotWebhookUrl?: string | ros.IResolvable;
 
     /**
      * Property email: The email address of the contact.
      */
-    readonly email?: string;
+    readonly email?: string | ros.IResolvable;
 
     /**
      * Property phoneNum: The phone number of the contact.
      */
-    readonly phoneNum?: string;
+    readonly phoneNum?: string | ros.IResolvable;
 
     /**
      * Property proxyUserId: Internal parameters
      */
-    readonly proxyUserId?: string;
+    readonly proxyUserId?: string | ros.IResolvable;
 
     /**
      * Property regionId: Region ID. Default to region of stack.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 
     /**
      * Property systemNoc: Specifies whether to receive system alerts.
@@ -57,7 +57,7 @@ export class AlertContact extends ros.Resource {
     /**
      * Attribute ContactId: The ID of the alert contact that you created.
      */
-    public readonly attrContactId: any;
+    public readonly attrContactId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ARMS::AlertContact`.

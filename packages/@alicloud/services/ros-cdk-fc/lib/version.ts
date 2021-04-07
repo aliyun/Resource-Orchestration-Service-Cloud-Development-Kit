@@ -11,12 +11,12 @@ export interface VersionProps {
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property description: Version description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -32,12 +32,12 @@ export class Version extends ros.Resource {
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: any;
+    public readonly attrVersionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::Version`.

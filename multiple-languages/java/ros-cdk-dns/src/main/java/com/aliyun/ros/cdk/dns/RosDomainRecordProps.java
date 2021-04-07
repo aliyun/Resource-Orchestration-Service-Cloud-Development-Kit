@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::DomainRecord`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.093Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainRecordProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainRecordProps.Jsii$Proxy.class)
 public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomainName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRr();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRr();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getValue();
+    @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLine() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLine() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTtl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
     }
 
@@ -52,13 +52,13 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosDomainRecordProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainRecordProps> {
-        private java.lang.String domainName;
-        private java.lang.String rr;
-        private java.lang.String type;
-        private java.lang.String value;
-        private java.lang.String line;
-        private java.lang.Number priority;
-        private java.lang.Number ttl;
+        private java.lang.Object domainName;
+        private java.lang.Object rr;
+        private java.lang.Object type;
+        private java.lang.Object value;
+        private java.lang.Object line;
+        private java.lang.Object priority;
+        private java.lang.Object ttl;
 
         /**
          * Sets the value of {@link RosDomainRecordProps#getDomainName}
@@ -66,6 +66,16 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
+            this.domainName = domainName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainRecordProps#getDomainName}
+         * @param domainName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {
             this.domainName = domainName;
             return this;
         }
@@ -81,11 +91,31 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainRecordProps#getRr}
+         * @param rr the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder rr(com.aliyun.ros.cdk.core.IResolvable rr) {
+            this.rr = rr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainRecordProps#getType}
          * @param type the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainRecordProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
             this.type = type;
             return this;
         }
@@ -101,11 +131,31 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainRecordProps#getValue}
+         * @param value the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+            this.value = value;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainRecordProps#getLine}
          * @param line the value to be set.
          * @return {@code this}
          */
         public Builder line(java.lang.String line) {
+            this.line = line;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainRecordProps#getLine}
+         * @param line the value to be set.
+         * @return {@code this}
+         */
+        public Builder line(com.aliyun.ros.cdk.core.IResolvable line) {
             this.line = line;
             return this;
         }
@@ -121,11 +171,31 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainRecordProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainRecordProps#getTtl}
          * @param ttl the value to be set.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
+            this.ttl = ttl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainRecordProps#getTtl}
+         * @param ttl the value to be set.
+         * @return {@code this}
+         */
+        public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {
             this.ttl = ttl;
             return this;
         }
@@ -146,13 +216,13 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDomainRecordProps {
-        private final java.lang.String domainName;
-        private final java.lang.String rr;
-        private final java.lang.String type;
-        private final java.lang.String value;
-        private final java.lang.String line;
-        private final java.lang.Number priority;
-        private final java.lang.Number ttl;
+        private final java.lang.Object domainName;
+        private final java.lang.Object rr;
+        private final java.lang.Object type;
+        private final java.lang.Object value;
+        private final java.lang.Object line;
+        private final java.lang.Object priority;
+        private final java.lang.Object ttl;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,19 +230,19 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.rr = software.amazon.jsii.Kernel.get(this, "rr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.line = software.amazon.jsii.Kernel.get(this, "line", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rr = software.amazon.jsii.Kernel.get(this, "rr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.line = software.amazon.jsii.Kernel.get(this, "line", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domainName, final java.lang.String rr, final java.lang.String type, final java.lang.String value, final java.lang.String line, final java.lang.Number priority, final java.lang.Number ttl) {
+        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object rr, final java.lang.Object type, final java.lang.Object value, final java.lang.Object line, final java.lang.Object priority, final java.lang.Object ttl) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
             this.rr = java.util.Objects.requireNonNull(rr, "rr is required");
@@ -184,37 +254,37 @@ public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getDomainName() {
+        public final java.lang.Object getDomainName() {
             return this.domainName;
         }
 
         @Override
-        public final java.lang.String getRr() {
+        public final java.lang.Object getRr() {
             return this.rr;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getValue() {
+        public final java.lang.Object getValue() {
             return this.value;
         }
 
         @Override
-        public final java.lang.String getLine() {
+        public final java.lang.Object getLine() {
             return this.line;
         }
 
         @Override
-        public final java.lang.Number getPriority() {
+        public final java.lang.Object getPriority() {
             return this.priority;
         }
 
         @Override
-        public final java.lang.Number getTtl() {
+        public final java.lang.Object getTtl() {
             return this.ttl;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a mapping.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosMapping")
 public class RosMapping extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -30,8 +30,8 @@ public class RosMapping extends com.aliyun.ros.cdk.core.RosRefElement {
      * @param key1 This parameter is required.
      * @param key2 This parameter is required.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String findInMap(final @org.jetbrains.annotations.NotNull java.lang.String key1, final @org.jetbrains.annotations.NotNull java.lang.String key2) {
-        return software.amazon.jsii.Kernel.call(this, "findInMap", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(key1, "key1 is required"), java.util.Objects.requireNonNull(key2, "key2 is required") });
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable findInMap(final @org.jetbrains.annotations.NotNull java.lang.String key1, final @org.jetbrains.annotations.NotNull java.lang.String key2) {
+        return software.amazon.jsii.Kernel.call(this, "findInMap", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(key1, "key1 is required"), java.util.Objects.requireNonNull(key2, "key2 is required") });
     }
 
     /**

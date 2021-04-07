@@ -12,29 +12,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// Minimal value: 1
         /// </remarks>
-        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"primitive\":\"number\"}")]
-        double BandwidthLimit
+        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object BandwidthLimit
         {
             get;
         }
 
         /// <summary>Property cenId: The ID of the CEN instance.</summary>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-        string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenId
         {
             get;
         }
 
         /// <summary>Property localRegionId: The ID of the local region.</summary>
-        [JsiiProperty(name: "localRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        string LocalRegionId
+        [JsiiProperty(name: "localRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LocalRegionId
         {
             get;
         }
 
         /// <summary>Property oppositeRegionId: The ID of the other interconnected region.</summary>
-        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        string OppositeRegionId
+        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object OppositeRegionId
         {
             get;
         }
@@ -51,31 +51,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             /// <remarks>
             /// Minimal value: 1
             /// </remarks>
-            [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"primitive\":\"number\"}")]
-            public double BandwidthLimit
+            [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BandwidthLimit
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property cenId: The ID of the CEN instance.</summary>
-            [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenId
+            [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property localRegionId: The ID of the local region.</summary>
-            [JsiiProperty(name: "localRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string LocalRegionId
+            [JsiiProperty(name: "localRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LocalRegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property oppositeRegionId: The ID of the other interconnected region.</summary>
-            [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string OppositeRegionId
+            [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object OppositeRegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

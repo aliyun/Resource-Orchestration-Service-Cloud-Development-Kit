@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.271Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDynamicTagGroupProps.Jsii$Proxy.class)
 public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getContactGroupList();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupList();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTagKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTagKey();
 
     /**
      */
@@ -36,13 +36,13 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMatchExpressFilterRelation() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMatchExpressFilterRelation() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getTemplateIdList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateIdList() {
         return null;
     }
 
@@ -56,20 +56,30 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosDynamicTagGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDynamicTagGroupProps> {
-        private java.util.List<java.lang.String> contactGroupList;
-        private java.lang.String tagKey;
+        private java.lang.Object contactGroupList;
+        private java.lang.Object tagKey;
         private java.lang.Object enableInstallAgent;
         private java.lang.Object enableSubscribeEvent;
         private java.lang.Object matchExpress;
-        private java.lang.String matchExpressFilterRelation;
-        private java.util.List<java.lang.String> templateIdList;
+        private java.lang.Object matchExpressFilterRelation;
+        private java.lang.Object templateIdList;
 
         /**
          * Sets the value of {@link RosDynamicTagGroupProps#getContactGroupList}
          * @param contactGroupList the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder contactGroupList(java.util.List<java.lang.String> contactGroupList) {
+        public Builder contactGroupList(com.aliyun.ros.cdk.core.IResolvable contactGroupList) {
+            this.contactGroupList = contactGroupList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDynamicTagGroupProps#getContactGroupList}
+         * @param contactGroupList the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactGroupList(java.util.List<? extends java.lang.Object> contactGroupList) {
             this.contactGroupList = contactGroupList;
             return this;
         }
@@ -80,6 +90,16 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder tagKey(java.lang.String tagKey) {
+            this.tagKey = tagKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDynamicTagGroupProps#getTagKey}
+         * @param tagKey the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tagKey(com.aliyun.ros.cdk.core.IResolvable tagKey) {
             this.tagKey = tagKey;
             return this;
         }
@@ -155,11 +175,31 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDynamicTagGroupProps#getMatchExpressFilterRelation}
+         * @param matchExpressFilterRelation the value to be set.
+         * @return {@code this}
+         */
+        public Builder matchExpressFilterRelation(com.aliyun.ros.cdk.core.IResolvable matchExpressFilterRelation) {
+            this.matchExpressFilterRelation = matchExpressFilterRelation;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDynamicTagGroupProps#getTemplateIdList}
          * @param templateIdList the value to be set.
          * @return {@code this}
          */
-        public Builder templateIdList(java.util.List<java.lang.String> templateIdList) {
+        public Builder templateIdList(com.aliyun.ros.cdk.core.IResolvable templateIdList) {
+            this.templateIdList = templateIdList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDynamicTagGroupProps#getTemplateIdList}
+         * @param templateIdList the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateIdList(java.util.List<? extends java.lang.Object> templateIdList) {
             this.templateIdList = templateIdList;
             return this;
         }
@@ -180,13 +220,13 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDynamicTagGroupProps {
-        private final java.util.List<java.lang.String> contactGroupList;
-        private final java.lang.String tagKey;
+        private final java.lang.Object contactGroupList;
+        private final java.lang.Object tagKey;
         private final java.lang.Object enableInstallAgent;
         private final java.lang.Object enableSubscribeEvent;
         private final java.lang.Object matchExpress;
-        private final java.lang.String matchExpressFilterRelation;
-        private final java.util.List<java.lang.String> templateIdList;
+        private final java.lang.Object matchExpressFilterRelation;
+        private final java.lang.Object templateIdList;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -194,19 +234,19 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.contactGroupList = software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.contactGroupList = software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableInstallAgent = software.amazon.jsii.Kernel.get(this, "enableInstallAgent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableSubscribeEvent = software.amazon.jsii.Kernel.get(this, "enableSubscribeEvent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.matchExpress = software.amazon.jsii.Kernel.get(this, "matchExpress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.matchExpressFilterRelation = software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.templateIdList = software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.matchExpressFilterRelation = software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateIdList = software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.List<java.lang.String> contactGroupList, final java.lang.String tagKey, final java.lang.Object enableInstallAgent, final java.lang.Object enableSubscribeEvent, final java.lang.Object matchExpress, final java.lang.String matchExpressFilterRelation, final java.util.List<java.lang.String> templateIdList) {
+        protected Jsii$Proxy(final java.lang.Object contactGroupList, final java.lang.Object tagKey, final java.lang.Object enableInstallAgent, final java.lang.Object enableSubscribeEvent, final java.lang.Object matchExpress, final java.lang.Object matchExpressFilterRelation, final java.lang.Object templateIdList) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactGroupList = java.util.Objects.requireNonNull(contactGroupList, "contactGroupList is required");
             this.tagKey = java.util.Objects.requireNonNull(tagKey, "tagKey is required");
@@ -218,12 +258,12 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.util.List<java.lang.String> getContactGroupList() {
+        public final java.lang.Object getContactGroupList() {
             return this.contactGroupList;
         }
 
         @Override
-        public final java.lang.String getTagKey() {
+        public final java.lang.Object getTagKey() {
             return this.tagKey;
         }
 
@@ -243,12 +283,12 @@ public interface RosDynamicTagGroupProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getMatchExpressFilterRelation() {
+        public final java.lang.Object getMatchExpressFilterRelation() {
             return this.matchExpressFilterRelation;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getTemplateIdList() {
+        public final java.lang.Object getTemplateIdList() {
             return this.templateIdList;
         }
 

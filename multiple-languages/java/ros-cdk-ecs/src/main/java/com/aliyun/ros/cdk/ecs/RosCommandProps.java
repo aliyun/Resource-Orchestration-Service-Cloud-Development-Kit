@@ -3,24 +3,24 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Command`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.279Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosCommandProps.Jsii$Proxy.class)
 public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCommandContent() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCommandContent() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -32,19 +32,19 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkingDir() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkingDir() {
         return null;
     }
 
@@ -58,13 +58,13 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosCommandProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCommandProps> {
-        private java.lang.String type;
-        private java.lang.String commandContent;
-        private java.lang.String description;
+        private java.lang.Object type;
+        private java.lang.Object commandContent;
+        private java.lang.Object description;
         private java.lang.Object enableParameter;
-        private java.lang.String name;
-        private java.lang.Number timeout;
-        private java.lang.String workingDir;
+        private java.lang.Object name;
+        private java.lang.Object timeout;
+        private java.lang.Object workingDir;
 
         /**
          * Sets the value of {@link RosCommandProps#getType}
@@ -72,6 +72,16 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
             this.type = type;
             return this;
         }
@@ -87,11 +97,31 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosCommandProps#getCommandContent}
+         * @param commandContent the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandContent(com.aliyun.ros.cdk.core.IResolvable commandContent) {
+            this.commandContent = commandContent;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommandProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -127,6 +157,16 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosCommandProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommandProps#getTimeout}
          * @param timeout the value to be set.
          * @return {@code this}
@@ -137,11 +177,31 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosCommandProps#getTimeout}
+         * @param timeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCommandProps#getWorkingDir}
          * @param workingDir the value to be set.
          * @return {@code this}
          */
         public Builder workingDir(java.lang.String workingDir) {
+            this.workingDir = workingDir;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCommandProps#getWorkingDir}
+         * @param workingDir the value to be set.
+         * @return {@code this}
+         */
+        public Builder workingDir(com.aliyun.ros.cdk.core.IResolvable workingDir) {
             this.workingDir = workingDir;
             return this;
         }
@@ -162,13 +222,13 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCommandProps {
-        private final java.lang.String type;
-        private final java.lang.String commandContent;
-        private final java.lang.String description;
+        private final java.lang.Object type;
+        private final java.lang.Object commandContent;
+        private final java.lang.Object description;
         private final java.lang.Object enableParameter;
-        private final java.lang.String name;
-        private final java.lang.Number timeout;
-        private final java.lang.String workingDir;
+        private final java.lang.Object name;
+        private final java.lang.Object timeout;
+        private final java.lang.Object workingDir;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -176,19 +236,19 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableParameter = software.amazon.jsii.Kernel.get(this, "enableParameter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String type, final java.lang.String commandContent, final java.lang.String description, final java.lang.Object enableParameter, final java.lang.String name, final java.lang.Number timeout, final java.lang.String workingDir) {
+        protected Jsii$Proxy(final java.lang.Object type, final java.lang.Object commandContent, final java.lang.Object description, final java.lang.Object enableParameter, final java.lang.Object name, final java.lang.Object timeout, final java.lang.Object workingDir) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.type = java.util.Objects.requireNonNull(type, "type is required");
             this.commandContent = commandContent;
@@ -200,17 +260,17 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getCommandContent() {
+        public final java.lang.Object getCommandContent() {
             return this.commandContent;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -220,17 +280,17 @@ public interface RosCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
         @Override
-        public final java.lang.String getWorkingDir() {
+        public final java.lang.Object getWorkingDir() {
             return this.workingDir;
         }
 

@@ -11,7 +11,7 @@ export interface DomainGroupProps {
     /**
      * Property groupName: Domain name group name
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 }
 
 /**
@@ -27,7 +27,7 @@ export class DomainGroup extends ros.Resource {
     /**
      * Attribute GroupId: Domain name group ID
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DNS::DomainGroup`.

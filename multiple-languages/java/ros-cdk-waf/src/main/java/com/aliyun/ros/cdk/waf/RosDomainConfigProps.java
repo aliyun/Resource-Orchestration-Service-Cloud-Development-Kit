@@ -3,72 +3,72 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.551Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosDomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainConfigProps.Jsii$Proxy.class)
 public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomain();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomain();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getIsAccessProduct();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIsAccessProduct();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocols();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocols();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHttpPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttpPort() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHttpsPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttpsPort() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getHttpsRedirect() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttpsRedirect() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getHttpToUserIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttpToUserIp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getLoadBalancing() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancing() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRsType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRsType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSourceIps() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceIps() {
         return null;
     }
 
@@ -82,18 +82,18 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosDomainConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainConfigProps> {
-        private java.lang.String domain;
-        private java.lang.String instanceId;
-        private java.lang.Number isAccessProduct;
-        private java.lang.String protocols;
-        private java.lang.String httpPort;
-        private java.lang.String httpsPort;
-        private java.lang.Number httpsRedirect;
-        private java.lang.Number httpToUserIp;
-        private java.lang.Number loadBalancing;
-        private java.lang.String region;
-        private java.lang.Number rsType;
-        private java.lang.String sourceIps;
+        private java.lang.Object domain;
+        private java.lang.Object instanceId;
+        private java.lang.Object isAccessProduct;
+        private java.lang.Object protocols;
+        private java.lang.Object httpPort;
+        private java.lang.Object httpsPort;
+        private java.lang.Object httpsRedirect;
+        private java.lang.Object httpToUserIp;
+        private java.lang.Object loadBalancing;
+        private java.lang.Object region;
+        private java.lang.Object rsType;
+        private java.lang.Object sourceIps;
 
         /**
          * Sets the value of {@link RosDomainConfigProps#getDomain}
@@ -101,6 +101,16 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder domain(java.lang.String domain) {
+            this.domain = domain;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getDomain}
+         * @param domain the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domain(com.aliyun.ros.cdk.core.IResolvable domain) {
             this.domain = domain;
             return this;
         }
@@ -116,11 +126,31 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getInstanceId}
+         * @param instanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getIsAccessProduct}
          * @param isAccessProduct the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder isAccessProduct(java.lang.Number isAccessProduct) {
+            this.isAccessProduct = isAccessProduct;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getIsAccessProduct}
+         * @param isAccessProduct the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder isAccessProduct(com.aliyun.ros.cdk.core.IResolvable isAccessProduct) {
             this.isAccessProduct = isAccessProduct;
             return this;
         }
@@ -136,11 +166,31 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getProtocols}
+         * @param protocols the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocols(com.aliyun.ros.cdk.core.IResolvable protocols) {
+            this.protocols = protocols;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getHttpPort}
          * @param httpPort the value to be set.
          * @return {@code this}
          */
         public Builder httpPort(java.lang.String httpPort) {
+            this.httpPort = httpPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getHttpPort}
+         * @param httpPort the value to be set.
+         * @return {@code this}
+         */
+        public Builder httpPort(com.aliyun.ros.cdk.core.IResolvable httpPort) {
             this.httpPort = httpPort;
             return this;
         }
@@ -156,11 +206,31 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getHttpsPort}
+         * @param httpsPort the value to be set.
+         * @return {@code this}
+         */
+        public Builder httpsPort(com.aliyun.ros.cdk.core.IResolvable httpsPort) {
+            this.httpsPort = httpsPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getHttpsRedirect}
          * @param httpsRedirect the value to be set.
          * @return {@code this}
          */
         public Builder httpsRedirect(java.lang.Number httpsRedirect) {
+            this.httpsRedirect = httpsRedirect;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getHttpsRedirect}
+         * @param httpsRedirect the value to be set.
+         * @return {@code this}
+         */
+        public Builder httpsRedirect(com.aliyun.ros.cdk.core.IResolvable httpsRedirect) {
             this.httpsRedirect = httpsRedirect;
             return this;
         }
@@ -176,11 +246,31 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getHttpToUserIp}
+         * @param httpToUserIp the value to be set.
+         * @return {@code this}
+         */
+        public Builder httpToUserIp(com.aliyun.ros.cdk.core.IResolvable httpToUserIp) {
+            this.httpToUserIp = httpToUserIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getLoadBalancing}
          * @param loadBalancing the value to be set.
          * @return {@code this}
          */
         public Builder loadBalancing(java.lang.Number loadBalancing) {
+            this.loadBalancing = loadBalancing;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getLoadBalancing}
+         * @param loadBalancing the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancing(com.aliyun.ros.cdk.core.IResolvable loadBalancing) {
             this.loadBalancing = loadBalancing;
             return this;
         }
@@ -196,6 +286,16 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getRegion}
+         * @param region the value to be set.
+         * @return {@code this}
+         */
+        public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
+            this.region = region;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getRsType}
          * @param rsType the value to be set.
          * @return {@code this}
@@ -206,11 +306,31 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDomainConfigProps#getRsType}
+         * @param rsType the value to be set.
+         * @return {@code this}
+         */
+        public Builder rsType(com.aliyun.ros.cdk.core.IResolvable rsType) {
+            this.rsType = rsType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainConfigProps#getSourceIps}
          * @param sourceIps the value to be set.
          * @return {@code this}
          */
         public Builder sourceIps(java.lang.String sourceIps) {
+            this.sourceIps = sourceIps;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainConfigProps#getSourceIps}
+         * @param sourceIps the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceIps(com.aliyun.ros.cdk.core.IResolvable sourceIps) {
             this.sourceIps = sourceIps;
             return this;
         }
@@ -231,18 +351,18 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDomainConfigProps {
-        private final java.lang.String domain;
-        private final java.lang.String instanceId;
-        private final java.lang.Number isAccessProduct;
-        private final java.lang.String protocols;
-        private final java.lang.String httpPort;
-        private final java.lang.String httpsPort;
-        private final java.lang.Number httpsRedirect;
-        private final java.lang.Number httpToUserIp;
-        private final java.lang.Number loadBalancing;
-        private final java.lang.String region;
-        private final java.lang.Number rsType;
-        private final java.lang.String sourceIps;
+        private final java.lang.Object domain;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object isAccessProduct;
+        private final java.lang.Object protocols;
+        private final java.lang.Object httpPort;
+        private final java.lang.Object httpsPort;
+        private final java.lang.Object httpsRedirect;
+        private final java.lang.Object httpToUserIp;
+        private final java.lang.Object loadBalancing;
+        private final java.lang.Object region;
+        private final java.lang.Object rsType;
+        private final java.lang.Object sourceIps;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -250,24 +370,24 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.isAccessProduct = software.amazon.jsii.Kernel.get(this, "isAccessProduct", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.protocols = software.amazon.jsii.Kernel.get(this, "protocols", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.httpPort = software.amazon.jsii.Kernel.get(this, "httpPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.httpsPort = software.amazon.jsii.Kernel.get(this, "httpsPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.httpsRedirect = software.amazon.jsii.Kernel.get(this, "httpsRedirect", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.httpToUserIp = software.amazon.jsii.Kernel.get(this, "httpToUserIp", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.loadBalancing = software.amazon.jsii.Kernel.get(this, "loadBalancing", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.rsType = software.amazon.jsii.Kernel.get(this, "rsType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.sourceIps = software.amazon.jsii.Kernel.get(this, "sourceIps", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isAccessProduct = software.amazon.jsii.Kernel.get(this, "isAccessProduct", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocols = software.amazon.jsii.Kernel.get(this, "protocols", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.httpPort = software.amazon.jsii.Kernel.get(this, "httpPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.httpsPort = software.amazon.jsii.Kernel.get(this, "httpsPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.httpsRedirect = software.amazon.jsii.Kernel.get(this, "httpsRedirect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.httpToUserIp = software.amazon.jsii.Kernel.get(this, "httpToUserIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancing = software.amazon.jsii.Kernel.get(this, "loadBalancing", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rsType = software.amazon.jsii.Kernel.get(this, "rsType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceIps = software.amazon.jsii.Kernel.get(this, "sourceIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domain, final java.lang.String instanceId, final java.lang.Number isAccessProduct, final java.lang.String protocols, final java.lang.String httpPort, final java.lang.String httpsPort, final java.lang.Number httpsRedirect, final java.lang.Number httpToUserIp, final java.lang.Number loadBalancing, final java.lang.String region, final java.lang.Number rsType, final java.lang.String sourceIps) {
+        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object instanceId, final java.lang.Object isAccessProduct, final java.lang.Object protocols, final java.lang.Object httpPort, final java.lang.Object httpsPort, final java.lang.Object httpsRedirect, final java.lang.Object httpToUserIp, final java.lang.Object loadBalancing, final java.lang.Object region, final java.lang.Object rsType, final java.lang.Object sourceIps) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
@@ -284,62 +404,62 @@ public interface RosDomainConfigProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getDomain() {
+        public final java.lang.Object getDomain() {
             return this.domain;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.Number getIsAccessProduct() {
+        public final java.lang.Object getIsAccessProduct() {
             return this.isAccessProduct;
         }
 
         @Override
-        public final java.lang.String getProtocols() {
+        public final java.lang.Object getProtocols() {
             return this.protocols;
         }
 
         @Override
-        public final java.lang.String getHttpPort() {
+        public final java.lang.Object getHttpPort() {
             return this.httpPort;
         }
 
         @Override
-        public final java.lang.String getHttpsPort() {
+        public final java.lang.Object getHttpsPort() {
             return this.httpsPort;
         }
 
         @Override
-        public final java.lang.Number getHttpsRedirect() {
+        public final java.lang.Object getHttpsRedirect() {
             return this.httpsRedirect;
         }
 
         @Override
-        public final java.lang.Number getHttpToUserIp() {
+        public final java.lang.Object getHttpToUserIp() {
             return this.httpToUserIp;
         }
 
         @Override
-        public final java.lang.Number getLoadBalancing() {
+        public final java.lang.Object getLoadBalancing() {
             return this.loadBalancing;
         }
 
         @Override
-        public final java.lang.String getRegion() {
+        public final java.lang.Object getRegion() {
             return this.region;
         }
 
         @Override
-        public final java.lang.Number getRsType() {
+        public final java.lang.Object getRsType() {
             return this.rsType;
         }
 
         @Override
-        public final java.lang.String getSourceIps() {
+        public final java.lang.Object getSourceIps() {
             return this.sourceIps;
         }
 

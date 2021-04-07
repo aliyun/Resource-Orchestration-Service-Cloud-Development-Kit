@@ -12,14 +12,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
     {
         /// <remarks>
         /// <strong>Property</strong>: endpoint: Terminal address of the message recipient for the created subscription.
-        /// Currently, four types of endpoints are supported: 
-        /// 1. HttpEndpoint, which must be prefixed with "http://"; 
-        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName}; 
-        /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
+        /// Currently, four types of endpoints are supported:
+        /// 1. HttpEndpoint, which must be prefixed with "http://";
+        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};
+        /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress};
         /// 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
         /// </remarks>
-        [JsiiProperty(name: "endpoint", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Endpoint
+        [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Endpoint
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Property</strong>: subscriptionName: Subscription name
         /// </remarks>
-        [JsiiProperty(name: "subscriptionName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SubscriptionName
+        [JsiiProperty(name: "subscriptionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SubscriptionName
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Property</strong>: topicName: Topic name
         /// </remarks>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TopicName
         {
             get;
             set;
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// The value is a string of no more than 16 characters. The default value is no message filter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "filterTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? FilterTag
+        [JsiiProperty(name: "filterTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? FilterTag
         {
             get;
             set;
@@ -62,8 +62,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NotifyContentFormat
+        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NotifyContentFormat
         {
             get;
             set;
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NotifyStrategy
+        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NotifyStrategy
         {
             get;
             set;

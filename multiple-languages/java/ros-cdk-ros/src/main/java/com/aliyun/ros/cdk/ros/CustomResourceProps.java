@@ -3,20 +3,57 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::CustomResource`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.017Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResourceProps")
 @software.amazon.jsii.Jsii.Proxy(CustomResourceProps.Jsii$Proxy.class)
 public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
+     * <p>
+     * Allowed values:
+     * <p>
+     * <ul>
+     * <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+     * <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
+     * <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
+     * <li>HTTP&amp;HTTPS: web[options]:<url>
+     * Two options are supported:
+     * <p>
+     * <ul>
+     * <li>sync: sync HTTP&amp;HTTPS request.</li>
+     * <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
+     * Examples:</li>
+     * <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+     * <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
+     * <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
+     * <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
+     * <li>acs:mns:cn-hangzhou:123456789:/topics/test-topic</li>
+     * <li>web:https://abc.com</li>
+     * <li>web[sync]:http://abc.com</li>
+     * <li>web[sync,idempotent]:https://abc.com</li>
+     * </ul></li>
+     * </ul>
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceToken();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceToken();
 
     /**
+     * Property timeout: Timeout seconds before service provider responses.
+     * <p>
+     * It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&amp;HTTPS request.
+     * Timeout seconds are always 10 for sync HTTP&amp;HTTPS request.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getTimeout();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTimeout();
 
     /**
+     * Property httpConfig: Config for HTTP&HTTPS service provider.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHttpConfig() {
+        return null;
+    }
+
+    /**
+     * Property parameters: Parameters to be passed to service provider.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
@@ -32,13 +69,37 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link CustomResourceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomResourceProps> {
-        private java.lang.String serviceToken;
-        private java.lang.Number timeout;
+        private java.lang.Object serviceToken;
+        private java.lang.Object timeout;
+        private java.lang.Object httpConfig;
         private java.lang.Object parameters;
 
         /**
          * Sets the value of {@link CustomResourceProps#getServiceToken}
-         * @param serviceToken the value to be set. This parameter is required.
+         * @param serviceToken Property serviceToken: The service token that was given to the template developer by the service provider to access the service. This parameter is required.
+         *                     Allowed values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         *                     <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
+         *                     <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
+         *                     <li>HTTP&amp;HTTPS: web[options]:<url>
+         *                     Two options are supported:
+         *                     <p>
+         *                     <ul>
+         *                     <li>sync: sync HTTP&amp;HTTPS request.</li>
+         *                     <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
+         *                     Examples:</li>
+         *                     <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:/topics/test-topic</li>
+         *                     <li>web:https://abc.com</li>
+         *                     <li>web[sync]:http://abc.com</li>
+         *                     <li>web[sync,idempotent]:https://abc.com</li>
+         *                     </ul></li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder serviceToken(java.lang.String serviceToken) {
@@ -47,8 +108,43 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link CustomResourceProps#getServiceToken}
+         * @param serviceToken Property serviceToken: The service token that was given to the template developer by the service provider to access the service. This parameter is required.
+         *                     Allowed values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         *                     <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
+         *                     <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
+         *                     <li>HTTP&amp;HTTPS: web[options]:<url>
+         *                     Two options are supported:
+         *                     <p>
+         *                     <ul>
+         *                     <li>sync: sync HTTP&amp;HTTPS request.</li>
+         *                     <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
+         *                     Examples:</li>
+         *                     <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
+         *                     <li>acs:mns:cn-hangzhou:123456789:/topics/test-topic</li>
+         *                     <li>web:https://abc.com</li>
+         *                     <li>web[sync]:http://abc.com</li>
+         *                     <li>web[sync,idempotent]:https://abc.com</li>
+         *                     </ul></li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder serviceToken(com.aliyun.ros.cdk.core.IResolvable serviceToken) {
+            this.serviceToken = serviceToken;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomResourceProps#getTimeout}
-         * @param timeout the value to be set. This parameter is required.
+         * @param timeout Property timeout: Timeout seconds before service provider responses. This parameter is required.
+         *                It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&amp;HTTPS request.
+         *                Timeout seconds are always 10 for sync HTTP&amp;HTTPS request.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -57,8 +153,40 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link CustomResourceProps#getTimeout}
+         * @param timeout Property timeout: Timeout seconds before service provider responses. This parameter is required.
+         *                It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&amp;HTTPS request.
+         *                Timeout seconds are always 10 for sync HTTP&amp;HTTPS request.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomResourceProps#getHttpConfig}
+         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider.
+         * @return {@code this}
+         */
+        public Builder httpConfig(com.aliyun.ros.cdk.core.IResolvable httpConfig) {
+            this.httpConfig = httpConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomResourceProps#getHttpConfig}
+         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider.
+         * @return {@code this}
+         */
+        public Builder httpConfig(com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty httpConfig) {
+            this.httpConfig = httpConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomResourceProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: Parameters to be passed to service provider.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -68,7 +196,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link CustomResourceProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: Parameters to be passed to service provider.
          * @return {@code this}
          */
         public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
@@ -83,7 +211,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public CustomResourceProps build() {
-            return new Jsii$Proxy(serviceToken, timeout, parameters);
+            return new Jsii$Proxy(serviceToken, timeout, httpConfig, parameters);
         }
     }
 
@@ -92,8 +220,9 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomResourceProps {
-        private final java.lang.String serviceToken;
-        private final java.lang.Number timeout;
+        private final java.lang.Object serviceToken;
+        private final java.lang.Object timeout;
+        private final java.lang.Object httpConfig;
         private final java.lang.Object parameters;
 
         /**
@@ -102,29 +231,36 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.serviceToken = software.amazon.jsii.Kernel.get(this, "serviceToken", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.serviceToken = software.amazon.jsii.Kernel.get(this, "serviceToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String serviceToken, final java.lang.Number timeout, final java.lang.Object parameters) {
+        protected Jsii$Proxy(final java.lang.Object serviceToken, final java.lang.Object timeout, final java.lang.Object httpConfig, final java.lang.Object parameters) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.serviceToken = java.util.Objects.requireNonNull(serviceToken, "serviceToken is required");
             this.timeout = java.util.Objects.requireNonNull(timeout, "timeout is required");
+            this.httpConfig = httpConfig;
             this.parameters = parameters;
         }
 
         @Override
-        public final java.lang.String getServiceToken() {
+        public final java.lang.Object getServiceToken() {
             return this.serviceToken;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
+        }
+
+        @Override
+        public final java.lang.Object getHttpConfig() {
+            return this.httpConfig;
         }
 
         @Override
@@ -140,6 +276,9 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
 
             data.set("serviceToken", om.valueToTree(this.getServiceToken()));
             data.set("timeout", om.valueToTree(this.getTimeout()));
+            if (this.getHttpConfig() != null) {
+                data.set("httpConfig", om.valueToTree(this.getHttpConfig()));
+            }
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
             }
@@ -163,6 +302,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
 
             if (!serviceToken.equals(that.serviceToken)) return false;
             if (!timeout.equals(that.timeout)) return false;
+            if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
             return this.parameters != null ? this.parameters.equals(that.parameters) : that.parameters == null;
         }
 
@@ -170,6 +310,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
         public final int hashCode() {
             int result = this.serviceToken.hashCode();
             result = 31 * result + (this.timeout.hashCode());
+            result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             return result;
         }

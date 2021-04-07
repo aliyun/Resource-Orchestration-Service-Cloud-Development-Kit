@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         }
 
         /// <summary>Attribute ZoneId: Zone ID.</summary>
-        [JsiiProperty(name: "attrZoneId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrZoneId
+        [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ZoneName: Zone name.</summary>
-        [JsiiProperty(name: "attrZoneName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrZoneName
+        [JsiiProperty(name: "attrZoneName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

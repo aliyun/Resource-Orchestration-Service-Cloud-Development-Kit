@@ -10,13 +10,13 @@ export interface RosDeviceProps {
     /**
      * @Property productKey: The identifier of the product to which the device to be registered belongs.
      */
-    readonly productKey: string;
+    readonly productKey: string | ros.IResolvable;
 
     /**
      * @Property devEui: DevEUI LoRaWAN equipment.
      * When you create a LoRaWAN devices, this will pass.
      */
-    readonly devEui?: string;
+    readonly devEui?: string | ros.IResolvable;
 
     /**
      * @Property deviceName: The name of the device that you want to register. The device name must consist of
@@ -25,25 +25,25 @@ export interface RosDeviceProps {
      * DeviceName is used with ProductKey to identify a specified device.
      * Note If you do not specify this parameter, the system will generate a name for the device.
      */
-    readonly deviceName?: string;
+    readonly deviceName?: string | ros.IResolvable;
 
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
      * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
      * character counts as two characters.
      */
-    readonly nickname?: string;
+    readonly nickname?: string | ros.IResolvable;
 
     /**
      * @Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
      * When you create a LoRaWAN devices, this will pass.
      */
-    readonly pinCode?: string;
+    readonly pinCode?: string | ros.IResolvable;
 }
 
 /**
@@ -106,48 +106,48 @@ export class RosDevice extends ros.RosResource {
     /**
      * @Attribute DeviceName: Device name.
      */
-    public readonly attrDeviceName: any;
+    public readonly attrDeviceName: ros.IResolvable;
 
     /**
      * @Attribute DeviceSecret: Device key.
      */
-    public readonly attrDeviceSecret: any;
+    public readonly attrDeviceSecret: ros.IResolvable;
 
     /**
      * @Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
 Description Keep, do not leak.
      */
-    public readonly attrIotId: any;
+    public readonly attrIotId: ros.IResolvable;
 
     /**
      * @Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: any;
+    public readonly attrIotInstanceId: ros.IResolvable;
 
     /**
      * @Attribute IpAddress: IP address.
      */
-    public readonly attrIpAddress: any;
+    public readonly attrIpAddress: ros.IResolvable;
 
     /**
      * @Attribute NickName: Nick name.
      */
-    public readonly attrNickName: any;
+    public readonly attrNickName: ros.IResolvable;
 
     /**
      * @Attribute NodeType: Node type.
      */
-    public readonly attrNodeType: any;
+    public readonly attrNodeType: ros.IResolvable;
 
     /**
      * @Attribute ProductKey: Product key.
      */
-    public readonly attrProductKey: any;
+    public readonly attrProductKey: ros.IResolvable;
 
     /**
      * @Attribute ProductName: Product name.
      */
-    public readonly attrProductName: any;
+    public readonly attrProductName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -155,13 +155,13 @@ Description Keep, do not leak.
     /**
      * @Property productKey: The identifier of the product to which the device to be registered belongs.
      */
-    public productKey: string;
+    public productKey: string | ros.IResolvable;
 
     /**
      * @Property devEui: DevEUI LoRaWAN equipment.
      * When you create a LoRaWAN devices, this will pass.
      */
-    public devEui: string | undefined;
+    public devEui: string | ros.IResolvable | undefined;
 
     /**
      * @Property deviceName: The name of the device that you want to register. The device name must consist of
@@ -170,25 +170,25 @@ Description Keep, do not leak.
      * DeviceName is used with ProductKey to identify a specified device.
      * Note If you do not specify this parameter, the system will generate a name for the device.
      */
-    public deviceName: string | undefined;
+    public deviceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    public iotInstanceId: string | undefined;
+    public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
      * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
      * character counts as two characters.
      */
-    public nickname: string | undefined;
+    public nickname: string | ros.IResolvable | undefined;
 
     /**
      * @Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
      * When you create a LoRaWAN devices, this will pass.
      */
-    public pinCode: string | undefined;
+    public pinCode: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::IOT::Device`.
@@ -199,15 +199,15 @@ Description Keep, do not leak.
      */
     constructor(scope: ros.Construct, id: string, props: RosDeviceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDevice.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDeviceName = ros.Token.asString(this.getAtt('DeviceName'));
-        this.attrDeviceSecret = ros.Token.asString(this.getAtt('DeviceSecret'));
-        this.attrIotId = ros.Token.asString(this.getAtt('IotId'));
-        this.attrIotInstanceId = ros.Token.asString(this.getAtt('IotInstanceId'));
-        this.attrIpAddress = ros.Token.asString(this.getAtt('IpAddress'));
-        this.attrNickName = ros.Token.asString(this.getAtt('NickName'));
-        this.attrNodeType = ros.Token.asString(this.getAtt('NodeType'));
-        this.attrProductKey = ros.Token.asString(this.getAtt('ProductKey'));
-        this.attrProductName = ros.Token.asString(this.getAtt('ProductName'));
+        this.attrDeviceName = this.getAtt('DeviceName');
+        this.attrDeviceSecret = this.getAtt('DeviceSecret');
+        this.attrIotId = this.getAtt('IotId');
+        this.attrIotInstanceId = this.getAtt('IotInstanceId');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrNickName = this.getAtt('NickName');
+        this.attrNodeType = this.getAtt('NodeType');
+        this.attrProductKey = this.getAtt('ProductKey');
+        this.attrProductName = this.getAtt('ProductName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.productKey = props.productKey;
@@ -242,23 +242,23 @@ export interface RosDeviceGroupProps {
     /**
      * @Property groupName: The name of the group. The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property groupDesc: The description of the group. You can enter a description with up to 100 characters.
      */
-    readonly groupDesc?: string;
+    readonly groupDesc?: string | ros.IResolvable;
 
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property superGroupId: The ID of the parent group.
      * If you want to create a first-level group, do not enter this parameter.
      */
-    readonly superGroupId?: string;
+    readonly superGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -317,12 +317,12 @@ export class RosDeviceGroup extends ros.RosResource {
     /**
      * @Attribute GroupId: Packet, ID, System for the globally unique identifier generated packet.
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * @Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: any;
+    public readonly attrIotInstanceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -330,23 +330,23 @@ export class RosDeviceGroup extends ros.RosResource {
     /**
      * @Property groupName: The name of the group. The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property groupDesc: The description of the group. You can enter a description with up to 100 characters.
      */
-    public groupDesc: string | undefined;
+    public groupDesc: string | ros.IResolvable | undefined;
 
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    public iotInstanceId: string | undefined;
+    public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property superGroupId: The ID of the parent group.
      * If you want to create a first-level group, do not enter this parameter.
      */
-    public superGroupId: string | undefined;
+    public superGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::IOT::DeviceGroup`.
@@ -357,8 +357,8 @@ export class RosDeviceGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDeviceGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDeviceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
-        this.attrIotInstanceId = ros.Token.asString(this.getAtt('IotInstanceId'));
+        this.attrGroupId = this.getAtt('GroupId');
+        this.attrIotInstanceId = this.getAtt('IotInstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
@@ -394,14 +394,14 @@ export interface RosProductProps {
      * the topological relationships with sub-devices, and synchronize the topological relationships
      * to IoT Platform.
      */
-    readonly nodeType: number;
+    readonly nodeType: number | ros.IResolvable;
 
     /**
      * @Property productName: The name of the product. A product name can be 4 to 30 characters in length and can
      * contain Chinese characters, English letters, digits, and underscores (_).
      * Note A product name must be unique in an account.
      */
-    readonly productName: string;
+    readonly productName: string | ros.IResolvable;
 
     /**
      * @Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
@@ -410,7 +410,7 @@ export interface RosProductProps {
      * If you do not input this parameter, the default value is used, which is iothub (Basic
      * Edition).
      */
-    readonly aliyunCommodityCode?: string;
+    readonly aliyunCommodityCode?: string | ros.IResolvable;
 
     /**
      * @Property authType: Authentication device to access the Internet of Things platform under the product. Optional:
@@ -421,13 +421,13 @@ export interface RosProductProps {
      * The use of X.509 certificates device side configuration instructions, see Using X.509 certificate authentication.
      * If this parameter is passed, the default value is secret.
      */
-    readonly authType?: string;
+    readonly authType?: string | ros.IResolvable;
 
     /**
      * @Property categoryKey: Identifier Product category. If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
      * Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
      */
-    readonly categoryKey?: string;
+    readonly categoryKey?: string | ros.IResolvable;
 
     /**
      * @Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
@@ -436,13 +436,13 @@ export interface RosProductProps {
      * 0: Do not parse/Custom.
      * 1: Alink JSON.
      */
-    readonly dataFormat?: number;
+    readonly dataFormat?: number | ros.IResolvable;
 
     /**
      * @Property description: A description of the product. The description can be a maximum of 100 characters in
      * length.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property id2: Whether ID2 certification.
@@ -459,14 +459,14 @@ export interface RosProductProps {
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property joinPermissionId: LoRaWAN network credential ID. When networking mode NetType chosen LORA, the necessary parameters.
      * Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
      * If you do not LoRaWAN network credentials, visit the network management platform to create things together.
      */
-    readonly joinPermissionId?: string;
+    readonly joinPermissionId?: string | ros.IResolvable;
 
     /**
      * @Property netType: Networking mode.
@@ -479,7 +479,7 @@ export interface RosProductProps {
      * OTHER
      * The default value is WIFI.
      */
-    readonly netType?: string;
+    readonly netType?: string | ros.IResolvable;
 
     /**
      * @Property protocolType: The protocol that devices of this product use to connect to gateways.
@@ -492,7 +492,7 @@ export interface RosProductProps {
      * ble: BLE.
      * zigbee: ZigBee.
      */
-    readonly protocolType?: string;
+    readonly protocolType?: string | ros.IResolvable;
 
     /**
      * @Property publishAuto: Whether to automatically model publication after the product is created.
@@ -506,7 +506,7 @@ export interface RosProductProps {
      * @Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
      * If this parameter is passed, the product will be classified as a default resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -610,12 +610,12 @@ export class RosProduct extends ros.RosResource {
     /**
      * @Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: any;
+    public readonly attrIotInstanceId: ros.IResolvable;
 
     /**
      * @Attribute ProductKey: The globally unique identifier of the product issued by IoT Platform.
      */
-    public readonly attrProductKey: any;
+    public readonly attrProductKey: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -628,14 +628,14 @@ export class RosProduct extends ros.RosResource {
      * the topological relationships with sub-devices, and synchronize the topological relationships
      * to IoT Platform.
      */
-    public nodeType: number;
+    public nodeType: number | ros.IResolvable;
 
     /**
      * @Property productName: The name of the product. A product name can be 4 to 30 characters in length and can
      * contain Chinese characters, English letters, digits, and underscores (_).
      * Note A product name must be unique in an account.
      */
-    public productName: string;
+    public productName: string | ros.IResolvable;
 
     /**
      * @Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
@@ -644,7 +644,7 @@ export class RosProduct extends ros.RosResource {
      * If you do not input this parameter, the default value is used, which is iothub (Basic
      * Edition).
      */
-    public aliyunCommodityCode: string | undefined;
+    public aliyunCommodityCode: string | ros.IResolvable | undefined;
 
     /**
      * @Property authType: Authentication device to access the Internet of Things platform under the product. Optional:
@@ -655,13 +655,13 @@ export class RosProduct extends ros.RosResource {
      * The use of X.509 certificates device side configuration instructions, see Using X.509 certificate authentication.
      * If this parameter is passed, the default value is secret.
      */
-    public authType: string | undefined;
+    public authType: string | ros.IResolvable | undefined;
 
     /**
      * @Property categoryKey: Identifier Product category. If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
      * Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
      */
-    public categoryKey: string | undefined;
+    public categoryKey: string | ros.IResolvable | undefined;
 
     /**
      * @Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
@@ -670,13 +670,13 @@ export class RosProduct extends ros.RosResource {
      * 0: Do not parse/Custom.
      * 1: Alink JSON.
      */
-    public dataFormat: number | undefined;
+    public dataFormat: number | ros.IResolvable | undefined;
 
     /**
      * @Property description: A description of the product. The description can be a maximum of 100 characters in
      * length.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property id2: Whether ID2 certification.
@@ -693,14 +693,14 @@ export class RosProduct extends ros.RosResource {
     /**
      * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    public iotInstanceId: string | undefined;
+    public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property joinPermissionId: LoRaWAN network credential ID. When networking mode NetType chosen LORA, the necessary parameters.
      * Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
      * If you do not LoRaWAN network credentials, visit the network management platform to create things together.
      */
-    public joinPermissionId: string | undefined;
+    public joinPermissionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property netType: Networking mode.
@@ -713,7 +713,7 @@ export class RosProduct extends ros.RosResource {
      * OTHER
      * The default value is WIFI.
      */
-    public netType: string | undefined;
+    public netType: string | ros.IResolvable | undefined;
 
     /**
      * @Property protocolType: The protocol that devices of this product use to connect to gateways.
@@ -726,7 +726,7 @@ export class RosProduct extends ros.RosResource {
      * ble: BLE.
      * zigbee: ZigBee.
      */
-    public protocolType: string | undefined;
+    public protocolType: string | ros.IResolvable | undefined;
 
     /**
      * @Property publishAuto: Whether to automatically model publication after the product is created.
@@ -740,7 +740,7 @@ export class RosProduct extends ros.RosResource {
      * @Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
      * If this parameter is passed, the product will be classified as a default resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::IOT::Product`.
@@ -751,8 +751,8 @@ export class RosProduct extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProductProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProduct.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrIotInstanceId = ros.Token.asString(this.getAtt('IotInstanceId'));
-        this.attrProductKey = ros.Token.asString(this.getAtt('ProductKey'));
+        this.attrIotInstanceId = this.getAtt('IotInstanceId');
+        this.attrProductKey = this.getAtt('ProductKey');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.nodeType = props.nodeType;
@@ -806,28 +806,28 @@ export interface RosProductTopicProps {
      * PUB: Publish. Devices can publish messages using the topics of this category.
      * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
      */
-    readonly operation: string;
+    readonly operation: string | ros.IResolvable;
 
     /**
      * @Property productKey: The unique identifier of the product for which you want to create a topic category.
      */
-    readonly productKey: string;
+    readonly productKey: string | ros.IResolvable;
 
     /**
      * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
-    readonly topicShortName: string;
+    readonly topicShortName: string | ros.IResolvable;
 
     /**
      * @Property desc: The description of the topic category. You can enter a description with up to 100 characters.
      */
-    readonly desc?: string;
+    readonly desc?: string | ros.IResolvable;
 
     /**
      * @Property iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 }
 
 /**
@@ -903,7 +903,7 @@ export class RosProductTopic extends ros.RosResource {
     /**
      * @Attribute TopicId: Topic ID
      */
-    public readonly attrTopicId: any;
+    public readonly attrTopicId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -914,28 +914,28 @@ export class RosProductTopic extends ros.RosResource {
      * PUB: Publish. Devices can publish messages using the topics of this category.
      * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
      */
-    public operation: string;
+    public operation: string | ros.IResolvable;
 
     /**
      * @Property productKey: The unique identifier of the product for which you want to create a topic category.
      */
-    public productKey: string;
+    public productKey: string | ros.IResolvable;
 
     /**
      * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
-    public topicShortName: string;
+    public topicShortName: string | ros.IResolvable;
 
     /**
      * @Property desc: The description of the topic category. You can enter a description with up to 100 characters.
      */
-    public desc: string | undefined;
+    public desc: string | ros.IResolvable | undefined;
 
     /**
      * @Property iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
      */
-    public iotInstanceId: string | undefined;
+    public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::IOT::ProductTopic`.
@@ -946,7 +946,7 @@ export class RosProductTopic extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProductTopicProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProductTopic.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrTopicId = ros.Token.asString(this.getAtt('TopicId'));
+        this.attrTopicId = this.getAtt('TopicId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.operation = props.operation;
@@ -977,54 +977,108 @@ export class RosProductTopic extends ros.RosResource {
 export interface RosRuleProps {
 
     /**
-     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain English letters, digits, underscores (_), and hyphens (-). Chinese language is also supported. Each Chinese symbol occupies 2 characters.
+     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain
+     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
+     * supported. Each Chinese symbol occupies 2 characters.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
-     * @Property dataType: The format of the data to be processed by the rule. You must specify the format of device data to be processed for this parameter. Valid values:  JSON: JSON data BINARY: binary data
+     * @Property dataType: The format of the data to be processed by the rule. You must specify the format of
+     * device data to be processed for this parameter. Valid values:
+     * JSON: JSON data
+     * BINARY: binary data
+     * Note If you specifyBINARY, you cannot set the TopicType parameter to 0 and forward data to Table Store, Time Series Database (TSDB), or ApsaradDB
+     * for RDS.
+     * Default value: JSON.
      */
-    readonly dataType?: string;
+    readonly dataType?: string | ros.IResolvable;
 
     /**
-     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However, the parameter is required for the instances that you have purchased.
+     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
+     * the parameter is required for the instances that you have purchased.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property productKey: The ProductKey of the product to which the rule applies.
      */
-    readonly productKey?: string;
+    readonly productKey?: string | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource group information in the Resource Management console.  If you do not specify this parameter, the rule is assigned to the default resource group.
+     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource
+     * group information in the Resource Management console.
+     * If you do not specify this parameter, the rule is assigned to the default resource
+     * group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property ruleDesc: The description of the rule. The description can be up to 100 characters in length. Each Chinese symbol occupies 1 characters.
+     * @Property ruleAction:
      */
-    readonly ruleDesc?: string;
+    readonly ruleAction?: Array<RosRule.RuleActionProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ruleDesc: The description of the rule. The description can be up to 100 characters in length.
+     * Each Chinese symbol occupies 1 characters.
+     */
+    readonly ruleDesc?: string | ros.IResolvable;
 
     /**
      * @Property select: The SQL SELECT statement that you want to execute. For more information, seeSQL expressions.
+     * Note Specify the fields that follow the Select keyword for this parameter. For example, if the Select statement is Select a,b,c, specify a,b,c for this parameter.
      */
-    readonly select?: string;
+    readonly select?: string | ros.IResolvable;
 
     /**
-     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.  Basic communication topics or Thing Specification Language (TSL)-based communication topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the product. Valid values of topicShortName: /thing/event/property/post: submits the property data of a device. /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL. /thing/lifecycle: submits device lifecycle changes. /thing/downlink/reply/message: sends a response to a request from IoT Platform. /thing/list/found: submits the data when a gateway detects a new sub-device. /thing/topo/lifecycle: submits device topology changes. /thing/event/property/history/post: submits historical property data of a device. /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL. /ota/upgrade: submits OTA update status. /ota/version/post: submits OTA module versions. /thing/deviceinfo/update: submits device tag changes. /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.  ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic. ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.  Custom topics. Example:${deviceName}/user/get.  You can call theQueryProductTopicoperation to view all custom topics of the product.  When you specify a custom topic, you can use the + and # wildcards.  You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the product. You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that follow/user.  For more information about how to use wildcards, see Wildcards in topics.  Topic that is used to submit device status changes: ${deviceName}.  You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
+     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
+     * Basic communication topics or Thing Specification Language (TSL)-based communication
+     * topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
+     * product. Valid values of topicShortName:
+     * /thing/event/property/post: submits the property data of a device.
+     * /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
+     * /thing/lifecycle: submits device lifecycle changes.
+     * /thing/downlink/reply/message: sends a response to a request from IoT Platform.
+     * /thing/list/found: submits the data when a gateway detects a new sub-device.
+     * /thing/topo/lifecycle: submits device topology changes.
+     * /thing/event/property/history/post: submits historical property data of a device.
+     * /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
+     * /ota/upgrade: submits OTA update status.
+     * /ota/version/post: submits OTA module versions.
+     * /thing/deviceinfo/update: submits device tag changes.
+     * /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
+     * ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic.
+     * ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.
+     * Custom topics. Example:${deviceName}/user/get.
+     * You can call theQueryProductTopicoperation to view all custom topics of the product.
+     * When you specify a custom topic, you can use the + and # wildcards.
+     * You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the
+     * product.
+     * You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
+     * follow/user.
+     * For more information about how to use wildcards, see Wildcards in topics.
+     * Topic that is used to submit device status changes: ${deviceName}.
+     * You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
      */
-    readonly shortTopic?: string;
+    readonly shortTopic?: string | ros.IResolvable;
 
     /**
-     * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic. 1: The topic is a custom topic. 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     * @Property startRule: Start the rule. The rule at least contains one rule action with normal data forward.
      */
-    readonly topicType?: number;
+    readonly startRule?: boolean | ros.IResolvable;
+
+    /**
+     * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic.
+     * 1: The topic is a custom topic.
+     * 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     */
+    readonly topicType?: number | ros.IResolvable;
 
     /**
      * @Property where: The condition that is used to trigger the rule. For more information, seeSQL expressions.
+     * Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a>10, specify a>10 for this parameter.
      */
-    readonly where?: string;
+    readonly where?: string | ros.IResolvable;
 }
 
 /**
@@ -1040,8 +1094,23 @@ function RosRulePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('topicType', ros.validateNumber)(properties.topicType));
     errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.ruleAction && (Array.isArray(properties.ruleAction) || (typeof properties.ruleAction) === 'string')) {
+        errors.collect(ros.propertyValidator('ruleAction', ros.validateLength)({
+            data: properties.ruleAction.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ruleAction', ros.listValidator(RosRule_RuleActionPropertyValidator))(properties.ruleAction));
     errors.collect(ros.propertyValidator('shortTopic', ros.validateString)(properties.shortTopic));
     errors.collect(ros.propertyValidator('select', ros.validateString)(properties.select));
+    errors.collect(ros.propertyValidator('startRule', ros.validateBoolean)(properties.startRule));
+    if(properties.dataType && (typeof properties.dataType) !== 'object') {
+        errors.collect(ros.propertyValidator('dataType', ros.validateAllowedValues)({
+          data: properties.dataType,
+          allowedValues: ["BINARY","JSON"],
+        }));
+    }
     errors.collect(ros.propertyValidator('dataType', ros.validateString)(properties.dataType));
     errors.collect(ros.propertyValidator('ruleDesc', ros.validateString)(properties.ruleDesc));
     errors.collect(ros.propertyValidator('where', ros.validateString)(properties.where));
@@ -1070,9 +1139,11 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
       ProductKey: ros.stringToRosTemplate(properties.productKey),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RuleAction: ros.listMapper(rosRuleRuleActionPropertyToRosTemplate)(properties.ruleAction),
       RuleDesc: ros.stringToRosTemplate(properties.ruleDesc),
       Select: ros.stringToRosTemplate(properties.select),
       ShortTopic: ros.stringToRosTemplate(properties.shortTopic),
+      StartRule: ros.booleanToRosTemplate(properties.startRule),
       TopicType: ros.numberToRosTemplate(properties.topicType),
       Where: ros.stringToRosTemplate(properties.where),
     };
@@ -1093,112 +1164,121 @@ export class RosRule extends ros.RosResource {
      */
 
     /**
-     * @Attribute DataType: The format of the data to be processed by the rule. You must specify the format of device data to be processed for this parameter. Valid values:  JSON: JSON data BINARY: binary data
+     * @Attribute ActionId: The ID of the rule action.
      */
-    public readonly attrDataType: any;
+    public readonly attrActionId: ros.IResolvable;
 
     /**
-     * @Attribute IotInstanceId: The ID of the instance. This parameter is not required for public instances. However, the parameter is required for the instances that you have purchased.
+     * @Attribute RuleId: The ID of the rule.
      */
-    public readonly attrIotInstanceId: any;
-
-    /**
-     * @Attribute Name: The name of the rule. The name must be 1 to 30 characters in length and can contain English letters, digits, underscores (_), and hyphens (-). Chinese language is also supported. Each Chinese symbol occupies 2 characters.
-     */
-    public readonly attrName: any;
-
-    /**
-     * @Attribute ProductKey: The ProductKey of the product to which the rule applies.
-     */
-    public readonly attrProductKey: any;
-
-    /**
-     * @Attribute ResourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource group information in the Resource Management console.  If you do not specify this parameter, the rule is assigned to the default resource group.
-     */
-    public readonly attrResourceGroupId: any;
-
-    /**
-     * @Attribute RuleDesc: The description of the rule. The description can be up to 100 characters in length. Each Chinese symbol occupies 1 characters.
-     */
-    public readonly attrRuleDesc: any;
-
-    /**
-     * @Attribute RuleId: The ID of the rule. The rule ID is generated by the rules engine if the call was successful.
-     */
-    public readonly attrRuleId: any;
-
-    /**
-     * @Attribute Select: The SQL SELECT statement that you want to execute. For more information, seeSQL expressions.
-     */
-    public readonly attrSelect: any;
-
-    /**
-     * @Attribute ShortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.  Basic communication topics or Thing Specification Language (TSL)-based communication topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the product. Valid values of topicShortName: /thing/event/property/post: submits the property data of a device. /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL. /thing/lifecycle: submits device lifecycle changes. /thing/downlink/reply/message: sends a response to a request from IoT Platform. /thing/list/found: submits the data when a gateway detects a new sub-device. /thing/topo/lifecycle: submits device topology changes. /thing/event/property/history/post: submits historical property data of a device. /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL. /ota/upgrade: submits OTA update status. /ota/version/post: submits OTA module versions. /thing/deviceinfo/update: submits device tag changes. /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.  ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic. ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.  Custom topics. Example:${deviceName}/user/get.  You can call theQueryProductTopicoperation to view all custom topics of the product.  When you specify a custom topic, you can use the + and # wildcards.  You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the product. You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that follow/user.  For more information about how to use wildcards, see Wildcards in topics.  Topic that is used to submit device status changes: ${deviceName}.  You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
-     */
-    public readonly attrShortTopic: any;
-
-    /**
-     * @Attribute TopicType: 0: The topic is a basic communication topic or TSL-based communication topic. 1: The topic is a custom topic. 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
-     */
-    public readonly attrTopicType: any;
-
-    /**
-     * @Attribute Where: The condition that is used to trigger the rule. For more information, seeSQL expressions.
-     */
-    public readonly attrWhere: any;
+    public readonly attrRuleId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain English letters, digits, underscores (_), and hyphens (-). Chinese language is also supported. Each Chinese symbol occupies 2 characters.
+     * @Property name: The name of the rule. The name must be 1 to 30 characters in length and can contain
+     * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
+     * supported. Each Chinese symbol occupies 2 characters.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
-     * @Property dataType: The format of the data to be processed by the rule. You must specify the format of device data to be processed for this parameter. Valid values:  JSON: JSON data BINARY: binary data
+     * @Property dataType: The format of the data to be processed by the rule. You must specify the format of
+     * device data to be processed for this parameter. Valid values:
+     * JSON: JSON data
+     * BINARY: binary data
+     * Note If you specifyBINARY, you cannot set the TopicType parameter to 0 and forward data to Table Store, Time Series Database (TSDB), or ApsaradDB
+     * for RDS.
+     * Default value: JSON.
      */
-    public dataType: string | undefined;
+    public dataType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However, the parameter is required for the instances that you have purchased.
+     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
+     * the parameter is required for the instances that you have purchased.
      */
-    public iotInstanceId: string | undefined;
+    public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property productKey: The ProductKey of the product to which the rule applies.
      */
-    public productKey: string | undefined;
+    public productKey: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource group information in the Resource Management console.  If you do not specify this parameter, the rule is assigned to the default resource group.
+     * @Property resourceGroupId: The ID of the resource group to which the rule is assigned. You can view the resource
+     * group information in the Resource Management console.
+     * If you do not specify this parameter, the rule is assigned to the default resource
+     * group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ruleDesc: The description of the rule. The description can be up to 100 characters in length. Each Chinese symbol occupies 1 characters.
+     * @Property ruleAction:
      */
-    public ruleDesc: string | undefined;
+    public ruleAction: Array<RosRule.RuleActionProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ruleDesc: The description of the rule. The description can be up to 100 characters in length.
+     * Each Chinese symbol occupies 1 characters.
+     */
+    public ruleDesc: string | ros.IResolvable | undefined;
 
     /**
      * @Property select: The SQL SELECT statement that you want to execute. For more information, seeSQL expressions.
+     * Note Specify the fields that follow the Select keyword for this parameter. For example, if the Select statement is Select a,b,c, specify a,b,c for this parameter.
      */
-    public select: string | undefined;
+    public select: string | ros.IResolvable | undefined;
 
     /**
-     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.  Basic communication topics or Thing Specification Language (TSL)-based communication topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the product. Valid values of topicShortName: /thing/event/property/post: submits the property data of a device. /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL. /thing/lifecycle: submits device lifecycle changes. /thing/downlink/reply/message: sends a response to a request from IoT Platform. /thing/list/found: submits the data when a gateway detects a new sub-device. /thing/topo/lifecycle: submits device topology changes. /thing/event/property/history/post: submits historical property data of a device. /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL. /ota/upgrade: submits OTA update status. /ota/version/post: submits OTA module versions. /thing/deviceinfo/update: submits device tag changes. /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.  ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic. ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.  Custom topics. Example:${deviceName}/user/get.  You can call theQueryProductTopicoperation to view all custom topics of the product.  When you specify a custom topic, you can use the + and # wildcards.  You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the product. You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that follow/user.  For more information about how to use wildcards, see Wildcards in topics.  Topic that is used to submit device status changes: ${deviceName}.  You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
+     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
+     * Basic communication topics or Thing Specification Language (TSL)-based communication
+     * topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
+     * product. Valid values of topicShortName:
+     * /thing/event/property/post: submits the property data of a device.
+     * /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
+     * /thing/lifecycle: submits device lifecycle changes.
+     * /thing/downlink/reply/message: sends a response to a request from IoT Platform.
+     * /thing/list/found: submits the data when a gateway detects a new sub-device.
+     * /thing/topo/lifecycle: submits device topology changes.
+     * /thing/event/property/history/post: submits historical property data of a device.
+     * /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
+     * /ota/upgrade: submits OTA update status.
+     * /ota/version/post: submits OTA module versions.
+     * /thing/deviceinfo/update: submits device tag changes.
+     * /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
+     * ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic.
+     * ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.
+     * Custom topics. Example:${deviceName}/user/get.
+     * You can call theQueryProductTopicoperation to view all custom topics of the product.
+     * When you specify a custom topic, you can use the + and # wildcards.
+     * You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the
+     * product.
+     * You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
+     * follow/user.
+     * For more information about how to use wildcards, see Wildcards in topics.
+     * Topic that is used to submit device status changes: ${deviceName}.
+     * You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
      */
-    public shortTopic: string | undefined;
+    public shortTopic: string | ros.IResolvable | undefined;
 
     /**
-     * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic. 1: The topic is a custom topic. 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     * @Property startRule: Start the rule. The rule at least contains one rule action with normal data forward.
      */
-    public topicType: number | undefined;
+    public startRule: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic.
+     * 1: The topic is a custom topic.
+     * 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     */
+    public topicType: number | ros.IResolvable | undefined;
 
     /**
      * @Property where: The condition that is used to trigger the rule. For more information, seeSQL expressions.
+     * Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a>10, specify a>10 for this parameter.
      */
-    public where: string | undefined;
+    public where: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::IOT::Rule`.
@@ -1209,17 +1289,8 @@ export class RosRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDataType = ros.Token.asString(this.getAtt('DataType'));
-        this.attrIotInstanceId = ros.Token.asString(this.getAtt('IotInstanceId'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
-        this.attrProductKey = ros.Token.asString(this.getAtt('ProductKey'));
-        this.attrResourceGroupId = ros.Token.asString(this.getAtt('ResourceGroupId'));
-        this.attrRuleDesc = ros.Token.asString(this.getAtt('RuleDesc'));
-        this.attrRuleId = ros.Token.asString(this.getAtt('RuleId'));
-        this.attrSelect = ros.Token.asString(this.getAtt('Select'));
-        this.attrShortTopic = ros.Token.asString(this.getAtt('ShortTopic'));
-        this.attrTopicType = ros.Token.asString(this.getAtt('TopicType'));
-        this.attrWhere = ros.Token.asString(this.getAtt('Where'));
+        this.attrActionId = this.getAtt('ActionId');
+        this.attrRuleId = this.getAtt('RuleId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -1227,9 +1298,11 @@ export class RosRule extends ros.RosResource {
         this.iotInstanceId = props.iotInstanceId;
         this.productKey = props.productKey;
         this.resourceGroupId = props.resourceGroupId;
+        this.ruleAction = props.ruleAction;
         this.ruleDesc = props.ruleDesc;
         this.select = props.select;
         this.shortTopic = props.shortTopic;
+        this.startRule = props.startRule;
         this.topicType = props.topicType;
         this.where = props.where;
     }
@@ -1242,14 +1315,314 @@ export class RosRule extends ros.RosResource {
             iotInstanceId: this.iotInstanceId,
             productKey: this.productKey,
             resourceGroupId: this.resourceGroupId,
+            ruleAction: this.ruleAction,
             ruleDesc: this.ruleDesc,
             select: this.select,
             shortTopic: this.shortTopic,
+            startRule: this.startRule,
             topicType: this.topicType,
             where: this.where,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
+    export interface RuleActionProperty {
+        /**
+         * @Property errorActionFlag: Indicates whether the rule action forwarded error operation data. Error operation
+     * data indicates that the rule engine failed to forward data from the IoT Platform topic
+     * to the destination cloud service. A data forwarding failure indicates that forwarding
+     * retries also failed. Valid values:
+     * true: forwards error operation data.
+     * false: forwards normal data instead of error operation data.
+     * Default value: false.
+         */
+        readonly errorActionFlag?: string | ros.IResolvable;
+        /**
+         * @Property type: The type of the rule action. Valid values:
+     * MNS: forwards data in the topics that have been processed by the rule engine to Message
+     * Service (MNS) for message transmission.
+     * FC: forwards data in the topics that have been processed by the rule engine to Function
+     * Compute for event computing.
+     * REPUBLISH: forwards data in the topics that have been processed by the rule engine to another
+     * IoT Platform topic.
+     * AMQP: forwards data to AMQP consumer groups.
+     * OTS: forwards data in the topics that have been processed by the rule engine to Table
+     * Store for NoSQL data storage.
+     * Note
+     * Rules of the binary data format (the DataType parameter is set toBINARY) do not support forwarding data to Table Store.
+     * Destination Alibaba Cloud services that are supported by the rule engine vary based
+     * on regions. For more information about the regions and destination cloud services
+     * that are supported by the rule engine, see Regions and zones.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property configuration: The configurations of the rule action. You must specify a JSON string. The configurations
+     * for different types of rule actions are different. For more information about required
+     * syntax and examples, see the following tables.
+         */
+        readonly configuration: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuleActionProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuleActionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_RuleActionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.errorActionFlag && (typeof properties.errorActionFlag) !== 'object') {
+        errors.collect(ros.propertyValidator('errorActionFlag', ros.validateAllowedValues)({
+          data: properties.errorActionFlag,
+          allowedValues: ["true","false"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('errorActionFlag', ros.validateString)(properties.errorActionFlag));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["AMQP","DATAHUB","FC","MNS","ONS","OTS","REPUBLISH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('configuration', ros.validateString)(properties.configuration));
+    return errors.wrap('supplied properties not correct for "RuleActionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::IOT::Rule.RuleAction` resource
+ *
+ * @param properties - the TypeScript properties of a `RuleActionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::IOT::Rule.RuleAction` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleRuleActionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_RuleActionPropertyValidator(properties).assertSuccess();
+    return {
+      ErrorActionFlag: ros.stringToRosTemplate(properties.errorActionFlag),
+      Type: ros.stringToRosTemplate(properties.type),
+      Configuration: ros.stringToRosTemplate(properties.configuration),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::IOT::RuleAction`
+ */
+export interface RosRuleActionProps {
+
+    /**
+     * @Property configuration: The configurations of the rule action. You must specify a JSON string. The configurations
+     * for different types of rule actions are different. For more information about required
+     * syntax and examples, see the following tables.
+     */
+    readonly configuration: string | ros.IResolvable;
+
+    /**
+     * @Property ruleId: The ID of the rule for which you want to create an action. You can use either of the
+     * following methods to view the rule ID: 1. Log on to the IoT Platform console and choose Rules>Data Forwarding. 2. Call the ListRule operation.
+     */
+    readonly ruleId: number | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the rule action. Valid values:
+     * MNS: forwards data in the topics that have been processed by the rule engine to Message
+     * Service (MNS) for message transmission.
+     * FC: forwards data in the topics that have been processed by the rule engine to Function
+     * Compute for event computing.
+     * REPUBLISH: forwards data in the topics that have been processed by the rule engine to another
+     * IoT Platform topic.
+     * AMQP: forwards data to AMQP consumer groups.
+     * OTS: forwards data in the topics that have been processed by the rule engine to Table
+     * Store for NoSQL data storage.
+     * Note
+     * Rules of the binary data format (the DataType parameter is set toBINARY) do not support forwarding data to Table Store.
+     * Destination Alibaba Cloud services that are supported by the rule engine vary based
+     * on regions. For more information about the regions and destination cloud services
+     * that are supported by the rule engine, see Regions and zones.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property errorActionFlag: Indicates whether the rule action forwarded error operation data. Error operation
+     * data indicates that the rule engine failed to forward data from the IoT Platform topic
+     * to the destination cloud service. A data forwarding failure indicates that forwarding
+     * retries also failed. Valid values:
+     * true: forwards error operation data.
+     * false: forwards normal data instead of error operation data.
+     * Default value: false.
+     */
+    readonly errorActionFlag?: boolean | ros.IResolvable;
+
+    /**
+     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
+     * the parameter is required for the instances that you have purchased.
+     */
+    readonly iotInstanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRuleActionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRuleActionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRuleActionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('errorActionFlag', ros.validateBoolean)(properties.errorActionFlag));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["AMQP","DATAHUB","FC","MNS","ONS","OTS","REPUBLISH"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
+    errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('configuration', ros.validateString)(properties.configuration));
+    errors.collect(ros.propertyValidator('ruleId', ros.requiredValidator)(properties.ruleId));
+    errors.collect(ros.propertyValidator('ruleId', ros.validateNumber)(properties.ruleId));
+    return errors.wrap('supplied properties not correct for "RosRuleActionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::IOT::RuleAction` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRuleActionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::IOT::RuleAction` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleActionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRuleActionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Configuration: ros.stringToRosTemplate(properties.configuration),
+      RuleId: ros.numberToRosTemplate(properties.ruleId),
+      Type: ros.stringToRosTemplate(properties.type),
+      ErrorActionFlag: ros.booleanToRosTemplate(properties.errorActionFlag),
+      IotInstanceId: ros.stringToRosTemplate(properties.iotInstanceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::IOT::RuleAction`
+ */
+export class RosRuleAction extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::RuleAction";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ActionId: The ID of the rule action.
+     */
+    public readonly attrActionId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configuration: The configurations of the rule action. You must specify a JSON string. The configurations
+     * for different types of rule actions are different. For more information about required
+     * syntax and examples, see the following tables.
+     */
+    public configuration: string | ros.IResolvable;
+
+    /**
+     * @Property ruleId: The ID of the rule for which you want to create an action. You can use either of the
+     * following methods to view the rule ID: 1. Log on to the IoT Platform console and choose Rules>Data Forwarding. 2. Call the ListRule operation.
+     */
+    public ruleId: number | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the rule action. Valid values:
+     * MNS: forwards data in the topics that have been processed by the rule engine to Message
+     * Service (MNS) for message transmission.
+     * FC: forwards data in the topics that have been processed by the rule engine to Function
+     * Compute for event computing.
+     * REPUBLISH: forwards data in the topics that have been processed by the rule engine to another
+     * IoT Platform topic.
+     * AMQP: forwards data to AMQP consumer groups.
+     * OTS: forwards data in the topics that have been processed by the rule engine to Table
+     * Store for NoSQL data storage.
+     * Note
+     * Rules of the binary data format (the DataType parameter is set toBINARY) do not support forwarding data to Table Store.
+     * Destination Alibaba Cloud services that are supported by the rule engine vary based
+     * on regions. For more information about the regions and destination cloud services
+     * that are supported by the rule engine, see Regions and zones.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property errorActionFlag: Indicates whether the rule action forwarded error operation data. Error operation
+     * data indicates that the rule engine failed to forward data from the IoT Platform topic
+     * to the destination cloud service. A data forwarding failure indicates that forwarding
+     * retries also failed. Valid values:
+     * true: forwards error operation data.
+     * false: forwards normal data instead of error operation data.
+     * Default value: false.
+     */
+    public errorActionFlag: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
+     * the parameter is required for the instances that you have purchased.
+     */
+    public iotInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::IOT::RuleAction`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRuleActionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRuleAction.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActionId = this.getAtt('ActionId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configuration = props.configuration;
+        this.ruleId = props.ruleId;
+        this.type = props.type;
+        this.errorActionFlag = props.errorActionFlag;
+        this.iotInstanceId = props.iotInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configuration: this.configuration,
+            ruleId: this.ruleId,
+            type: this.type,
+            errorActionFlag: this.errorActionFlag,
+            iotInstanceId: this.iotInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRuleActionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

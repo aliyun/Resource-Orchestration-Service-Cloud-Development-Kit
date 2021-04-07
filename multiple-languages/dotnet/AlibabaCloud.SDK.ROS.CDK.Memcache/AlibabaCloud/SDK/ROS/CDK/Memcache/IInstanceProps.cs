@@ -15,9 +15,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// false
         /// Note Default value: false.
         /// </remarks>
-        [JsiiProperty(name: "autoRenew", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoRenew
+        object? AutoRenew
         {
             get
             {
@@ -35,9 +35,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// 12
         /// Note You must specify this parameter if the value of the AutoRenew parameter is true.
         /// </remarks>
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoRenewPeriod
+        object? AutoRenewPeriod
         {
             get
             {
@@ -52,9 +52,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// false
         /// Note Default value: false.
         /// </remarks>
-        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoUseCoupon
+        object? AutoUseCoupon
         {
             get
             {
@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property backupPolicy: Backup policy.</summary>
-        [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-memcache.RosInstance.BackupPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-memcache.RosInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BackupPolicy
         {
@@ -79,9 +79,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
         /// the CreateInstance operation.
         /// </remarks>
-        [JsiiProperty(name: "capacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Capacity
+        object? Capacity
         {
             get
             {
@@ -96,9 +96,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// PostPaid: pay-as-you-go.
         /// Note Default value: PostPaid.
         /// </remarks>
-        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ChargeType
+        object? ChargeType
         {
             get
             {
@@ -111,9 +111,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// For more information,
         /// see Set parameters.
         /// </remarks>
-        [JsiiProperty(name: "config", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Config
+        object? Config
         {
             get
             {
@@ -125,9 +125,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// <remarks>
         /// Default value: youhuiquan_promotion_option_id_for_blank.
         /// </remarks>
-        [JsiiProperty(name: "couponNo", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "couponNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? CouponNo
+        object? CouponNo
         {
             get
             {
@@ -141,9 +141,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
         /// the CreateInstance operation.
         /// </remarks>
-        [JsiiProperty(name: "instanceClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceClass
+        object? InstanceClass
         {
             get
             {
@@ -157,9 +157,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
         /// ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
         /// </remarks>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceName
+        object? InstanceName
         {
             get
             {
@@ -174,9 +174,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// VPC
         /// Note Default value: CLASSIC.
         /// </remarks>
-        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NetworkType
+        object? NetworkType
         {
             get
             {
@@ -192,9 +192,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
         /// hyphens (-), and equal signs (=).
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Password
+        object? Password
         {
             get
             {
@@ -209,9 +209,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// and 36.
         /// Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Period
+        object? Period
         {
             get
             {
@@ -224,9 +224,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
         /// block of the VSwitch to which the instance belongs.
         /// </remarks>
-        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PrivateIpAddress
+        object? PrivateIpAddress
         {
             get
             {
@@ -235,9 +235,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property resourceGroupId: Resource group ID.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -246,9 +246,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property vpcId: The ID of the VPC.</summary>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VpcId
+        object? VpcId
         {
             get
             {
@@ -259,7 +259,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// <summary>Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.</summary>
         /// <remarks>
         /// If set to:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>true: enables password free.</description>
         /// <description>false: disables password free.</description>
@@ -276,9 +276,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -290,9 +290,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// <remarks>
         /// You can call the DescribeRegions operation to query the latest region list.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ZoneId
+        object? ZoneId
         {
             get
             {
@@ -316,10 +316,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note Default value: false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoRenew", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoRenew
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property autoRenewPeriod: The period of the auto renewal.</summary>
@@ -333,10 +333,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note You must specify this parameter if the value of the AutoRenew parameter is true.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoRenewPeriod
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property autoUseCoupon: Specifies whether to use a coupon.</summary>
@@ -347,15 +347,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note Default value: false.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoUseCoupon
+            [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoUseCoupon
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property backupPolicy: Backup policy.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-memcache.RosInstance.BackupPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-memcache.RosInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
             public object? BackupPolicy
             {
                 get => GetInstanceProperty<object?>();
@@ -368,10 +368,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// the CreateInstance operation.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "capacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Capacity
+            [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Capacity
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property chargeType: The billing method of the instance.</summary>
@@ -382,10 +382,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note Default value: PostPaid.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ChargeType
+            [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property config: The parameter configuration of the instance, in a JSON string.</summary>
@@ -394,10 +394,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// see Set parameters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "config", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Config
+            [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Config
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property couponNo: The coupon number.</summary>
@@ -405,10 +405,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Default value: youhuiquan_promotion_option_id_for_blank.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "couponNo", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? CouponNo
+            [JsiiProperty(name: "couponNo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CouponNo
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceClass: The instance type.</summary>
@@ -418,10 +418,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// the CreateInstance operation.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceClass
+            [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceClass
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceName: The name of the instance.</summary>
@@ -431,10 +431,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property networkType: The network type of the instance.</summary>
@@ -445,10 +445,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note Default value: CLASSIC.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NetworkType
+            [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property password: The password of the instance.</summary>
@@ -460,10 +460,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// hyphens (-), and equal signs (=).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Password
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property period: The subscription period.</summary>
@@ -474,10 +474,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateIpAddress: The internal IP address of the instance.</summary>
@@ -486,32 +486,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// block of the VSwitch to which the instance belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PrivateIpAddress
+            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIpAddress
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceGroupId: Resource group ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcId: The ID of the VPC.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.</summary>
             /// <remarks>
             /// If set to:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>true: enables password free.</description>
             /// <description>false: disables password free.</description>
@@ -526,10 +526,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 
             /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property zoneId: The ID of the zone in which the instance is created.</summary>
@@ -537,10 +537,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// You can call the DescribeRegions operation to query the latest region list.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

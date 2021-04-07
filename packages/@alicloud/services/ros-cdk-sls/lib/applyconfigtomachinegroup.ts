@@ -11,17 +11,17 @@ export interface ApplyConfigToMachineGroupProps {
     /**
      * Property configName: Apply config to the config name
      */
-    readonly configName?: string;
+    readonly configName?: string | ros.IResolvable;
 
     /**
      * Property groupName: Apply config to the group name
      */
-    readonly groupName?: string;
+    readonly groupName?: string | ros.IResolvable;
 
     /**
      * Property projectName: Apply config to the project name.
      */
-    readonly projectName?: string;
+    readonly projectName?: string | ros.IResolvable;
 }
 
 /**

@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::LogtailConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogtailConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosLogtailConfigProps.Jsii$Proxy.class)
 public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogtailConfigName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogtailConfigName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
      */
@@ -42,9 +42,9 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosLogtailConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosLogtailConfigProps> {
-        private java.lang.String logstoreName;
-        private java.lang.String logtailConfigName;
-        private java.lang.String projectName;
+        private java.lang.Object logstoreName;
+        private java.lang.Object logtailConfigName;
+        private java.lang.Object projectName;
         private java.lang.Object cloneFrom;
         private java.lang.Object rawConfigData;
 
@@ -54,6 +54,16 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder logstoreName(java.lang.String logstoreName) {
+            this.logstoreName = logstoreName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLogtailConfigProps#getLogstoreName}
+         * @param logstoreName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder logstoreName(com.aliyun.ros.cdk.core.IResolvable logstoreName) {
             this.logstoreName = logstoreName;
             return this;
         }
@@ -69,11 +79,31 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosLogtailConfigProps#getLogtailConfigName}
+         * @param logtailConfigName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder logtailConfigName(com.aliyun.ros.cdk.core.IResolvable logtailConfigName) {
+            this.logtailConfigName = logtailConfigName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLogtailConfigProps#getProjectName}
          * @param projectName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLogtailConfigProps#getProjectName}
+         * @param projectName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.projectName = projectName;
             return this;
         }
@@ -134,9 +164,9 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosLogtailConfigProps {
-        private final java.lang.String logstoreName;
-        private final java.lang.String logtailConfigName;
-        private final java.lang.String projectName;
+        private final java.lang.Object logstoreName;
+        private final java.lang.Object logtailConfigName;
+        private final java.lang.Object projectName;
         private final java.lang.Object cloneFrom;
         private final java.lang.Object rawConfigData;
 
@@ -146,9 +176,9 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloneFrom = software.amazon.jsii.Kernel.get(this, "cloneFrom", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rawConfigData = software.amazon.jsii.Kernel.get(this, "rawConfigData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -156,7 +186,7 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String logstoreName, final java.lang.String logtailConfigName, final java.lang.String projectName, final java.lang.Object cloneFrom, final java.lang.Object rawConfigData) {
+        protected Jsii$Proxy(final java.lang.Object logstoreName, final java.lang.Object logtailConfigName, final java.lang.Object projectName, final java.lang.Object cloneFrom, final java.lang.Object rawConfigData) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
             this.logtailConfigName = java.util.Objects.requireNonNull(logtailConfigName, "logtailConfigName is required");
@@ -166,17 +196,17 @@ public interface RosLogtailConfigProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getLogstoreName() {
+        public final java.lang.Object getLogstoreName() {
             return this.logstoreName;
         }
 
         @Override
-        public final java.lang.String getLogtailConfigName() {
+        public final java.lang.Object getLogtailConfigName() {
             return this.logtailConfigName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

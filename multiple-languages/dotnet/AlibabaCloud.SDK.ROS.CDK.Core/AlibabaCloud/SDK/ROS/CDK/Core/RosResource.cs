@@ -40,6 +40,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosCondition)}, new object[]{con});
         }
 
+        [JsiiMethod(name: "addCount", parametersJson: "[{\"name\":\"count\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}}]")]
+        public virtual void AddCount(object count)
+        {
+            InvokeInstanceVoidMethod(new System.Type[]{typeof(object)}, new object[]{count});
+        }
+
         /// <summary>Syntactic sugar for `addOverride(path, undefined)`.</summary>
         /// <param name="path">The path of the value to delete.</param>
         [JsiiMethod(name: "addDeletionOverride", parametersJson: "[{\"docs\":{\"summary\":\"The path of the value to delete.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}}]")]
@@ -48,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string)}, new object[]{path});
         }
 
-        /// <summary>Indicates that this resource depends on another resource and cannot be&#xD; provisioned unless the other resource has been successfully provisioned.</summary>
+        /// <summary>Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.</summary>
         /// <remarks>
         /// This can be used for resources across stacks (or nested stack) boundaries
         /// and the dependency will automatically be transferred to the relevant scope.
@@ -72,26 +78,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>Adds an override to the synthesized ROS resource.</summary>
-        /// <param name="path">- The path of the property, you can use dot notation to&#xD;override values in complex types.</param>
+        /// <param name="path">- The path of the property, you can use dot notation to override values in complex types.</param>
         /// <param name="value">- The value.</param>
         /// <remarks>
         /// To add a
         /// property override, either use <c>addPropertyOverride</c> or prefix <c>path</c> with
         /// "Properties." (i.e. <c>Properties.TopicName</c>).
-        /// 
+        ///
         /// If the override is nested, separate each nested level using a dot (.) in the path parameter.
         /// If there is an array as part of the nesting, specify the index in the path.
-        /// 
+        ///
         /// For example,
-        /// 
+        ///
         /// <code><![CDATA[
         /// // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
         /// AddOverride("Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes", new [] { "myattribute" });
         /// AddOverride("Properties.GlobalSecondaryIndexes.1.ProjectionType", "INCLUDE");
         /// ]]></code>
-        /// 
+        ///
         /// would add the overrides
-        /// 
+        ///
         /// <code><![CDATA[
         /// "Properties": {
         ///    "GlobalSecondaryIndexes": [
@@ -111,7 +117,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// }
         /// ]]></code>
         /// </remarks>
-        [JsiiMethod(name: "addOverride", parametersJson: "[{\"docs\":{\"remarks\":\"Any intermdediate keys\rwill be created as needed.\",\"summary\":\"- The path of the property, you can use dot notation to\roverride values in complex types.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"remarks\":\"Could be primitive or complex.\",\"summary\":\"- The value.\"},\"name\":\"value\",\"type\":{\"primitive\":\"any\"}}]")]
+        [JsiiMethod(name: "addOverride", parametersJson: "[{\"docs\":{\"remarks\":\"Any intermdediate keys\nwill be created as needed.\",\"summary\":\"- The path of the property, you can use dot notation to override values in complex types.\"},\"name\":\"path\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"remarks\":\"Could be primitive or complex.\",\"summary\":\"- The value.\"},\"name\":\"value\",\"type\":{\"primitive\":\"any\"}}]")]
         public virtual void AddOverride(string path, object @value)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string), typeof(object)}, new object[]{path, @value});
@@ -202,7 +208,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<string>()!;
         }
 
-        /// <summary>Return properties modified after initiation&#xD; &#xD; Resources that expose mutable properties should override this function to&#xD; collect and return the properties object for this resource.</summary>
+        /// <summary>Return properties modified after initiation.</summary>
+        /// <remarks>
+        /// Resources that expose mutable properties should override this function to
+        /// collect and return the properties object for this resource.
+        /// </remarks>
         [JsiiProperty(name: "updatedProperites", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected virtual System.Collections.Generic.IDictionary<string, object> UpdatedProperites
         {

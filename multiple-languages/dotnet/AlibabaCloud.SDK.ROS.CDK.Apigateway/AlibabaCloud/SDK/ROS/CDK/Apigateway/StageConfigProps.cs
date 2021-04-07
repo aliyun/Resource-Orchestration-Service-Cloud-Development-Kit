@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class StageConfigProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps
     {
         /// <summary>Property groupId: The id of the Group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupId
         {
             get;
             set;
         }
 
         /// <summary>Property stageName: The name of the Stage.</summary>
-        [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string StageName
+        [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object StageName
         {
             get;
             set;

@@ -11,12 +11,12 @@ export interface CenBandwidthPackageAssociationProps {
     /**
      * Property cenBandwidthPackageId: The ID of the bandwidth package.
      */
-    readonly cenBandwidthPackageId: string;
+    readonly cenBandwidthPackageId: string | ros.IResolvable;
 
     /**
      * Property cenId: The ID of the CEN instance.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 }
 
 /**

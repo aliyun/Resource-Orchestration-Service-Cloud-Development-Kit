@@ -11,12 +11,12 @@ export interface ProjectProps {
     /**
      * Property comment: The comment of project.
      */
-    readonly comment: string;
+    readonly comment: string | ros.IResolvable;
 
     /**
      * Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 }
 
 /**
@@ -32,7 +32,7 @@ export class Project extends ros.Resource {
     /**
      * Attribute ProjectName: Project name
      */
-    public readonly attrProjectName: any;
+    public readonly attrProjectName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DATAHUB::Project`.

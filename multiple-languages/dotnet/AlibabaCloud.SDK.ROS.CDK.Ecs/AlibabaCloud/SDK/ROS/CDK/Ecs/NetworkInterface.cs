@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute MacAddress: The MAC address of your Network Interface.</summary>
-        [JsiiProperty(name: "attrMacAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMacAddress
+        [JsiiProperty(name: "attrMacAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMacAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute NetworkInterfaceId: ID of your Network Interface.</summary>
-        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNetworkInterfaceId
+        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetworkInterfaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PrivateIpAddress: The primary private ip address of your Network Interface.</summary>
-        [JsiiProperty(name: "attrPrivateIpAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrivateIpAddress
+        [JsiiProperty(name: "attrPrivateIpAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateIpAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.</summary>
-        [JsiiProperty(name: "attrSecondaryPrivateIpAddresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecondaryPrivateIpAddresses
+        [JsiiProperty(name: "attrSecondaryPrivateIpAddresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecondaryPrivateIpAddresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

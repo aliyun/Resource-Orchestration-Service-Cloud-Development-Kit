@@ -11,7 +11,7 @@ export interface NamespaceProps {
     /**
      * Property namespace: domain name
      */
-    readonly namespace: string;
+    readonly namespace: string | ros.IResolvable;
 
     /**
      * Property autoCreate: whether auto create repository
@@ -21,7 +21,7 @@ export interface NamespaceProps {
     /**
      * Property defaultVisibility: repository default visibility, public or private
      */
-    readonly defaultVisibility?: string;
+    readonly defaultVisibility?: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class Namespace extends ros.Resource {
     /**
      * Attribute NamespaceId: The namespace id
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CR::Namespace`.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::CenInstanceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceAttachment")
 public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstanceAttachment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CenInstanceAttachment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenInstanceAttachmentProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstanceAttachment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CenInstanceAttachment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenInstanceAttachmentProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cen.CenInstanceAttachment> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,46 +83,114 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cenId: The ID of the CEN instance.
+         * <p>
          * @return {@code this}
-         * @param cenId This parameter is required.
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
             this.props.cenId(cenId);
             return this;
         }
+        /**
+         * Property cenId: The ID of the CEN instance.
+         * <p>
+         * @return {@code this}
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
 
         /**
+         * Property childInstanceId: The ID of the network to attach.
+         * <p>
          * @return {@code this}
-         * @param childInstanceId This parameter is required.
+         * @param childInstanceId Property childInstanceId: The ID of the network to attach. This parameter is required.
          */
         public Builder childInstanceId(final java.lang.String childInstanceId) {
             this.props.childInstanceId(childInstanceId);
             return this;
         }
+        /**
+         * Property childInstanceId: The ID of the network to attach.
+         * <p>
+         * @return {@code this}
+         * @param childInstanceId Property childInstanceId: The ID of the network to attach. This parameter is required.
+         */
+        public Builder childInstanceId(final com.aliyun.ros.cdk.core.IResolvable childInstanceId) {
+            this.props.childInstanceId(childInstanceId);
+            return this;
+        }
 
         /**
+         * Property childInstanceRegionId: The ID of the region where the network is located.
+         * <p>
+         * The ID of the region where the network is located.
+         * <p>
          * @return {@code this}
-         * @param childInstanceRegionId This parameter is required.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
          */
         public Builder childInstanceRegionId(final java.lang.String childInstanceRegionId) {
             this.props.childInstanceRegionId(childInstanceRegionId);
             return this;
         }
+        /**
+         * Property childInstanceRegionId: The ID of the region where the network is located.
+         * <p>
+         * The ID of the region where the network is located.
+         * <p>
+         * @return {@code this}
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
+         */
+        public Builder childInstanceRegionId(final com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
+            this.props.childInstanceRegionId(childInstanceRegionId);
+            return this;
+        }
 
         /**
+         * Property childInstanceType: The type of the network to attach.
+         * <p>
+         * Support VPC, VBR or CCN.
+         * <p>
          * @return {@code this}
-         * @param childInstanceType This parameter is required.
+         * @param childInstanceType Property childInstanceType: The type of the network to attach. This parameter is required.
          */
         public Builder childInstanceType(final java.lang.String childInstanceType) {
             this.props.childInstanceType(childInstanceType);
             return this;
         }
+        /**
+         * Property childInstanceType: The type of the network to attach.
+         * <p>
+         * Support VPC, VBR or CCN.
+         * <p>
+         * @return {@code this}
+         * @param childInstanceType Property childInstanceType: The type of the network to attach. This parameter is required.
+         */
+        public Builder childInstanceType(final com.aliyun.ros.cdk.core.IResolvable childInstanceType) {
+            this.props.childInstanceType(childInstanceType);
+            return this;
+        }
 
         /**
+         * Property childInstanceOwnerId: The account ID to which the network belongs.
+         * <p>
          * @return {@code this}
-         * @param childInstanceOwnerId This parameter is required.
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs. This parameter is required.
          */
         public Builder childInstanceOwnerId(final java.lang.Number childInstanceOwnerId) {
+            this.props.childInstanceOwnerId(childInstanceOwnerId);
+            return this;
+        }
+        /**
+         * Property childInstanceOwnerId: The account ID to which the network belongs.
+         * <p>
+         * @return {@code this}
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs. This parameter is required.
+         */
+        public Builder childInstanceOwnerId(final com.aliyun.ros.cdk.core.IResolvable childInstanceOwnerId) {
             this.props.childInstanceOwnerId(childInstanceOwnerId);
             return this;
         }

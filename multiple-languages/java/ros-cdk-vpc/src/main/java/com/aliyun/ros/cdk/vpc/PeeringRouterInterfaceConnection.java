@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.450Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceConnection")
 public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public PeeringRouterInterfaceConnection(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnectionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public PeeringRouterInterfaceConnection(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnectionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     }
 
     /**
+     * Attribute OppositeInterfaceId: The receiver RouterInterface ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOppositeInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOppositeInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOppositeInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RouterInterfaceId: The initiator RouterInterface ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRouterInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRouterInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnection> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,19 +97,43 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
         }
 
         /**
+         * Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
+         * <p>
          * @return {@code this}
-         * @param oppositeInterfaceId This parameter is required.
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface. This parameter is required.
          */
         public Builder oppositeInterfaceId(final java.lang.String oppositeInterfaceId) {
             this.props.oppositeInterfaceId(oppositeInterfaceId);
             return this;
         }
+        /**
+         * Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
+         * <p>
+         * @return {@code this}
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface. This parameter is required.
+         */
+        public Builder oppositeInterfaceId(final com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.props.oppositeInterfaceId(oppositeInterfaceId);
+            return this;
+        }
 
         /**
+         * Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
+         * <p>
          * @return {@code this}
-         * @param routerInterfaceId This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface. This parameter is required.
          */
         public Builder routerInterfaceId(final java.lang.String routerInterfaceId) {
+            this.props.routerInterfaceId(routerInterfaceId);
+            return this;
+        }
+        /**
+         * Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
+         * <p>
+         * @return {@code this}
+         * @param routerInterfaceId Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface. This parameter is required.
+         */
+        public Builder routerInterfaceId(final com.aliyun.ros.cdk.core.IResolvable routerInterfaceId) {
             this.props.routerInterfaceId(routerInterfaceId);
             return this;
         }

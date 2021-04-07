@@ -11,7 +11,7 @@ export interface MonitorGroupInstancesProps {
     /**
      * Property groupId: The ID of the application group.
      */
-    readonly groupId: number;
+    readonly groupId: number | ros.IResolvable;
 
     /**
      * Property instances:
@@ -32,7 +32,7 @@ export class MonitorGroupInstances extends ros.Resource {
     /**
      * Attribute GroupId: The ID of the application group.
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::MonitorGroupInstances`.

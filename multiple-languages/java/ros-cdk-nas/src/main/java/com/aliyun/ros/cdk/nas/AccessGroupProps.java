@@ -3,22 +3,27 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::AccessGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AccessGroupProps.Jsii$Proxy.class)
 public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property accessGroupName: Permission group name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
     /**
+     * Property accessGroupType: Permission group type, including the Vpc and Classic types.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupType();
 
     /**
+     * Property description: Permission group description.
+     * <p>
+     * It is the same as the permission group name by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -32,13 +37,13 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link AccessGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccessGroupProps> {
-        private java.lang.String accessGroupName;
-        private java.lang.String accessGroupType;
-        private java.lang.String description;
+        private java.lang.Object accessGroupName;
+        private java.lang.Object accessGroupType;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link AccessGroupProps#getAccessGroupName}
-         * @param accessGroupName the value to be set. This parameter is required.
+         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
@@ -47,8 +52,18 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AccessGroupProps#getAccessGroupName}
+         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
+            this.accessGroupName = accessGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccessGroupProps#getAccessGroupType}
-         * @param accessGroupType the value to be set. This parameter is required.
+         * @param accessGroupType Property accessGroupType: Permission group type, including the Vpc and Classic types. This parameter is required.
          * @return {@code this}
          */
         public Builder accessGroupType(java.lang.String accessGroupType) {
@@ -57,11 +72,33 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AccessGroupProps#getAccessGroupType}
+         * @param accessGroupType Property accessGroupType: Permission group type, including the Vpc and Classic types. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupType(com.aliyun.ros.cdk.core.IResolvable accessGroupType) {
+            this.accessGroupType = accessGroupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccessGroupProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Permission group description.
+         *                    It is the same as the permission group name by default.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AccessGroupProps#getDescription}
+         * @param description Property description: Permission group description.
+         *                    It is the same as the permission group name by default.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -82,9 +119,9 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessGroupProps {
-        private final java.lang.String accessGroupName;
-        private final java.lang.String accessGroupType;
-        private final java.lang.String description;
+        private final java.lang.Object accessGroupName;
+        private final java.lang.Object accessGroupType;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +129,15 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessGroupType = software.amazon.jsii.Kernel.get(this, "accessGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessGroupType = software.amazon.jsii.Kernel.get(this, "accessGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accessGroupName, final java.lang.String accessGroupType, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object accessGroupType, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
             this.accessGroupType = java.util.Objects.requireNonNull(accessGroupType, "accessGroupType is required");
@@ -108,17 +145,17 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getAccessGroupName() {
+        public final java.lang.Object getAccessGroupName() {
             return this.accessGroupName;
         }
 
         @Override
-        public final java.lang.String getAccessGroupType() {
+        public final java.lang.Object getAccessGroupType() {
             return this.accessGroupType;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

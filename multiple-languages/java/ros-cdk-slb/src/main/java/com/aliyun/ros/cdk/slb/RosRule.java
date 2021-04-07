@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRules() {
-        return software.amazon.jsii.Kernel.get(this, "attrRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRules() {
+        return software.amazon.jsii.Kernel.get(this, "attrRules", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort() {
-        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort() {
+        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,13 +75,25 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setListenerPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "listenerPort", java.util.Objects.requireNonNull(value, "listenerPort is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
+    }
+
+    /**
+     */
+    public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
     }
 
@@ -112,24 +124,24 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRuleName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getVServerGroupId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getVServerGroupId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDomain() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDomain() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getUrl() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUrl() {
             return null;
         }
 
@@ -145,10 +157,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RuleListProperty> {
-            private java.lang.String ruleName;
-            private java.lang.String vServerGroupId;
-            private java.lang.String domain;
-            private java.lang.String url;
+            private java.lang.Object ruleName;
+            private java.lang.Object vServerGroupId;
+            private java.lang.Object domain;
+            private java.lang.Object url;
 
             /**
              * Sets the value of {@link RuleListProperty#getRuleName}
@@ -157,6 +169,17 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder ruleName(java.lang.String ruleName) {
+                this.ruleName = ruleName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleListProperty#getRuleName}
+             * @param ruleName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
                 this.ruleName = ruleName;
                 return this;
             }
@@ -173,6 +196,17 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RuleListProperty#getVServerGroupId}
+             * @param vServerGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vServerGroupId(com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
+                this.vServerGroupId = vServerGroupId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RuleListProperty#getDomain}
              * @param domain the value to be set.
              * @return {@code this}
@@ -184,12 +218,34 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RuleListProperty#getDomain}
+             * @param domain the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder domain(com.aliyun.ros.cdk.core.IResolvable domain) {
+                this.domain = domain;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RuleListProperty#getUrl}
              * @param url the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder url(java.lang.String url) {
+                this.url = url;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleListProperty#getUrl}
+             * @param url the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder url(com.aliyun.ros.cdk.core.IResolvable url) {
                 this.url = url;
                 return this;
             }
@@ -212,10 +268,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RuleListProperty {
-            private final java.lang.String ruleName;
-            private final java.lang.String vServerGroupId;
-            private final java.lang.String domain;
-            private final java.lang.String url;
+            private final java.lang.Object ruleName;
+            private final java.lang.Object vServerGroupId;
+            private final java.lang.Object domain;
+            private final java.lang.Object url;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -223,16 +279,16 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.url = software.amazon.jsii.Kernel.get(this, "url", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.url = software.amazon.jsii.Kernel.get(this, "url", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String ruleName, final java.lang.String vServerGroupId, final java.lang.String domain, final java.lang.String url) {
+            protected Jsii$Proxy(final java.lang.Object ruleName, final java.lang.Object vServerGroupId, final java.lang.Object domain, final java.lang.Object url) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
                 this.vServerGroupId = java.util.Objects.requireNonNull(vServerGroupId, "vServerGroupId is required");
@@ -241,22 +297,22 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getRuleName() {
+            public final java.lang.Object getRuleName() {
                 return this.ruleName;
             }
 
             @Override
-            public final java.lang.String getVServerGroupId() {
+            public final java.lang.Object getVServerGroupId() {
                 return this.vServerGroupId;
             }
 
             @Override
-            public final java.lang.String getDomain() {
+            public final java.lang.Object getDomain() {
                 return this.domain;
             }
 
             @Override
-            public final java.lang.String getUrl() {
+            public final java.lang.Object getUrl() {
                 return this.url;
             }
 
@@ -343,12 +399,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.listenerPort(listenerPort);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param listenerPort This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param loadBalancerId This parameter is required.
          */
         public Builder loadBalancerId(final java.lang.String loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancerId This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }

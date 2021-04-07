@@ -16,19 +16,19 @@ export interface RoleProps {
     /**
      * Property roleName: Specifies the role name, containing up to 64 characters.
      */
-    readonly roleName: string;
+    readonly roleName: string | ros.IResolvable;
 
     /**
      * Property description: Remark information, up to 1024 characters or Chinese characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
      */
-    readonly maxSessionDuration?: number;
+    readonly maxSessionDuration?: number | ros.IResolvable;
 
     /**
      * Property policies: Describes what actions are allowed on what resources.
@@ -49,17 +49,17 @@ export class Role extends ros.Resource {
     /**
      * Attribute Arn: Name of alicloud resource.
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * Attribute RoleId: Id of ram role.
      */
-    public readonly attrRoleId: any;
+    public readonly attrRoleId: ros.IResolvable;
 
     /**
      * Attribute RoleName: Name of ram role.
      */
-    public readonly attrRoleName: any;
+    public readonly attrRoleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::Role`.

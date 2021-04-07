@@ -3,50 +3,70 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.227Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBookProps")
 @software.amazon.jsii.Jsii.Proxy(AddressBookProps.Jsii$Proxy.class)
 public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property description: Address book description.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescription();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
+     * Property groupName: Name Address book.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
+     * Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupType();
 
     /**
+     * Property addressList: Address list of the address book, between multiple addresses separated by commas.
+     * <p>
+     * Note: When GroupType ip, it must be set to port or domain.
+     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
+     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+     * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAddressList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressList() {
         return null;
     }
 
     /**
+     * Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book.
+     * <p>
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoAddTagEcs() {
         return null;
     }
 
     /**
+     * Property regionId: Region ID.
+     * <p>
+     * Default to cn-hangzhou.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
     /**
+     * Property tagList:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTagList() {
         return null;
     }
 
     /**
+     * Property tagRelation: The relationship between the labels to be matched more ECS.
+     * <p>
+     * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
+     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTagRelation() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagRelation() {
         return null;
     }
 
@@ -60,18 +80,18 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link AddressBookProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AddressBookProps> {
-        private java.lang.String description;
-        private java.lang.String groupName;
-        private java.lang.String groupType;
-        private java.lang.String addressList;
+        private java.lang.Object description;
+        private java.lang.Object groupName;
+        private java.lang.Object groupType;
+        private java.lang.Object addressList;
         private java.lang.Object autoAddTagEcs;
-        private java.lang.String regionId;
+        private java.lang.Object regionId;
         private java.lang.Object tagList;
-        private java.lang.String tagRelation;
+        private java.lang.Object tagRelation;
 
         /**
          * Sets the value of {@link AddressBookProps#getDescription}
-         * @param description the value to be set. This parameter is required.
+         * @param description Property description: Address book description. This parameter is required.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -80,8 +100,18 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AddressBookProps#getDescription}
+         * @param description Property description: Address book description. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AddressBookProps#getGroupName}
-         * @param groupName the value to be set. This parameter is required.
+         * @param groupName Property groupName: Name Address book. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -90,8 +120,18 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AddressBookProps#getGroupName}
+         * @param groupName Property groupName: Name Address book. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AddressBookProps#getGroupType}
-         * @param groupType the value to be set. This parameter is required.
+         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
          * @return {@code this}
          */
         public Builder groupType(java.lang.String groupType) {
@@ -100,8 +140,22 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AddressBookProps#getGroupType}
+         * @param groupType Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.groupType = groupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AddressBookProps#getAddressList}
-         * @param addressList the value to be set.
+         * @param addressList Property addressList: Address list of the address book, between multiple addresses separated by commas.
+         *                    Note: When GroupType ip, it must be set to port or domain.
+         *                    When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
+         *                    When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+         *                    When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
          * @return {@code this}
          */
         public Builder addressList(java.lang.String addressList) {
@@ -110,8 +164,23 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AddressBookProps#getAddressList}
+         * @param addressList Property addressList: Address list of the address book, between multiple addresses separated by commas.
+         *                    Note: When GroupType ip, it must be set to port or domain.
+         *                    When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
+         *                    When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+         *                    When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
+         * @return {@code this}
+         */
+        public Builder addressList(com.aliyun.ros.cdk.core.IResolvable addressList) {
+            this.addressList = addressList;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AddressBookProps#getAutoAddTagEcs}
-         * @param autoAddTagEcs the value to be set.
+         * @param autoAddTagEcs Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book.
+         *                      Default to false.
          * @return {@code this}
          */
         public Builder autoAddTagEcs(java.lang.Boolean autoAddTagEcs) {
@@ -121,7 +190,8 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getAutoAddTagEcs}
-         * @param autoAddTagEcs the value to be set.
+         * @param autoAddTagEcs Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book.
+         *                      Default to false.
          * @return {@code this}
          */
         public Builder autoAddTagEcs(com.aliyun.ros.cdk.core.IResolvable autoAddTagEcs) {
@@ -131,7 +201,8 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getRegionId}
-         * @param regionId the value to be set.
+         * @param regionId Property regionId: Region ID.
+         *                 Default to cn-hangzhou.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
@@ -140,8 +211,19 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AddressBookProps#getRegionId}
+         * @param regionId Property regionId: Region ID.
+         *                 Default to cn-hangzhou.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AddressBookProps#getTagList}
-         * @param tagList the value to be set.
+         * @param tagList Property tagList:.
          * @return {@code this}
          */
         public Builder tagList(com.aliyun.ros.cdk.core.IResolvable tagList) {
@@ -151,7 +233,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getTagList}
-         * @param tagList the value to be set.
+         * @param tagList Property tagList:.
          * @return {@code this}
          */
         public Builder tagList(java.util.List<? extends java.lang.Object> tagList) {
@@ -161,10 +243,24 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressBookProps#getTagRelation}
-         * @param tagRelation the value to be set.
+         * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS.
+         *                    and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
+         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
          * @return {@code this}
          */
         public Builder tagRelation(java.lang.String tagRelation) {
+            this.tagRelation = tagRelation;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AddressBookProps#getTagRelation}
+         * @param tagRelation Property tagRelation: The relationship between the labels to be matched more ECS.
+         *                    and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
+         *                    or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+         * @return {@code this}
+         */
+        public Builder tagRelation(com.aliyun.ros.cdk.core.IResolvable tagRelation) {
             this.tagRelation = tagRelation;
             return this;
         }
@@ -185,14 +281,14 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AddressBookProps {
-        private final java.lang.String description;
-        private final java.lang.String groupName;
-        private final java.lang.String groupType;
-        private final java.lang.String addressList;
+        private final java.lang.Object description;
+        private final java.lang.Object groupName;
+        private final java.lang.Object groupType;
+        private final java.lang.Object addressList;
         private final java.lang.Object autoAddTagEcs;
-        private final java.lang.String regionId;
+        private final java.lang.Object regionId;
         private final java.lang.Object tagList;
-        private final java.lang.String tagRelation;
+        private final java.lang.Object tagRelation;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -200,20 +296,20 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.addressList = software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.addressList = software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoAddTagEcs = software.amazon.jsii.Kernel.get(this, "autoAddTagEcs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tagList = software.amazon.jsii.Kernel.get(this, "tagList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tagRelation = software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tagRelation = software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.String groupName, final java.lang.String groupType, final java.lang.String addressList, final java.lang.Object autoAddTagEcs, final java.lang.String regionId, final java.lang.Object tagList, final java.lang.String tagRelation) {
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object groupName, final java.lang.Object groupType, final java.lang.Object addressList, final java.lang.Object autoAddTagEcs, final java.lang.Object regionId, final java.lang.Object tagList, final java.lang.Object tagRelation) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = java.util.Objects.requireNonNull(description, "description is required");
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
@@ -226,22 +322,22 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getGroupType() {
+        public final java.lang.Object getGroupType() {
             return this.groupType;
         }
 
         @Override
-        public final java.lang.String getAddressList() {
+        public final java.lang.Object getAddressList() {
             return this.addressList;
         }
 
@@ -251,7 +347,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 
@@ -261,7 +357,7 @@ public interface AddressBookProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getTagRelation() {
+        public final java.lang.Object getTagRelation() {
             return this.tagRelation;
         }
 

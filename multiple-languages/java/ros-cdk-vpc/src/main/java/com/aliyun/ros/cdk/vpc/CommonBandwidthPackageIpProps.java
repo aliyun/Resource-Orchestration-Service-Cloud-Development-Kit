@@ -3,16 +3,18 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.142Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackageIpProps")
 @software.amazon.jsii.Jsii.Proxy(CommonBandwidthPackageIpProps.Jsii$Proxy.class)
 public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBandwidthPackageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthPackageId();
 
     /**
+     * Property eips: List of eip associated with the Internet Shared Bandwidth instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEips();
 
@@ -26,12 +28,12 @@ public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.Jsii
      * A builder for {@link CommonBandwidthPackageIpProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CommonBandwidthPackageIpProps> {
-        private java.lang.String bandwidthPackageId;
+        private java.lang.Object bandwidthPackageId;
         private java.lang.Object eips;
 
         /**
          * Sets the value of {@link CommonBandwidthPackageIpProps#getBandwidthPackageId}
-         * @param bandwidthPackageId the value to be set. This parameter is required.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance. This parameter is required.
          * @return {@code this}
          */
         public Builder bandwidthPackageId(java.lang.String bandwidthPackageId) {
@@ -40,8 +42,18 @@ public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link CommonBandwidthPackageIpProps#getBandwidthPackageId}
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageId(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
+            this.bandwidthPackageId = bandwidthPackageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CommonBandwidthPackageIpProps#getEips}
-         * @param eips the value to be set. This parameter is required.
+         * @param eips Property eips: List of eip associated with the Internet Shared Bandwidth instance. This parameter is required.
          * @return {@code this}
          */
         public Builder eips(com.aliyun.ros.cdk.core.IResolvable eips) {
@@ -51,7 +63,7 @@ public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link CommonBandwidthPackageIpProps#getEips}
-         * @param eips the value to be set. This parameter is required.
+         * @param eips Property eips: List of eip associated with the Internet Shared Bandwidth instance. This parameter is required.
          * @return {@code this}
          */
         public Builder eips(java.util.List<? extends java.lang.Object> eips) {
@@ -75,7 +87,7 @@ public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CommonBandwidthPackageIpProps {
-        private final java.lang.String bandwidthPackageId;
+        private final java.lang.Object bandwidthPackageId;
         private final java.lang.Object eips;
 
         /**
@@ -84,21 +96,21 @@ public interface CommonBandwidthPackageIpProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eips = software.amazon.jsii.Kernel.get(this, "eips", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String bandwidthPackageId, final java.lang.Object eips) {
+        protected Jsii$Proxy(final java.lang.Object bandwidthPackageId, final java.lang.Object eips) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidthPackageId = java.util.Objects.requireNonNull(bandwidthPackageId, "bandwidthPackageId is required");
             this.eips = java.util.Objects.requireNonNull(eips, "eips is required");
         }
 
         @Override
-        public final java.lang.String getBandwidthPackageId() {
+        public final java.lang.Object getBandwidthPackageId() {
             return this.bandwidthPackageId;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MetricRuleTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTemplate")
 public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
-        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrId() {
+        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
     }
 
@@ -93,8 +99,8 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getRestVersion() {
-        return software.amazon.jsii.Kernel.get(this, "restVersion", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestVersion() {
+        return software.amazon.jsii.Kernel.get(this, "restVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +129,25 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTemplateId() {
-        return software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setRestVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateId() {
+        return software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTemplateId(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "templateId", value);
+    }
+
+    /**
+     */
+    public void setTemplateId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "templateId", value);
     }
     /**
@@ -136,22 +160,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCategory();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCategory();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getMetricName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getMetricName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getNamespace();
+        @org.jetbrains.annotations.NotNull java.lang.Object getNamespace();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRuleName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
         /**
          */
@@ -163,21 +187,21 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSelector() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSelector() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getWebhook() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWebhook() {
             return null;
         }
 
@@ -193,14 +217,14 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AlertTemplatesProperty> {
-            private java.lang.String category;
-            private java.lang.String metricName;
-            private java.lang.String namespace;
-            private java.lang.String ruleName;
+            private java.lang.Object category;
+            private java.lang.Object metricName;
+            private java.lang.Object namespace;
+            private java.lang.Object ruleName;
             private java.lang.Object escalations;
-            private java.lang.Number period;
-            private java.lang.String selector;
-            private java.lang.String webhook;
+            private java.lang.Object period;
+            private java.lang.Object selector;
+            private java.lang.Object webhook;
 
             /**
              * Sets the value of {@link AlertTemplatesProperty#getCategory}
@@ -209,6 +233,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder category(java.lang.String category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AlertTemplatesProperty#getCategory}
+             * @param category the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
                 this.category = category;
                 return this;
             }
@@ -225,6 +260,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AlertTemplatesProperty#getMetricName}
+             * @param metricName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder metricName(com.aliyun.ros.cdk.core.IResolvable metricName) {
+                this.metricName = metricName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AlertTemplatesProperty#getNamespace}
              * @param namespace the value to be set. This parameter is required.
              * @return {@code this}
@@ -236,12 +282,34 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AlertTemplatesProperty#getNamespace}
+             * @param namespace the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder namespace(com.aliyun.ros.cdk.core.IResolvable namespace) {
+                this.namespace = namespace;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AlertTemplatesProperty#getRuleName}
              * @param ruleName the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder ruleName(java.lang.String ruleName) {
+                this.ruleName = ruleName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AlertTemplatesProperty#getRuleName}
+             * @param ruleName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
                 this.ruleName = ruleName;
                 return this;
             }
@@ -280,6 +348,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AlertTemplatesProperty#getPeriod}
+             * @param period the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+                this.period = period;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AlertTemplatesProperty#getSelector}
              * @param selector the value to be set.
              * @return {@code this}
@@ -291,12 +370,34 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AlertTemplatesProperty#getSelector}
+             * @param selector the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder selector(com.aliyun.ros.cdk.core.IResolvable selector) {
+                this.selector = selector;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AlertTemplatesProperty#getWebhook}
              * @param webhook the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder webhook(java.lang.String webhook) {
+                this.webhook = webhook;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AlertTemplatesProperty#getWebhook}
+             * @param webhook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder webhook(com.aliyun.ros.cdk.core.IResolvable webhook) {
                 this.webhook = webhook;
                 return this;
             }
@@ -319,14 +420,14 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AlertTemplatesProperty {
-            private final java.lang.String category;
-            private final java.lang.String metricName;
-            private final java.lang.String namespace;
-            private final java.lang.String ruleName;
+            private final java.lang.Object category;
+            private final java.lang.Object metricName;
+            private final java.lang.Object namespace;
+            private final java.lang.Object ruleName;
             private final java.lang.Object escalations;
-            private final java.lang.Number period;
-            private final java.lang.String selector;
-            private final java.lang.String webhook;
+            private final java.lang.Object period;
+            private final java.lang.Object selector;
+            private final java.lang.Object webhook;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -334,20 +435,20 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.escalations = software.amazon.jsii.Kernel.get(this, "escalations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.selector = software.amazon.jsii.Kernel.get(this, "selector", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.webhook = software.amazon.jsii.Kernel.get(this, "webhook", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.selector = software.amazon.jsii.Kernel.get(this, "selector", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.webhook = software.amazon.jsii.Kernel.get(this, "webhook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String category, final java.lang.String metricName, final java.lang.String namespace, final java.lang.String ruleName, final java.lang.Object escalations, final java.lang.Number period, final java.lang.String selector, final java.lang.String webhook) {
+            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object metricName, final java.lang.Object namespace, final java.lang.Object ruleName, final java.lang.Object escalations, final java.lang.Object period, final java.lang.Object selector, final java.lang.Object webhook) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.category = java.util.Objects.requireNonNull(category, "category is required");
                 this.metricName = java.util.Objects.requireNonNull(metricName, "metricName is required");
@@ -360,22 +461,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getCategory() {
+            public final java.lang.Object getCategory() {
                 return this.category;
             }
 
             @Override
-            public final java.lang.String getMetricName() {
+            public final java.lang.Object getMetricName() {
                 return this.metricName;
             }
 
             @Override
-            public final java.lang.String getNamespace() {
+            public final java.lang.Object getNamespace() {
                 return this.namespace;
             }
 
             @Override
-            public final java.lang.String getRuleName() {
+            public final java.lang.Object getRuleName() {
                 return this.ruleName;
             }
 
@@ -385,17 +486,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Number getPeriod() {
+            public final java.lang.Object getPeriod() {
                 return this.period;
             }
 
             @Override
-            public final java.lang.String getSelector() {
+            public final java.lang.Object getSelector() {
                 return this.selector;
             }
 
             @Override
-            public final java.lang.String getWebhook() {
+            public final java.lang.Object getWebhook() {
                 return this.webhook;
             }
 
@@ -473,22 +574,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link CriticalProperty}
@@ -502,10 +603,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CriticalProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.String threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link CriticalProperty#getComparisonOperator}
@@ -514,6 +615,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CriticalProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -530,6 +642,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CriticalProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CriticalProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -541,12 +664,34 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CriticalProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CriticalProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CriticalProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -569,10 +714,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CriticalProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.String threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -580,16 +725,16 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.String threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -598,22 +743,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.String getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -882,22 +1027,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link InfoProperty}
@@ -911,10 +1056,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InfoProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.String threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link InfoProperty#getComparisonOperator}
@@ -923,6 +1068,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InfoProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -939,6 +1095,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link InfoProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InfoProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -950,12 +1117,34 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link InfoProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InfoProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InfoProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -978,10 +1167,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InfoProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.String threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -989,16 +1178,16 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.String threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -1007,22 +1196,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.String getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -1080,22 +1269,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link WarnProperty}
@@ -1109,10 +1298,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WarnProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.String threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link WarnProperty#getComparisonOperator}
@@ -1121,6 +1310,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WarnProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -1137,6 +1337,17 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WarnProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WarnProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -1148,12 +1359,34 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WarnProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WarnProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WarnProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -1176,10 +1409,10 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements WarnProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.String threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1187,16 +1420,16 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.String threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -1205,22 +1438,22 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.String getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -1303,6 +1536,14 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1329,6 +1570,14 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1338,12 +1587,28 @@ public class RosMetricRuleTemplate extends com.aliyun.ros.cdk.core.RosResource {
             this.props.restVersion(restVersion);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param restVersion This parameter is required.
+         */
+        public Builder restVersion(final com.aliyun.ros.cdk.core.IResolvable restVersion) {
+            this.props.restVersion(restVersion);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param templateId This parameter is required.
          */
         public Builder templateId(final java.lang.Number templateId) {
+            this.props.templateId(templateId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateId This parameter is required.
+         */
+        public Builder templateId(final com.aliyun.ros.cdk.core.IResolvable templateId) {
             this.props.templateId(templateId);
             return this;
         }

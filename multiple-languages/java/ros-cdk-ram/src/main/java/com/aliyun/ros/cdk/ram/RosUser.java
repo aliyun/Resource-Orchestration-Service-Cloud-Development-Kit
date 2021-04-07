@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosUser")
 public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,26 +44,26 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLastLoginDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrLastLoginDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLastLoginDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrLastLoginDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,8 +81,8 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getUserName() {
-        return software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUserName() {
+        return software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +93,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getComments() {
-        return software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUserName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "userName", java.util.Objects.requireNonNull(value, "userName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getComments() {
+        return software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDisplayName() {
-        return software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setComments(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "comments", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDisplayName() {
+        return software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +129,25 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEmail() {
-        return software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDisplayName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "displayName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEmail() {
+        return software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setEmail(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "email", value);
+    }
+
+    /**
+     */
+    public void setEmail(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "email", value);
     }
 
@@ -165,13 +189,19 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMobilePhone() {
-        return software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMobilePhone() {
+        return software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMobilePhone(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "mobilePhone", value);
+    }
+
+    /**
+     */
+    public void setMobilePhone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "mobilePhone", value);
     }
 
@@ -209,7 +239,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
             return null;
         }
 
@@ -233,7 +263,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LoginProfileProperty> {
             private java.lang.Object mfaBindRequired;
-            private java.lang.String password;
+            private java.lang.Object password;
             private java.lang.Object passwordResetRequired;
 
             /**
@@ -265,6 +295,17 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder password(java.lang.String password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoginProfileProperty#getPassword}
+             * @param password the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
                 this.password = password;
                 return this;
             }
@@ -310,7 +351,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoginProfileProperty {
             private final java.lang.Object mfaBindRequired;
-            private final java.lang.String password;
+            private final java.lang.Object password;
             private final java.lang.Object passwordResetRequired;
 
             /**
@@ -320,14 +361,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.mfaBindRequired = software.amazon.jsii.Kernel.get(this, "mfaBindRequired", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.passwordResetRequired = software.amazon.jsii.Kernel.get(this, "passwordResetRequired", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mfaBindRequired, final java.lang.String password, final java.lang.Object passwordResetRequired) {
+            protected Jsii$Proxy(final java.lang.Object mfaBindRequired, final java.lang.Object password, final java.lang.Object passwordResetRequired) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.mfaBindRequired = mfaBindRequired;
                 this.password = password;
@@ -340,7 +381,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getPassword() {
+            public final java.lang.Object getPassword() {
                 return this.password;
             }
 
@@ -411,12 +452,12 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getPolicyName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
@@ -433,8 +474,8 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PoliciesProperty> {
             private java.lang.Object policyDocument;
-            private java.lang.String policyName;
-            private java.lang.String description;
+            private java.lang.Object policyName;
+            private java.lang.Object description;
 
             /**
              * Sets the value of {@link PoliciesProperty#getPolicyDocument}
@@ -470,12 +511,34 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PoliciesProperty#getPolicyName}
+             * @param policyName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder policyName(com.aliyun.ros.cdk.core.IResolvable policyName) {
+                this.policyName = policyName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PoliciesProperty#getDescription}
              * @param description the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PoliciesProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
                 return this;
             }
@@ -499,8 +562,8 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PoliciesProperty {
             private final java.lang.Object policyDocument;
-            private final java.lang.String policyName;
-            private final java.lang.String description;
+            private final java.lang.Object policyName;
+            private final java.lang.Object description;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -509,14 +572,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.policyDocument = software.amazon.jsii.Kernel.get(this, "policyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object policyDocument, final java.lang.String policyName, final java.lang.String description) {
+            protected Jsii$Proxy(final java.lang.Object policyDocument, final java.lang.Object policyName, final java.lang.Object description) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.policyDocument = java.util.Objects.requireNonNull(policyDocument, "policyDocument is required");
                 this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
@@ -529,12 +592,12 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getPolicyName() {
+            public final java.lang.Object getPolicyName() {
                 return this.policyName;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
@@ -598,7 +661,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getVersion() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
             return null;
         }
 
@@ -615,7 +678,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentProperty> {
             private java.lang.Object statement;
-            private java.lang.String version;
+            private java.lang.Object version;
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
@@ -651,6 +714,17 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PolicyDocumentProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link PolicyDocumentProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -669,7 +743,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyDocumentProperty {
             private final java.lang.Object statement;
-            private final java.lang.String version;
+            private final java.lang.Object version;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -678,13 +752,13 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.statement = software.amazon.jsii.Kernel.get(this, "statement", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.String version) {
+            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.Object version) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.statement = statement;
                 this.version = version;
@@ -696,7 +770,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getVersion() {
+            public final java.lang.Object getVersion() {
                 return this.version;
             }
 
@@ -766,7 +840,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEffect() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEffect() {
             return null;
         }
 
@@ -791,7 +865,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<StatementProperty> {
             private java.lang.Object action;
             private java.lang.Object condition;
-            private java.lang.String effect;
+            private java.lang.Object effect;
             private java.lang.Object resource;
 
             /**
@@ -850,6 +924,17 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link StatementProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link StatementProperty#getResource}
              * @param resource the value to be set.
              * @return {@code this}
@@ -891,7 +976,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StatementProperty {
             private final java.lang.Object action;
             private final java.lang.Object condition;
-            private final java.lang.String effect;
+            private final java.lang.Object effect;
             private final java.lang.Object resource;
 
             /**
@@ -902,14 +987,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.String effect, final java.lang.Object resource) {
+            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.action = action;
                 this.condition = condition;
@@ -928,7 +1013,7 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getEffect() {
+            public final java.lang.Object getEffect() {
                 return this.effect;
             }
 
@@ -1024,12 +1109,28 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             this.props.userName(userName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param userName This parameter is required.
+         */
+        public Builder userName(final com.aliyun.ros.cdk.core.IResolvable userName) {
+            this.props.userName(userName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param comments This parameter is required.
          */
         public Builder comments(final java.lang.String comments) {
+            this.props.comments(comments);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param comments This parameter is required.
+         */
+        public Builder comments(final com.aliyun.ros.cdk.core.IResolvable comments) {
             this.props.comments(comments);
             return this;
         }
@@ -1042,12 +1143,28 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
             this.props.displayName(displayName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param displayName This parameter is required.
+         */
+        public Builder displayName(final com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.props.displayName(displayName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param email This parameter is required.
          */
         public Builder email(final java.lang.String email) {
+            this.props.email(email);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param email This parameter is required.
+         */
+        public Builder email(final com.aliyun.ros.cdk.core.IResolvable email) {
             this.props.email(email);
             return this;
         }
@@ -1091,6 +1208,14 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
          * @param mobilePhone This parameter is required.
          */
         public Builder mobilePhone(final java.lang.String mobilePhone) {
+            this.props.mobilePhone(mobilePhone);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param mobilePhone This parameter is required.
+         */
+        public Builder mobilePhone(final com.aliyun.ros.cdk.core.IResolvable mobilePhone) {
             this.props.mobilePhone(mobilePhone);
             return this;
         }

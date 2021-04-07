@@ -11,17 +11,17 @@ export interface RetcodeAppProps {
     /**
      * Property regionId: Region ID. Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
      */
-    readonly regionId: string;
+    readonly regionId: string | ros.IResolvable;
 
     /**
      * Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
      */
-    readonly retcodeAppName: string;
+    readonly retcodeAppName: string | ros.IResolvable;
 
     /**
      * Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
      */
-    readonly retcodeAppType: string;
+    readonly retcodeAppType: string | ros.IResolvable;
 }
 
 /**
@@ -37,12 +37,12 @@ export class RetcodeApp extends ros.Resource {
     /**
      * Attribute AppId: The ID of the application for which you created the browser monitoring job.
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * Attribute Pid: The PID.
      */
-    public readonly attrPid: any;
+    public readonly attrPid: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ARMS::RetcodeApp`.

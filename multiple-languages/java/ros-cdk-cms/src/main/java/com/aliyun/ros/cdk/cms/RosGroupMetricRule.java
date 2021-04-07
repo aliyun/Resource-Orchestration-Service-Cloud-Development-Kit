@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::GroupMetricRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.278Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.931Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosGroupMetricRule")
 public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCategory() {
-        return software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCategory() {
+        return software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCategory(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "category", java.util.Objects.requireNonNull(value, "category is required"));
+    }
+
+    /**
+     */
+    public void setCategory(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "category", java.util.Objects.requireNonNull(value, "category is required"));
     }
 
@@ -93,8 +99,8 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getMetricName() {
-        return software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupId", java.util.Objects.requireNonNull(value, "groupId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getMetricName() {
+        return software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNamespace() {
-        return software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setMetricName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "metricName", java.util.Objects.requireNonNull(value, "metricName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNamespace() {
+        return software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +147,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNamespace(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "namespace", java.util.Objects.requireNonNull(value, "namespace is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuleName() {
-        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRuleId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ruleId", java.util.Objects.requireNonNull(value, "ruleId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuleName() {
+        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,8 +183,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDimensions() {
-        return software.amazon.jsii.Kernel.get(this, "dimensions", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRuleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ruleName", java.util.Objects.requireNonNull(value, "ruleName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDimensions() {
+        return software.amazon.jsii.Kernel.get(this, "dimensions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -165,8 +201,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEffectiveInterval() {
-        return software.amazon.jsii.Kernel.get(this, "effectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDimensions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dimensions", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEffectiveInterval() {
+        return software.amazon.jsii.Kernel.get(this, "effectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -177,8 +219,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEmailSubject() {
-        return software.amazon.jsii.Kernel.get(this, "emailSubject", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEffectiveInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "effectiveInterval", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEmailSubject() {
+        return software.amazon.jsii.Kernel.get(this, "emailSubject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -189,8 +237,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInterval() {
-        return software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setEmailSubject(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "emailSubject", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
+        return software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -201,8 +255,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNoEffectiveInterval() {
-        return software.amazon.jsii.Kernel.get(this, "noEffectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "interval", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNoEffectiveInterval() {
+        return software.amazon.jsii.Kernel.get(this, "noEffectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -213,8 +273,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setNoEffectiveInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "noEffectiveInterval", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -225,8 +291,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getSilenceTime() {
-        return software.amazon.jsii.Kernel.get(this, "silenceTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSilenceTime() {
+        return software.amazon.jsii.Kernel.get(this, "silenceTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -237,13 +309,25 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getWebhook() {
-        return software.amazon.jsii.Kernel.get(this, "webhook", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSilenceTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "silenceTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWebhook() {
+        return software.amazon.jsii.Kernel.get(this, "webhook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setWebhook(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "webhook", value);
+    }
+
+    /**
+     */
+    public void setWebhook(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "webhook", value);
     }
     /**
@@ -256,22 +340,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link CriticalProperty}
@@ -285,10 +369,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CriticalProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.Number threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link CriticalProperty#getComparisonOperator}
@@ -297,6 +381,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CriticalProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -313,6 +408,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CriticalProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CriticalProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -324,12 +430,34 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CriticalProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CriticalProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CriticalProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -352,10 +480,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CriticalProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.Number threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -363,16 +491,16 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.Number threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -381,22 +509,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.Number getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -669,22 +797,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link InfoProperty}
@@ -698,10 +826,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InfoProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.Number threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link InfoProperty#getComparisonOperator}
@@ -710,6 +838,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InfoProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -726,6 +865,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link InfoProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InfoProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -737,12 +887,34 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link InfoProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InfoProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InfoProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -765,10 +937,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InfoProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.Number threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -776,16 +948,16 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.Number threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -794,22 +966,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.Number getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -867,22 +1039,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getComparisonOperator();
+        @org.jetbrains.annotations.NotNull java.lang.Object getComparisonOperator();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getStatistics();
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatistics();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getThreshold();
+        @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTimes();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTimes();
 
         /**
          * @return a {@link Builder} of {@link WarnProperty}
@@ -896,10 +1068,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WarnProperty> {
-            private java.lang.String comparisonOperator;
-            private java.lang.String statistics;
-            private java.lang.Number threshold;
-            private java.lang.Number times;
+            private java.lang.Object comparisonOperator;
+            private java.lang.Object statistics;
+            private java.lang.Object threshold;
+            private java.lang.Object times;
 
             /**
              * Sets the value of {@link WarnProperty#getComparisonOperator}
@@ -908,6 +1080,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comparisonOperator(java.lang.String comparisonOperator) {
+                this.comparisonOperator = comparisonOperator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WarnProperty#getComparisonOperator}
+             * @param comparisonOperator the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comparisonOperator(com.aliyun.ros.cdk.core.IResolvable comparisonOperator) {
                 this.comparisonOperator = comparisonOperator;
                 return this;
             }
@@ -924,6 +1107,17 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WarnProperty#getStatistics}
+             * @param statistics the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statistics(com.aliyun.ros.cdk.core.IResolvable statistics) {
+                this.statistics = statistics;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WarnProperty#getThreshold}
              * @param threshold the value to be set. This parameter is required.
              * @return {@code this}
@@ -935,12 +1129,34 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WarnProperty#getThreshold}
+             * @param threshold the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder threshold(com.aliyun.ros.cdk.core.IResolvable threshold) {
+                this.threshold = threshold;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WarnProperty#getTimes}
              * @param times the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder times(java.lang.Number times) {
+                this.times = times;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WarnProperty#getTimes}
+             * @param times the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder times(com.aliyun.ros.cdk.core.IResolvable times) {
                 this.times = times;
                 return this;
             }
@@ -963,10 +1179,10 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements WarnProperty {
-            private final java.lang.String comparisonOperator;
-            private final java.lang.String statistics;
-            private final java.lang.Number threshold;
-            private final java.lang.Number times;
+            private final java.lang.Object comparisonOperator;
+            private final java.lang.Object statistics;
+            private final java.lang.Object threshold;
+            private final java.lang.Object times;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -974,16 +1190,16 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.comparisonOperator = software.amazon.jsii.Kernel.get(this, "comparisonOperator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.times = software.amazon.jsii.Kernel.get(this, "times", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String comparisonOperator, final java.lang.String statistics, final java.lang.Number threshold, final java.lang.Number times) {
+            protected Jsii$Proxy(final java.lang.Object comparisonOperator, final java.lang.Object statistics, final java.lang.Object threshold, final java.lang.Object times) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.comparisonOperator = java.util.Objects.requireNonNull(comparisonOperator, "comparisonOperator is required");
                 this.statistics = java.util.Objects.requireNonNull(statistics, "statistics is required");
@@ -992,22 +1208,22 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getComparisonOperator() {
+            public final java.lang.Object getComparisonOperator() {
                 return this.comparisonOperator;
             }
 
             @Override
-            public final java.lang.String getStatistics() {
+            public final java.lang.Object getStatistics() {
                 return this.statistics;
             }
 
             @Override
-            public final java.lang.Number getThreshold() {
+            public final java.lang.Object getThreshold() {
                 return this.threshold;
             }
 
             @Override
-            public final java.lang.Number getTimes() {
+            public final java.lang.Object getTimes() {
                 return this.times;
             }
 
@@ -1090,6 +1306,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.category(category);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param category This parameter is required.
+         */
+        public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
+            this.props.category(category);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1116,12 +1340,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param groupId This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param metricName This parameter is required.
          */
         public Builder metricName(final java.lang.String metricName) {
+            this.props.metricName(metricName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param metricName This parameter is required.
+         */
+        public Builder metricName(final com.aliyun.ros.cdk.core.IResolvable metricName) {
             this.props.metricName(metricName);
             return this;
         }
@@ -1134,12 +1374,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.namespace(namespace);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param namespace This parameter is required.
+         */
+        public Builder namespace(final com.aliyun.ros.cdk.core.IResolvable namespace) {
+            this.props.namespace(namespace);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param ruleId This parameter is required.
          */
         public Builder ruleId(final java.lang.String ruleId) {
+            this.props.ruleId(ruleId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ruleId This parameter is required.
+         */
+        public Builder ruleId(final com.aliyun.ros.cdk.core.IResolvable ruleId) {
             this.props.ruleId(ruleId);
             return this;
         }
@@ -1152,12 +1408,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ruleName(ruleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ruleName This parameter is required.
+         */
+        public Builder ruleName(final com.aliyun.ros.cdk.core.IResolvable ruleName) {
+            this.props.ruleName(ruleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dimensions This parameter is required.
          */
         public Builder dimensions(final java.lang.String dimensions) {
+            this.props.dimensions(dimensions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dimensions This parameter is required.
+         */
+        public Builder dimensions(final com.aliyun.ros.cdk.core.IResolvable dimensions) {
             this.props.dimensions(dimensions);
             return this;
         }
@@ -1170,12 +1442,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.effectiveInterval(effectiveInterval);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param effectiveInterval This parameter is required.
+         */
+        public Builder effectiveInterval(final com.aliyun.ros.cdk.core.IResolvable effectiveInterval) {
+            this.props.effectiveInterval(effectiveInterval);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param emailSubject This parameter is required.
          */
         public Builder emailSubject(final java.lang.String emailSubject) {
+            this.props.emailSubject(emailSubject);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param emailSubject This parameter is required.
+         */
+        public Builder emailSubject(final com.aliyun.ros.cdk.core.IResolvable emailSubject) {
             this.props.emailSubject(emailSubject);
             return this;
         }
@@ -1188,12 +1476,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.interval(interval);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param interval This parameter is required.
+         */
+        public Builder interval(final com.aliyun.ros.cdk.core.IResolvable interval) {
+            this.props.interval(interval);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param noEffectiveInterval This parameter is required.
          */
         public Builder noEffectiveInterval(final java.lang.String noEffectiveInterval) {
+            this.props.noEffectiveInterval(noEffectiveInterval);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param noEffectiveInterval This parameter is required.
+         */
+        public Builder noEffectiveInterval(final com.aliyun.ros.cdk.core.IResolvable noEffectiveInterval) {
             this.props.noEffectiveInterval(noEffectiveInterval);
             return this;
         }
@@ -1206,6 +1510,14 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.period(period);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1215,12 +1527,28 @@ public class RosGroupMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.silenceTime(silenceTime);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param silenceTime This parameter is required.
+         */
+        public Builder silenceTime(final com.aliyun.ros.cdk.core.IResolvable silenceTime) {
+            this.props.silenceTime(silenceTime);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param webhook This parameter is required.
          */
         public Builder webhook(final java.lang.String webhook) {
+            this.props.webhook(webhook);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param webhook This parameter is required.
+         */
+        public Builder webhook(final com.aliyun.ros.cdk.core.IResolvable webhook) {
             this.props.webhook(webhook);
             return this;
         }

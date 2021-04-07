@@ -3,44 +3,58 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.403Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(VSwitchProps.Jsii$Proxy.class)
 public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCidrBlock();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCidrBlock();
 
     /**
+     * Property vpcId: VPC id to create vswtich.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
+     * Property zoneId: The availability zone in which the VSwitch will be created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
+     * Property description: Description of the VSwitch, [2, 256] characters.
+     * <p>
+     * Do not fill or empty, the default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment.
+     * <p>
+     * Value: 0-255 (decimal).
+     * The IPv6 segment mask of the switch defaults to 64 bits.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIpv6CidrBlock() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6CidrBlock() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to vswitch.
+     * <p>
+     * Max support 20 tags to add during create vswitch. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchName() {
         return null;
     }
 
@@ -54,17 +68,17 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VSwitchProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VSwitchProps> {
-        private java.lang.String cidrBlock;
-        private java.lang.String vpcId;
-        private java.lang.String zoneId;
-        private java.lang.String description;
-        private java.lang.Number ipv6CidrBlock;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String vSwitchName;
+        private java.lang.Object cidrBlock;
+        private java.lang.Object vpcId;
+        private java.lang.Object zoneId;
+        private java.lang.Object description;
+        private java.lang.Object ipv6CidrBlock;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
+        private java.lang.Object vSwitchName;
 
         /**
          * Sets the value of {@link VSwitchProps#getCidrBlock}
-         * @param cidrBlock the value to be set. This parameter is required.
+         * @param cidrBlock Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block. This parameter is required.
          * @return {@code this}
          */
         public Builder cidrBlock(java.lang.String cidrBlock) {
@@ -73,8 +87,18 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getCidrBlock}
+         * @param cidrBlock Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cidrBlock(com.aliyun.ros.cdk.core.IResolvable cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
+         * @param vpcId Property vpcId: VPC id to create vswtich. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -83,8 +107,18 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getVpcId}
+         * @param vpcId Property vpcId: VPC id to create vswtich. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getZoneId}
-         * @param zoneId the value to be set. This parameter is required.
+         * @param zoneId Property zoneId: The availability zone in which the VSwitch will be created. This parameter is required.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -93,8 +127,19 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getZoneId}
+         * @param zoneId Property zoneId: The availability zone in which the VSwitch will be created. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the VSwitch, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -103,8 +148,21 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getDescription}
+         * @param description Property description: Description of the VSwitch, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getIpv6CidrBlock}
-         * @param ipv6CidrBlock the value to be set.
+         * @param ipv6CidrBlock Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment.
+         *                      Value: 0-255 (decimal).
+         *                      The IPv6 segment mask of the switch defaults to 64 bits.
          * @return {@code this}
          */
         public Builder ipv6CidrBlock(java.lang.Number ipv6CidrBlock) {
@@ -113,22 +171,45 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VSwitchProps#getIpv6CidrBlock}
+         * @param ipv6CidrBlock Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment.
+         *                      Value: 0-255 (decimal).
+         *                      The IPv6 segment mask of the switch defaults to 64 bits.
+         * @return {@code this}
+         */
+        public Builder ipv6CidrBlock(com.aliyun.ros.cdk.core.IResolvable ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VSwitchProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to vswitch.
+         *             Max support 20 tags to add during create vswitch. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link VSwitchProps#getVSwitchName}
-         * @param vSwitchName the value to be set.
+         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder vSwitchName(java.lang.String vSwitchName) {
+            this.vSwitchName = vSwitchName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VSwitchProps#getVSwitchName}
+         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder vSwitchName(com.aliyun.ros.cdk.core.IResolvable vSwitchName) {
             this.vSwitchName = vSwitchName;
             return this;
         }
@@ -149,13 +230,13 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VSwitchProps {
-        private final java.lang.String cidrBlock;
-        private final java.lang.String vpcId;
-        private final java.lang.String zoneId;
-        private final java.lang.String description;
-        private final java.lang.Number ipv6CidrBlock;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String vSwitchName;
+        private final java.lang.Object cidrBlock;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object zoneId;
+        private final java.lang.Object description;
+        private final java.lang.Object ipv6CidrBlock;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags;
+        private final java.lang.Object vSwitchName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -163,62 +244,62 @@ public interface VSwitchProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cidrBlock = software.amazon.jsii.Kernel.get(this, "cidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.vSwitchName = software.amazon.jsii.Kernel.get(this, "vSwitchName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cidrBlock = software.amazon.jsii.Kernel.get(this, "cidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty.class)));
+            this.vSwitchName = software.amazon.jsii.Kernel.get(this, "vSwitchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String cidrBlock, final java.lang.String vpcId, final java.lang.String zoneId, final java.lang.String description, final java.lang.Number ipv6CidrBlock, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String vSwitchName) {
+        protected Jsii$Proxy(final java.lang.Object cidrBlock, final java.lang.Object vpcId, final java.lang.Object zoneId, final java.lang.Object description, final java.lang.Object ipv6CidrBlock, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags, final java.lang.Object vSwitchName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cidrBlock = java.util.Objects.requireNonNull(cidrBlock, "cidrBlock is required");
             this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
             this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
             this.description = description;
             this.ipv6CidrBlock = ipv6CidrBlock;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty>)tags;
             this.vSwitchName = vSwitchName;
         }
 
         @Override
-        public final java.lang.String getCidrBlock() {
+        public final java.lang.Object getCidrBlock() {
             return this.cidrBlock;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getIpv6CidrBlock() {
+        public final java.lang.Object getIpv6CidrBlock() {
             return this.ipv6CidrBlock;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVSwitchName() {
+        public final java.lang.Object getVSwitchName() {
             return this.vSwitchName;
         }
 

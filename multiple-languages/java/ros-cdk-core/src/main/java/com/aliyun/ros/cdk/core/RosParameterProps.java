@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.328Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,11 +17,15 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         return null;
     }
 
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getAssociationPropertyMetadata() {
+        return null;
+    }
+
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getConfirm() {
         return null;
     }
 
-    default @org.jetbrains.annotations.Nullable java.lang.String getConstraintDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConstraintDescription() {
         return null;
     }
 
@@ -29,7 +33,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         return null;
     }
 
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -57,6 +61,10 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         return null;
     }
 
+    default @org.jetbrains.annotations.Nullable java.lang.Boolean getTextArea() {
+        return null;
+    }
+
     default @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosParameterType getType() {
         return null;
     }
@@ -74,16 +82,18 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         private java.lang.String allowedPattern;
         private java.util.List<java.lang.Object> allowedValues;
         private java.lang.String associationProperty;
+        private java.util.Map<java.lang.String, java.lang.Object> associationPropertyMetadata;
         private java.lang.Boolean confirm;
-        private java.lang.String constraintDescription;
+        private java.lang.Object constraintDescription;
         private java.lang.Object defaultValue;
-        private java.lang.String description;
+        private java.lang.Object description;
         private java.lang.String label;
         private java.lang.Number maxLength;
         private java.lang.Number maxValue;
         private java.lang.Number minLength;
         private java.lang.Number minValue;
         private java.lang.Boolean noEcho;
+        private java.lang.Boolean textArea;
         private com.aliyun.ros.cdk.core.RosParameterType type;
 
         /**
@@ -118,6 +128,17 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getAssociationPropertyMetadata}
+         * @param associationPropertyMetadata the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder associationPropertyMetadata(java.util.Map<java.lang.String, ? extends java.lang.Object> associationPropertyMetadata) {
+            this.associationPropertyMetadata = (java.util.Map<java.lang.String, java.lang.Object>)associationPropertyMetadata;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getConfirm}
          * @param confirm the value to be set.
          * @return {@code this}
@@ -138,6 +159,16 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getConstraintDescription}
+         * @param constraintDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder constraintDescription(java.util.Map<java.lang.String, java.lang.String> constraintDescription) {
+            this.constraintDescription = constraintDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getDefaultValue}
          * @param defaultValue the value to be set.
          * @return {@code this}
@@ -153,6 +184,16 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(java.util.Map<java.lang.String, java.lang.String> description) {
             this.description = description;
             return this;
         }
@@ -218,6 +259,16 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getTextArea}
+         * @param textArea the value to be set.
+         * @return {@code this}
+         */
+        public Builder textArea(java.lang.Boolean textArea) {
+            this.textArea = textArea;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getType}
          * @param type the value to be set.
          * @return {@code this}
@@ -234,7 +285,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosParameterProps build() {
-            return new Jsii$Proxy(allowedPattern, allowedValues, associationProperty, confirm, constraintDescription, defaultValue, description, label, maxLength, maxValue, minLength, minValue, noEcho, type);
+            return new Jsii$Proxy(allowedPattern, allowedValues, associationProperty, associationPropertyMetadata, confirm, constraintDescription, defaultValue, description, label, maxLength, maxValue, minLength, minValue, noEcho, textArea, type);
         }
     }
 
@@ -246,16 +297,18 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.String allowedPattern;
         private final java.util.List<java.lang.Object> allowedValues;
         private final java.lang.String associationProperty;
+        private final java.util.Map<java.lang.String, java.lang.Object> associationPropertyMetadata;
         private final java.lang.Boolean confirm;
-        private final java.lang.String constraintDescription;
+        private final java.lang.Object constraintDescription;
         private final java.lang.Object defaultValue;
-        private final java.lang.String description;
+        private final java.lang.Object description;
         private final java.lang.String label;
         private final java.lang.Number maxLength;
         private final java.lang.Number maxValue;
         private final java.lang.Number minLength;
         private final java.lang.Number minValue;
         private final java.lang.Boolean noEcho;
+        private final java.lang.Boolean textArea;
         private final com.aliyun.ros.cdk.core.RosParameterType type;
 
         /**
@@ -267,16 +320,18 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.allowedPattern = software.amazon.jsii.Kernel.get(this, "allowedPattern", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.allowedValues = software.amazon.jsii.Kernel.get(this, "allowedValues", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.associationProperty = software.amazon.jsii.Kernel.get(this, "associationProperty", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.associationPropertyMetadata = software.amazon.jsii.Kernel.get(this, "associationPropertyMetadata", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.confirm = software.amazon.jsii.Kernel.get(this, "confirm", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
-            this.constraintDescription = software.amazon.jsii.Kernel.get(this, "constraintDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.constraintDescription = software.amazon.jsii.Kernel.get(this, "constraintDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultValue = software.amazon.jsii.Kernel.get(this, "defaultValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.label = software.amazon.jsii.Kernel.get(this, "label", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.maxLength = software.amazon.jsii.Kernel.get(this, "maxLength", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.maxValue = software.amazon.jsii.Kernel.get(this, "maxValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.minLength = software.amazon.jsii.Kernel.get(this, "minLength", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.minValue = software.amazon.jsii.Kernel.get(this, "minValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.noEcho = software.amazon.jsii.Kernel.get(this, "noEcho", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+            this.textArea = software.amazon.jsii.Kernel.get(this, "textArea", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosParameterType.class));
         }
 
@@ -284,11 +339,12 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String allowedPattern, final java.util.List<? extends java.lang.Object> allowedValues, final java.lang.String associationProperty, final java.lang.Boolean confirm, final java.lang.String constraintDescription, final java.lang.Object defaultValue, final java.lang.String description, final java.lang.String label, final java.lang.Number maxLength, final java.lang.Number maxValue, final java.lang.Number minLength, final java.lang.Number minValue, final java.lang.Boolean noEcho, final com.aliyun.ros.cdk.core.RosParameterType type) {
+        protected Jsii$Proxy(final java.lang.String allowedPattern, final java.util.List<? extends java.lang.Object> allowedValues, final java.lang.String associationProperty, final java.util.Map<java.lang.String, ? extends java.lang.Object> associationPropertyMetadata, final java.lang.Boolean confirm, final java.lang.Object constraintDescription, final java.lang.Object defaultValue, final java.lang.Object description, final java.lang.String label, final java.lang.Number maxLength, final java.lang.Number maxValue, final java.lang.Number minLength, final java.lang.Number minValue, final java.lang.Boolean noEcho, final java.lang.Boolean textArea, final com.aliyun.ros.cdk.core.RosParameterType type) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.allowedPattern = allowedPattern;
             this.allowedValues = (java.util.List<java.lang.Object>)allowedValues;
             this.associationProperty = associationProperty;
+            this.associationPropertyMetadata = (java.util.Map<java.lang.String, java.lang.Object>)associationPropertyMetadata;
             this.confirm = confirm;
             this.constraintDescription = constraintDescription;
             this.defaultValue = defaultValue;
@@ -299,6 +355,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.minLength = minLength;
             this.minValue = minValue;
             this.noEcho = noEcho;
+            this.textArea = textArea;
             this.type = type;
         }
 
@@ -318,12 +375,17 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.util.Map<java.lang.String, java.lang.Object> getAssociationPropertyMetadata() {
+            return this.associationPropertyMetadata;
+        }
+
+        @Override
         public final java.lang.Boolean getConfirm() {
             return this.confirm;
         }
 
         @Override
-        public final java.lang.String getConstraintDescription() {
+        public final java.lang.Object getConstraintDescription() {
             return this.constraintDescription;
         }
 
@@ -333,7 +395,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -368,6 +430,11 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Boolean getTextArea() {
+            return this.textArea;
+        }
+
+        @Override
         public final com.aliyun.ros.cdk.core.RosParameterType getType() {
             return this.type;
         }
@@ -386,6 +453,9 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getAssociationProperty() != null) {
                 data.set("associationProperty", om.valueToTree(this.getAssociationProperty()));
+            }
+            if (this.getAssociationPropertyMetadata() != null) {
+                data.set("associationPropertyMetadata", om.valueToTree(this.getAssociationPropertyMetadata()));
             }
             if (this.getConfirm() != null) {
                 data.set("confirm", om.valueToTree(this.getConfirm()));
@@ -417,6 +487,9 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getNoEcho() != null) {
                 data.set("noEcho", om.valueToTree(this.getNoEcho()));
             }
+            if (this.getTextArea() != null) {
+                data.set("textArea", om.valueToTree(this.getTextArea()));
+            }
             if (this.getType() != null) {
                 data.set("type", om.valueToTree(this.getType()));
             }
@@ -441,6 +514,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (this.allowedPattern != null ? !this.allowedPattern.equals(that.allowedPattern) : that.allowedPattern != null) return false;
             if (this.allowedValues != null ? !this.allowedValues.equals(that.allowedValues) : that.allowedValues != null) return false;
             if (this.associationProperty != null ? !this.associationProperty.equals(that.associationProperty) : that.associationProperty != null) return false;
+            if (this.associationPropertyMetadata != null ? !this.associationPropertyMetadata.equals(that.associationPropertyMetadata) : that.associationPropertyMetadata != null) return false;
             if (this.confirm != null ? !this.confirm.equals(that.confirm) : that.confirm != null) return false;
             if (this.constraintDescription != null ? !this.constraintDescription.equals(that.constraintDescription) : that.constraintDescription != null) return false;
             if (this.defaultValue != null ? !this.defaultValue.equals(that.defaultValue) : that.defaultValue != null) return false;
@@ -451,6 +525,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (this.minLength != null ? !this.minLength.equals(that.minLength) : that.minLength != null) return false;
             if (this.minValue != null ? !this.minValue.equals(that.minValue) : that.minValue != null) return false;
             if (this.noEcho != null ? !this.noEcho.equals(that.noEcho) : that.noEcho != null) return false;
+            if (this.textArea != null ? !this.textArea.equals(that.textArea) : that.textArea != null) return false;
             return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
 
@@ -459,6 +534,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             int result = this.allowedPattern != null ? this.allowedPattern.hashCode() : 0;
             result = 31 * result + (this.allowedValues != null ? this.allowedValues.hashCode() : 0);
             result = 31 * result + (this.associationProperty != null ? this.associationProperty.hashCode() : 0);
+            result = 31 * result + (this.associationPropertyMetadata != null ? this.associationPropertyMetadata.hashCode() : 0);
             result = 31 * result + (this.confirm != null ? this.confirm.hashCode() : 0);
             result = 31 * result + (this.constraintDescription != null ? this.constraintDescription.hashCode() : 0);
             result = 31 * result + (this.defaultValue != null ? this.defaultValue.hashCode() : 0);
@@ -469,6 +545,7 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.minLength != null ? this.minLength.hashCode() : 0);
             result = 31 * result + (this.minValue != null ? this.minValue.hashCode() : 0);
             result = 31 * result + (this.noEcho != null ? this.noEcho.hashCode() : 0);
+            result = 31 * result + (this.textArea != null ? this.textArea.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;
         }

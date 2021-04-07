@@ -18,6 +18,7 @@
 @alicloud/ros-cdk-slb.MasterSlaveServerGroupProps=com.aliyun.ros.cdk.slb.MasterSlaveServerGroupProps
 @alicloud/ros-cdk-slb.RosAccessControl=com.aliyun.ros.cdk.slb.RosAccessControl
 @alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty=com.aliyun.ros.cdk.slb.RosAccessControl$AclEntrysProperty
+@alicloud/ros-cdk-slb.RosAccessControl.TagsProperty=com.aliyun.ros.cdk.slb.RosAccessControl$TagsProperty
 @alicloud/ros-cdk-slb.RosAccessControlProps=com.aliyun.ros.cdk.slb.RosAccessControlProps
 @alicloud/ros-cdk-slb.RosBackendServerAttachment=com.aliyun.ros.cdk.slb.RosBackendServerAttachment
 @alicloud/ros-cdk-slb.RosBackendServerAttachment.BackendServersProperty=com.aliyun.ros.cdk.slb.RosBackendServerAttachment$BackendServersProperty
@@ -26,6 +27,7 @@
 @alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAddition.BackendServersProperty=com.aliyun.ros.cdk.slb.RosBackendServerToVServerGroupAddition$BackendServersProperty
 @alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAdditionProps=com.aliyun.ros.cdk.slb.RosBackendServerToVServerGroupAdditionProps
 @alicloud/ros-cdk-slb.RosCertificate=com.aliyun.ros.cdk.slb.RosCertificate
+@alicloud/ros-cdk-slb.RosCertificate.TagsProperty=com.aliyun.ros.cdk.slb.RosCertificate$TagsProperty
 @alicloud/ros-cdk-slb.RosCertificateProps=com.aliyun.ros.cdk.slb.RosCertificateProps
 @alicloud/ros-cdk-slb.RosDomainExtension=com.aliyun.ros.cdk.slb.RosDomainExtension
 @alicloud/ros-cdk-slb.RosDomainExtensionProps=com.aliyun.ros.cdk.slb.RosDomainExtensionProps
@@ -33,10 +35,13 @@
 @alicloud/ros-cdk-slb.RosListener.HealthCheckProperty=com.aliyun.ros.cdk.slb.RosListener$HealthCheckProperty
 @alicloud/ros-cdk-slb.RosListener.HttpConfigProperty=com.aliyun.ros.cdk.slb.RosListener$HttpConfigProperty
 @alicloud/ros-cdk-slb.RosListener.PersistenceProperty=com.aliyun.ros.cdk.slb.RosListener$PersistenceProperty
+@alicloud/ros-cdk-slb.RosListener.PortRangeProperty=com.aliyun.ros.cdk.slb.RosListener$PortRangeProperty
 @alicloud/ros-cdk-slb.RosListenerProps=com.aliyun.ros.cdk.slb.RosListenerProps
 @alicloud/ros-cdk-slb.RosLoadBalancer=com.aliyun.ros.cdk.slb.RosLoadBalancer
+@alicloud/ros-cdk-slb.RosLoadBalancer.TagsProperty=com.aliyun.ros.cdk.slb.RosLoadBalancer$TagsProperty
 @alicloud/ros-cdk-slb.RosLoadBalancerClone=com.aliyun.ros.cdk.slb.RosLoadBalancerClone
 @alicloud/ros-cdk-slb.RosLoadBalancerClone.BackendServersProperty=com.aliyun.ros.cdk.slb.RosLoadBalancerClone$BackendServersProperty
+@alicloud/ros-cdk-slb.RosLoadBalancerClone.TagsProperty=com.aliyun.ros.cdk.slb.RosLoadBalancerClone$TagsProperty
 @alicloud/ros-cdk-slb.RosLoadBalancerCloneProps=com.aliyun.ros.cdk.slb.RosLoadBalancerCloneProps
 @alicloud/ros-cdk-slb.RosLoadBalancerProps=com.aliyun.ros.cdk.slb.RosLoadBalancerProps
 @alicloud/ros-cdk-slb.RosMasterSlaveServerGroup=com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup

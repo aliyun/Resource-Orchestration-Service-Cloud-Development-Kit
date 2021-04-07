@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// Various specifications of the reference data migration test performance specifications
         /// </remarks>
-        [JsiiProperty(name: "migrationJobClass", typeJson: "{\"primitive\":\"string\"}")]
-        string MigrationJobClass
+        [JsiiProperty(name: "migrationJobClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object MigrationJobClass
         {
             get;
         }
@@ -30,9 +30,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Property migrationJobName: Migrating job name.</summary>
-        [JsiiProperty(name: "migrationJobName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "migrationJobName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MigrationJobName
+        object? MigrationJobName
         {
             get
             {
@@ -85,10 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// <remarks>
             /// Various specifications of the reference data migration test performance specifications
             /// </remarks>
-            [JsiiProperty(name: "migrationJobClass", typeJson: "{\"primitive\":\"string\"}")]
-            public string MigrationJobClass
+            [JsiiProperty(name: "migrationJobClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object MigrationJobClass
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property destinationEndpoint: Migration target configuration.</summary>
@@ -101,10 +101,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
             /// <summary>Property migrationJobName: Migrating job name.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "migrationJobName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MigrationJobName
+            [JsiiProperty(name: "migrationJobName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MigrationJobName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property migrationMode: Migration mode.</summary>

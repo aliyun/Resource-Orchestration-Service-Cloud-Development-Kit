@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public interface ISiteMonitorProps
     {
         /// <summary>Property address: The URL or IP address monitored by the monitoring task.</summary>
-        [JsiiProperty(name: "address", typeJson: "{\"primitive\":\"string\"}")]
-        string Address
+        [JsiiProperty(name: "address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Address
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// The name must be 4 to 100 characters in length.
         /// It can contain letters, digits, and underscores (_).
         /// </remarks>
-        [JsiiProperty(name: "taskName", typeJson: "{\"primitive\":\"string\"}")]
-        string TaskName
+        [JsiiProperty(name: "taskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TaskName
         {
             get;
         }
@@ -31,16 +31,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// Valid values: HTTP, HTTPS, PING, TCP,
         /// UDP, DNS, SMTP, POP3, and FTP.
         /// </remarks>
-        [JsiiProperty(name: "taskType", typeJson: "{\"primitive\":\"string\"}")]
-        string TaskType
+        [JsiiProperty(name: "taskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TaskType
         {
             get;
         }
 
         /// <summary>Property alertIds:.</summary>
-        [JsiiProperty(name: "alertIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "alertIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? AlertIds
+        object? AlertIds
         {
             get
             {
@@ -53,9 +53,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// Valid values: 1, 5, and 15. Unit:
         /// minutes. Default value: 1.
         /// </remarks>
-        [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Interval
+        object? Interval
         {
             get
             {
@@ -87,9 +87,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// The
         /// options vary based on the protocol.
         /// </remarks>
-        [JsiiProperty(name: "optionsJson", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "optionsJson", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? OptionsJson
+        object? OptionsJson
         {
             get
             {
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <summary>Property address: The URL or IP address monitored by the monitoring task.</summary>
-            [JsiiProperty(name: "address", typeJson: "{\"primitive\":\"string\"}")]
-            public string Address
+            [JsiiProperty(name: "address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Address
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property taskName: The name of the site monitoring task.</summary>
@@ -117,10 +117,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// The name must be 4 to 100 characters in length.
             /// It can contain letters, digits, and underscores (_).
             /// </remarks>
-            [JsiiProperty(name: "taskName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TaskName
+            [JsiiProperty(name: "taskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TaskName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property taskType: The protocol used by the site monitoring task.</summary>
@@ -128,18 +128,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// Valid values: HTTP, HTTPS, PING, TCP,
             /// UDP, DNS, SMTP, POP3, and FTP.
             /// </remarks>
-            [JsiiProperty(name: "taskType", typeJson: "{\"primitive\":\"string\"}")]
-            public string TaskType
+            [JsiiProperty(name: "taskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TaskType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property alertIds:.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "alertIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? AlertIds
+            [JsiiProperty(name: "alertIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AlertIds
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property interval: The interval at which detection requests are sent.</summary>
@@ -148,10 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// minutes. Default value: 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Interval
+            [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Interval
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ispCities: The information about detection points, which is specified in a JSON array.</summary>
@@ -176,10 +176,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// options vary based on the protocol.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "optionsJson", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? OptionsJson
+            [JsiiProperty(name: "optionsJson", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OptionsJson
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

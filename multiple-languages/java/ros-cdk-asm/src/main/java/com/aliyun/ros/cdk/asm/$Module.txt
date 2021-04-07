@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-asm.RosServiceMesh=com.aliyun.ros.cdk.asm.RosServiceMesh
+@alicloud/ros-cdk-asm.RosServiceMesh.OPAProperty=com.aliyun.ros.cdk.asm.RosServiceMesh$OPAProperty
+@alicloud/ros-cdk-asm.RosServiceMesh.ProxyProperty=com.aliyun.ros.cdk.asm.RosServiceMesh$ProxyProperty
+@alicloud/ros-cdk-asm.RosServiceMeshProps=com.aliyun.ros.cdk.asm.RosServiceMeshProps
+@alicloud/ros-cdk-asm.ServiceMesh=com.aliyun.ros.cdk.asm.ServiceMesh
+@alicloud/ros-cdk-asm.ServiceMeshProps=com.aliyun.ros.cdk.asm.ServiceMeshProps

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.082Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancerCloneProps.Jsii$Proxy.class)
 public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceLoadBalancerId();
 
     /**
      */
@@ -20,37 +20,37 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBackendServersPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServersPolicy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTagsPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagsPolicy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -64,14 +64,14 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosLoadBalancerCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosLoadBalancerCloneProps> {
-        private java.lang.String sourceLoadBalancerId;
+        private java.lang.Object sourceLoadBalancerId;
         private java.lang.Object backendServers;
-        private java.lang.String backendServersPolicy;
-        private java.lang.String loadBalancerName;
-        private java.lang.String resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String tagsPolicy;
-        private java.lang.String vSwitchId;
+        private java.lang.Object backendServersPolicy;
+        private java.lang.Object loadBalancerName;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
+        private java.lang.Object tagsPolicy;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getSourceLoadBalancerId}
@@ -79,6 +79,16 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder sourceLoadBalancerId(java.lang.String sourceLoadBalancerId) {
+            this.sourceLoadBalancerId = sourceLoadBalancerId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getSourceLoadBalancerId}
+         * @param sourceLoadBalancerId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceLoadBalancerId(com.aliyun.ros.cdk.core.IResolvable sourceLoadBalancerId) {
             this.sourceLoadBalancerId = sourceLoadBalancerId;
             return this;
         }
@@ -114,11 +124,31 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getBackendServersPolicy}
+         * @param backendServersPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder backendServersPolicy(com.aliyun.ros.cdk.core.IResolvable backendServersPolicy) {
+            this.backendServersPolicy = backendServersPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getLoadBalancerName}
          * @param loadBalancerName the value to be set.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
+            this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getLoadBalancerName}
+         * @param loadBalancerName the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.loadBalancerName = loadBalancerName;
             return this;
         }
@@ -134,13 +164,23 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)tags;
             return this;
         }
 
@@ -155,11 +195,31 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getTagsPolicy}
+         * @param tagsPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder tagsPolicy(com.aliyun.ros.cdk.core.IResolvable tagsPolicy) {
+            this.tagsPolicy = tagsPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerCloneProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerCloneProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -180,14 +240,14 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosLoadBalancerCloneProps {
-        private final java.lang.String sourceLoadBalancerId;
+        private final java.lang.Object sourceLoadBalancerId;
         private final java.lang.Object backendServers;
-        private final java.lang.String backendServersPolicy;
-        private final java.lang.String loadBalancerName;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String tagsPolicy;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object backendServersPolicy;
+        private final java.lang.Object loadBalancerName;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
+        private final java.lang.Object tagsPolicy;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -195,34 +255,34 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sourceLoadBalancerId = software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sourceLoadBalancerId = software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.backendServersPolicy = software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.tagsPolicy = software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.backendServersPolicy = software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty.class)));
+            this.tagsPolicy = software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String sourceLoadBalancerId, final java.lang.Object backendServers, final java.lang.String backendServersPolicy, final java.lang.String loadBalancerName, final java.lang.String resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String tagsPolicy, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object sourceLoadBalancerId, final java.lang.Object backendServers, final java.lang.Object backendServersPolicy, final java.lang.Object loadBalancerName, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags, final java.lang.Object tagsPolicy, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sourceLoadBalancerId = java.util.Objects.requireNonNull(sourceLoadBalancerId, "sourceLoadBalancerId is required");
             this.backendServers = backendServers;
             this.backendServersPolicy = backendServersPolicy;
             this.loadBalancerName = loadBalancerName;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)tags;
             this.tagsPolicy = tagsPolicy;
             this.vSwitchId = vSwitchId;
         }
 
         @Override
-        public final java.lang.String getSourceLoadBalancerId() {
+        public final java.lang.Object getSourceLoadBalancerId() {
             return this.sourceLoadBalancerId;
         }
 
@@ -232,32 +292,32 @@ public interface RosLoadBalancerCloneProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getBackendServersPolicy() {
+        public final java.lang.Object getBackendServersPolicy() {
             return this.backendServersPolicy;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerName() {
+        public final java.lang.Object getLoadBalancerName() {
             return this.loadBalancerName;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getTagsPolicy() {
+        public final java.lang.Object getTagsPolicy() {
             return this.tagsPolicy;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

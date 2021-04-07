@@ -11,12 +11,12 @@ export interface DrdsDBProps {
     /**
      * Property drdsInstanceId: DRDS instance ID
      */
-    readonly drdsInstanceId: string;
+    readonly drdsInstanceId: string | ros.IResolvable;
 
     /**
      * Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
      */
-    readonly accountName?: string;
+    readonly accountName?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
@@ -27,17 +27,17 @@ export interface DrdsDBProps {
      * Property dbInstType: The type of the attached storage. Valid values:
      * RDS or POLARDB
      */
-    readonly dbInstType?: string;
+    readonly dbInstType?: string | ros.IResolvable;
 
     /**
      * Property dbName: Database Name
      */
-    readonly dbName?: string;
+    readonly dbName?: string | ros.IResolvable;
 
     /**
      * Property encode: Encoding used by the database
      */
-    readonly encode?: string;
+    readonly encode?: string | ros.IResolvable;
 
     /**
      * Property instDbName:
@@ -47,12 +47,12 @@ export interface DrdsDBProps {
     /**
      * Property password: The logon password of the database instance.
      */
-    readonly password?: string;
+    readonly password?: string | ros.IResolvable;
 
     /**
      * Property rdsInstance: This property is required only for vertical partitioning.
      */
-    readonly rdsInstance?: string[];
+    readonly rdsInstance?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property type: Database Sharding method. For more information, see scalability principle. Valid values:
@@ -60,7 +60,7 @@ export interface DrdsDBProps {
      * and table sharding.
      * VERTICAL: indicates VERTICAL partitioning.
      */
-    readonly type?: string;
+    readonly type?: string | ros.IResolvable;
 }
 
 /**

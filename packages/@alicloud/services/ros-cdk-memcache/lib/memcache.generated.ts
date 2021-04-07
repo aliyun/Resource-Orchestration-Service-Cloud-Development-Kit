@@ -13,7 +13,7 @@ export interface RosInstanceProps {
      * false
      * Note Default value: false.
      */
-    readonly autoRenew?: string;
+    readonly autoRenew?: string | ros.IResolvable;
 
     /**
      * @Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
@@ -24,7 +24,7 @@ export interface RosInstanceProps {
      * 12
      * Note You must specify this parameter if the value of the AutoRenew parameter is true.
      */
-    readonly autoRenewPeriod?: string;
+    readonly autoRenewPeriod?: string | ros.IResolvable;
 
     /**
      * @Property autoUseCoupon: Specifies whether to use a coupon. Valid values:
@@ -32,7 +32,7 @@ export interface RosInstanceProps {
      * false
      * Note Default value: false.
      */
-    readonly autoUseCoupon?: string;
+    readonly autoUseCoupon?: string | ros.IResolvable;
 
     /**
      * @Property backupPolicy: Backup policy
@@ -44,7 +44,7 @@ export interface RosInstanceProps {
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
-    readonly capacity?: number;
+    readonly capacity?: number | ros.IResolvable;
 
     /**
      * @Property chargeType: The billing method of the instance. Valid values:
@@ -52,32 +52,32 @@ export interface RosInstanceProps {
      * PostPaid: pay-as-you-go.
      * Note Default value: PostPaid.
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property config: The parameter configuration of the instance, in a JSON string. For more information,
      * see Set parameters.
      */
-    readonly config?: string;
+    readonly config?: string | ros.IResolvable;
 
     /**
      * @Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
      */
-    readonly couponNo?: string;
+    readonly couponNo?: string | ros.IResolvable;
 
     /**
      * @Property instanceClass: The instance type. For more information, see Instance types.
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
-    readonly instanceClass?: string;
+    readonly instanceClass?: string | ros.IResolvable;
 
     /**
      * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
      * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
-    readonly instanceName?: string;
+    readonly instanceName?: string | ros.IResolvable;
 
     /**
      * @Property networkType: The network type of the instance. Valid values:
@@ -85,7 +85,7 @@ export interface RosInstanceProps {
      * VPC
      * Note Default value: CLASSIC.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property password: The password of the instance. The password can be 8 to 32 characters in length and
@@ -94,7 +94,7 @@ export interface RosInstanceProps {
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
      * hyphens (-), and equal signs (=).
      */
-    readonly password?: string;
+    readonly password?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period. You must specify this parameter if the value of the ChargeType
@@ -102,24 +102,24 @@ export interface RosInstanceProps {
      * and 36.
      * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
      */
-    readonly period?: string;
+    readonly period?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The internal IP address of the instance.
      * Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
      * block of the VSwitch to which the instance belongs.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group ID.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The ID of the VPC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -131,12 +131,12 @@ export interface RosInstanceProps {
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -224,27 +224,27 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionDomain: The internal endpoint of the instance.
      */
-    public readonly attrConnectionDomain: any;
+    public readonly attrConnectionDomain: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: The globally unique identifier (GUID) of the instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * @Attribute InstanceName: The name of the instance.
      */
-    public readonly attrInstanceName: any;
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * @Attribute Port: Port of created instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     /**
      * @Attribute QPS: QPS.
      */
-    public readonly attrQps: any;
+    public readonly attrQps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -255,7 +255,7 @@ export class RosInstance extends ros.RosResource {
      * false
      * Note Default value: false.
      */
-    public autoRenew: string | undefined;
+    public autoRenew: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
@@ -266,7 +266,7 @@ export class RosInstance extends ros.RosResource {
      * 12
      * Note You must specify this parameter if the value of the AutoRenew parameter is true.
      */
-    public autoRenewPeriod: string | undefined;
+    public autoRenewPeriod: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoUseCoupon: Specifies whether to use a coupon. Valid values:
@@ -274,7 +274,7 @@ export class RosInstance extends ros.RosResource {
      * false
      * Note Default value: false.
      */
-    public autoUseCoupon: string | undefined;
+    public autoUseCoupon: string | ros.IResolvable | undefined;
 
     /**
      * @Property backupPolicy: Backup policy
@@ -286,7 +286,7 @@ export class RosInstance extends ros.RosResource {
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
-    public capacity: number | undefined;
+    public capacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property chargeType: The billing method of the instance. Valid values:
@@ -294,32 +294,32 @@ export class RosInstance extends ros.RosResource {
      * PostPaid: pay-as-you-go.
      * Note Default value: PostPaid.
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property config: The parameter configuration of the instance, in a JSON string. For more information,
      * see Set parameters.
      */
-    public config: string | undefined;
+    public config: string | ros.IResolvable | undefined;
 
     /**
      * @Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
      */
-    public couponNo: string | undefined;
+    public couponNo: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceClass: The instance type. For more information, see Instance types.
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
-    public instanceClass: string | undefined;
+    public instanceClass: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
      * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
-    public instanceName: string | undefined;
+    public instanceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property networkType: The network type of the instance. Valid values:
@@ -327,7 +327,7 @@ export class RosInstance extends ros.RosResource {
      * VPC
      * Note Default value: CLASSIC.
      */
-    public networkType: string | undefined;
+    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property password: The password of the instance. The password can be 8 to 32 characters in length and
@@ -336,7 +336,7 @@ export class RosInstance extends ros.RosResource {
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
      * hyphens (-), and equal signs (=).
      */
-    public password: string | undefined;
+    public password: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period. You must specify this parameter if the value of the ChargeType
@@ -344,24 +344,24 @@ export class RosInstance extends ros.RosResource {
      * and 36.
      * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
      */
-    public period: string | undefined;
+    public period: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The internal IP address of the instance.
      * Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
      * block of the VSwitch to which the instance belongs.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group ID.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The ID of the VPC.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -373,12 +373,12 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::Memcache::Instance`.
@@ -389,11 +389,11 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionDomain = ros.Token.asString(this.getAtt('ConnectionDomain'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrInstanceName = ros.Token.asString(this.getAtt('InstanceName'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
-        this.attrQps = ros.Token.asString(this.getAtt('QPS'));
+        this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrPort = this.getAtt('Port');
+        this.attrQps = this.getAtt('QPS');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.autoRenew = props.autoRenew;
@@ -454,17 +454,17 @@ export namespace RosInstance {
         /**
          * @Property preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
          */
-        readonly preferredBackupPeriod: string;
+        readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
          * @Property preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
          */
-        readonly preferredBackupTime: string;
+        readonly preferredBackupTime: string | ros.IResolvable;
         /**
          * @Property enableBackupLog: Enable or disable incremental backup. Options:
      * 1, means open.
      * 0, which means off, the default value.
          */
-        readonly enableBackupLog?: number;
+        readonly enableBackupLog?: number | ros.IResolvable;
     }
 }
 /**
@@ -511,22 +511,22 @@ export interface RosWhitelistProps {
     /**
      * @Property instanceId: Instance ID (globally unique)
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: IP address whitelist to be modified
      */
-    readonly securityIps: string;
+    readonly securityIps: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    readonly securityIpGroupAttribute?: string;
+    readonly securityIpGroupAttribute?: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupName: Whitelist group
      */
-    readonly securityIpGroupName?: string;
+    readonly securityIpGroupName?: string | ros.IResolvable;
 }
 
 /**
@@ -599,17 +599,17 @@ export class RosWhitelist extends ros.RosResource {
     /**
      * @Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public readonly attrSecurityIpGroupAttribute: any;
+    public readonly attrSecurityIpGroupAttribute: ros.IResolvable;
 
     /**
      * @Attribute SecurityIpGroupName: Whitelist group
      */
-    public readonly attrSecurityIpGroupName: any;
+    public readonly attrSecurityIpGroupName: ros.IResolvable;
 
     /**
      * @Attribute SecurityIps: IP address whitelist to be modified
      */
-    public readonly attrSecurityIps: any;
+    public readonly attrSecurityIps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -617,22 +617,22 @@ export class RosWhitelist extends ros.RosResource {
     /**
      * @Property instanceId: Instance ID (globally unique)
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: IP address whitelist to be modified
      */
-    public securityIps: string;
+    public securityIps: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public securityIpGroupAttribute: string | undefined;
+    public securityIpGroupAttribute: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpGroupName: Whitelist group
      */
-    public securityIpGroupName: string | undefined;
+    public securityIpGroupName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::Memcache::Whitelist`.
@@ -643,9 +643,9 @@ export class RosWhitelist extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosWhitelistProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosWhitelist.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSecurityIpGroupAttribute = ros.Token.asString(this.getAtt('SecurityIpGroupAttribute'));
-        this.attrSecurityIpGroupName = ros.Token.asString(this.getAtt('SecurityIpGroupName'));
-        this.attrSecurityIps = ros.Token.asString(this.getAtt('SecurityIps'));
+        this.attrSecurityIpGroupAttribute = this.getAtt('SecurityIpGroupAttribute');
+        this.attrSecurityIpGroupName = this.getAtt('SecurityIpGroupName');
+        this.attrSecurityIps = this.getAtt('SecurityIps');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;

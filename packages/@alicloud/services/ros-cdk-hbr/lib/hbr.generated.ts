@@ -10,7 +10,7 @@ export interface RosBackupClientsProps {
     /**
      * @Property instanceIds: ID list of instances to install backup client
      */
-    readonly instanceIds: string[];
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -70,12 +70,12 @@ export class RosBackupClients extends ros.RosResource {
     /**
      * @Attribute ClientIds: ID list of clients installed in instances
      */
-    public readonly attrClientIds: any;
+    public readonly attrClientIds: ros.IResolvable;
 
     /**
      * @Attribute InstanceIds: ID list of instances to install backup client
      */
-    public readonly attrInstanceIds: any;
+    public readonly attrInstanceIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -83,7 +83,7 @@ export class RosBackupClients extends ros.RosResource {
     /**
      * @Property instanceIds: ID list of instances to install backup client
      */
-    public instanceIds: string[];
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::HBR::BackupClients`.
@@ -94,8 +94,8 @@ export class RosBackupClients extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBackupClientsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBackupClients.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClientIds = ros.Token.asString(this.getAtt('ClientIds'));
-        this.attrInstanceIds = ros.Token.asString(this.getAtt('InstanceIds'));
+        this.attrClientIds = this.getAtt('ClientIds');
+        this.attrInstanceIds = this.getAtt('InstanceIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceIds = props.instanceIds;
@@ -120,47 +120,47 @@ export interface RosRestoreJobProps {
     /**
      * @Property restoreType: Restore type
      */
-    readonly restoreType: string;
+    readonly restoreType: string | ros.IResolvable;
 
     /**
      * @Property snapshotId: Snapshot ID
      */
-    readonly snapshotId: string;
+    readonly snapshotId: string | ros.IResolvable;
 
     /**
      * @Property sourceClientId: Source client ID. It should be provided when SourceType=FILE.
      */
-    readonly sourceClientId: string;
+    readonly sourceClientId: string | ros.IResolvable;
 
     /**
      * @Property sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
      */
-    readonly sourceInstanceId: string;
+    readonly sourceInstanceId: string | ros.IResolvable;
 
     /**
      * @Property sourceType: Source type
      */
-    readonly sourceType: string;
+    readonly sourceType: string | ros.IResolvable;
 
     /**
      * @Property targetClientId: Target client ID. It should be provided when RestoreType=FILE.
      */
-    readonly targetClientId: string;
+    readonly targetClientId: string | ros.IResolvable;
 
     /**
-     * @Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * @Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
      */
-    readonly targetInstanceId: string;
+    readonly targetInstanceId: string | ros.IResolvable;
 
     /**
      * @Property targetPath: Target path. For instance, "/".
      */
-    readonly targetPath: string;
+    readonly targetPath: string | ros.IResolvable;
 
     /**
      * @Property vaultId: Vault ID
      */
-    readonly vaultId: string;
+    readonly vaultId: string | ros.IResolvable;
 }
 
 /**
@@ -249,27 +249,27 @@ export class RosRestoreJob extends ros.RosResource {
     /**
      * @Attribute ErrorMessage: Error message of restore job
      */
-    public readonly attrErrorMessage: any;
+    public readonly attrErrorMessage: ros.IResolvable;
 
     /**
      * @Attribute RestoreId: Restore job ID
      */
-    public readonly attrRestoreId: any;
+    public readonly attrRestoreId: ros.IResolvable;
 
     /**
      * @Attribute RestoreType: Restore type
      */
-    public readonly attrRestoreType: any;
+    public readonly attrRestoreType: ros.IResolvable;
 
     /**
      * @Attribute SourceType: Source type
      */
-    public readonly attrSourceType: any;
+    public readonly attrSourceType: ros.IResolvable;
 
     /**
      * @Attribute Status: Restore job status
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -277,47 +277,47 @@ export class RosRestoreJob extends ros.RosResource {
     /**
      * @Property restoreType: Restore type
      */
-    public restoreType: string;
+    public restoreType: string | ros.IResolvable;
 
     /**
      * @Property snapshotId: Snapshot ID
      */
-    public snapshotId: string;
+    public snapshotId: string | ros.IResolvable;
 
     /**
      * @Property sourceClientId: Source client ID. It should be provided when SourceType=FILE.
      */
-    public sourceClientId: string;
+    public sourceClientId: string | ros.IResolvable;
 
     /**
      * @Property sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
      */
-    public sourceInstanceId: string;
+    public sourceInstanceId: string | ros.IResolvable;
 
     /**
      * @Property sourceType: Source type
      */
-    public sourceType: string;
+    public sourceType: string | ros.IResolvable;
 
     /**
      * @Property targetClientId: Target client ID. It should be provided when RestoreType=FILE.
      */
-    public targetClientId: string;
+    public targetClientId: string | ros.IResolvable;
 
     /**
-     * @Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * @Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
      */
-    public targetInstanceId: string;
+    public targetInstanceId: string | ros.IResolvable;
 
     /**
      * @Property targetPath: Target path. For instance, "/".
      */
-    public targetPath: string;
+    public targetPath: string | ros.IResolvable;
 
     /**
      * @Property vaultId: Vault ID
      */
-    public vaultId: string;
+    public vaultId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::HBR::RestoreJob`.
@@ -328,11 +328,11 @@ export class RosRestoreJob extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRestoreJobProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRestoreJob.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrErrorMessage = ros.Token.asString(this.getAtt('ErrorMessage'));
-        this.attrRestoreId = ros.Token.asString(this.getAtt('RestoreId'));
-        this.attrRestoreType = ros.Token.asString(this.getAtt('RestoreType'));
-        this.attrSourceType = ros.Token.asString(this.getAtt('SourceType'));
-        this.attrStatus = ros.Token.asString(this.getAtt('Status'));
+        this.attrErrorMessage = this.getAtt('ErrorMessage');
+        this.attrRestoreId = this.getAtt('RestoreId');
+        this.attrRestoreType = this.getAtt('RestoreType');
+        this.attrSourceType = this.getAtt('SourceType');
+        this.attrStatus = this.getAtt('Status');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.restoreType = props.restoreType;

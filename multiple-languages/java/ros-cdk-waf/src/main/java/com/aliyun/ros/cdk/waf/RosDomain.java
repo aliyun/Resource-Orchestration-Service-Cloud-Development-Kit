@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * A ROS template type:  `ALIYUN::WAF::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.548Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,92 +44,92 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterType() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterType() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCname() {
-        return software.amazon.jsii.Kernel.get(this, "attrCname", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCname() {
+        return software.amazon.jsii.Kernel.get(this, "attrCname", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttp2Port() {
-        return software.amazon.jsii.Kernel.get(this, "attrHttp2Port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHttp2Port() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttp2Port", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrHttpPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHttpPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttpPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpsPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrHttpsPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHttpsPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttpsPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpsRedirect() {
-        return software.amazon.jsii.Kernel.get(this, "attrHttpsRedirect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHttpsRedirect() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttpsRedirect", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpToUserIp() {
-        return software.amazon.jsii.Kernel.get(this, "attrHttpToUserIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHttpToUserIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrHttpToUserIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsAccessProduct() {
-        return software.amazon.jsii.Kernel.get(this, "attrIsAccessProduct", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIsAccessProduct() {
+        return software.amazon.jsii.Kernel.get(this, "attrIsAccessProduct", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancing() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancing", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancing() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancing", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLogHeaders() {
-        return software.amazon.jsii.Kernel.get(this, "attrLogHeaders", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLogHeaders() {
+        return software.amazon.jsii.Kernel.get(this, "attrLogHeaders", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVersion() {
-        return software.amazon.jsii.Kernel.get(this, "attrVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVersion() {
+        return software.amazon.jsii.Kernel.get(this, "attrVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -139,13 +139,19 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDomainName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
+    }
+
+    /**
+     */
+    public void setDomainName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
     }
 
@@ -159,8 +165,8 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +177,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getIsAccessProduct() {
-        return software.amazon.jsii.Kernel.get(this, "isAccessProduct", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", java.util.Objects.requireNonNull(value, "instanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getIsAccessProduct() {
+        return software.amazon.jsii.Kernel.get(this, "isAccessProduct", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,20 +195,32 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getSourceIps() {
-        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "sourceIps", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
+    public void setIsAccessProduct(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "isAccessProduct", java.util.Objects.requireNonNull(value, "isAccessProduct is required"));
     }
 
     /**
      */
-    public void setSourceIps(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceIps() {
+        return software.amazon.jsii.Kernel.get(this, "sourceIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSourceIps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceIps", java.util.Objects.requireNonNull(value, "sourceIps is required"));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getClusterType() {
-        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSourceIps(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "sourceIps", java.util.Objects.requireNonNull(value, "sourceIps is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClusterType() {
+        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +231,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getConnectionTime() {
-        return software.amazon.jsii.Kernel.get(this, "connectionTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setClusterType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clusterType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConnectionTime() {
+        return software.amazon.jsii.Kernel.get(this, "connectionTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,44 +249,68 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getHttp2Port() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "http2Port", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setConnectionTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "connectionTime", value);
     }
 
     /**
      */
-    public void setHttp2Port(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttp2Port() {
+        return software.amazon.jsii.Kernel.get(this, "http2Port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttp2Port(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "http2Port", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getHttpPort() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "httpPort", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setHttp2Port(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "http2Port", value);
     }
 
     /**
      */
-    public void setHttpPort(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpPort() {
+        return software.amazon.jsii.Kernel.get(this, "httpPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "httpPort", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getHttpsPort() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "httpsPort", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setHttpPort(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "httpPort", value);
     }
 
     /**
      */
-    public void setHttpsPort(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpsPort() {
+        return software.amazon.jsii.Kernel.get(this, "httpsPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpsPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "httpsPort", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHttpsRedirect() {
-        return software.amazon.jsii.Kernel.get(this, "httpsRedirect", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHttpsPort(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "httpsPort", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpsRedirect() {
+        return software.amazon.jsii.Kernel.get(this, "httpsRedirect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -267,8 +321,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHttpToUserIp() {
-        return software.amazon.jsii.Kernel.get(this, "httpToUserIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHttpsRedirect(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpsRedirect", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpToUserIp() {
+        return software.amazon.jsii.Kernel.get(this, "httpToUserIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -279,13 +339,25 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancing() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancing", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHttpToUserIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpToUserIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancing() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancing", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setLoadBalancing(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancing", value);
+    }
+
+    /**
+     */
+    public void setLoadBalancing(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancing", value);
     }
 
@@ -309,8 +381,8 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getReadTime() {
-        return software.amazon.jsii.Kernel.get(this, "readTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReadTime() {
+        return software.amazon.jsii.Kernel.get(this, "readTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -321,8 +393,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setReadTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "readTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -333,13 +411,25 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getWriteTime() {
-        return software.amazon.jsii.Kernel.get(this, "writeTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWriteTime() {
+        return software.amazon.jsii.Kernel.get(this, "writeTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setWriteTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "writeTime", value);
+    }
+
+    /**
+     */
+    public void setWriteTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "writeTime", value);
     }
     /**
@@ -352,14 +442,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getK() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getK() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getV() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getV() {
             return null;
         }
 
@@ -375,8 +465,8 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LogHeadersProperty> {
-            private java.lang.String k;
-            private java.lang.String v;
+            private java.lang.Object k;
+            private java.lang.Object v;
 
             /**
              * Sets the value of {@link LogHeadersProperty#getK}
@@ -390,12 +480,34 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link LogHeadersProperty#getK}
+             * @param k the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder k(com.aliyun.ros.cdk.core.IResolvable k) {
+                this.k = k;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link LogHeadersProperty#getV}
              * @param v the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder v(java.lang.String v) {
+                this.v = v;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogHeadersProperty#getV}
+             * @param v the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder v(com.aliyun.ros.cdk.core.IResolvable v) {
                 this.v = v;
                 return this;
             }
@@ -418,8 +530,8 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogHeadersProperty {
-            private final java.lang.String k;
-            private final java.lang.String v;
+            private final java.lang.Object k;
+            private final java.lang.Object v;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -427,26 +539,26 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.k = software.amazon.jsii.Kernel.get(this, "k", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.v = software.amazon.jsii.Kernel.get(this, "v", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.k = software.amazon.jsii.Kernel.get(this, "k", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.v = software.amazon.jsii.Kernel.get(this, "v", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String k, final java.lang.String v) {
+            protected Jsii$Proxy(final java.lang.Object k, final java.lang.Object v) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.k = k;
                 this.v = v;
             }
 
             @Override
-            public final java.lang.String getK() {
+            public final java.lang.Object getK() {
                 return this.k;
             }
 
             @Override
-            public final java.lang.String getV() {
+            public final java.lang.Object getV() {
                 return this.v;
             }
 
@@ -527,12 +639,28 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.domainName(domainName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param domainName This parameter is required.
+         */
+        public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
+            this.props.domainName(domainName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceId This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
@@ -545,12 +673,28 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.isAccessProduct(isAccessProduct);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param isAccessProduct This parameter is required.
+         */
+        public Builder isAccessProduct(final com.aliyun.ros.cdk.core.IResolvable isAccessProduct) {
+            this.props.isAccessProduct(isAccessProduct);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param sourceIps This parameter is required.
          */
-        public Builder sourceIps(final java.util.List<java.lang.String> sourceIps) {
+        public Builder sourceIps(final com.aliyun.ros.cdk.core.IResolvable sourceIps) {
+            this.props.sourceIps(sourceIps);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceIps This parameter is required.
+         */
+        public Builder sourceIps(final java.util.List<? extends java.lang.Object> sourceIps) {
             this.props.sourceIps(sourceIps);
             return this;
         }
@@ -563,6 +707,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.clusterType(clusterType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param clusterType This parameter is required.
+         */
+        public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.props.clusterType(clusterType);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -572,12 +724,28 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.connectionTime(connectionTime);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param connectionTime This parameter is required.
+         */
+        public Builder connectionTime(final com.aliyun.ros.cdk.core.IResolvable connectionTime) {
+            this.props.connectionTime(connectionTime);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param http2Port This parameter is required.
          */
-        public Builder http2Port(final java.util.List<java.lang.String> http2Port) {
+        public Builder http2Port(final com.aliyun.ros.cdk.core.IResolvable http2Port) {
+            this.props.http2Port(http2Port);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param http2Port This parameter is required.
+         */
+        public Builder http2Port(final java.util.List<? extends java.lang.Object> http2Port) {
             this.props.http2Port(http2Port);
             return this;
         }
@@ -586,7 +754,15 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param httpPort This parameter is required.
          */
-        public Builder httpPort(final java.util.List<java.lang.String> httpPort) {
+        public Builder httpPort(final com.aliyun.ros.cdk.core.IResolvable httpPort) {
+            this.props.httpPort(httpPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpPort This parameter is required.
+         */
+        public Builder httpPort(final java.util.List<? extends java.lang.Object> httpPort) {
             this.props.httpPort(httpPort);
             return this;
         }
@@ -595,7 +771,15 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param httpsPort This parameter is required.
          */
-        public Builder httpsPort(final java.util.List<java.lang.String> httpsPort) {
+        public Builder httpsPort(final com.aliyun.ros.cdk.core.IResolvable httpsPort) {
+            this.props.httpsPort(httpsPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpsPort This parameter is required.
+         */
+        public Builder httpsPort(final java.util.List<? extends java.lang.Object> httpsPort) {
             this.props.httpsPort(httpsPort);
             return this;
         }
@@ -608,6 +792,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.httpsRedirect(httpsRedirect);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param httpsRedirect This parameter is required.
+         */
+        public Builder httpsRedirect(final com.aliyun.ros.cdk.core.IResolvable httpsRedirect) {
+            this.props.httpsRedirect(httpsRedirect);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -617,12 +809,28 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.httpToUserIp(httpToUserIp);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param httpToUserIp This parameter is required.
+         */
+        public Builder httpToUserIp(final com.aliyun.ros.cdk.core.IResolvable httpToUserIp) {
+            this.props.httpToUserIp(httpToUserIp);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param loadBalancing This parameter is required.
          */
         public Builder loadBalancing(final java.lang.String loadBalancing) {
+            this.props.loadBalancing(loadBalancing);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancing This parameter is required.
+         */
+        public Builder loadBalancing(final com.aliyun.ros.cdk.core.IResolvable loadBalancing) {
             this.props.loadBalancing(loadBalancing);
             return this;
         }
@@ -652,6 +860,14 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.readTime(readTime);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param readTime This parameter is required.
+         */
+        public Builder readTime(final com.aliyun.ros.cdk.core.IResolvable readTime) {
+            this.props.readTime(readTime);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -661,12 +877,28 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param writeTime This parameter is required.
          */
         public Builder writeTime(final java.lang.Number writeTime) {
+            this.props.writeTime(writeTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param writeTime This parameter is required.
+         */
+        public Builder writeTime(final com.aliyun.ros.cdk.core.IResolvable writeTime) {
             this.props.writeTime(writeTime);
             return this;
         }

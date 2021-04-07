@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::NetworkInterfacePermission`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.580Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfacePermissionProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfacePermissionProps.Jsii$Proxy.class)
 public interface NetworkInterfacePermissionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property accountId: the account id.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountId();
 
     /**
+     * Property networkInterfaceId: Network interface id.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
+     * Property permission: the permission.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPermission();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPermission();
 
     /**
      * @return a {@link Builder} of {@link NetworkInterfacePermissionProps}
@@ -30,13 +33,13 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
      * A builder for {@link NetworkInterfacePermissionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NetworkInterfacePermissionProps> {
-        private java.lang.String accountId;
-        private java.lang.String networkInterfaceId;
-        private java.lang.String permission;
+        private java.lang.Object accountId;
+        private java.lang.Object networkInterfaceId;
+        private java.lang.Object permission;
 
         /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getAccountId}
-         * @param accountId the value to be set. This parameter is required.
+         * @param accountId Property accountId: the account id. This parameter is required.
          * @return {@code this}
          */
         public Builder accountId(java.lang.String accountId) {
@@ -45,8 +48,18 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
         }
 
         /**
+         * Sets the value of {@link NetworkInterfacePermissionProps#getAccountId}
+         * @param accountId Property accountId: the account id. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accountId(com.aliyun.ros.cdk.core.IResolvable accountId) {
+            this.accountId = accountId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getNetworkInterfaceId}
-         * @param networkInterfaceId the value to be set. This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
          * @return {@code this}
          */
         public Builder networkInterfaceId(java.lang.String networkInterfaceId) {
@@ -55,11 +68,31 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
         }
 
         /**
+         * Sets the value of {@link NetworkInterfacePermissionProps#getNetworkInterfaceId}
+         * @param networkInterfaceId Property networkInterfaceId: Network interface id. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getPermission}
-         * @param permission the value to be set. This parameter is required.
+         * @param permission Property permission: the permission. This parameter is required.
          * @return {@code this}
          */
         public Builder permission(java.lang.String permission) {
+            this.permission = permission;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkInterfacePermissionProps#getPermission}
+         * @param permission Property permission: the permission. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder permission(com.aliyun.ros.cdk.core.IResolvable permission) {
             this.permission = permission;
             return this;
         }
@@ -80,9 +113,9 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkInterfacePermissionProps {
-        private final java.lang.String accountId;
-        private final java.lang.String networkInterfaceId;
-        private final java.lang.String permission;
+        private final java.lang.Object accountId;
+        private final java.lang.Object networkInterfaceId;
+        private final java.lang.Object permission;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +123,15 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accountId = software.amazon.jsii.Kernel.get(this, "accountId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.permission = software.amazon.jsii.Kernel.get(this, "permission", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accountId = software.amazon.jsii.Kernel.get(this, "accountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.permission = software.amazon.jsii.Kernel.get(this, "permission", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accountId, final java.lang.String networkInterfaceId, final java.lang.String permission) {
+        protected Jsii$Proxy(final java.lang.Object accountId, final java.lang.Object networkInterfaceId, final java.lang.Object permission) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accountId = java.util.Objects.requireNonNull(accountId, "accountId is required");
             this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
@@ -106,17 +139,17 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
         }
 
         @Override
-        public final java.lang.String getAccountId() {
+        public final java.lang.Object getAccountId() {
             return this.accountId;
         }
 
         @Override
-        public final java.lang.String getNetworkInterfaceId() {
+        public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
         }
 
         @Override
-        public final java.lang.String getPermission() {
+        public final java.lang.Object getPermission() {
             return this.permission;
         }
 

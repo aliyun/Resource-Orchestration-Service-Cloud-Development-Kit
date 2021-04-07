@@ -11,22 +11,46 @@ export interface SnapshotProps {
     /**
      * Property diskId: Indicates the ID of the specified disk.
      */
-    readonly diskId: string;
+    readonly diskId: string | ros.IResolvable;
 
     /**
      * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. The description will appear on the console. By default, the value is zero.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property instantAccess: Specifies whether to enable the instant access feature. Valid values: 
+     * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs) 
+     * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
+     * Default value: false.
+     * Note This parameter and the Category parameter cannot be specified at the same time. 
+     * For more information, see the "Description" section in this topic.
+     */
+    readonly instantAccess?: boolean | ros.IResolvable;
+
+    /**
+     * Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. After the retention period ends, 
+     * the snapshot is automatically released. This parameter takes effect only when InstantAccess 
+     * is set to true. Unit: days.
+     * Valid values: 1 to 65535. By default, the value of 
+     * this parameter is the same as that of RetentionDays.
+     */
+    readonly instantAccessRetentionDays?: number | ros.IResolvable;
 
     /**
      * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
-    readonly snapshotName?: string;
+    readonly snapshotName?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSnapshot.TagsProperty[];
 
     /**
      * Property timeout: The number of minutes to wait for create snapshot.
      */
-    readonly timeout?: number;
+    readonly timeout?: number | ros.IResolvable;
 }
 
 /**
@@ -42,7 +66,7 @@ export class Snapshot extends ros.Resource {
     /**
      * Attribute SnapshotId: The snapshot ID.
      */
-    public readonly attrSnapshotId: any;
+    public readonly attrSnapshotId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::Snapshot`.
@@ -55,9 +79,12 @@ export class Snapshot extends ros.Resource {
         super(scope, id);
 
         const rosSnapshot = new RosSnapshot(this, id,  {
+            instantAccess: props.instantAccess,
             description: props.description,
             timeout: props.timeout ? props.timeout : 200,
             snapshotName: props.snapshotName,
+            instantAccessRetentionDays: props.instantAccessRetentionDays,
+            tags: props.tags,
             diskId: props.diskId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSnapshot;

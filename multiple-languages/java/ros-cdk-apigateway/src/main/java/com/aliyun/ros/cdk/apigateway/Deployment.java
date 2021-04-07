@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Deployment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.077Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Deployment")
 public class Deployment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Deployment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Deployment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.DeploymentProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Deployment`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Deployment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.DeploymentProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.Deployment> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,46 +83,106 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property apiId: The id of the API.
+         * <p>
          * @return {@code this}
-         * @param apiId This parameter is required.
+         * @param apiId Property apiId: The id of the API. This parameter is required.
          */
         public Builder apiId(final java.lang.String apiId) {
             this.props.apiId(apiId);
             return this;
         }
+        /**
+         * Property apiId: The id of the API.
+         * <p>
+         * @return {@code this}
+         * @param apiId Property apiId: The id of the API. This parameter is required.
+         */
+        public Builder apiId(final com.aliyun.ros.cdk.core.IResolvable apiId) {
+            this.props.apiId(apiId);
+            return this;
+        }
 
         /**
+         * Property groupId: The id of the Group.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The id of the Group.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property stageName: Bind traffic in this stage.
+         * <p>
          * @return {@code this}
-         * @param stageName This parameter is required.
+         * @param stageName Property stageName: Bind traffic in this stage. This parameter is required.
          */
         public Builder stageName(final java.lang.String stageName) {
             this.props.stageName(stageName);
             return this;
         }
+        /**
+         * Property stageName: Bind traffic in this stage.
+         * <p>
+         * @return {@code this}
+         * @param stageName Property stageName: Bind traffic in this stage. This parameter is required.
+         */
+        public Builder stageName(final com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.props.stageName(stageName);
+            return this;
+        }
 
         /**
+         * Property description: Description of the deployment, less than 180 characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description of the deployment, less than 180 characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description of the deployment, less than 180 characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description of the deployment, less than 180 characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property historyVersion: The history version.
+         * <p>
          * @return {@code this}
-         * @param historyVersion This parameter is required.
+         * @param historyVersion Property historyVersion: The history version. This parameter is required.
          */
         public Builder historyVersion(final java.lang.String historyVersion) {
+            this.props.historyVersion(historyVersion);
+            return this;
+        }
+        /**
+         * Property historyVersion: The history version.
+         * <p>
+         * @return {@code this}
+         * @param historyVersion Property historyVersion: The history version. This parameter is required.
+         */
+        public Builder historyVersion(final com.aliyun.ros.cdk.core.IResolvable historyVersion) {
             this.props.historyVersion(historyVersion);
             return this;
         }

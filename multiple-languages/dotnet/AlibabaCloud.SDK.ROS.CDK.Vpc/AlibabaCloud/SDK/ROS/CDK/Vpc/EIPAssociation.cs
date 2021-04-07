@@ -36,17 +36,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// Returned only for VPC elastic IP addresses.
         /// </remarks>
-        [JsiiProperty(name: "attrAllocationId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAllocationId
+        [JsiiProperty(name: "attrAllocationId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAllocationId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute EipAddress: IP address of created EIP.</summary>
-        [JsiiProperty(name: "attrEipAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEipAddress
+        [JsiiProperty(name: "attrEipAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEipAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

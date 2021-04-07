@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         }
 
         /// <summary>Attribute TableName: Table name.</summary>
-        [JsiiProperty(name: "attrTableName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTableName
+        [JsiiProperty(name: "attrTableName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTableName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

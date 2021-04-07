@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IVpnConnectionProps
     {
         /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
-        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"primitive\":\"string\"}")]
-        string CustomerGatewayId
+        [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CustomerGatewayId
         {
             get;
         }
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
         /// </remarks>
-        [JsiiProperty(name: "localSubnet", typeJson: "{\"primitive\":\"string\"}")]
-        string LocalSubnet
+        [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LocalSubnet
         {
             get;
         }
@@ -29,15 +29,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
         /// </remarks>
-        [JsiiProperty(name: "remoteSubnet", typeJson: "{\"primitive\":\"string\"}")]
-        string RemoteSubnet
+        [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RemoteSubnet
         {
             get;
         }
 
         /// <summary>Property vpnGatewayId: ID of the VPN gateway.</summary>
-        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"primitive\":\"string\"}")]
-        string VpnGatewayId
+        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VpnGatewayId
         {
             get;
         }
@@ -95,9 +95,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Name
+        object? Name
         {
             get
             {
@@ -114,37 +114,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property customerGatewayId: The ID of the user gateway.</summary>
-            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CustomerGatewayId
+            [JsiiProperty(name: "customerGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CustomerGatewayId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
             /// <remarks>
             /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
             /// </remarks>
-            [JsiiProperty(name: "localSubnet", typeJson: "{\"primitive\":\"string\"}")]
-            public string LocalSubnet
+            [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LocalSubnet
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.</summary>
             /// <remarks>
             /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
             /// </remarks>
-            [JsiiProperty(name: "remoteSubnet", typeJson: "{\"primitive\":\"string\"}")]
-            public string RemoteSubnet
+            [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RemoteSubnet
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vpnGatewayId: ID of the VPN gateway.</summary>
-            [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VpnGatewayId
+            [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VpnGatewayId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.</summary>
@@ -189,10 +189,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Name
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

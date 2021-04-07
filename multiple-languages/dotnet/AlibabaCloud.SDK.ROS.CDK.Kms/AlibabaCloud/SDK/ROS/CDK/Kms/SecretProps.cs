@@ -15,16 +15,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// Secrets Manager encrypts the secret
         /// value and stores it in the initial version.
         /// </remarks>
-        [JsiiProperty(name: "secretData", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SecretData
+        [JsiiProperty(name: "secretData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SecretData
         {
             get;
             set;
         }
 
         /// <summary>Property secretName: The name of the secret.</summary>
-        [JsiiProperty(name: "secretName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SecretName
+        [JsiiProperty(name: "secretName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SecretName
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// Version numbers are unique in each secret
         /// object.
         /// </remarks>
-        [JsiiProperty(name: "versionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VersionId
+        [JsiiProperty(name: "versionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VersionId
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         /// <summary>Property description: The description of the secret.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -58,8 +58,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// Note The KMS CMK must be a symmetric key.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "encryptionKeyId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EncryptionKeyId
+        [JsiiProperty(name: "encryptionKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EncryptionKeyId
         {
             get;
             set;
@@ -84,8 +84,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// Default value: 30
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recoveryWindowInDays", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? RecoveryWindowInDays
+        [JsiiProperty(name: "recoveryWindowInDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RecoveryWindowInDays
         {
             get;
             set;
@@ -98,8 +98,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// binary
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "secretDataType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SecretDataType
+        [JsiiProperty(name: "secretDataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecretDataType
         {
             get;
             set;
@@ -110,8 +110,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         /// ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "versionStages", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? VersionStages
+        [JsiiProperty(name: "versionStages", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? VersionStages
         {
             get;
             set;

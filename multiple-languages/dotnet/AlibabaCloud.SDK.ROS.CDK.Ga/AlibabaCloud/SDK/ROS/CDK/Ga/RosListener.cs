@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Attribute</strong>: ListenerId: The ID of the listener.
         /// </remarks>
-        [JsiiProperty(name: "attrListenerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerId
+        [JsiiProperty(name: "attrListenerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
         /// </remarks>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AcceleratorId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// tcp: TCP protocol
         /// udp: UDP protocol
         /// </remarks>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Protocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -107,10 +107,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// a specific source (client) IP address are always routed to the same endpoint.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "clientAffinity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ClientAffinity
+        [JsiiProperty(name: "clientAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ClientAffinity
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -118,10 +118,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <strong>Property</strong>: description: The description of the listener.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -131,10 +131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// (_), and hyphens (-). It must start with a letter or Chinese character.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IPortRangesProperty), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosListener.PortRangesProperty")]
@@ -144,8 +144,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: fromPort: The first listening port of the port range specified for receiving and forwarding
             /// requests to endpoints.
             /// </remarks>
-            [JsiiProperty(name: "fromPort", typeJson: "{\"primitive\":\"number\"}")]
-            double FromPort
+            [JsiiProperty(name: "fromPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object FromPort
             {
                 get;
             }
@@ -154,8 +154,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: toPort: The last listening port of the port range specified for receiving and forwarding requests
             /// to endpoints.
             /// </remarks>
-            [JsiiProperty(name: "toPort", typeJson: "{\"primitive\":\"number\"}")]
-            double ToPort
+            [JsiiProperty(name: "toPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ToPort
             {
                 get;
             }
@@ -171,20 +171,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// <strong>Property</strong>: fromPort: The first listening port of the port range specified for receiving and forwarding
                 /// requests to endpoints.
                 /// </remarks>
-                [JsiiProperty(name: "fromPort", typeJson: "{\"primitive\":\"number\"}")]
-                public double FromPort
+                [JsiiProperty(name: "fromPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object FromPort
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: toPort: The last listening port of the port range specified for receiving and forwarding requests
                 /// to endpoints.
                 /// </remarks>
-                [JsiiProperty(name: "toPort", typeJson: "{\"primitive\":\"number\"}")]
-                public double ToPort
+                [JsiiProperty(name: "toPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ToPort
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -197,8 +197,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: fromPort: The first listening port of the port range specified for receiving and forwarding
             /// requests to endpoints.
             /// </remarks>
-            [JsiiProperty(name: "fromPort", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double FromPort
+            [JsiiProperty(name: "fromPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object FromPort
             {
                 get;
                 set;
@@ -208,8 +208,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: toPort: The last listening port of the port range specified for receiving and forwarding requests
             /// to endpoints.
             /// </remarks>
-            [JsiiProperty(name: "toPort", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double ToPort
+            [JsiiProperty(name: "toPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ToPort
             {
                 get;
                 set;

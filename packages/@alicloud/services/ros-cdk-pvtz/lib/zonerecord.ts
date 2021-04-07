@@ -11,37 +11,37 @@ export interface ZoneRecordProps {
     /**
      * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    readonly rr: string;
+    readonly rr: string | ros.IResolvable;
 
     /**
      * Property status: Allowed values: [ENABLE, DISABLE]
      */
-    readonly status: string;
+    readonly status: string | ros.IResolvable;
 
     /**
-     * Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property value: Record value
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * Property zoneId: Zone Id
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
-     * Property priority: MX record priority, value range [1,10]. Default to 10.
+     * Property priority: MX record priority, value range [1,99]. Default to 10.
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * Property ttl: Survival time, default is 60
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -55,9 +55,19 @@ export class ZoneRecord extends ros.Resource {
      */
 
     /**
+     * Attribute Record: Record data.
+     */
+    public readonly attrRecord: ros.IResolvable;
+
+    /**
      * Attribute RecordId: Parsing record Id
      */
-    public readonly attrRecordId: any;
+    public readonly attrRecordId: ros.IResolvable;
+
+    /**
+     * Attribute ZoneId: Zone ID.
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneRecord`.
@@ -79,6 +89,8 @@ export class ZoneRecord extends ros.Resource {
             ttl: props.ttl ? props.ttl : 60,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneRecord;
+        this.attrRecord = rosZoneRecord.attrRecord;
         this.attrRecordId = rosZoneRecord.attrRecordId;
+        this.attrZoneId = rosZoneRecord.attrZoneId;
     }
 }

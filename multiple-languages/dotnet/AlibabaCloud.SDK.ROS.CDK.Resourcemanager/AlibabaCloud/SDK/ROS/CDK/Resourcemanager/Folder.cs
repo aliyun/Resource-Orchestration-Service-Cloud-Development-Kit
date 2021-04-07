@@ -33,27 +33,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Attribute FolderId: The ID of the folder.</summary>
-        [JsiiProperty(name: "attrFolderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFolderId
+        [JsiiProperty(name: "attrFolderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFolderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute FolderName: The name of the folder.</summary>
-        [JsiiProperty(name: "attrFolderName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFolderName
+        [JsiiProperty(name: "attrFolderName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFolderName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ParentFolderId: The ID of the parent folder.</summary>
         /// <remarks>
         /// If not set, the system default value will be used
         /// </remarks>
-        [JsiiProperty(name: "attrParentFolderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrParentFolderId
+        [JsiiProperty(name: "attrParentFolderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrParentFolderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

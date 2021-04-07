@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     public class ZoneProps : AlibabaCloud.SDK.ROS.CDK.Pvtz.IZoneProps
     {
         /// <summary>Property zoneName: Zone name.</summary>
-        [JsiiProperty(name: "zoneName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ZoneName
+        [JsiiProperty(name: "zoneName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ZoneName
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// Default to ZONE.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "proxyPattern", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProxyPattern
+        [JsiiProperty(name: "proxyPattern", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProxyPattern
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// It can only contain numbers, Chinese, English and special characters: "_-,.，。".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Remark
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Remark
         {
             get;
             set;

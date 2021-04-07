@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <remarks>
         /// If the condition evaluates
         /// to <c>false</c>, this output value will not be included in the stack.
-        /// 
+        ///
         /// <strong>Default</strong>: - No condition is associated with the output.
         /// </remarks>
         [JsiiProperty(name: "condition", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosCondition\"}", isOptional: true)]
@@ -38,7 +38,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>A String type that describes the output value.</summary>
         /// <remarks>
         /// The description can be a maximum of 4 K in length.
-        /// 
+        ///
         /// <strong>Default</strong>: - No description.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
@@ -54,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>The name used to export the value of this output across stacks.</summary>
         /// <remarks>
         /// To import the value from another stack, use <c>Fn.importValue(exportName)</c>.
-        /// 
+        ///
         /// <strong>Default</strong>: - the output is not exported
         /// </remarks>
         [JsiiProperty(name: "exportName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
@@ -89,7 +89,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             /// <remarks>
             /// If the condition evaluates
             /// to <c>false</c>, this output value will not be included in the stack.
-            /// 
+            ///
             /// <strong>Default</strong>: - No condition is associated with the output.
             /// </remarks>
             [JsiiOptional]
@@ -102,7 +102,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             /// <summary>A String type that describes the output value.</summary>
             /// <remarks>
             /// The description can be a maximum of 4 K in length.
-            /// 
+            ///
             /// <strong>Default</strong>: - No description.
             /// </remarks>
             [JsiiOptional]
@@ -115,7 +115,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             /// <summary>The name used to export the value of this output across stacks.</summary>
             /// <remarks>
             /// To import the value from another stack, use <c>Fn.importValue(exportName)</c>.
-            /// 
+            ///
             /// <strong>Default</strong>: - the output is not exported
             /// </remarks>
             [JsiiOptional]

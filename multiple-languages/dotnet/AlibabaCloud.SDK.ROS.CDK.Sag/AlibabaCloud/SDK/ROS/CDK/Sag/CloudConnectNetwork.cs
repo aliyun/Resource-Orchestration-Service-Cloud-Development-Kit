@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <summary>Attribute CcnId: The ID of the CCN instance.</summary>
-        [JsiiProperty(name: "attrCcnId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCcnId
+        [JsiiProperty(name: "attrCcnId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCcnId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

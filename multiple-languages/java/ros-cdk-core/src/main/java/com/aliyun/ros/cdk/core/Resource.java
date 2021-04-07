@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A construct which represents a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.315Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Resource")
 public abstract class Resource extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.IResource {
 
@@ -29,6 +29,10 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
         software.amazon.jsii.Kernel.call(this, "addCondition", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(condition, "condition is required") });
     }
 
+    public void addCount(final @org.jetbrains.annotations.NotNull java.lang.Object count) {
+        software.amazon.jsii.Kernel.call(this, "addCount", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(count, "count is required") });
+    }
+
     public void addDependency(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Resource resource) {
         software.amazon.jsii.Kernel.call(this, "addDependency", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(resource, "resource is required") });
     }
@@ -45,8 +49,8 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
         return software.amazon.jsii.Kernel.call(this, "generatePhysicalName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
-    public @org.jetbrains.annotations.NotNull java.lang.String getAtt(final @org.jetbrains.annotations.NotNull java.lang.String name) {
-        return software.amazon.jsii.Kernel.call(this, "getAtt", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(name, "name is required") });
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAtt(final @org.jetbrains.annotations.NotNull java.lang.String name) {
+        return software.amazon.jsii.Kernel.call(this, "getAtt", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class), new Object[] { java.util.Objects.requireNonNull(name, "name is required") });
     }
 
     public void setMetadata(final @org.jetbrains.annotations.NotNull java.lang.String key, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
@@ -54,7 +58,7 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
     }
 
     /**
-     * (experimental) Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
+     * (experimental) Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
      * <p>
      * This value will resolve to one of the following:
      * <p>

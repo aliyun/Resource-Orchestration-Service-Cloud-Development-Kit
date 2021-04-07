@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::MigrationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.464Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosMigrationJob")
 public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMigrationJobId() {
-        return software.amazon.jsii.Kernel.get(this, "attrMigrationJobId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMigrationJobId() {
+        return software.amazon.jsii.Kernel.get(this, "attrMigrationJobId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getMigrationJobClass() {
-        return software.amazon.jsii.Kernel.get(this, "migrationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getMigrationJobClass() {
+        return software.amazon.jsii.Kernel.get(this, "migrationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMigrationJobClass(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "migrationJobClass", java.util.Objects.requireNonNull(value, "migrationJobClass is required"));
+    }
+
+    /**
+     */
+    public void setMigrationJobClass(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "migrationJobClass", java.util.Objects.requireNonNull(value, "migrationJobClass is required"));
     }
 
@@ -93,13 +99,19 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMigrationJobName() {
-        return software.amazon.jsii.Kernel.get(this, "migrationJobName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMigrationJobName() {
+        return software.amazon.jsii.Kernel.get(this, "migrationJobName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMigrationJobName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "migrationJobName", value);
+    }
+
+    /**
+     */
+    public void setMigrationJobName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "migrationJobName", value);
     }
 
@@ -166,7 +178,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getColumnName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getColumnName() {
             return null;
         }
 
@@ -182,7 +194,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnExcludesProperty> {
-            private java.lang.String columnName;
+            private java.lang.Object columnName;
 
             /**
              * Sets the value of {@link ColumnExcludesProperty#getColumnName}
@@ -191,6 +203,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder columnName(java.lang.String columnName) {
+                this.columnName = columnName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColumnExcludesProperty#getColumnName}
+             * @param columnName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder columnName(com.aliyun.ros.cdk.core.IResolvable columnName) {
                 this.columnName = columnName;
                 return this;
             }
@@ -213,7 +236,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ColumnExcludesProperty {
-            private final java.lang.String columnName;
+            private final java.lang.Object columnName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -221,19 +244,19 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.columnName = software.amazon.jsii.Kernel.get(this, "columnName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.columnName = software.amazon.jsii.Kernel.get(this, "columnName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String columnName) {
+            protected Jsii$Proxy(final java.lang.Object columnName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.columnName = columnName;
             }
 
             @Override
-            public final java.lang.String getColumnName() {
+            public final java.lang.Object getColumnName() {
                 return this.columnName;
             }
 
@@ -284,14 +307,14 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getColumnName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getColumnName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNewColumnName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNewColumnName() {
             return null;
         }
 
@@ -307,8 +330,8 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnIncludesProperty> {
-            private java.lang.String columnName;
-            private java.lang.String newColumnName;
+            private java.lang.Object columnName;
+            private java.lang.Object newColumnName;
 
             /**
              * Sets the value of {@link ColumnIncludesProperty#getColumnName}
@@ -322,12 +345,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ColumnIncludesProperty#getColumnName}
+             * @param columnName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder columnName(com.aliyun.ros.cdk.core.IResolvable columnName) {
+                this.columnName = columnName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ColumnIncludesProperty#getNewColumnName}
              * @param newColumnName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder newColumnName(java.lang.String newColumnName) {
+                this.newColumnName = newColumnName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColumnIncludesProperty#getNewColumnName}
+             * @param newColumnName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder newColumnName(com.aliyun.ros.cdk.core.IResolvable newColumnName) {
                 this.newColumnName = newColumnName;
                 return this;
             }
@@ -350,8 +395,8 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ColumnIncludesProperty {
-            private final java.lang.String columnName;
-            private final java.lang.String newColumnName;
+            private final java.lang.Object columnName;
+            private final java.lang.Object newColumnName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -359,26 +404,26 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.columnName = software.amazon.jsii.Kernel.get(this, "columnName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.newColumnName = software.amazon.jsii.Kernel.get(this, "newColumnName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.columnName = software.amazon.jsii.Kernel.get(this, "columnName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.newColumnName = software.amazon.jsii.Kernel.get(this, "newColumnName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String columnName, final java.lang.String newColumnName) {
+            protected Jsii$Proxy(final java.lang.Object columnName, final java.lang.Object newColumnName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.columnName = columnName;
                 this.newColumnName = newColumnName;
             }
 
             @Override
-            public final java.lang.String getColumnName() {
+            public final java.lang.Object getColumnName() {
                 return this.columnName;
             }
 
             @Override
-            public final java.lang.String getNewColumnName() {
+            public final java.lang.Object getNewColumnName() {
                 return this.newColumnName;
             }
 
@@ -434,62 +479,62 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getPassword();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPassword();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRegion();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegion();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getUserName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDatabaseName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDatabaseName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEngineName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEngineName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getIp() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIp() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPort() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getRole() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRole() {
             return null;
         }
 
@@ -505,16 +550,16 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DestinationEndpointProperty> {
-            private java.lang.String instanceType;
-            private java.lang.String password;
-            private java.lang.String region;
-            private java.lang.String userName;
-            private java.lang.String databaseName;
-            private java.lang.String engineName;
-            private java.lang.String instanceId;
-            private java.lang.String ip;
-            private java.lang.String port;
-            private java.lang.String role;
+            private java.lang.Object instanceType;
+            private java.lang.Object password;
+            private java.lang.Object region;
+            private java.lang.Object userName;
+            private java.lang.Object databaseName;
+            private java.lang.Object engineName;
+            private java.lang.Object instanceId;
+            private java.lang.Object ip;
+            private java.lang.Object port;
+            private java.lang.Object role;
 
             /**
              * Sets the value of {@link DestinationEndpointProperty#getInstanceType}
@@ -523,6 +568,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceType(java.lang.String instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationEndpointProperty#getInstanceType}
+             * @param instanceType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
                 this.instanceType = instanceType;
                 return this;
             }
@@ -539,12 +595,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationEndpointProperty#getPassword}
+             * @param password the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationEndpointProperty#getRegion}
              * @param region the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationEndpointProperty#getRegion}
+             * @param region the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
                 this.region = region;
                 return this;
             }
@@ -561,12 +639,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationEndpointProperty#getUserName}
+             * @param userName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
+                this.userName = userName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationEndpointProperty#getDatabaseName}
              * @param databaseName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder databaseName(java.lang.String databaseName) {
+                this.databaseName = databaseName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationEndpointProperty#getDatabaseName}
+             * @param databaseName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder databaseName(com.aliyun.ros.cdk.core.IResolvable databaseName) {
                 this.databaseName = databaseName;
                 return this;
             }
@@ -583,12 +683,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationEndpointProperty#getEngineName}
+             * @param engineName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder engineName(com.aliyun.ros.cdk.core.IResolvable engineName) {
+                this.engineName = engineName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationEndpointProperty#getInstanceId}
              * @param instanceId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceId(java.lang.String instanceId) {
+                this.instanceId = instanceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationEndpointProperty#getInstanceId}
+             * @param instanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
                 this.instanceId = instanceId;
                 return this;
             }
@@ -605,6 +727,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationEndpointProperty#getIp}
+             * @param ip the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ip(com.aliyun.ros.cdk.core.IResolvable ip) {
+                this.ip = ip;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationEndpointProperty#getPort}
              * @param port the value to be set.
              * @return {@code this}
@@ -616,12 +749,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DestinationEndpointProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DestinationEndpointProperty#getRole}
              * @param role the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder role(java.lang.String role) {
+                this.role = role;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DestinationEndpointProperty#getRole}
+             * @param role the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
                 this.role = role;
                 return this;
             }
@@ -644,16 +799,16 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DestinationEndpointProperty {
-            private final java.lang.String instanceType;
-            private final java.lang.String password;
-            private final java.lang.String region;
-            private final java.lang.String userName;
-            private final java.lang.String databaseName;
-            private final java.lang.String engineName;
-            private final java.lang.String instanceId;
-            private final java.lang.String ip;
-            private final java.lang.String port;
-            private final java.lang.String role;
+            private final java.lang.Object instanceType;
+            private final java.lang.Object password;
+            private final java.lang.Object region;
+            private final java.lang.Object userName;
+            private final java.lang.Object databaseName;
+            private final java.lang.Object engineName;
+            private final java.lang.Object instanceId;
+            private final java.lang.Object ip;
+            private final java.lang.Object port;
+            private final java.lang.Object role;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -661,22 +816,22 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.databaseName = software.amazon.jsii.Kernel.get(this, "databaseName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.engineName = software.amazon.jsii.Kernel.get(this, "engineName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.ip = software.amazon.jsii.Kernel.get(this, "ip", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.databaseName = software.amazon.jsii.Kernel.get(this, "databaseName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.engineName = software.amazon.jsii.Kernel.get(this, "engineName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ip = software.amazon.jsii.Kernel.get(this, "ip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String instanceType, final java.lang.String password, final java.lang.String region, final java.lang.String userName, final java.lang.String databaseName, final java.lang.String engineName, final java.lang.String instanceId, final java.lang.String ip, final java.lang.String port, final java.lang.String role) {
+            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object password, final java.lang.Object region, final java.lang.Object userName, final java.lang.Object databaseName, final java.lang.Object engineName, final java.lang.Object instanceId, final java.lang.Object ip, final java.lang.Object port, final java.lang.Object role) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
                 this.password = java.util.Objects.requireNonNull(password, "password is required");
@@ -691,52 +846,52 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getInstanceType() {
+            public final java.lang.Object getInstanceType() {
                 return this.instanceType;
             }
 
             @Override
-            public final java.lang.String getPassword() {
+            public final java.lang.Object getPassword() {
                 return this.password;
             }
 
             @Override
-            public final java.lang.String getRegion() {
+            public final java.lang.Object getRegion() {
                 return this.region;
             }
 
             @Override
-            public final java.lang.String getUserName() {
+            public final java.lang.Object getUserName() {
                 return this.userName;
             }
 
             @Override
-            public final java.lang.String getDatabaseName() {
+            public final java.lang.Object getDatabaseName() {
                 return this.databaseName;
             }
 
             @Override
-            public final java.lang.String getEngineName() {
+            public final java.lang.Object getEngineName() {
                 return this.engineName;
             }
 
             @Override
-            public final java.lang.String getInstanceId() {
+            public final java.lang.Object getInstanceId() {
                 return this.instanceId;
             }
 
             @Override
-            public final java.lang.String getIp() {
+            public final java.lang.Object getIp() {
                 return this.ip;
             }
 
             @Override
-            public final java.lang.String getPort() {
+            public final java.lang.Object getPort() {
                 return this.port;
             }
 
             @Override
-            public final java.lang.String getRole() {
+            public final java.lang.Object getRole() {
                 return this.role;
             }
 
@@ -1039,28 +1194,28 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDbName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNewDbName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNewDbName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNewSchemaName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNewSchemaName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSchemaName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSchemaName() {
             return null;
         }
 
@@ -1090,10 +1245,10 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MigrationObjectProperty> {
-            private java.lang.String dbName;
-            private java.lang.String newDbName;
-            private java.lang.String newSchemaName;
-            private java.lang.String schemaName;
+            private java.lang.Object dbName;
+            private java.lang.Object newDbName;
+            private java.lang.Object newSchemaName;
+            private java.lang.Object schemaName;
             private java.lang.Object tableExcludes;
             private java.lang.Object tableIncludes;
 
@@ -1104,6 +1259,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder dbName(java.lang.String dbName) {
+                this.dbName = dbName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MigrationObjectProperty#getDbName}
+             * @param dbName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
                 this.dbName = dbName;
                 return this;
             }
@@ -1120,6 +1286,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link MigrationObjectProperty#getNewDbName}
+             * @param newDbName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder newDbName(com.aliyun.ros.cdk.core.IResolvable newDbName) {
+                this.newDbName = newDbName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MigrationObjectProperty#getNewSchemaName}
              * @param newSchemaName the value to be set.
              * @return {@code this}
@@ -1131,12 +1308,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link MigrationObjectProperty#getNewSchemaName}
+             * @param newSchemaName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder newSchemaName(com.aliyun.ros.cdk.core.IResolvable newSchemaName) {
+                this.newSchemaName = newSchemaName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MigrationObjectProperty#getSchemaName}
              * @param schemaName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder schemaName(java.lang.String schemaName) {
+                this.schemaName = schemaName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MigrationObjectProperty#getSchemaName}
+             * @param schemaName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder schemaName(com.aliyun.ros.cdk.core.IResolvable schemaName) {
                 this.schemaName = schemaName;
                 return this;
             }
@@ -1203,10 +1402,10 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MigrationObjectProperty {
-            private final java.lang.String dbName;
-            private final java.lang.String newDbName;
-            private final java.lang.String newSchemaName;
-            private final java.lang.String schemaName;
+            private final java.lang.Object dbName;
+            private final java.lang.Object newDbName;
+            private final java.lang.Object newSchemaName;
+            private final java.lang.Object schemaName;
             private final java.lang.Object tableExcludes;
             private final java.lang.Object tableIncludes;
 
@@ -1216,10 +1415,10 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.newDbName = software.amazon.jsii.Kernel.get(this, "newDbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.newSchemaName = software.amazon.jsii.Kernel.get(this, "newSchemaName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.schemaName = software.amazon.jsii.Kernel.get(this, "schemaName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.newDbName = software.amazon.jsii.Kernel.get(this, "newDbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.newSchemaName = software.amazon.jsii.Kernel.get(this, "newSchemaName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.schemaName = software.amazon.jsii.Kernel.get(this, "schemaName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tableExcludes = software.amazon.jsii.Kernel.get(this, "tableExcludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tableIncludes = software.amazon.jsii.Kernel.get(this, "tableIncludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -1227,7 +1426,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String dbName, final java.lang.String newDbName, final java.lang.String newSchemaName, final java.lang.String schemaName, final java.lang.Object tableExcludes, final java.lang.Object tableIncludes) {
+            protected Jsii$Proxy(final java.lang.Object dbName, final java.lang.Object newDbName, final java.lang.Object newSchemaName, final java.lang.Object schemaName, final java.lang.Object tableExcludes, final java.lang.Object tableIncludes) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.dbName = dbName;
                 this.newDbName = newDbName;
@@ -1238,22 +1437,22 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getDbName() {
+            public final java.lang.Object getDbName() {
                 return this.dbName;
             }
 
             @Override
-            public final java.lang.String getNewDbName() {
+            public final java.lang.Object getNewDbName() {
                 return this.newDbName;
             }
 
             @Override
-            public final java.lang.String getNewSchemaName() {
+            public final java.lang.Object getNewSchemaName() {
                 return this.newSchemaName;
             }
 
             @Override
-            public final java.lang.String getSchemaName() {
+            public final java.lang.Object getSchemaName() {
                 return this.schemaName;
             }
 
@@ -1339,76 +1538,76 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getPassword();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPassword();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRegion();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegion();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getUserName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDatabaseName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDatabaseName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEngineName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEngineName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getIp() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIp() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOracleSid() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOracleSid() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getOwnerId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOwnerId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPort() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getRole() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRole() {
             return null;
         }
 
@@ -1424,18 +1623,18 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SourceEndpointProperty> {
-            private java.lang.String instanceType;
-            private java.lang.String password;
-            private java.lang.String region;
-            private java.lang.String userName;
-            private java.lang.String databaseName;
-            private java.lang.String engineName;
-            private java.lang.String instanceId;
-            private java.lang.String ip;
-            private java.lang.String oracleSid;
-            private java.lang.String ownerId;
-            private java.lang.String port;
-            private java.lang.String role;
+            private java.lang.Object instanceType;
+            private java.lang.Object password;
+            private java.lang.Object region;
+            private java.lang.Object userName;
+            private java.lang.Object databaseName;
+            private java.lang.Object engineName;
+            private java.lang.Object instanceId;
+            private java.lang.Object ip;
+            private java.lang.Object oracleSid;
+            private java.lang.Object ownerId;
+            private java.lang.Object port;
+            private java.lang.Object role;
 
             /**
              * Sets the value of {@link SourceEndpointProperty#getInstanceType}
@@ -1444,6 +1643,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceType(java.lang.String instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getInstanceType}
+             * @param instanceType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
                 this.instanceType = instanceType;
                 return this;
             }
@@ -1460,12 +1670,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getPassword}
+             * @param password the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getRegion}
              * @param region the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getRegion}
+             * @param region the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
                 this.region = region;
                 return this;
             }
@@ -1482,12 +1714,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getUserName}
+             * @param userName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
+                this.userName = userName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getDatabaseName}
              * @param databaseName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder databaseName(java.lang.String databaseName) {
+                this.databaseName = databaseName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getDatabaseName}
+             * @param databaseName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder databaseName(com.aliyun.ros.cdk.core.IResolvable databaseName) {
                 this.databaseName = databaseName;
                 return this;
             }
@@ -1504,12 +1758,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getEngineName}
+             * @param engineName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder engineName(com.aliyun.ros.cdk.core.IResolvable engineName) {
+                this.engineName = engineName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getInstanceId}
              * @param instanceId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceId(java.lang.String instanceId) {
+                this.instanceId = instanceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getInstanceId}
+             * @param instanceId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
                 this.instanceId = instanceId;
                 return this;
             }
@@ -1526,12 +1802,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getIp}
+             * @param ip the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ip(com.aliyun.ros.cdk.core.IResolvable ip) {
+                this.ip = ip;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getOracleSid}
              * @param oracleSid the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder oracleSid(java.lang.String oracleSid) {
+                this.oracleSid = oracleSid;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getOracleSid}
+             * @param oracleSid the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder oracleSid(com.aliyun.ros.cdk.core.IResolvable oracleSid) {
                 this.oracleSid = oracleSid;
                 return this;
             }
@@ -1548,6 +1846,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getOwnerId}
+             * @param ownerId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ownerId(com.aliyun.ros.cdk.core.IResolvable ownerId) {
+                this.ownerId = ownerId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getPort}
              * @param port the value to be set.
              * @return {@code this}
@@ -1559,12 +1868,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SourceEndpointProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SourceEndpointProperty#getRole}
              * @param role the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder role(java.lang.String role) {
+                this.role = role;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SourceEndpointProperty#getRole}
+             * @param role the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
                 this.role = role;
                 return this;
             }
@@ -1587,18 +1918,18 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SourceEndpointProperty {
-            private final java.lang.String instanceType;
-            private final java.lang.String password;
-            private final java.lang.String region;
-            private final java.lang.String userName;
-            private final java.lang.String databaseName;
-            private final java.lang.String engineName;
-            private final java.lang.String instanceId;
-            private final java.lang.String ip;
-            private final java.lang.String oracleSid;
-            private final java.lang.String ownerId;
-            private final java.lang.String port;
-            private final java.lang.String role;
+            private final java.lang.Object instanceType;
+            private final java.lang.Object password;
+            private final java.lang.Object region;
+            private final java.lang.Object userName;
+            private final java.lang.Object databaseName;
+            private final java.lang.Object engineName;
+            private final java.lang.Object instanceId;
+            private final java.lang.Object ip;
+            private final java.lang.Object oracleSid;
+            private final java.lang.Object ownerId;
+            private final java.lang.Object port;
+            private final java.lang.Object role;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1606,24 +1937,24 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.databaseName = software.amazon.jsii.Kernel.get(this, "databaseName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.engineName = software.amazon.jsii.Kernel.get(this, "engineName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.ip = software.amazon.jsii.Kernel.get(this, "ip", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.oracleSid = software.amazon.jsii.Kernel.get(this, "oracleSid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.ownerId = software.amazon.jsii.Kernel.get(this, "ownerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.databaseName = software.amazon.jsii.Kernel.get(this, "databaseName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.engineName = software.amazon.jsii.Kernel.get(this, "engineName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ip = software.amazon.jsii.Kernel.get(this, "ip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.oracleSid = software.amazon.jsii.Kernel.get(this, "oracleSid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ownerId = software.amazon.jsii.Kernel.get(this, "ownerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String instanceType, final java.lang.String password, final java.lang.String region, final java.lang.String userName, final java.lang.String databaseName, final java.lang.String engineName, final java.lang.String instanceId, final java.lang.String ip, final java.lang.String oracleSid, final java.lang.String ownerId, final java.lang.String port, final java.lang.String role) {
+            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object password, final java.lang.Object region, final java.lang.Object userName, final java.lang.Object databaseName, final java.lang.Object engineName, final java.lang.Object instanceId, final java.lang.Object ip, final java.lang.Object oracleSid, final java.lang.Object ownerId, final java.lang.Object port, final java.lang.Object role) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
                 this.password = java.util.Objects.requireNonNull(password, "password is required");
@@ -1640,62 +1971,62 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getInstanceType() {
+            public final java.lang.Object getInstanceType() {
                 return this.instanceType;
             }
 
             @Override
-            public final java.lang.String getPassword() {
+            public final java.lang.Object getPassword() {
                 return this.password;
             }
 
             @Override
-            public final java.lang.String getRegion() {
+            public final java.lang.Object getRegion() {
                 return this.region;
             }
 
             @Override
-            public final java.lang.String getUserName() {
+            public final java.lang.Object getUserName() {
                 return this.userName;
             }
 
             @Override
-            public final java.lang.String getDatabaseName() {
+            public final java.lang.Object getDatabaseName() {
                 return this.databaseName;
             }
 
             @Override
-            public final java.lang.String getEngineName() {
+            public final java.lang.Object getEngineName() {
                 return this.engineName;
             }
 
             @Override
-            public final java.lang.String getInstanceId() {
+            public final java.lang.Object getInstanceId() {
                 return this.instanceId;
             }
 
             @Override
-            public final java.lang.String getIp() {
+            public final java.lang.Object getIp() {
                 return this.ip;
             }
 
             @Override
-            public final java.lang.String getOracleSid() {
+            public final java.lang.Object getOracleSid() {
                 return this.oracleSid;
             }
 
             @Override
-            public final java.lang.String getOwnerId() {
+            public final java.lang.Object getOwnerId() {
                 return this.ownerId;
             }
 
             @Override
-            public final java.lang.String getPort() {
+            public final java.lang.Object getPort() {
                 return this.port;
             }
 
             @Override
-            public final java.lang.String getRole() {
+            public final java.lang.Object getRole() {
                 return this.role;
             }
 
@@ -1793,7 +2124,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getTableName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTableName() {
             return null;
         }
 
@@ -1809,7 +2140,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableExcludesProperty> {
-            private java.lang.String tableName;
+            private java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableExcludesProperty#getTableName}
@@ -1818,6 +2149,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder tableName(java.lang.String tableName) {
+                this.tableName = tableName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TableExcludesProperty#getTableName}
+             * @param tableName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
                 this.tableName = tableName;
                 return this;
             }
@@ -1840,7 +2182,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TableExcludesProperty {
-            private final java.lang.String tableName;
+            private final java.lang.Object tableName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1848,19 +2190,19 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String tableName) {
+            protected Jsii$Proxy(final java.lang.Object tableName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.tableName = tableName;
             }
 
             @Override
-            public final java.lang.String getTableName() {
+            public final java.lang.Object getTableName() {
                 return this.tableName;
             }
 
@@ -1925,21 +2267,21 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getFilterCondition() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFilterCondition() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNewTableName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNewTableName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getTableName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTableName() {
             return null;
         }
 
@@ -1957,9 +2299,9 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<TableIncludesProperty> {
             private java.lang.Object columnExcludes;
             private java.lang.Object columnIncludes;
-            private java.lang.String filterCondition;
-            private java.lang.String newTableName;
-            private java.lang.String tableName;
+            private java.lang.Object filterCondition;
+            private java.lang.Object newTableName;
+            private java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableIncludesProperty#getColumnExcludes}
@@ -2017,6 +2359,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TableIncludesProperty#getFilterCondition}
+             * @param filterCondition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder filterCondition(com.aliyun.ros.cdk.core.IResolvable filterCondition) {
+                this.filterCondition = filterCondition;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TableIncludesProperty#getNewTableName}
              * @param newTableName the value to be set.
              * @return {@code this}
@@ -2028,12 +2381,34 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TableIncludesProperty#getNewTableName}
+             * @param newTableName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder newTableName(com.aliyun.ros.cdk.core.IResolvable newTableName) {
+                this.newTableName = newTableName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TableIncludesProperty#getTableName}
              * @param tableName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder tableName(java.lang.String tableName) {
+                this.tableName = tableName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TableIncludesProperty#getTableName}
+             * @param tableName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
                 this.tableName = tableName;
                 return this;
             }
@@ -2058,9 +2433,9 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TableIncludesProperty {
             private final java.lang.Object columnExcludes;
             private final java.lang.Object columnIncludes;
-            private final java.lang.String filterCondition;
-            private final java.lang.String newTableName;
-            private final java.lang.String tableName;
+            private final java.lang.Object filterCondition;
+            private final java.lang.Object newTableName;
+            private final java.lang.Object tableName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2070,15 +2445,15 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.columnExcludes = software.amazon.jsii.Kernel.get(this, "columnExcludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.columnIncludes = software.amazon.jsii.Kernel.get(this, "columnIncludes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.filterCondition = software.amazon.jsii.Kernel.get(this, "filterCondition", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.newTableName = software.amazon.jsii.Kernel.get(this, "newTableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.filterCondition = software.amazon.jsii.Kernel.get(this, "filterCondition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.newTableName = software.amazon.jsii.Kernel.get(this, "newTableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnExcludes, final java.lang.Object columnIncludes, final java.lang.String filterCondition, final java.lang.String newTableName, final java.lang.String tableName) {
+            protected Jsii$Proxy(final java.lang.Object columnExcludes, final java.lang.Object columnIncludes, final java.lang.Object filterCondition, final java.lang.Object newTableName, final java.lang.Object tableName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.columnExcludes = columnExcludes;
                 this.columnIncludes = columnIncludes;
@@ -2098,17 +2473,17 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getFilterCondition() {
+            public final java.lang.Object getFilterCondition() {
                 return this.filterCondition;
             }
 
             @Override
-            public final java.lang.String getNewTableName() {
+            public final java.lang.Object getNewTableName() {
                 return this.newTableName;
             }
 
             @Override
-            public final java.lang.String getTableName() {
+            public final java.lang.Object getTableName() {
                 return this.tableName;
             }
 
@@ -2204,6 +2579,14 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             this.props.migrationJobClass(migrationJobClass);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param migrationJobClass This parameter is required.
+         */
+        public Builder migrationJobClass(final com.aliyun.ros.cdk.core.IResolvable migrationJobClass) {
+            this.props.migrationJobClass(migrationJobClass);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -2227,6 +2610,14 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          * @param migrationJobName This parameter is required.
          */
         public Builder migrationJobName(final java.lang.String migrationJobName) {
+            this.props.migrationJobName(migrationJobName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param migrationJobName This parameter is required.
+         */
+        public Builder migrationJobName(final com.aliyun.ros.cdk.core.IResolvable migrationJobName) {
             this.props.migrationJobName(migrationJobName);
             return this;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  `ALIYUN::EDAS::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.733Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.407Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::Application`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Application(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.ApplicationProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::Application`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Application(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.ApplicationProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AppId: Application Id, a unique identifier EDAS application.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Port: Application port.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.edas.Application> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,82 +97,202 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters).
+         * <p>
          * @return {@code this}
-         * @param applicationName This parameter is required.
+         * @param applicationName Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters). This parameter is required.
          */
         public Builder applicationName(final java.lang.String applicationName) {
             this.props.applicationName(applicationName);
             return this;
         }
+        /**
+         * Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters).
+         * <p>
+         * @return {@code this}
+         * @param applicationName Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters). This parameter is required.
+         */
+        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
 
         /**
+         * Property clusterId: Cluster ID of ECS application.
+         * <p>
          * @return {@code this}
-         * @param clusterId This parameter is required.
+         * @param clusterId Property clusterId: Cluster ID of ECS application. This parameter is required.
          */
         public Builder clusterId(final java.lang.String clusterId) {
             this.props.clusterId(clusterId);
             return this;
         }
+        /**
+         * Property clusterId: Cluster ID of ECS application.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: Cluster ID of ECS application. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
 
         /**
+         * Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).
+         * <p>
+         * When creating HSF application, this parameter must be specified
+         * <p>
          * @return {@code this}
-         * @param buildPackId This parameter is required.
+         * @param buildPackId Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition). This parameter is required.
          */
         public Builder buildPackId(final java.lang.Number buildPackId) {
             this.props.buildPackId(buildPackId);
             return this;
         }
+        /**
+         * Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).
+         * <p>
+         * When creating HSF application, this parameter must be specified
+         * <p>
+         * @return {@code this}
+         * @param buildPackId Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition). This parameter is required.
+         */
+        public Builder buildPackId(final com.aliyun.ros.cdk.core.IResolvable buildPackId) {
+            this.props.buildPackId(buildPackId);
+            return this;
+        }
 
         /**
+         * Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.
+         * <p>
+         * Commonly used application component ID and meaning:
+         * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
+         * 1.7.x
+         * <p>
          * @return {@code this}
-         * @param componentIds This parameter is required.
+         * @param componentIds Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment. This parameter is required.
          */
         public Builder componentIds(final java.lang.String componentIds) {
             this.props.componentIds(componentIds);
             return this;
         }
+        /**
+         * Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.
+         * <p>
+         * Commonly used application component ID and meaning:
+         * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
+         * 1.7.x
+         * <p>
+         * @return {@code this}
+         * @param componentIds Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment. This parameter is required.
+         */
+        public Builder componentIds(final com.aliyun.ros.cdk.core.IResolvable componentIds) {
+            this.props.componentIds(componentIds);
+            return this;
+        }
 
         /**
+         * Property description: Descriptive information.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Descriptive information. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Descriptive information.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Descriptive information. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).
+         * <p>
          * @return {@code this}
-         * @param ecuInfo This parameter is required.
+         * @param ecuInfo Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain). This parameter is required.
          */
         public Builder ecuInfo(final java.lang.String ecuInfo) {
             this.props.ecuInfo(ecuInfo);
             return this;
         }
+        /**
+         * Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).
+         * <p>
+         * @return {@code this}
+         * @param ecuInfo Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain). This parameter is required.
+         */
+        public Builder ecuInfo(final com.aliyun.ros.cdk.core.IResolvable ecuInfo) {
+            this.props.ecuInfo(ecuInfo);
+            return this;
+        }
 
         /**
+         * Property healthCheckUrl: Application Health Check URL.
+         * <p>
          * @return {@code this}
-         * @param healthCheckUrl This parameter is required.
+         * @param healthCheckUrl Property healthCheckUrl: Application Health Check URL. This parameter is required.
          */
         public Builder healthCheckUrl(final java.lang.String healthCheckUrl) {
             this.props.healthCheckUrl(healthCheckUrl);
             return this;
         }
+        /**
+         * Property healthCheckUrl: Application Health Check URL.
+         * <p>
+         * @return {@code this}
+         * @param healthCheckUrl Property healthCheckUrl: Application Health Check URL. This parameter is required.
+         */
+        public Builder healthCheckUrl(final com.aliyun.ros.cdk.core.IResolvable healthCheckUrl) {
+            this.props.healthCheckUrl(healthCheckUrl);
+            return this;
+        }
 
         /**
+         * Property logicalRegionId: Namespace ID.
+         * <p>
          * @return {@code this}
-         * @param logicalRegionId This parameter is required.
+         * @param logicalRegionId Property logicalRegionId: Namespace ID. This parameter is required.
          */
         public Builder logicalRegionId(final java.lang.String logicalRegionId) {
             this.props.logicalRegionId(logicalRegionId);
             return this;
         }
+        /**
+         * Property logicalRegionId: Namespace ID.
+         * <p>
+         * @return {@code this}
+         * @param logicalRegionId Property logicalRegionId: Namespace ID. This parameter is required.
+         */
+        public Builder logicalRegionId(final com.aliyun.ros.cdk.core.IResolvable logicalRegionId) {
+            this.props.logicalRegionId(logicalRegionId);
+            return this;
+        }
 
         /**
+         * Property packageType: Application packet format, possible values: war or jar.
+         * <p>
          * @return {@code this}
-         * @param packageType This parameter is required.
+         * @param packageType Property packageType: Application packet format, possible values: war or jar. This parameter is required.
          */
         public Builder packageType(final java.lang.String packageType) {
+            this.props.packageType(packageType);
+            return this;
+        }
+        /**
+         * Property packageType: Application packet format, possible values: war or jar.
+         * <p>
+         * @return {@code this}
+         * @param packageType Property packageType: Application packet format, possible values: war or jar. This parameter is required.
+         */
+        public Builder packageType(final com.aliyun.ros.cdk.core.IResolvable packageType) {
             this.props.packageType(packageType);
             return this;
         }

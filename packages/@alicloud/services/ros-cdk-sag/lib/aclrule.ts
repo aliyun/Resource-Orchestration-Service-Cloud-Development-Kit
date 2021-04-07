@@ -11,54 +11,54 @@ export interface ACLRuleProps {
     /**
      * Property aclId: Access control ID.
      */
-    readonly aclId: string;
+    readonly aclId: string | ros.IResolvable;
 
     /**
      * Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.
      */
-    readonly destCidr: string;
+    readonly destCidr: string | ros.IResolvable;
 
     /**
      * Property destPortRange: Destination port range, 80/80.
      */
-    readonly destPortRange: string;
+    readonly destPortRange: string | ros.IResolvable;
 
     /**
      * Property direction: Regular direction.
      * Value: in|out
      */
-    readonly direction: string;
+    readonly direction: string | ros.IResolvable;
 
     /**
      * Property ipProtocol: Protocol, not case sensitive.
      */
-    readonly ipProtocol: string;
+    readonly ipProtocol: string | ros.IResolvable;
 
     /**
      * Property policy: Access: accept|drop
      */
-    readonly policy: string;
+    readonly policy: string | ros.IResolvable;
 
     /**
      * Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
      */
-    readonly sourceCidr: string;
+    readonly sourceCidr: string | ros.IResolvable;
 
     /**
      * Property sourcePortRange: Source port range, 80/80.
      */
-    readonly sourcePortRange: string;
+    readonly sourcePortRange: string | ros.IResolvable;
 
     /**
      * Property description: Rule description information, ranging from 1 to 512 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 }
 
 /**
@@ -74,7 +74,7 @@ export class ACLRule extends ros.Resource {
     /**
      * Attribute AcrId: Access control rule ID.
      */
-    public readonly attrAcrId: any;
+    public readonly attrAcrId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::ACLRule`.

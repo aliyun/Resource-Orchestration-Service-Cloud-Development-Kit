@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         }
 
         /// <summary>Attribute IndexName: Index name.</summary>
-        [JsiiProperty(name: "attrIndexName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIndexName
+        [JsiiProperty(name: "attrIndexName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIndexName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

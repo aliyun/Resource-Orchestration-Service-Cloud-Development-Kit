@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS template type:  `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.671Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKey")
 public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKeyId() {
-        return software.amazon.jsii.Kernel.get(this, "attrKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKeyId() {
+        return software.amazon.jsii.Kernel.get(this, "attrKeyId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -111,8 +117,8 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKeySpec() {
-        return software.amazon.jsii.Kernel.get(this, "keySpec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeySpec() {
+        return software.amazon.jsii.Kernel.get(this, "keySpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +129,14 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKeyUsage() {
-        return software.amazon.jsii.Kernel.get(this, "keyUsage", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setKeySpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "keySpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeyUsage() {
+        return software.amazon.jsii.Kernel.get(this, "keyUsage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +147,14 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPendingWindowInDays() {
-        return software.amazon.jsii.Kernel.get(this, "pendingWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setKeyUsage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "keyUsage", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPendingWindowInDays() {
+        return software.amazon.jsii.Kernel.get(this, "pendingWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +165,14 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getProtectionLevel() {
-        return software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPendingWindowInDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pendingWindowInDays", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
+        return software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,13 +183,25 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRotationInterval() {
-        return software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProtectionLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "protectionLevel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRotationInterval() {
+        return software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRotationInterval(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "rotationInterval", value);
+    }
+
+    /**
+     */
+    public void setRotationInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "rotationInterval", value);
     }
 
@@ -200,6 +236,14 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -246,12 +290,28 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
             this.props.keySpec(keySpec);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param keySpec This parameter is required.
+         */
+        public Builder keySpec(final com.aliyun.ros.cdk.core.IResolvable keySpec) {
+            this.props.keySpec(keySpec);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param keyUsage This parameter is required.
          */
         public Builder keyUsage(final java.lang.String keyUsage) {
+            this.props.keyUsage(keyUsage);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param keyUsage This parameter is required.
+         */
+        public Builder keyUsage(final com.aliyun.ros.cdk.core.IResolvable keyUsage) {
             this.props.keyUsage(keyUsage);
             return this;
         }
@@ -264,6 +324,14 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
             this.props.pendingWindowInDays(pendingWindowInDays);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param pendingWindowInDays This parameter is required.
+         */
+        public Builder pendingWindowInDays(final com.aliyun.ros.cdk.core.IResolvable pendingWindowInDays) {
+            this.props.pendingWindowInDays(pendingWindowInDays);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -273,12 +341,28 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
             this.props.protectionLevel(protectionLevel);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param protectionLevel This parameter is required.
+         */
+        public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
+            this.props.protectionLevel(protectionLevel);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param rotationInterval This parameter is required.
          */
         public Builder rotationInterval(final java.lang.String rotationInterval) {
+            this.props.rotationInterval(rotationInterval);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param rotationInterval This parameter is required.
+         */
+        public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
             this.props.rotationInterval(rotationInterval);
             return this;
         }

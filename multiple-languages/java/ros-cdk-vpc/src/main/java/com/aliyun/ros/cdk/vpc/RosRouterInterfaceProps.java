@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.194Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouterInterfaceProps.Jsii$Proxy.class)
 public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRole();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRole();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouterId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccessPointId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessPointId() {
         return null;
     }
 
@@ -30,91 +30,91 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckSourceIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckSourceIp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckTargetIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckTargetIp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeAccessPointId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeAccessPointId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceOwnerId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceOwnerId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRegionId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRouterType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouterType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
         return null;
     }
 
@@ -128,25 +128,25 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosRouterInterfaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRouterInterfaceProps> {
-        private java.lang.String role;
-        private java.lang.String routerId;
-        private java.lang.String accessPointId;
+        private java.lang.Object role;
+        private java.lang.Object routerId;
+        private java.lang.Object accessPointId;
         private java.lang.Object autoPay;
-        private java.lang.String description;
-        private java.lang.String healthCheckSourceIp;
-        private java.lang.String healthCheckTargetIp;
-        private java.lang.String instanceChargeType;
-        private java.lang.String name;
-        private java.lang.String oppositeAccessPointId;
-        private java.lang.String oppositeInterfaceId;
-        private java.lang.String oppositeInterfaceOwnerId;
-        private java.lang.String oppositeRegionId;
-        private java.lang.String oppositeRouterId;
-        private java.lang.String oppositeRouterType;
-        private java.lang.Number period;
-        private java.lang.String pricingCycle;
-        private java.lang.String routerType;
-        private java.lang.String spec;
+        private java.lang.Object description;
+        private java.lang.Object healthCheckSourceIp;
+        private java.lang.Object healthCheckTargetIp;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object name;
+        private java.lang.Object oppositeAccessPointId;
+        private java.lang.Object oppositeInterfaceId;
+        private java.lang.Object oppositeInterfaceOwnerId;
+        private java.lang.Object oppositeRegionId;
+        private java.lang.Object oppositeRouterId;
+        private java.lang.Object oppositeRouterType;
+        private java.lang.Object period;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object routerType;
+        private java.lang.Object spec;
 
         /**
          * Sets the value of {@link RosRouterInterfaceProps#getRole}
@@ -154,6 +154,16 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder role(java.lang.String role) {
+            this.role = role;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getRole}
+         * @param role the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
             this.role = role;
             return this;
         }
@@ -169,11 +179,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getRouterId}
+         * @param routerId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routerId(com.aliyun.ros.cdk.core.IResolvable routerId) {
+            this.routerId = routerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getAccessPointId}
          * @param accessPointId the value to be set.
          * @return {@code this}
          */
         public Builder accessPointId(java.lang.String accessPointId) {
+            this.accessPointId = accessPointId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getAccessPointId}
+         * @param accessPointId the value to be set.
+         * @return {@code this}
+         */
+        public Builder accessPointId(com.aliyun.ros.cdk.core.IResolvable accessPointId) {
             this.accessPointId = accessPointId;
             return this;
         }
@@ -209,11 +239,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getHealthCheckSourceIp}
          * @param healthCheckSourceIp the value to be set.
          * @return {@code this}
          */
         public Builder healthCheckSourceIp(java.lang.String healthCheckSourceIp) {
+            this.healthCheckSourceIp = healthCheckSourceIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getHealthCheckSourceIp}
+         * @param healthCheckSourceIp the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckSourceIp(com.aliyun.ros.cdk.core.IResolvable healthCheckSourceIp) {
             this.healthCheckSourceIp = healthCheckSourceIp;
             return this;
         }
@@ -229,11 +279,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getHealthCheckTargetIp}
+         * @param healthCheckTargetIp the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckTargetIp(com.aliyun.ros.cdk.core.IResolvable healthCheckTargetIp) {
+            this.healthCheckTargetIp = healthCheckTargetIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getInstanceChargeType}
          * @param instanceChargeType the value to be set.
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.instanceChargeType = instanceChargeType;
             return this;
         }
@@ -249,11 +319,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getOppositeAccessPointId}
          * @param oppositeAccessPointId the value to be set.
          * @return {@code this}
          */
         public Builder oppositeAccessPointId(java.lang.String oppositeAccessPointId) {
+            this.oppositeAccessPointId = oppositeAccessPointId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeAccessPointId}
+         * @param oppositeAccessPointId the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeAccessPointId(com.aliyun.ros.cdk.core.IResolvable oppositeAccessPointId) {
             this.oppositeAccessPointId = oppositeAccessPointId;
             return this;
         }
@@ -269,11 +359,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeInterfaceId}
+         * @param oppositeInterfaceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeInterfaceId(com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.oppositeInterfaceId = oppositeInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getOppositeInterfaceOwnerId}
          * @param oppositeInterfaceOwnerId the value to be set.
          * @return {@code this}
          */
         public Builder oppositeInterfaceOwnerId(java.lang.String oppositeInterfaceOwnerId) {
+            this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeInterfaceOwnerId}
+         * @param oppositeInterfaceOwnerId the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeInterfaceOwnerId(com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceOwnerId) {
             this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
             return this;
         }
@@ -289,11 +399,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeRegionId}
+         * @param oppositeRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeRegionId(com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
+            this.oppositeRegionId = oppositeRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getOppositeRouterId}
          * @param oppositeRouterId the value to be set.
          * @return {@code this}
          */
         public Builder oppositeRouterId(java.lang.String oppositeRouterId) {
+            this.oppositeRouterId = oppositeRouterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeRouterId}
+         * @param oppositeRouterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeRouterId(com.aliyun.ros.cdk.core.IResolvable oppositeRouterId) {
             this.oppositeRouterId = oppositeRouterId;
             return this;
         }
@@ -309,11 +439,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getOppositeRouterType}
+         * @param oppositeRouterType the value to be set.
+         * @return {@code this}
+         */
+        public Builder oppositeRouterType(com.aliyun.ros.cdk.core.IResolvable oppositeRouterType) {
+            this.oppositeRouterType = oppositeRouterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -329,6 +479,16 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getPricingCycle}
+         * @param pricingCycle the value to be set.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getRouterType}
          * @param routerType the value to be set.
          * @return {@code this}
@@ -339,11 +499,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getRouterType}
+         * @param routerType the value to be set.
+         * @return {@code this}
+         */
+        public Builder routerType(com.aliyun.ros.cdk.core.IResolvable routerType) {
+            this.routerType = routerType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getSpec}
          * @param spec the value to be set.
          * @return {@code this}
          */
         public Builder spec(java.lang.String spec) {
+            this.spec = spec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getSpec}
+         * @param spec the value to be set.
+         * @return {@code this}
+         */
+        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
             this.spec = spec;
             return this;
         }
@@ -364,25 +544,25 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRouterInterfaceProps {
-        private final java.lang.String role;
-        private final java.lang.String routerId;
-        private final java.lang.String accessPointId;
+        private final java.lang.Object role;
+        private final java.lang.Object routerId;
+        private final java.lang.Object accessPointId;
         private final java.lang.Object autoPay;
-        private final java.lang.String description;
-        private final java.lang.String healthCheckSourceIp;
-        private final java.lang.String healthCheckTargetIp;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String name;
-        private final java.lang.String oppositeAccessPointId;
-        private final java.lang.String oppositeInterfaceId;
-        private final java.lang.String oppositeInterfaceOwnerId;
-        private final java.lang.String oppositeRegionId;
-        private final java.lang.String oppositeRouterId;
-        private final java.lang.String oppositeRouterType;
-        private final java.lang.Number period;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String routerType;
-        private final java.lang.String spec;
+        private final java.lang.Object description;
+        private final java.lang.Object healthCheckSourceIp;
+        private final java.lang.Object healthCheckTargetIp;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object name;
+        private final java.lang.Object oppositeAccessPointId;
+        private final java.lang.Object oppositeInterfaceId;
+        private final java.lang.Object oppositeInterfaceOwnerId;
+        private final java.lang.Object oppositeRegionId;
+        private final java.lang.Object oppositeRouterId;
+        private final java.lang.Object oppositeRouterType;
+        private final java.lang.Object period;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object routerType;
+        private final java.lang.Object spec;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -390,31 +570,31 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessPointId = software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessPointId = software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckSourceIp = software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckTargetIp = software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeAccessPointId = software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeInterfaceOwnerId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRouterId = software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRouterType = software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckSourceIp = software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckTargetIp = software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeAccessPointId = software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeInterfaceOwnerId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRouterId = software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRouterType = software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String role, final java.lang.String routerId, final java.lang.String accessPointId, final java.lang.Object autoPay, final java.lang.String description, final java.lang.String healthCheckSourceIp, final java.lang.String healthCheckTargetIp, final java.lang.String instanceChargeType, final java.lang.String name, final java.lang.String oppositeAccessPointId, final java.lang.String oppositeInterfaceId, final java.lang.String oppositeInterfaceOwnerId, final java.lang.String oppositeRegionId, final java.lang.String oppositeRouterId, final java.lang.String oppositeRouterType, final java.lang.Number period, final java.lang.String pricingCycle, final java.lang.String routerType, final java.lang.String spec) {
+        protected Jsii$Proxy(final java.lang.Object role, final java.lang.Object routerId, final java.lang.Object accessPointId, final java.lang.Object autoPay, final java.lang.Object description, final java.lang.Object healthCheckSourceIp, final java.lang.Object healthCheckTargetIp, final java.lang.Object instanceChargeType, final java.lang.Object name, final java.lang.Object oppositeAccessPointId, final java.lang.Object oppositeInterfaceId, final java.lang.Object oppositeInterfaceOwnerId, final java.lang.Object oppositeRegionId, final java.lang.Object oppositeRouterId, final java.lang.Object oppositeRouterType, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object routerType, final java.lang.Object spec) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.role = java.util.Objects.requireNonNull(role, "role is required");
             this.routerId = java.util.Objects.requireNonNull(routerId, "routerId is required");
@@ -438,17 +618,17 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getRole() {
+        public final java.lang.Object getRole() {
             return this.role;
         }
 
         @Override
-        public final java.lang.String getRouterId() {
+        public final java.lang.Object getRouterId() {
             return this.routerId;
         }
 
         @Override
-        public final java.lang.String getAccessPointId() {
+        public final java.lang.Object getAccessPointId() {
             return this.accessPointId;
         }
 
@@ -458,77 +638,77 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getHealthCheckSourceIp() {
+        public final java.lang.Object getHealthCheckSourceIp() {
             return this.healthCheckSourceIp;
         }
 
         @Override
-        public final java.lang.String getHealthCheckTargetIp() {
+        public final java.lang.Object getHealthCheckTargetIp() {
             return this.healthCheckTargetIp;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getOppositeAccessPointId() {
+        public final java.lang.Object getOppositeAccessPointId() {
             return this.oppositeAccessPointId;
         }
 
         @Override
-        public final java.lang.String getOppositeInterfaceId() {
+        public final java.lang.Object getOppositeInterfaceId() {
             return this.oppositeInterfaceId;
         }
 
         @Override
-        public final java.lang.String getOppositeInterfaceOwnerId() {
+        public final java.lang.Object getOppositeInterfaceOwnerId() {
             return this.oppositeInterfaceOwnerId;
         }
 
         @Override
-        public final java.lang.String getOppositeRegionId() {
+        public final java.lang.Object getOppositeRegionId() {
             return this.oppositeRegionId;
         }
 
         @Override
-        public final java.lang.String getOppositeRouterId() {
+        public final java.lang.Object getOppositeRouterId() {
             return this.oppositeRouterId;
         }
 
         @Override
-        public final java.lang.String getOppositeRouterType() {
+        public final java.lang.Object getOppositeRouterType() {
             return this.oppositeRouterType;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getRouterType() {
+        public final java.lang.Object getRouterType() {
             return this.routerType;
         }
 
         @Override
-        public final java.lang.String getSpec() {
+        public final java.lang.Object getSpec() {
             return this.spec;
         }
 

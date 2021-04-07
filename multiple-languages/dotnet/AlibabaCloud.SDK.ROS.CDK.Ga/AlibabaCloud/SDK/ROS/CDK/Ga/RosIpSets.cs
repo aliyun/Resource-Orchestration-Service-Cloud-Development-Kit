@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Attribute</strong>: AccelerateRegionIds: The ID list of the accelerate region.
         /// </remarks>
-        [JsiiProperty(name: "attrAccelerateRegionIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccelerateRegionIds
+        [JsiiProperty(name: "attrAccelerateRegionIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccelerateRegionIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: IpSetIds: The ID list of the ip set.
         /// </remarks>
-        [JsiiProperty(name: "attrIpSetIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpSetIds
+        [JsiiProperty(name: "attrIpSetIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpSetIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: IpVersions: The IP version list of the accelerate region.
         /// </remarks>
-        [JsiiProperty(name: "attrIpVersions", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpVersions
+        [JsiiProperty(name: "attrIpVersions", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpVersions
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: accelerateRegion:
         /// </remarks>
-        [JsiiProperty(name: "accelerateRegion", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-ga.RosIpSets.AccelerateRegionProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "accelerateRegion", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosIpSets.AccelerateRegionProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object AccelerateRegion
         {
             get => GetInstanceProperty<object>()!;
@@ -90,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: acceleratorId: The ID of the GA instance.
         /// </remarks>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AcceleratorId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -109,8 +109,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <remarks>
             /// <strong>Property</strong>: accelerateRegionId: The ID of the region where traffic is to be accelerated.
             /// </remarks>
-            [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            string AccelerateRegionId
+            [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object AccelerateRegionId
             {
                 get;
             }
@@ -122,8 +122,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// The total bandwidth for all regions must not exceed the amount included in your basic
             /// bandwidth plan.
             /// </remarks>
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-            double Bandwidth
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Bandwidth
             {
                 get;
             }
@@ -131,9 +131,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <remarks>
             /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
             /// </remarks>
-            [JsiiProperty(name: "ipVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? IpVersion
+            object? IpVersion
             {
                 get
                 {
@@ -151,10 +151,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// <remarks>
                 /// <strong>Property</strong>: accelerateRegionId: The ID of the region where traffic is to be accelerated.
                 /// </remarks>
-                [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"primitive\":\"string\"}")]
-                public string AccelerateRegionId
+                [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object AccelerateRegionId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -164,20 +164,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// The total bandwidth for all regions must not exceed the amount included in your basic
                 /// bandwidth plan.
                 /// </remarks>
-                [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-                public double Bandwidth
+                [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Bandwidth
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "ipVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? IpVersion
+                [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IpVersion
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -189,8 +189,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <remarks>
             /// <strong>Property</strong>: accelerateRegionId: The ID of the region where traffic is to be accelerated.
             /// </remarks>
-            [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string AccelerateRegionId
+            [JsiiProperty(name: "accelerateRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object AccelerateRegionId
             {
                 get;
                 set;
@@ -203,8 +203,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// The total bandwidth for all regions must not exceed the amount included in your basic
             /// bandwidth plan.
             /// </remarks>
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double Bandwidth
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Bandwidth
             {
                 get;
                 set;
@@ -214,8 +214,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: ipVersion: IP version. Valid values: IPv4, IPv6
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? IpVersion
+            [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? IpVersion
             {
                 get;
                 set;

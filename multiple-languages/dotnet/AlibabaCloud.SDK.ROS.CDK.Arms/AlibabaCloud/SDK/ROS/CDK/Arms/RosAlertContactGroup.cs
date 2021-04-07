@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Attribute</strong>: ContactGroupId: The ID of the alert contact group that you created.
         /// </remarks>
-        [JsiiProperty(name: "attrContactGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContactGroupId
+        [JsiiProperty(name: "attrContactGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContactGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,17 +62,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: contactGroupName: The name of the alert contact group that you want to create.
         /// </remarks>
-        [JsiiProperty(name: "contactGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ContactGroupName
+        [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ContactGroupName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: contactIds: The list of alert contact ID.
         /// </remarks>
-        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object ContactIds
         {
             get => GetInstanceProperty<object>()!;
@@ -90,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <strong>Property</strong>: proxyUserId: Internal parameters
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "proxyUserId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ProxyUserId
+        [JsiiProperty(name: "proxyUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ProxyUserId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -101,10 +101,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <strong>Property</strong>: regionId: Region ID. Default to region of stack.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RegionId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::DBInstanceSecurityIps`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.294Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceSecurityIps")
 public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,8 +55,8 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -67,13 +67,25 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceIpArrayAttribute() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayAttribute", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDbInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceId", java.util.Objects.requireNonNull(value, "dbInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceIpArrayAttribute() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayAttribute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbInstanceIpArrayAttribute(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceIpArrayAttribute", java.util.Objects.requireNonNull(value, "dbInstanceIpArrayAttribute is required"));
+    }
+
+    /**
+     */
+    public void setDbInstanceIpArrayAttribute(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceIpArrayAttribute", java.util.Objects.requireNonNull(value, "dbInstanceIpArrayAttribute is required"));
     }
 
@@ -87,13 +99,19 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceIpArrayName() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceIpArrayName() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbInstanceIpArrayName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceIpArrayName", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceIpArrayName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceIpArrayName", value);
     }
 
@@ -131,6 +149,14 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbInstanceId This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -140,12 +166,28 @@ public class RosDBInstanceSecurityIps extends com.aliyun.ros.cdk.core.RosResourc
             this.props.dbInstanceIpArrayAttribute(dbInstanceIpArrayAttribute);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbInstanceIpArrayAttribute This parameter is required.
+         */
+        public Builder dbInstanceIpArrayAttribute(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayAttribute) {
+            this.props.dbInstanceIpArrayAttribute(dbInstanceIpArrayAttribute);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbInstanceIpArrayName This parameter is required.
          */
         public Builder dbInstanceIpArrayName(final java.lang.String dbInstanceIpArrayName) {
+            this.props.dbInstanceIpArrayName(dbInstanceIpArrayName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceIpArrayName This parameter is required.
+         */
+        public Builder dbInstanceIpArrayName(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayName) {
             this.props.dbInstanceIpArrayName(dbInstanceIpArrayName);
             return this;
         }

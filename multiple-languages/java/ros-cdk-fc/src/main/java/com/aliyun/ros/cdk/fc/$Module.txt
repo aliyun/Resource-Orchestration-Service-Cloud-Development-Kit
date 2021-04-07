@@ -29,6 +29,8 @@
 @alicloud/ros-cdk-fc.RosService.LogConfigProperty=com.aliyun.ros.cdk.fc.RosService$LogConfigProperty
 @alicloud/ros-cdk-fc.RosService.MountPointsProperty=com.aliyun.ros.cdk.fc.RosService$MountPointsProperty
 @alicloud/ros-cdk-fc.RosService.NasConfigProperty=com.aliyun.ros.cdk.fc.RosService$NasConfigProperty
+@alicloud/ros-cdk-fc.RosService.TagsProperty=com.aliyun.ros.cdk.fc.RosService$TagsProperty
+@alicloud/ros-cdk-fc.RosService.TracingConfigProperty=com.aliyun.ros.cdk.fc.RosService$TracingConfigProperty
 @alicloud/ros-cdk-fc.RosService.VpcConfigProperty=com.aliyun.ros.cdk.fc.RosService$VpcConfigProperty
 @alicloud/ros-cdk-fc.RosServiceProps=com.aliyun.ros.cdk.fc.RosServiceProps
 @alicloud/ros-cdk-fc.RosTrigger=com.aliyun.ros.cdk.fc.RosTrigger

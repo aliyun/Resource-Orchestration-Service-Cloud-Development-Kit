@@ -11,17 +11,17 @@ export interface AccessGroupProps {
     /**
      * Property accessGroupName: Permission group name
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * Property accessGroupType: Permission group type, including the Vpc and Classic types
      */
-    readonly accessGroupType: string;
+    readonly accessGroupType: string | ros.IResolvable;
 
     /**
      * Property description: Permission group description. It is the same as the permission group name by default.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class AccessGroup extends ros.Resource {
     /**
      * Attribute AccessGroupName: Permission group name
      */
-    public readonly attrAccessGroupName: any;
+    public readonly attrAccessGroupName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::NAS::AccessGroup`.

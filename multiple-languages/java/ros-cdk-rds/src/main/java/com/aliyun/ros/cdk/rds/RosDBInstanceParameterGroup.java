@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::DBInstanceParameterGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup")
 public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -60,14 +60,20 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setDbInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceId", java.util.Objects.requireNonNull(value, "dbInstanceId is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -93,13 +99,19 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getForcerestart() {
-        return software.amazon.jsii.Kernel.get(this, "forcerestart", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getForcerestart() {
+        return software.amazon.jsii.Kernel.get(this, "forcerestart", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setForcerestart(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "forcerestart", value);
+    }
+
+    /**
+     */
+    public void setForcerestart(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "forcerestart", value);
     }
     /**
@@ -112,12 +124,12 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getKey();
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getValue();
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
         /**
          * @return a {@link Builder} of {@link ParametersProperty}
@@ -131,8 +143,8 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ParametersProperty> {
-            private java.lang.String key;
-            private java.lang.String value;
+            private java.lang.Object key;
+            private java.lang.Object value;
 
             /**
              * Sets the value of {@link ParametersProperty#getKey}
@@ -146,12 +158,34 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link ParametersProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ParametersProperty#getValue}
              * @param value the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ParametersProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
                 this.value = value;
                 return this;
             }
@@ -174,8 +208,8 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ParametersProperty {
-            private final java.lang.String key;
-            private final java.lang.String value;
+            private final java.lang.Object key;
+            private final java.lang.Object value;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -183,26 +217,26 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String key, final java.lang.String value) {
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.key = java.util.Objects.requireNonNull(key, "key is required");
                 this.value = java.util.Objects.requireNonNull(value, "value is required");
             }
 
             @Override
-            public final java.lang.String getKey() {
+            public final java.lang.Object getKey() {
                 return this.key;
             }
 
             @Override
-            public final java.lang.String getValue() {
+            public final java.lang.Object getValue() {
                 return this.value;
             }
 
@@ -279,6 +313,14 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbInstanceId This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -302,6 +344,14 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
          * @param forcerestart This parameter is required.
          */
         public Builder forcerestart(final java.lang.String forcerestart) {
+            this.props.forcerestart(forcerestart);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param forcerestart This parameter is required.
+         */
+        public Builder forcerestart(final com.aliyun.ros.cdk.core.IResolvable forcerestart) {
             this.props.forcerestart(forcerestart);
             return this;
         }

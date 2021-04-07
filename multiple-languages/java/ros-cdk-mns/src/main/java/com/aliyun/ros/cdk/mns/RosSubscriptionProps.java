@@ -3,38 +3,38 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Subscription`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.701Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscriptionProps")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionProps.Jsii$Proxy.class)
 public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEndpoint();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEndpoint();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSubscriptionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSubscriptionName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopicName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopicName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFilterTag() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFilterTag() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNotifyContentFormat() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNotifyContentFormat() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNotifyStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNotifyStrategy() {
         return null;
     }
 
@@ -48,12 +48,12 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosSubscriptionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSubscriptionProps> {
-        private java.lang.String endpoint;
-        private java.lang.String subscriptionName;
-        private java.lang.String topicName;
-        private java.lang.String filterTag;
-        private java.lang.String notifyContentFormat;
-        private java.lang.String notifyStrategy;
+        private java.lang.Object endpoint;
+        private java.lang.Object subscriptionName;
+        private java.lang.Object topicName;
+        private java.lang.Object filterTag;
+        private java.lang.Object notifyContentFormat;
+        private java.lang.Object notifyStrategy;
 
         /**
          * Sets the value of {@link RosSubscriptionProps#getEndpoint}
@@ -61,6 +61,16 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder endpoint(java.lang.String endpoint) {
+            this.endpoint = endpoint;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionProps#getEndpoint}
+         * @param endpoint the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder endpoint(com.aliyun.ros.cdk.core.IResolvable endpoint) {
             this.endpoint = endpoint;
             return this;
         }
@@ -76,11 +86,31 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionProps#getSubscriptionName}
+         * @param subscriptionName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder subscriptionName(com.aliyun.ros.cdk.core.IResolvable subscriptionName) {
+            this.subscriptionName = subscriptionName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionProps#getTopicName}
          * @param topicName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder topicName(java.lang.String topicName) {
+            this.topicName = topicName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionProps#getTopicName}
+         * @param topicName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder topicName(com.aliyun.ros.cdk.core.IResolvable topicName) {
             this.topicName = topicName;
             return this;
         }
@@ -96,6 +126,16 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionProps#getFilterTag}
+         * @param filterTag the value to be set.
+         * @return {@code this}
+         */
+        public Builder filterTag(com.aliyun.ros.cdk.core.IResolvable filterTag) {
+            this.filterTag = filterTag;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionProps#getNotifyContentFormat}
          * @param notifyContentFormat the value to be set.
          * @return {@code this}
@@ -106,11 +146,31 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSubscriptionProps#getNotifyContentFormat}
+         * @param notifyContentFormat the value to be set.
+         * @return {@code this}
+         */
+        public Builder notifyContentFormat(com.aliyun.ros.cdk.core.IResolvable notifyContentFormat) {
+            this.notifyContentFormat = notifyContentFormat;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSubscriptionProps#getNotifyStrategy}
          * @param notifyStrategy the value to be set.
          * @return {@code this}
          */
         public Builder notifyStrategy(java.lang.String notifyStrategy) {
+            this.notifyStrategy = notifyStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSubscriptionProps#getNotifyStrategy}
+         * @param notifyStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder notifyStrategy(com.aliyun.ros.cdk.core.IResolvable notifyStrategy) {
             this.notifyStrategy = notifyStrategy;
             return this;
         }
@@ -131,12 +191,12 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSubscriptionProps {
-        private final java.lang.String endpoint;
-        private final java.lang.String subscriptionName;
-        private final java.lang.String topicName;
-        private final java.lang.String filterTag;
-        private final java.lang.String notifyContentFormat;
-        private final java.lang.String notifyStrategy;
+        private final java.lang.Object endpoint;
+        private final java.lang.Object subscriptionName;
+        private final java.lang.Object topicName;
+        private final java.lang.Object filterTag;
+        private final java.lang.Object notifyContentFormat;
+        private final java.lang.Object notifyStrategy;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +204,18 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.subscriptionName = software.amazon.jsii.Kernel.get(this, "subscriptionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.filterTag = software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.notifyContentFormat = software.amazon.jsii.Kernel.get(this, "notifyContentFormat", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.notifyStrategy = software.amazon.jsii.Kernel.get(this, "notifyStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionName = software.amazon.jsii.Kernel.get(this, "subscriptionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.filterTag = software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.notifyContentFormat = software.amazon.jsii.Kernel.get(this, "notifyContentFormat", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.notifyStrategy = software.amazon.jsii.Kernel.get(this, "notifyStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String endpoint, final java.lang.String subscriptionName, final java.lang.String topicName, final java.lang.String filterTag, final java.lang.String notifyContentFormat, final java.lang.String notifyStrategy) {
+        protected Jsii$Proxy(final java.lang.Object endpoint, final java.lang.Object subscriptionName, final java.lang.Object topicName, final java.lang.Object filterTag, final java.lang.Object notifyContentFormat, final java.lang.Object notifyStrategy) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.endpoint = java.util.Objects.requireNonNull(endpoint, "endpoint is required");
             this.subscriptionName = java.util.Objects.requireNonNull(subscriptionName, "subscriptionName is required");
@@ -166,32 +226,32 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getEndpoint() {
+        public final java.lang.Object getEndpoint() {
             return this.endpoint;
         }
 
         @Override
-        public final java.lang.String getSubscriptionName() {
+        public final java.lang.Object getSubscriptionName() {
             return this.subscriptionName;
         }
 
         @Override
-        public final java.lang.String getTopicName() {
+        public final java.lang.Object getTopicName() {
             return this.topicName;
         }
 
         @Override
-        public final java.lang.String getFilterTag() {
+        public final java.lang.Object getFilterTag() {
             return this.filterTag;
         }
 
         @Override
-        public final java.lang.String getNotifyContentFormat() {
+        public final java.lang.Object getNotifyContentFormat() {
             return this.notifyContentFormat;
         }
 
         @Override
-        public final java.lang.String getNotifyStrategy() {
+        public final java.lang.Object getNotifyStrategy() {
             return this.notifyStrategy;
         }
 

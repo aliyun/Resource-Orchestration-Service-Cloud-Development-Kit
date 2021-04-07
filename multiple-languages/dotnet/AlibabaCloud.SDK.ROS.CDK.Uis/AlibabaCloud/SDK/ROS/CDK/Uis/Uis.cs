@@ -33,38 +33,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         }
 
         /// <summary>Attribute ClientInfoDB: The client info DB.</summary>
-        [JsiiProperty(name: "attrClientInfoDb", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDb
+        [JsiiProperty(name: "attrClientInfoDb", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDb
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ClientInfoDBAccount: The client info DB account.</summary>
-        [JsiiProperty(name: "attrClientInfoDbAccount", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDbAccount
+        [JsiiProperty(name: "attrClientInfoDbAccount", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDbAccount
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ClientInfoDBPassword: The client info DB password.</summary>
-        [JsiiProperty(name: "attrClientInfoDbPassword", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDbPassword
+        [JsiiProperty(name: "attrClientInfoDbPassword", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDbPassword
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SslClientCertUrl: The ssl client cert url.</summary>
-        [JsiiProperty(name: "attrSslClientCertUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSslClientCertUrl
+        [JsiiProperty(name: "attrSslClientCertUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslClientCertUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute UisId: The ID of the instance.</summary>
-        [JsiiProperty(name: "attrUisId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisId
+        [JsiiProperty(name: "attrUisId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

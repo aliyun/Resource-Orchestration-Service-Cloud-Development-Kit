@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: bigScreen:
         /// </remarks>
-        [JsiiProperty(name: "bigScreen", typeJson: "{\"primitive\":\"string\"}")]
-        string BigScreen
+        [JsiiProperty(name: "bigScreen", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object BigScreen
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: exclusiveIpPackage:
         /// </remarks>
-        [JsiiProperty(name: "exclusiveIpPackage", typeJson: "{\"primitive\":\"string\"}")]
-        string ExclusiveIpPackage
+        [JsiiProperty(name: "exclusiveIpPackage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ExclusiveIpPackage
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: extBandwidth:
         /// </remarks>
-        [JsiiProperty(name: "extBandwidth", typeJson: "{\"primitive\":\"string\"}")]
-        string ExtBandwidth
+        [JsiiProperty(name: "extBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ExtBandwidth
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: extDomainPackage:
         /// </remarks>
-        [JsiiProperty(name: "extDomainPackage", typeJson: "{\"primitive\":\"string\"}")]
-        string ExtDomainPackage
+        [JsiiProperty(name: "extDomainPackage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ExtDomainPackage
         {
             get;
         }
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: logStorage:
         /// </remarks>
-        [JsiiProperty(name: "logStorage", typeJson: "{\"primitive\":\"string\"}")]
-        string LogStorage
+        [JsiiProperty(name: "logStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LogStorage
         {
             get;
         }
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: logTime:
         /// </remarks>
-        [JsiiProperty(name: "logTime", typeJson: "{\"primitive\":\"string\"}")]
-        string LogTime
+        [JsiiProperty(name: "logTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LogTime
         {
             get;
         }
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: packageCode:
         /// </remarks>
-        [JsiiProperty(name: "packageCode", typeJson: "{\"primitive\":\"string\"}")]
-        string PackageCode
+        [JsiiProperty(name: "packageCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PackageCode
         {
             get;
         }
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: prefessionalService:
         /// </remarks>
-        [JsiiProperty(name: "prefessionalService", typeJson: "{\"primitive\":\"string\"}")]
-        string PrefessionalService
+        [JsiiProperty(name: "prefessionalService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PrefessionalService
         {
             get;
         }
@@ -83,8 +83,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: subscriptionType: Subscription type of the instance
         /// </remarks>
-        [JsiiProperty(name: "subscriptionType", typeJson: "{\"primitive\":\"string\"}")]
-        string SubscriptionType
+        [JsiiProperty(name: "subscriptionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SubscriptionType
         {
             get;
         }
@@ -92,8 +92,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: wafLog:
         /// </remarks>
-        [JsiiProperty(name: "wafLog", typeJson: "{\"primitive\":\"string\"}")]
-        string WafLog
+        [JsiiProperty(name: "wafLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object WafLog
         {
             get;
         }
@@ -101,9 +101,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: period:
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Period
+        object? Period
         {
             get
             {
@@ -114,9 +114,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: renewalStatus:
         /// </remarks>
-        [JsiiProperty(name: "renewalStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "renewalStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RenewalStatus
+        object? RenewalStatus
         {
             get
             {
@@ -127,9 +127,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: renewPeriod:
         /// </remarks>
-        [JsiiProperty(name: "renewPeriod", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "renewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RenewPeriod
+        object? RenewPeriod
         {
             get
             {
@@ -148,121 +148,121 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             /// <remarks>
             /// <strong>Property</strong>: bigScreen:
             /// </remarks>
-            [JsiiProperty(name: "bigScreen", typeJson: "{\"primitive\":\"string\"}")]
-            public string BigScreen
+            [JsiiProperty(name: "bigScreen", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BigScreen
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: exclusiveIpPackage:
             /// </remarks>
-            [JsiiProperty(name: "exclusiveIpPackage", typeJson: "{\"primitive\":\"string\"}")]
-            public string ExclusiveIpPackage
+            [JsiiProperty(name: "exclusiveIpPackage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExclusiveIpPackage
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: extBandwidth:
             /// </remarks>
-            [JsiiProperty(name: "extBandwidth", typeJson: "{\"primitive\":\"string\"}")]
-            public string ExtBandwidth
+            [JsiiProperty(name: "extBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExtBandwidth
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: extDomainPackage:
             /// </remarks>
-            [JsiiProperty(name: "extDomainPackage", typeJson: "{\"primitive\":\"string\"}")]
-            public string ExtDomainPackage
+            [JsiiProperty(name: "extDomainPackage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExtDomainPackage
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: logStorage:
             /// </remarks>
-            [JsiiProperty(name: "logStorage", typeJson: "{\"primitive\":\"string\"}")]
-            public string LogStorage
+            [JsiiProperty(name: "logStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LogStorage
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: logTime:
             /// </remarks>
-            [JsiiProperty(name: "logTime", typeJson: "{\"primitive\":\"string\"}")]
-            public string LogTime
+            [JsiiProperty(name: "logTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LogTime
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: packageCode:
             /// </remarks>
-            [JsiiProperty(name: "packageCode", typeJson: "{\"primitive\":\"string\"}")]
-            public string PackageCode
+            [JsiiProperty(name: "packageCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PackageCode
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: prefessionalService:
             /// </remarks>
-            [JsiiProperty(name: "prefessionalService", typeJson: "{\"primitive\":\"string\"}")]
-            public string PrefessionalService
+            [JsiiProperty(name: "prefessionalService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PrefessionalService
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: subscriptionType: Subscription type of the instance
             /// </remarks>
-            [JsiiProperty(name: "subscriptionType", typeJson: "{\"primitive\":\"string\"}")]
-            public string SubscriptionType
+            [JsiiProperty(name: "subscriptionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SubscriptionType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: wafLog:
             /// </remarks>
-            [JsiiProperty(name: "wafLog", typeJson: "{\"primitive\":\"string\"}")]
-            public string WafLog
+            [JsiiProperty(name: "wafLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object WafLog
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: period:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: renewalStatus:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "renewalStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RenewalStatus
+            [JsiiProperty(name: "renewalStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RenewalStatus
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: renewPeriod:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "renewPeriod", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RenewPeriod
+            [JsiiProperty(name: "renewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RenewPeriod
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

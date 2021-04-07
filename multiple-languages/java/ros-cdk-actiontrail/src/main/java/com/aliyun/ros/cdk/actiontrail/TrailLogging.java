@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * A ROS resource type:  `ALIYUN::ACTIONTRAIL::TrailLogging`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.056Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.627Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
 public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public TrailLogging(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailLoggingProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public TrailLogging(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailLoggingProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,33 +49,38 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute IsLogging: Indicates whether the trail is logging API invocations.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsLogging() {
-        return software.amazon.jsii.Kernel.get(this, "attrIsLogging", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIsLogging() {
+        return software.amazon.jsii.Kernel.get(this, "attrIsLogging", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLatestDeliveryError() {
-        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryError", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLatestDeliveryError() {
+        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryError", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLatestDeliveryTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLatestDeliveryTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStartLoggingTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrStartLoggingTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStartLoggingTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrStartLoggingTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStopLoggingTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrStopLoggingTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStopLoggingTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrStopLoggingTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -76,8 +89,8 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.actiontrail.TrailLogging> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -85,8 +98,8 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -105,16 +118,20 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property enable: Whether to enable the trail logging.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Whether to enable the trail logging. This parameter is required.
          */
         public Builder enable(final java.lang.Boolean enable) {
             this.props.enable(enable);
             return this;
         }
         /**
+         * Property enable: Whether to enable the trail logging.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Whether to enable the trail logging. This parameter is required.
          */
         public Builder enable(final com.aliyun.ros.cdk.core.IResolvable enable) {
             this.props.enable(enable);
@@ -122,10 +139,22 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property name: The name of the trail to be enabled.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the trail to be enabled. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * Property name: The name of the trail to be enabled.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the trail to be enabled. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

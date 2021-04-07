@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public class CommonBandwidthPackageIpProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ICommonBandwidthPackageIpProps
     {
         /// <summary>Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.</summary>
-        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string BandwidthPackageId
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object BandwidthPackageId
         {
             get;
             set;

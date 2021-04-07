@@ -11,12 +11,12 @@ export interface LogConfigProps {
     /**
      * Property slsLogStore: Logstore name of SLS
      */
-    readonly slsLogStore: string;
+    readonly slsLogStore: string | ros.IResolvable;
 
     /**
      * Property slsProject: Project name of SLS
      */
-    readonly slsProject: string;
+    readonly slsProject: string | ros.IResolvable;
 }
 
 /**
@@ -32,12 +32,12 @@ export class LogConfig extends ros.Resource {
     /**
      * Attribute SlsLogStore: Logstore name of SLS
      */
-    public readonly attrSlsLogStore: any;
+    public readonly attrSlsLogStore: ros.IResolvable;
 
     /**
      * Attribute SlsProject: Project name of SLS
      */
-    public readonly attrSlsProject: any;
+    public readonly attrSlsProject: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::LogConfig`.

@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public class MetricRuleTemplateProps : AlibabaCloud.SDK.ROS.CDK.Cms.IMetricRuleTemplateProps
     {
         /// <summary>Property name: The name of the alert template.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         /// <summary>Property description: The description of the alert template.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// uniquely identifies an alert template.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "restVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? RestVersion
+        [JsiiProperty(name: "restVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RestVersion
         {
             get;
             set;
@@ -52,8 +52,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         /// <summary>Property templateId: The ID of the alert template.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "templateId", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? TemplateId
+        [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TemplateId
         {
             get;
             set;

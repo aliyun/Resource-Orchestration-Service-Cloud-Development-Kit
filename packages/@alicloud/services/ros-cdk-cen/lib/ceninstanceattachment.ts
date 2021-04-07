@@ -11,27 +11,27 @@ export interface CenInstanceAttachmentProps {
     /**
      * Property cenId: The ID of the CEN instance.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 
     /**
      * Property childInstanceId: The ID of the network to attach.
      */
-    readonly childInstanceId: string;
+    readonly childInstanceId: string | ros.IResolvable;
 
     /**
      * Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
      */
-    readonly childInstanceRegionId: string;
+    readonly childInstanceRegionId: string | ros.IResolvable;
 
     /**
      * Property childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
      */
-    readonly childInstanceType: string;
+    readonly childInstanceType: string | ros.IResolvable;
 
     /**
      * Property childInstanceOwnerId: The account ID to which the network belongs.
      */
-    readonly childInstanceOwnerId?: number;
+    readonly childInstanceOwnerId?: number | ros.IResolvable;
 }
 
 /**

@@ -11,13 +11,13 @@ export interface AssignIpv6AddressesProps {
     /**
      * Property networkInterfaceId: Elastic network interface ID.
      */
-    readonly networkInterfaceId: string;
+    readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
      * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
-    readonly ipv6AddressCount?: number;
+    readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
      * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
@@ -39,17 +39,17 @@ export class AssignIpv6Addresses extends ros.Resource {
     /**
      * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
      */
-    public readonly attrIpv6AddressIds: any;
+    public readonly attrIpv6AddressIds: ros.IResolvable;
 
     /**
      * Attribute Ipv6Addresses: Assigned IPv6 addresses.
      */
-    public readonly attrIpv6Addresses: any;
+    public readonly attrIpv6Addresses: ros.IResolvable;
 
     /**
      * Attribute NetworkInterfaceId: Elastic network interface ID.
      */
-    public readonly attrNetworkInterfaceId: any;
+    public readonly attrNetworkInterfaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.

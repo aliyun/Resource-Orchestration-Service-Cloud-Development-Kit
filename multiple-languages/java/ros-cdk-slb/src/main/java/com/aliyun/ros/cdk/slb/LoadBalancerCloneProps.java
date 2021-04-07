@@ -3,54 +3,73 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.381Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerCloneProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerCloneProps.Jsii$Proxy.class)
 public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property sourceLoadBalancerId: Source load balancer id to clone.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceLoadBalancerId();
 
     /**
+     * Property backendServers: The list of ECS instance, which will attached to load balancer.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServers() {
         return null;
     }
 
     /**
+     * Property backendServersPolicy: Solution for handle the backend server and weights.
+     * <p>
+     * If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBackendServersPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServersPolicy() {
         return null;
     }
 
     /**
+     * Property loadBalancerName: Name of created load balancer.
+     * <p>
+     * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to slb.
+     * <p>
+     * Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property tagsPolicy: Solution for handle the tags.
+     * <p>
+     * If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+     * Default is 'empty'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTagsPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagsPolicy() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The new VSwitch ID to create load balancer instance.
+     * <p>
+     * For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -64,18 +83,18 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link LoadBalancerCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerCloneProps> {
-        private java.lang.String sourceLoadBalancerId;
+        private java.lang.Object sourceLoadBalancerId;
         private java.lang.Object backendServers;
-        private java.lang.String backendServersPolicy;
-        private java.lang.String loadBalancerName;
-        private java.lang.String resourceGroupId;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String tagsPolicy;
-        private java.lang.String vSwitchId;
+        private java.lang.Object backendServersPolicy;
+        private java.lang.Object loadBalancerName;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
+        private java.lang.Object tagsPolicy;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getSourceLoadBalancerId}
-         * @param sourceLoadBalancerId the value to be set. This parameter is required.
+         * @param sourceLoadBalancerId Property sourceLoadBalancerId: Source load balancer id to clone. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceLoadBalancerId(java.lang.String sourceLoadBalancerId) {
@@ -84,8 +103,18 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link LoadBalancerCloneProps#getSourceLoadBalancerId}
+         * @param sourceLoadBalancerId Property sourceLoadBalancerId: Source load balancer id to clone. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceLoadBalancerId(com.aliyun.ros.cdk.core.IResolvable sourceLoadBalancerId) {
+            this.sourceLoadBalancerId = sourceLoadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerCloneProps#getBackendServers}
-         * @param backendServers the value to be set.
+         * @param backendServers Property backendServers: The list of ECS instance, which will attached to load balancer.
          * @return {@code this}
          */
         public Builder backendServers(com.aliyun.ros.cdk.core.IResolvable backendServers) {
@@ -95,7 +124,7 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getBackendServers}
-         * @param backendServers the value to be set.
+         * @param backendServers Property backendServers: The list of ECS instance, which will attached to load balancer.
          * @return {@code this}
          */
         public Builder backendServers(java.util.List<? extends java.lang.Object> backendServers) {
@@ -105,7 +134,8 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getBackendServersPolicy}
-         * @param backendServersPolicy the value to be set.
+         * @param backendServersPolicy Property backendServersPolicy: Solution for handle the backend server and weights.
+         *                             If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
          * @return {@code this}
          */
         public Builder backendServersPolicy(java.lang.String backendServersPolicy) {
@@ -114,8 +144,20 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link LoadBalancerCloneProps#getBackendServersPolicy}
+         * @param backendServersPolicy Property backendServersPolicy: Solution for handle the backend server and weights.
+         *                             If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
+         * @return {@code this}
+         */
+        public Builder backendServersPolicy(com.aliyun.ros.cdk.core.IResolvable backendServersPolicy) {
+            this.backendServersPolicy = backendServersPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerName}
-         * @param loadBalancerName the value to be set.
+         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
+         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
@@ -124,8 +166,19 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link LoadBalancerCloneProps#getLoadBalancerName}
+         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
+         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @return {@code this}
+         */
+        public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
+            this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerCloneProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -134,19 +187,32 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link LoadBalancerCloneProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerCloneProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to slb.
+         *             Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link LoadBalancerCloneProps#getTagsPolicy}
-         * @param tagsPolicy the value to be set.
+         * @param tagsPolicy Property tagsPolicy: Solution for handle the tags.
+         *                   If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+         *                   Default is 'empty'.
          * @return {@code this}
          */
         public Builder tagsPolicy(java.lang.String tagsPolicy) {
@@ -155,11 +221,35 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link LoadBalancerCloneProps#getTagsPolicy}
+         * @param tagsPolicy Property tagsPolicy: Solution for handle the tags.
+         *                   If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
+         *                   Default is 'empty'.
+         * @return {@code this}
+         */
+        public Builder tagsPolicy(com.aliyun.ros.cdk.core.IResolvable tagsPolicy) {
+            this.tagsPolicy = tagsPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerCloneProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The new VSwitch ID to create load balancer instance.
+         *                  For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerCloneProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The new VSwitch ID to create load balancer instance.
+         *                  For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -180,14 +270,14 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerCloneProps {
-        private final java.lang.String sourceLoadBalancerId;
+        private final java.lang.Object sourceLoadBalancerId;
         private final java.lang.Object backendServers;
-        private final java.lang.String backendServersPolicy;
-        private final java.lang.String loadBalancerName;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String tagsPolicy;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object backendServersPolicy;
+        private final java.lang.Object loadBalancerName;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags;
+        private final java.lang.Object tagsPolicy;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -195,34 +285,34 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sourceLoadBalancerId = software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sourceLoadBalancerId = software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.backendServersPolicy = software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.tagsPolicy = software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.backendServersPolicy = software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty.class)));
+            this.tagsPolicy = software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String sourceLoadBalancerId, final java.lang.Object backendServers, final java.lang.String backendServersPolicy, final java.lang.String loadBalancerName, final java.lang.String resourceGroupId, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String tagsPolicy, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object sourceLoadBalancerId, final java.lang.Object backendServers, final java.lang.Object backendServersPolicy, final java.lang.Object loadBalancerName, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags, final java.lang.Object tagsPolicy, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sourceLoadBalancerId = java.util.Objects.requireNonNull(sourceLoadBalancerId, "sourceLoadBalancerId is required");
             this.backendServers = backendServers;
             this.backendServersPolicy = backendServersPolicy;
             this.loadBalancerName = loadBalancerName;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)tags;
             this.tagsPolicy = tagsPolicy;
             this.vSwitchId = vSwitchId;
         }
 
         @Override
-        public final java.lang.String getSourceLoadBalancerId() {
+        public final java.lang.Object getSourceLoadBalancerId() {
             return this.sourceLoadBalancerId;
         }
 
@@ -232,32 +322,32 @@ public interface LoadBalancerCloneProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getBackendServersPolicy() {
+        public final java.lang.Object getBackendServersPolicy() {
             return this.backendServersPolicy;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerName() {
+        public final java.lang.Object getLoadBalancerName() {
             return this.loadBalancerName;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getTagsPolicy() {
+        public final java.lang.Object getTagsPolicy() {
             return this.tagsPolicy;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

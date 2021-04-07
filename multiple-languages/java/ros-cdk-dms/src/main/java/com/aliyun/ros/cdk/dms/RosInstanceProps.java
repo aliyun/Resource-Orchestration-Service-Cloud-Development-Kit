@@ -3,106 +3,106 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a `ALIYUN::DMS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.416Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.085Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDatabasePassword();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDatabasePassword();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDatabaseUser();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDatabaseUser();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getDbaUid();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbaUid();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEnvType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEnvType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getExportTimeout();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExportTimeout();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getHost();
+    @org.jetbrains.annotations.NotNull java.lang.Object getHost();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceAlias();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceAlias();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceSource();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceSource();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPort();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getQueryTimeout();
+    @org.jetbrains.annotations.NotNull java.lang.Object getQueryTimeout();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSafeRule();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSafeRule();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getTid();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTid();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDataLinkName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataLinkName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDdlOnline() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDdlOnline() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEcsInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcsInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEcsRegion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcsRegion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSid() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSid() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getUseDsql() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUseDsql() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
@@ -116,27 +116,27 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.String databasePassword;
-        private java.lang.String databaseUser;
-        private java.lang.Number dbaUid;
-        private java.lang.String envType;
-        private java.lang.Number exportTimeout;
-        private java.lang.String host;
-        private java.lang.String instanceAlias;
-        private java.lang.String instanceSource;
-        private java.lang.String instanceType;
-        private java.lang.String networkType;
-        private java.lang.Number port;
-        private java.lang.Number queryTimeout;
-        private java.lang.String safeRule;
-        private java.lang.Number tid;
-        private java.lang.String dataLinkName;
-        private java.lang.Number ddlOnline;
-        private java.lang.String ecsInstanceId;
-        private java.lang.String ecsRegion;
-        private java.lang.String sid;
-        private java.lang.Number useDsql;
-        private java.lang.String vpcId;
+        private java.lang.Object databasePassword;
+        private java.lang.Object databaseUser;
+        private java.lang.Object dbaUid;
+        private java.lang.Object envType;
+        private java.lang.Object exportTimeout;
+        private java.lang.Object host;
+        private java.lang.Object instanceAlias;
+        private java.lang.Object instanceSource;
+        private java.lang.Object instanceType;
+        private java.lang.Object networkType;
+        private java.lang.Object port;
+        private java.lang.Object queryTimeout;
+        private java.lang.Object safeRule;
+        private java.lang.Object tid;
+        private java.lang.Object dataLinkName;
+        private java.lang.Object ddlOnline;
+        private java.lang.Object ecsInstanceId;
+        private java.lang.Object ecsRegion;
+        private java.lang.Object sid;
+        private java.lang.Object useDsql;
+        private java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getDatabasePassword}
@@ -144,6 +144,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder databasePassword(java.lang.String databasePassword) {
+            this.databasePassword = databasePassword;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDatabasePassword}
+         * @param databasePassword the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder databasePassword(com.aliyun.ros.cdk.core.IResolvable databasePassword) {
             this.databasePassword = databasePassword;
             return this;
         }
@@ -159,11 +169,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getDatabaseUser}
+         * @param databaseUser the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder databaseUser(com.aliyun.ros.cdk.core.IResolvable databaseUser) {
+            this.databaseUser = databaseUser;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getDbaUid}
          * @param dbaUid the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder dbaUid(java.lang.Number dbaUid) {
+            this.dbaUid = dbaUid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDbaUid}
+         * @param dbaUid the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbaUid(com.aliyun.ros.cdk.core.IResolvable dbaUid) {
             this.dbaUid = dbaUid;
             return this;
         }
@@ -179,11 +209,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getEnvType}
+         * @param envType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder envType(com.aliyun.ros.cdk.core.IResolvable envType) {
+            this.envType = envType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getExportTimeout}
          * @param exportTimeout the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder exportTimeout(java.lang.Number exportTimeout) {
+            this.exportTimeout = exportTimeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getExportTimeout}
+         * @param exportTimeout the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder exportTimeout(com.aliyun.ros.cdk.core.IResolvable exportTimeout) {
             this.exportTimeout = exportTimeout;
             return this;
         }
@@ -199,11 +249,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getHost}
+         * @param host the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder host(com.aliyun.ros.cdk.core.IResolvable host) {
+            this.host = host;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInstanceAlias}
          * @param instanceAlias the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceAlias(java.lang.String instanceAlias) {
+            this.instanceAlias = instanceAlias;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceAlias}
+         * @param instanceAlias the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceAlias(com.aliyun.ros.cdk.core.IResolvable instanceAlias) {
             this.instanceAlias = instanceAlias;
             return this;
         }
@@ -219,11 +289,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInstanceSource}
+         * @param instanceSource the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceSource(com.aliyun.ros.cdk.core.IResolvable instanceSource) {
+            this.instanceSource = instanceSource;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInstanceType}
          * @param instanceType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceType}
+         * @param instanceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.instanceType = instanceType;
             return this;
         }
@@ -239,11 +329,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getNetworkType}
+         * @param networkType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPort}
          * @param port the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder port(java.lang.Number port) {
+            this.port = port;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPort}
+         * @param port the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
             this.port = port;
             return this;
         }
@@ -259,11 +369,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getQueryTimeout}
+         * @param queryTimeout the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder queryTimeout(com.aliyun.ros.cdk.core.IResolvable queryTimeout) {
+            this.queryTimeout = queryTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSafeRule}
          * @param safeRule the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder safeRule(java.lang.String safeRule) {
+            this.safeRule = safeRule;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSafeRule}
+         * @param safeRule the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder safeRule(com.aliyun.ros.cdk.core.IResolvable safeRule) {
             this.safeRule = safeRule;
             return this;
         }
@@ -279,11 +409,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getTid}
+         * @param tid the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tid(com.aliyun.ros.cdk.core.IResolvable tid) {
+            this.tid = tid;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getDataLinkName}
          * @param dataLinkName the value to be set.
          * @return {@code this}
          */
         public Builder dataLinkName(java.lang.String dataLinkName) {
+            this.dataLinkName = dataLinkName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDataLinkName}
+         * @param dataLinkName the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataLinkName(com.aliyun.ros.cdk.core.IResolvable dataLinkName) {
             this.dataLinkName = dataLinkName;
             return this;
         }
@@ -299,11 +449,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getDdlOnline}
+         * @param ddlOnline the value to be set.
+         * @return {@code this}
+         */
+        public Builder ddlOnline(com.aliyun.ros.cdk.core.IResolvable ddlOnline) {
+            this.ddlOnline = ddlOnline;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getEcsInstanceId}
          * @param ecsInstanceId the value to be set.
          * @return {@code this}
          */
         public Builder ecsInstanceId(java.lang.String ecsInstanceId) {
+            this.ecsInstanceId = ecsInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEcsInstanceId}
+         * @param ecsInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder ecsInstanceId(com.aliyun.ros.cdk.core.IResolvable ecsInstanceId) {
             this.ecsInstanceId = ecsInstanceId;
             return this;
         }
@@ -319,11 +489,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getEcsRegion}
+         * @param ecsRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder ecsRegion(com.aliyun.ros.cdk.core.IResolvable ecsRegion) {
+            this.ecsRegion = ecsRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSid}
          * @param sid the value to be set.
          * @return {@code this}
          */
         public Builder sid(java.lang.String sid) {
+            this.sid = sid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSid}
+         * @param sid the value to be set.
+         * @return {@code this}
+         */
+        public Builder sid(com.aliyun.ros.cdk.core.IResolvable sid) {
             this.sid = sid;
             return this;
         }
@@ -339,11 +529,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getUseDsql}
+         * @param useDsql the value to be set.
+         * @return {@code this}
+         */
+        public Builder useDsql(com.aliyun.ros.cdk.core.IResolvable useDsql) {
+            this.useDsql = useDsql;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -364,27 +574,27 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceProps {
-        private final java.lang.String databasePassword;
-        private final java.lang.String databaseUser;
-        private final java.lang.Number dbaUid;
-        private final java.lang.String envType;
-        private final java.lang.Number exportTimeout;
-        private final java.lang.String host;
-        private final java.lang.String instanceAlias;
-        private final java.lang.String instanceSource;
-        private final java.lang.String instanceType;
-        private final java.lang.String networkType;
-        private final java.lang.Number port;
-        private final java.lang.Number queryTimeout;
-        private final java.lang.String safeRule;
-        private final java.lang.Number tid;
-        private final java.lang.String dataLinkName;
-        private final java.lang.Number ddlOnline;
-        private final java.lang.String ecsInstanceId;
-        private final java.lang.String ecsRegion;
-        private final java.lang.String sid;
-        private final java.lang.Number useDsql;
-        private final java.lang.String vpcId;
+        private final java.lang.Object databasePassword;
+        private final java.lang.Object databaseUser;
+        private final java.lang.Object dbaUid;
+        private final java.lang.Object envType;
+        private final java.lang.Object exportTimeout;
+        private final java.lang.Object host;
+        private final java.lang.Object instanceAlias;
+        private final java.lang.Object instanceSource;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object networkType;
+        private final java.lang.Object port;
+        private final java.lang.Object queryTimeout;
+        private final java.lang.Object safeRule;
+        private final java.lang.Object tid;
+        private final java.lang.Object dataLinkName;
+        private final java.lang.Object ddlOnline;
+        private final java.lang.Object ecsInstanceId;
+        private final java.lang.Object ecsRegion;
+        private final java.lang.Object sid;
+        private final java.lang.Object useDsql;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -392,33 +602,33 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.databasePassword = software.amazon.jsii.Kernel.get(this, "databasePassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.databaseUser = software.amazon.jsii.Kernel.get(this, "databaseUser", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbaUid = software.amazon.jsii.Kernel.get(this, "dbaUid", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.envType = software.amazon.jsii.Kernel.get(this, "envType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.exportTimeout = software.amazon.jsii.Kernel.get(this, "exportTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.host = software.amazon.jsii.Kernel.get(this, "host", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceAlias = software.amazon.jsii.Kernel.get(this, "instanceAlias", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceSource = software.amazon.jsii.Kernel.get(this, "instanceSource", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.queryTimeout = software.amazon.jsii.Kernel.get(this, "queryTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.safeRule = software.amazon.jsii.Kernel.get(this, "safeRule", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.dataLinkName = software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ddlOnline = software.amazon.jsii.Kernel.get(this, "ddlOnline", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ecsInstanceId = software.amazon.jsii.Kernel.get(this, "ecsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ecsRegion = software.amazon.jsii.Kernel.get(this, "ecsRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sid = software.amazon.jsii.Kernel.get(this, "sid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.useDsql = software.amazon.jsii.Kernel.get(this, "useDsql", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.databasePassword = software.amazon.jsii.Kernel.get(this, "databasePassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.databaseUser = software.amazon.jsii.Kernel.get(this, "databaseUser", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbaUid = software.amazon.jsii.Kernel.get(this, "dbaUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.envType = software.amazon.jsii.Kernel.get(this, "envType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.exportTimeout = software.amazon.jsii.Kernel.get(this, "exportTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.host = software.amazon.jsii.Kernel.get(this, "host", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceAlias = software.amazon.jsii.Kernel.get(this, "instanceAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceSource = software.amazon.jsii.Kernel.get(this, "instanceSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.queryTimeout = software.amazon.jsii.Kernel.get(this, "queryTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.safeRule = software.amazon.jsii.Kernel.get(this, "safeRule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataLinkName = software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ddlOnline = software.amazon.jsii.Kernel.get(this, "ddlOnline", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecsInstanceId = software.amazon.jsii.Kernel.get(this, "ecsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecsRegion = software.amazon.jsii.Kernel.get(this, "ecsRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sid = software.amazon.jsii.Kernel.get(this, "sid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.useDsql = software.amazon.jsii.Kernel.get(this, "useDsql", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String databasePassword, final java.lang.String databaseUser, final java.lang.Number dbaUid, final java.lang.String envType, final java.lang.Number exportTimeout, final java.lang.String host, final java.lang.String instanceAlias, final java.lang.String instanceSource, final java.lang.String instanceType, final java.lang.String networkType, final java.lang.Number port, final java.lang.Number queryTimeout, final java.lang.String safeRule, final java.lang.Number tid, final java.lang.String dataLinkName, final java.lang.Number ddlOnline, final java.lang.String ecsInstanceId, final java.lang.String ecsRegion, final java.lang.String sid, final java.lang.Number useDsql, final java.lang.String vpcId) {
+        protected Jsii$Proxy(final java.lang.Object databasePassword, final java.lang.Object databaseUser, final java.lang.Object dbaUid, final java.lang.Object envType, final java.lang.Object exportTimeout, final java.lang.Object host, final java.lang.Object instanceAlias, final java.lang.Object instanceSource, final java.lang.Object instanceType, final java.lang.Object networkType, final java.lang.Object port, final java.lang.Object queryTimeout, final java.lang.Object safeRule, final java.lang.Object tid, final java.lang.Object dataLinkName, final java.lang.Object ddlOnline, final java.lang.Object ecsInstanceId, final java.lang.Object ecsRegion, final java.lang.Object sid, final java.lang.Object useDsql, final java.lang.Object vpcId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.databasePassword = java.util.Objects.requireNonNull(databasePassword, "databasePassword is required");
             this.databaseUser = java.util.Objects.requireNonNull(databaseUser, "databaseUser is required");
@@ -444,107 +654,107 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getDatabasePassword() {
+        public final java.lang.Object getDatabasePassword() {
             return this.databasePassword;
         }
 
         @Override
-        public final java.lang.String getDatabaseUser() {
+        public final java.lang.Object getDatabaseUser() {
             return this.databaseUser;
         }
 
         @Override
-        public final java.lang.Number getDbaUid() {
+        public final java.lang.Object getDbaUid() {
             return this.dbaUid;
         }
 
         @Override
-        public final java.lang.String getEnvType() {
+        public final java.lang.Object getEnvType() {
             return this.envType;
         }
 
         @Override
-        public final java.lang.Number getExportTimeout() {
+        public final java.lang.Object getExportTimeout() {
             return this.exportTimeout;
         }
 
         @Override
-        public final java.lang.String getHost() {
+        public final java.lang.Object getHost() {
             return this.host;
         }
 
         @Override
-        public final java.lang.String getInstanceAlias() {
+        public final java.lang.Object getInstanceAlias() {
             return this.instanceAlias;
         }
 
         @Override
-        public final java.lang.String getInstanceSource() {
+        public final java.lang.Object getInstanceSource() {
             return this.instanceSource;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.Number getPort() {
+        public final java.lang.Object getPort() {
             return this.port;
         }
 
         @Override
-        public final java.lang.Number getQueryTimeout() {
+        public final java.lang.Object getQueryTimeout() {
             return this.queryTimeout;
         }
 
         @Override
-        public final java.lang.String getSafeRule() {
+        public final java.lang.Object getSafeRule() {
             return this.safeRule;
         }
 
         @Override
-        public final java.lang.Number getTid() {
+        public final java.lang.Object getTid() {
             return this.tid;
         }
 
         @Override
-        public final java.lang.String getDataLinkName() {
+        public final java.lang.Object getDataLinkName() {
             return this.dataLinkName;
         }
 
         @Override
-        public final java.lang.Number getDdlOnline() {
+        public final java.lang.Object getDdlOnline() {
             return this.ddlOnline;
         }
 
         @Override
-        public final java.lang.String getEcsInstanceId() {
+        public final java.lang.Object getEcsInstanceId() {
             return this.ecsInstanceId;
         }
 
         @Override
-        public final java.lang.String getEcsRegion() {
+        public final java.lang.Object getEcsRegion() {
             return this.ecsRegion;
         }
 
         @Override
-        public final java.lang.String getSid() {
+        public final java.lang.Object getSid() {
             return this.sid;
         }
 
         @Override
-        public final java.lang.Number getUseDsql() {
+        public final java.lang.Object getUseDsql() {
             return this.useDsql;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 

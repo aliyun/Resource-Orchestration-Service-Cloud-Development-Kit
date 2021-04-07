@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS resource type:  `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.486Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ImageCache")
 public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ImageCache(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.eci.ImageCacheProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ImageCache(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.eci.ImageCacheProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ImageCacheId: The ID of the image cache.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageCacheId() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageCacheId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageCacheId() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageCacheId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.eci.ImageCache> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,64 +90,152 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property image: The image list to be cached.
+         * <p>
          * @return {@code this}
-         * @param image This parameter is required.
+         * @param image Property image: The image list to be cached. This parameter is required.
          */
-        public Builder image(final java.util.List<java.lang.String> image) {
+        public Builder image(final com.aliyun.ros.cdk.core.IResolvable image) {
+            this.props.image(image);
+            return this;
+        }
+        /**
+         * Property image: The image list to be cached.
+         * <p>
+         * @return {@code this}
+         * @param image Property image: The image list to be cached. This parameter is required.
+         */
+        public Builder image(final java.util.List<? extends java.lang.Object> image) {
             this.props.image(image);
             return this;
         }
 
         /**
+         * Property imageCacheName: Image cache name.
+         * <p>
          * @return {@code this}
-         * @param imageCacheName This parameter is required.
+         * @param imageCacheName Property imageCacheName: Image cache name. This parameter is required.
          */
         public Builder imageCacheName(final java.lang.String imageCacheName) {
             this.props.imageCacheName(imageCacheName);
             return this;
         }
+        /**
+         * Property imageCacheName: Image cache name.
+         * <p>
+         * @return {@code this}
+         * @param imageCacheName Property imageCacheName: Image cache name. This parameter is required.
+         */
+        public Builder imageCacheName(final com.aliyun.ros.cdk.core.IResolvable imageCacheName) {
+            this.props.imageCacheName(imageCacheName);
+            return this;
+        }
 
         /**
+         * Property securityGroupId: Security group ID.
+         * <p>
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
+         * @param securityGroupId Property securityGroupId: Security group ID. This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * Property securityGroupId: Security group ID.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: Security group ID. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
+         * Property vSwitchId: VSwitch ID.
+         * <p>
          * @return {@code this}
-         * @param vSwitchId This parameter is required.
+         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * Property vSwitchId: VSwitch ID.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: VSwitch ID. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
+         * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
+         * <p>
          * @return {@code this}
-         * @param eipInstanceId This parameter is required.
+         * @param eipInstanceId Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway. This parameter is required.
          */
         public Builder eipInstanceId(final java.lang.String eipInstanceId) {
             this.props.eipInstanceId(eipInstanceId);
             return this;
         }
+        /**
+         * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
+         * <p>
+         * @return {@code this}
+         * @param eipInstanceId Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway. This parameter is required.
+         */
+        public Builder eipInstanceId(final com.aliyun.ros.cdk.core.IResolvable eipInstanceId) {
+            this.props.eipInstanceId(eipInstanceId);
+            return this;
+        }
 
         /**
+         * Property imageRegistryCredential: Private image password.
+         * <p>
+         * Alibaba Cloud ACR image can be left blank.
+         * <p>
          * @return {@code this}
-         * @param imageRegistryCredential This parameter is required.
+         * @param imageRegistryCredential Property imageRegistryCredential: Private image password. This parameter is required.
          */
-        public Builder imageRegistryCredential(final java.util.List<java.lang.String> imageRegistryCredential) {
+        public Builder imageRegistryCredential(final com.aliyun.ros.cdk.core.IResolvable imageRegistryCredential) {
+            this.props.imageRegistryCredential(imageRegistryCredential);
+            return this;
+        }
+        /**
+         * Property imageRegistryCredential: Private image password.
+         * <p>
+         * Alibaba Cloud ACR image can be left blank.
+         * <p>
+         * @return {@code this}
+         * @param imageRegistryCredential Property imageRegistryCredential: Private image password. This parameter is required.
+         */
+        public Builder imageRegistryCredential(final java.util.List<? extends java.lang.Object> imageRegistryCredential) {
             this.props.imageRegistryCredential(imageRegistryCredential);
             return this;
         }
 
         /**
+         * Property resourceGroupId: Resource group.
+         * <p>
          * @return {@code this}
-         * @param resourceGroupId This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Resource group. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAddition")
 public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVServerGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVServerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVServerGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,13 +81,19 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getVServerGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getVServerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setVServerGroupId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vServerGroupId", java.util.Objects.requireNonNull(value, "vServerGroupId is required"));
+    }
+
+    /**
+     */
+    public void setVServerGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vServerGroupId", java.util.Objects.requireNonNull(value, "vServerGroupId is required"));
     }
     /**
@@ -100,17 +106,38 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPort();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getServerId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getWeight() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerIp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWeight() {
             return null;
         }
 
@@ -126,9 +153,12 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BackendServersProperty> {
-            private java.lang.Number port;
-            private java.lang.String serverId;
-            private java.lang.Number weight;
+            private java.lang.Object port;
+            private java.lang.Object serverId;
+            private java.lang.Object description;
+            private java.lang.Object serverIp;
+            private java.lang.Object type;
+            private java.lang.Object weight;
 
             /**
              * Sets the value of {@link BackendServersProperty#getPort}
@@ -137,6 +167,17 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder port(java.lang.Number port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getPort}
+             * @param port the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
                 this.port = port;
                 return this;
             }
@@ -153,12 +194,100 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
             }
 
             /**
+             * Sets the value of {@link BackendServersProperty#getServerId}
+             * @param serverId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverId(com.aliyun.ros.cdk.core.IResolvable serverId) {
+                this.serverId = serverId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(java.lang.String serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(com.aliyun.ros.cdk.core.IResolvable serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BackendServersProperty#getWeight}
              * @param weight the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder weight(java.lang.Number weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getWeight}
+             * @param weight the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
                 this.weight = weight;
                 return this;
             }
@@ -171,7 +300,7 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public BackendServersProperty build() {
-                return new Jsii$Proxy(port, serverId, weight);
+                return new Jsii$Proxy(port, serverId, description, serverIp, type, weight);
             }
         }
 
@@ -181,9 +310,12 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BackendServersProperty {
-            private final java.lang.Number port;
-            private final java.lang.String serverId;
-            private final java.lang.Number weight;
+            private final java.lang.Object port;
+            private final java.lang.Object serverId;
+            private final java.lang.Object description;
+            private final java.lang.Object serverIp;
+            private final java.lang.Object type;
+            private final java.lang.Object weight;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -191,33 +323,54 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Number port, final java.lang.String serverId, final java.lang.Number weight) {
+            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object serverId, final java.lang.Object description, final java.lang.Object serverIp, final java.lang.Object type, final java.lang.Object weight) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.port = java.util.Objects.requireNonNull(port, "port is required");
                 this.serverId = java.util.Objects.requireNonNull(serverId, "serverId is required");
+                this.description = description;
+                this.serverIp = serverIp;
+                this.type = type;
                 this.weight = weight;
             }
 
             @Override
-            public final java.lang.Number getPort() {
+            public final java.lang.Object getPort() {
                 return this.port;
             }
 
             @Override
-            public final java.lang.String getServerId() {
+            public final java.lang.Object getServerId() {
                 return this.serverId;
             }
 
             @Override
-            public final java.lang.Number getWeight() {
+            public final java.lang.Object getDescription() {
+                return this.description;
+            }
+
+            @Override
+            public final java.lang.Object getServerIp() {
+                return this.serverIp;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getWeight() {
                 return this.weight;
             }
 
@@ -229,6 +382,15 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
 
                 data.set("port", om.valueToTree(this.getPort()));
                 data.set("serverId", om.valueToTree(this.getServerId()));
+                if (this.getDescription() != null) {
+                    data.set("description", om.valueToTree(this.getDescription()));
+                }
+                if (this.getServerIp() != null) {
+                    data.set("serverIp", om.valueToTree(this.getServerIp()));
+                }
+                if (this.getType() != null) {
+                    data.set("type", om.valueToTree(this.getType()));
+                }
                 if (this.getWeight() != null) {
                     data.set("weight", om.valueToTree(this.getWeight()));
                 }
@@ -252,6 +414,9 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
 
                 if (!port.equals(that.port)) return false;
                 if (!serverId.equals(that.serverId)) return false;
+                if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                if (this.serverIp != null ? !this.serverIp.equals(that.serverIp) : that.serverIp != null) return false;
+                if (this.type != null ? !this.type.equals(that.type) : that.type != null) return false;
                 return this.weight != null ? this.weight.equals(that.weight) : that.weight == null;
             }
 
@@ -259,6 +424,9 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
             public final int hashCode() {
                 int result = this.port.hashCode();
                 result = 31 * result + (this.serverId.hashCode());
+                result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.serverIp != null ? this.serverIp.hashCode() : 0);
+                result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
                 result = 31 * result + (this.weight != null ? this.weight.hashCode() : 0);
                 return result;
             }
@@ -313,6 +481,14 @@ public class RosBackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.c
          * @param vServerGroupId This parameter is required.
          */
         public Builder vServerGroupId(final java.lang.String vServerGroupId) {
+            this.props.vServerGroupId(vServerGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vServerGroupId This parameter is required.
+         */
+        public Builder vServerGroupId(final com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
             this.props.vServerGroupId(vServerGroupId);
             return this;
         }

@@ -11,27 +11,27 @@ export interface InstanceProps {
     /**
      * Property instanceName: The name of the instance.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * Property clusterType: Cluster type, the default is SSD.
      */
-    readonly clusterType?: string;
+    readonly clusterType?: string | ros.IResolvable;
 
     /**
      * Property description: Instance description.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property network: Instance network type, default is NORMAL.
      */
-    readonly network?: string;
+    readonly network?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -47,22 +47,22 @@ export class Instance extends ros.Resource {
     /**
      * Attribute InstanceName: Instance name
      */
-    public readonly attrInstanceName: any;
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * Attribute PrivateEndpoint: Private endpoint
      */
-    public readonly attrPrivateEndpoint: any;
+    public readonly attrPrivateEndpoint: ros.IResolvable;
 
     /**
      * Attribute PublicEndpoint: Public endpoint
      */
-    public readonly attrPublicEndpoint: any;
+    public readonly attrPublicEndpoint: ros.IResolvable;
 
     /**
      * Attribute VpcEndpoint: Vpc endpoint
      */
-    public readonly attrVpcEndpoint: any;
+    public readonly attrVpcEndpoint: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OTS::Instance`.
@@ -79,7 +79,7 @@ export class Instance extends ros.Resource {
             description: props.description,
             network: props.network ? props.network : 'NORMAL',
             clusterType: props.clusterType ? props.clusterType : 'SSD',
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrInstanceName = rosInstance.attrInstanceName;

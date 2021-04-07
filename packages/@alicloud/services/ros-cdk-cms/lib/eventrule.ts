@@ -16,31 +16,31 @@ export interface EventRuleProps {
     /**
      * Property ruleName: The name of the alarm rule.
      */
-    readonly ruleName: string;
+    readonly ruleName: string | ros.IResolvable;
 
     /**
      * Property description: The description of the alert rule.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property eventType: The type of the event alert. Valid values:
      * SYSTEM
      * CUSTOM
      */
-    readonly eventType?: string;
+    readonly eventType?: string | ros.IResolvable;
 
     /**
      * Property groupId: The ID of the application group.
      */
-    readonly groupId?: string;
+    readonly groupId?: string | ros.IResolvable;
 
     /**
      * Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
      */
-    readonly state?: string;
+    readonly state?: string | ros.IResolvable;
 }
 
 /**
@@ -56,7 +56,7 @@ export class EventRule extends ros.Resource {
     /**
      * Attribute Data: Number of rows affected.
      */
-    public readonly attrData: any;
+    public readonly attrData: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::EventRule`.

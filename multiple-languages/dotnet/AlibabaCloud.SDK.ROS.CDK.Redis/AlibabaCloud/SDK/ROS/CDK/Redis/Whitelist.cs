@@ -36,24 +36,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
         /// </remarks>
-        [JsiiProperty(name: "attrSecurityIpGroupAttribute", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityIpGroupAttribute
+        [JsiiProperty(name: "attrSecurityIpGroupAttribute", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityIpGroupAttribute
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecurityIpGroupName: Whitelist group.</summary>
-        [JsiiProperty(name: "attrSecurityIpGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityIpGroupName
+        [JsiiProperty(name: "attrSecurityIpGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityIpGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecurityIps: IP address whitelist to be modified.</summary>
-        [JsiiProperty(name: "attrSecurityIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityIps
+        [JsiiProperty(name: "attrSecurityIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

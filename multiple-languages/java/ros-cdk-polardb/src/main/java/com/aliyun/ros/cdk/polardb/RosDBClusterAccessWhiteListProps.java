@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteListProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterAccessWhiteListProps.Jsii$Proxy.class)
 public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecurityIps();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityIps();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbClusterIpArrayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterIpArrayName() {
         return null;
     }
 
@@ -32,9 +32,9 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
      * A builder for {@link RosDBClusterAccessWhiteListProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBClusterAccessWhiteListProps> {
-        private java.lang.String dbClusterId;
-        private java.lang.String securityIps;
-        private java.lang.String dbClusterIpArrayName;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object securityIps;
+        private java.lang.Object dbClusterIpArrayName;
 
         /**
          * Sets the value of {@link RosDBClusterAccessWhiteListProps#getDbClusterId}
@@ -42,6 +42,16 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterAccessWhiteListProps#getDbClusterId}
+         * @param dbClusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.dbClusterId = dbClusterId;
             return this;
         }
@@ -57,11 +67,31 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosDBClusterAccessWhiteListProps#getSecurityIps}
+         * @param securityIps the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder securityIps(com.aliyun.ros.cdk.core.IResolvable securityIps) {
+            this.securityIps = securityIps;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterAccessWhiteListProps#getDbClusterIpArrayName}
          * @param dbClusterIpArrayName the value to be set.
          * @return {@code this}
          */
         public Builder dbClusterIpArrayName(java.lang.String dbClusterIpArrayName) {
+            this.dbClusterIpArrayName = dbClusterIpArrayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterAccessWhiteListProps#getDbClusterIpArrayName}
+         * @param dbClusterIpArrayName the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbClusterIpArrayName(com.aliyun.ros.cdk.core.IResolvable dbClusterIpArrayName) {
             this.dbClusterIpArrayName = dbClusterIpArrayName;
             return this;
         }
@@ -82,9 +112,9 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBClusterAccessWhiteListProps {
-        private final java.lang.String dbClusterId;
-        private final java.lang.String securityIps;
-        private final java.lang.String dbClusterIpArrayName;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object securityIps;
+        private final java.lang.Object dbClusterIpArrayName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +122,15 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityIps = software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbClusterIpArrayName = software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityIps = software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterIpArrayName = software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbClusterId, final java.lang.String securityIps, final java.lang.String dbClusterIpArrayName) {
+        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object securityIps, final java.lang.Object dbClusterIpArrayName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
             this.securityIps = java.util.Objects.requireNonNull(securityIps, "securityIps is required");
@@ -108,17 +138,17 @@ public interface RosDBClusterAccessWhiteListProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getSecurityIps() {
+        public final java.lang.Object getSecurityIps() {
             return this.securityIps;
         }
 
         @Override
-        public final java.lang.String getDbClusterIpArrayName() {
+        public final java.lang.Object getDbClusterIpArrayName() {
             return this.dbClusterIpArrayName;
         }
 

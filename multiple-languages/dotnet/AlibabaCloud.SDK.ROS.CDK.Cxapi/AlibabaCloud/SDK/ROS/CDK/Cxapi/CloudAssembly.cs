@@ -69,7 +69,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <summary>Returns a ROS stack artifact from this assembly.</summary>
         /// <remarks>
         /// Will only search the current assembly.
-        /// 
+        ///
         /// Param stackName the name of the ROS stack.
         /// Throws if there is no stack artifact by that name
         /// Throws if there is more than one stack with the same stack name. You can

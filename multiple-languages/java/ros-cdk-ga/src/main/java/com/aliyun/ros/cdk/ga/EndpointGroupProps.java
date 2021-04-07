@@ -3,72 +3,90 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::EndpointGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.997Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.588Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.EndpointGroupProps")
 @software.amazon.jsii.Jsii.Proxy(EndpointGroupProps.Jsii$Proxy.class)
 public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId();
 
     /**
+     * Property endpointConfigurations:.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEndpointConfigurations();
 
     /**
+     * Property endpointGroupRegion: The region ID of the endpoint group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEndpointGroupRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEndpointGroupRegion();
 
     /**
+     * Property listenerId: The ID of the listener to be associated with the endpoint group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getListenerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerId();
 
     /**
+     * Property description: The description of the endpoint group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property healthCheckIntervalSeconds: The interval between two consecutive health checks.
+     * <p>
+     * Unit: seconds.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getHealthCheckIntervalSeconds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckIntervalSeconds() {
         return null;
     }
 
     /**
+     * Property healthCheckPath: The path set as the destination on the targets for health checks.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckPath() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckPath() {
         return null;
     }
 
     /**
+     * Property healthCheckPort: The port that is used to connect with the targets for health checks.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getHealthCheckPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckPort() {
         return null;
     }
 
     /**
+     * Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
+     * <p>
+     * tcp: TCP protocol
+     * http: HTTP protocol
+     * https: HTTPS protocol
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckProtocol() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckProtocol() {
         return null;
     }
 
     /**
+     * Property name: The name of the endpoint group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getThresholdCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getThresholdCount() {
         return null;
     }
 
     /**
+     * Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with multiple endpoint groups.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTrafficPercentage() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTrafficPercentage() {
         return null;
     }
 
@@ -82,22 +100,22 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link EndpointGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<EndpointGroupProps> {
-        private java.lang.String acceleratorId;
+        private java.lang.Object acceleratorId;
         private java.lang.Object endpointConfigurations;
-        private java.lang.String endpointGroupRegion;
-        private java.lang.String listenerId;
-        private java.lang.String description;
-        private java.lang.Number healthCheckIntervalSeconds;
-        private java.lang.String healthCheckPath;
-        private java.lang.Number healthCheckPort;
-        private java.lang.String healthCheckProtocol;
-        private java.lang.String name;
-        private java.lang.Number thresholdCount;
-        private java.lang.Number trafficPercentage;
+        private java.lang.Object endpointGroupRegion;
+        private java.lang.Object listenerId;
+        private java.lang.Object description;
+        private java.lang.Object healthCheckIntervalSeconds;
+        private java.lang.Object healthCheckPath;
+        private java.lang.Object healthCheckPort;
+        private java.lang.Object healthCheckProtocol;
+        private java.lang.Object name;
+        private java.lang.Object thresholdCount;
+        private java.lang.Object trafficPercentage;
 
         /**
          * Sets the value of {@link EndpointGroupProps#getAcceleratorId}
-         * @param acceleratorId the value to be set. This parameter is required.
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated. This parameter is required.
          * @return {@code this}
          */
         public Builder acceleratorId(java.lang.String acceleratorId) {
@@ -106,8 +124,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getAcceleratorId}
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder acceleratorId(com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.acceleratorId = acceleratorId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getEndpointConfigurations}
-         * @param endpointConfigurations the value to be set. This parameter is required.
+         * @param endpointConfigurations Property endpointConfigurations:. This parameter is required.
          * @return {@code this}
          */
         public Builder endpointConfigurations(com.aliyun.ros.cdk.core.IResolvable endpointConfigurations) {
@@ -117,7 +145,7 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link EndpointGroupProps#getEndpointConfigurations}
-         * @param endpointConfigurations the value to be set. This parameter is required.
+         * @param endpointConfigurations Property endpointConfigurations:. This parameter is required.
          * @return {@code this}
          */
         public Builder endpointConfigurations(java.util.List<? extends java.lang.Object> endpointConfigurations) {
@@ -127,7 +155,7 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link EndpointGroupProps#getEndpointGroupRegion}
-         * @param endpointGroupRegion the value to be set. This parameter is required.
+         * @param endpointGroupRegion Property endpointGroupRegion: The region ID of the endpoint group. This parameter is required.
          * @return {@code this}
          */
         public Builder endpointGroupRegion(java.lang.String endpointGroupRegion) {
@@ -136,8 +164,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getEndpointGroupRegion}
+         * @param endpointGroupRegion Property endpointGroupRegion: The region ID of the endpoint group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder endpointGroupRegion(com.aliyun.ros.cdk.core.IResolvable endpointGroupRegion) {
+            this.endpointGroupRegion = endpointGroupRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getListenerId}
-         * @param listenerId the value to be set. This parameter is required.
+         * @param listenerId Property listenerId: The ID of the listener to be associated with the endpoint group. This parameter is required.
          * @return {@code this}
          */
         public Builder listenerId(java.lang.String listenerId) {
@@ -146,8 +184,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getListenerId}
+         * @param listenerId Property listenerId: The ID of the listener to be associated with the endpoint group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder listenerId(com.aliyun.ros.cdk.core.IResolvable listenerId) {
+            this.listenerId = listenerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the endpoint group.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -156,8 +204,19 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getDescription}
+         * @param description Property description: The description of the endpoint group.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getHealthCheckIntervalSeconds}
-         * @param healthCheckIntervalSeconds the value to be set.
+         * @param healthCheckIntervalSeconds Property healthCheckIntervalSeconds: The interval between two consecutive health checks.
+         *                                   Unit: seconds.
          * @return {@code this}
          */
         public Builder healthCheckIntervalSeconds(java.lang.Number healthCheckIntervalSeconds) {
@@ -166,8 +225,19 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckIntervalSeconds}
+         * @param healthCheckIntervalSeconds Property healthCheckIntervalSeconds: The interval between two consecutive health checks.
+         *                                   Unit: seconds.
+         * @return {@code this}
+         */
+        public Builder healthCheckIntervalSeconds(com.aliyun.ros.cdk.core.IResolvable healthCheckIntervalSeconds) {
+            this.healthCheckIntervalSeconds = healthCheckIntervalSeconds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getHealthCheckPath}
-         * @param healthCheckPath the value to be set.
+         * @param healthCheckPath Property healthCheckPath: The path set as the destination on the targets for health checks.
          * @return {@code this}
          */
         public Builder healthCheckPath(java.lang.String healthCheckPath) {
@@ -176,8 +246,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckPath}
+         * @param healthCheckPath Property healthCheckPath: The path set as the destination on the targets for health checks.
+         * @return {@code this}
+         */
+        public Builder healthCheckPath(com.aliyun.ros.cdk.core.IResolvable healthCheckPath) {
+            this.healthCheckPath = healthCheckPath;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getHealthCheckPort}
-         * @param healthCheckPort the value to be set.
+         * @param healthCheckPort Property healthCheckPort: The port that is used to connect with the targets for health checks.
          * @return {@code this}
          */
         public Builder healthCheckPort(java.lang.Number healthCheckPort) {
@@ -186,8 +266,21 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckPort}
+         * @param healthCheckPort Property healthCheckPort: The port that is used to connect with the targets for health checks.
+         * @return {@code this}
+         */
+        public Builder healthCheckPort(com.aliyun.ros.cdk.core.IResolvable healthCheckPort) {
+            this.healthCheckPort = healthCheckPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getHealthCheckProtocol}
-         * @param healthCheckProtocol the value to be set.
+         * @param healthCheckProtocol Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
+         *                            tcp: TCP protocol
+         *                            http: HTTP protocol
+         *                            https: HTTPS protocol
          * @return {@code this}
          */
         public Builder healthCheckProtocol(java.lang.String healthCheckProtocol) {
@@ -196,8 +289,21 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getHealthCheckProtocol}
+         * @param healthCheckProtocol Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
+         *                            tcp: TCP protocol
+         *                            http: HTTP protocol
+         *                            https: HTTPS protocol
+         * @return {@code this}
+         */
+        public Builder healthCheckProtocol(com.aliyun.ros.cdk.core.IResolvable healthCheckProtocol) {
+            this.healthCheckProtocol = healthCheckProtocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the endpoint group.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -206,8 +312,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getName}
+         * @param name Property name: The name of the endpoint group.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getThresholdCount}
-         * @param thresholdCount the value to be set.
+         * @param thresholdCount Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
          * @return {@code this}
          */
         public Builder thresholdCount(java.lang.Number thresholdCount) {
@@ -216,11 +332,31 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link EndpointGroupProps#getThresholdCount}
+         * @param thresholdCount Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+         * @return {@code this}
+         */
+        public Builder thresholdCount(com.aliyun.ros.cdk.core.IResolvable thresholdCount) {
+            this.thresholdCount = thresholdCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EndpointGroupProps#getTrafficPercentage}
-         * @param trafficPercentage the value to be set.
+         * @param trafficPercentage Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with multiple endpoint groups.
          * @return {@code this}
          */
         public Builder trafficPercentage(java.lang.Number trafficPercentage) {
+            this.trafficPercentage = trafficPercentage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EndpointGroupProps#getTrafficPercentage}
+         * @param trafficPercentage Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with multiple endpoint groups.
+         * @return {@code this}
+         */
+        public Builder trafficPercentage(com.aliyun.ros.cdk.core.IResolvable trafficPercentage) {
             this.trafficPercentage = trafficPercentage;
             return this;
         }
@@ -241,18 +377,18 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EndpointGroupProps {
-        private final java.lang.String acceleratorId;
+        private final java.lang.Object acceleratorId;
         private final java.lang.Object endpointConfigurations;
-        private final java.lang.String endpointGroupRegion;
-        private final java.lang.String listenerId;
-        private final java.lang.String description;
-        private final java.lang.Number healthCheckIntervalSeconds;
-        private final java.lang.String healthCheckPath;
-        private final java.lang.Number healthCheckPort;
-        private final java.lang.String healthCheckProtocol;
-        private final java.lang.String name;
-        private final java.lang.Number thresholdCount;
-        private final java.lang.Number trafficPercentage;
+        private final java.lang.Object endpointGroupRegion;
+        private final java.lang.Object listenerId;
+        private final java.lang.Object description;
+        private final java.lang.Object healthCheckIntervalSeconds;
+        private final java.lang.Object healthCheckPath;
+        private final java.lang.Object healthCheckPort;
+        private final java.lang.Object healthCheckProtocol;
+        private final java.lang.Object name;
+        private final java.lang.Object thresholdCount;
+        private final java.lang.Object trafficPercentage;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -260,24 +396,24 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointConfigurations = software.amazon.jsii.Kernel.get(this, "endpointConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.endpointGroupRegion = software.amazon.jsii.Kernel.get(this, "endpointGroupRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.listenerId = software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckIntervalSeconds = software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.healthCheckPath = software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckPort = software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.healthCheckProtocol = software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.thresholdCount = software.amazon.jsii.Kernel.get(this, "thresholdCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.trafficPercentage = software.amazon.jsii.Kernel.get(this, "trafficPercentage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.endpointGroupRegion = software.amazon.jsii.Kernel.get(this, "endpointGroupRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerId = software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckIntervalSeconds = software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckPath = software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckPort = software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckProtocol = software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.thresholdCount = software.amazon.jsii.Kernel.get(this, "thresholdCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.trafficPercentage = software.amazon.jsii.Kernel.get(this, "trafficPercentage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String acceleratorId, final java.lang.Object endpointConfigurations, final java.lang.String endpointGroupRegion, final java.lang.String listenerId, final java.lang.String description, final java.lang.Number healthCheckIntervalSeconds, final java.lang.String healthCheckPath, final java.lang.Number healthCheckPort, final java.lang.String healthCheckProtocol, final java.lang.String name, final java.lang.Number thresholdCount, final java.lang.Number trafficPercentage) {
+        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object endpointConfigurations, final java.lang.Object endpointGroupRegion, final java.lang.Object listenerId, final java.lang.Object description, final java.lang.Object healthCheckIntervalSeconds, final java.lang.Object healthCheckPath, final java.lang.Object healthCheckPort, final java.lang.Object healthCheckProtocol, final java.lang.Object name, final java.lang.Object thresholdCount, final java.lang.Object trafficPercentage) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
             this.endpointConfigurations = java.util.Objects.requireNonNull(endpointConfigurations, "endpointConfigurations is required");
@@ -294,7 +430,7 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getAcceleratorId() {
+        public final java.lang.Object getAcceleratorId() {
             return this.acceleratorId;
         }
 
@@ -304,52 +440,52 @@ public interface EndpointGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getEndpointGroupRegion() {
+        public final java.lang.Object getEndpointGroupRegion() {
             return this.endpointGroupRegion;
         }
 
         @Override
-        public final java.lang.String getListenerId() {
+        public final java.lang.Object getListenerId() {
             return this.listenerId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getHealthCheckIntervalSeconds() {
+        public final java.lang.Object getHealthCheckIntervalSeconds() {
             return this.healthCheckIntervalSeconds;
         }
 
         @Override
-        public final java.lang.String getHealthCheckPath() {
+        public final java.lang.Object getHealthCheckPath() {
             return this.healthCheckPath;
         }
 
         @Override
-        public final java.lang.Number getHealthCheckPort() {
+        public final java.lang.Object getHealthCheckPort() {
             return this.healthCheckPort;
         }
 
         @Override
-        public final java.lang.String getHealthCheckProtocol() {
+        public final java.lang.Object getHealthCheckProtocol() {
             return this.healthCheckProtocol;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getThresholdCount() {
+        public final java.lang.Object getThresholdCount() {
             return this.thresholdCount;
         }
 
         @Override
-        public final java.lang.Number getTrafficPercentage() {
+        public final java.lang.Object getTrafficPercentage() {
             return this.trafficPercentage;
         }
 

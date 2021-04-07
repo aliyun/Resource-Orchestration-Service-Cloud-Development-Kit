@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute CustomerGatewayId: The ID of the user gateway.</summary>
-        [JsiiProperty(name: "attrCustomerGatewayId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCustomerGatewayId
+        [JsiiProperty(name: "attrCustomerGatewayId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomerGatewayId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

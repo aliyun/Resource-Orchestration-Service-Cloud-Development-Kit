@@ -19,12 +19,12 @@ export interface DatabaseProps {
      * | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
      * SQL_ASCII.
      */
-    readonly characterSetName: string;
+    readonly characterSetName: string | ros.IResolvable;
 
     /**
      * Property dbInstanceId: The ID of the instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property dbName: The name of the database you want to create.
@@ -35,7 +35,7 @@ export interface DatabaseProps {
      * The name must be unique in the instance.
      * For more information about invalid characters, see Forbidden keywords table.
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 
     /**
      * Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
@@ -43,7 +43,7 @@ export interface DatabaseProps {
      * (_), and hyphens (-).
      * Note The description cannot start with http:// or https://.
      */
-    readonly dbDescription?: string;
+    readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**
@@ -59,12 +59,12 @@ export class Database extends ros.Resource {
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Attribute DBName: The name of the database.
      */
-    public readonly attrDbName: any;
+    public readonly attrDbName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::Database`.

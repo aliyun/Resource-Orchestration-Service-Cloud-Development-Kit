@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS resource type:  `ALIYUN::OTS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.149Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.772Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::Instance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.InstanceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::Instance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,27 +49,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute InstanceName: Instance name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PrivateEndpoint: Private endpoint.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateEndpoint() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrivateEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateEndpoint", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PublicEndpoint: Public endpoint.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicEndpoint() {
-        return software.amazon.jsii.Kernel.get(this, "attrPublicEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicEndpoint", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute VpcEndpoint: Vpc endpoint.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcEndpoint() {
-        return software.amazon.jsii.Kernel.get(this, "attrVpcEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcEndpoint", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -70,8 +82,8 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ots.Instance> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -79,8 +91,8 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -99,46 +111,98 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceName: The name of the instance.
+         * <p>
          * @return {@code this}
-         * @param instanceName This parameter is required.
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * Property instanceName: The name of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
+         * Property clusterType: Cluster type, the default is SSD.
+         * <p>
          * @return {@code this}
-         * @param clusterType This parameter is required.
+         * @param clusterType Property clusterType: Cluster type, the default is SSD. This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
+        /**
+         * Property clusterType: Cluster type, the default is SSD.
+         * <p>
+         * @return {@code this}
+         * @param clusterType Property clusterType: Cluster type, the default is SSD. This parameter is required.
+         */
+        public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.props.clusterType(clusterType);
+            return this;
+        }
 
         /**
+         * Property description: Instance description.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Instance description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Instance description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Instance description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property network: Instance network type, default is NORMAL.
+         * <p>
          * @return {@code this}
-         * @param network This parameter is required.
+         * @param network Property network: Instance network type, default is NORMAL. This parameter is required.
          */
         public Builder network(final java.lang.String network) {
             this.props.network(network);
             return this;
         }
+        /**
+         * Property network: Instance network type, default is NORMAL.
+         * <p>
+         * @return {@code this}
+         * @param network Property network: Instance network type, default is NORMAL. This parameter is required.
+         */
+        public Builder network(final com.aliyun.ros.cdk.core.IResolvable network) {
+            this.props.network(network);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }

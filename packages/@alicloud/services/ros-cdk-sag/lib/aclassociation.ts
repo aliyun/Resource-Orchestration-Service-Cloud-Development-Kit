@@ -11,12 +11,12 @@ export interface ACLAssociationProps {
     /**
      * Property aclId: Access control ID.
      */
-    readonly aclId: string;
+    readonly aclId: string | ros.IResolvable;
 
     /**
      * Property smartAgId: An intelligent gateway instance that needs to bind access control.
      */
-    readonly smartAgId: string;
+    readonly smartAgId: string | ros.IResolvable;
 }
 
 /**

@@ -11,24 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
     public class ScheduleProps : AlibabaCloud.SDK.ROS.CDK.Fnf.IScheduleProps
     {
         /// <summary>Property cronExpression: Cron expression.</summary>
-        [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CronExpression
+        [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CronExpression
         {
             get;
             set;
         }
 
         /// <summary>Property flowName: Flow name.</summary>
-        [JsiiProperty(name: "flowName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string FlowName
+        [JsiiProperty(name: "flowName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object FlowName
         {
             get;
             set;
         }
 
         /// <summary>Property scheduleName: Schedule name.</summary>
-        [JsiiProperty(name: "scheduleName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ScheduleName
+        [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ScheduleName
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 
         /// <summary>Property description: Description of the schedule.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -54,8 +54,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 
         /// <summary>Property payload: Payload.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "payload", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Payload
+        [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Payload
         {
             get;
             set;

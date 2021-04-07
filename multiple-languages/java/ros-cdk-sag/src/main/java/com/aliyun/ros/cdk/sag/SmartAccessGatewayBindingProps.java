@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::SmartAccessGatewayBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.051Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.SmartAccessGatewayBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SmartAccessGatewayBindingProps.Jsii$Proxy.class)
 public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property ccnId: The ID of the CCN instance to bind.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCcnId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCcnId();
 
     /**
+     * Property smartAgId: The ID of the Smart Access Gateway instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSmartAgId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSmartAgId();
 
     /**
      * @return a {@link Builder} of {@link SmartAccessGatewayBindingProps}
@@ -26,12 +28,12 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
      * A builder for {@link SmartAccessGatewayBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SmartAccessGatewayBindingProps> {
-        private java.lang.String ccnId;
-        private java.lang.String smartAgId;
+        private java.lang.Object ccnId;
+        private java.lang.Object smartAgId;
 
         /**
          * Sets the value of {@link SmartAccessGatewayBindingProps#getCcnId}
-         * @param ccnId the value to be set. This parameter is required.
+         * @param ccnId Property ccnId: The ID of the CCN instance to bind. This parameter is required.
          * @return {@code this}
          */
         public Builder ccnId(java.lang.String ccnId) {
@@ -40,11 +42,31 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link SmartAccessGatewayBindingProps#getCcnId}
+         * @param ccnId Property ccnId: The ID of the CCN instance to bind. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ccnId(com.aliyun.ros.cdk.core.IResolvable ccnId) {
+            this.ccnId = ccnId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SmartAccessGatewayBindingProps#getSmartAgId}
-         * @param smartAgId the value to be set. This parameter is required.
+         * @param smartAgId Property smartAgId: The ID of the Smart Access Gateway instance. This parameter is required.
          * @return {@code this}
          */
         public Builder smartAgId(java.lang.String smartAgId) {
+            this.smartAgId = smartAgId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SmartAccessGatewayBindingProps#getSmartAgId}
+         * @param smartAgId Property smartAgId: The ID of the Smart Access Gateway instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder smartAgId(com.aliyun.ros.cdk.core.IResolvable smartAgId) {
             this.smartAgId = smartAgId;
             return this;
         }
@@ -65,8 +87,8 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SmartAccessGatewayBindingProps {
-        private final java.lang.String ccnId;
-        private final java.lang.String smartAgId;
+        private final java.lang.Object ccnId;
+        private final java.lang.Object smartAgId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.Jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ccnId = software.amazon.jsii.Kernel.get(this, "ccnId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.smartAgId = software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ccnId = software.amazon.jsii.Kernel.get(this, "ccnId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.smartAgId = software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ccnId, final java.lang.String smartAgId) {
+        protected Jsii$Proxy(final java.lang.Object ccnId, final java.lang.Object smartAgId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ccnId = java.util.Objects.requireNonNull(ccnId, "ccnId is required");
             this.smartAgId = java.util.Objects.requireNonNull(smartAgId, "smartAgId is required");
         }
 
         @Override
-        public final java.lang.String getCcnId() {
+        public final java.lang.Object getCcnId() {
             return this.ccnId;
         }
 
         @Override
-        public final java.lang.String getSmartAgId() {
+        public final java.lang.Object getSmartAgId() {
             return this.smartAgId;
         }
 

@@ -16,7 +16,7 @@ export interface BackendServerToVServerGroupAdditionProps {
     /**
      * Property vServerGroupId: The ID of virtual server group.
      */
-    readonly vServerGroupId: string;
+    readonly vServerGroupId: string | ros.IResolvable;
 }
 
 /**
@@ -32,7 +32,7 @@ export class BackendServerToVServerGroupAddition extends ros.Resource {
     /**
      * Attribute VServerGroupId: The ID of virtual server group.
      */
-    public readonly attrVServerGroupId: any;
+    public readonly attrVServerGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.

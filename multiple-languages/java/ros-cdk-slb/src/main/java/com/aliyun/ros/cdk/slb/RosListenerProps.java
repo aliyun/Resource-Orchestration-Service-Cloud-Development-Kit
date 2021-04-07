@@ -3,52 +3,58 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBackendServerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBackendServerPort();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAclType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCaCertificateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificateId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -66,13 +72,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIdleTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIdleTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterSlaveServerGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSlaveServerGroupId() {
         return null;
     }
 
@@ -84,25 +90,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRequestTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPortRange() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScheduler() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRequestTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServerCertificateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScheduler() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVServerGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerCertificateId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVServerGroupId() {
         return null;
     }
 
@@ -116,24 +128,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosListenerProps> {
-        private java.lang.Number backendServerPort;
-        private java.lang.Number bandwidth;
-        private java.lang.Number listenerPort;
-        private java.lang.String loadBalancerId;
-        private java.lang.String protocol;
-        private java.lang.String aclId;
-        private java.lang.String aclStatus;
-        private java.lang.String aclType;
-        private java.lang.String caCertificateId;
+        private java.lang.Object backendServerPort;
+        private java.lang.Object bandwidth;
+        private java.lang.Object listenerPort;
+        private java.lang.Object loadBalancerId;
+        private java.lang.Object protocol;
+        private java.lang.Object aclId;
+        private java.lang.Object aclStatus;
+        private java.lang.Object aclType;
+        private java.lang.Object caCertificateId;
+        private java.lang.Object description;
         private java.lang.Object healthCheck;
         private java.lang.Object httpConfig;
-        private java.lang.Number idleTimeout;
-        private java.lang.String masterSlaveServerGroupId;
+        private java.lang.Object idleTimeout;
+        private java.lang.Object masterSlaveServerGroupId;
         private java.lang.Object persistence;
-        private java.lang.Number requestTimeout;
-        private java.lang.String scheduler;
-        private java.lang.String serverCertificateId;
-        private java.lang.String vServerGroupId;
+        private java.lang.Object portRange;
+        private java.lang.Object requestTimeout;
+        private java.lang.Object scheduler;
+        private java.lang.Object serverCertificateId;
+        private java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link RosListenerProps#getBackendServerPort}
@@ -141,6 +155,16 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder backendServerPort(java.lang.Number backendServerPort) {
+            this.backendServerPort = backendServerPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getBackendServerPort}
+         * @param backendServerPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder backendServerPort(com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
             this.backendServerPort = backendServerPort;
             return this;
         }
@@ -156,11 +180,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getBandwidth}
+         * @param bandwidth the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getListenerPort}
          * @param listenerPort the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder listenerPort(java.lang.Number listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getListenerPort}
+         * @param listenerPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
             this.listenerPort = listenerPort;
             return this;
         }
@@ -176,11 +220,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getLoadBalancerId}
+         * @param loadBalancerId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getProtocol}
          * @param protocol the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder protocol(java.lang.String protocol) {
+            this.protocol = protocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getProtocol}
+         * @param protocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
             this.protocol = protocol;
             return this;
         }
@@ -196,11 +260,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getAclId}
+         * @param aclId the value to be set.
+         * @return {@code this}
+         */
+        public Builder aclId(com.aliyun.ros.cdk.core.IResolvable aclId) {
+            this.aclId = aclId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getAclStatus}
          * @param aclStatus the value to be set.
          * @return {@code this}
          */
         public Builder aclStatus(java.lang.String aclStatus) {
+            this.aclStatus = aclStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getAclStatus}
+         * @param aclStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder aclStatus(com.aliyun.ros.cdk.core.IResolvable aclStatus) {
             this.aclStatus = aclStatus;
             return this;
         }
@@ -216,12 +300,52 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getAclType}
+         * @param aclType the value to be set.
+         * @return {@code this}
+         */
+        public Builder aclType(com.aliyun.ros.cdk.core.IResolvable aclType) {
+            this.aclType = aclType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getCaCertificateId}
          * @param caCertificateId the value to be set.
          * @return {@code this}
          */
         public Builder caCertificateId(java.lang.String caCertificateId) {
             this.caCertificateId = caCertificateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getCaCertificateId}
+         * @param caCertificateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder caCertificateId(com.aliyun.ros.cdk.core.IResolvable caCertificateId) {
+            this.caCertificateId = caCertificateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
             return this;
         }
 
@@ -276,11 +400,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getIdleTimeout}
+         * @param idleTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder idleTimeout(com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
+            this.idleTimeout = idleTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getMasterSlaveServerGroupId}
          * @param masterSlaveServerGroupId the value to be set.
          * @return {@code this}
          */
         public Builder masterSlaveServerGroupId(java.lang.String masterSlaveServerGroupId) {
+            this.masterSlaveServerGroupId = masterSlaveServerGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getMasterSlaveServerGroupId}
+         * @param masterSlaveServerGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterSlaveServerGroupId(com.aliyun.ros.cdk.core.IResolvable masterSlaveServerGroupId) {
             this.masterSlaveServerGroupId = masterSlaveServerGroupId;
             return this;
         }
@@ -306,11 +450,41 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getPortRange}
+         * @param portRange the value to be set.
+         * @return {@code this}
+         */
+        public Builder portRange(com.aliyun.ros.cdk.core.IResolvable portRange) {
+            this.portRange = portRange;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getPortRange}
+         * @param portRange the value to be set.
+         * @return {@code this}
+         */
+        public Builder portRange(java.util.List<? extends java.lang.Object> portRange) {
+            this.portRange = portRange;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getRequestTimeout}
          * @param requestTimeout the value to be set.
          * @return {@code this}
          */
         public Builder requestTimeout(java.lang.Number requestTimeout) {
+            this.requestTimeout = requestTimeout;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getRequestTimeout}
+         * @param requestTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder requestTimeout(com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
             this.requestTimeout = requestTimeout;
             return this;
         }
@@ -326,11 +500,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getScheduler}
+         * @param scheduler the value to be set.
+         * @return {@code this}
+         */
+        public Builder scheduler(com.aliyun.ros.cdk.core.IResolvable scheduler) {
+            this.scheduler = scheduler;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getServerCertificateId}
          * @param serverCertificateId the value to be set.
          * @return {@code this}
          */
         public Builder serverCertificateId(java.lang.String serverCertificateId) {
+            this.serverCertificateId = serverCertificateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getServerCertificateId}
+         * @param serverCertificateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverCertificateId(com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.serverCertificateId = serverCertificateId;
             return this;
         }
@@ -346,13 +540,23 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getVServerGroupId}
+         * @param vServerGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vServerGroupId(com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
+            this.vServerGroupId = vServerGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosListenerProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosListenerProps build() {
-            return new Jsii$Proxy(backendServerPort, bandwidth, listenerPort, loadBalancerId, protocol, aclId, aclStatus, aclType, caCertificateId, healthCheck, httpConfig, idleTimeout, masterSlaveServerGroupId, persistence, requestTimeout, scheduler, serverCertificateId, vServerGroupId);
+            return new Jsii$Proxy(backendServerPort, bandwidth, listenerPort, loadBalancerId, protocol, aclId, aclStatus, aclType, caCertificateId, description, healthCheck, httpConfig, idleTimeout, masterSlaveServerGroupId, persistence, portRange, requestTimeout, scheduler, serverCertificateId, vServerGroupId);
         }
     }
 
@@ -361,24 +565,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosListenerProps {
-        private final java.lang.Number backendServerPort;
-        private final java.lang.Number bandwidth;
-        private final java.lang.Number listenerPort;
-        private final java.lang.String loadBalancerId;
-        private final java.lang.String protocol;
-        private final java.lang.String aclId;
-        private final java.lang.String aclStatus;
-        private final java.lang.String aclType;
-        private final java.lang.String caCertificateId;
+        private final java.lang.Object backendServerPort;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object listenerPort;
+        private final java.lang.Object loadBalancerId;
+        private final java.lang.Object protocol;
+        private final java.lang.Object aclId;
+        private final java.lang.Object aclStatus;
+        private final java.lang.Object aclType;
+        private final java.lang.Object caCertificateId;
+        private final java.lang.Object description;
         private final java.lang.Object healthCheck;
         private final java.lang.Object httpConfig;
-        private final java.lang.Number idleTimeout;
-        private final java.lang.String masterSlaveServerGroupId;
+        private final java.lang.Object idleTimeout;
+        private final java.lang.Object masterSlaveServerGroupId;
         private final java.lang.Object persistence;
-        private final java.lang.Number requestTimeout;
-        private final java.lang.String scheduler;
-        private final java.lang.String serverCertificateId;
-        private final java.lang.String vServerGroupId;
+        private final java.lang.Object portRange;
+        private final java.lang.Object requestTimeout;
+        private final java.lang.Object scheduler;
+        private final java.lang.Object serverCertificateId;
+        private final java.lang.Object vServerGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -386,30 +592,32 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheck = software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.masterSlaveServerGroupId = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterSlaveServerGroupId = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.persistence = software.amazon.jsii.Kernel.get(this, "persistence", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number backendServerPort, final java.lang.Number bandwidth, final java.lang.Number listenerPort, final java.lang.String loadBalancerId, final java.lang.String protocol, final java.lang.String aclId, final java.lang.String aclStatus, final java.lang.String aclType, final java.lang.String caCertificateId, final java.lang.Object healthCheck, final java.lang.Object httpConfig, final java.lang.Number idleTimeout, final java.lang.String masterSlaveServerGroupId, final java.lang.Object persistence, final java.lang.Number requestTimeout, final java.lang.String scheduler, final java.lang.String serverCertificateId, final java.lang.String vServerGroupId) {
+        protected Jsii$Proxy(final java.lang.Object backendServerPort, final java.lang.Object bandwidth, final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object protocol, final java.lang.Object aclId, final java.lang.Object aclStatus, final java.lang.Object aclType, final java.lang.Object caCertificateId, final java.lang.Object description, final java.lang.Object healthCheck, final java.lang.Object httpConfig, final java.lang.Object idleTimeout, final java.lang.Object masterSlaveServerGroupId, final java.lang.Object persistence, final java.lang.Object portRange, final java.lang.Object requestTimeout, final java.lang.Object scheduler, final java.lang.Object serverCertificateId, final java.lang.Object vServerGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backendServerPort = java.util.Objects.requireNonNull(backendServerPort, "backendServerPort is required");
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
@@ -420,11 +628,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.aclStatus = aclStatus;
             this.aclType = aclType;
             this.caCertificateId = caCertificateId;
+            this.description = description;
             this.healthCheck = healthCheck;
             this.httpConfig = httpConfig;
             this.idleTimeout = idleTimeout;
             this.masterSlaveServerGroupId = masterSlaveServerGroupId;
             this.persistence = persistence;
+            this.portRange = portRange;
             this.requestTimeout = requestTimeout;
             this.scheduler = scheduler;
             this.serverCertificateId = serverCertificateId;
@@ -432,48 +642,53 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getBackendServerPort() {
+        public final java.lang.Object getBackendServerPort() {
             return this.backendServerPort;
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.Number getListenerPort() {
+        public final java.lang.Object getListenerPort() {
             return this.listenerPort;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
         @Override
-        public final java.lang.String getProtocol() {
+        public final java.lang.Object getProtocol() {
             return this.protocol;
         }
 
         @Override
-        public final java.lang.String getAclId() {
+        public final java.lang.Object getAclId() {
             return this.aclId;
         }
 
         @Override
-        public final java.lang.String getAclStatus() {
+        public final java.lang.Object getAclStatus() {
             return this.aclStatus;
         }
 
         @Override
-        public final java.lang.String getAclType() {
+        public final java.lang.Object getAclType() {
             return this.aclType;
         }
 
         @Override
-        public final java.lang.String getCaCertificateId() {
+        public final java.lang.Object getCaCertificateId() {
             return this.caCertificateId;
+        }
+
+        @Override
+        public final java.lang.Object getDescription() {
+            return this.description;
         }
 
         @Override
@@ -487,12 +702,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getIdleTimeout() {
+        public final java.lang.Object getIdleTimeout() {
             return this.idleTimeout;
         }
 
         @Override
-        public final java.lang.String getMasterSlaveServerGroupId() {
+        public final java.lang.Object getMasterSlaveServerGroupId() {
             return this.masterSlaveServerGroupId;
         }
 
@@ -502,22 +717,27 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getRequestTimeout() {
+        public final java.lang.Object getPortRange() {
+            return this.portRange;
+        }
+
+        @Override
+        public final java.lang.Object getRequestTimeout() {
             return this.requestTimeout;
         }
 
         @Override
-        public final java.lang.String getScheduler() {
+        public final java.lang.Object getScheduler() {
             return this.scheduler;
         }
 
         @Override
-        public final java.lang.String getServerCertificateId() {
+        public final java.lang.Object getServerCertificateId() {
             return this.serverCertificateId;
         }
 
         @Override
-        public final java.lang.String getVServerGroupId() {
+        public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
 
@@ -544,6 +764,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getCaCertificateId() != null) {
                 data.set("caCertificateId", om.valueToTree(this.getCaCertificateId()));
             }
+            if (this.getDescription() != null) {
+                data.set("description", om.valueToTree(this.getDescription()));
+            }
             if (this.getHealthCheck() != null) {
                 data.set("healthCheck", om.valueToTree(this.getHealthCheck()));
             }
@@ -558,6 +781,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getPersistence() != null) {
                 data.set("persistence", om.valueToTree(this.getPersistence()));
+            }
+            if (this.getPortRange() != null) {
+                data.set("portRange", om.valueToTree(this.getPortRange()));
             }
             if (this.getRequestTimeout() != null) {
                 data.set("requestTimeout", om.valueToTree(this.getRequestTimeout()));
@@ -598,11 +824,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.aclStatus != null ? !this.aclStatus.equals(that.aclStatus) : that.aclStatus != null) return false;
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
+            if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.healthCheck != null ? !this.healthCheck.equals(that.healthCheck) : that.healthCheck != null) return false;
             if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.masterSlaveServerGroupId != null ? !this.masterSlaveServerGroupId.equals(that.masterSlaveServerGroupId) : that.masterSlaveServerGroupId != null) return false;
             if (this.persistence != null ? !this.persistence.equals(that.persistence) : that.persistence != null) return false;
+            if (this.portRange != null ? !this.portRange.equals(that.portRange) : that.portRange != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverCertificateId != null ? !this.serverCertificateId.equals(that.serverCertificateId) : that.serverCertificateId != null) return false;
@@ -620,11 +848,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.aclStatus != null ? this.aclStatus.hashCode() : 0);
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.healthCheck != null ? this.healthCheck.hashCode() : 0);
             result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.masterSlaveServerGroupId != null ? this.masterSlaveServerGroupId.hashCode() : 0);
             result = 31 * result + (this.persistence != null ? this.persistence.hashCode() : 0);
+            result = 31 * result + (this.portRange != null ? this.portRange.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverCertificateId != null ? this.serverCertificateId.hashCode() : 0);

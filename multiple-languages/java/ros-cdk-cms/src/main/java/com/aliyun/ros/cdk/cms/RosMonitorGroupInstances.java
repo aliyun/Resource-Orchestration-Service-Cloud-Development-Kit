@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.288Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroupInstances")
 public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setGroupId(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "groupId", java.util.Objects.requireNonNull(value, "groupId is required"));
+    }
+
+    /**
+     */
+    public void setGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "groupId", java.util.Objects.requireNonNull(value, "groupId is required"));
     }
 
@@ -100,22 +106,22 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCategory();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCategory();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getRegionId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
 
         /**
          * @return a {@link Builder} of {@link InstancesProperty}
@@ -129,10 +135,10 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InstancesProperty> {
-            private java.lang.String category;
-            private java.lang.String instanceId;
-            private java.lang.String instanceName;
-            private java.lang.String regionId;
+            private java.lang.Object category;
+            private java.lang.Object instanceId;
+            private java.lang.Object instanceName;
+            private java.lang.Object regionId;
 
             /**
              * Sets the value of {@link InstancesProperty#getCategory}
@@ -141,6 +147,17 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder category(java.lang.String category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancesProperty#getCategory}
+             * @param category the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
                 this.category = category;
                 return this;
             }
@@ -157,6 +174,17 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link InstancesProperty#getInstanceId}
+             * @param instanceId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+                this.instanceId = instanceId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InstancesProperty#getInstanceName}
              * @param instanceName the value to be set. This parameter is required.
              * @return {@code this}
@@ -168,12 +196,34 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link InstancesProperty#getInstanceName}
+             * @param instanceName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+                this.instanceName = instanceName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InstancesProperty#getRegionId}
              * @param regionId the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder regionId(java.lang.String regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstancesProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
                 this.regionId = regionId;
                 return this;
             }
@@ -196,10 +246,10 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstancesProperty {
-            private final java.lang.String category;
-            private final java.lang.String instanceId;
-            private final java.lang.String instanceName;
-            private final java.lang.String regionId;
+            private final java.lang.Object category;
+            private final java.lang.Object instanceId;
+            private final java.lang.Object instanceName;
+            private final java.lang.Object regionId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -207,16 +257,16 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String category, final java.lang.String instanceId, final java.lang.String instanceName, final java.lang.String regionId) {
+            protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object regionId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.category = java.util.Objects.requireNonNull(category, "category is required");
                 this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
@@ -225,22 +275,22 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
-            public final java.lang.String getCategory() {
+            public final java.lang.Object getCategory() {
                 return this.category;
             }
 
             @Override
-            public final java.lang.String getInstanceId() {
+            public final java.lang.Object getInstanceId() {
                 return this.instanceId;
             }
 
             @Override
-            public final java.lang.String getInstanceName() {
+            public final java.lang.Object getInstanceName() {
                 return this.instanceName;
             }
 
             @Override
-            public final java.lang.String getRegionId() {
+            public final java.lang.Object getRegionId() {
                 return this.regionId;
             }
 
@@ -320,6 +370,14 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
          * @param groupId This parameter is required.
          */
         public Builder groupId(final java.lang.Number groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param groupId This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
             this.props.groupId(groupId);
             return this;
         }

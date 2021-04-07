@@ -3,66 +3,66 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBigScreen();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBigScreen();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getExclusiveIpPackage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExclusiveIpPackage();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getExtBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExtBandwidth();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getExtDomainPackage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExtDomainPackage();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogStorage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogStorage();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogTime();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogTime();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPackageCode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPackageCode();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPrefessionalService();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPrefessionalService();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSubscriptionType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSubscriptionType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getWafLog();
+    @org.jetbrains.annotations.NotNull java.lang.Object getWafLog();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRenewalStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRenewalStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRenewPeriod() {
         return null;
     }
 
@@ -76,19 +76,19 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.String bigScreen;
-        private java.lang.String exclusiveIpPackage;
-        private java.lang.String extBandwidth;
-        private java.lang.String extDomainPackage;
-        private java.lang.String logStorage;
-        private java.lang.String logTime;
-        private java.lang.String packageCode;
-        private java.lang.String prefessionalService;
-        private java.lang.String subscriptionType;
-        private java.lang.String wafLog;
-        private java.lang.String period;
-        private java.lang.String renewalStatus;
-        private java.lang.String renewPeriod;
+        private java.lang.Object bigScreen;
+        private java.lang.Object exclusiveIpPackage;
+        private java.lang.Object extBandwidth;
+        private java.lang.Object extDomainPackage;
+        private java.lang.Object logStorage;
+        private java.lang.Object logTime;
+        private java.lang.Object packageCode;
+        private java.lang.Object prefessionalService;
+        private java.lang.Object subscriptionType;
+        private java.lang.Object wafLog;
+        private java.lang.Object period;
+        private java.lang.Object renewalStatus;
+        private java.lang.Object renewPeriod;
 
         /**
          * Sets the value of {@link RosInstanceProps#getBigScreen}
@@ -96,6 +96,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder bigScreen(java.lang.String bigScreen) {
+            this.bigScreen = bigScreen;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getBigScreen}
+         * @param bigScreen the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bigScreen(com.aliyun.ros.cdk.core.IResolvable bigScreen) {
             this.bigScreen = bigScreen;
             return this;
         }
@@ -111,11 +121,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getExclusiveIpPackage}
+         * @param exclusiveIpPackage the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder exclusiveIpPackage(com.aliyun.ros.cdk.core.IResolvable exclusiveIpPackage) {
+            this.exclusiveIpPackage = exclusiveIpPackage;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getExtBandwidth}
          * @param extBandwidth the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder extBandwidth(java.lang.String extBandwidth) {
+            this.extBandwidth = extBandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getExtBandwidth}
+         * @param extBandwidth the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder extBandwidth(com.aliyun.ros.cdk.core.IResolvable extBandwidth) {
             this.extBandwidth = extBandwidth;
             return this;
         }
@@ -131,11 +161,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getExtDomainPackage}
+         * @param extDomainPackage the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder extDomainPackage(com.aliyun.ros.cdk.core.IResolvable extDomainPackage) {
+            this.extDomainPackage = extDomainPackage;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getLogStorage}
          * @param logStorage the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder logStorage(java.lang.String logStorage) {
+            this.logStorage = logStorage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getLogStorage}
+         * @param logStorage the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder logStorage(com.aliyun.ros.cdk.core.IResolvable logStorage) {
             this.logStorage = logStorage;
             return this;
         }
@@ -151,11 +201,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getLogTime}
+         * @param logTime the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder logTime(com.aliyun.ros.cdk.core.IResolvable logTime) {
+            this.logTime = logTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPackageCode}
          * @param packageCode the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder packageCode(java.lang.String packageCode) {
+            this.packageCode = packageCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPackageCode}
+         * @param packageCode the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder packageCode(com.aliyun.ros.cdk.core.IResolvable packageCode) {
             this.packageCode = packageCode;
             return this;
         }
@@ -171,11 +241,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getPrefessionalService}
+         * @param prefessionalService the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder prefessionalService(com.aliyun.ros.cdk.core.IResolvable prefessionalService) {
+            this.prefessionalService = prefessionalService;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSubscriptionType}
          * @param subscriptionType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder subscriptionType(java.lang.String subscriptionType) {
+            this.subscriptionType = subscriptionType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSubscriptionType}
+         * @param subscriptionType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder subscriptionType(com.aliyun.ros.cdk.core.IResolvable subscriptionType) {
             this.subscriptionType = subscriptionType;
             return this;
         }
@@ -191,11 +281,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getWafLog}
+         * @param wafLog the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder wafLog(com.aliyun.ros.cdk.core.IResolvable wafLog) {
+            this.wafLog = wafLog;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -211,11 +321,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getRenewalStatus}
+         * @param renewalStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder renewalStatus(com.aliyun.ros.cdk.core.IResolvable renewalStatus) {
+            this.renewalStatus = renewalStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getRenewPeriod}
          * @param renewPeriod the value to be set.
          * @return {@code this}
          */
         public Builder renewPeriod(java.lang.String renewPeriod) {
+            this.renewPeriod = renewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getRenewPeriod}
+         * @param renewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder renewPeriod(com.aliyun.ros.cdk.core.IResolvable renewPeriod) {
             this.renewPeriod = renewPeriod;
             return this;
         }
@@ -236,19 +366,19 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceProps {
-        private final java.lang.String bigScreen;
-        private final java.lang.String exclusiveIpPackage;
-        private final java.lang.String extBandwidth;
-        private final java.lang.String extDomainPackage;
-        private final java.lang.String logStorage;
-        private final java.lang.String logTime;
-        private final java.lang.String packageCode;
-        private final java.lang.String prefessionalService;
-        private final java.lang.String subscriptionType;
-        private final java.lang.String wafLog;
-        private final java.lang.String period;
-        private final java.lang.String renewalStatus;
-        private final java.lang.String renewPeriod;
+        private final java.lang.Object bigScreen;
+        private final java.lang.Object exclusiveIpPackage;
+        private final java.lang.Object extBandwidth;
+        private final java.lang.Object extDomainPackage;
+        private final java.lang.Object logStorage;
+        private final java.lang.Object logTime;
+        private final java.lang.Object packageCode;
+        private final java.lang.Object prefessionalService;
+        private final java.lang.Object subscriptionType;
+        private final java.lang.Object wafLog;
+        private final java.lang.Object period;
+        private final java.lang.Object renewalStatus;
+        private final java.lang.Object renewPeriod;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -256,25 +386,25 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bigScreen = software.amazon.jsii.Kernel.get(this, "bigScreen", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.exclusiveIpPackage = software.amazon.jsii.Kernel.get(this, "exclusiveIpPackage", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.extBandwidth = software.amazon.jsii.Kernel.get(this, "extBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.extDomainPackage = software.amazon.jsii.Kernel.get(this, "extDomainPackage", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logStorage = software.amazon.jsii.Kernel.get(this, "logStorage", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logTime = software.amazon.jsii.Kernel.get(this, "logTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageCode = software.amazon.jsii.Kernel.get(this, "packageCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.prefessionalService = software.amazon.jsii.Kernel.get(this, "prefessionalService", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.subscriptionType = software.amazon.jsii.Kernel.get(this, "subscriptionType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.wafLog = software.amazon.jsii.Kernel.get(this, "wafLog", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.renewPeriod = software.amazon.jsii.Kernel.get(this, "renewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bigScreen = software.amazon.jsii.Kernel.get(this, "bigScreen", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.exclusiveIpPackage = software.amazon.jsii.Kernel.get(this, "exclusiveIpPackage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.extBandwidth = software.amazon.jsii.Kernel.get(this, "extBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.extDomainPackage = software.amazon.jsii.Kernel.get(this, "extDomainPackage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logStorage = software.amazon.jsii.Kernel.get(this, "logStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logTime = software.amazon.jsii.Kernel.get(this, "logTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageCode = software.amazon.jsii.Kernel.get(this, "packageCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.prefessionalService = software.amazon.jsii.Kernel.get(this, "prefessionalService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.subscriptionType = software.amazon.jsii.Kernel.get(this, "subscriptionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.wafLog = software.amazon.jsii.Kernel.get(this, "wafLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.renewPeriod = software.amazon.jsii.Kernel.get(this, "renewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String bigScreen, final java.lang.String exclusiveIpPackage, final java.lang.String extBandwidth, final java.lang.String extDomainPackage, final java.lang.String logStorage, final java.lang.String logTime, final java.lang.String packageCode, final java.lang.String prefessionalService, final java.lang.String subscriptionType, final java.lang.String wafLog, final java.lang.String period, final java.lang.String renewalStatus, final java.lang.String renewPeriod) {
+        protected Jsii$Proxy(final java.lang.Object bigScreen, final java.lang.Object exclusiveIpPackage, final java.lang.Object extBandwidth, final java.lang.Object extDomainPackage, final java.lang.Object logStorage, final java.lang.Object logTime, final java.lang.Object packageCode, final java.lang.Object prefessionalService, final java.lang.Object subscriptionType, final java.lang.Object wafLog, final java.lang.Object period, final java.lang.Object renewalStatus, final java.lang.Object renewPeriod) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bigScreen = java.util.Objects.requireNonNull(bigScreen, "bigScreen is required");
             this.exclusiveIpPackage = java.util.Objects.requireNonNull(exclusiveIpPackage, "exclusiveIpPackage is required");
@@ -292,67 +422,67 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getBigScreen() {
+        public final java.lang.Object getBigScreen() {
             return this.bigScreen;
         }
 
         @Override
-        public final java.lang.String getExclusiveIpPackage() {
+        public final java.lang.Object getExclusiveIpPackage() {
             return this.exclusiveIpPackage;
         }
 
         @Override
-        public final java.lang.String getExtBandwidth() {
+        public final java.lang.Object getExtBandwidth() {
             return this.extBandwidth;
         }
 
         @Override
-        public final java.lang.String getExtDomainPackage() {
+        public final java.lang.Object getExtDomainPackage() {
             return this.extDomainPackage;
         }
 
         @Override
-        public final java.lang.String getLogStorage() {
+        public final java.lang.Object getLogStorage() {
             return this.logStorage;
         }
 
         @Override
-        public final java.lang.String getLogTime() {
+        public final java.lang.Object getLogTime() {
             return this.logTime;
         }
 
         @Override
-        public final java.lang.String getPackageCode() {
+        public final java.lang.Object getPackageCode() {
             return this.packageCode;
         }
 
         @Override
-        public final java.lang.String getPrefessionalService() {
+        public final java.lang.Object getPrefessionalService() {
             return this.prefessionalService;
         }
 
         @Override
-        public final java.lang.String getSubscriptionType() {
+        public final java.lang.Object getSubscriptionType() {
             return this.subscriptionType;
         }
 
         @Override
-        public final java.lang.String getWafLog() {
+        public final java.lang.Object getWafLog() {
             return this.wafLog;
         }
 
         @Override
-        public final java.lang.String getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getRenewalStatus() {
+        public final java.lang.Object getRenewalStatus() {
             return this.renewalStatus;
         }
 
         @Override
-        public final java.lang.String getRenewPeriod() {
+        public final java.lang.Object getRenewPeriod() {
             return this.renewPeriod;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::MonitoringAgentProcess`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitoringAgentProcess")
 public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public MonitoringAgentProcess(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.MonitoringAgentProcessProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public MonitoringAgentProcess(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.MonitoringAgentProcessProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Id: The process ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
-        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrId() {
+        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.MonitoringAgentProcess> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,64 @@ public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceId: The ID of the instance.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: The ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property processName: The name of the process.
+         * <p>
          * @return {@code this}
-         * @param processName This parameter is required.
+         * @param processName Property processName: The name of the process. This parameter is required.
          */
         public Builder processName(final java.lang.String processName) {
             this.props.processName(processName);
             return this;
         }
+        /**
+         * Property processName: The name of the process.
+         * <p>
+         * @return {@code this}
+         * @param processName Property processName: The name of the process. This parameter is required.
+         */
+        public Builder processName(final com.aliyun.ros.cdk.core.IResolvable processName) {
+            this.props.processName(processName);
+            return this;
+        }
 
         /**
+         * Property processUser: The user who launched the process.
+         * <p>
          * @return {@code this}
-         * @param processUser This parameter is required.
+         * @param processUser Property processUser: The user who launched the process. This parameter is required.
          */
         public Builder processUser(final java.lang.String processUser) {
+            this.props.processUser(processUser);
+            return this;
+        }
+        /**
+         * Property processUser: The user who launched the process.
+         * <p>
+         * @return {@code this}
+         * @param processUser Property processUser: The user who launched the process. This parameter is required.
+         */
+        public Builder processUser(final com.aliyun.ros.cdk.core.IResolvable processUser) {
             this.props.processUser(processUser);
             return this;
         }

@@ -3,76 +3,103 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SynchronizationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.478Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJobProps")
 @software.amazon.jsii.Jsii.Proxy(SynchronizationJobProps.Jsii$Proxy.class)
 public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property destinationEndpoint: Migration target configuration.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestinationEndpoint();
 
     /**
+     * Property destRegion: Region where the synchronization target instance is located.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestRegion();
 
     /**
+     * Property sourceEndpoint: Migration source configuration.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceEndpoint();
 
     /**
+     * Property sourceRegion: Region where the synchronization source instance is located.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceRegion();
 
     /**
+     * Property synchronizationJobClass: Synchronous instance specifications, which can be: micro, small, medium, large and so on.
+     * <p>
+     * The default value is: small
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSynchronizationJobClass();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSynchronizationJobClass();
 
     /**
+     * Property dataInitialization: Whether to perform full data initialization before synchronization.
+     * <p>
+     * The values include:true: means full data initialization
+     * false: no full data initialization
+     * The default value is: true
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDataInitialization() {
         return null;
     }
 
     /**
+     * Property networkType: When synchronization geographies, the type of data transmission network used.
+     * <p>
+     * Value include: Internet, Intranet. The default value is: Internet
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
+     * Property payType: Payment type, which include: Postpaid: postpaid type, Prepaid: Prepaid type.
+     * <p>
+     * Default is Postpaid
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
     }
 
     /**
+     * Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be: Year: Annual, Month: monthly.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property structureInitialization: Whether to initialize the structure object before synchronization.
+     * <p>
+     * The values include:true: indicates that the structure object is initialized
+     * false: no result object initialization
+     * The default value is: true
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStructureInitialization() {
         return null;
     }
 
     /**
+     * Property synchronizationObjects: Objects that need to be synchronized.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSynchronizationObjects() {
         return null;
     }
 
     /**
+     * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTopology() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTopology() {
         return null;
     }
 
     /**
+     * Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getUsedTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
     }
 
@@ -87,32 +114,22 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
      */
     public static final class Builder implements software.amazon.jsii.Builder<SynchronizationJobProps> {
         private java.lang.Object destinationEndpoint;
-        private java.lang.String destRegion;
+        private java.lang.Object destRegion;
         private java.lang.Object sourceEndpoint;
-        private java.lang.String sourceRegion;
-        private java.lang.String synchronizationJobClass;
+        private java.lang.Object sourceRegion;
+        private java.lang.Object synchronizationJobClass;
         private java.lang.Object dataInitialization;
-        private java.lang.String networkType;
-        private java.lang.String payType;
-        private java.lang.String period;
+        private java.lang.Object networkType;
+        private java.lang.Object payType;
+        private java.lang.Object period;
         private java.lang.Object structureInitialization;
         private java.lang.Object synchronizationObjects;
-        private java.lang.String topology;
-        private java.lang.Number usedTime;
+        private java.lang.Object topology;
+        private java.lang.Object usedTime;
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getDestinationEndpoint}
-         * @param destinationEndpoint the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder destinationEndpoint(com.aliyun.ros.cdk.dts.RosSynchronizationJob.DestinationEndpointProperty destinationEndpoint) {
-            this.destinationEndpoint = destinationEndpoint;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link SynchronizationJobProps#getDestinationEndpoint}
-         * @param destinationEndpoint the value to be set. This parameter is required.
+         * @param destinationEndpoint Property destinationEndpoint: Migration target configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder destinationEndpoint(com.aliyun.ros.cdk.core.IResolvable destinationEndpoint) {
@@ -121,8 +138,18 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getDestinationEndpoint}
+         * @param destinationEndpoint Property destinationEndpoint: Migration target configuration. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationEndpoint(com.aliyun.ros.cdk.dts.RosSynchronizationJob.DestinationEndpointProperty destinationEndpoint) {
+            this.destinationEndpoint = destinationEndpoint;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getDestRegion}
-         * @param destRegion the value to be set. This parameter is required.
+         * @param destRegion Property destRegion: Region where the synchronization target instance is located. This parameter is required.
          * @return {@code this}
          */
         public Builder destRegion(java.lang.String destRegion) {
@@ -131,8 +158,18 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getDestRegion}
+         * @param destRegion Property destRegion: Region where the synchronization target instance is located. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destRegion(com.aliyun.ros.cdk.core.IResolvable destRegion) {
+            this.destRegion = destRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getSourceEndpoint}
-         * @param sourceEndpoint the value to be set. This parameter is required.
+         * @param sourceEndpoint Property sourceEndpoint: Migration source configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceEndpoint(com.aliyun.ros.cdk.core.IResolvable sourceEndpoint) {
@@ -142,7 +179,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getSourceEndpoint}
-         * @param sourceEndpoint the value to be set. This parameter is required.
+         * @param sourceEndpoint Property sourceEndpoint: Migration source configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceEndpoint(com.aliyun.ros.cdk.dts.RosSynchronizationJob.SourceEndpointProperty sourceEndpoint) {
@@ -152,7 +189,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getSourceRegion}
-         * @param sourceRegion the value to be set. This parameter is required.
+         * @param sourceRegion Property sourceRegion: Region where the synchronization source instance is located. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceRegion(java.lang.String sourceRegion) {
@@ -161,8 +198,19 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getSourceRegion}
+         * @param sourceRegion Property sourceRegion: Region where the synchronization source instance is located. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceRegion(com.aliyun.ros.cdk.core.IResolvable sourceRegion) {
+            this.sourceRegion = sourceRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getSynchronizationJobClass}
-         * @param synchronizationJobClass the value to be set. This parameter is required.
+         * @param synchronizationJobClass Property synchronizationJobClass: Synchronous instance specifications, which can be: micro, small, medium, large and so on. This parameter is required.
+         *                                The default value is: small
          * @return {@code this}
          */
         public Builder synchronizationJobClass(java.lang.String synchronizationJobClass) {
@@ -171,8 +219,22 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getSynchronizationJobClass}
+         * @param synchronizationJobClass Property synchronizationJobClass: Synchronous instance specifications, which can be: micro, small, medium, large and so on. This parameter is required.
+         *                                The default value is: small
+         * @return {@code this}
+         */
+        public Builder synchronizationJobClass(com.aliyun.ros.cdk.core.IResolvable synchronizationJobClass) {
+            this.synchronizationJobClass = synchronizationJobClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getDataInitialization}
-         * @param dataInitialization the value to be set.
+         * @param dataInitialization Property dataInitialization: Whether to perform full data initialization before synchronization.
+         *                           The values include:true: means full data initialization
+         *                           false: no full data initialization
+         *                           The default value is: true
          * @return {@code this}
          */
         public Builder dataInitialization(java.lang.Boolean dataInitialization) {
@@ -182,7 +244,10 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getDataInitialization}
-         * @param dataInitialization the value to be set.
+         * @param dataInitialization Property dataInitialization: Whether to perform full data initialization before synchronization.
+         *                           The values include:true: means full data initialization
+         *                           false: no full data initialization
+         *                           The default value is: true
          * @return {@code this}
          */
         public Builder dataInitialization(com.aliyun.ros.cdk.core.IResolvable dataInitialization) {
@@ -192,7 +257,8 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getNetworkType}
-         * @param networkType the value to be set.
+         * @param networkType Property networkType: When synchronization geographies, the type of data transmission network used.
+         *                    Value include: Internet, Intranet. The default value is: Internet
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
@@ -201,8 +267,20 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getNetworkType}
+         * @param networkType Property networkType: When synchronization geographies, the type of data transmission network used.
+         *                    Value include: Internet, Intranet. The default value is: Internet
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getPayType}
-         * @param payType the value to be set.
+         * @param payType Property payType: Payment type, which include: Postpaid: postpaid type, Prepaid: Prepaid type.
+         *                Default is Postpaid
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -211,8 +289,19 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getPayType}
+         * @param payType Property payType: Payment type, which include: Postpaid: postpaid type, Prepaid: Prepaid type.
+         *                Default is Postpaid
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be: Year: Annual, Month: monthly.
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
@@ -221,8 +310,21 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getPeriod}
+         * @param period Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be: Year: Annual, Month: monthly.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getStructureInitialization}
-         * @param structureInitialization the value to be set.
+         * @param structureInitialization Property structureInitialization: Whether to initialize the structure object before synchronization.
+         *                                The values include:true: indicates that the structure object is initialized
+         *                                false: no result object initialization
+         *                                The default value is: true
          * @return {@code this}
          */
         public Builder structureInitialization(java.lang.Boolean structureInitialization) {
@@ -232,7 +334,10 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getStructureInitialization}
-         * @param structureInitialization the value to be set.
+         * @param structureInitialization Property structureInitialization: Whether to initialize the structure object before synchronization.
+         *                                The values include:true: indicates that the structure object is initialized
+         *                                false: no result object initialization
+         *                                The default value is: true
          * @return {@code this}
          */
         public Builder structureInitialization(com.aliyun.ros.cdk.core.IResolvable structureInitialization) {
@@ -242,7 +347,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getSynchronizationObjects}
-         * @param synchronizationObjects the value to be set.
+         * @param synchronizationObjects Property synchronizationObjects: Objects that need to be synchronized.
          * @return {@code this}
          */
         public Builder synchronizationObjects(com.aliyun.ros.cdk.core.IResolvable synchronizationObjects) {
@@ -252,7 +357,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getSynchronizationObjects}
-         * @param synchronizationObjects the value to be set.
+         * @param synchronizationObjects Property synchronizationObjects: Objects that need to be synchronized.
          * @return {@code this}
          */
         public Builder synchronizationObjects(java.util.List<? extends java.lang.Object> synchronizationObjects) {
@@ -262,7 +367,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getTopology}
-         * @param topology the value to be set.
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
          * @return {@code this}
          */
         public Builder topology(java.lang.String topology) {
@@ -271,11 +376,31 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link SynchronizationJobProps#getTopology}
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+         * @return {@code this}
+         */
+        public Builder topology(com.aliyun.ros.cdk.core.IResolvable topology) {
+            this.topology = topology;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SynchronizationJobProps#getUsedTime}
-         * @param usedTime the value to be set.
+         * @param usedTime Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed.
          * @return {@code this}
          */
         public Builder usedTime(java.lang.Number usedTime) {
+            this.usedTime = usedTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SynchronizationJobProps#getUsedTime}
+         * @param usedTime Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed.
+         * @return {@code this}
+         */
+        public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {
             this.usedTime = usedTime;
             return this;
         }
@@ -297,18 +422,18 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SynchronizationJobProps {
         private final java.lang.Object destinationEndpoint;
-        private final java.lang.String destRegion;
+        private final java.lang.Object destRegion;
         private final java.lang.Object sourceEndpoint;
-        private final java.lang.String sourceRegion;
-        private final java.lang.String synchronizationJobClass;
+        private final java.lang.Object sourceRegion;
+        private final java.lang.Object synchronizationJobClass;
         private final java.lang.Object dataInitialization;
-        private final java.lang.String networkType;
-        private final java.lang.String payType;
-        private final java.lang.String period;
+        private final java.lang.Object networkType;
+        private final java.lang.Object payType;
+        private final java.lang.Object period;
         private final java.lang.Object structureInitialization;
         private final java.lang.Object synchronizationObjects;
-        private final java.lang.String topology;
-        private final java.lang.Number usedTime;
+        private final java.lang.Object topology;
+        private final java.lang.Object usedTime;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -317,24 +442,24 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.destinationEndpoint = software.amazon.jsii.Kernel.get(this, "destinationEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.destRegion = software.amazon.jsii.Kernel.get(this, "destRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.destRegion = software.amazon.jsii.Kernel.get(this, "destRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceEndpoint = software.amazon.jsii.Kernel.get(this, "sourceEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.sourceRegion = software.amazon.jsii.Kernel.get(this, "sourceRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.synchronizationJobClass = software.amazon.jsii.Kernel.get(this, "synchronizationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sourceRegion = software.amazon.jsii.Kernel.get(this, "sourceRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.synchronizationJobClass = software.amazon.jsii.Kernel.get(this, "synchronizationJobClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dataInitialization = software.amazon.jsii.Kernel.get(this, "dataInitialization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.structureInitialization = software.amazon.jsii.Kernel.get(this, "structureInitialization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.synchronizationObjects = software.amazon.jsii.Kernel.get(this, "synchronizationObjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.topology = software.amazon.jsii.Kernel.get(this, "topology", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.topology = software.amazon.jsii.Kernel.get(this, "topology", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object destinationEndpoint, final java.lang.String destRegion, final java.lang.Object sourceEndpoint, final java.lang.String sourceRegion, final java.lang.String synchronizationJobClass, final java.lang.Object dataInitialization, final java.lang.String networkType, final java.lang.String payType, final java.lang.String period, final java.lang.Object structureInitialization, final java.lang.Object synchronizationObjects, final java.lang.String topology, final java.lang.Number usedTime) {
+        protected Jsii$Proxy(final java.lang.Object destinationEndpoint, final java.lang.Object destRegion, final java.lang.Object sourceEndpoint, final java.lang.Object sourceRegion, final java.lang.Object synchronizationJobClass, final java.lang.Object dataInitialization, final java.lang.Object networkType, final java.lang.Object payType, final java.lang.Object period, final java.lang.Object structureInitialization, final java.lang.Object synchronizationObjects, final java.lang.Object topology, final java.lang.Object usedTime) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.destinationEndpoint = java.util.Objects.requireNonNull(destinationEndpoint, "destinationEndpoint is required");
             this.destRegion = java.util.Objects.requireNonNull(destRegion, "destRegion is required");
@@ -357,7 +482,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getDestRegion() {
+        public final java.lang.Object getDestRegion() {
             return this.destRegion;
         }
 
@@ -367,12 +492,12 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getSourceRegion() {
+        public final java.lang.Object getSourceRegion() {
             return this.sourceRegion;
         }
 
         @Override
-        public final java.lang.String getSynchronizationJobClass() {
+        public final java.lang.Object getSynchronizationJobClass() {
             return this.synchronizationJobClass;
         }
 
@@ -382,17 +507,17 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
         @Override
-        public final java.lang.String getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
@@ -407,12 +532,12 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getTopology() {
+        public final java.lang.Object getTopology() {
             return this.topology;
         }
 
         @Override
-        public final java.lang.Number getUsedTime() {
+        public final java.lang.Object getUsedTime() {
             return this.usedTime;
         }
 

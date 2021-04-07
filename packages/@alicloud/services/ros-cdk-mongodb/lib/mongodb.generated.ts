@@ -10,17 +10,17 @@ export interface RosInstanceProps {
     /**
      * @Property dbInstanceClass: MongoDB instance supported instance type, make sure it should be correct.
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. MongoDB is [5,3000], increased every 10 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -30,87 +30,99 @@ export interface RosInstanceProps {
     /**
      * @Property backupId: Specific backup set Id.
      */
-    readonly backupId?: string;
+    readonly backupId?: string | ros.IResolvable;
 
     /**
      * @Property businessInfo: The business information. It is an additional parameter.
      */
-    readonly businessInfo?: string;
+    readonly businessInfo?: string | ros.IResolvable;
 
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property couponNo: The coupon code. Default value:youhuiquan_promotion_option_id_for_blank.
      */
-    readonly couponNo?: string;
+    readonly couponNo?: string | ros.IResolvable;
 
     /**
      * @Property databaseNames: The name of the database.
      */
-    readonly databaseNames?: string;
+    readonly databaseNames?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
      */
-    readonly readonlyReplicas?: number;
+    readonly readonlyReplicas?: number | ros.IResolvable;
 
     /**
      * @Property replicationFactor: The number of nodes in the replica set. Allowed values: [3, 5, 7], default to 3.
      */
-    readonly replicationFactor?: number;
+    readonly replicationFactor?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    readonly restoreTime?: string;
+    readonly restoreTime?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the ECS security group.
+     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
+     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * @Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    readonly srcDbInstanceId?: string;
+    readonly srcDbInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -122,12 +134,12 @@ export interface RosInstanceProps {
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -140,8 +152,38 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
     errors.collect(ros.propertyValidator('businessInfo', ros.validateString)(properties.businessInfo));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('securityIpArray', ros.validateString)(properties.securityIpArray));
+    errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
+    if(properties.storageEngine && (typeof properties.storageEngine) !== 'object') {
+        errors.collect(ros.propertyValidator('storageEngine', ros.validateAllowedValues)({
+          data: properties.storageEngine,
+          allowedValues: ["WiredTiger","RocksDB","TerarkDB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storageEngine', ros.validateString)(properties.storageEngine));
+    errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
+    if(properties.networkType && (typeof properties.networkType) !== 'object') {
+        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
+          data: properties.networkType,
+          allowedValues: ["CLASSIC","VPC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
+    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     if(properties.readonlyReplicas && (typeof properties.readonlyReplicas) !== 'object') {
         errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateAllowedValues)({
@@ -150,7 +192,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateNumber)(properties.readonlyReplicas));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.replicationFactor && (typeof properties.replicationFactor) !== 'object') {
         errors.collect(ros.propertyValidator('replicationFactor', ros.validateAllowedValues)({
           data: properties.replicationFactor,
@@ -161,7 +202,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -170,38 +211,18 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('securityIpArray', ros.validateString)(properties.securityIpArray));
-    errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
-    if(properties.storageEngine && (typeof properties.storageEngine) !== 'object') {
-        errors.collect(ros.propertyValidator('storageEngine', ros.validateAllowedValues)({
-          data: properties.storageEngine,
-          allowedValues: ["WiredTiger","RocksDB","TerarkDB"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('storageEngine', ros.validateString)(properties.storageEngine));
     errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
-    errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    if(properties.networkType && (typeof properties.networkType) !== 'object') {
-        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
-          data: properties.networkType,
-          allowedValues: ["CLASSIC","VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
-    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('databaseNames', ros.validateString)(properties.databaseNames));
     errors.collect(ros.propertyValidator('srcDbInstanceId', ros.validateString)(properties.srcDbInstanceId));
-    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -236,9 +257,11 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ReplicationFactor: ros.numberToRosTemplate(properties.replicationFactor),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
+      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -263,27 +286,27 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionURI: Connection uri.
      */
-    public readonly attrConnectionUri: any;
+    public readonly attrConnectionUri: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute ReplicaSetName: Name of replica set
      */
-    public readonly attrReplicaSetName: any;
+    public readonly attrReplicaSetName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -291,17 +314,17 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property dbInstanceClass: MongoDB instance supported instance type, make sure it should be correct.
      */
-    public dbInstanceClass: string;
+    public dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. MongoDB is [5,3000], increased every 10 GB, Unit in GB
      */
-    public dbInstanceStorage: number;
+    public dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    public accountPassword: string | undefined;
+    public accountPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -311,87 +334,99 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property backupId: Specific backup set Id.
      */
-    public backupId: string | undefined;
+    public backupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property businessInfo: The business information. It is an additional parameter.
      */
-    public businessInfo: string | undefined;
+    public businessInfo: string | ros.IResolvable | undefined;
 
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property couponNo: The coupon code. Default value:youhuiquan_promotion_option_id_for_blank.
      */
-    public couponNo: string | undefined;
+    public couponNo: string | ros.IResolvable | undefined;
 
     /**
      * @Property databaseNames: The name of the database.
      */
-    public databaseNames: string | undefined;
+    public databaseNames: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    public engineVersion: string | undefined;
+    public engineVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    public networkType: string | undefined;
+    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
      */
-    public readonlyReplicas: number | undefined;
+    public readonlyReplicas: number | ros.IResolvable | undefined;
 
     /**
      * @Property replicationFactor: The number of nodes in the replica set. Allowed values: [3, 5, 7], default to 3.
      */
-    public replicationFactor: number | undefined;
+    public replicationFactor: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    public restoreTime: string | undefined;
+    public restoreTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The ID of the ECS security group.
+     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
+     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    public securityIpArray: string | undefined;
+    public securityIpArray: string | ros.IResolvable | undefined;
 
     /**
      * @Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    public srcDbInstanceId: string | undefined;
+    public srcDbInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    public storageEngine: string | undefined;
+    public storageEngine: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -403,12 +438,12 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MONGODB::Instance`.
@@ -419,11 +454,11 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionUri = ros.Token.asString(this.getAtt('ConnectionURI'));
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrDbInstanceStatus = ros.Token.asString(this.getAtt('DBInstanceStatus'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrReplicaSetName = ros.Token.asString(this.getAtt('ReplicaSetName'));
+        this.attrConnectionUri = this.getAtt('ConnectionURI');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrReplicaSetName = this.getAtt('ReplicaSetName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceClass = props.dbInstanceClass;
@@ -443,9 +478,11 @@ export class RosInstance extends ros.RosResource {
         this.replicationFactor = props.replicationFactor;
         this.resourceGroupId = props.resourceGroupId;
         this.restoreTime = props.restoreTime;
+        this.securityGroupId = props.securityGroupId;
         this.securityIpArray = props.securityIpArray;
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -472,9 +509,11 @@ export class RosInstance extends ros.RosResource {
             replicationFactor: this.replicationFactor,
             resourceGroupId: this.resourceGroupId,
             restoreTime: this.restoreTime,
+            securityGroupId: this.securityGroupId,
             securityIpArray: this.securityIpArray,
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
+            tags: this.tags,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -486,6 +525,54 @@ export class RosInstance extends ros.RosResource {
     }
 }
 
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::MONGODB::ServerlessInstance`
  */
@@ -494,12 +581,12 @@ export interface RosServerlessInstanceProps {
     /**
      * @Property dbInstanceStorage: Database instance storage size. MongoDB is [1,10], increased every 1 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -509,62 +596,67 @@ export interface RosServerlessInstanceProps {
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version.Support 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property periodPriceType: Charge period for created instance.
      */
-    readonly periodPriceType?: string;
+    readonly periodPriceType?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerlessInstance.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -578,10 +670,10 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -602,7 +694,7 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -623,6 +715,14 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('periodPriceType', ros.validateString)(properties.periodPriceType));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosServerlessInstance_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosServerlessInstanceProps"');
 }
 
@@ -652,6 +752,7 @@ function rosServerlessInstancePropsToRosTemplate(properties: any, enableResource
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
+      Tags: ros.listMapper(rosServerlessInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -675,22 +776,22 @@ export class RosServerlessInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionURI: Connection uri.
      */
-    public readonly attrConnectionUri: any;
+    public readonly attrConnectionUri: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -698,12 +799,12 @@ export class RosServerlessInstance extends ros.RosResource {
     /**
      * @Property dbInstanceStorage: Database instance storage size. MongoDB is [1,10], increased every 1 GB, Unit in GB
      */
-    public dbInstanceStorage: number;
+    public dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    public accountPassword: string | undefined;
+    public accountPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -713,62 +814,67 @@ export class RosServerlessInstance extends ros.RosResource {
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Database instance version.Support 4.2
      */
-    public engineVersion: string | undefined;
+    public engineVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    public networkType: string | undefined;
+    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property periodPriceType: Charge period for created instance.
      */
-    public periodPriceType: string | undefined;
+    public periodPriceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    public securityIpArray: string | undefined;
+    public securityIpArray: string | ros.IResolvable | undefined;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger
      */
-    public storageEngine: string | undefined;
+    public storageEngine: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosServerlessInstance.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MONGODB::ServerlessInstance`.
@@ -779,10 +885,10 @@ export class RosServerlessInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosServerlessInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosServerlessInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionUri = ros.Token.asString(this.getAtt('ConnectionURI'));
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrDbInstanceStatus = ros.Token.asString(this.getAtt('DBInstanceStatus'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+        this.attrConnectionUri = this.getAtt('ConnectionURI');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
+        this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceStorage = props.dbInstanceStorage;
@@ -797,6 +903,7 @@ export class RosServerlessInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.securityIpArray = props.securityIpArray;
         this.storageEngine = props.storageEngine;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -817,6 +924,7 @@ export class RosServerlessInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             securityIpArray: this.securityIpArray,
             storageEngine: this.storageEngine,
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
@@ -825,6 +933,54 @@ export class RosServerlessInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosServerlessInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosServerlessInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerlessInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::ServerlessInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::ServerlessInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosServerlessInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerlessInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -850,7 +1006,7 @@ export interface RosShardingInstanceProps {
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -860,67 +1016,72 @@ export interface RosShardingInstanceProps {
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property protocolType: Protocol type. Valid value: mongodb or dynamodb.
      */
-    readonly protocolType?: string;
+    readonly protocolType?: string | ros.IResolvable;
 
     /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    readonly restoreTime?: string;
+    readonly restoreTime?: string | ros.IResolvable;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * @Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    readonly srcDbInstanceId?: string;
+    readonly srcDbInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosShardingInstance.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -974,7 +1135,7 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1005,6 +1166,14 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('replicaSet', ros.listValidator(RosShardingInstance_ReplicaSetPropertyValidator))(properties.replicaSet));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosShardingInstance_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosShardingInstanceProps"');
 }
 
@@ -1037,6 +1206,7 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
+      Tags: ros.listMapper(rosShardingInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -1060,17 +1230,17 @@ export class RosShardingInstance extends ros.RosResource {
     /**
      * @Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1093,7 +1263,7 @@ export class RosShardingInstance extends ros.RosResource {
     /**
      * @Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    public accountPassword: string | undefined;
+    public accountPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -1103,67 +1273,72 @@ export class RosShardingInstance extends ros.RosResource {
     /**
      * @Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    public engineVersion: string | undefined;
+    public engineVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    public networkType: string | undefined;
+    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property protocolType: Protocol type. Valid value: mongodb or dynamodb.
      */
-    public protocolType: string | undefined;
+    public protocolType: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    public restoreTime: string | undefined;
+    public restoreTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpArray: Security ips to add or remove.
      */
-    public securityIpArray: string | undefined;
+    public securityIpArray: string | ros.IResolvable | undefined;
 
     /**
      * @Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    public srcDbInstanceId: string | undefined;
+    public srcDbInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    public storageEngine: string | undefined;
+    public storageEngine: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosShardingInstance.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MONGODB::ShardingInstance`.
@@ -1174,9 +1349,9 @@ export class RosShardingInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosShardingInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosShardingInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrDbInstanceStatus = ros.Token.asString(this.getAtt('DBInstanceStatus'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbInstanceStatus = this.getAtt('DBInstanceStatus');
+        this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.configServer = props.configServer;
@@ -1194,6 +1369,7 @@ export class RosShardingInstance extends ros.RosResource {
         this.securityIpArray = props.securityIpArray;
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -1217,6 +1393,7 @@ export class RosShardingInstance extends ros.RosResource {
             securityIpArray: this.securityIpArray,
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
@@ -1235,11 +1412,11 @@ export namespace RosShardingInstance {
         /**
          * @Property storage: The storage space of config server. Valid value: 20. Unit: GB.
          */
-        readonly storage: number;
+        readonly storage: number | ros.IResolvable;
         /**
          * @Property class: The specification of config server.
          */
-        readonly class: string;
+        readonly class: string | ros.IResolvable;
     }
 }
 /**
@@ -1284,7 +1461,7 @@ export namespace RosShardingInstance {
         /**
          * @Property class: The specification of mongo.
          */
-        readonly class: string;
+        readonly class: string | ros.IResolvable;
     }
 }
 /**
@@ -1328,11 +1505,11 @@ export namespace RosShardingInstance {
      * Valid values: 10 to 2000. Unit: GB.
      * You can only specify this value in 10 GB increments.
          */
-        readonly storage: number;
+        readonly storage: number | ros.IResolvable;
         /**
          * @Property class: The specification of shard.
          */
-        readonly class: string;
+        readonly class: string | ros.IResolvable;
     }
 }
 /**
@@ -1366,5 +1543,53 @@ function rosShardingInstanceReplicaSetPropertyToRosTemplate(properties: any): an
     return {
       Storage: ros.numberToRosTemplate(properties.storage),
       Class: ros.stringToRosTemplate(properties.class),
+    };
+}
+
+export namespace RosShardingInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosShardingInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::ShardingInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::ShardingInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosShardingInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosShardingInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }

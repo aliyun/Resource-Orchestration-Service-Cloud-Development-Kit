@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::CenBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthPackage")
 public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth() {
-        return software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setBandwidth(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidth", java.util.Objects.requireNonNull(value, "bandwidth is required"));
+    }
+
+    /**
+     */
+    public void setBandwidth(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "bandwidth", java.util.Objects.requireNonNull(value, "bandwidth is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGeographicRegionAId() {
-        return software.amazon.jsii.Kernel.get(this, "geographicRegionAId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGeographicRegionAId() {
+        return software.amazon.jsii.Kernel.get(this, "geographicRegionAId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGeographicRegionBId() {
-        return software.amazon.jsii.Kernel.get(this, "geographicRegionBId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGeographicRegionAId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "geographicRegionAId", java.util.Objects.requireNonNull(value, "geographicRegionAId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGeographicRegionBId() {
+        return software.amazon.jsii.Kernel.get(this, "geographicRegionBId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setGeographicRegionBId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "geographicRegionBId", java.util.Objects.requireNonNull(value, "geographicRegionBId is required"));
+    }
+
+    /**
+     */
+    public void setGeographicRegionBId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "geographicRegionBId", java.util.Objects.requireNonNull(value, "geographicRegionBId is required"));
     }
 
@@ -135,8 +153,8 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewDuration() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewDuration() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +165,14 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getBandwidthPackageChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAutoRenewDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewDuration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +183,14 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBandwidthPackageChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthPackageChargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +201,14 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +219,14 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,13 +237,25 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
-        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
+        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setPricingCycle(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
+    }
+
+    /**
+     */
+    public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
     }
 
@@ -239,6 +293,14 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
             this.props.bandwidth(bandwidth);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param bandwidth This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -248,12 +310,28 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
             this.props.geographicRegionAId(geographicRegionAId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param geographicRegionAId This parameter is required.
+         */
+        public Builder geographicRegionAId(final com.aliyun.ros.cdk.core.IResolvable geographicRegionAId) {
+            this.props.geographicRegionAId(geographicRegionAId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param geographicRegionBId This parameter is required.
          */
         public Builder geographicRegionBId(final java.lang.String geographicRegionBId) {
+            this.props.geographicRegionBId(geographicRegionBId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param geographicRegionBId This parameter is required.
+         */
+        public Builder geographicRegionBId(final com.aliyun.ros.cdk.core.IResolvable geographicRegionBId) {
             this.props.geographicRegionBId(geographicRegionBId);
             return this;
         }
@@ -300,12 +378,28 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
             this.props.autoRenewDuration(autoRenewDuration);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param autoRenewDuration This parameter is required.
+         */
+        public Builder autoRenewDuration(final com.aliyun.ros.cdk.core.IResolvable autoRenewDuration) {
+            this.props.autoRenewDuration(autoRenewDuration);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param bandwidthPackageChargeType This parameter is required.
          */
         public Builder bandwidthPackageChargeType(final java.lang.String bandwidthPackageChargeType) {
+            this.props.bandwidthPackageChargeType(bandwidthPackageChargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidthPackageChargeType This parameter is required.
+         */
+        public Builder bandwidthPackageChargeType(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageChargeType) {
             this.props.bandwidthPackageChargeType(bandwidthPackageChargeType);
             return this;
         }
@@ -318,12 +412,28 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }
@@ -336,12 +446,28 @@ public class RosCenBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource 
             this.props.period(period);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param pricingCycle This parameter is required.
          */
         public Builder pricingCycle(final java.lang.String pricingCycle) {
+            this.props.pricingCycle(pricingCycle);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param pricingCycle This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);
             return this;
         }

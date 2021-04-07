@@ -33,51 +33,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Attribute AccountId: This ID of Resource Manager Account.</summary>
-        [JsiiProperty(name: "attrAccountId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccountId
+        [JsiiProperty(name: "attrAccountId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccountId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DisplayName: Member name.</summary>
-        [JsiiProperty(name: "attrDisplayName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDisplayName
+        [JsiiProperty(name: "attrDisplayName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDisplayName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute FolderId: The ID of the parent folder.</summary>
-        [JsiiProperty(name: "attrFolderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFolderId
+        [JsiiProperty(name: "attrFolderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFolderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute JoinMethod: Ways for members to join the resource directory.</summary>
         /// <remarks>
         /// Valid values: invited, created
         /// </remarks>
-        [JsiiProperty(name: "attrJoinMethod", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrJoinMethod
+        [JsiiProperty(name: "attrJoinMethod", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrJoinMethod
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ResourceDirectoryId: Resource directory ID.</summary>
-        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrResourceDirectoryId
+        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceDirectoryId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Type: Member type.</summary>
         /// <remarks>
         /// The value of ResourceAccount indicates the resource account
         /// </remarks>
-        [JsiiProperty(name: "attrType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrType
+        [JsiiProperty(name: "attrType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

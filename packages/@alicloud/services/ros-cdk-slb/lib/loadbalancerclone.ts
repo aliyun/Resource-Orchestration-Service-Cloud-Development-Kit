@@ -11,7 +11,7 @@ export interface LoadBalancerCloneProps {
     /**
      * Property sourceLoadBalancerId: Source load balancer id to clone
      */
-    readonly sourceLoadBalancerId: string;
+    readonly sourceLoadBalancerId: string | ros.IResolvable;
 
     /**
      * Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -21,33 +21,33 @@ export interface LoadBalancerCloneProps {
     /**
      * Property backendServersPolicy: Solution for handle the backend server and weights. If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
      */
-    readonly backendServersPolicy?: string;
+    readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
      * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    readonly loadBalancerName?: string;
+    readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to slb. Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosLoadBalancerClone.TagsProperty[];
 
     /**
      * Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
-    readonly tagsPolicy?: string;
+    readonly tagsPolicy?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -63,7 +63,7 @@ export class LoadBalancerClone extends ros.Resource {
     /**
      * Attribute LoadBalancerId: The id of load balance generated
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::LoadBalancerClone`.
@@ -82,7 +82,7 @@ export class LoadBalancerClone extends ros.Resource {
             tagsPolicy: props.tagsPolicy ? props.tagsPolicy : 'empty',
             vSwitchId: props.vSwitchId,
             backendServers: props.backendServers,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             backendServersPolicy: props.backendServersPolicy ? props.backendServersPolicy : 'clone',
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancerClone;

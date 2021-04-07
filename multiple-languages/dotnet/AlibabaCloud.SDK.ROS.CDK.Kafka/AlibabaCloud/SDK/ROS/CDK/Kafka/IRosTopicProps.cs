@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// <strong>Property</strong>: instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
         /// You can call the GetInstanceList operation to query instances.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// The value can only contain letters, digits, hyphens (-), and underscores (_).
         /// The value must be 3 to 64 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}")]
-        string Remark
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Remark
         {
             get;
         }
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// if it contains more characters.
         /// The name cannot be modified after being created.
         /// </remarks>
-        [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-        string Topic
+        [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Topic
         {
             get;
         }
@@ -49,9 +49,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// We recommend that you set the number of partitions to a multiple of 6 to reduce the
         /// risk of data skew.Note:For special requirements,submit a ticket.
         /// </remarks>
-        [JsiiProperty(name: "partitionNum", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? PartitionNum
+        object? PartitionNum
         {
             get
             {
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// <strong>Property</strong>: instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
             /// You can call the GetInstanceList operation to query instances.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -83,10 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// The value can only contain letters, digits, hyphens (-), and underscores (_).
             /// The value must be 3 to 64 characters in length.
             /// </remarks>
-            [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}")]
-            public string Remark
+            [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Remark
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -96,10 +96,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// if it contains more characters.
             /// The name cannot be modified after being created.
             /// </remarks>
-            [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-            public string Topic
+            [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Topic
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -109,10 +109,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// risk of data skew.Note:For special requirements,submit a ticket.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "partitionNum", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? PartitionNum
+            [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PartitionNum
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

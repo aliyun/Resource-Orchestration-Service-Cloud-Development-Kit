@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <remarks>
         /// <strong>Property</strong>: drdsInstanceId: DRDS instance ID
         /// </remarks>
-        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DrdsInstanceId
+        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DrdsInstanceId
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccountName
         {
             get;
             set;
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// RDS or POLARDB
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbInstType
+        [JsiiProperty(name: "dbInstType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbInstType
         {
             get;
             set;
@@ -58,8 +58,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: dbName: Database Name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbName
         {
             get;
             set;
@@ -69,8 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: encode: Encoding used by the database
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "encode", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Encode
+        [JsiiProperty(name: "encode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Encode
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: password: The logon password of the database instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Password
         {
             get;
             set;
@@ -102,8 +102,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: rdsInstance: This property is required only for vertical partitioning.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "rdsInstance", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? RdsInstance
+        [JsiiProperty(name: "rdsInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? RdsInstance
         {
             get;
             set;
@@ -116,8 +116,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// VERTICAL: indicates VERTICAL partitioning.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Type
         {
             get;
             set;

@@ -11,22 +11,22 @@ export interface SnatEntryProps {
     /**
      * Property snatIp: The public IP address. Separate multiple EIPs with commas.
      */
-    readonly snatIp: string;
+    readonly snatIp: string | ros.IResolvable;
 
     /**
      * Property snatTableId: The ID of the SNAT table.
      */
-    readonly snatTableId: string;
+    readonly snatTableId: string | ros.IResolvable;
 
     /**
      * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
-    readonly snatEntryName?: string;
+    readonly snatEntryName?: string | ros.IResolvable;
 
     /**
      * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
-    readonly sourceCidr?: string;
+    readonly sourceCidr?: string | ros.IResolvable;
 
     /**
      * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
@@ -47,7 +47,7 @@ export class SnatEntry extends ros.Resource {
     /**
      * Attribute SnatEntryIds: The IDS of the SNAT entry.
      */
-    public readonly attrSnatEntryIds: any;
+    public readonly attrSnatEntryIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::SnatEntry`.

@@ -3,28 +3,28 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::CopyImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCopyImageProps")
 @software.amazon.jsii.Jsii.Proxy(RosCopyImageProps.Jsii$Proxy.class)
 public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestinationRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestinationRegionId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getImageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationImageName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationImageName() {
         return null;
     }
 
@@ -36,7 +36,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKmsKeyId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
         return null;
     }
 
@@ -56,12 +56,12 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosCopyImageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCopyImageProps> {
-        private java.lang.String destinationRegionId;
-        private java.lang.String imageId;
-        private java.lang.String destinationDescription;
-        private java.lang.String destinationImageName;
+        private java.lang.Object destinationRegionId;
+        private java.lang.Object imageId;
+        private java.lang.Object destinationDescription;
+        private java.lang.Object destinationImageName;
         private java.lang.Object encrypted;
-        private java.lang.String kmsKeyId;
+        private java.lang.Object kmsKeyId;
         private java.lang.Object tag;
 
         /**
@@ -70,6 +70,16 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder destinationRegionId(java.lang.String destinationRegionId) {
+            this.destinationRegionId = destinationRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCopyImageProps#getDestinationRegionId}
+         * @param destinationRegionId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationRegionId(com.aliyun.ros.cdk.core.IResolvable destinationRegionId) {
             this.destinationRegionId = destinationRegionId;
             return this;
         }
@@ -85,6 +95,16 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosCopyImageProps#getImageId}
+         * @param imageId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCopyImageProps#getDestinationDescription}
          * @param destinationDescription the value to be set.
          * @return {@code this}
@@ -95,11 +115,31 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosCopyImageProps#getDestinationDescription}
+         * @param destinationDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationDescription(com.aliyun.ros.cdk.core.IResolvable destinationDescription) {
+            this.destinationDescription = destinationDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCopyImageProps#getDestinationImageName}
          * @param destinationImageName the value to be set.
          * @return {@code this}
          */
         public Builder destinationImageName(java.lang.String destinationImageName) {
+            this.destinationImageName = destinationImageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCopyImageProps#getDestinationImageName}
+         * @param destinationImageName the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationImageName(com.aliyun.ros.cdk.core.IResolvable destinationImageName) {
             this.destinationImageName = destinationImageName;
             return this;
         }
@@ -130,6 +170,16 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder kmsKeyId(java.lang.String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCopyImageProps#getKmsKeyId}
+         * @param kmsKeyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             return this;
         }
@@ -170,12 +220,12 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCopyImageProps {
-        private final java.lang.String destinationRegionId;
-        private final java.lang.String imageId;
-        private final java.lang.String destinationDescription;
-        private final java.lang.String destinationImageName;
+        private final java.lang.Object destinationRegionId;
+        private final java.lang.Object imageId;
+        private final java.lang.Object destinationDescription;
+        private final java.lang.Object destinationImageName;
         private final java.lang.Object encrypted;
-        private final java.lang.String kmsKeyId;
+        private final java.lang.Object kmsKeyId;
         private final java.lang.Object tag;
 
         /**
@@ -184,19 +234,19 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.destinationRegionId = software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationDescription = software.amazon.jsii.Kernel.get(this, "destinationDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationImageName = software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.destinationRegionId = software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationDescription = software.amazon.jsii.Kernel.get(this, "destinationDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationImageName = software.amazon.jsii.Kernel.get(this, "destinationImageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String destinationRegionId, final java.lang.String imageId, final java.lang.String destinationDescription, final java.lang.String destinationImageName, final java.lang.Object encrypted, final java.lang.String kmsKeyId, final java.lang.Object tag) {
+        protected Jsii$Proxy(final java.lang.Object destinationRegionId, final java.lang.Object imageId, final java.lang.Object destinationDescription, final java.lang.Object destinationImageName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object tag) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.destinationRegionId = java.util.Objects.requireNonNull(destinationRegionId, "destinationRegionId is required");
             this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
@@ -208,22 +258,22 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getDestinationRegionId() {
+        public final java.lang.Object getDestinationRegionId() {
             return this.destinationRegionId;
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getDestinationDescription() {
+        public final java.lang.Object getDestinationDescription() {
             return this.destinationDescription;
         }
 
         @Override
-        public final java.lang.String getDestinationImageName() {
+        public final java.lang.Object getDestinationImageName() {
             return this.destinationImageName;
         }
 
@@ -233,7 +283,7 @@ public interface RosCopyImageProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getKmsKeyId() {
+        public final java.lang.Object getKmsKeyId() {
             return this.kmsKeyId;
         }
 

@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
         /// <remarks>
         /// If this field has values, it means that the
         /// cloud assembly is not complete and should not be deployed.
-        /// 
+        ///
         /// <strong>Default</strong>: - no missing context.
         /// </remarks>
         [JsiiProperty(name: "missing", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-assembly-schema.MissingContext\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -90,7 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             /// <remarks>
             /// If this field has values, it means that the
             /// cloud assembly is not complete and should not be deployed.
-            /// 
+            ///
             /// <strong>Default</strong>: - no missing context.
             /// </remarks>
             [JsiiOptional]

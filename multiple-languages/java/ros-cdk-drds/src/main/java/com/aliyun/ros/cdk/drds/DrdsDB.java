@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * A ROS resource type:  `ALIYUN::DRDS::DrdsDB`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.094Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsDB")
 public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DRDS::DrdsDB`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DrdsDB(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.drds.DrdsDBProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DRDS::DrdsDB`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DrdsDB(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.drds.DrdsDBProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.drds.DrdsDB> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,34 +83,62 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property drdsInstanceId: DRDS instance ID.
+         * <p>
          * @return {@code this}
-         * @param drdsInstanceId This parameter is required.
+         * @param drdsInstanceId Property drdsInstanceId: DRDS instance ID. This parameter is required.
          */
         public Builder drdsInstanceId(final java.lang.String drdsInstanceId) {
             this.props.drdsInstanceId(drdsInstanceId);
             return this;
         }
+        /**
+         * Property drdsInstanceId: DRDS instance ID.
+         * <p>
+         * @return {@code this}
+         * @param drdsInstanceId Property drdsInstanceId: DRDS instance ID. This parameter is required.
+         */
+        public Builder drdsInstanceId(final com.aliyun.ros.cdk.core.IResolvable drdsInstanceId) {
+            this.props.drdsInstanceId(drdsInstanceId);
+            return this;
+        }
 
         /**
+         * Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
+         * <p>
          * @return {@code this}
-         * @param accountName This parameter is required.
+         * @param accountName Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs. This parameter is required.
          */
         public Builder accountName(final java.lang.String accountName) {
             this.props.accountName(accountName);
             return this;
         }
+        /**
+         * Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
+         * <p>
+         * @return {@code this}
+         * @param accountName Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs. This parameter is required.
+         */
+        public Builder accountName(final com.aliyun.ros.cdk.core.IResolvable accountName) {
+            this.props.accountName(accountName);
+            return this;
+        }
 
         /**
+         * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceIsCreating This parameter is required.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created. This parameter is required.
          */
         public Builder dbInstanceIsCreating(final java.lang.Boolean dbInstanceIsCreating) {
             this.props.dbInstanceIsCreating(dbInstanceIsCreating);
             return this;
         }
         /**
+         * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceIsCreating This parameter is required.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created. This parameter is required.
          */
         public Builder dbInstanceIsCreating(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIsCreating) {
             this.props.dbInstanceIsCreating(dbInstanceIsCreating);
@@ -110,43 +146,89 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbInstType: The type of the attached storage.
+         * <p>
+         * Valid values:
+         * RDS or POLARDB
+         * <p>
          * @return {@code this}
-         * @param dbInstType This parameter is required.
+         * @param dbInstType Property dbInstType: The type of the attached storage. This parameter is required.
          */
         public Builder dbInstType(final java.lang.String dbInstType) {
             this.props.dbInstType(dbInstType);
             return this;
         }
+        /**
+         * Property dbInstType: The type of the attached storage.
+         * <p>
+         * Valid values:
+         * RDS or POLARDB
+         * <p>
+         * @return {@code this}
+         * @param dbInstType Property dbInstType: The type of the attached storage. This parameter is required.
+         */
+        public Builder dbInstType(final com.aliyun.ros.cdk.core.IResolvable dbInstType) {
+            this.props.dbInstType(dbInstType);
+            return this;
+        }
 
         /**
+         * Property dbName: Database Name.
+         * <p>
          * @return {@code this}
-         * @param dbName This parameter is required.
+         * @param dbName Property dbName: Database Name. This parameter is required.
          */
         public Builder dbName(final java.lang.String dbName) {
             this.props.dbName(dbName);
             return this;
         }
+        /**
+         * Property dbName: Database Name.
+         * <p>
+         * @return {@code this}
+         * @param dbName Property dbName: Database Name. This parameter is required.
+         */
+        public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.props.dbName(dbName);
+            return this;
+        }
 
         /**
+         * Property encode: Encoding used by the database.
+         * <p>
          * @return {@code this}
-         * @param encode This parameter is required.
+         * @param encode Property encode: Encoding used by the database. This parameter is required.
          */
         public Builder encode(final java.lang.String encode) {
             this.props.encode(encode);
             return this;
         }
+        /**
+         * Property encode: Encoding used by the database.
+         * <p>
+         * @return {@code this}
+         * @param encode Property encode: Encoding used by the database. This parameter is required.
+         */
+        public Builder encode(final com.aliyun.ros.cdk.core.IResolvable encode) {
+            this.props.encode(encode);
+            return this;
+        }
 
         /**
+         * Property instDbName:.
+         * <p>
          * @return {@code this}
-         * @param instDbName This parameter is required.
+         * @param instDbName Property instDbName:. This parameter is required.
          */
         public Builder instDbName(final com.aliyun.ros.cdk.core.IResolvable instDbName) {
             this.props.instDbName(instDbName);
             return this;
         }
         /**
+         * Property instDbName:.
+         * <p>
          * @return {@code this}
-         * @param instDbName This parameter is required.
+         * @param instDbName Property instDbName:. This parameter is required.
          */
         public Builder instDbName(final java.util.List<? extends java.lang.Object> instDbName) {
             this.props.instDbName(instDbName);
@@ -154,28 +236,74 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property password: The logon password of the database instance.
+         * <p>
          * @return {@code this}
-         * @param password This parameter is required.
+         * @param password Property password: The logon password of the database instance. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props.password(password);
             return this;
         }
+        /**
+         * Property password: The logon password of the database instance.
+         * <p>
+         * @return {@code this}
+         * @param password Property password: The logon password of the database instance. This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
+            return this;
+        }
 
         /**
+         * Property rdsInstance: This property is required only for vertical partitioning.
+         * <p>
          * @return {@code this}
-         * @param rdsInstance This parameter is required.
+         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning. This parameter is required.
          */
-        public Builder rdsInstance(final java.util.List<java.lang.String> rdsInstance) {
+        public Builder rdsInstance(final com.aliyun.ros.cdk.core.IResolvable rdsInstance) {
+            this.props.rdsInstance(rdsInstance);
+            return this;
+        }
+        /**
+         * Property rdsInstance: This property is required only for vertical partitioning.
+         * <p>
+         * @return {@code this}
+         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning. This parameter is required.
+         */
+        public Builder rdsInstance(final java.util.List<? extends java.lang.Object> rdsInstance) {
             this.props.rdsInstance(rdsInstance);
             return this;
         }
 
         /**
+         * Property type: Database Sharding method.
+         * <p>
+         * For more information, see scalability principle. Valid values:
+         * HORIZONTAL: indicates HORIZONTAL partitioning, which is commonly known as database
+         * and table sharding.
+         * VERTICAL: indicates VERTICAL partitioning.
+         * <p>
          * @return {@code this}
-         * @param type This parameter is required.
+         * @param type Property type: Database Sharding method. This parameter is required.
          */
         public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * Property type: Database Sharding method.
+         * <p>
+         * For more information, see scalability principle. Valid values:
+         * HORIZONTAL: indicates HORIZONTAL partitioning, which is commonly known as database
+         * and table sharding.
+         * VERTICAL: indicates VERTICAL partitioning.
+         * <p>
+         * @return {@code this}
+         * @param type Property type: Database Sharding method. This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
             this.props.type(type);
             return this;
         }

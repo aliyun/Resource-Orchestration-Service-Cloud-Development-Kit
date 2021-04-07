@@ -47,46 +47,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Attribute</strong>: ClientInfoDB: The client info DB.
         /// </remarks>
-        [JsiiProperty(name: "attrClientInfoDb", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDb
+        [JsiiProperty(name: "attrClientInfoDb", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDb
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClientInfoDBAccount: The client info DB account.
         /// </remarks>
-        [JsiiProperty(name: "attrClientInfoDbAccount", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDbAccount
+        [JsiiProperty(name: "attrClientInfoDbAccount", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDbAccount
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClientInfoDBPassword: The client info DB password.
         /// </remarks>
-        [JsiiProperty(name: "attrClientInfoDbPassword", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientInfoDbPassword
+        [JsiiProperty(name: "attrClientInfoDbPassword", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientInfoDbPassword
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SslClientCertUrl: The ssl client cert url.
         /// </remarks>
-        [JsiiProperty(name: "attrSslClientCertUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSslClientCertUrl
+        [JsiiProperty(name: "attrSslClientCertUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslClientCertUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: UisId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "attrUisId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisId
+        [JsiiProperty(name: "attrUisId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -107,10 +107,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -119,10 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -3,46 +3,71 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.876Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.DynamicTagGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DynamicTagGroupProps.Jsii$Proxy.class)
 public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property contactGroupList: Alarm contacts.
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getContactGroupList();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupList();
 
     /**
+     * Property tagKey: Tag key.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTagKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTagKey();
 
     /**
+     * Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default.
+     * <p>
+     * Values are:
+     * true: enable installation
+     * Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
+     * false: disable installation
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableInstallAgent() {
         return null;
     }
 
     /**
+     * Property enableSubscribeEvent: Whether the event subscription is enabled.
+     * <p>
+     * Values are
+     * :true: enable event subscription
+     * false: disable event subscription
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSubscribeEvent() {
         return null;
     }
 
     /**
+     * Property matchExpress: Matching list.
+     * <p>
+     * Only supports one currently.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMatchExpress() {
         return null;
     }
 
     /**
+     * Property matchExpressFilterRelation: The relationship between the conditional expressions.
+     * <p>
+     * Values are:
+     * and: the relationship between
+     * or: the relationship or the
+     * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMatchExpressFilterRelation() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMatchExpressFilterRelation() {
         return null;
     }
 
     /**
+     * Property templateIdList: Alarm template ID list.
+     * <p>
+     * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getTemplateIdList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateIdList() {
         return null;
     }
 
@@ -56,27 +81,37 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link DynamicTagGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DynamicTagGroupProps> {
-        private java.util.List<java.lang.String> contactGroupList;
-        private java.lang.String tagKey;
+        private java.lang.Object contactGroupList;
+        private java.lang.Object tagKey;
         private java.lang.Object enableInstallAgent;
         private java.lang.Object enableSubscribeEvent;
         private java.lang.Object matchExpress;
-        private java.lang.String matchExpressFilterRelation;
-        private java.util.List<java.lang.String> templateIdList;
+        private java.lang.Object matchExpressFilterRelation;
+        private java.lang.Object templateIdList;
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getContactGroupList}
-         * @param contactGroupList the value to be set. This parameter is required.
+         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
          * @return {@code this}
          */
-        public Builder contactGroupList(java.util.List<java.lang.String> contactGroupList) {
+        public Builder contactGroupList(com.aliyun.ros.cdk.core.IResolvable contactGroupList) {
+            this.contactGroupList = contactGroupList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DynamicTagGroupProps#getContactGroupList}
+         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactGroupList(java.util.List<? extends java.lang.Object> contactGroupList) {
             this.contactGroupList = contactGroupList;
             return this;
         }
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getTagKey}
-         * @param tagKey the value to be set. This parameter is required.
+         * @param tagKey Property tagKey: Tag key. This parameter is required.
          * @return {@code this}
          */
         public Builder tagKey(java.lang.String tagKey) {
@@ -85,8 +120,22 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link DynamicTagGroupProps#getTagKey}
+         * @param tagKey Property tagKey: Tag key. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tagKey(com.aliyun.ros.cdk.core.IResolvable tagKey) {
+            this.tagKey = tagKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DynamicTagGroupProps#getEnableInstallAgent}
-         * @param enableInstallAgent the value to be set.
+         * @param enableInstallAgent Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default.
+         *                           Values are:
+         *                           true: enable installation
+         *                           Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
+         *                           false: disable installation
          * @return {@code this}
          */
         public Builder enableInstallAgent(java.lang.Boolean enableInstallAgent) {
@@ -96,7 +145,11 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getEnableInstallAgent}
-         * @param enableInstallAgent the value to be set.
+         * @param enableInstallAgent Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default.
+         *                           Values are:
+         *                           true: enable installation
+         *                           Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
+         *                           false: disable installation
          * @return {@code this}
          */
         public Builder enableInstallAgent(com.aliyun.ros.cdk.core.IResolvable enableInstallAgent) {
@@ -106,7 +159,10 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getEnableSubscribeEvent}
-         * @param enableSubscribeEvent the value to be set.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled.
+         *                             Values are
+         *                             :true: enable event subscription
+         *                             false: disable event subscription
          * @return {@code this}
          */
         public Builder enableSubscribeEvent(java.lang.Boolean enableSubscribeEvent) {
@@ -116,7 +172,10 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getEnableSubscribeEvent}
-         * @param enableSubscribeEvent the value to be set.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled.
+         *                             Values are
+         *                             :true: enable event subscription
+         *                             false: disable event subscription
          * @return {@code this}
          */
         public Builder enableSubscribeEvent(com.aliyun.ros.cdk.core.IResolvable enableSubscribeEvent) {
@@ -126,7 +185,8 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getMatchExpress}
-         * @param matchExpress the value to be set.
+         * @param matchExpress Property matchExpress: Matching list.
+         *                     Only supports one currently.
          * @return {@code this}
          */
         public Builder matchExpress(com.aliyun.ros.cdk.core.IResolvable matchExpress) {
@@ -136,7 +196,8 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getMatchExpress}
-         * @param matchExpress the value to be set.
+         * @param matchExpress Property matchExpress: Matching list.
+         *                     Only supports one currently.
          * @return {@code this}
          */
         public Builder matchExpress(java.util.List<? extends java.lang.Object> matchExpress) {
@@ -146,7 +207,11 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link DynamicTagGroupProps#getMatchExpressFilterRelation}
-         * @param matchExpressFilterRelation the value to be set.
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         *                                   Values are:
+         *                                   and: the relationship between
+         *                                   or: the relationship or the
+         *                                   Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
          * @return {@code this}
          */
         public Builder matchExpressFilterRelation(java.lang.String matchExpressFilterRelation) {
@@ -155,11 +220,37 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
-         * Sets the value of {@link DynamicTagGroupProps#getTemplateIdList}
-         * @param templateIdList the value to be set.
+         * Sets the value of {@link DynamicTagGroupProps#getMatchExpressFilterRelation}
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         *                                   Values are:
+         *                                   and: the relationship between
+         *                                   or: the relationship or the
+         *                                   Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
          * @return {@code this}
          */
-        public Builder templateIdList(java.util.List<java.lang.String> templateIdList) {
+        public Builder matchExpressFilterRelation(com.aliyun.ros.cdk.core.IResolvable matchExpressFilterRelation) {
+            this.matchExpressFilterRelation = matchExpressFilterRelation;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DynamicTagGroupProps#getTemplateIdList}
+         * @param templateIdList Property templateIdList: Alarm template ID list.
+         *                       When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * @return {@code this}
+         */
+        public Builder templateIdList(com.aliyun.ros.cdk.core.IResolvable templateIdList) {
+            this.templateIdList = templateIdList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DynamicTagGroupProps#getTemplateIdList}
+         * @param templateIdList Property templateIdList: Alarm template ID list.
+         *                       When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * @return {@code this}
+         */
+        public Builder templateIdList(java.util.List<? extends java.lang.Object> templateIdList) {
             this.templateIdList = templateIdList;
             return this;
         }
@@ -180,13 +271,13 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DynamicTagGroupProps {
-        private final java.util.List<java.lang.String> contactGroupList;
-        private final java.lang.String tagKey;
+        private final java.lang.Object contactGroupList;
+        private final java.lang.Object tagKey;
         private final java.lang.Object enableInstallAgent;
         private final java.lang.Object enableSubscribeEvent;
         private final java.lang.Object matchExpress;
-        private final java.lang.String matchExpressFilterRelation;
-        private final java.util.List<java.lang.String> templateIdList;
+        private final java.lang.Object matchExpressFilterRelation;
+        private final java.lang.Object templateIdList;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -194,19 +285,19 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.contactGroupList = software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.contactGroupList = software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tagKey = software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableInstallAgent = software.amazon.jsii.Kernel.get(this, "enableInstallAgent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableSubscribeEvent = software.amazon.jsii.Kernel.get(this, "enableSubscribeEvent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.matchExpress = software.amazon.jsii.Kernel.get(this, "matchExpress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.matchExpressFilterRelation = software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.templateIdList = software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.matchExpressFilterRelation = software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateIdList = software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.List<java.lang.String> contactGroupList, final java.lang.String tagKey, final java.lang.Object enableInstallAgent, final java.lang.Object enableSubscribeEvent, final java.lang.Object matchExpress, final java.lang.String matchExpressFilterRelation, final java.util.List<java.lang.String> templateIdList) {
+        protected Jsii$Proxy(final java.lang.Object contactGroupList, final java.lang.Object tagKey, final java.lang.Object enableInstallAgent, final java.lang.Object enableSubscribeEvent, final java.lang.Object matchExpress, final java.lang.Object matchExpressFilterRelation, final java.lang.Object templateIdList) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactGroupList = java.util.Objects.requireNonNull(contactGroupList, "contactGroupList is required");
             this.tagKey = java.util.Objects.requireNonNull(tagKey, "tagKey is required");
@@ -218,12 +309,12 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.util.List<java.lang.String> getContactGroupList() {
+        public final java.lang.Object getContactGroupList() {
             return this.contactGroupList;
         }
 
         @Override
-        public final java.lang.String getTagKey() {
+        public final java.lang.Object getTagKey() {
             return this.tagKey;
         }
 
@@ -243,12 +334,12 @@ public interface DynamicTagGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getMatchExpressFilterRelation() {
+        public final java.lang.Object getMatchExpressFilterRelation() {
             return this.matchExpressFilterRelation;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getTemplateIdList() {
+        public final java.lang.Object getTemplateIdList() {
             return this.templateIdList;
         }
 

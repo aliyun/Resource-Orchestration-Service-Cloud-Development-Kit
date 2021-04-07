@@ -3,108 +3,151 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DedicatedHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.534Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.176Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostProps.Jsii$Proxy.class)
 public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dedicatedHostType: The instance type of host.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDedicatedHostType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDedicatedHostType();
 
     /**
+     * Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getActionOnMaintenance() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getActionOnMaintenance() {
         return null;
     }
 
     /**
+     * Property autoPlacement: Specifies whether the dedicated host is added to the resource pool for automatic deployment.
+     * <p>
+     * If you do not specify the DedicatedHostId parameter when you create an instance on a dedicated host, Alibaba Cloud automatically selects a dedicated host from the resource pool to host the instance. For more information, see Automatic deployment. Valid values:on: The dedicated host is added to the resource pool for automatic deployment.off: The dedicated host is not added to the resource pool for automatic deployment.Default value: on.Note When you create a dedicated host: If you do not specify this parameter, the dedicated host is added to the automatic deployment resource pool.If you do not want to add the dedicated host to the automatic deployment resource pool, set the value to off.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoPlacement() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPlacement() {
         return null;
     }
 
     /**
+     * Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+     * <p>
+     * format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoReleaseTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
         return null;
     }
 
     /**
+     * Property autoRenew: Whether renew the fee automatically?
+     * <p>
+     * When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoRenew() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
+     * Property autoRenewPeriod: The time period of auto renew.
+     * <p>
+     * When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
     }
 
     /**
+     * Property chargeType: Instance Charge type, allowed value: Prepaid and Postpaid.
+     * <p>
+     * If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
     /**
+     * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+     * <p>
+     * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDedicatedHostName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostName() {
         return null;
     }
 
     /**
+     * Property description: The description of host.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host.
+     * <p>
+     * Unit: seconds. Valid values: 15 to 310.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getNetworkAttributesSlbUdpTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkAttributesSlbUdpTimeout() {
         return null;
     }
 
     /**
+     * Property networkAttributesUdpTimeout: The duration of UDP timeout for sessions between users and instances on the dedicated host.
+     * <p>
+     * Unit: seconds. Valid values: 15 to 310.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getNetworkAttributesUdpTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkAttributesUdpTimeout() {
         return null;
     }
 
     /**
+     * Property period: Prepaid time period.
+     * <p>
+     * Unit is month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Default value is 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
+     * <p>
+     * Default value is Month.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
     /**
+     * Property quantity: The number of dedicated hosts that you want to create.
+     * <p>
+     * Valid values: 1 to 100.Default value: 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getQuantity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQuantity() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     * <p>
+     * If this is left blank, the system automatically fills in the ID of the default resource group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property zoneId: The zone to create the host.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -118,27 +161,27 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link DedicatedHostProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DedicatedHostProps> {
-        private java.lang.String dedicatedHostType;
-        private java.lang.String actionOnMaintenance;
-        private java.lang.String autoPlacement;
-        private java.lang.String autoReleaseTime;
-        private java.lang.String autoRenew;
-        private java.lang.Number autoRenewPeriod;
-        private java.lang.String chargeType;
-        private java.lang.String dedicatedHostName;
-        private java.lang.String description;
-        private java.lang.Number networkAttributesSlbUdpTimeout;
-        private java.lang.Number networkAttributesUdpTimeout;
-        private java.lang.Number period;
-        private java.lang.String periodUnit;
-        private java.lang.Number quantity;
-        private java.lang.String resourceGroupId;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String zoneId;
+        private java.lang.Object dedicatedHostType;
+        private java.lang.Object actionOnMaintenance;
+        private java.lang.Object autoPlacement;
+        private java.lang.Object autoReleaseTime;
+        private java.lang.Object autoRenew;
+        private java.lang.Object autoRenewPeriod;
+        private java.lang.Object chargeType;
+        private java.lang.Object dedicatedHostName;
+        private java.lang.Object description;
+        private java.lang.Object networkAttributesSlbUdpTimeout;
+        private java.lang.Object networkAttributesUdpTimeout;
+        private java.lang.Object period;
+        private java.lang.Object periodUnit;
+        private java.lang.Object quantity;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostType}
-         * @param dedicatedHostType the value to be set. This parameter is required.
+         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
          * @return {@code this}
          */
         public Builder dedicatedHostType(java.lang.String dedicatedHostType) {
@@ -147,8 +190,18 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getDedicatedHostType}
+         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostType(com.aliyun.ros.cdk.core.IResolvable dedicatedHostType) {
+            this.dedicatedHostType = dedicatedHostType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getActionOnMaintenance}
-         * @param actionOnMaintenance the value to be set.
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
          * @return {@code this}
          */
         public Builder actionOnMaintenance(java.lang.String actionOnMaintenance) {
@@ -157,8 +210,19 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getActionOnMaintenance}
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+         * @return {@code this}
+         */
+        public Builder actionOnMaintenance(com.aliyun.ros.cdk.core.IResolvable actionOnMaintenance) {
+            this.actionOnMaintenance = actionOnMaintenance;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getAutoPlacement}
-         * @param autoPlacement the value to be set.
+         * @param autoPlacement Property autoPlacement: Specifies whether the dedicated host is added to the resource pool for automatic deployment.
+         *                      If you do not specify the DedicatedHostId parameter when you create an instance on a dedicated host, Alibaba Cloud automatically selects a dedicated host from the resource pool to host the instance. For more information, see Automatic deployment. Valid values:on: The dedicated host is added to the resource pool for automatic deployment.off: The dedicated host is not added to the resource pool for automatic deployment.Default value: on.Note When you create a dedicated host: If you do not specify this parameter, the dedicated host is added to the automatic deployment resource pool.If you do not want to add the dedicated host to the automatic deployment resource pool, set the value to off.
          * @return {@code this}
          */
         public Builder autoPlacement(java.lang.String autoPlacement) {
@@ -167,8 +231,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getAutoPlacement}
+         * @param autoPlacement Property autoPlacement: Specifies whether the dedicated host is added to the resource pool for automatic deployment.
+         *                      If you do not specify the DedicatedHostId parameter when you create an instance on a dedicated host, Alibaba Cloud automatically selects a dedicated host from the resource pool to host the instance. For more information, see Automatic deployment. Valid values:on: The dedicated host is added to the resource pool for automatic deployment.off: The dedicated host is not added to the resource pool for automatic deployment.Default value: on.Note When you create a dedicated host: If you do not specify this parameter, the dedicated host is added to the automatic deployment resource pool.If you do not want to add the dedicated host to the automatic deployment resource pool, set the value to off.
+         * @return {@code this}
+         */
+        public Builder autoPlacement(com.aliyun.ros.cdk.core.IResolvable autoPlacement) {
+            this.autoPlacement = autoPlacement;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getAutoReleaseTime}
-         * @param autoReleaseTime the value to be set.
+         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
          * @return {@code this}
          */
         public Builder autoReleaseTime(java.lang.String autoReleaseTime) {
@@ -177,8 +253,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getAutoReleaseTime}
+         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * @return {@code this}
+         */
+        public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
+            this.autoReleaseTime = autoReleaseTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Whether renew the fee automatically?.
+         *                  When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.String autoRenew) {
@@ -187,8 +275,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Whether renew the fee automatically?.
+         *                  When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod the value to be set.
+         * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew.
+         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -197,8 +297,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: The time period of auto renew.
+         *                        When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getChargeType}
-         * @param chargeType the value to be set.
+         * @param chargeType Property chargeType: Instance Charge type, allowed value: Prepaid and Postpaid.
+         *                   If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -207,8 +319,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getChargeType}
+         * @param chargeType Property chargeType: Instance Charge type, allowed value: Prepaid and Postpaid.
+         *                   If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostName}
-         * @param dedicatedHostName the value to be set.
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+         *                          It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
          * @return {@code this}
          */
         public Builder dedicatedHostName(java.lang.String dedicatedHostName) {
@@ -217,8 +341,19 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getDedicatedHostName}
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+         *                          It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostName(com.aliyun.ros.cdk.core.IResolvable dedicatedHostName) {
+            this.dedicatedHostName = dedicatedHostName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of host.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -227,8 +362,19 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getDescription}
+         * @param description Property description: The description of host.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getNetworkAttributesSlbUdpTimeout}
-         * @param networkAttributesSlbUdpTimeout the value to be set.
+         * @param networkAttributesSlbUdpTimeout Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host.
+         *                                       Unit: seconds. Valid values: 15 to 310.
          * @return {@code this}
          */
         public Builder networkAttributesSlbUdpTimeout(java.lang.Number networkAttributesSlbUdpTimeout) {
@@ -237,8 +383,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getNetworkAttributesSlbUdpTimeout}
+         * @param networkAttributesSlbUdpTimeout Property networkAttributesSlbUdpTimeout: The duration of UDP timeout for sessions between Server Load Balancer (SLB) and the dedicated host.
+         *                                       Unit: seconds. Valid values: 15 to 310.
+         * @return {@code this}
+         */
+        public Builder networkAttributesSlbUdpTimeout(com.aliyun.ros.cdk.core.IResolvable networkAttributesSlbUdpTimeout) {
+            this.networkAttributesSlbUdpTimeout = networkAttributesSlbUdpTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getNetworkAttributesUdpTimeout}
-         * @param networkAttributesUdpTimeout the value to be set.
+         * @param networkAttributesUdpTimeout Property networkAttributesUdpTimeout: The duration of UDP timeout for sessions between users and instances on the dedicated host.
+         *                                    Unit: seconds. Valid values: 15 to 310.
          * @return {@code this}
          */
         public Builder networkAttributesUdpTimeout(java.lang.Number networkAttributesUdpTimeout) {
@@ -247,8 +405,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getNetworkAttributesUdpTimeout}
+         * @param networkAttributesUdpTimeout Property networkAttributesUdpTimeout: The duration of UDP timeout for sessions between users and instances on the dedicated host.
+         *                                    Unit: seconds. Valid values: 15 to 310.
+         * @return {@code this}
+         */
+        public Builder networkAttributesUdpTimeout(com.aliyun.ros.cdk.core.IResolvable networkAttributesUdpTimeout) {
+            this.networkAttributesUdpTimeout = networkAttributesUdpTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: Prepaid time period.
+         *               Unit is month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Default value is 1.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -257,8 +427,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getPeriod}
+         * @param period Property period: Prepaid time period.
+         *               Unit is month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Default value is 1.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getPeriodUnit}
-         * @param periodUnit the value to be set.
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
+         *                   Default value is Month.
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
@@ -267,8 +449,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.
+         *                   Default value is Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getQuantity}
-         * @param quantity the value to be set.
+         * @param quantity Property quantity: The number of dedicated hosts that you want to create.
+         *                 Valid values: 1 to 100.Default value: 1.
          * @return {@code this}
          */
         public Builder quantity(java.lang.Number quantity) {
@@ -277,8 +471,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getQuantity}
+         * @param quantity Property quantity: The number of dedicated hosts that you want to create.
+         *                 Valid values: 1 to 100.Default value: 1.
+         * @return {@code this}
+         */
+        public Builder quantity(com.aliyun.ros.cdk.core.IResolvable quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         *                        If this is left blank, the system automatically fills in the ID of the default resource group.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -287,22 +493,44 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link DedicatedHostProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         *                        If this is left blank, the system automatically fills in the ID of the default resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DedicatedHostProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link DedicatedHostProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: The zone to create the host.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DedicatedHostProps#getZoneId}
+         * @param zoneId Property zoneId: The zone to create the host.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -323,23 +551,23 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DedicatedHostProps {
-        private final java.lang.String dedicatedHostType;
-        private final java.lang.String actionOnMaintenance;
-        private final java.lang.String autoPlacement;
-        private final java.lang.String autoReleaseTime;
-        private final java.lang.String autoRenew;
-        private final java.lang.Number autoRenewPeriod;
-        private final java.lang.String chargeType;
-        private final java.lang.String dedicatedHostName;
-        private final java.lang.String description;
-        private final java.lang.Number networkAttributesSlbUdpTimeout;
-        private final java.lang.Number networkAttributesUdpTimeout;
-        private final java.lang.Number period;
-        private final java.lang.String periodUnit;
-        private final java.lang.Number quantity;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String zoneId;
+        private final java.lang.Object dedicatedHostType;
+        private final java.lang.Object actionOnMaintenance;
+        private final java.lang.Object autoPlacement;
+        private final java.lang.Object autoReleaseTime;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object dedicatedHostName;
+        private final java.lang.Object description;
+        private final java.lang.Object networkAttributesSlbUdpTimeout;
+        private final java.lang.Object networkAttributesUdpTimeout;
+        private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object quantity;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -347,30 +575,30 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dedicatedHostType = software.amazon.jsii.Kernel.get(this, "dedicatedHostType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.actionOnMaintenance = software.amazon.jsii.Kernel.get(this, "actionOnMaintenance", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoPlacement = software.amazon.jsii.Kernel.get(this, "autoPlacement", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dedicatedHostName = software.amazon.jsii.Kernel.get(this, "dedicatedHostName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkAttributesSlbUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesSlbUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.networkAttributesUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dedicatedHostType = software.amazon.jsii.Kernel.get(this, "dedicatedHostType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.actionOnMaintenance = software.amazon.jsii.Kernel.get(this, "actionOnMaintenance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoPlacement = software.amazon.jsii.Kernel.get(this, "autoPlacement", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostName = software.amazon.jsii.Kernel.get(this, "dedicatedHostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkAttributesSlbUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesSlbUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkAttributesUdpTimeout = software.amazon.jsii.Kernel.get(this, "networkAttributesUdpTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty.class)));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String dedicatedHostType, final java.lang.String actionOnMaintenance, final java.lang.String autoPlacement, final java.lang.String autoReleaseTime, final java.lang.String autoRenew, final java.lang.Number autoRenewPeriod, final java.lang.String chargeType, final java.lang.String dedicatedHostName, final java.lang.String description, final java.lang.Number networkAttributesSlbUdpTimeout, final java.lang.Number networkAttributesUdpTimeout, final java.lang.Number period, final java.lang.String periodUnit, final java.lang.Number quantity, final java.lang.String resourceGroupId, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object dedicatedHostType, final java.lang.Object actionOnMaintenance, final java.lang.Object autoPlacement, final java.lang.Object autoReleaseTime, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object chargeType, final java.lang.Object dedicatedHostName, final java.lang.Object description, final java.lang.Object networkAttributesSlbUdpTimeout, final java.lang.Object networkAttributesUdpTimeout, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object quantity, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dedicatedHostType = java.util.Objects.requireNonNull(dedicatedHostType, "dedicatedHostType is required");
             this.actionOnMaintenance = actionOnMaintenance;
@@ -387,92 +615,92 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
             this.periodUnit = periodUnit;
             this.quantity = quantity;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty>)tags;
             this.zoneId = zoneId;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostType() {
+        public final java.lang.Object getDedicatedHostType() {
             return this.dedicatedHostType;
         }
 
         @Override
-        public final java.lang.String getActionOnMaintenance() {
+        public final java.lang.Object getActionOnMaintenance() {
             return this.actionOnMaintenance;
         }
 
         @Override
-        public final java.lang.String getAutoPlacement() {
+        public final java.lang.Object getAutoPlacement() {
             return this.autoPlacement;
         }
 
         @Override
-        public final java.lang.String getAutoReleaseTime() {
+        public final java.lang.Object getAutoReleaseTime() {
             return this.autoReleaseTime;
         }
 
         @Override
-        public final java.lang.String getAutoRenew() {
+        public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
         }
 
         @Override
-        public final java.lang.Number getAutoRenewPeriod() {
+        public final java.lang.Object getAutoRenewPeriod() {
             return this.autoRenewPeriod;
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostName() {
+        public final java.lang.Object getDedicatedHostName() {
             return this.dedicatedHostName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getNetworkAttributesSlbUdpTimeout() {
+        public final java.lang.Object getNetworkAttributesSlbUdpTimeout() {
             return this.networkAttributesSlbUdpTimeout;
         }
 
         @Override
-        public final java.lang.Number getNetworkAttributesUdpTimeout() {
+        public final java.lang.Object getNetworkAttributesUdpTimeout() {
             return this.networkAttributesUdpTimeout;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodUnit() {
+        public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
         }
 
         @Override
-        public final java.lang.Number getQuantity() {
+        public final java.lang.Object getQuantity() {
             return this.quantity;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

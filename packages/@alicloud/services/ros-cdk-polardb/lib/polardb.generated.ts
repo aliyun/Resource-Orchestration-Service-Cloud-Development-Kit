@@ -12,7 +12,7 @@ export interface RosAccountProps {
      * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
      * - It can be up to 16 characters in length.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The password of the database account. The password must comply with the following rules:
@@ -20,19 +20,19 @@ export interface RosAccountProps {
      * - Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).
      * - It must be 8 to 32 characters in length.
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: The description of the database account. The description must comply with the following rules:
      * - It cannot start with http:// or https://.
      * - It must be 2 to 256 characters in length.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -43,7 +43,7 @@ export interface RosAccountProps {
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * @Property accountType: The type of the database account. Valid values:
@@ -53,12 +53,12 @@ export interface RosAccountProps {
      * Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
      * You can create only one privileged account for an ApsaraDB for POLARDB cluster.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
-    readonly dbName?: string;
+    readonly dbName?: string | ros.IResolvable;
 }
 
 /**
@@ -157,7 +157,7 @@ export class RosAccount extends ros.RosResource {
      * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
      * - It can be up to 16 characters in length.
      */
-    public accountName: string;
+    public accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The password of the database account. The password must comply with the following rules:
@@ -165,19 +165,19 @@ export class RosAccount extends ros.RosResource {
      * - Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).
      * - It must be 8 to 32 characters in length.
      */
-    public accountPassword: string;
+    public accountPassword: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: The description of the database account. The description must comply with the following rules:
      * - It cannot start with http:// or https://.
      * - It must be 2 to 256 characters in length.
      */
-    public accountDescription: string | undefined;
+    public accountDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -188,7 +188,7 @@ export class RosAccount extends ros.RosResource {
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
-    public accountPrivilege: string | undefined;
+    public accountPrivilege: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountType: The type of the database account. Valid values:
@@ -198,12 +198,12 @@ export class RosAccount extends ros.RosResource {
      * Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
      * You can create only one privileged account for an ApsaraDB for POLARDB cluster.
      */
-    public accountType: string | undefined;
+    public accountType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
-    public dbName: string | undefined;
+    public dbName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::Account`.
@@ -250,7 +250,7 @@ export interface RosAccountPrivilegeProps {
     /**
      * @Property accountName: The name of the database account to be granted access permissions.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -261,19 +261,19 @@ export interface RosAccountPrivilegeProps {
      * The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
      * Separate multiple permissions with a comma (,).
      */
-    readonly accountPrivilege: string;
+    readonly accountPrivilege: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database whose access permissions are to be granted to the database account.
      * You can grant access permissions on one or more databases to the database account.
      * Separate multiple databases with a comma (,).
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 }
 
 /**
@@ -359,7 +359,7 @@ export class RosAccountPrivilege extends ros.RosResource {
     /**
      * @Property accountName: The name of the database account to be granted access permissions.
      */
-    public accountName: string;
+    public accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -370,19 +370,19 @@ export class RosAccountPrivilege extends ros.RosResource {
      * The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
      * Separate multiple permissions with a comma (,).
      */
-    public accountPrivilege: string;
+    public accountPrivilege: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database whose access permissions are to be granted to the database account.
      * You can grant access permissions on one or more databases to the database account.
      * Separate multiple databases with a comma (,).
      */
-    public dbName: string;
+    public dbName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::AccountPrivilege`.
@@ -423,7 +423,7 @@ export interface RosDBClusterProps {
     /**
      * @Property dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
      */
-    readonly dbNodeClass: string;
+    readonly dbNodeClass: string | ros.IResolvable;
 
     /**
      * @Property dbType: Database type, value:
@@ -431,7 +431,7 @@ export interface RosDBClusterProps {
      * PostgreSQL
      * Oracle
      */
-    readonly dbType: string;
+    readonly dbType: string | ros.IResolvable;
 
     /**
      * @Property dbVersion: The version of the database. Valid values:
@@ -439,19 +439,19 @@ export interface RosDBClusterProps {
      * PostgreSQL: 11
      * Oracle: 11
      */
-    readonly dbVersion: string;
+    readonly dbVersion: string | ros.IResolvable;
 
     /**
      * @Property payType: The billing method of the cluster. Valid values:
      * Postpaid: pay-as-you-go
      * Prepaid: subscription
      */
-    readonly payType: string;
+    readonly payType: string | ros.IResolvable;
 
     /**
      * @Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
-    readonly autoRenewPeriod?: number;
+    readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * @Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows:
@@ -461,7 +461,7 @@ export interface RosDBClusterProps {
      * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    readonly backupRetentionPolicyOnClusterDeletion?: string;
+    readonly backupRetentionPolicyOnClusterDeletion?: string | ros.IResolvable;
 
     /**
      * @Property cloneDataPoint: The time point of data to be cloned. Valid values:
@@ -474,17 +474,17 @@ export interface RosDBClusterProps {
      * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
      * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
      */
-    readonly cloneDataPoint?: string;
+    readonly cloneDataPoint?: string | ros.IResolvable;
 
     /**
      * @Property clusterNetworkType: The network type of the cluster. Currently, only VPC is supported. Default value: VPC.
      */
-    readonly clusterNetworkType?: string;
+    readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
      * @Property creationCategory: Cluster series. The value could be Normal (standard version).
      */
-    readonly creationCategory?: string;
+    readonly creationCategory?: string | ros.IResolvable;
 
     /**
      * @Property creationOption: The method for creating an ApsaraDB for POLARDB cluster. Valid values:
@@ -499,7 +499,7 @@ export interface RosDBClusterProps {
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
      * When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
      */
-    readonly creationOption?: string;
+    readonly creationOption?: string | ros.IResolvable;
 
     /**
      * @Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
@@ -508,7 +508,12 @@ export interface RosDBClusterProps {
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    readonly dbClusterDescription?: string;
+    readonly dbClusterDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterParameters: Modifies the parameters of a the PolarDB cluster.
+     */
+    readonly dbClusterParameters?: RosDBCluster.DBClusterParametersProperty | ros.IResolvable;
 
     /**
      * @Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
@@ -516,13 +521,13 @@ export interface RosDBClusterProps {
      * Other pickable value range is from -12:00 to +13:00, for example, 00:00.
      * Note: This parameter takes effect only when DBType is MySQL.
      */
-    readonly defaultTimeZone?: string;
+    readonly defaultTimeZone?: string | ros.IResolvable;
 
     /**
      * @Property gdnId: The ID of the Global Database Network (GDN).
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
-    readonly gdnId?: string;
+    readonly gdnId?: string | ros.IResolvable;
 
     /**
      * @Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows:
@@ -530,19 +535,19 @@ export interface RosDBClusterProps {
      * The default value is 1.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    readonly lowerCaseTableNames?: number;
+    readonly lowerCaseTableNames?: number | ros.IResolvable;
 
     /**
      * @Property maintainTime: The maintainable time of the cluster:
      * Format: HH: mmZ- HH: mmZ.
      * Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
      */
-    readonly maintainTime?: string;
+    readonly maintainTime?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -554,17 +559,24 @@ export interface RosDBClusterProps {
      * but only sends an SMS message three days before the cluster expires to remind you
      * that the cluster is not renewed.
      */
-    readonly renewalStatus?: string;
+    readonly renewalStatus?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The ID of the security group. 
+     * You can add up to three security groups to a cluster.
+     *
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
-    readonly securityIpList?: string;
+    readonly securityIpList?: string | ros.IResolvable;
 
     /**
      * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -572,7 +584,12 @@ export interface RosDBClusterProps {
      * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
-    readonly sourceResourceId?: string;
+    readonly sourceResourceId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDBCluster.TagsProperty[];
 
     /**
      * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -585,17 +602,17 @@ export interface RosDBClusterProps {
     /**
      * @Property vpcId: The ID of the VPC to connect to.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch to connect to.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query available zones.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -608,20 +625,10 @@ export interface RosDBClusterProps {
 function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('defaultTimeZone', ros.validateString)(properties.defaultTimeZone));
-    errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('cloneDataPoint', ros.validateString)(properties.cloneDataPoint));
     errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.backupRetentionPolicyOnClusterDeletion && (typeof properties.backupRetentionPolicyOnClusterDeletion) !== 'object') {
         errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateAllowedValues)({
           data: properties.backupRetentionPolicyOnClusterDeletion,
@@ -629,6 +636,52 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateString)(properties.backupRetentionPolicyOnClusterDeletion));
+    errors.collect(ros.propertyValidator('sourceResourceId', ros.validateString)(properties.sourceResourceId));
+    errors.collect(ros.propertyValidator('dbType', ros.requiredValidator)(properties.dbType));
+    if(properties.dbType && (typeof properties.dbType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbType', ros.validateAllowedValues)({
+          data: properties.dbType,
+          allowedValues: ["MySQL","Oracle","PostgreSQL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
+    errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    if(properties.clusterNetworkType && (typeof properties.clusterNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateAllowedValues)({
+          data: properties.clusterNetworkType,
+          allowedValues: ["VPC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateString)(properties.clusterNetworkType));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('dbClusterParameters', RosDBCluster_DBClusterParametersPropertyValidator)(properties.dbClusterParameters));
+    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDBCluster_TagsPropertyValidator))(properties.tags));
+    if(properties.lowerCaseTableNames && (typeof properties.lowerCaseTableNames) !== 'object') {
+        errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateAllowedValues)({
+          data: properties.lowerCaseTableNames,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateNumber)(properties.lowerCaseTableNames));
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
         errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
           data: properties.renewalStatus,
@@ -651,15 +704,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('sourceResourceId', ros.validateString)(properties.sourceResourceId));
-    errors.collect(ros.propertyValidator('dbType', ros.requiredValidator)(properties.dbType));
-    if(properties.dbType && (typeof properties.dbType) !== 'object') {
-        errors.collect(ros.propertyValidator('dbType', ros.validateAllowedValues)({
-          data: properties.dbType,
-          allowedValues: ["MySQL","Oracle","PostgreSQL"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -669,6 +713,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('creationCategory', ros.validateString)(properties.creationCategory));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.requiredValidator)(properties.dbNodeClass));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
     if(properties.creationOption && (typeof properties.creationOption) !== 'object') {
@@ -678,25 +723,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
-    errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
-    errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
-    if(properties.clusterNetworkType && (typeof properties.clusterNetworkType) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateAllowedValues)({
-          data: properties.clusterNetworkType,
-          allowedValues: ["VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateString)(properties.clusterNetworkType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
-    if(properties.lowerCaseTableNames && (typeof properties.lowerCaseTableNames) !== 'object') {
-        errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateAllowedValues)({
-          data: properties.lowerCaseTableNames,
-          allowedValues: [0,1],
-        }));
-    }
-    errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateNumber)(properties.lowerCaseTableNames));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -725,6 +752,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       CreationCategory: ros.stringToRosTemplate(properties.creationCategory),
       CreationOption: ros.stringToRosTemplate(properties.creationOption),
       DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
+      DBClusterParameters: rosDBClusterDBClusterParametersPropertyToRosTemplate(properties.dbClusterParameters),
       DefaultTimeZone: ros.stringToRosTemplate(properties.defaultTimeZone),
       GDNId: ros.stringToRosTemplate(properties.gdnId),
       LowerCaseTableNames: ros.numberToRosTemplate(properties.lowerCaseTableNames),
@@ -732,8 +760,10 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       Period: ros.numberToRosTemplate(properties.period),
       RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
       SourceResourceId: ros.stringToRosTemplate(properties.sourceResourceId),
+      Tags: ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
       TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -758,47 +788,47 @@ export class RosDBCluster extends ros.RosResource {
     /**
      * @Attribute ClusterConnectionString: The cluster connection string of the db cluster.
      */
-    public readonly attrClusterConnectionString: any;
+    public readonly attrClusterConnectionString: ros.IResolvable;
 
     /**
      * @Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
      */
-    public readonly attrClusterEndpointId: any;
+    public readonly attrClusterEndpointId: ros.IResolvable;
 
     /**
      * @Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
      */
-    public readonly attrCustomConnectionStrings: any;
+    public readonly attrCustomConnectionStrings: ros.IResolvable;
 
     /**
      * @Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
      */
-    public readonly attrCustomEndpointIds: any;
+    public readonly attrCustomEndpointIds: ros.IResolvable;
 
     /**
      * @Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
      */
-    public readonly attrDbClusterId: any;
+    public readonly attrDbClusterId: ros.IResolvable;
 
     /**
      * @Attribute DBNodeIds: The ID list of cluster nodes.
      */
-    public readonly attrDbNodeIds: any;
+    public readonly attrDbNodeIds: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The Order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute PrimaryConnectionString: The primary connection string of the db cluster.
      */
-    public readonly attrPrimaryConnectionString: any;
+    public readonly attrPrimaryConnectionString: ros.IResolvable;
 
     /**
      * @Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
      */
-    public readonly attrPrimaryEndpointId: any;
+    public readonly attrPrimaryEndpointId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -806,7 +836,7 @@ export class RosDBCluster extends ros.RosResource {
     /**
      * @Property dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
      */
-    public dbNodeClass: string;
+    public dbNodeClass: string | ros.IResolvable;
 
     /**
      * @Property dbType: Database type, value:
@@ -814,7 +844,7 @@ export class RosDBCluster extends ros.RosResource {
      * PostgreSQL
      * Oracle
      */
-    public dbType: string;
+    public dbType: string | ros.IResolvable;
 
     /**
      * @Property dbVersion: The version of the database. Valid values:
@@ -822,19 +852,19 @@ export class RosDBCluster extends ros.RosResource {
      * PostgreSQL: 11
      * Oracle: 11
      */
-    public dbVersion: string;
+    public dbVersion: string | ros.IResolvable;
 
     /**
      * @Property payType: The billing method of the cluster. Valid values:
      * Postpaid: pay-as-you-go
      * Prepaid: subscription
      */
-    public payType: string;
+    public payType: string | ros.IResolvable;
 
     /**
      * @Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
-    public autoRenewPeriod: number | undefined;
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows:
@@ -844,7 +874,7 @@ export class RosDBCluster extends ros.RosResource {
      * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    public backupRetentionPolicyOnClusterDeletion: string | undefined;
+    public backupRetentionPolicyOnClusterDeletion: string | ros.IResolvable | undefined;
 
     /**
      * @Property cloneDataPoint: The time point of data to be cloned. Valid values:
@@ -857,17 +887,17 @@ export class RosDBCluster extends ros.RosResource {
      * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
      * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
      */
-    public cloneDataPoint: string | undefined;
+    public cloneDataPoint: string | ros.IResolvable | undefined;
 
     /**
      * @Property clusterNetworkType: The network type of the cluster. Currently, only VPC is supported. Default value: VPC.
      */
-    public clusterNetworkType: string | undefined;
+    public clusterNetworkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property creationCategory: Cluster series. The value could be Normal (standard version).
      */
-    public creationCategory: string | undefined;
+    public creationCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property creationOption: The method for creating an ApsaraDB for POLARDB cluster. Valid values:
@@ -882,7 +912,7 @@ export class RosDBCluster extends ros.RosResource {
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
      * When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
      */
-    public creationOption: string | undefined;
+    public creationOption: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
@@ -891,7 +921,12 @@ export class RosDBCluster extends ros.RosResource {
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    public dbClusterDescription: string | undefined;
+    public dbClusterDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbClusterParameters: Modifies the parameters of a the PolarDB cluster.
+     */
+    public dbClusterParameters: RosDBCluster.DBClusterParametersProperty | ros.IResolvable | undefined;
 
     /**
      * @Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
@@ -899,13 +934,13 @@ export class RosDBCluster extends ros.RosResource {
      * Other pickable value range is from -12:00 to +13:00, for example, 00:00.
      * Note: This parameter takes effect only when DBType is MySQL.
      */
-    public defaultTimeZone: string | undefined;
+    public defaultTimeZone: string | ros.IResolvable | undefined;
 
     /**
      * @Property gdnId: The ID of the Global Database Network (GDN).
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
-    public gdnId: string | undefined;
+    public gdnId: string | ros.IResolvable | undefined;
 
     /**
      * @Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows:
@@ -913,19 +948,19 @@ export class RosDBCluster extends ros.RosResource {
      * The default value is 1.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    public lowerCaseTableNames: number | undefined;
+    public lowerCaseTableNames: number | ros.IResolvable | undefined;
 
     /**
      * @Property maintainTime: The maintainable time of the cluster:
      * Format: HH: mmZ- HH: mmZ.
      * Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
      */
-    public maintainTime: string | undefined;
+    public maintainTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -937,17 +972,24 @@ export class RosDBCluster extends ros.RosResource {
      * but only sends an SMS message three days before the cluster expires to remind you
      * that the cluster is not renewed.
      */
-    public renewalStatus: string | undefined;
+    public renewalStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupIds: The ID of the security group. 
+     * You can add up to three security groups to a cluster.
+     *
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
-    public securityIpList: string | undefined;
+    public securityIpList: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -955,7 +997,12 @@ export class RosDBCluster extends ros.RosResource {
      * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
-    public sourceResourceId: string | undefined;
+    public sourceResourceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosDBCluster.TagsProperty[] | undefined;
 
     /**
      * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -968,17 +1015,17 @@ export class RosDBCluster extends ros.RosResource {
     /**
      * @Property vpcId: The ID of the VPC to connect to.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch to connect to.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query available zones.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBCluster`.
@@ -989,15 +1036,15 @@ export class RosDBCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterConnectionString = ros.Token.asString(this.getAtt('ClusterConnectionString'));
-        this.attrClusterEndpointId = ros.Token.asString(this.getAtt('ClusterEndpointId'));
-        this.attrCustomConnectionStrings = ros.Token.asString(this.getAtt('CustomConnectionStrings'));
-        this.attrCustomEndpointIds = ros.Token.asString(this.getAtt('CustomEndpointIds'));
-        this.attrDbClusterId = ros.Token.asString(this.getAtt('DBClusterId'));
-        this.attrDbNodeIds = ros.Token.asString(this.getAtt('DBNodeIds'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPrimaryConnectionString = ros.Token.asString(this.getAtt('PrimaryConnectionString'));
-        this.attrPrimaryEndpointId = ros.Token.asString(this.getAtt('PrimaryEndpointId'));
+        this.attrClusterConnectionString = this.getAtt('ClusterConnectionString');
+        this.attrClusterEndpointId = this.getAtt('ClusterEndpointId');
+        this.attrCustomConnectionStrings = this.getAtt('CustomConnectionStrings');
+        this.attrCustomEndpointIds = this.getAtt('CustomEndpointIds');
+        this.attrDbClusterId = this.getAtt('DBClusterId');
+        this.attrDbNodeIds = this.getAtt('DBNodeIds');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPrimaryConnectionString = this.getAtt('PrimaryConnectionString');
+        this.attrPrimaryEndpointId = this.getAtt('PrimaryEndpointId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbNodeClass = props.dbNodeClass;
@@ -1011,6 +1058,7 @@ export class RosDBCluster extends ros.RosResource {
         this.creationCategory = props.creationCategory;
         this.creationOption = props.creationOption;
         this.dbClusterDescription = props.dbClusterDescription;
+        this.dbClusterParameters = props.dbClusterParameters;
         this.defaultTimeZone = props.defaultTimeZone;
         this.gdnId = props.gdnId;
         this.lowerCaseTableNames = props.lowerCaseTableNames;
@@ -1018,8 +1066,10 @@ export class RosDBCluster extends ros.RosResource {
         this.period = props.period;
         this.renewalStatus = props.renewalStatus;
         this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupIds = props.securityGroupIds;
         this.securityIpList = props.securityIpList;
         this.sourceResourceId = props.sourceResourceId;
+        this.tags = props.tags;
         this.tdeStatus = props.tdeStatus;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -1040,6 +1090,7 @@ export class RosDBCluster extends ros.RosResource {
             creationCategory: this.creationCategory,
             creationOption: this.creationOption,
             dbClusterDescription: this.dbClusterDescription,
+            dbClusterParameters: this.dbClusterParameters,
             defaultTimeZone: this.defaultTimeZone,
             gdnId: this.gdnId,
             lowerCaseTableNames: this.lowerCaseTableNames,
@@ -1047,8 +1098,10 @@ export class RosDBCluster extends ros.RosResource {
             period: this.period,
             renewalStatus: this.renewalStatus,
             resourceGroupId: this.resourceGroupId,
+            securityGroupIds: this.securityGroupIds,
             securityIpList: this.securityIpList,
             sourceResourceId: this.sourceResourceId,
+            tags: this.tags,
             tdeStatus: this.tdeStatus,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -1060,6 +1113,123 @@ export class RosDBCluster extends ros.RosResource {
     }
 }
 
+export namespace RosDBCluster {
+    /**
+     * @stability external
+     */
+    export interface DBClusterParametersProperty {
+        /**
+         * @Property parameters: The JSON string that consists of parameters and values. 
+     * The parameter values are strings, for example, 
+     * {"auto_increment_increment":"1","character_set_filesystem":"utf8"}.
+     * You can call the DescribeDBClusterParameters operation to 
+     * view the parameters of the PolarDB cluster.
+         */
+        readonly parameters?: string | ros.IResolvable;
+        /**
+         * @Property effectiveTime: The time when the modified values of parameters take effect. Valid values: 
+     * - Auto: The system automatically determines how the modified values of parameters take effect.
+     * If all the modified values of parameters can take effect without a cluster restart, 
+     * they immediately take effect. If a cluster restart is required to make the modified values  
+     * of some parameters take effect, all of them take effect after a cluster restart 
+     * is performed within the maintenance window. 
+     * - Immediately: If all the modified values of parameters can take effect without a 
+     * cluster restart, the modifications immediately take effect. If a cluster restart is 
+     * required to make the modified values of some parameters take effect, 
+     * the cluster is immediately restarted for the modifications to take effect. 
+     * - MaintainTime: The modified values of parameters take effect within the maintenance window. 
+     * All the modified values of parameters take effect within the maintenance window.
+     * Default value: Auto.
+         */
+        readonly effectiveTime?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DBClusterParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `DBClusterParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBCluster_DBClusterParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameters', ros.validateString)(properties.parameters));
+    if(properties.effectiveTime && (typeof properties.effectiveTime) !== 'object') {
+        errors.collect(ros.propertyValidator('effectiveTime', ros.validateAllowedValues)({
+          data: properties.effectiveTime,
+          allowedValues: ["Auto","Immediately","MaintainTime"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('effectiveTime', ros.validateString)(properties.effectiveTime));
+    return errors.wrap('supplied properties not correct for "DBClusterParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.DBClusterParameters` resource
+ *
+ * @param properties - the TypeScript properties of a `DBClusterParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.DBClusterParameters` resource.
+ */
+// @ts-ignore TS6133
+function rosDBClusterDBClusterParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBCluster_DBClusterParametersPropertyValidator(properties).assertSuccess();
+    return {
+      Parameters: ros.stringToRosTemplate(properties.parameters),
+      EffectiveTime: ros.stringToRosTemplate(properties.effectiveTime),
+    };
+}
+
+export namespace RosDBCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`
  */
@@ -1068,7 +1238,7 @@ export interface RosDBClusterAccessWhiteListProps {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. Each
@@ -1079,14 +1249,14 @@ export interface RosDBClusterAccessWhiteListProps {
      * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
      * ranges from 1 to 32.
      */
-    readonly securityIps: string;
+    readonly securityIps: string | ros.IResolvable;
 
     /**
      * @Property dbClusterIpArrayName: The name of the IP address whitelist group. If you do not specify this parameter,
      * the Default whitelist group is modified by default.
      * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
      */
-    readonly dbClusterIpArrayName?: string;
+    readonly dbClusterIpArrayName?: string | ros.IResolvable;
 }
 
 /**
@@ -1151,7 +1321,7 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
     /**
      * @Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    public readonly attrDbClusterId: any;
+    public readonly attrDbClusterId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1159,7 +1329,7 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. Each
@@ -1170,14 +1340,14 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
      * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
      * ranges from 1 to 32.
      */
-    public securityIps: string;
+    public securityIps: string | ros.IResolvable;
 
     /**
      * @Property dbClusterIpArrayName: The name of the IP address whitelist group. If you do not specify this parameter,
      * the Default whitelist group is modified by default.
      * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
      */
-    public dbClusterIpArrayName: string | undefined;
+    public dbClusterIpArrayName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
@@ -1188,7 +1358,7 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterAccessWhiteListProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBClusterAccessWhiteList.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbClusterId = ros.Token.asString(this.getAtt('DBClusterId'));
+        this.attrDbClusterId = this.getAtt('DBClusterId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
@@ -1217,14 +1387,14 @@ export interface RosDBClusterEndpointProps {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
      * Valid values: Enable, Disable.
      * Default value: Disable.
      */
-    readonly autoAddNewNodes?: string;
+    readonly autoAddNewNodes?: string | ros.IResolvable;
 
     /**
      * @Property endpointConfig:
@@ -1234,7 +1404,7 @@ export interface RosDBClusterEndpointProps {
     /**
      * @Property endpointType: The type of the cluster connection point. Set this parameter to Custom.
      */
-    readonly endpointType?: string;
+    readonly endpointType?: string | ros.IResolvable;
 
     /**
      * @Property nodes: The nodes to be added to this connection point to process read requests from this connection point. Add at least two nodes.
@@ -1248,7 +1418,7 @@ export interface RosDBClusterEndpointProps {
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
      */
-    readonly readWriteMode?: string;
+    readonly readWriteMode?: string | ros.IResolvable;
 }
 
 /**
@@ -1330,17 +1500,17 @@ export class RosDBClusterEndpoint extends ros.RosResource {
     /**
      * @Attribute Addresses: The address items of the db cluster endpoint.
      */
-    public readonly attrAddresses: any;
+    public readonly attrAddresses: ros.IResolvable;
 
     /**
      * @Attribute ConnectionString: The first connection string of the db cluster endpoint.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     /**
      * @Attribute DBEndpointId: DB cluster endpoint ID. E.g. pe-xxxxxxxx.
      */
-    public readonly attrDbEndpointId: any;
+    public readonly attrDbEndpointId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1348,14 +1518,14 @@ export class RosDBClusterEndpoint extends ros.RosResource {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
      * Valid values: Enable, Disable.
      * Default value: Disable.
      */
-    public autoAddNewNodes: string | undefined;
+    public autoAddNewNodes: string | ros.IResolvable | undefined;
 
     /**
      * @Property endpointConfig:
@@ -1365,7 +1535,7 @@ export class RosDBClusterEndpoint extends ros.RosResource {
     /**
      * @Property endpointType: The type of the cluster connection point. Set this parameter to Custom.
      */
-    public endpointType: string | undefined;
+    public endpointType: string | ros.IResolvable | undefined;
 
     /**
      * @Property nodes: The nodes to be added to this connection point to process read requests from this connection point. Add at least two nodes.
@@ -1379,7 +1549,7 @@ export class RosDBClusterEndpoint extends ros.RosResource {
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
      */
-    public readWriteMode: string | undefined;
+    public readWriteMode: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.
@@ -1390,9 +1560,9 @@ export class RosDBClusterEndpoint extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterEndpointProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBClusterEndpoint.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAddresses = ros.Token.asString(this.getAtt('Addresses'));
-        this.attrConnectionString = ros.Token.asString(this.getAtt('ConnectionString'));
-        this.attrDbEndpointId = ros.Token.asString(this.getAtt('DBEndpointId'));
+        this.attrAddresses = this.getAtt('Addresses');
+        this.attrConnectionString = this.getAtt('ConnectionString');
+        this.attrDbEndpointId = this.getAtt('DBEndpointId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
@@ -1431,7 +1601,7 @@ export namespace RosDBClusterEndpoint {
      * For example, {"ConsistLevel": "0"}.
      * Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
          */
-        readonly consistLevel?: string;
+        readonly consistLevel?: string | ros.IResolvable;
     }
 }
 /**
@@ -1478,19 +1648,19 @@ export interface RosDBClusterEndpointAddressProps {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbEndpointId: The ID of the cluster connection point.
      */
-    readonly dbEndpointId: string;
+    readonly dbEndpointId: string | ros.IResolvable;
 
     /**
      * @Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules:
      * It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
      * The length is 6~30 characters.
      */
-    readonly connectionStringPrefix?: string;
+    readonly connectionStringPrefix?: string | ros.IResolvable;
 
     /**
      * @Property netType: The network type of the connection string. 
@@ -1498,7 +1668,7 @@ export interface RosDBClusterEndpointAddressProps {
      * If set to Private, ROS will only modify Private address for you.
      * Default to Public.
      */
-    readonly netType?: string;
+    readonly netType?: string | ros.IResolvable;
 }
 
 /**
@@ -1570,12 +1740,12 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
     /**
      * @Attribute Address: The details of the endpoint address.
      */
-    public readonly attrAddress: any;
+    public readonly attrAddress: ros.IResolvable;
 
     /**
      * @Attribute ConnectionString: The connection string of the endpoint address.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1583,19 +1753,19 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbEndpointId: The ID of the cluster connection point.
      */
-    public dbEndpointId: string;
+    public dbEndpointId: string | ros.IResolvable;
 
     /**
      * @Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules:
      * It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
      * The length is 6~30 characters.
      */
-    public connectionStringPrefix: string | undefined;
+    public connectionStringPrefix: string | ros.IResolvable | undefined;
 
     /**
      * @Property netType: The network type of the connection string. 
@@ -1603,7 +1773,7 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
      * If set to Private, ROS will only modify Private address for you.
      * Default to Public.
      */
-    public netType: string | undefined;
+    public netType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpointAddress`.
@@ -1614,8 +1784,8 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterEndpointAddressProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBClusterEndpointAddress.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAddress = ros.Token.asString(this.getAtt('Address'));
-        this.attrConnectionString = ros.Token.asString(this.getAtt('ConnectionString'));
+        this.attrAddress = this.getAtt('Address');
+        this.attrConnectionString = this.getAtt('ConnectionString');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
@@ -1646,12 +1816,12 @@ export interface RosDBInstanceProps {
     /**
      * @Property characterSetName: The character set of the database. For more information, see Character sets.
      */
-    readonly characterSetName: string;
+    readonly characterSetName: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database to be created. The name must comply with the following rules:
@@ -1659,12 +1829,12 @@ export interface RosDBInstanceProps {
      * (-), and underscores (_).
      * It must end with a letter or a digit. It can be up to 64 characters in length.
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 
     /**
      * @Property accountName: The name of the database account to be used.
      */
-    readonly accountName?: string;
+    readonly accountName?: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -1674,14 +1844,14 @@ export interface RosDBInstanceProps {
      * DDLOnly: runs only data definition language (DDL) statements.
      * Default value: ReadWrite.
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * @Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    readonly dbDescription?: string;
+    readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**
@@ -1768,12 +1938,12 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property characterSetName: The character set of the database. For more information, see Character sets.
      */
-    public characterSetName: string;
+    public characterSetName: string | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database to be created. The name must comply with the following rules:
@@ -1781,12 +1951,12 @@ export class RosDBInstance extends ros.RosResource {
      * (-), and underscores (_).
      * It must end with a letter or a digit. It can be up to 64 characters in length.
      */
-    public dbName: string;
+    public dbName: string | ros.IResolvable;
 
     /**
      * @Property accountName: The name of the database account to be used.
      */
-    public accountName: string | undefined;
+    public accountName: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -1796,14 +1966,14 @@ export class RosDBInstance extends ros.RosResource {
      * DDLOnly: runs only data definition language (DDL) statements.
      * Default value: ReadWrite.
      */
-    public accountPrivilege: string | undefined;
+    public accountPrivilege: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    public dbDescription: string | undefined;
+    public dbDescription: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBInstance`.
@@ -1848,12 +2018,12 @@ export interface RosDBNodesProps {
     /**
      * @Property amount: Number of nodes to be added to cluster.
      */
-    readonly amount: number;
+    readonly amount: number | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 }
 
 /**
@@ -1916,12 +2086,12 @@ export class RosDBNodes extends ros.RosResource {
     /**
      * @Attribute DBNodeIds: The ID list of added cluster nodes.
      */
-    public readonly attrDbNodeIds: any;
+    public readonly attrDbNodeIds: ros.IResolvable;
 
     /**
      * @Attribute OrderIds: The order ID list of added cluster nodes.
      */
-    public readonly attrOrderIds: any;
+    public readonly attrOrderIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1929,12 +2099,12 @@ export class RosDBNodes extends ros.RosResource {
     /**
      * @Property amount: Number of nodes to be added to cluster.
      */
-    public amount: number;
+    public amount: number | ros.IResolvable;
 
     /**
      * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
-    public dbClusterId: string;
+    public dbClusterId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
@@ -1945,8 +2115,8 @@ export class RosDBNodes extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBNodesProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBNodes.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbNodeIds = ros.Token.asString(this.getAtt('DBNodeIds'));
-        this.attrOrderIds = ros.Token.asString(this.getAtt('OrderIds'));
+        this.attrDbNodeIds = this.getAtt('DBNodeIds');
+        this.attrOrderIds = this.getAtt('OrderIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.amount = props.amount;

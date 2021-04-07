@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  `ALIYUN::EDAS::UserDefineRegion`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.UserDefineRegion")
 public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::UserDefineRegion`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public UserDefineRegion(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.UserDefineRegionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::UserDefineRegion`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public UserDefineRegion(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.UserDefineRegionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,33 +49,38 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute BelongRegion: Under the physical region ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBelongRegion() {
-        return software.amazon.jsii.Kernel.get(this, "attrBelongRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBelongRegion() {
+        return software.amazon.jsii.Kernel.get(this, "attrBelongRegion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute DebugEnable: Whether debug is enable.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDebugEnable() {
-        return software.amazon.jsii.Kernel.get(this, "attrDebugEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDebugEnable() {
+        return software.amazon.jsii.Kernel.get(this, "attrDebugEnable", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Id: Resource ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrId() {
-        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrId() {
+        return software.amazon.jsii.Kernel.get(this, "attrId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RegionName: Region name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRegionName() {
-        return software.amazon.jsii.Kernel.get(this, "attrRegionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRegionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrRegionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute UserId: User account ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -76,8 +89,8 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.edas.UserDefineRegion> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -85,8 +98,8 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -105,34 +118,62 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property regionName: Logical region (or namespace) name.
+         * <p>
          * @return {@code this}
-         * @param regionName This parameter is required.
+         * @param regionName Property regionName: Logical region (or namespace) name. This parameter is required.
          */
         public Builder regionName(final java.lang.String regionName) {
             this.props.regionName(regionName);
             return this;
         }
+        /**
+         * Property regionName: Logical region (or namespace) name.
+         * <p>
+         * @return {@code this}
+         * @param regionName Property regionName: Logical region (or namespace) name. This parameter is required.
+         */
+        public Builder regionName(final com.aliyun.ros.cdk.core.IResolvable regionName) {
+            this.props.regionName(regionName);
+            return this;
+        }
 
         /**
+         * Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier").
+         * <p>
          * @return {@code this}
-         * @param regionTag This parameter is required.
+         * @param regionTag Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier"). This parameter is required.
          */
         public Builder regionTag(final java.lang.String regionTag) {
             this.props.regionTag(regionTag);
             return this;
         }
+        /**
+         * Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier").
+         * <p>
+         * @return {@code this}
+         * @param regionTag Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier"). This parameter is required.
+         */
+        public Builder regionTag(final com.aliyun.ros.cdk.core.IResolvable regionTag) {
+            this.props.regionTag(regionTag);
+            return this;
+        }
 
         /**
+         * Property debugEnable: Whether debug is enable.
+         * <p>
          * @return {@code this}
-         * @param debugEnable This parameter is required.
+         * @param debugEnable Property debugEnable: Whether debug is enable. This parameter is required.
          */
         public Builder debugEnable(final java.lang.Boolean debugEnable) {
             this.props.debugEnable(debugEnable);
             return this;
         }
         /**
+         * Property debugEnable: Whether debug is enable.
+         * <p>
          * @return {@code this}
-         * @param debugEnable This parameter is required.
+         * @param debugEnable Property debugEnable: Whether debug is enable. This parameter is required.
          */
         public Builder debugEnable(final com.aliyun.ros.cdk.core.IResolvable debugEnable) {
             this.props.debugEnable(debugEnable);
@@ -140,10 +181,22 @@ public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: Logic region (or namespace) description.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Logic region (or namespace) description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * Property description: Logic region (or namespace) description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Logic region (or namespace) description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }

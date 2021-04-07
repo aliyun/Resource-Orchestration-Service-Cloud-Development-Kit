@@ -3,20 +3,20 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionHandleProps")
 @software.amazon.jsii.Jsii.Proxy(RosWaitConditionHandleProps.Jsii$Proxy.class)
 public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
         return null;
     }
 
@@ -30,8 +30,8 @@ public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link RosWaitConditionHandleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosWaitConditionHandleProps> {
-        private java.lang.Number count;
-        private java.lang.String mode;
+        private java.lang.Object count;
+        private java.lang.Object mode;
 
         /**
          * Sets the value of {@link RosWaitConditionHandleProps#getCount}
@@ -44,11 +44,31 @@ public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosWaitConditionHandleProps#getCount}
+         * @param count the value to be set.
+         * @return {@code this}
+         */
+        public Builder count(com.aliyun.ros.cdk.core.IResolvable count) {
+            this.count = count;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosWaitConditionHandleProps#getMode}
          * @param mode the value to be set.
          * @return {@code this}
          */
         public Builder mode(java.lang.String mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosWaitConditionHandleProps#getMode}
+         * @param mode the value to be set.
+         * @return {@code this}
+         */
+        public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
             this.mode = mode;
             return this;
         }
@@ -69,8 +89,8 @@ public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSe
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosWaitConditionHandleProps {
-        private final java.lang.Number count;
-        private final java.lang.String mode;
+        private final java.lang.Object count;
+        private final java.lang.Object mode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -78,26 +98,26 @@ public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSe
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number count, final java.lang.String mode) {
+        protected Jsii$Proxy(final java.lang.Object count, final java.lang.Object mode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.count = count;
             this.mode = mode;
         }
 
         @Override
-        public final java.lang.Number getCount() {
+        public final java.lang.Object getCount() {
             return this.count;
         }
 
         @Override
-        public final java.lang.String getMode() {
+        public final java.lang.Object getMode() {
             return this.mode;
         }
 

@@ -11,7 +11,7 @@ export interface AssignPrivateIpAddressesProps {
     /**
      * Property networkInterfaceId: The ID of the ENI.
      */
-    readonly networkInterfaceId: string;
+    readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
      * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
@@ -26,7 +26,7 @@ export interface AssignPrivateIpAddressesProps {
     /**
      * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
      */
-    readonly secondaryPrivateIpAddressCount?: number;
+    readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
 }
 
 /**
@@ -42,12 +42,12 @@ export class AssignPrivateIpAddresses extends ros.Resource {
     /**
      * Attribute NetworkInterfaceId: The ID of the ENI.
      */
-    public readonly attrNetworkInterfaceId: any;
+    public readonly attrNetworkInterfaceId: ros.IResolvable;
 
     /**
      * Attribute PrivateIpAddresses: Assigned private ip addresses.
      */
-    public readonly attrPrivateIpAddresses: any;
+    public readonly attrPrivateIpAddresses: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.

@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <summary>Attribute CreateDate: Create date of ram user.</summary>
-        [JsiiProperty(name: "attrCreateDate", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCreateDate
+        [JsiiProperty(name: "attrCreateDate", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCreateDate
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LastLoginDate: Last login date of ram user.</summary>
-        [JsiiProperty(name: "attrLastLoginDate", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLastLoginDate
+        [JsiiProperty(name: "attrLastLoginDate", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLastLoginDate
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute UserId: Id of ram user.</summary>
-        [JsiiProperty(name: "attrUserId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUserId
+        [JsiiProperty(name: "attrUserId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute UserName: Name of ram user.</summary>
-        [JsiiProperty(name: "attrUserName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUserName
+        [JsiiProperty(name: "attrUserName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

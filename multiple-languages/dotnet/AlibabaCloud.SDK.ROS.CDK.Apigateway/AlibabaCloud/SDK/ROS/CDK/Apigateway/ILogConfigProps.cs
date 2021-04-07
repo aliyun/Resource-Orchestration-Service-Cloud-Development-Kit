@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public interface ILogConfigProps
     {
         /// <summary>Property slsLogStore: Logstore name of SLS.</summary>
-        [JsiiProperty(name: "slsLogStore", typeJson: "{\"primitive\":\"string\"}")]
-        string SlsLogStore
+        [JsiiProperty(name: "slsLogStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SlsLogStore
         {
             get;
         }
 
         /// <summary>Property slsProject: Project name of SLS.</summary>
-        [JsiiProperty(name: "slsProject", typeJson: "{\"primitive\":\"string\"}")]
-        string SlsProject
+        [JsiiProperty(name: "slsProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SlsProject
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <summary>Property slsLogStore: Logstore name of SLS.</summary>
-            [JsiiProperty(name: "slsLogStore", typeJson: "{\"primitive\":\"string\"}")]
-            public string SlsLogStore
+            [JsiiProperty(name: "slsLogStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SlsLogStore
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property slsProject: Project name of SLS.</summary>
-            [JsiiProperty(name: "slsProject", typeJson: "{\"primitive\":\"string\"}")]
-            public string SlsProject
+            [JsiiProperty(name: "slsProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SlsProject
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

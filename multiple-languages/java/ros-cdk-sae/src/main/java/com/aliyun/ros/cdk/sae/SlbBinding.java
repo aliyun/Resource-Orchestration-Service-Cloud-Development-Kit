@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS resource type:  `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.SlbBinding")
 public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAE::SlbBinding`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public SlbBinding(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sae.SlbBindingProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAE::SlbBinding`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public SlbBinding(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sae.SlbBindingProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AppId: Successful application deployment target ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChangeOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrChangeOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChangeOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrChangeOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sae.SlbBinding> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,46 +97,114 @@ public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property appId: Successful application deployment target ID.
+         * <p>
          * @return {@code this}
-         * @param appId This parameter is required.
+         * @param appId Property appId: Successful application deployment target ID. This parameter is required.
          */
         public Builder appId(final java.lang.String appId) {
             this.props.appId(appId);
             return this;
         }
+        /**
+         * Property appId: Successful application deployment target ID.
+         * <p>
+         * @return {@code this}
+         * @param appId Property appId: Successful application deployment target ID. This parameter is required.
+         */
+        public Builder appId(final com.aliyun.ros.cdk.core.IResolvable appId) {
+            this.props.appId(appId);
+            return this;
+        }
 
         /**
+         * Property internet: Binding public SLB.
+         * <p>
+         * For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
+         * <p>
          * @return {@code this}
-         * @param internet This parameter is required.
+         * @param internet Property internet: Binding public SLB. This parameter is required.
          */
         public Builder internet(final java.lang.String internet) {
             this.props.internet(internet);
             return this;
         }
+        /**
+         * Property internet: Binding public SLB.
+         * <p>
+         * For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
+         * <p>
+         * @return {@code this}
+         * @param internet Property internet: Binding public SLB. This parameter is required.
+         */
+        public Builder internet(final com.aliyun.ros.cdk.core.IResolvable internet) {
+            this.props.internet(internet);
+            return this;
+        }
 
         /**
+         * Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples.
+         * <p>
          * @return {@code this}
-         * @param internetSlbId This parameter is required.
+         * @param internetSlbId Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples. This parameter is required.
          */
         public Builder internetSlbId(final java.lang.String internetSlbId) {
             this.props.internetSlbId(internetSlbId);
             return this;
         }
+        /**
+         * Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples.
+         * <p>
+         * @return {@code this}
+         * @param internetSlbId Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples. This parameter is required.
+         */
+        public Builder internetSlbId(final com.aliyun.ros.cdk.core.IResolvable internetSlbId) {
+            this.props.internetSlbId(internetSlbId);
+            return this;
+        }
 
         /**
+         * Property intranet: Bind private SLB.
+         * <p>
+         * For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
+         * <p>
          * @return {@code this}
-         * @param intranet This parameter is required.
+         * @param intranet Property intranet: Bind private SLB. This parameter is required.
          */
         public Builder intranet(final java.lang.String intranet) {
             this.props.intranet(intranet);
             return this;
         }
+        /**
+         * Property intranet: Bind private SLB.
+         * <p>
+         * For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
+         * <p>
+         * @return {@code this}
+         * @param intranet Property intranet: Bind private SLB. This parameter is required.
+         */
+        public Builder intranet(final com.aliyun.ros.cdk.core.IResolvable intranet) {
+            this.props.intranet(intranet);
+            return this;
+        }
 
         /**
+         * Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples.
+         * <p>
          * @return {@code this}
-         * @param intranetSlbId This parameter is required.
+         * @param intranetSlbId Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples. This parameter is required.
          */
         public Builder intranetSlbId(final java.lang.String intranetSlbId) {
+            this.props.intranetSlbId(intranetSlbId);
+            return this;
+        }
+        /**
+         * Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples.
+         * <p>
+         * @return {@code this}
+         * @param intranetSlbId Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples. This parameter is required.
+         */
+        public Builder intranetSlbId(final com.aliyun.ros.cdk.core.IResolvable intranetSlbId) {
             this.props.intranetSlbId(intranetSlbId);
             return this;
         }

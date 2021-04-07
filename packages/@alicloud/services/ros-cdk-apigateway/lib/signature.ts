@@ -11,17 +11,17 @@ export interface SignatureProps {
     /**
      * Property signatureKey: The key of the signature.
      */
-    readonly signatureKey: string;
+    readonly signatureKey: string | ros.IResolvable;
 
     /**
      * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly signatureName: string;
+    readonly signatureName: string | ros.IResolvable;
 
     /**
      * Property signatureSecret: The secret of the signature.
      */
-    readonly signatureSecret: string;
+    readonly signatureSecret: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class Signature extends ros.Resource {
     /**
      * Attribute SignatureId: The id of the created signature
      */
-    public readonly attrSignatureId: any;
+    public readonly attrSignatureId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Signature`.

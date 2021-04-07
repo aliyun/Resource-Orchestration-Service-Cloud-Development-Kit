@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: clusterId: Cluster id
         /// </remarks>
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ClusterId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: imageId: Mirror id
         /// </remarks>
-        [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ImageId
+        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ImageId
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
         /// </remarks>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceType
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
         /// </remarks>
-        [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SystemDiskCategory
+        [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SystemDiskCategory
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: systemDiskSize: System disk size
         /// </remarks>
-        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double SystemDiskSize
+        [JsiiProperty(name: "systemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SystemDiskSize
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// Desktop
         /// Application
         /// </remarks>
-        [JsiiProperty(name: "workMode", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string WorkMode
+        [JsiiProperty(name: "workMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object WorkMode
         {
             get;
             set;
@@ -111,8 +111,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// PrePaid: Subscription
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceChargeType
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceChargeType
         {
             get;
             set;
@@ -125,8 +125,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// This value is only valid when AllocatePublicAddress is true.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InternetChargeType
+        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InternetChargeType
         {
             get;
             set;
@@ -139,8 +139,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// This value is only valid when AllocatePublicAddress is true.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? InternetMaxBandwidthIn
+        [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InternetMaxBandwidthIn
         {
             get;
             set;
@@ -153,8 +153,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// This value is only valid when AllocatePublicAddress is true.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? InternetMaxBandwidthOut
+        [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InternetMaxBandwidthOut
         {
             get;
             set;
@@ -164,8 +164,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: name: Instance name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;
@@ -178,8 +178,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// This value is only valid when InstanceChargeType is PrePaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -190,8 +190,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// This value is only valid when InstanceChargeType is PrePaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "periodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PeriodUnit
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PeriodUnit
         {
             get;
             set;
@@ -201,8 +201,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: vSwitchId: VSwitch id
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VSwitchId
         {
             get;
             set;

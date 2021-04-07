@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.651Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.315Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupProps.Jsii$Proxy.class)
 public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getImageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMaxAmount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMaxAmount();
 
     /**
      */
@@ -28,25 +28,25 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoReleaseTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoRenew() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDedicatedHostId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostId() {
         return null;
     }
 
@@ -58,13 +58,13 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -82,55 +82,55 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHostName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHpcClusterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIoOptimized() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIpv6AddressCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
     }
 
@@ -142,37 +142,37 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
@@ -184,43 +184,43 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityEnhancementStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityEnhancementStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
@@ -232,79 +232,79 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotPriceLimit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskAutoSnapshotPolicyId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDiskName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDiskName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskPerformanceLevel() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserData() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -318,57 +318,57 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosInstanceGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceGroupProps> {
-        private java.lang.String imageId;
-        private java.lang.String instanceType;
-        private java.lang.Number maxAmount;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceType;
+        private java.lang.Object maxAmount;
         private java.lang.Object allocatePublicIp;
-        private java.lang.String autoReleaseTime;
-        private java.lang.String autoRenew;
-        private java.lang.Number autoRenewPeriod;
-        private java.lang.String dedicatedHostId;
+        private java.lang.Object autoReleaseTime;
+        private java.lang.Object autoRenew;
+        private java.lang.Object autoRenewPeriod;
+        private java.lang.Object dedicatedHostId;
         private java.lang.Object deletionProtection;
-        private java.lang.String deploymentSetId;
-        private java.lang.String description;
+        private java.lang.Object deploymentSetId;
+        private java.lang.Object description;
         private java.lang.Object diskMappings;
         private java.lang.Object eniMappings;
-        private java.lang.String hostName;
-        private java.lang.String hpcClusterId;
-        private java.lang.String instanceChargeType;
-        private java.lang.String instanceName;
-        private java.lang.String internetChargeType;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.Number internetMaxBandwidthOut;
-        private java.lang.String ioOptimized;
-        private java.lang.Number ipv6AddressCount;
+        private java.lang.Object hostName;
+        private java.lang.Object hpcClusterId;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object instanceName;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object internetMaxBandwidthOut;
+        private java.lang.Object ioOptimized;
+        private java.lang.Object ipv6AddressCount;
         private java.lang.Object ipv6Addresses;
-        private java.lang.String keyPairName;
-        private java.lang.String launchTemplateId;
-        private java.lang.String launchTemplateName;
-        private java.lang.String launchTemplateVersion;
-        private java.lang.String networkType;
-        private java.lang.String password;
+        private java.lang.Object keyPairName;
+        private java.lang.Object launchTemplateId;
+        private java.lang.Object launchTemplateName;
+        private java.lang.Object launchTemplateVersion;
+        private java.lang.Object networkType;
+        private java.lang.Object password;
         private java.lang.Object passwordInherit;
-        private java.lang.Number period;
-        private java.lang.String periodUnit;
-        private java.lang.String privateIpAddress;
-        private java.lang.String ramRoleName;
-        private java.lang.String resourceGroupId;
-        private java.lang.String securityEnhancementStrategy;
-        private java.lang.String securityGroupId;
+        private java.lang.Object period;
+        private java.lang.Object periodUnit;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object securityEnhancementStrategy;
+        private java.lang.Object securityGroupId;
         private java.lang.Object securityGroupIds;
-        private java.lang.String spotPriceLimit;
-        private java.lang.String spotStrategy;
-        private java.lang.String systemDiskAutoSnapshotPolicyId;
-        private java.lang.String systemDiskCategory;
-        private java.lang.String systemDiskDescription;
-        private java.lang.String systemDiskDiskName;
-        private java.lang.String systemDiskPerformanceLevel;
-        private java.lang.Number systemDiskSize;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String userData;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object spotPriceLimit;
+        private java.lang.Object spotStrategy;
+        private java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private java.lang.Object systemDiskCategory;
+        private java.lang.Object systemDiskDescription;
+        private java.lang.Object systemDiskDiskName;
+        private java.lang.Object systemDiskPerformanceLevel;
+        private java.lang.Object systemDiskSize;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        private java.lang.Object userData;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosInstanceGroupProps#getImageId}
@@ -376,6 +376,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getImageId}
+         * @param imageId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.imageId = imageId;
             return this;
         }
@@ -391,11 +401,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getInstanceType}
+         * @param instanceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getMaxAmount}
          * @param maxAmount the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder maxAmount(java.lang.Number maxAmount) {
+            this.maxAmount = maxAmount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getMaxAmount}
+         * @param maxAmount the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder maxAmount(com.aliyun.ros.cdk.core.IResolvable maxAmount) {
             this.maxAmount = maxAmount;
             return this;
         }
@@ -431,11 +461,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getAutoReleaseTime}
+         * @param autoReleaseTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
+            this.autoReleaseTime = autoReleaseTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getAutoRenew}
          * @param autoRenew the value to be set.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.String autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getAutoRenew}
+         * @param autoRenew the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.autoRenew = autoRenew;
             return this;
         }
@@ -451,11 +501,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getDedicatedHostId}
          * @param dedicatedHostId the value to be set.
          * @return {@code this}
          */
         public Builder dedicatedHostId(java.lang.String dedicatedHostId) {
+            this.dedicatedHostId = dedicatedHostId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getDedicatedHostId}
+         * @param dedicatedHostId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
             this.dedicatedHostId = dedicatedHostId;
             return this;
         }
@@ -491,11 +561,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getDeploymentSetId}
+         * @param deploymentSetId the value to be set.
+         * @return {@code this}
+         */
+        public Builder deploymentSetId(com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.deploymentSetId = deploymentSetId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -551,11 +641,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getHostName}
+         * @param hostName the value to be set.
+         * @return {@code this}
+         */
+        public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getHpcClusterId}
          * @param hpcClusterId the value to be set.
          * @return {@code this}
          */
         public Builder hpcClusterId(java.lang.String hpcClusterId) {
+            this.hpcClusterId = hpcClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getHpcClusterId}
+         * @param hpcClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder hpcClusterId(com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.hpcClusterId = hpcClusterId;
             return this;
         }
@@ -571,11 +681,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getInstanceName}
          * @param instanceName the value to be set.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getInstanceName}
+         * @param instanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
             return this;
         }
@@ -591,11 +721,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getInternetChargeType}
+         * @param internetChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn the value to be set.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
             this.internetMaxBandwidthIn = internetMaxBandwidthIn;
             return this;
         }
@@ -611,6 +761,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getInternetMaxBandwidthOut}
+         * @param internetMaxBandwidthOut the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getIoOptimized}
          * @param ioOptimized the value to be set.
          * @return {@code this}
@@ -621,11 +781,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getIoOptimized}
+         * @param ioOptimized the value to be set.
+         * @return {@code this}
+         */
+        public Builder ioOptimized(com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
+            this.ioOptimized = ioOptimized;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getIpv6AddressCount}
          * @param ipv6AddressCount the value to be set.
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
             this.ipv6AddressCount = ipv6AddressCount;
             return this;
         }
@@ -661,11 +841,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getKeyPairName}
+         * @param keyPairName the value to be set.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getLaunchTemplateId}
          * @param launchTemplateId the value to be set.
          * @return {@code this}
          */
         public Builder launchTemplateId(java.lang.String launchTemplateId) {
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getLaunchTemplateId}
+         * @param launchTemplateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateId(com.aliyun.ros.cdk.core.IResolvable launchTemplateId) {
             this.launchTemplateId = launchTemplateId;
             return this;
         }
@@ -681,11 +881,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getLaunchTemplateName}
+         * @param launchTemplateName the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateName(com.aliyun.ros.cdk.core.IResolvable launchTemplateName) {
+            this.launchTemplateName = launchTemplateName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getLaunchTemplateVersion}
          * @param launchTemplateVersion the value to be set.
          * @return {@code this}
          */
         public Builder launchTemplateVersion(java.lang.String launchTemplateVersion) {
+            this.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getLaunchTemplateVersion}
+         * @param launchTemplateVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateVersion(com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
             this.launchTemplateVersion = launchTemplateVersion;
             return this;
         }
@@ -701,11 +921,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getNetworkType}
+         * @param networkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getPassword}
          * @param password the value to be set.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
             this.password = password;
             return this;
         }
@@ -741,11 +981,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getPeriodUnit}
          * @param periodUnit the value to be set.
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.periodUnit = periodUnit;
             return this;
         }
@@ -761,11 +1021,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getRamRoleName}
          * @param ramRoleName the value to be set.
          * @return {@code this}
          */
         public Builder ramRoleName(java.lang.String ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getRamRoleName}
+         * @param ramRoleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
             this.ramRoleName = ramRoleName;
             return this;
         }
@@ -781,6 +1061,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSecurityEnhancementStrategy}
          * @param securityEnhancementStrategy the value to be set.
          * @return {@code this}
@@ -791,11 +1081,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSecurityEnhancementStrategy}
+         * @param securityEnhancementStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityEnhancementStrategy(com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
+            this.securityEnhancementStrategy = securityEnhancementStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSecurityGroupId}
          * @param securityGroupId the value to be set.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
             return this;
         }
@@ -831,11 +1141,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSpotPriceLimit}
+         * @param spotPriceLimit the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
+            this.spotPriceLimit = spotPriceLimit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSpotStrategy}
          * @param spotStrategy the value to be set.
          * @return {@code this}
          */
         public Builder spotStrategy(java.lang.String spotStrategy) {
+            this.spotStrategy = spotStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getSpotStrategy}
+         * @param spotStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotStrategy(com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
             this.spotStrategy = spotStrategy;
             return this;
         }
@@ -851,11 +1181,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskAutoSnapshotPolicyId}
+         * @param systemDiskAutoSnapshotPolicyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskAutoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable systemDiskAutoSnapshotPolicyId) {
+            this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSystemDiskCategory}
          * @param systemDiskCategory the value to be set.
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
+            this.systemDiskCategory = systemDiskCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskCategory}
+         * @param systemDiskCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
             this.systemDiskCategory = systemDiskCategory;
             return this;
         }
@@ -871,11 +1221,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskDescription}
+         * @param systemDiskDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDescription(com.aliyun.ros.cdk.core.IResolvable systemDiskDescription) {
+            this.systemDiskDescription = systemDiskDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSystemDiskDiskName}
          * @param systemDiskDiskName the value to be set.
          * @return {@code this}
          */
         public Builder systemDiskDiskName(java.lang.String systemDiskDiskName) {
+            this.systemDiskDiskName = systemDiskDiskName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskDiskName}
+         * @param systemDiskDiskName the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskDiskName(com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
             this.systemDiskDiskName = systemDiskDiskName;
             return this;
         }
@@ -891,6 +1261,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskPerformanceLevel}
+         * @param systemDiskPerformanceLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getSystemDiskSize}
          * @param systemDiskSize the value to be set.
          * @return {@code this}
@@ -901,13 +1281,23 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getSystemDiskSize}
+         * @param systemDiskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)tags;
             return this;
         }
 
@@ -917,6 +1307,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder userData(java.lang.String userData) {
+            this.userData = userData;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getUserData}
+         * @param userData the value to be set.
+         * @return {@code this}
+         */
+        public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
             this.userData = userData;
             return this;
         }
@@ -932,6 +1332,16 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
@@ -942,11 +1352,31 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -967,57 +1397,57 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceGroupProps {
-        private final java.lang.String imageId;
-        private final java.lang.String instanceType;
-        private final java.lang.Number maxAmount;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object maxAmount;
         private final java.lang.Object allocatePublicIp;
-        private final java.lang.String autoReleaseTime;
-        private final java.lang.String autoRenew;
-        private final java.lang.Number autoRenewPeriod;
-        private final java.lang.String dedicatedHostId;
+        private final java.lang.Object autoReleaseTime;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object dedicatedHostId;
         private final java.lang.Object deletionProtection;
-        private final java.lang.String deploymentSetId;
-        private final java.lang.String description;
+        private final java.lang.Object deploymentSetId;
+        private final java.lang.Object description;
         private final java.lang.Object diskMappings;
         private final java.lang.Object eniMappings;
-        private final java.lang.String hostName;
-        private final java.lang.String hpcClusterId;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String instanceName;
-        private final java.lang.String internetChargeType;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.Number internetMaxBandwidthOut;
-        private final java.lang.String ioOptimized;
-        private final java.lang.Number ipv6AddressCount;
+        private final java.lang.Object hostName;
+        private final java.lang.Object hpcClusterId;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object internetMaxBandwidthOut;
+        private final java.lang.Object ioOptimized;
+        private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object ipv6Addresses;
-        private final java.lang.String keyPairName;
-        private final java.lang.String launchTemplateId;
-        private final java.lang.String launchTemplateName;
-        private final java.lang.String launchTemplateVersion;
-        private final java.lang.String networkType;
-        private final java.lang.String password;
+        private final java.lang.Object keyPairName;
+        private final java.lang.Object launchTemplateId;
+        private final java.lang.Object launchTemplateName;
+        private final java.lang.Object launchTemplateVersion;
+        private final java.lang.Object networkType;
+        private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
-        private final java.lang.Number period;
-        private final java.lang.String periodUnit;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String securityEnhancementStrategy;
-        private final java.lang.String securityGroupId;
+        private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityEnhancementStrategy;
+        private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
-        private final java.lang.String spotPriceLimit;
-        private final java.lang.String spotStrategy;
-        private final java.lang.String systemDiskAutoSnapshotPolicyId;
-        private final java.lang.String systemDiskCategory;
-        private final java.lang.String systemDiskDescription;
-        private final java.lang.String systemDiskDiskName;
-        private final java.lang.String systemDiskPerformanceLevel;
-        private final java.lang.Number systemDiskSize;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String userData;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object spotPriceLimit;
+        private final java.lang.Object spotStrategy;
+        private final java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskDescription;
+        private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskPerformanceLevel;
+        private final java.lang.Object systemDiskSize;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        private final java.lang.Object userData;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1025,64 +1455,64 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maxAmount = software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxAmount = software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicIp = software.amazon.jsii.Kernel.get(this, "allocatePublicIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostId = software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eniMappings = software.amazon.jsii.Kernel.get(this, "eniMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
+            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String imageId, final java.lang.String instanceType, final java.lang.Number maxAmount, final java.lang.Object allocatePublicIp, final java.lang.String autoReleaseTime, final java.lang.String autoRenew, final java.lang.Number autoRenewPeriod, final java.lang.String dedicatedHostId, final java.lang.Object deletionProtection, final java.lang.String deploymentSetId, final java.lang.String description, final java.lang.Object diskMappings, final java.lang.Object eniMappings, final java.lang.String hostName, final java.lang.String hpcClusterId, final java.lang.String instanceChargeType, final java.lang.String instanceName, final java.lang.String internetChargeType, final java.lang.Number internetMaxBandwidthIn, final java.lang.Number internetMaxBandwidthOut, final java.lang.String ioOptimized, final java.lang.Number ipv6AddressCount, final java.lang.Object ipv6Addresses, final java.lang.String keyPairName, final java.lang.String launchTemplateId, final java.lang.String launchTemplateName, final java.lang.String launchTemplateVersion, final java.lang.String networkType, final java.lang.String password, final java.lang.Object passwordInherit, final java.lang.Number period, final java.lang.String periodUnit, final java.lang.String privateIpAddress, final java.lang.String ramRoleName, final java.lang.String resourceGroupId, final java.lang.String securityEnhancementStrategy, final java.lang.String securityGroupId, final java.lang.Object securityGroupIds, final java.lang.String spotPriceLimit, final java.lang.String spotStrategy, final java.lang.String systemDiskAutoSnapshotPolicyId, final java.lang.String systemDiskCategory, final java.lang.String systemDiskDescription, final java.lang.String systemDiskDiskName, final java.lang.String systemDiskPerformanceLevel, final java.lang.Number systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String userData, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object maxAmount, final java.lang.Object allocatePublicIp, final java.lang.Object autoReleaseTime, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object dedicatedHostId, final java.lang.Object deletionProtection, final java.lang.Object deploymentSetId, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object eniMappings, final java.lang.Object hostName, final java.lang.Object hpcClusterId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object ipv6AddressCount, final java.lang.Object ipv6Addresses, final java.lang.Object keyPairName, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateName, final java.lang.Object launchTemplateVersion, final java.lang.Object networkType, final java.lang.Object password, final java.lang.Object passwordInherit, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object privateIpAddress, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object securityGroupIds, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags, final java.lang.Object userData, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
             this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
@@ -1130,7 +1560,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.systemDiskDiskName = systemDiskDiskName;
             this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
             this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)tags;
             this.userData = userData;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
@@ -1138,17 +1568,17 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.Number getMaxAmount() {
+        public final java.lang.Object getMaxAmount() {
             return this.maxAmount;
         }
 
@@ -1158,22 +1588,22 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getAutoReleaseTime() {
+        public final java.lang.Object getAutoReleaseTime() {
             return this.autoReleaseTime;
         }
 
         @Override
-        public final java.lang.String getAutoRenew() {
+        public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
         }
 
         @Override
-        public final java.lang.Number getAutoRenewPeriod() {
+        public final java.lang.Object getAutoRenewPeriod() {
             return this.autoRenewPeriod;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostId() {
+        public final java.lang.Object getDedicatedHostId() {
             return this.dedicatedHostId;
         }
 
@@ -1183,12 +1613,12 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getDeploymentSetId() {
+        public final java.lang.Object getDeploymentSetId() {
             return this.deploymentSetId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -1203,47 +1633,47 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getHostName() {
+        public final java.lang.Object getHostName() {
             return this.hostName;
         }
 
         @Override
-        public final java.lang.String getHpcClusterId() {
+        public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthOut() {
+        public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
 
         @Override
-        public final java.lang.String getIoOptimized() {
+        public final java.lang.Object getIoOptimized() {
             return this.ioOptimized;
         }
 
         @Override
-        public final java.lang.Number getIpv6AddressCount() {
+        public final java.lang.Object getIpv6AddressCount() {
             return this.ipv6AddressCount;
         }
 
@@ -1253,32 +1683,32 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateId() {
+        public final java.lang.Object getLaunchTemplateId() {
             return this.launchTemplateId;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateName() {
+        public final java.lang.Object getLaunchTemplateName() {
             return this.launchTemplateName;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateVersion() {
+        public final java.lang.Object getLaunchTemplateVersion() {
             return this.launchTemplateVersion;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
@@ -1288,37 +1718,37 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodUnit() {
+        public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityEnhancementStrategy() {
+        public final java.lang.Object getSecurityEnhancementStrategy() {
             return this.securityEnhancementStrategy;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
@@ -1328,67 +1758,67 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getSpotPriceLimit() {
+        public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
 
         @Override
-        public final java.lang.String getSpotStrategy() {
+        public final java.lang.Object getSpotStrategy() {
             return this.spotStrategy;
         }
 
         @Override
-        public final java.lang.String getSystemDiskAutoSnapshotPolicyId() {
+        public final java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
             return this.systemDiskAutoSnapshotPolicyId;
         }
 
         @Override
-        public final java.lang.String getSystemDiskCategory() {
+        public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDescription() {
+        public final java.lang.Object getSystemDiskDescription() {
             return this.systemDiskDescription;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDiskName() {
+        public final java.lang.Object getSystemDiskDiskName() {
             return this.systemDiskDiskName;
         }
 
         @Override
-        public final java.lang.String getSystemDiskPerformanceLevel() {
+        public final java.lang.Object getSystemDiskPerformanceLevel() {
             return this.systemDiskPerformanceLevel;
         }
 
         @Override
-        public final java.lang.Number getSystemDiskSize() {
+        public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getUserData() {
+        public final java.lang.Object getUserData() {
             return this.userData;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

@@ -11,19 +11,19 @@ export interface CustomerGatewayProps {
     /**
      * Property ipAddress: The IP address of the user gateway.
      */
-    readonly ipAddress: string;
+    readonly ipAddress: string | ros.IResolvable;
 
     /**
      * Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the user gateway.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -39,7 +39,7 @@ export class CustomerGateway extends ros.Resource {
     /**
      * Attribute CustomerGatewayId: The ID of the user gateway.
      */
-    public readonly attrCustomerGatewayId: any;
+    public readonly attrCustomerGatewayId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::CustomerGateway`.

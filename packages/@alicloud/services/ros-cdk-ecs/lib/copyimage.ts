@@ -11,22 +11,22 @@ export interface CopyImageProps {
     /**
      * Property destinationRegionId: ID of the region to where the destination custom image belongs.
      */
-    readonly destinationRegionId: string;
+    readonly destinationRegionId: string | ros.IResolvable;
 
     /**
      * Property imageId: ID of the source custom image.
      */
-    readonly imageId: string;
+    readonly imageId: string | ros.IResolvable;
 
     /**
      * Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
      */
-    readonly destinationDescription?: string;
+    readonly destinationDescription?: string | ros.IResolvable;
 
     /**
      * Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
      */
-    readonly destinationImageName?: string;
+    readonly destinationImageName?: string | ros.IResolvable;
 
     /**
      * Property encrypted: Whether to encrypt the image.
@@ -36,7 +36,7 @@ export interface CopyImageProps {
     /**
      * Property kmsKeyId: The ID of the key used to encrypt the image.
      */
-    readonly kmsKeyId?: string;
+    readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
      * Property tag:
@@ -57,7 +57,7 @@ export class CopyImage extends ros.Resource {
     /**
      * Attribute ImageId: ID of the source custom image.
      */
-    public readonly attrImageId: any;
+    public readonly attrImageId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::CopyImage`.

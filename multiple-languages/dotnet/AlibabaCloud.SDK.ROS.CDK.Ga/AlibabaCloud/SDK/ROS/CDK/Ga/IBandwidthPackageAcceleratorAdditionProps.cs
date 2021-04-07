@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     public interface IBandwidthPackageAcceleratorAdditionProps
     {
         /// <summary>Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth plan.</summary>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-        string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AcceleratorId
         {
             get;
         }
 
         /// <summary>Property bandwidthPackageId: The ID of the bandwidth package to associate.</summary>
-        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"primitive\":\"string\"}")]
-        string BandwidthPackageId
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object BandwidthPackageId
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <summary>Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth plan.</summary>
-            [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-            public string AcceleratorId
+            [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AcceleratorId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property bandwidthPackageId: The ID of the bandwidth package to associate.</summary>
-            [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"primitive\":\"string\"}")]
-            public string BandwidthPackageId
+            [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BandwidthPackageId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

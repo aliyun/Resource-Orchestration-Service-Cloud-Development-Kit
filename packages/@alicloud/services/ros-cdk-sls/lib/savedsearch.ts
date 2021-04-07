@@ -16,7 +16,7 @@ export interface SavedsearchProps {
     /**
      * Property project: Project name
      */
-    readonly project: string;
+    readonly project: string | ros.IResolvable;
 }
 
 /**
@@ -32,7 +32,7 @@ export class Savedsearch extends ros.Resource {
     /**
      * Attribute SavedsearchName: Savedsearch name.
      */
-    public readonly attrSavedsearchName: any;
+    public readonly attrSavedsearchName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Savedsearch`.

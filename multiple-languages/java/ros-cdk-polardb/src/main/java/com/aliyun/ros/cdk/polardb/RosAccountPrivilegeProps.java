@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::AccountPrivilege`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccountPrivilegeProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountPrivilegeProps.Jsii$Proxy.class)
 public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountPrivilege();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountPrivilege();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
     /**
      * @return a {@link Builder} of {@link RosAccountPrivilegeProps}
@@ -34,10 +34,10 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosAccountPrivilegeProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccountPrivilegeProps> {
-        private java.lang.String accountName;
-        private java.lang.String accountPrivilege;
-        private java.lang.String dbClusterId;
-        private java.lang.String dbName;
+        private java.lang.Object accountName;
+        private java.lang.Object accountPrivilege;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object dbName;
 
         /**
          * Sets the value of {@link RosAccountPrivilegeProps#getAccountName}
@@ -45,6 +45,16 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountPrivilegeProps#getAccountName}
+         * @param accountName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
             this.accountName = accountName;
             return this;
         }
@@ -60,6 +70,16 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosAccountPrivilegeProps#getAccountPrivilege}
+         * @param accountPrivilege the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
+            this.accountPrivilege = accountPrivilege;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccountPrivilegeProps#getDbClusterId}
          * @param dbClusterId the value to be set. This parameter is required.
          * @return {@code this}
@@ -70,11 +90,31 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosAccountPrivilegeProps#getDbClusterId}
+         * @param dbClusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccountPrivilegeProps#getDbName}
          * @param dbName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountPrivilegeProps#getDbName}
+         * @param dbName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.dbName = dbName;
             return this;
         }
@@ -95,10 +135,10 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccountPrivilegeProps {
-        private final java.lang.String accountName;
-        private final java.lang.String accountPrivilege;
-        private final java.lang.String dbClusterId;
-        private final java.lang.String dbName;
+        private final java.lang.Object accountName;
+        private final java.lang.Object accountPrivilege;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object dbName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -106,16 +146,16 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accountName, final java.lang.String accountPrivilege, final java.lang.String dbClusterId, final java.lang.String dbName) {
+        protected Jsii$Proxy(final java.lang.Object accountName, final java.lang.Object accountPrivilege, final java.lang.Object dbClusterId, final java.lang.Object dbName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accountName = java.util.Objects.requireNonNull(accountName, "accountName is required");
             this.accountPrivilege = java.util.Objects.requireNonNull(accountPrivilege, "accountPrivilege is required");
@@ -124,22 +164,22 @@ public interface RosAccountPrivilegeProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getAccountName() {
+        public final java.lang.Object getAccountName() {
             return this.accountName;
         }
 
         @Override
-        public final java.lang.String getAccountPrivilege() {
+        public final java.lang.Object getAccountPrivilege() {
             return this.accountPrivilege;
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 

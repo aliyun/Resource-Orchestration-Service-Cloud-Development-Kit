@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public interface IMonitorGroupProps
     {
         /// <summary>Property groupName: The name of the application group.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupName
         {
             get;
         }
@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// Alert notifications for the application group are sent to
         /// the specified alert contact group.
         /// </remarks>
-        [JsiiProperty(name: "contactGroups", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "contactGroups", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ContactGroups
+        object? ContactGroups
         {
             get
             {
@@ -39,10 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <summary>Property groupName: The name of the application group.</summary>
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property contactGroups: The alert contact group.</summary>
@@ -51,10 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// the specified alert contact group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "contactGroups", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ContactGroups
+            [JsiiProperty(name: "contactGroups", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ContactGroups
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

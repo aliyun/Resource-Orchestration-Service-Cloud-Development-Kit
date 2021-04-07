@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public interface IMetricRuleTemplateProps
     {
         /// <summary>Property name: The name of the alert template.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -27,9 +27,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Property description: The description of the alert template.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -43,9 +43,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// to obtain information about the alert templates. The combination of version and ID
         /// uniquely identifies an alert template.
         /// </remarks>
-        [JsiiProperty(name: "restVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "restVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? RestVersion
+        object? RestVersion
         {
             get
             {
@@ -54,9 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Property templateId: The ID of the alert template.</summary>
-        [JsiiProperty(name: "templateId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TemplateId
+        object? TemplateId
         {
             get
             {
@@ -73,10 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <summary>Property name: The name of the alert template.</summary>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property alertTemplates: Valid values of N: 0 to 200.</summary>
@@ -89,10 +89,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
             /// <summary>Property description: The description of the alert template.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restVersion: The version of the alert template.</summary>
@@ -102,18 +102,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// uniquely identifies an alert template.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "restVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? RestVersion
+            [JsiiProperty(name: "restVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestVersion
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property templateId: The ID of the alert template.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "templateId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TemplateId
+            [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateId
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

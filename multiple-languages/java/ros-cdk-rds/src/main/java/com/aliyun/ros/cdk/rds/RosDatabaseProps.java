@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Database`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.961Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabaseProps.Jsii$Proxy.class)
 public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCharacterSetName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCharacterSetName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
         return null;
     }
 
@@ -36,10 +36,10 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosDatabaseProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDatabaseProps> {
-        private java.lang.String characterSetName;
-        private java.lang.String dbInstanceId;
-        private java.lang.String dbName;
-        private java.lang.String dbDescription;
+        private java.lang.Object characterSetName;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object dbName;
+        private java.lang.Object dbDescription;
 
         /**
          * Sets the value of {@link RosDatabaseProps#getCharacterSetName}
@@ -47,6 +47,16 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder characterSetName(java.lang.String characterSetName) {
+            this.characterSetName = characterSetName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatabaseProps#getCharacterSetName}
+         * @param characterSetName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder characterSetName(com.aliyun.ros.cdk.core.IResolvable characterSetName) {
             this.characterSetName = characterSetName;
             return this;
         }
@@ -62,6 +72,16 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosDatabaseProps#getDbInstanceId}
+         * @param dbInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDatabaseProps#getDbName}
          * @param dbName the value to be set. This parameter is required.
          * @return {@code this}
@@ -72,11 +92,31 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosDatabaseProps#getDbName}
+         * @param dbName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDatabaseProps#getDbDescription}
          * @param dbDescription the value to be set.
          * @return {@code this}
          */
         public Builder dbDescription(java.lang.String dbDescription) {
+            this.dbDescription = dbDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDatabaseProps#getDbDescription}
+         * @param dbDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbDescription(com.aliyun.ros.cdk.core.IResolvable dbDescription) {
             this.dbDescription = dbDescription;
             return this;
         }
@@ -97,10 +137,10 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDatabaseProps {
-        private final java.lang.String characterSetName;
-        private final java.lang.String dbInstanceId;
-        private final java.lang.String dbName;
-        private final java.lang.String dbDescription;
+        private final java.lang.Object characterSetName;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object dbName;
+        private final java.lang.Object dbDescription;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -108,16 +148,16 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String characterSetName, final java.lang.String dbInstanceId, final java.lang.String dbName, final java.lang.String dbDescription) {
+        protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbInstanceId, final java.lang.Object dbName, final java.lang.Object dbDescription) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
@@ -126,22 +166,22 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getCharacterSetName() {
+        public final java.lang.Object getCharacterSetName() {
             return this.characterSetName;
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 
         @Override
-        public final java.lang.String getDbDescription() {
+        public final java.lang.Object getDbDescription() {
             return this.dbDescription;
         }
 

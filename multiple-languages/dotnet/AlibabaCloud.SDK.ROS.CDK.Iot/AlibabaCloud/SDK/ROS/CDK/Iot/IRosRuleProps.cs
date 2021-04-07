@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// English letters, digits, underscores (_), and hyphens (-). Chinese language is also
         /// supported. Each Chinese symbol occupies 2 characters.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -28,9 +28,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// for RDS.
         /// Default value: JSON.
         /// </remarks>
-        [JsiiProperty(name: "dataType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DataType
+        object? DataType
         {
             get
             {
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
         /// the parameter is required for the instances that you have purchased.
         /// </remarks>
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IotInstanceId
+        object? IotInstanceId
         {
             get
             {
@@ -55,9 +55,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// <strong>Property</strong>: productKey: The ProductKey of the product to which the rule applies.
         /// </remarks>
-        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ProductKey
+        object? ProductKey
         {
             get
             {
@@ -71,9 +71,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If you do not specify this parameter, the rule is assigned to the default resource
         /// group.
         /// </remarks>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -98,9 +98,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: ruleDesc: The description of the rule. The description can be up to 100 characters in length.
         /// Each Chinese symbol occupies 1 characters.
         /// </remarks>
-        [JsiiProperty(name: "ruleDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "ruleDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RuleDesc
+        object? RuleDesc
         {
             get
             {
@@ -112,9 +112,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: select: The SQL SELECT statement that you want to execute. For more information, seeSQL expressions.
         /// Note Specify the fields that follow the Select keyword for this parameter. For example, if the Select statement is Select a,b,c, specify a,b,c for this parameter.
         /// </remarks>
-        [JsiiProperty(name: "select", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "select", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Select
+        object? Select
         {
             get
             {
@@ -152,9 +152,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Topic that is used to submit device status changes: ${deviceName}.
         /// You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
         /// </remarks>
-        [JsiiProperty(name: "shortTopic", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "shortTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ShortTopic
+        object? ShortTopic
         {
             get
             {
@@ -180,9 +180,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// 1: The topic is a custom topic.
         /// 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
         /// </remarks>
-        [JsiiProperty(name: "topicType", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "topicType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TopicType
+        object? TopicType
         {
             get
             {
@@ -194,9 +194,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: where: The condition that is used to trigger the rule. For more information, seeSQL expressions.
         /// Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a>10, specify a>10 for this parameter.
         /// </remarks>
-        [JsiiProperty(name: "where", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "where", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Where
+        object? Where
         {
             get
             {
@@ -217,10 +217,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// English letters, digits, underscores (_), and hyphens (-). Chinese language is also
             /// supported. Each Chinese symbol occupies 2 characters.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -233,10 +233,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// Default value: JSON.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dataType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DataType
+            [JsiiProperty(name: "dataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DataType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -244,20 +244,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// the parameter is required for the instances that you have purchased.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IotInstanceId
+            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IotInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: productKey: The ProductKey of the product to which the rule applies.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ProductKey
+            [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProductKey
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -267,10 +267,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -288,10 +288,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// Each Chinese symbol occupies 1 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ruleDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RuleDesc
+            [JsiiProperty(name: "ruleDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RuleDesc
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -299,10 +299,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// Note Specify the fields that follow the Select keyword for this parameter. For example, if the Select statement is Select a,b,c, specify a,b,c for this parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "select", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Select
+            [JsiiProperty(name: "select", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Select
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -336,10 +336,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "shortTopic", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ShortTopic
+            [JsiiProperty(name: "shortTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShortTopic
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -358,10 +358,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "topicType", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TopicType
+            [JsiiProperty(name: "topicType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TopicType
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -369,10 +369,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a>10, specify a>10 for this parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "where", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Where
+            [JsiiProperty(name: "where", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Where
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

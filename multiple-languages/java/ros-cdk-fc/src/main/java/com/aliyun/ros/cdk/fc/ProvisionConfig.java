@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS resource type:  `ALIYUN::FC::ProvisionConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.943Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ProvisionConfig")
 public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::ProvisionConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ProvisionConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.ProvisionConfigProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::ProvisionConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ProvisionConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.ProvisionConfigProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,33 +49,38 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute FunctionName: The function name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Qualifier: The service alias.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrQualifier() {
-        return software.amazon.jsii.Kernel.get(this, "attrQualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQualifier() {
+        return software.amazon.jsii.Kernel.get(this, "attrQualifier", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Resource: The resource.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResource() {
-        return software.amazon.jsii.Kernel.get(this, "attrResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResource() {
+        return software.amazon.jsii.Kernel.get(this, "attrResource", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ServiceName: The service name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Target: Number of provision.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTarget() {
-        return software.amazon.jsii.Kernel.get(this, "attrTarget", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTarget() {
+        return software.amazon.jsii.Kernel.get(this, "attrTarget", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -76,8 +89,8 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc.ProvisionConfig> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -85,8 +98,8 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -105,37 +118,89 @@ public class ProvisionConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property functionName: Function name.
+         * <p>
          * @return {@code this}
-         * @param functionName This parameter is required.
+         * @param functionName Property functionName: Function name. This parameter is required.
          */
         public Builder functionName(final java.lang.String functionName) {
             this.props.functionName(functionName);
             return this;
         }
+        /**
+         * Property functionName: Function name.
+         * <p>
+         * @return {@code this}
+         * @param functionName Property functionName: Function name. This parameter is required.
+         */
+        public Builder functionName(final com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
 
         /**
+         * Property qualifier: Service's alias.
+         * <p>
+         * Example : "LATEST"
+         * <p>
          * @return {@code this}
-         * @param qualifier This parameter is required.
+         * @param qualifier Property qualifier: Service's alias. This parameter is required.
          */
         public Builder qualifier(final java.lang.String qualifier) {
             this.props.qualifier(qualifier);
             return this;
         }
+        /**
+         * Property qualifier: Service's alias.
+         * <p>
+         * Example : "LATEST"
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: Service's alias. This parameter is required.
+         */
+        public Builder qualifier(final com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
 
         /**
+         * Property serviceName: Service name.
+         * <p>
          * @return {@code this}
-         * @param serviceName This parameter is required.
+         * @param serviceName Property serviceName: Service name. This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
+        /**
+         * Property serviceName: Service name.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: Service name. This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
 
         /**
+         * Property target: Number of provision.
+         * <p>
          * @return {@code this}
-         * @param target This parameter is required.
+         * @param target Property target: Number of provision. This parameter is required.
          */
         public Builder target(final java.lang.Number target) {
+            this.props.target(target);
+            return this;
+        }
+        /**
+         * Property target: Number of provision.
+         * <p>
+         * @return {@code this}
+         * @param target Property target: Number of provision. This parameter is required.
+         */
+        public Builder target(final com.aliyun.ros.cdk.core.IResolvable target) {
             this.props.target(target);
             return this;
         }

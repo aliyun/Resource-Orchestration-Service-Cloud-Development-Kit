@@ -14,19 +14,19 @@ export interface ControlPolicyProps {
      * drop: rejected
      * log: Observation
      */
-    readonly aclAction: string;
+    readonly aclAction: string | ros.IResolvable;
 
     /**
      * Property applicationName: Application types supported by the security policy.
      * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
      * NOTE ANY indicates that the policy is applied to all types of applications.
      */
-    readonly applicationName: string;
+    readonly applicationName: string | ros.IResolvable;
 
     /**
      * Property description: Security access control policy description information.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * Property destination: Security Access Control destination address policy.
@@ -35,7 +35,7 @@ export interface ControlPolicyProps {
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
      */
-    readonly destination: string;
+    readonly destination: string | ros.IResolvable;
 
     /**
      * Property destinationType: Security Access Control destination address type of policy.
@@ -44,26 +44,26 @@ export interface ControlPolicyProps {
      * domain: The purpose domain
      * location: The purpose area
      */
-    readonly destinationType: string;
+    readonly destinationType: string | ros.IResolvable;
 
     /**
      * Property direction: Security access control traffic direction policies.
      * in: internal and external traffic access control
      * out: within the flow of external access control
      */
-    readonly direction: string;
+    readonly direction: string | ros.IResolvable;
 
     /**
      * Property newOrder: Security access control priority policy in force. Priority number increments sequentially from 1, lower the priority number, the higher the priority.
      * Description -1 indicates the lowest priority.
      */
-    readonly newOrder: number;
+    readonly newOrder: number | ros.IResolvable;
 
     /**
      * Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
      * Allowed values: ANY, TCP, UDP, ICMP
      */
-    readonly proto: string;
+    readonly proto: string | ros.IResolvable;
 
     /**
      * Property source: Security access control source address policy.
@@ -71,7 +71,7 @@ export interface ControlPolicyProps {
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
-    readonly source: string;
+    readonly source: string | ros.IResolvable;
 
     /**
      * Property sourceType: Security access control source address type of policy.
@@ -79,31 +79,31 @@ export interface ControlPolicyProps {
      * group: source address book
      * location: the source area
      */
-    readonly sourceType: string;
+    readonly sourceType: string | ros.IResolvable;
 
     /**
      * Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
-    readonly destPort?: string;
+    readonly destPort?: string | ros.IResolvable;
 
     /**
      * Property destPortGroup: Security access control policy access traffic destination port address book name.
      * Description DestPortType is group, set the item.
      */
-    readonly destPortGroup?: string;
+    readonly destPortGroup?: string | ros.IResolvable;
 
     /**
      * Property destPortType: Security access control policy access destination port traffic type.
      * port: Port
      * group: port address book
      */
-    readonly destPortType?: string;
+    readonly destPortType?: string | ros.IResolvable;
 
     /**
      * Property regionId: Region ID. Default to cn-hangzhou.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 }
 
 /**
@@ -119,7 +119,7 @@ export class ControlPolicy extends ros.Resource {
     /**
      * Attribute AclUuid: Security access control ID that uniquely identifies the policy.
      */
-    public readonly attrAclUuid: any;
+    public readonly attrAclUuid: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CLOUDFW::ControlPolicy`.

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::BackupClients`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.018Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.627Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosBackupClientsProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackupClientsProps.Jsii$Proxy.class)
 public interface RosBackupClientsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getInstanceIds();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
      * @return a {@link Builder} of {@link RosBackupClientsProps}
@@ -22,14 +22,24 @@ public interface RosBackupClientsProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosBackupClientsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBackupClientsProps> {
-        private java.util.List<java.lang.String> instanceIds;
+        private java.lang.Object instanceIds;
 
         /**
          * Sets the value of {@link RosBackupClientsProps#getInstanceIds}
          * @param instanceIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<java.lang.String> instanceIds) {
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.instanceIds = instanceIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBackupClientsProps#getInstanceIds}
+         * @param instanceIds the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
@@ -50,7 +60,7 @@ public interface RosBackupClientsProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBackupClientsProps {
-        private final java.util.List<java.lang.String> instanceIds;
+        private final java.lang.Object instanceIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -58,19 +68,19 @@ public interface RosBackupClientsProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.List<java.lang.String> instanceIds) {
+        protected Jsii$Proxy(final java.lang.Object instanceIds) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
         }
 
         @Override
-        public final java.util.List<java.lang.String> getInstanceIds() {
+        public final java.lang.Object getInstanceIds() {
             return this.instanceIds;
         }
 

@@ -3,88 +3,176 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Product`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.635Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.ProductProps")
 @software.amazon.jsii.Jsii.Proxy(ProductProps.Jsii$Proxy.class)
 public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property nodeType: The node type of the product.
+     * <p>
+     * Values:
+     * 0: Device. A device cannot be mounted with sub-devices. It can connect to IoT Platform
+     * either directly or as a sub-device of a gateway.
+     * 1: Gateway. A gateway can be mounted with sub-devices. It can manage sub-devices, maintain
+     * the topological relationships with sub-devices, and synchronize the topological relationships
+     * to IoT Platform.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getNodeType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNodeType();
 
     /**
+     * Property productName: The name of the product.
+     * <p>
+     * A product name can be 4 to 30 characters in length and can
+     * contain Chinese characters, English letters, digits, and underscores (_).
+     * Note A product name must be unique in an account.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductName();
 
     /**
+     * Property aliyunCommodityCode: The edition of the product that you want to create.
+     * <p>
+     * There are two options:
+     * iothub_senior: Pro Edition.
+     * iothub: Basic Edition.
+     * If you do not input this parameter, the default value is used, which is iothub (Basic
+     * Edition).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAliyunCommodityCode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliyunCommodityCode() {
         return null;
     }
 
     /**
+     * Property authType: Authentication device to access the Internet of Things platform under the product.
+     * <p>
+     * Optional:
+     * secret: using a device key for device authentication.
+     * Details can be found MQTT-TCP connection communication.
+     * id2: Use things device authentication ID.
+     * x509: X.509 certificates using the device for device authentication.
+     * The use of X.509 certificates device side configuration instructions, see Using X.509 certificate authentication.
+     * If this parameter is passed, the default value is secret.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAuthType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuthType() {
         return null;
     }
 
     /**
+     * Property categoryKey: Identifier Product category.
+     * <p>
+     * If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
+     * Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCategoryKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCategoryKey() {
         return null;
     }
 
     /**
+     * Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
+     * <p>
+     * This parameter is only available and required when you create a Pro Edition product.
+     * Options:
+     * 0: Do not parse/Custom.
+     * 1: Alink JSON.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDataFormat() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataFormat() {
         return null;
     }
 
     /**
+     * Property description: A description of the product.
+     * <p>
+     * The description can be a maximum of 100 characters in
+     * length.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property id2: Whether ID2 certification.
+     * <p>
+     * Optional values:
+     * true: the opening of ID2 certification.
+     * false: do not open ID2 certification.
+     * Do not pass this parameter, the default is not opened.
+     * Explanation
+     * Only 2 East China (Shanghai) regional support ID2 authentication.
+     * If this parameter value is set to true, but passed AuthType parameter value is not id2, the system will AuthType parameter values prevail.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getId2() {
         return null;
     }
 
     /**
+     * Property iotInstanceId: Public instance does not pass this parameter;
+     * <p>
+     * instance that you need to buy the incoming instance ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
+     * Property joinPermissionId: LoRaWAN network credential ID.
+     * <p>
+     * When networking mode NetType chosen LORA, the necessary parameters.
+     * Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
+     * If you do not LoRaWAN network credentials, visit the network management platform to create things together.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getJoinPermissionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getJoinPermissionId() {
         return null;
     }
 
     /**
+     * Property netType: Networking mode.
+     * <p>
+     * Set this parameter only if you are creating a product whose devices directly connect
+     * to IoT Platform.
+     * Options:
+     * WIFI
+     * CELLULAR
+     * ETHERNET
+     * OTHER
+     * The default value is WIFI.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetType() {
         return null;
     }
 
     /**
+     * Property protocolType: The protocol that devices of this product use to connect to gateways.
+     * <p>
+     * Set this parameter only if you are creating a product whose devices will be connected
+     * to gateways.
+     * Options:
+     * modbus: Modbus.
+     * opc-ua: OPC UA.
+     * customize: Customized protocol.
+     * ble: BLE.
+     * zigbee: ZigBee.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProtocolType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProtocolType() {
         return null;
     }
 
     /**
+     * Property publishAuto: Whether to automatically model publication after the product is created.
+     * <p>
+     * true: publishing.
+     * false: not released.
+     * This parameter is not passed, the default value true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPublishAuto() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
+     * <p>
+     * If this parameter is passed, the product will be classified as a default resource group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -98,24 +186,30 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ProductProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ProductProps> {
-        private java.lang.Number nodeType;
-        private java.lang.String productName;
-        private java.lang.String aliyunCommodityCode;
-        private java.lang.String authType;
-        private java.lang.String categoryKey;
-        private java.lang.Number dataFormat;
-        private java.lang.String description;
+        private java.lang.Object nodeType;
+        private java.lang.Object productName;
+        private java.lang.Object aliyunCommodityCode;
+        private java.lang.Object authType;
+        private java.lang.Object categoryKey;
+        private java.lang.Object dataFormat;
+        private java.lang.Object description;
         private java.lang.Object id2;
-        private java.lang.String iotInstanceId;
-        private java.lang.String joinPermissionId;
-        private java.lang.String netType;
-        private java.lang.String protocolType;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object joinPermissionId;
+        private java.lang.Object netType;
+        private java.lang.Object protocolType;
         private java.lang.Object publishAuto;
-        private java.lang.String resourceGroupId;
+        private java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link ProductProps#getNodeType}
-         * @param nodeType the value to be set. This parameter is required.
+         * @param nodeType Property nodeType: The node type of the product. This parameter is required.
+         *                 Values:
+         *                 0: Device. A device cannot be mounted with sub-devices. It can connect to IoT Platform
+         *                 either directly or as a sub-device of a gateway.
+         *                 1: Gateway. A gateway can be mounted with sub-devices. It can manage sub-devices, maintain
+         *                 the topological relationships with sub-devices, and synchronize the topological relationships
+         *                 to IoT Platform.
          * @return {@code this}
          */
         public Builder nodeType(java.lang.Number nodeType) {
@@ -124,8 +218,27 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getNodeType}
+         * @param nodeType Property nodeType: The node type of the product. This parameter is required.
+         *                 Values:
+         *                 0: Device. A device cannot be mounted with sub-devices. It can connect to IoT Platform
+         *                 either directly or as a sub-device of a gateway.
+         *                 1: Gateway. A gateway can be mounted with sub-devices. It can manage sub-devices, maintain
+         *                 the topological relationships with sub-devices, and synchronize the topological relationships
+         *                 to IoT Platform.
+         * @return {@code this}
+         */
+        public Builder nodeType(com.aliyun.ros.cdk.core.IResolvable nodeType) {
+            this.nodeType = nodeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getProductName}
-         * @param productName the value to be set. This parameter is required.
+         * @param productName Property productName: The name of the product. This parameter is required.
+         *                    A product name can be 4 to 30 characters in length and can
+         *                    contain Chinese characters, English letters, digits, and underscores (_).
+         *                    Note A product name must be unique in an account.
          * @return {@code this}
          */
         public Builder productName(java.lang.String productName) {
@@ -134,8 +247,26 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getProductName}
+         * @param productName Property productName: The name of the product. This parameter is required.
+         *                    A product name can be 4 to 30 characters in length and can
+         *                    contain Chinese characters, English letters, digits, and underscores (_).
+         *                    Note A product name must be unique in an account.
+         * @return {@code this}
+         */
+        public Builder productName(com.aliyun.ros.cdk.core.IResolvable productName) {
+            this.productName = productName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getAliyunCommodityCode}
-         * @param aliyunCommodityCode the value to be set.
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create.
+         *                            There are two options:
+         *                            iothub_senior: Pro Edition.
+         *                            iothub: Basic Edition.
+         *                            If you do not input this parameter, the default value is used, which is iothub (Basic
+         *                            Edition).
          * @return {@code this}
          */
         public Builder aliyunCommodityCode(java.lang.String aliyunCommodityCode) {
@@ -144,8 +275,30 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getAliyunCommodityCode}
+         * @param aliyunCommodityCode Property aliyunCommodityCode: The edition of the product that you want to create.
+         *                            There are two options:
+         *                            iothub_senior: Pro Edition.
+         *                            iothub: Basic Edition.
+         *                            If you do not input this parameter, the default value is used, which is iothub (Basic
+         *                            Edition).
+         * @return {@code this}
+         */
+        public Builder aliyunCommodityCode(com.aliyun.ros.cdk.core.IResolvable aliyunCommodityCode) {
+            this.aliyunCommodityCode = aliyunCommodityCode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getAuthType}
-         * @param authType the value to be set.
+         * @param authType Property authType: Authentication device to access the Internet of Things platform under the product.
+         *                 Optional:
+         *                 secret: using a device key for device authentication.
+         *                 Details can be found MQTT-TCP connection communication.
+         *                 id2: Use things device authentication ID.
+         *                 x509: X.509 certificates using the device for device authentication.
+         *                 The use of X.509 certificates device side configuration instructions, see Using X.509 certificate authentication.
+         *                 If this parameter is passed, the default value is secret.
          * @return {@code this}
          */
         public Builder authType(java.lang.String authType) {
@@ -154,8 +307,27 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getAuthType}
+         * @param authType Property authType: Authentication device to access the Internet of Things platform under the product.
+         *                 Optional:
+         *                 secret: using a device key for device authentication.
+         *                 Details can be found MQTT-TCP connection communication.
+         *                 id2: Use things device authentication ID.
+         *                 x509: X.509 certificates using the device for device authentication.
+         *                 The use of X.509 certificates device side configuration instructions, see Using X.509 certificate authentication.
+         *                 If this parameter is passed, the default value is secret.
+         * @return {@code this}
+         */
+        public Builder authType(com.aliyun.ros.cdk.core.IResolvable authType) {
+            this.authType = authType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getCategoryKey}
-         * @param categoryKey the value to be set.
+         * @param categoryKey Property categoryKey: Identifier Product category.
+         *                    If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
+         *                    Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
          * @return {@code this}
          */
         public Builder categoryKey(java.lang.String categoryKey) {
@@ -164,8 +336,24 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getCategoryKey}
+         * @param categoryKey Property categoryKey: Identifier Product category.
+         *                    If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
+         *                    Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
+         * @return {@code this}
+         */
+        public Builder categoryKey(com.aliyun.ros.cdk.core.IResolvable categoryKey) {
+            this.categoryKey = categoryKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getDataFormat}
-         * @param dataFormat the value to be set.
+         * @param dataFormat Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
+         *                   This parameter is only available and required when you create a Pro Edition product.
+         *                   Options:
+         *                   0: Do not parse/Custom.
+         *                   1: Alink JSON.
          * @return {@code this}
          */
         public Builder dataFormat(java.lang.Number dataFormat) {
@@ -174,8 +362,24 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getDataFormat}
+         * @param dataFormat Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
+         *                   This parameter is only available and required when you create a Pro Edition product.
+         *                   Options:
+         *                   0: Do not parse/Custom.
+         *                   1: Alink JSON.
+         * @return {@code this}
+         */
+        public Builder dataFormat(com.aliyun.ros.cdk.core.IResolvable dataFormat) {
+            this.dataFormat = dataFormat;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: A description of the product.
+         *                    The description can be a maximum of 100 characters in
+         *                    length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -184,8 +388,27 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getDescription}
+         * @param description Property description: A description of the product.
+         *                    The description can be a maximum of 100 characters in
+         *                    length.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getId2}
-         * @param id2 the value to be set.
+         * @param id2 Property id2: Whether ID2 certification.
+         *            Optional values:
+         *            true: the opening of ID2 certification.
+         *            false: do not open ID2 certification.
+         *            Do not pass this parameter, the default is not opened.
+         *            Explanation
+         *            Only 2 East China (Shanghai) regional support ID2 authentication.
+         *            If this parameter value is set to true, but passed AuthType parameter value is not id2, the system will AuthType parameter values prevail.
          * @return {@code this}
          */
         public Builder id2(java.lang.Boolean id2) {
@@ -195,7 +418,14 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getId2}
-         * @param id2 the value to be set.
+         * @param id2 Property id2: Whether ID2 certification.
+         *            Optional values:
+         *            true: the opening of ID2 certification.
+         *            false: do not open ID2 certification.
+         *            Do not pass this parameter, the default is not opened.
+         *            Explanation
+         *            Only 2 East China (Shanghai) regional support ID2 authentication.
+         *            If this parameter value is set to true, but passed AuthType parameter value is not id2, the system will AuthType parameter values prevail.
          * @return {@code this}
          */
         public Builder id2(com.aliyun.ros.cdk.core.IResolvable id2) {
@@ -205,7 +435,8 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getIotInstanceId}
-         * @param iotInstanceId the value to be set.
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
+         *                      instance that you need to buy the incoming instance ID.
          * @return {@code this}
          */
         public Builder iotInstanceId(java.lang.String iotInstanceId) {
@@ -214,8 +445,22 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getIotInstanceId}
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
+         *                      instance that you need to buy the incoming instance ID.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getJoinPermissionId}
-         * @param joinPermissionId the value to be set.
+         * @param joinPermissionId Property joinPermissionId: LoRaWAN network credential ID.
+         *                         When networking mode NetType chosen LORA, the necessary parameters.
+         *                         Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
+         *                         If you do not LoRaWAN network credentials, visit the network management platform to create things together.
          * @return {@code this}
          */
         public Builder joinPermissionId(java.lang.String joinPermissionId) {
@@ -224,8 +469,29 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getJoinPermissionId}
+         * @param joinPermissionId Property joinPermissionId: LoRaWAN network credential ID.
+         *                         When networking mode NetType chosen LORA, the necessary parameters.
+         *                         Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
+         *                         If you do not LoRaWAN network credentials, visit the network management platform to create things together.
+         * @return {@code this}
+         */
+        public Builder joinPermissionId(com.aliyun.ros.cdk.core.IResolvable joinPermissionId) {
+            this.joinPermissionId = joinPermissionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getNetType}
-         * @param netType the value to be set.
+         * @param netType Property netType: Networking mode.
+         *                Set this parameter only if you are creating a product whose devices directly connect
+         *                to IoT Platform.
+         *                Options:
+         *                WIFI
+         *                CELLULAR
+         *                ETHERNET
+         *                OTHER
+         *                The default value is WIFI.
          * @return {@code this}
          */
         public Builder netType(java.lang.String netType) {
@@ -234,8 +500,34 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getNetType}
+         * @param netType Property netType: Networking mode.
+         *                Set this parameter only if you are creating a product whose devices directly connect
+         *                to IoT Platform.
+         *                Options:
+         *                WIFI
+         *                CELLULAR
+         *                ETHERNET
+         *                OTHER
+         *                The default value is WIFI.
+         * @return {@code this}
+         */
+        public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
+            this.netType = netType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getProtocolType}
-         * @param protocolType the value to be set.
+         * @param protocolType Property protocolType: The protocol that devices of this product use to connect to gateways.
+         *                     Set this parameter only if you are creating a product whose devices will be connected
+         *                     to gateways.
+         *                     Options:
+         *                     modbus: Modbus.
+         *                     opc-ua: OPC UA.
+         *                     customize: Customized protocol.
+         *                     ble: BLE.
+         *                     zigbee: ZigBee.
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
@@ -244,8 +536,29 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProductProps#getProtocolType}
+         * @param protocolType Property protocolType: The protocol that devices of this product use to connect to gateways.
+         *                     Set this parameter only if you are creating a product whose devices will be connected
+         *                     to gateways.
+         *                     Options:
+         *                     modbus: Modbus.
+         *                     opc-ua: OPC UA.
+         *                     customize: Customized protocol.
+         *                     ble: BLE.
+         *                     zigbee: ZigBee.
+         * @return {@code this}
+         */
+        public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
+            this.protocolType = protocolType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductProps#getPublishAuto}
-         * @param publishAuto the value to be set.
+         * @param publishAuto Property publishAuto: Whether to automatically model publication after the product is created.
+         *                    true: publishing.
+         *                    false: not released.
+         *                    This parameter is not passed, the default value true.
          * @return {@code this}
          */
         public Builder publishAuto(java.lang.Boolean publishAuto) {
@@ -255,7 +568,10 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getPublishAuto}
-         * @param publishAuto the value to be set.
+         * @param publishAuto Property publishAuto: Whether to automatically model publication after the product is created.
+         *                    true: publishing.
+         *                    false: not released.
+         *                    This parameter is not passed, the default value true.
          * @return {@code this}
          */
         public Builder publishAuto(com.aliyun.ros.cdk.core.IResolvable publishAuto) {
@@ -265,10 +581,22 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProductProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
+         *                        If this parameter is passed, the product will be classified as a default resource group.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ProductProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
+         *                        If this parameter is passed, the product will be classified as a default resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
             return this;
         }
@@ -289,20 +617,20 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ProductProps {
-        private final java.lang.Number nodeType;
-        private final java.lang.String productName;
-        private final java.lang.String aliyunCommodityCode;
-        private final java.lang.String authType;
-        private final java.lang.String categoryKey;
-        private final java.lang.Number dataFormat;
-        private final java.lang.String description;
+        private final java.lang.Object nodeType;
+        private final java.lang.Object productName;
+        private final java.lang.Object aliyunCommodityCode;
+        private final java.lang.Object authType;
+        private final java.lang.Object categoryKey;
+        private final java.lang.Object dataFormat;
+        private final java.lang.Object description;
         private final java.lang.Object id2;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String joinPermissionId;
-        private final java.lang.String netType;
-        private final java.lang.String protocolType;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object joinPermissionId;
+        private final java.lang.Object netType;
+        private final java.lang.Object protocolType;
         private final java.lang.Object publishAuto;
-        private final java.lang.String resourceGroupId;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -310,26 +638,26 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.nodeType = software.amazon.jsii.Kernel.get(this, "nodeType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.productName = software.amazon.jsii.Kernel.get(this, "productName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aliyunCommodityCode = software.amazon.jsii.Kernel.get(this, "aliyunCommodityCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.authType = software.amazon.jsii.Kernel.get(this, "authType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.categoryKey = software.amazon.jsii.Kernel.get(this, "categoryKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dataFormat = software.amazon.jsii.Kernel.get(this, "dataFormat", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.nodeType = software.amazon.jsii.Kernel.get(this, "nodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productName = software.amazon.jsii.Kernel.get(this, "productName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliyunCommodityCode = software.amazon.jsii.Kernel.get(this, "aliyunCommodityCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.authType = software.amazon.jsii.Kernel.get(this, "authType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.categoryKey = software.amazon.jsii.Kernel.get(this, "categoryKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataFormat = software.amazon.jsii.Kernel.get(this, "dataFormat", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.id2 = software.amazon.jsii.Kernel.get(this, "id2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.joinPermissionId = software.amazon.jsii.Kernel.get(this, "joinPermissionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.joinPermissionId = software.amazon.jsii.Kernel.get(this, "joinPermissionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.publishAuto = software.amazon.jsii.Kernel.get(this, "publishAuto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number nodeType, final java.lang.String productName, final java.lang.String aliyunCommodityCode, final java.lang.String authType, final java.lang.String categoryKey, final java.lang.Number dataFormat, final java.lang.String description, final java.lang.Object id2, final java.lang.String iotInstanceId, final java.lang.String joinPermissionId, final java.lang.String netType, final java.lang.String protocolType, final java.lang.Object publishAuto, final java.lang.String resourceGroupId) {
+        protected Jsii$Proxy(final java.lang.Object nodeType, final java.lang.Object productName, final java.lang.Object aliyunCommodityCode, final java.lang.Object authType, final java.lang.Object categoryKey, final java.lang.Object dataFormat, final java.lang.Object description, final java.lang.Object id2, final java.lang.Object iotInstanceId, final java.lang.Object joinPermissionId, final java.lang.Object netType, final java.lang.Object protocolType, final java.lang.Object publishAuto, final java.lang.Object resourceGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.nodeType = java.util.Objects.requireNonNull(nodeType, "nodeType is required");
             this.productName = java.util.Objects.requireNonNull(productName, "productName is required");
@@ -348,37 +676,37 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getNodeType() {
+        public final java.lang.Object getNodeType() {
             return this.nodeType;
         }
 
         @Override
-        public final java.lang.String getProductName() {
+        public final java.lang.Object getProductName() {
             return this.productName;
         }
 
         @Override
-        public final java.lang.String getAliyunCommodityCode() {
+        public final java.lang.Object getAliyunCommodityCode() {
             return this.aliyunCommodityCode;
         }
 
         @Override
-        public final java.lang.String getAuthType() {
+        public final java.lang.Object getAuthType() {
             return this.authType;
         }
 
         @Override
-        public final java.lang.String getCategoryKey() {
+        public final java.lang.Object getCategoryKey() {
             return this.categoryKey;
         }
 
         @Override
-        public final java.lang.Number getDataFormat() {
+        public final java.lang.Object getDataFormat() {
             return this.dataFormat;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -388,22 +716,22 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getJoinPermissionId() {
+        public final java.lang.Object getJoinPermissionId() {
             return this.joinPermissionId;
         }
 
         @Override
-        public final java.lang.String getNetType() {
+        public final java.lang.Object getNetType() {
             return this.netType;
         }
 
         @Override
-        public final java.lang.String getProtocolType() {
+        public final java.lang.Object getProtocolType() {
             return this.protocolType;
         }
 
@@ -413,7 +741,7 @@ public interface ProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 

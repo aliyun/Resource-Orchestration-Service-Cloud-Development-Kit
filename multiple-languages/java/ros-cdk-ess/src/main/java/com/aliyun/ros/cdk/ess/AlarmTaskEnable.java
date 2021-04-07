@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::AlarmTaskEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.805Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTaskEnable")
 public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ESS::AlarmTaskEnable`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AlarmTaskEnable(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.AlarmTaskEnableProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ESS::AlarmTaskEnable`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AlarmTaskEnable(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.AlarmTaskEnableProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ess.AlarmTaskEnable> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,25 +83,41 @@ public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property alarmTaskId: The id of alarm task.
+         * <p>
          * @return {@code this}
-         * @param alarmTaskId This parameter is required.
+         * @param alarmTaskId Property alarmTaskId: The id of alarm task. This parameter is required.
          */
         public Builder alarmTaskId(final java.lang.String alarmTaskId) {
             this.props.alarmTaskId(alarmTaskId);
             return this;
         }
+        /**
+         * Property alarmTaskId: The id of alarm task.
+         * <p>
+         * @return {@code this}
+         * @param alarmTaskId Property alarmTaskId: The id of alarm task. This parameter is required.
+         */
+        public Builder alarmTaskId(final com.aliyun.ros.cdk.core.IResolvable alarmTaskId) {
+            this.props.alarmTaskId(alarmTaskId);
+            return this;
+        }
 
         /**
+         * Property enable: Enable alarm task or not.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Enable alarm task or not. This parameter is required.
          */
         public Builder enable(final java.lang.Boolean enable) {
             this.props.enable(enable);
             return this;
         }
         /**
+         * Property enable: Enable alarm task or not.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Enable alarm task or not. This parameter is required.
          */
         public Builder enable(final com.aliyun.ros.cdk.core.IResolvable enable) {
             this.props.enable(enable);

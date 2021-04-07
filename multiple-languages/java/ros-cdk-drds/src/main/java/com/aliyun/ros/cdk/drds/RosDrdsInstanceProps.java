@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.461Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.RosDrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDrdsInstanceProps.Jsii$Proxy.class)
 public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescription();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceSeries();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceSeries();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPayType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getQuantity();
+    @org.jetbrains.annotations.NotNull java.lang.Object getQuantity();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSpecification();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSpecification();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
@@ -50,25 +50,31 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMySqlVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMySqlVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVswitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVswitchId() {
         return null;
     }
 
@@ -82,19 +88,20 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosDrdsInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDrdsInstanceProps> {
-        private java.lang.String description;
-        private java.lang.String instanceSeries;
-        private java.lang.String payType;
-        private java.lang.Number quantity;
-        private java.lang.String specification;
-        private java.lang.String type;
-        private java.lang.String zoneId;
-        private java.lang.Number duration;
+        private java.lang.Object description;
+        private java.lang.Object instanceSeries;
+        private java.lang.Object payType;
+        private java.lang.Object quantity;
+        private java.lang.Object specification;
+        private java.lang.Object type;
+        private java.lang.Object zoneId;
+        private java.lang.Object duration;
         private java.lang.Object isAutoRenew;
-        private java.lang.String mySqlVersion;
-        private java.lang.String pricingCycle;
-        private java.lang.String vpcId;
-        private java.lang.String vswitchId;
+        private java.lang.Object mySqlVersion;
+        private java.lang.Object pricingCycle;
+        private java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vswitchId;
 
         /**
          * Sets the value of {@link RosDrdsInstanceProps#getDescription}
@@ -102,6 +109,16 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getDescription}
+         * @param description the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -117,11 +134,31 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getInstanceSeries}
+         * @param instanceSeries the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceSeries(com.aliyun.ros.cdk.core.IResolvable instanceSeries) {
+            this.instanceSeries = instanceSeries;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getPayType}
          * @param payType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getPayType}
+         * @param payType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
             this.payType = payType;
             return this;
         }
@@ -137,11 +174,31 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getQuantity}
+         * @param quantity the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder quantity(com.aliyun.ros.cdk.core.IResolvable quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getSpecification}
          * @param specification the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder specification(java.lang.String specification) {
+            this.specification = specification;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getSpecification}
+         * @param specification the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder specification(com.aliyun.ros.cdk.core.IResolvable specification) {
             this.specification = specification;
             return this;
         }
@@ -157,6 +214,16 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getZoneId}
          * @param zoneId the value to be set. This parameter is required.
          * @return {@code this}
@@ -167,11 +234,31 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getZoneId}
+         * @param zoneId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getDuration}
          * @param duration the value to be set.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getDuration}
+         * @param duration the value to be set.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
             return this;
         }
@@ -207,6 +294,16 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getMySqlVersion}
+         * @param mySqlVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder mySqlVersion(com.aliyun.ros.cdk.core.IResolvable mySqlVersion) {
+            this.mySqlVersion = mySqlVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getPricingCycle}
          * @param pricingCycle the value to be set.
          * @return {@code this}
@@ -217,11 +314,42 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getPricingCycle}
+         * @param pricingCycle the value to be set.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsInstanceProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsInstanceProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -237,13 +365,23 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosDrdsInstanceProps#getVswitchId}
+         * @param vswitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vswitchId(com.aliyun.ros.cdk.core.IResolvable vswitchId) {
+            this.vswitchId = vswitchId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDrdsInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosDrdsInstanceProps build() {
-            return new Jsii$Proxy(description, instanceSeries, payType, quantity, specification, type, zoneId, duration, isAutoRenew, mySqlVersion, pricingCycle, vpcId, vswitchId);
+            return new Jsii$Proxy(description, instanceSeries, payType, quantity, specification, type, zoneId, duration, isAutoRenew, mySqlVersion, pricingCycle, tags, vpcId, vswitchId);
         }
     }
 
@@ -252,19 +390,20 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDrdsInstanceProps {
-        private final java.lang.String description;
-        private final java.lang.String instanceSeries;
-        private final java.lang.String payType;
-        private final java.lang.Number quantity;
-        private final java.lang.String specification;
-        private final java.lang.String type;
-        private final java.lang.String zoneId;
-        private final java.lang.Number duration;
+        private final java.lang.Object description;
+        private final java.lang.Object instanceSeries;
+        private final java.lang.Object payType;
+        private final java.lang.Object quantity;
+        private final java.lang.Object specification;
+        private final java.lang.Object type;
+        private final java.lang.Object zoneId;
+        private final java.lang.Object duration;
         private final java.lang.Object isAutoRenew;
-        private final java.lang.String mySqlVersion;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String vpcId;
-        private final java.lang.String vswitchId;
+        private final java.lang.Object mySqlVersion;
+        private final java.lang.Object pricingCycle;
+        private final java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vswitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -272,25 +411,27 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceSeries = software.amazon.jsii.Kernel.get(this, "instanceSeries", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.specification = software.amazon.jsii.Kernel.get(this, "specification", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceSeries = software.amazon.jsii.Kernel.get(this, "instanceSeries", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.specification = software.amazon.jsii.Kernel.get(this, "specification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isAutoRenew = software.amazon.jsii.Kernel.get(this, "isAutoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.mySqlVersion = software.amazon.jsii.Kernel.get(this, "mySqlVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vswitchId = software.amazon.jsii.Kernel.get(this, "vswitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.mySqlVersion = software.amazon.jsii.Kernel.get(this, "mySqlVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vswitchId = software.amazon.jsii.Kernel.get(this, "vswitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.String instanceSeries, final java.lang.String payType, final java.lang.Number quantity, final java.lang.String specification, final java.lang.String type, final java.lang.String zoneId, final java.lang.Number duration, final java.lang.Object isAutoRenew, final java.lang.String mySqlVersion, final java.lang.String pricingCycle, final java.lang.String vpcId, final java.lang.String vswitchId) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object instanceSeries, final java.lang.Object payType, final java.lang.Object quantity, final java.lang.Object specification, final java.lang.Object type, final java.lang.Object zoneId, final java.lang.Object duration, final java.lang.Object isAutoRenew, final java.lang.Object mySqlVersion, final java.lang.Object pricingCycle, final java.util.List<? extends com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vswitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = java.util.Objects.requireNonNull(description, "description is required");
             this.instanceSeries = java.util.Objects.requireNonNull(instanceSeries, "instanceSeries is required");
@@ -303,47 +444,48 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             this.isAutoRenew = isAutoRenew;
             this.mySqlVersion = mySqlVersion;
             this.pricingCycle = pricingCycle;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vswitchId = vswitchId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getInstanceSeries() {
+        public final java.lang.Object getInstanceSeries() {
             return this.instanceSeries;
         }
 
         @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
         @Override
-        public final java.lang.Number getQuantity() {
+        public final java.lang.Object getQuantity() {
             return this.quantity;
         }
 
         @Override
-        public final java.lang.String getSpecification() {
+        public final java.lang.Object getSpecification() {
             return this.specification;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
         @Override
-        public final java.lang.Number getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
@@ -353,22 +495,27 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getMySqlVersion() {
+        public final java.lang.Object getMySqlVersion() {
             return this.mySqlVersion;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVswitchId() {
+        public final java.lang.Object getVswitchId() {
             return this.vswitchId;
         }
 
@@ -396,6 +543,9 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -432,6 +582,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             if (this.isAutoRenew != null ? !this.isAutoRenew.equals(that.isAutoRenew) : that.isAutoRenew != null) return false;
             if (this.mySqlVersion != null ? !this.mySqlVersion.equals(that.mySqlVersion) : that.mySqlVersion != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vswitchId != null ? this.vswitchId.equals(that.vswitchId) : that.vswitchId == null;
         }
@@ -449,6 +600,7 @@ public interface RosDrdsInstanceProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.isAutoRenew != null ? this.isAutoRenew.hashCode() : 0);
             result = 31 * result + (this.mySqlVersion != null ? this.mySqlVersion.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vswitchId != null ? this.vswitchId.hashCode() : 0);
             return result;

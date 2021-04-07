@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.711Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.374Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Route")
 public class Route extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::Route`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Route(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.RouteProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::Route`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Route(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.RouteProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.Route> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,52 +83,112 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property destinationCidrBlock: The RouteEntry's target network segment.
+         * <p>
          * @return {@code this}
-         * @param destinationCidrBlock This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
          */
         public Builder destinationCidrBlock(final java.lang.String destinationCidrBlock) {
             this.props.destinationCidrBlock(destinationCidrBlock);
             return this;
         }
+        /**
+         * Property destinationCidrBlock: The RouteEntry's target network segment.
+         * <p>
+         * @return {@code this}
+         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         */
+        public Builder destinationCidrBlock(final com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
+            this.props.destinationCidrBlock(destinationCidrBlock);
+            return this;
+        }
 
         /**
+         * Property routeId: RouteId of created route entry.
+         * <p>
          * @return {@code this}
-         * @param routeId This parameter is required.
+         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
          */
         public Builder routeId(final java.lang.String routeId) {
             this.props.routeId(routeId);
             return this;
         }
+        /**
+         * Property routeId: RouteId of created route entry.
+         * <p>
+         * @return {@code this}
+         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
+         */
+        public Builder routeId(final com.aliyun.ros.cdk.core.IResolvable routeId) {
+            this.props.routeId(routeId);
+            return this;
+        }
 
         /**
+         * Property routeTableId: RouteTableId of created route entry.
+         * <p>
          * @return {@code this}
-         * @param routeTableId This parameter is required.
+         * @param routeTableId Property routeTableId: RouteTableId of created route entry. This parameter is required.
          */
         public Builder routeTableId(final java.lang.String routeTableId) {
             this.props.routeTableId(routeTableId);
             return this;
         }
+        /**
+         * Property routeTableId: RouteTableId of created route entry.
+         * <p>
+         * @return {@code this}
+         * @param routeTableId Property routeTableId: RouteTableId of created route entry. This parameter is required.
+         */
+        public Builder routeTableId(final com.aliyun.ros.cdk.core.IResolvable routeTableId) {
+            this.props.routeTableId(routeTableId);
+            return this;
+        }
 
         /**
+         * Property nextHopId: The route entry's next hop.
+         * <p>
+         * When the NextHopList is specified, the value will be ignored.
+         * <p>
          * @return {@code this}
-         * @param nextHopId This parameter is required.
+         * @param nextHopId Property nextHopId: The route entry's next hop. This parameter is required.
          */
         public Builder nextHopId(final java.lang.String nextHopId) {
             this.props.nextHopId(nextHopId);
             return this;
         }
+        /**
+         * Property nextHopId: The route entry's next hop.
+         * <p>
+         * When the NextHopList is specified, the value will be ignored.
+         * <p>
+         * @return {@code this}
+         * @param nextHopId Property nextHopId: The route entry's next hop. This parameter is required.
+         */
+        public Builder nextHopId(final com.aliyun.ros.cdk.core.IResolvable nextHopId) {
+            this.props.nextHopId(nextHopId);
+            return this;
+        }
 
         /**
+         * Property nextHopList: The route entry's next hop list.
+         * <p>
+         * If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
+         * <p>
          * @return {@code this}
-         * @param nextHopList This parameter is required.
+         * @param nextHopList Property nextHopList: The route entry's next hop list. This parameter is required.
          */
         public Builder nextHopList(final com.aliyun.ros.cdk.core.IResolvable nextHopList) {
             this.props.nextHopList(nextHopList);
             return this;
         }
         /**
+         * Property nextHopList: The route entry's next hop list.
+         * <p>
+         * If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
+         * <p>
          * @return {@code this}
-         * @param nextHopList This parameter is required.
+         * @param nextHopList Property nextHopList: The route entry's next hop list. This parameter is required.
          */
         public Builder nextHopList(final java.util.List<? extends java.lang.Object> nextHopList) {
             this.props.nextHopList(nextHopList);
@@ -128,10 +196,26 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property nextHopType: The next hop type.
+         * <p>
+         * Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * <p>
          * @return {@code this}
-         * @param nextHopType This parameter is required.
+         * @param nextHopType Property nextHopType: The next hop type. This parameter is required.
          */
         public Builder nextHopType(final java.lang.String nextHopType) {
+            this.props.nextHopType(nextHopType);
+            return this;
+        }
+        /**
+         * Property nextHopType: The next hop type.
+         * <p>
+         * Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * <p>
+         * @return {@code this}
+         * @param nextHopType Property nextHopType: The next hop type. This parameter is required.
+         */
+        public Builder nextHopType(final com.aliyun.ros.cdk.core.IResolvable nextHopType) {
             this.props.nextHopType(nextHopType);
             return this;
         }

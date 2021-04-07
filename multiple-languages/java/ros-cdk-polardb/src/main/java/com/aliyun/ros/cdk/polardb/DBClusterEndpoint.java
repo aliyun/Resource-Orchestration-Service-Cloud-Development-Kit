@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.817Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpoint")
 public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBClusterEndpoint(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterEndpointProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBClusterEndpoint(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterEndpointProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,26 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Addresses: The address items of the db cluster endpoint.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ConnectionString: The first connection string of the db cluster endpoint.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute DBEndpointId: DB cluster endpoint ID.
+     * <p>
+     * E.g. pe-xxxxxxxx.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbEndpointId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbEndpointId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbEndpointId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +77,8 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.DBClusterEndpoint> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +86,8 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,60 +106,120 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
+         * <p>
          * @return {@code this}
-         * @param dbClusterId This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created. This parameter is required.
          */
         public Builder dbClusterId(final java.lang.String dbClusterId) {
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
+         * <p>
+         * @return {@code this}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created. This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
+         * Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
+         * <p>
+         * Valid values: Enable, Disable.
+         * Default value: Disable.
+         * <p>
          * @return {@code this}
-         * @param autoAddNewNodes This parameter is required.
+         * @param autoAddNewNodes Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point. This parameter is required.
          */
         public Builder autoAddNewNodes(final java.lang.String autoAddNewNodes) {
             this.props.autoAddNewNodes(autoAddNewNodes);
             return this;
         }
-
         /**
+         * Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
+         * <p>
+         * Valid values: Enable, Disable.
+         * Default value: Disable.
+         * <p>
          * @return {@code this}
-         * @param endpointConfig This parameter is required.
+         * @param autoAddNewNodes Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point. This parameter is required.
          */
-        public Builder endpointConfig(final com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
-            this.props.endpointConfig(endpointConfig);
+        public Builder autoAddNewNodes(final com.aliyun.ros.cdk.core.IResolvable autoAddNewNodes) {
+            this.props.autoAddNewNodes(autoAddNewNodes);
             return this;
         }
+
         /**
+         * Property endpointConfig:.
+         * <p>
          * @return {@code this}
-         * @param endpointConfig This parameter is required.
+         * @param endpointConfig Property endpointConfig:. This parameter is required.
          */
         public Builder endpointConfig(final com.aliyun.ros.cdk.core.IResolvable endpointConfig) {
             this.props.endpointConfig(endpointConfig);
             return this;
         }
+        /**
+         * Property endpointConfig:.
+         * <p>
+         * @return {@code this}
+         * @param endpointConfig Property endpointConfig:. This parameter is required.
+         */
+        public Builder endpointConfig(final com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
+            this.props.endpointConfig(endpointConfig);
+            return this;
+        }
 
         /**
+         * Property endpointType: The type of the cluster connection point.
+         * <p>
+         * Set this parameter to Custom.
+         * <p>
          * @return {@code this}
-         * @param endpointType This parameter is required.
+         * @param endpointType Property endpointType: The type of the cluster connection point. This parameter is required.
          */
         public Builder endpointType(final java.lang.String endpointType) {
             this.props.endpointType(endpointType);
             return this;
         }
+        /**
+         * Property endpointType: The type of the cluster connection point.
+         * <p>
+         * Set this parameter to Custom.
+         * <p>
+         * @return {@code this}
+         * @param endpointType Property endpointType: The type of the cluster connection point. This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
 
         /**
+         * Property nodes: The nodes to be added to this connection point to process read requests from this connection point.
+         * <p>
+         * Add at least two nodes.
+         * If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
+         * <p>
          * @return {@code this}
-         * @param nodes This parameter is required.
+         * @param nodes Property nodes: The nodes to be added to this connection point to process read requests from this connection point. This parameter is required.
          */
         public Builder nodes(final java.util.List<? extends java.lang.Object> nodes) {
             this.props.nodes(nodes);
             return this;
         }
         /**
+         * Property nodes: The nodes to be added to this connection point to process read requests from this connection point.
+         * <p>
+         * Add at least two nodes.
+         * If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
+         * <p>
          * @return {@code this}
-         * @param nodes This parameter is required.
+         * @param nodes Property nodes: The nodes to be added to this connection point to process read requests from this connection point. This parameter is required.
          */
         public Builder nodes(final com.aliyun.ros.cdk.core.IResolvable nodes) {
             this.props.nodes(nodes);
@@ -154,10 +227,32 @@ public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property readWriteMode: The read/write mode of the cluster connection point.
+         * <p>
+         * Valid values:
+         * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
+         * ReadOnly: receives and forwards only read requests.
+         * Default value: ReadOnly.
+         * <p>
          * @return {@code this}
-         * @param readWriteMode This parameter is required.
+         * @param readWriteMode Property readWriteMode: The read/write mode of the cluster connection point. This parameter is required.
          */
         public Builder readWriteMode(final java.lang.String readWriteMode) {
+            this.props.readWriteMode(readWriteMode);
+            return this;
+        }
+        /**
+         * Property readWriteMode: The read/write mode of the cluster connection point.
+         * <p>
+         * Valid values:
+         * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
+         * ReadOnly: receives and forwards only read requests.
+         * Default value: ReadOnly.
+         * <p>
+         * @return {@code this}
+         * @param readWriteMode Property readWriteMode: The read/write mode of the cluster connection point. This parameter is required.
+         */
+        public Builder readWriteMode(final com.aliyun.ros.cdk.core.IResolvable readWriteMode) {
             this.props.readWriteMode(readWriteMode);
             return this;
         }

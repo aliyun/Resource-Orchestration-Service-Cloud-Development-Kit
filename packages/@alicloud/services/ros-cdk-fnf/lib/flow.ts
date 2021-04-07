@@ -11,27 +11,27 @@ export interface FlowProps {
     /**
      * Property definition: The definition of the created flow following the FDL syntax standard.
      */
-    readonly definition: string;
+    readonly definition: string | ros.IResolvable;
 
     /**
      * Property name: The name of the flow created. This name is unique under the account.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property description: Create a description of the flow.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
-    readonly requestId?: string;
+    readonly requestId?: string | ros.IResolvable;
 
     /**
      * Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
      */
-    readonly roleArn?: string;
+    readonly roleArn?: string | ros.IResolvable;
 }
 
 /**
@@ -47,22 +47,22 @@ export class Flow extends ros.Resource {
     /**
      * Attribute CreatedTime: Flow creation time.
      */
-    public readonly attrCreatedTime: any;
+    public readonly attrCreatedTime: ros.IResolvable;
 
     /**
      * Attribute Id: The unique ID of the flow.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * Attribute LastModifiedTime: The most recently modified time of the flow.
      */
-    public readonly attrLastModifiedTime: any;
+    public readonly attrLastModifiedTime: ros.IResolvable;
 
     /**
      * Attribute Name: The name of the flow created.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FNF::Flow`.

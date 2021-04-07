@@ -14,23 +14,35 @@ export interface AutoEnableServiceProps {
      * ARMS: Realtime Monitoring Service
      * ApiGateway: API Gateway
      * BatchCompute: Batch Compute
+     * BrainIndustrial: Brain Industrial
+     * CloudStorageGateway: Cloud Storage Gateway
      * CMS: Cloud Monitor Service
+     * CR: Container Registry
+     * CS: Container Service
      * DataHub: Data Hub
+     * DataWorks: DataWorksDCDN: Dynamic Route for CDN
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
-     * NAS: Network Attached Storage
+     * FNF: Serverless Workflow
+     * MaxCompute: MaxComputeNAS: Network Attached Storage
+     * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
+     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
      * OTS: Table Store
      * PrivateLink: Private Link
+     * PrivateZone: Private Zone
      * RocketMQ: RocketMQ
+     * SAE: Serverless App Engine
      * SLS: Log Service
+     * VS: Video Surveillance
+     * Xtrace: Tracing Anlaysis
      *
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 }
 
 /**

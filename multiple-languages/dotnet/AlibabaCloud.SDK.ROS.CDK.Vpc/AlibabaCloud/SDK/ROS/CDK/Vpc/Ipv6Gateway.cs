@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute Ipv6GatewayId: ID IPv6 gateway.</summary>
-        [JsiiProperty(name: "attrIpv6GatewayId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpv6GatewayId
+        [JsiiProperty(name: "attrIpv6GatewayId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6GatewayId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Properties for defining a `ALIYUN::CDN::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(DomainConfigProps.Jsii$Proxy.class)
 public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property domainNames: Your accelerated domain name, separated by commas in English.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomainNames();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomainNames();
 
     /**
+     * Property functions: function list, please refer to the CDN documentation for details.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFunctions();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFunctions();
 
     /**
      * @return a {@link Builder} of {@link DomainConfigProps}
@@ -26,12 +28,12 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link DomainConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainConfigProps> {
-        private java.lang.String domainNames;
-        private java.lang.String functions;
+        private java.lang.Object domainNames;
+        private java.lang.Object functions;
 
         /**
          * Sets the value of {@link DomainConfigProps#getDomainNames}
-         * @param domainNames the value to be set. This parameter is required.
+         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
          * @return {@code this}
          */
         public Builder domainNames(java.lang.String domainNames) {
@@ -40,11 +42,31 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link DomainConfigProps#getDomainNames}
+         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domainNames(com.aliyun.ros.cdk.core.IResolvable domainNames) {
+            this.domainNames = domainNames;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DomainConfigProps#getFunctions}
-         * @param functions the value to be set. This parameter is required.
+         * @param functions Property functions: function list, please refer to the CDN documentation for details. This parameter is required.
          * @return {@code this}
          */
         public Builder functions(java.lang.String functions) {
+            this.functions = functions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainConfigProps#getFunctions}
+         * @param functions Property functions: function list, please refer to the CDN documentation for details. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder functions(com.aliyun.ros.cdk.core.IResolvable functions) {
             this.functions = functions;
             return this;
         }
@@ -65,8 +87,8 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DomainConfigProps {
-        private final java.lang.String domainNames;
-        private final java.lang.String functions;
+        private final java.lang.Object domainNames;
+        private final java.lang.Object functions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domainNames = software.amazon.jsii.Kernel.get(this, "domainNames", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.functions = software.amazon.jsii.Kernel.get(this, "functions", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domainNames = software.amazon.jsii.Kernel.get(this, "domainNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.functions = software.amazon.jsii.Kernel.get(this, "functions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domainNames, final java.lang.String functions) {
+        protected Jsii$Proxy(final java.lang.Object domainNames, final java.lang.Object functions) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainNames = java.util.Objects.requireNonNull(domainNames, "domainNames is required");
             this.functions = java.util.Objects.requireNonNull(functions, "functions is required");
         }
 
         @Override
-        public final java.lang.String getDomainNames() {
+        public final java.lang.Object getDomainNames() {
             return this.domainNames;
         }
 
         @Override
-        public final java.lang.String getFunctions() {
+        public final java.lang.Object getFunctions() {
             return this.functions;
         }
 

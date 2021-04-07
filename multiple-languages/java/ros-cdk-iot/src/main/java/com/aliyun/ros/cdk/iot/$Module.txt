@@ -15,6 +15,11 @@
 @alicloud/ros-cdk-iot.RosProductTopic=com.aliyun.ros.cdk.iot.RosProductTopic
 @alicloud/ros-cdk-iot.RosProductTopicProps=com.aliyun.ros.cdk.iot.RosProductTopicProps
 @alicloud/ros-cdk-iot.RosRule=com.aliyun.ros.cdk.iot.RosRule
+@alicloud/ros-cdk-iot.RosRule.RuleActionProperty=com.aliyun.ros.cdk.iot.RosRule$RuleActionProperty
+@alicloud/ros-cdk-iot.RosRuleAction=com.aliyun.ros.cdk.iot.RosRuleAction
+@alicloud/ros-cdk-iot.RosRuleActionProps=com.aliyun.ros.cdk.iot.RosRuleActionProps
 @alicloud/ros-cdk-iot.RosRuleProps=com.aliyun.ros.cdk.iot.RosRuleProps
 @alicloud/ros-cdk-iot.Rule=com.aliyun.ros.cdk.iot.Rule
+@alicloud/ros-cdk-iot.RuleAction=com.aliyun.ros.cdk.iot.RuleAction
+@alicloud/ros-cdk-iot.RuleActionProps=com.aliyun.ros.cdk.iot.RuleActionProps
 @alicloud/ros-cdk-iot.RuleProps=com.aliyun.ros.cdk.iot.RuleProps

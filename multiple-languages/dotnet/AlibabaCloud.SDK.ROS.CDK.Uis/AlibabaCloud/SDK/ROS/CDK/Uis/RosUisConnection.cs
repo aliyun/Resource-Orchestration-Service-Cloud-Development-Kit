@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Attribute</strong>: UisConnectionId: ID of the VPN server. This ID does not distinguish between protocols.
         /// </remarks>
-        [JsiiProperty(name: "attrUisConnectionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisConnectionId
+        [JsiiProperty(name: "attrUisConnectionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisConnectionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,20 +69,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Property</strong>: uisNodeId: Node instance ID.
         /// </remarks>
-        [JsiiProperty(name: "uisNodeId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string UisNodeId
+        [JsiiProperty(name: "uisNodeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object UisNodeId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: uisProtocol: The protocol name used by the software and server. The default value is SSLVPN.
         /// </remarks>
-        [JsiiProperty(name: "uisProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string UisProtocol
+        [JsiiProperty(name: "uisProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object UisProtocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -90,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: description: A description of the tunnel connection.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -101,7 +101,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: greConfig: The config for GRE. Item can be overwritten, but removed.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "greConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-uis.RosUisConnection.GreConfigProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [JsiiProperty(name: "greConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-uis.RosUisConnection.GreConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public virtual object? GreConfig
         {
             get => GetInstanceProperty<object?>();
@@ -112,10 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: name: The name of the tunnel connection.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -135,8 +135,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerIp: The customer's public IP.
             /// </remarks>
-            [JsiiProperty(name: "customerIp", typeJson: "{\"primitive\":\"string\"}")]
-            string CustomerIp
+            [JsiiProperty(name: "customerIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CustomerIp
             {
                 get;
             }
@@ -144,8 +144,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerSubnet: The CIDR of customer's GRE private network.
             /// </remarks>
-            [JsiiProperty(name: "customerSubnet", typeJson: "{\"primitive\":\"string\"}")]
-            string CustomerSubnet
+            [JsiiProperty(name: "customerSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CustomerSubnet
             {
                 get;
             }
@@ -153,8 +153,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerTunnelIp: The GRE Tunnel IP for Customer.
             /// </remarks>
-            [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"primitive\":\"string\"}")]
-            string CustomerTunnelIp
+            [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CustomerTunnelIp
             {
                 get;
             }
@@ -162,8 +162,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: localIp: UisNode IP.
             /// </remarks>
-            [JsiiProperty(name: "localIp", typeJson: "{\"primitive\":\"string\"}")]
-            string LocalIp
+            [JsiiProperty(name: "localIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LocalIp
             {
                 get;
             }
@@ -171,8 +171,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: localTunnelIp: The GRE Tunnel IP for UisNode.
             /// </remarks>
-            [JsiiProperty(name: "localTunnelIp", typeJson: "{\"primitive\":\"string\"}")]
-            string LocalTunnelIp
+            [JsiiProperty(name: "localTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LocalTunnelIp
             {
                 get;
             }
@@ -187,46 +187,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
                 /// <remarks>
                 /// <strong>Property</strong>: customerIp: The customer's public IP.
                 /// </remarks>
-                [JsiiProperty(name: "customerIp", typeJson: "{\"primitive\":\"string\"}")]
-                public string CustomerIp
+                [JsiiProperty(name: "customerIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CustomerIp
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: customerSubnet: The CIDR of customer's GRE private network.
                 /// </remarks>
-                [JsiiProperty(name: "customerSubnet", typeJson: "{\"primitive\":\"string\"}")]
-                public string CustomerSubnet
+                [JsiiProperty(name: "customerSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CustomerSubnet
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: customerTunnelIp: The GRE Tunnel IP for Customer.
                 /// </remarks>
-                [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"primitive\":\"string\"}")]
-                public string CustomerTunnelIp
+                [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CustomerTunnelIp
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: localIp: UisNode IP.
                 /// </remarks>
-                [JsiiProperty(name: "localIp", typeJson: "{\"primitive\":\"string\"}")]
-                public string LocalIp
+                [JsiiProperty(name: "localIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LocalIp
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: localTunnelIp: The GRE Tunnel IP for UisNode.
                 /// </remarks>
-                [JsiiProperty(name: "localTunnelIp", typeJson: "{\"primitive\":\"string\"}")]
-                public string LocalTunnelIp
+                [JsiiProperty(name: "localTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LocalTunnelIp
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -238,8 +238,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerIp: The customer's public IP.
             /// </remarks>
-            [JsiiProperty(name: "customerIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string CustomerIp
+            [JsiiProperty(name: "customerIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object CustomerIp
             {
                 get;
                 set;
@@ -248,8 +248,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerSubnet: The CIDR of customer's GRE private network.
             /// </remarks>
-            [JsiiProperty(name: "customerSubnet", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string CustomerSubnet
+            [JsiiProperty(name: "customerSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object CustomerSubnet
             {
                 get;
                 set;
@@ -258,8 +258,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: customerTunnelIp: The GRE Tunnel IP for Customer.
             /// </remarks>
-            [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string CustomerTunnelIp
+            [JsiiProperty(name: "customerTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object CustomerTunnelIp
             {
                 get;
                 set;
@@ -268,8 +268,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: localIp: UisNode IP.
             /// </remarks>
-            [JsiiProperty(name: "localIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string LocalIp
+            [JsiiProperty(name: "localIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object LocalIp
             {
                 get;
                 set;
@@ -278,8 +278,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: localTunnelIp: The GRE Tunnel IP for UisNode.
             /// </remarks>
-            [JsiiProperty(name: "localTunnelIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string LocalTunnelIp
+            [JsiiProperty(name: "localTunnelIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object LocalTunnelIp
             {
                 get;
                 set;
@@ -291,8 +291,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: cipher: The encryption algorithm used by SSL-VPN. Value: AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none.
             /// </remarks>
-            [JsiiProperty(name: "cipher", typeJson: "{\"primitive\":\"string\"}")]
-            string Cipher
+            [JsiiProperty(name: "cipher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Cipher
             {
                 get;
             }
@@ -300,8 +300,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: port: The port used by the SSL-VPN server. The default value is 1194. The port range us 1025-10000, and avoid the following well-known ports [22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500]
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}")]
-            double Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Port
             {
                 get;
             }
@@ -309,8 +309,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: protocol: The protocol used by the SSL-VPN server. Value: UDP (default) | TCP
             /// </remarks>
-            [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-            string Protocol
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Protocol
             {
                 get;
             }
@@ -325,28 +325,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
                 /// <remarks>
                 /// <strong>Property</strong>: cipher: The encryption algorithm used by SSL-VPN. Value: AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none.
                 /// </remarks>
-                [JsiiProperty(name: "cipher", typeJson: "{\"primitive\":\"string\"}")]
-                public string Cipher
+                [JsiiProperty(name: "cipher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Cipher
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: port: The port used by the SSL-VPN server. The default value is 1194. The port range us 1025-10000, and avoid the following well-known ports [22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500]
                 /// </remarks>
-                [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}")]
-                public double Port
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Port
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: protocol: The protocol used by the SSL-VPN server. Value: UDP (default) | TCP
                 /// </remarks>
-                [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-                public string Protocol
+                [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Protocol
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -358,8 +358,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: cipher: The encryption algorithm used by SSL-VPN. Value: AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none.
             /// </remarks>
-            [JsiiProperty(name: "cipher", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Cipher
+            [JsiiProperty(name: "cipher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Cipher
             {
                 get;
                 set;
@@ -368,8 +368,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: port: The port used by the SSL-VPN server. The default value is 1194. The port range us 1025-10000, and avoid the following well-known ports [22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500]
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Port
             {
                 get;
                 set;
@@ -378,8 +378,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
             /// <remarks>
             /// <strong>Property</strong>: protocol: The protocol used by the SSL-VPN server. Value: UDP (default) | TCP
             /// </remarks>
-            [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Protocol
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Protocol
             {
                 get;
                 set;

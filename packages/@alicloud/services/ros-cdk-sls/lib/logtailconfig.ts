@@ -14,7 +14,7 @@ export interface LogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * Property logtailConfigName: Logtail config name:
@@ -22,7 +22,7 @@ export interface LogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logtailConfigName: string;
+    readonly logtailConfigName: string | ros.IResolvable;
 
     /**
      * Property projectName: Project name:
@@ -30,7 +30,7 @@ export interface LogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * Property cloneFrom: Clone logtail config data from existing logtail config.
@@ -123,12 +123,17 @@ export class LogtailConfig extends ros.Resource {
     /**
      * Attribute AppliedMachineGroups: Applied machine groups.
      */
-    public readonly attrAppliedMachineGroups: any;
+    public readonly attrAppliedMachineGroups: ros.IResolvable;
 
     /**
      * Attribute Endpoint: Endpoint address.
      */
-    public readonly attrEndpoint: any;
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
+     * Attribute LogtailConfigName: Logtail config name.
+     */
+    public readonly attrLogtailConfigName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::LogtailConfig`.
@@ -150,5 +155,6 @@ export class LogtailConfig extends ros.Resource {
         this.resource = rosLogtailConfig;
         this.attrAppliedMachineGroups = rosLogtailConfig.attrAppliedMachineGroups;
         this.attrEndpoint = rosLogtailConfig.attrEndpoint;
+        this.attrLogtailConfigName = rosLogtailConfig.attrLogtailConfigName;
     }
 }

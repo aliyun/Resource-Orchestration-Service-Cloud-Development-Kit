@@ -11,47 +11,47 @@ export interface RestoreJobProps {
     /**
      * Property restoreType: Restore type
      */
-    readonly restoreType: string;
+    readonly restoreType: string | ros.IResolvable;
 
     /**
      * Property snapshotId: Snapshot ID
      */
-    readonly snapshotId: string;
+    readonly snapshotId: string | ros.IResolvable;
 
     /**
      * Property sourceClientId: Source client ID. It should be provided when SourceType=FILE.
      */
-    readonly sourceClientId: string;
+    readonly sourceClientId: string | ros.IResolvable;
 
     /**
      * Property sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
      */
-    readonly sourceInstanceId: string;
+    readonly sourceInstanceId: string | ros.IResolvable;
 
     /**
      * Property sourceType: Source type
      */
-    readonly sourceType: string;
+    readonly sourceType: string | ros.IResolvable;
 
     /**
      * Property targetClientId: Target client ID. It should be provided when RestoreType=FILE.
      */
-    readonly targetClientId: string;
+    readonly targetClientId: string | ros.IResolvable;
 
     /**
-     * Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
      */
-    readonly targetInstanceId: string;
+    readonly targetInstanceId: string | ros.IResolvable;
 
     /**
      * Property targetPath: Target path. For instance, "/".
      */
-    readonly targetPath: string;
+    readonly targetPath: string | ros.IResolvable;
 
     /**
      * Property vaultId: Vault ID
      */
-    readonly vaultId: string;
+    readonly vaultId: string | ros.IResolvable;
 }
 
 /**
@@ -67,27 +67,27 @@ export class RestoreJob extends ros.Resource {
     /**
      * Attribute ErrorMessage: Error message of restore job
      */
-    public readonly attrErrorMessage: any;
+    public readonly attrErrorMessage: ros.IResolvable;
 
     /**
      * Attribute RestoreId: Restore job ID
      */
-    public readonly attrRestoreId: any;
+    public readonly attrRestoreId: ros.IResolvable;
 
     /**
      * Attribute RestoreType: Restore type
      */
-    public readonly attrRestoreType: any;
+    public readonly attrRestoreType: ros.IResolvable;
 
     /**
      * Attribute SourceType: Source type
      */
-    public readonly attrSourceType: any;
+    public readonly attrSourceType: ros.IResolvable;
 
     /**
      * Attribute Status: Restore job status
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::HBR::RestoreJob`.

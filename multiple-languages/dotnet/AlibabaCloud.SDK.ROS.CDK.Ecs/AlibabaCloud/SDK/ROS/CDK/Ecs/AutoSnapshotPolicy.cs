@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.</summary>
-        [JsiiProperty(name: "attrAutoSnapshotPolicyId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoSnapshotPolicyId
+        [JsiiProperty(name: "attrAutoSnapshotPolicyId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoSnapshotPolicyId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

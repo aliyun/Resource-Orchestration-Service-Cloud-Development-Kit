@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// If you set this, you don't have to call 'synth()' explicitly. Note that
         /// this feature is only available for certain programming languages, and
         /// calling 'synth()' is still recommended.
-        /// 
+        ///
         /// Default true if running via CDK CLI ('CDK_OUTDIR' is set), 'false'
         /// otherwise
         /// </remarks>
@@ -28,9 +28,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Additional context values for the application.</summary>
         /// <remarks>
         /// Context set by the CLI or the 'context' key in 'cdk.json' has precedence.
-        /// 
+        ///
         /// Context can be read from any construct using 'node.getContext(key)'.
-        /// 
+        ///
         /// <strong>Default</strong>: - no additional context
         /// </remarks>
         [JsiiOptional]

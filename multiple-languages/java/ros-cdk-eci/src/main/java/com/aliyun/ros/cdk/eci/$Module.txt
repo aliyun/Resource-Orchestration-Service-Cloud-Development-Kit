@@ -3,6 +3,7 @@
 @alicloud/ros-cdk-eci.ImageCache=com.aliyun.ros.cdk.eci.ImageCache
 @alicloud/ros-cdk-eci.ImageCacheProps=com.aliyun.ros.cdk.eci.ImageCacheProps
 @alicloud/ros-cdk-eci.RosContainerGroup=com.aliyun.ros.cdk.eci.RosContainerGroup
+@alicloud/ros-cdk-eci.RosContainerGroup.AcrRegistryInfoProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$AcrRegistryInfoProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.ConfigFileVolumeConfigFileToPathProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$ConfigFileVolumeConfigFileToPathProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.ContainerProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$ContainerProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.DnsConfigProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$DnsConfigProperty

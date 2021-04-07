@@ -16,12 +16,12 @@ export interface RunCommandProps {
      * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
      * Each custom parameter key cannot exceed 64 bytes.
      */
-    readonly commandContent: string;
+    readonly commandContent: string | ros.IResolvable;
 
     /**
      * Property instanceIds: The instance id list. Select up to 20 instances at a time.Instances status must be running.
      */
-    readonly instanceIds: string[];
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property type: The language type of the O&M script. Valid values:
@@ -29,7 +29,7 @@ export interface RunCommandProps {
      * RunPowerShellScript: PowerShell scripts for Windows instances
      * RunShellScript: shell scripts for Linux instances
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
@@ -37,12 +37,12 @@ export interface RunCommandProps {
      * Base64: base64-encoded.
      * Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
      */
-    readonly contentEncoding?: string;
+    readonly contentEncoding?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the script, which supports all character sets. It can be up to 512 characters in length.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property enableParameter: Specifies whether the script contains custom parameters.
@@ -54,7 +54,7 @@ export interface RunCommandProps {
      * Property frequency: The execution period of recurring tasks. If the Timed parameter is set to True, you must specify the Frequency parameter. The interval between two recurring tasks cannot be less than 10 seconds.
      * The parameter value follows the cron expression. For more information, see Configure scheduled commands.
      */
-    readonly frequency?: string;
+    readonly frequency?: string | ros.IResolvable;
 
     /**
      * Property keepCommand: Specifies whether to retain the script after it is run. Valid values:
@@ -67,7 +67,7 @@ export interface RunCommandProps {
     /**
      * Property name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
@@ -92,7 +92,7 @@ export interface RunCommandProps {
      * Property timeout: The timeout period for script execution. Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
      * Default value: 60.
      */
-    readonly timeout?: number;
+    readonly timeout?: number | ros.IResolvable;
 
     /**
      * Property workingDir: The running directory of the script in the ECS instance.
@@ -100,7 +100,7 @@ export interface RunCommandProps {
      * Linux instances: under the home directory of the administrator (root user): /root.
      * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
      */
-    readonly workingDir?: string;
+    readonly workingDir?: string | ros.IResolvable;
 }
 
 /**
@@ -116,12 +116,12 @@ export class RunCommand extends ros.Resource {
     /**
      * Attribute CommandId: The id of command created.
      */
-    public readonly attrCommandId: any;
+    public readonly attrCommandId: ros.IResolvable;
 
     /**
      * Attribute InvokeId: The invoke id of command.
      */
-    public readonly attrInvokeId: any;
+    public readonly attrInvokeId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::RunCommand`.

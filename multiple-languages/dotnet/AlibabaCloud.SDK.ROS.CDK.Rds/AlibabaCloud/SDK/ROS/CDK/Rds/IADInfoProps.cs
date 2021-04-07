@@ -9,36 +9,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     public interface IADInfoProps
     {
         /// <summary>Property adAccountName: Domain account name.</summary>
-        [JsiiProperty(name: "adAccountName", typeJson: "{\"primitive\":\"string\"}")]
-        string AdAccountName
+        [JsiiProperty(name: "adAccountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AdAccountName
         {
             get;
         }
 
         /// <summary>Property addns: Active directory domain name.</summary>
-        [JsiiProperty(name: "addns", typeJson: "{\"primitive\":\"string\"}")]
-        string Addns
+        [JsiiProperty(name: "addns", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Addns
         {
             get;
         }
 
         /// <summary>Property adPassword: Domain password.</summary>
-        [JsiiProperty(name: "adPassword", typeJson: "{\"primitive\":\"string\"}")]
-        string AdPassword
+        [JsiiProperty(name: "adPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AdPassword
         {
             get;
         }
 
         /// <summary>Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.</summary>
-        [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"primitive\":\"string\"}")]
-        string AdServerIpAddress
+        [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AdServerIpAddress
         {
             get;
         }
 
         /// <summary>Property dbInstanceId: The ID of the instance.</summary>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbInstanceId
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbInstanceId
         {
             get;
         }
@@ -52,38 +52,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <summary>Property adAccountName: Domain account name.</summary>
-            [JsiiProperty(name: "adAccountName", typeJson: "{\"primitive\":\"string\"}")]
-            public string AdAccountName
+            [JsiiProperty(name: "adAccountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AdAccountName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property addns: Active directory domain name.</summary>
-            [JsiiProperty(name: "addns", typeJson: "{\"primitive\":\"string\"}")]
-            public string Addns
+            [JsiiProperty(name: "addns", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Addns
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property adPassword: Domain password.</summary>
-            [JsiiProperty(name: "adPassword", typeJson: "{\"primitive\":\"string\"}")]
-            public string AdPassword
+            [JsiiProperty(name: "adPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AdPassword
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.</summary>
-            [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"primitive\":\"string\"}")]
-            public string AdServerIpAddress
+            [JsiiProperty(name: "adServerIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AdServerIpAddress
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbInstanceId: The ID of the instance.</summary>
-            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbInstanceId
+            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

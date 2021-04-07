@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a `ALIYUN::DMS::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.087Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserProps.Jsii$Proxy.class)
 public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUid();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUid();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMobile() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMobile() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getRoleNames() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRoleNames() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTid() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTid() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserName() {
         return null;
     }
 
@@ -52,12 +52,12 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosUserProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUserProps> {
-        private java.lang.String uid;
-        private java.lang.String mobile;
-        private java.util.List<java.lang.String> roleNames;
-        private java.lang.String status;
-        private java.lang.String tid;
-        private java.lang.String userName;
+        private java.lang.Object uid;
+        private java.lang.Object mobile;
+        private java.lang.Object roleNames;
+        private java.lang.Object status;
+        private java.lang.Object tid;
+        private java.lang.Object userName;
 
         /**
          * Sets the value of {@link RosUserProps#getUid}
@@ -65,6 +65,16 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder uid(java.lang.String uid) {
+            this.uid = uid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserProps#getUid}
+         * @param uid the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uid(com.aliyun.ros.cdk.core.IResolvable uid) {
             this.uid = uid;
             return this;
         }
@@ -80,11 +90,31 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getMobile}
+         * @param mobile the value to be set.
+         * @return {@code this}
+         */
+        public Builder mobile(com.aliyun.ros.cdk.core.IResolvable mobile) {
+            this.mobile = mobile;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getRoleNames}
          * @param roleNames the value to be set.
          * @return {@code this}
          */
-        public Builder roleNames(java.util.List<java.lang.String> roleNames) {
+        public Builder roleNames(com.aliyun.ros.cdk.core.IResolvable roleNames) {
+            this.roleNames = roleNames;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserProps#getRoleNames}
+         * @param roleNames the value to be set.
+         * @return {@code this}
+         */
+        public Builder roleNames(java.util.List<? extends java.lang.Object> roleNames) {
             this.roleNames = roleNames;
             return this;
         }
@@ -100,6 +130,16 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getStatus}
+         * @param status the value to be set.
+         * @return {@code this}
+         */
+        public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getTid}
          * @param tid the value to be set.
          * @return {@code this}
@@ -110,11 +150,31 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getTid}
+         * @param tid the value to be set.
+         * @return {@code this}
+         */
+        public Builder tid(com.aliyun.ros.cdk.core.IResolvable tid) {
+            this.tid = tid;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getUserName}
          * @param userName the value to be set.
          * @return {@code this}
          */
         public Builder userName(java.lang.String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserProps#getUserName}
+         * @param userName the value to be set.
+         * @return {@code this}
+         */
+        public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
             this.userName = userName;
             return this;
         }
@@ -135,12 +195,12 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosUserProps {
-        private final java.lang.String uid;
-        private final java.lang.String mobile;
-        private final java.util.List<java.lang.String> roleNames;
-        private final java.lang.String status;
-        private final java.lang.String tid;
-        private final java.lang.String userName;
+        private final java.lang.Object uid;
+        private final java.lang.Object mobile;
+        private final java.lang.Object roleNames;
+        private final java.lang.Object status;
+        private final java.lang.Object tid;
+        private final java.lang.Object userName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -148,18 +208,18 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.uid = software.amazon.jsii.Kernel.get(this, "uid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.mobile = software.amazon.jsii.Kernel.get(this, "mobile", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.roleNames = software.amazon.jsii.Kernel.get(this, "roleNames", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.uid = software.amazon.jsii.Kernel.get(this, "uid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mobile = software.amazon.jsii.Kernel.get(this, "mobile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleNames = software.amazon.jsii.Kernel.get(this, "roleNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String uid, final java.lang.String mobile, final java.util.List<java.lang.String> roleNames, final java.lang.String status, final java.lang.String tid, final java.lang.String userName) {
+        protected Jsii$Proxy(final java.lang.Object uid, final java.lang.Object mobile, final java.lang.Object roleNames, final java.lang.Object status, final java.lang.Object tid, final java.lang.Object userName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.uid = java.util.Objects.requireNonNull(uid, "uid is required");
             this.mobile = mobile;
@@ -170,32 +230,32 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getUid() {
+        public final java.lang.Object getUid() {
             return this.uid;
         }
 
         @Override
-        public final java.lang.String getMobile() {
+        public final java.lang.Object getMobile() {
             return this.mobile;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getRoleNames() {
+        public final java.lang.Object getRoleNames() {
             return this.roleNames;
         }
 
         @Override
-        public final java.lang.String getStatus() {
+        public final java.lang.Object getStatus() {
             return this.status;
         }
 
         @Override
-        public final java.lang.String getTid() {
+        public final java.lang.Object getTid() {
             return this.tid;
         }
 
         @Override
-        public final java.lang.String getUserName() {
+        public final java.lang.Object getUserName() {
             return this.userName;
         }
 

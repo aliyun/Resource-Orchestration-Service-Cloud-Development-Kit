@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <summary>Attribute ScalingConfigurationId: The scaling configuration id.</summary>
-        [JsiiProperty(name: "attrScalingConfigurationId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingConfigurationId
+        [JsiiProperty(name: "attrScalingConfigurationId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingConfigurationId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

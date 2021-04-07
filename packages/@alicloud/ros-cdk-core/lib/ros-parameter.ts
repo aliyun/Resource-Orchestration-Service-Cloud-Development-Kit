@@ -10,6 +10,8 @@ export enum RosParameterType {
   JSON = 'Json',
   BOOLEAN = 'Boolean',
   COMMAD_ELIMITED_LIST = 'CommaDelimitedList',
+  OOS_PARAMETER = 'ALIYUN::OOS::Parameter::Value',
+  OOS_SECRET_PARAMETER = 'ALIYUN::OOS::SecretParameter::Value',
 }
 
 export interface RosParameterProps {
@@ -17,8 +19,8 @@ export interface RosParameterProps {
   readonly defaultValue?: any;
   readonly allowedPattern?: string;
   readonly allowedValues?: any[];
-  readonly constraintDescription?: string;
-  readonly description?: string;
+  readonly constraintDescription?: string | {[key: string]: string};
+  readonly description?: string | {[key: string]: string};
   readonly maxLength?: number;
   readonly maxValue?: number;
   readonly minLength?: number;
@@ -27,7 +29,9 @@ export interface RosParameterProps {
 
   readonly label?: string;
   readonly associationProperty?: string;
+  readonly associationPropertyMetadata?: {[key: string]: any};
   readonly confirm?: boolean;
+  readonly textArea?: boolean;
 }
 
 /**
@@ -42,9 +46,15 @@ export class RosParameter extends RosElement {
     'ALIYUN::ECS::Instance::ZoneId',
     'ALIYUN::ECS::VPC::VPCId',
     'ALIYUN::ECS::VSwitch::VSwitchId',
+    'ALIYUN::ECS::Instance::InstanceType',
+    'ALIYUN::ECS::SecurityGroup::SecurityGroupId',
+    'ALIYUN::RAM::Role',
+    'ALIYUN::RAM::User',
+    'ALIYUN::ECS::KeyPair::KeyPairName',
   ];
 
-  public static readonly TYPE_ALLOWED_VALUES: string[] = ['String', 'Number', 'CommaDelimitedList', 'Json', 'Boolean'];
+  public static readonly TYPE_ALLOWED_VALUES: string[] = ['String', 'Number', 'CommaDelimitedList', 'Json', 'Boolean',
+    'ALIYUN::OOS::Parameter::Value', 'ALIYUN::OOS::SecretParameter::Value'];
 
   private readonly type: RosParameterType;
   private readonly id: string;
@@ -137,7 +147,9 @@ export class RosParameter extends RosElement {
           NoEcho: this.props.noEcho,
           Label: this.props.label,
           AssociationProperty: this.props.associationProperty,
+          AssociationPropertyMetadata: this.props.associationPropertyMetadata,
           Confirm: this.props.confirm,
+          TextArea: this.props.textArea,
         },
       },
     };
@@ -151,7 +163,7 @@ export class RosParameter extends RosElement {
     // check whether the required properties is in parameter(props)
     requireProperty(props, 'type', this);
     // check whether the associationProperty is allowed value
-    isAllowedValue(props, 'associationProperty', this, RosParameter.ASSOCIATION_PROPERTY_ALLOWED_VALUES);
+    // isAllowedValue(props, 'associationProperty', this, RosParameter.ASSOCIATION_PROPERTY_ALLOWED_VALUES);
     // check the type of this parameter is allowed
     isAllowedValue(props, 'type', this, RosParameter.TYPE_ALLOWED_VALUES);
     // check whether the max length of string is larger than the min length
@@ -177,6 +189,11 @@ export namespace RosParameter {
     public static readonly VPC_ID = 'ALIYUN::ECS::VPC::VPCId';
     public static readonly IMAGE_ID = 'ALIYUN::ECS::Instance::ImageId';
     public static readonly VSWITCH_ID = 'ALIYUN::ECS::VSwitch::VSwitchId';
+    public static readonly ECS_INSTANCE_TYPE = 'ALIYUN::ECS::Instance::InstanceType';
+    public static readonly SECURITY_GROUP_ID = 'ALIYUN::ECS::SecurityGroup::SecurityGroupId';
+    public static readonly RAM_ROLE = 'ALIYUN::RAM::Role';
+    public static readonly RAM_USER = 'ALIYUN::RAM::User';
+    public static readonly ECS_KEY_PAIR_NAME = 'ALIYUN::ECS::KeyPair::KeyPairName';
   } 
 }
 

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.702Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopicName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopicName();
 
     /**
      */
@@ -20,7 +20,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaximumMessageSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaximumMessageSize() {
         return null;
     }
 
@@ -34,9 +34,9 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicProps> {
-        private java.lang.String topicName;
+        private java.lang.Object topicName;
         private java.lang.Object loggingEnabled;
-        private java.lang.Number maximumMessageSize;
+        private java.lang.Object maximumMessageSize;
 
         /**
          * Sets the value of {@link RosTopicProps#getTopicName}
@@ -44,6 +44,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder topicName(java.lang.String topicName) {
+            this.topicName = topicName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getTopicName}
+         * @param topicName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder topicName(com.aliyun.ros.cdk.core.IResolvable topicName) {
             this.topicName = topicName;
             return this;
         }
@@ -79,6 +89,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getMaximumMessageSize}
+         * @param maximumMessageSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder maximumMessageSize(com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
+            this.maximumMessageSize = maximumMessageSize;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosTopicProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -94,9 +114,9 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTopicProps {
-        private final java.lang.String topicName;
+        private final java.lang.Object topicName;
         private final java.lang.Object loggingEnabled;
-        private final java.lang.Number maximumMessageSize;
+        private final java.lang.Object maximumMessageSize;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,15 +124,15 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingEnabled = software.amazon.jsii.Kernel.get(this, "loggingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String topicName, final java.lang.Object loggingEnabled, final java.lang.Number maximumMessageSize) {
+        protected Jsii$Proxy(final java.lang.Object topicName, final java.lang.Object loggingEnabled, final java.lang.Object maximumMessageSize) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.topicName = java.util.Objects.requireNonNull(topicName, "topicName is required");
             this.loggingEnabled = loggingEnabled;
@@ -120,7 +140,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTopicName() {
+        public final java.lang.Object getTopicName() {
             return this.topicName;
         }
 
@@ -130,7 +150,7 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getMaximumMessageSize() {
+        public final java.lang.Object getMaximumMessageSize() {
             return this.maximumMessageSize;
         }
 

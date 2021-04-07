@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <summary>Attribute ClientIds: ID list of clients installed in instances.</summary>
-        [JsiiProperty(name: "attrClientIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientIds
+        [JsiiProperty(name: "attrClientIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceIds: ID list of instances to install backup client.</summary>
-        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceIds
+        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

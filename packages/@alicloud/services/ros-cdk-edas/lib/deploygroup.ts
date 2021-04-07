@@ -11,12 +11,12 @@ export interface DeployGroupProps {
     /**
      * Property appId: Application ID
      */
-    readonly appId: string;
+    readonly appId: string | ros.IResolvable;
 
     /**
      * Property groupName: Group name, maximum length of 64.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 }
 
 /**
@@ -32,17 +32,17 @@ export class DeployGroup extends ros.Resource {
     /**
      * Attribute AppId: Application ID
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * Attribute GroupName: Deploy group name
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * Attribute Id: Deploy group ID
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::DeployGroup`.

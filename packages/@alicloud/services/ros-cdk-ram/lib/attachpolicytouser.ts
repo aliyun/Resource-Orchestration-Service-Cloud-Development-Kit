@@ -11,17 +11,17 @@ export interface AttachPolicyToUserProps {
     /**
      * Property policyName: Authorization policy name.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    readonly policyType: string;
+    readonly policyType: string | ros.IResolvable;
 
     /**
      * Property userName: User name.Example: dev.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 }
 
 /**

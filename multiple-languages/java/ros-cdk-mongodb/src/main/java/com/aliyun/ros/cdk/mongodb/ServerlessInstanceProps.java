@@ -3,96 +3,128 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ServerlessInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.100Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ServerlessInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ServerlessInstanceProps.Jsii$Proxy.class)
 public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbInstanceStorage: Database instance storage size.
+     * <p>
+     * MongoDB is [1,10], increased every 1 GB, Unit in GB
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getDbInstanceStorage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceStorage();
 
     /**
+     * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPassword() {
         return null;
     }
 
     /**
+     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+     * <p>
+     * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
+     * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
     /**
+     * Property dbInstanceDescription: Description of created database instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return null;
     }
 
     /**
+     * Property engineVersion: Database instance version.Support 4.2.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEngineVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEngineVersion() {
         return null;
     }
 
     /**
+     * Property networkType: The instance network type.
+     * <p>
+     * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
+     * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property periodPriceType: Charge period for created instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodPriceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodPriceType() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property securityIpArray: Security ips to add or remove.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityIpArray() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpArray() {
         return null;
     }
 
     /**
+     * Property storageEngine: Database storage engine.Support WiredTiger.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getStorageEngine() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageEngine() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vpcId: The VPC id to create mongodb instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
+     * Property zoneId: On which zone to create the instance.
+     * <p>
+     * If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -106,25 +138,27 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link ServerlessInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServerlessInstanceProps> {
-        private java.lang.Number dbInstanceStorage;
-        private java.lang.String accountPassword;
+        private java.lang.Object dbInstanceStorage;
+        private java.lang.Object accountPassword;
         private java.lang.Object autoRenew;
-        private java.lang.String chargeType;
-        private java.lang.String dbInstanceDescription;
-        private java.lang.String engineVersion;
-        private java.lang.String networkType;
-        private java.lang.Number period;
-        private java.lang.String periodPriceType;
-        private java.lang.String resourceGroupId;
-        private java.lang.String securityIpArray;
-        private java.lang.String storageEngine;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object chargeType;
+        private java.lang.Object dbInstanceDescription;
+        private java.lang.Object engineVersion;
+        private java.lang.Object networkType;
+        private java.lang.Object period;
+        private java.lang.Object periodPriceType;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object securityIpArray;
+        private java.lang.Object storageEngine;
+        private java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link ServerlessInstanceProps#getDbInstanceStorage}
-         * @param dbInstanceStorage the value to be set. This parameter is required.
+         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         *                          MongoDB is [1,10], increased every 1 GB, Unit in GB
          * @return {@code this}
          */
         public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
@@ -133,8 +167,19 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getDbInstanceStorage}
+         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         *                          MongoDB is [1,10], increased every 1 GB, Unit in GB
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorage(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
+            this.dbInstanceStorage = dbInstanceStorage;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getAccountPassword}
-         * @param accountPassword the value to be set.
+         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
          * @return {@code this}
          */
         public Builder accountPassword(java.lang.String accountPassword) {
@@ -143,8 +188,19 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getAccountPassword}
+         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * @return {@code this}
+         */
+        public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {
+            this.accountPassword = accountPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -154,7 +210,8 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ServerlessInstanceProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -164,7 +221,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link ServerlessInstanceProps#getChargeType}
-         * @param chargeType the value to be set.
+         * @param chargeType Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -173,8 +230,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getChargeType}
+         * @param chargeType Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription the value to be set.
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
          * @return {@code this}
          */
         public Builder dbInstanceDescription(java.lang.String dbInstanceDescription) {
@@ -183,8 +250,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getDbInstanceDescription}
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @return {@code this}
+         */
+        public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
+            this.dbInstanceDescription = dbInstanceDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getEngineVersion}
-         * @param engineVersion the value to be set.
+         * @param engineVersion Property engineVersion: Database instance version.Support 4.2.
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -193,8 +270,19 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getEngineVersion}
+         * @param engineVersion Property engineVersion: Database instance version.Support 4.2.
+         * @return {@code this}
+         */
+        public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
+            this.engineVersion = engineVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getNetworkType}
-         * @param networkType the value to be set.
+         * @param networkType Property networkType: The instance network type.
+         *                    Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
@@ -203,8 +291,19 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getNetworkType}
+         * @param networkType Property networkType: The instance network type.
+         *                    Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -213,8 +312,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getPeriod}
+         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getPeriodPriceType}
-         * @param periodPriceType the value to be set.
+         * @param periodPriceType Property periodPriceType: Charge period for created instance.
          * @return {@code this}
          */
         public Builder periodPriceType(java.lang.String periodPriceType) {
@@ -223,8 +332,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getPeriodPriceType}
+         * @param periodPriceType Property periodPriceType: Charge period for created instance.
+         * @return {@code this}
+         */
+        public Builder periodPriceType(com.aliyun.ros.cdk.core.IResolvable periodPriceType) {
+            this.periodPriceType = periodPriceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -233,8 +352,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getSecurityIpArray}
-         * @param securityIpArray the value to be set.
+         * @param securityIpArray Property securityIpArray: Security ips to add or remove.
          * @return {@code this}
          */
         public Builder securityIpArray(java.lang.String securityIpArray) {
@@ -243,8 +372,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getSecurityIpArray}
+         * @param securityIpArray Property securityIpArray: Security ips to add or remove.
+         * @return {@code this}
+         */
+        public Builder securityIpArray(com.aliyun.ros.cdk.core.IResolvable securityIpArray) {
+            this.securityIpArray = securityIpArray;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getStorageEngine}
-         * @param storageEngine the value to be set.
+         * @param storageEngine Property storageEngine: Database storage engine.Support WiredTiger.
          * @return {@code this}
          */
         public Builder storageEngine(java.lang.String storageEngine) {
@@ -253,8 +392,30 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getStorageEngine}
+         * @param storageEngine Property storageEngine: Database storage engine.Support WiredTiger.
+         * @return {@code this}
+         */
+        public Builder storageEngine(com.aliyun.ros.cdk.core.IResolvable storageEngine) {
+            this.storageEngine = storageEngine;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerlessInstanceProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: The VPC id to create mongodb instance.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -263,8 +424,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getVpcId}
+         * @param vpcId Property vpcId: The VPC id to create mongodb instance.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The vSwitch Id to create mongodb instance.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -273,11 +444,33 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The vSwitch Id to create mongodb instance.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: On which zone to create the instance.
+         *               If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerlessInstanceProps#getZoneId}
+         * @param zoneId Property zoneId: On which zone to create the instance.
+         *               If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -289,7 +482,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public ServerlessInstanceProps build() {
-            return new Jsii$Proxy(dbInstanceStorage, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, periodPriceType, resourceGroupId, securityIpArray, storageEngine, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(dbInstanceStorage, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, periodPriceType, resourceGroupId, securityIpArray, storageEngine, tags, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -298,21 +491,22 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerlessInstanceProps {
-        private final java.lang.Number dbInstanceStorage;
-        private final java.lang.String accountPassword;
+        private final java.lang.Object dbInstanceStorage;
+        private final java.lang.Object accountPassword;
         private final java.lang.Object autoRenew;
-        private final java.lang.String chargeType;
-        private final java.lang.String dbInstanceDescription;
-        private final java.lang.String engineVersion;
-        private final java.lang.String networkType;
-        private final java.lang.Number period;
-        private final java.lang.String periodPriceType;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String securityIpArray;
-        private final java.lang.String storageEngine;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object dbInstanceDescription;
+        private final java.lang.Object engineVersion;
+        private final java.lang.Object networkType;
+        private final java.lang.Object period;
+        private final java.lang.Object periodPriceType;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityIpArray;
+        private final java.lang.Object storageEngine;
+        private final java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -320,27 +514,29 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodPriceType = software.amazon.jsii.Kernel.get(this, "periodPriceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodPriceType = software.amazon.jsii.Kernel.get(this, "periodPriceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number dbInstanceStorage, final java.lang.String accountPassword, final java.lang.Object autoRenew, final java.lang.String chargeType, final java.lang.String dbInstanceDescription, final java.lang.String engineVersion, final java.lang.String networkType, final java.lang.Number period, final java.lang.String periodPriceType, final java.lang.String resourceGroupId, final java.lang.String securityIpArray, final java.lang.String storageEngine, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object dbInstanceStorage, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object periodPriceType, final java.lang.Object resourceGroupId, final java.lang.Object securityIpArray, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
             this.accountPassword = accountPassword;
@@ -354,18 +550,19 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             this.resourceGroupId = resourceGroupId;
             this.securityIpArray = securityIpArray;
             this.storageEngine = storageEngine;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.zoneId = zoneId;
         }
 
         @Override
-        public final java.lang.Number getDbInstanceStorage() {
+        public final java.lang.Object getDbInstanceStorage() {
             return this.dbInstanceStorage;
         }
 
         @Override
-        public final java.lang.String getAccountPassword() {
+        public final java.lang.Object getAccountPassword() {
             return this.accountPassword;
         }
 
@@ -375,62 +572,67 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.String getDbInstanceDescription() {
+        public final java.lang.Object getDbInstanceDescription() {
             return this.dbInstanceDescription;
         }
 
         @Override
-        public final java.lang.String getEngineVersion() {
+        public final java.lang.Object getEngineVersion() {
             return this.engineVersion;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodPriceType() {
+        public final java.lang.Object getPeriodPriceType() {
             return this.periodPriceType;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityIpArray() {
+        public final java.lang.Object getSecurityIpArray() {
             return this.securityIpArray;
         }
 
         @Override
-        public final java.lang.String getStorageEngine() {
+        public final java.lang.Object getStorageEngine() {
             return this.storageEngine;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
@@ -474,6 +676,9 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.getStorageEngine() != null) {
                 data.set("storageEngine", om.valueToTree(this.getStorageEngine()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -513,6 +718,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityIpArray != null ? !this.securityIpArray.equals(that.securityIpArray) : that.securityIpArray != null) return false;
             if (this.storageEngine != null ? !this.storageEngine.equals(that.storageEngine) : that.storageEngine != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -532,6 +738,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityIpArray != null ? this.securityIpArray.hashCode() : 0);
             result = 31 * result + (this.storageEngine != null ? this.storageEngine.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

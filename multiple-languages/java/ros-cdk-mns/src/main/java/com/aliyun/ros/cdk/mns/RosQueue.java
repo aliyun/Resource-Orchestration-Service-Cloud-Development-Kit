@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * A ROS template type:  `ALIYUN::MNS::Queue`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.070Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.698Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosQueue")
 public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,20 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArnWithSlash() {
-        return software.amazon.jsii.Kernel.get(this, "attrArnWithSlash", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArnWithSlash() {
+        return software.amazon.jsii.Kernel.get(this, "attrArnWithSlash", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrQueueUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrQueueUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQueueName() {
+        return software.amazon.jsii.Kernel.get(this, "attrQueueName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQueueUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrQueueUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +75,8 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getQueueName() {
-        return software.amazon.jsii.Kernel.get(this, "queueName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getQueueName() {
+        return software.amazon.jsii.Kernel.get(this, "queueName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,13 +87,25 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getDelaySeconds() {
-        return software.amazon.jsii.Kernel.get(this, "delaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setQueueName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "queueName", java.util.Objects.requireNonNull(value, "queueName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDelaySeconds() {
+        return software.amazon.jsii.Kernel.get(this, "delaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDelaySeconds(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "delaySeconds", value);
+    }
+
+    /**
+     */
+    public void setDelaySeconds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "delaySeconds", value);
     }
 
@@ -111,8 +129,8 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getMaximumMessageSize() {
-        return software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaximumMessageSize() {
+        return software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +141,14 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getMessageRetentionPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "messageRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMaximumMessageSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maximumMessageSize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMessageRetentionPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "messageRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +159,14 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPollingWaitSeconds() {
-        return software.amazon.jsii.Kernel.get(this, "pollingWaitSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMessageRetentionPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "messageRetentionPeriod", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPollingWaitSeconds() {
+        return software.amazon.jsii.Kernel.get(this, "pollingWaitSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,13 +177,25 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getVisibilityTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "visibilityTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPollingWaitSeconds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pollingWaitSeconds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVisibilityTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "visibilityTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setVisibilityTimeout(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "visibilityTimeout", value);
+    }
+
+    /**
+     */
+    public void setVisibilityTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "visibilityTimeout", value);
     }
 
@@ -191,12 +233,28 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
             this.props.queueName(queueName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param queueName This parameter is required.
+         */
+        public Builder queueName(final com.aliyun.ros.cdk.core.IResolvable queueName) {
+            this.props.queueName(queueName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param delaySeconds This parameter is required.
          */
         public Builder delaySeconds(final java.lang.Number delaySeconds) {
+            this.props.delaySeconds(delaySeconds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param delaySeconds This parameter is required.
+         */
+        public Builder delaySeconds(final com.aliyun.ros.cdk.core.IResolvable delaySeconds) {
             this.props.delaySeconds(delaySeconds);
             return this;
         }
@@ -226,12 +284,28 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
             this.props.maximumMessageSize(maximumMessageSize);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param maximumMessageSize This parameter is required.
+         */
+        public Builder maximumMessageSize(final com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
+            this.props.maximumMessageSize(maximumMessageSize);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param messageRetentionPeriod This parameter is required.
          */
         public Builder messageRetentionPeriod(final java.lang.Number messageRetentionPeriod) {
+            this.props.messageRetentionPeriod(messageRetentionPeriod);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param messageRetentionPeriod This parameter is required.
+         */
+        public Builder messageRetentionPeriod(final com.aliyun.ros.cdk.core.IResolvable messageRetentionPeriod) {
             this.props.messageRetentionPeriod(messageRetentionPeriod);
             return this;
         }
@@ -244,12 +318,28 @@ public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
             this.props.pollingWaitSeconds(pollingWaitSeconds);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param pollingWaitSeconds This parameter is required.
+         */
+        public Builder pollingWaitSeconds(final com.aliyun.ros.cdk.core.IResolvable pollingWaitSeconds) {
+            this.props.pollingWaitSeconds(pollingWaitSeconds);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param visibilityTimeout This parameter is required.
          */
         public Builder visibilityTimeout(final java.lang.Number visibilityTimeout) {
+            this.props.visibilityTimeout(visibilityTimeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param visibilityTimeout This parameter is required.
+         */
+        public Builder visibilityTimeout(final com.aliyun.ros.cdk.core.IResolvable visibilityTimeout) {
             this.props.visibilityTimeout(visibilityTimeout);
             return this;
         }

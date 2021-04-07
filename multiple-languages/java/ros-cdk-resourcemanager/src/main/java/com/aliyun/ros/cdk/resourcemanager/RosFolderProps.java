@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Folder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.996Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosFolderProps")
 @software.amazon.jsii.Jsii.Proxy(RosFolderProps.Jsii$Proxy.class)
 public interface RosFolderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFolderName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFolderName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getParentFolderId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getParentFolderId() {
         return null;
     }
 
@@ -28,8 +28,8 @@ public interface RosFolderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosFolderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFolderProps> {
-        private java.lang.String folderName;
-        private java.lang.String parentFolderId;
+        private java.lang.Object folderName;
+        private java.lang.Object parentFolderId;
 
         /**
          * Sets the value of {@link RosFolderProps#getFolderName}
@@ -42,11 +42,31 @@ public interface RosFolderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosFolderProps#getFolderName}
+         * @param folderName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder folderName(com.aliyun.ros.cdk.core.IResolvable folderName) {
+            this.folderName = folderName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFolderProps#getParentFolderId}
          * @param parentFolderId the value to be set.
          * @return {@code this}
          */
         public Builder parentFolderId(java.lang.String parentFolderId) {
+            this.parentFolderId = parentFolderId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFolderProps#getParentFolderId}
+         * @param parentFolderId the value to be set.
+         * @return {@code this}
+         */
+        public Builder parentFolderId(com.aliyun.ros.cdk.core.IResolvable parentFolderId) {
             this.parentFolderId = parentFolderId;
             return this;
         }
@@ -67,8 +87,8 @@ public interface RosFolderProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFolderProps {
-        private final java.lang.String folderName;
-        private final java.lang.String parentFolderId;
+        private final java.lang.Object folderName;
+        private final java.lang.Object parentFolderId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -76,26 +96,26 @@ public interface RosFolderProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.folderName = software.amazon.jsii.Kernel.get(this, "folderName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.parentFolderId = software.amazon.jsii.Kernel.get(this, "parentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.folderName = software.amazon.jsii.Kernel.get(this, "folderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.parentFolderId = software.amazon.jsii.Kernel.get(this, "parentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String folderName, final java.lang.String parentFolderId) {
+        protected Jsii$Proxy(final java.lang.Object folderName, final java.lang.Object parentFolderId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.folderName = java.util.Objects.requireNonNull(folderName, "folderName is required");
             this.parentFolderId = parentFolderId;
         }
 
         @Override
-        public final java.lang.String getFolderName() {
+        public final java.lang.Object getFolderName() {
             return this.folderName;
         }
 
         @Override
-        public final java.lang.String getParentFolderId() {
+        public final java.lang.Object getParentFolderId() {
             return this.parentFolderId;
         }
 

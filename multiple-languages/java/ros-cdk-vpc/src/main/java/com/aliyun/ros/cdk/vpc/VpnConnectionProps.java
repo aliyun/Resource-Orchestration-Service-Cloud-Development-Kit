@@ -3,54 +3,73 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.232Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(VpnConnectionProps.Jsii$Proxy.class)
 public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property customerGatewayId: The ID of the user gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCustomerGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCustomerGatewayId();
 
     /**
+     * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
+     * <p>
+     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLocalSubnet();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet();
 
     /**
+     * Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
+     * <p>
+     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRemoteSubnet();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRemoteSubnet();
 
     /**
+     * Property vpnGatewayId: ID of the VPN gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpnGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpnGatewayId();
 
     /**
+     * Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.
+     * <p>
+     * Value:
+     * True: Negotiate immediately after the configuration is complete.
+     * False (default): Negotiate when traffic enters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEffectImmediately() {
         return null;
     }
 
     /**
+     * Property healthCheckConfig: Whether to enable the health check configuration.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckConfig() {
         return null;
     }
 
     /**
+     * Property ikeConfig: Configuration information for the first phase of negotiation.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIkeConfig() {
         return null;
     }
 
     /**
+     * Property ipsecConfig: Configuration information for the second phase negotiation.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpsecConfig() {
         return null;
     }
 
     /**
+     * Property name: The name of the IPsec connection.
+     * <p>
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -64,19 +83,19 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link VpnConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpnConnectionProps> {
-        private java.lang.String customerGatewayId;
-        private java.lang.String localSubnet;
-        private java.lang.String remoteSubnet;
-        private java.lang.String vpnGatewayId;
+        private java.lang.Object customerGatewayId;
+        private java.lang.Object localSubnet;
+        private java.lang.Object remoteSubnet;
+        private java.lang.Object vpnGatewayId;
         private java.lang.Object effectImmediately;
         private java.lang.Object healthCheckConfig;
         private java.lang.Object ikeConfig;
         private java.lang.Object ipsecConfig;
-        private java.lang.String name;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link VpnConnectionProps#getCustomerGatewayId}
-         * @param customerGatewayId the value to be set. This parameter is required.
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder customerGatewayId(java.lang.String customerGatewayId) {
@@ -85,8 +104,19 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link VpnConnectionProps#getCustomerGatewayId}
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder customerGatewayId(com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
+            this.customerGatewayId = customerGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpnConnectionProps#getLocalSubnet}
-         * @param localSubnet the value to be set. This parameter is required.
+         * @param localSubnet Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation. This parameter is required.
+         *                    Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
          * @return {@code this}
          */
         public Builder localSubnet(java.lang.String localSubnet) {
@@ -95,8 +125,20 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link VpnConnectionProps#getLocalSubnet}
+         * @param localSubnet Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation. This parameter is required.
+         *                    Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+         * @return {@code this}
+         */
+        public Builder localSubnet(com.aliyun.ros.cdk.core.IResolvable localSubnet) {
+            this.localSubnet = localSubnet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpnConnectionProps#getRemoteSubnet}
-         * @param remoteSubnet the value to be set. This parameter is required.
+         * @param remoteSubnet Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation. This parameter is required.
+         *                     Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
          * @return {@code this}
          */
         public Builder remoteSubnet(java.lang.String remoteSubnet) {
@@ -105,8 +147,19 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link VpnConnectionProps#getRemoteSubnet}
+         * @param remoteSubnet Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation. This parameter is required.
+         *                     Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+         * @return {@code this}
+         */
+        public Builder remoteSubnet(com.aliyun.ros.cdk.core.IResolvable remoteSubnet) {
+            this.remoteSubnet = remoteSubnet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpnConnectionProps#getVpnGatewayId}
-         * @param vpnGatewayId the value to be set. This parameter is required.
+         * @param vpnGatewayId Property vpnGatewayId: ID of the VPN gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder vpnGatewayId(java.lang.String vpnGatewayId) {
@@ -115,8 +168,21 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link VpnConnectionProps#getVpnGatewayId}
+         * @param vpnGatewayId Property vpnGatewayId: ID of the VPN gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpnGatewayId(com.aliyun.ros.cdk.core.IResolvable vpnGatewayId) {
+            this.vpnGatewayId = vpnGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpnConnectionProps#getEffectImmediately}
-         * @param effectImmediately the value to be set.
+         * @param effectImmediately Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.
+         *                          Value:
+         *                          True: Negotiate immediately after the configuration is complete.
+         *                          False (default): Negotiate when traffic enters.
          * @return {@code this}
          */
         public Builder effectImmediately(java.lang.Boolean effectImmediately) {
@@ -126,7 +192,10 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getEffectImmediately}
-         * @param effectImmediately the value to be set.
+         * @param effectImmediately Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.
+         *                          Value:
+         *                          True: Negotiate immediately after the configuration is complete.
+         *                          False (default): Negotiate when traffic enters.
          * @return {@code this}
          */
         public Builder effectImmediately(com.aliyun.ros.cdk.core.IResolvable effectImmediately) {
@@ -136,7 +205,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getHealthCheckConfig}
-         * @param healthCheckConfig the value to be set.
+         * @param healthCheckConfig Property healthCheckConfig: Whether to enable the health check configuration.
          * @return {@code this}
          */
         public Builder healthCheckConfig(com.aliyun.ros.cdk.core.IResolvable healthCheckConfig) {
@@ -146,7 +215,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getHealthCheckConfig}
-         * @param healthCheckConfig the value to be set.
+         * @param healthCheckConfig Property healthCheckConfig: Whether to enable the health check configuration.
          * @return {@code this}
          */
         public Builder healthCheckConfig(com.aliyun.ros.cdk.vpc.RosVpnConnection.HealthCheckConfigProperty healthCheckConfig) {
@@ -156,7 +225,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getIkeConfig}
-         * @param ikeConfig the value to be set.
+         * @param ikeConfig Property ikeConfig: Configuration information for the first phase of negotiation.
          * @return {@code this}
          */
         public Builder ikeConfig(com.aliyun.ros.cdk.core.IResolvable ikeConfig) {
@@ -166,7 +235,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getIkeConfig}
-         * @param ikeConfig the value to be set.
+         * @param ikeConfig Property ikeConfig: Configuration information for the first phase of negotiation.
          * @return {@code this}
          */
         public Builder ikeConfig(com.aliyun.ros.cdk.vpc.RosVpnConnection.IkeConfigProperty ikeConfig) {
@@ -176,7 +245,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getIpsecConfig}
-         * @param ipsecConfig the value to be set.
+         * @param ipsecConfig Property ipsecConfig: Configuration information for the second phase negotiation.
          * @return {@code this}
          */
         public Builder ipsecConfig(com.aliyun.ros.cdk.core.IResolvable ipsecConfig) {
@@ -186,7 +255,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getIpsecConfig}
-         * @param ipsecConfig the value to be set.
+         * @param ipsecConfig Property ipsecConfig: Configuration information for the second phase negotiation.
          * @return {@code this}
          */
         public Builder ipsecConfig(com.aliyun.ros.cdk.vpc.RosVpnConnection.IpsecConfigProperty ipsecConfig) {
@@ -196,10 +265,22 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link VpnConnectionProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the IPsec connection.
+         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpnConnectionProps#getName}
+         * @param name Property name: The name of the IPsec connection.
+         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -220,15 +301,15 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpnConnectionProps {
-        private final java.lang.String customerGatewayId;
-        private final java.lang.String localSubnet;
-        private final java.lang.String remoteSubnet;
-        private final java.lang.String vpnGatewayId;
+        private final java.lang.Object customerGatewayId;
+        private final java.lang.Object localSubnet;
+        private final java.lang.Object remoteSubnet;
+        private final java.lang.Object vpnGatewayId;
         private final java.lang.Object effectImmediately;
         private final java.lang.Object healthCheckConfig;
         private final java.lang.Object ikeConfig;
         private final java.lang.Object ipsecConfig;
-        private final java.lang.String name;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -236,21 +317,21 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remoteSubnet = software.amazon.jsii.Kernel.get(this, "remoteSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remoteSubnet = software.amazon.jsii.Kernel.get(this, "remoteSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectImmediately = software.amazon.jsii.Kernel.get(this, "effectImmediately", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ikeConfig = software.amazon.jsii.Kernel.get(this, "ikeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipsecConfig = software.amazon.jsii.Kernel.get(this, "ipsecConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String customerGatewayId, final java.lang.String localSubnet, final java.lang.String remoteSubnet, final java.lang.String vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object healthCheckConfig, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object customerGatewayId, final java.lang.Object localSubnet, final java.lang.Object remoteSubnet, final java.lang.Object vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object healthCheckConfig, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.customerGatewayId = java.util.Objects.requireNonNull(customerGatewayId, "customerGatewayId is required");
             this.localSubnet = java.util.Objects.requireNonNull(localSubnet, "localSubnet is required");
@@ -264,22 +345,22 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getCustomerGatewayId() {
+        public final java.lang.Object getCustomerGatewayId() {
             return this.customerGatewayId;
         }
 
         @Override
-        public final java.lang.String getLocalSubnet() {
+        public final java.lang.Object getLocalSubnet() {
             return this.localSubnet;
         }
 
         @Override
-        public final java.lang.String getRemoteSubnet() {
+        public final java.lang.Object getRemoteSubnet() {
             return this.remoteSubnet;
         }
 
         @Override
-        public final java.lang.String getVpnGatewayId() {
+        public final java.lang.Object getVpnGatewayId() {
             return this.vpnGatewayId;
         }
 
@@ -304,7 +385,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

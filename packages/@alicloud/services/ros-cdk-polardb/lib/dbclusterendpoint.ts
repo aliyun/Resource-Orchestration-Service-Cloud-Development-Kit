@@ -11,14 +11,14 @@ export interface DBClusterEndpointProps {
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
      * Valid values: Enable, Disable.
      * Default value: Disable.
      */
-    readonly autoAddNewNodes?: string;
+    readonly autoAddNewNodes?: string | ros.IResolvable;
 
     /**
      * Property endpointConfig:
@@ -28,7 +28,7 @@ export interface DBClusterEndpointProps {
     /**
      * Property endpointType: The type of the cluster connection point. Set this parameter to Custom.
      */
-    readonly endpointType?: string;
+    readonly endpointType?: string | ros.IResolvable;
 
     /**
      * Property nodes: The nodes to be added to this connection point to process read requests from this connection point. Add at least two nodes.
@@ -42,7 +42,7 @@ export interface DBClusterEndpointProps {
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
      */
-    readonly readWriteMode?: string;
+    readonly readWriteMode?: string | ros.IResolvable;
 }
 
 /**
@@ -58,17 +58,17 @@ export class DBClusterEndpoint extends ros.Resource {
     /**
      * Attribute Addresses: The address items of the db cluster endpoint.
      */
-    public readonly attrAddresses: any;
+    public readonly attrAddresses: ros.IResolvable;
 
     /**
      * Attribute ConnectionString: The first connection string of the db cluster endpoint.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     /**
      * Attribute DBEndpointId: DB cluster endpoint ID. E.g. pe-xxxxxxxx.
      */
-    public readonly attrDbEndpointId: any;
+    public readonly attrDbEndpointId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.

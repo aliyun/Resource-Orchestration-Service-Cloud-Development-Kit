@@ -3,38 +3,46 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a `ALIYUN::FOAS::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDeployType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDeployType();
 
     /**
+     * Property managerIds: Comma delimited account Id list of managers.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getManagerIds();
+    @org.jetbrains.annotations.NotNull java.lang.Object getManagerIds();
 
     /**
+     * Property name: Project name.
+     * <p>
+     * It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
+     * Property clusterId: Cluster ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getClusterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
         return null;
     }
 
     /**
+     * Property description: Project description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property orderId: Order Id of Shared cluster.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOrderId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOrderId() {
         return null;
     }
 
@@ -48,16 +56,16 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ProjectProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ProjectProps> {
-        private java.lang.String deployType;
-        private java.lang.String managerIds;
-        private java.lang.String name;
-        private java.lang.String clusterId;
-        private java.lang.String description;
-        private java.lang.String orderId;
+        private java.lang.Object deployType;
+        private java.lang.Object managerIds;
+        private java.lang.Object name;
+        private java.lang.Object clusterId;
+        private java.lang.Object description;
+        private java.lang.Object orderId;
 
         /**
          * Sets the value of {@link ProjectProps#getDeployType}
-         * @param deployType the value to be set. This parameter is required.
+         * @param deployType Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public. This parameter is required.
          * @return {@code this}
          */
         public Builder deployType(java.lang.String deployType) {
@@ -66,8 +74,18 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProjectProps#getDeployType}
+         * @param deployType Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder deployType(com.aliyun.ros.cdk.core.IResolvable deployType) {
+            this.deployType = deployType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProjectProps#getManagerIds}
-         * @param managerIds the value to be set. This parameter is required.
+         * @param managerIds Property managerIds: Comma delimited account Id list of managers. This parameter is required.
          * @return {@code this}
          */
         public Builder managerIds(java.lang.String managerIds) {
@@ -76,8 +94,19 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProjectProps#getManagerIds}
+         * @param managerIds Property managerIds: Comma delimited account Id list of managers. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder managerIds(com.aliyun.ros.cdk.core.IResolvable managerIds) {
+            this.managerIds = managerIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProjectProps#getName}
-         * @param name the value to be set. This parameter is required.
+         * @param name Property name: Project name. This parameter is required.
+         *             It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -86,8 +115,19 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProjectProps#getName}
+         * @param name Property name: Project name. This parameter is required.
+         *             It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProjectProps#getClusterId}
-         * @param clusterId the value to be set.
+         * @param clusterId Property clusterId: Cluster ID.
          * @return {@code this}
          */
         public Builder clusterId(java.lang.String clusterId) {
@@ -96,8 +136,18 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProjectProps#getClusterId}
+         * @param clusterId Property clusterId: Cluster ID.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProjectProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Project description.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -106,11 +156,31 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ProjectProps#getDescription}
+         * @param description Property description: Project description.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProjectProps#getOrderId}
-         * @param orderId the value to be set.
+         * @param orderId Property orderId: Order Id of Shared cluster.
          * @return {@code this}
          */
         public Builder orderId(java.lang.String orderId) {
+            this.orderId = orderId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ProjectProps#getOrderId}
+         * @param orderId Property orderId: Order Id of Shared cluster.
+         * @return {@code this}
+         */
+        public Builder orderId(com.aliyun.ros.cdk.core.IResolvable orderId) {
             this.orderId = orderId;
             return this;
         }
@@ -131,12 +201,12 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ProjectProps {
-        private final java.lang.String deployType;
-        private final java.lang.String managerIds;
-        private final java.lang.String name;
-        private final java.lang.String clusterId;
-        private final java.lang.String description;
-        private final java.lang.String orderId;
+        private final java.lang.Object deployType;
+        private final java.lang.Object managerIds;
+        private final java.lang.Object name;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object description;
+        private final java.lang.Object orderId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +214,18 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.deployType = software.amazon.jsii.Kernel.get(this, "deployType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.managerIds = software.amazon.jsii.Kernel.get(this, "managerIds", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.orderId = software.amazon.jsii.Kernel.get(this, "orderId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.deployType = software.amazon.jsii.Kernel.get(this, "deployType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.managerIds = software.amazon.jsii.Kernel.get(this, "managerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.orderId = software.amazon.jsii.Kernel.get(this, "orderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String deployType, final java.lang.String managerIds, final java.lang.String name, final java.lang.String clusterId, final java.lang.String description, final java.lang.String orderId) {
+        protected Jsii$Proxy(final java.lang.Object deployType, final java.lang.Object managerIds, final java.lang.Object name, final java.lang.Object clusterId, final java.lang.Object description, final java.lang.Object orderId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.deployType = java.util.Objects.requireNonNull(deployType, "deployType is required");
             this.managerIds = java.util.Objects.requireNonNull(managerIds, "managerIds is required");
@@ -166,32 +236,32 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDeployType() {
+        public final java.lang.Object getDeployType() {
             return this.deployType;
         }
 
         @Override
-        public final java.lang.String getManagerIds() {
+        public final java.lang.Object getManagerIds() {
             return this.managerIds;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getClusterId() {
+        public final java.lang.Object getClusterId() {
             return this.clusterId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getOrderId() {
+        public final java.lang.Object getOrderId() {
             return this.orderId;
         }
 

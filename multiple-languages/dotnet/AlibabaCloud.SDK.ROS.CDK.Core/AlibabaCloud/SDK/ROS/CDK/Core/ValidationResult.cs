@@ -4,7 +4,11 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Representation of validation results&#xD; &#xD; Models a tree of validation errors so that we have as much information as possible&#xD; about the failure that occurred.</summary>
+    /// <summary>Representation of validation results.</summary>
+    /// <remarks>
+    /// Models a tree of validation errors so that we have as much information as possible
+    /// about the failure that occurred.
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.ValidationResult), fullyQualifiedName: "@alicloud/ros-cdk-core.ValidationResult", parametersJson: "[{\"name\":\"errorMessage\",\"optional\":true,\"type\":{\"primitive\":\"string\"}},{\"name\":\"results\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ValidationResults\"}}]")]
     public class ValidationResult : DeputyBase
     {

@@ -3,46 +3,46 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::RestoreJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.629Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosRestoreJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosRestoreJobProps.Jsii$Proxy.class)
 public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRestoreType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRestoreType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSnapshotId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSnapshotId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceClientId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceClientId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTargetClientId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTargetClientId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTargetInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTargetInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTargetPath();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTargetPath();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVaultId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVaultId();
 
     /**
      * @return a {@link Builder} of {@link RosRestoreJobProps}
@@ -54,15 +54,15 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRestoreJobProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRestoreJobProps> {
-        private java.lang.String restoreType;
-        private java.lang.String snapshotId;
-        private java.lang.String sourceClientId;
-        private java.lang.String sourceInstanceId;
-        private java.lang.String sourceType;
-        private java.lang.String targetClientId;
-        private java.lang.String targetInstanceId;
-        private java.lang.String targetPath;
-        private java.lang.String vaultId;
+        private java.lang.Object restoreType;
+        private java.lang.Object snapshotId;
+        private java.lang.Object sourceClientId;
+        private java.lang.Object sourceInstanceId;
+        private java.lang.Object sourceType;
+        private java.lang.Object targetClientId;
+        private java.lang.Object targetInstanceId;
+        private java.lang.Object targetPath;
+        private java.lang.Object vaultId;
 
         /**
          * Sets the value of {@link RosRestoreJobProps#getRestoreType}
@@ -70,6 +70,16 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder restoreType(java.lang.String restoreType) {
+            this.restoreType = restoreType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreJobProps#getRestoreType}
+         * @param restoreType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder restoreType(com.aliyun.ros.cdk.core.IResolvable restoreType) {
             this.restoreType = restoreType;
             return this;
         }
@@ -85,11 +95,31 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRestoreJobProps#getSnapshotId}
+         * @param snapshotId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
+            this.snapshotId = snapshotId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreJobProps#getSourceClientId}
          * @param sourceClientId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceClientId(java.lang.String sourceClientId) {
+            this.sourceClientId = sourceClientId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreJobProps#getSourceClientId}
+         * @param sourceClientId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceClientId(com.aliyun.ros.cdk.core.IResolvable sourceClientId) {
             this.sourceClientId = sourceClientId;
             return this;
         }
@@ -105,11 +135,31 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRestoreJobProps#getSourceInstanceId}
+         * @param sourceInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceInstanceId(com.aliyun.ros.cdk.core.IResolvable sourceInstanceId) {
+            this.sourceInstanceId = sourceInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreJobProps#getSourceType}
          * @param sourceType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceType(java.lang.String sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreJobProps#getSourceType}
+         * @param sourceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceType(com.aliyun.ros.cdk.core.IResolvable sourceType) {
             this.sourceType = sourceType;
             return this;
         }
@@ -125,11 +175,31 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRestoreJobProps#getTargetClientId}
+         * @param targetClientId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder targetClientId(com.aliyun.ros.cdk.core.IResolvable targetClientId) {
+            this.targetClientId = targetClientId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreJobProps#getTargetInstanceId}
          * @param targetInstanceId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder targetInstanceId(java.lang.String targetInstanceId) {
+            this.targetInstanceId = targetInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreJobProps#getTargetInstanceId}
+         * @param targetInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder targetInstanceId(com.aliyun.ros.cdk.core.IResolvable targetInstanceId) {
             this.targetInstanceId = targetInstanceId;
             return this;
         }
@@ -145,11 +215,31 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRestoreJobProps#getTargetPath}
+         * @param targetPath the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder targetPath(com.aliyun.ros.cdk.core.IResolvable targetPath) {
+            this.targetPath = targetPath;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreJobProps#getVaultId}
          * @param vaultId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder vaultId(java.lang.String vaultId) {
+            this.vaultId = vaultId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreJobProps#getVaultId}
+         * @param vaultId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vaultId(com.aliyun.ros.cdk.core.IResolvable vaultId) {
             this.vaultId = vaultId;
             return this;
         }
@@ -170,15 +260,15 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRestoreJobProps {
-        private final java.lang.String restoreType;
-        private final java.lang.String snapshotId;
-        private final java.lang.String sourceClientId;
-        private final java.lang.String sourceInstanceId;
-        private final java.lang.String sourceType;
-        private final java.lang.String targetClientId;
-        private final java.lang.String targetInstanceId;
-        private final java.lang.String targetPath;
-        private final java.lang.String vaultId;
+        private final java.lang.Object restoreType;
+        private final java.lang.Object snapshotId;
+        private final java.lang.Object sourceClientId;
+        private final java.lang.Object sourceInstanceId;
+        private final java.lang.Object sourceType;
+        private final java.lang.Object targetClientId;
+        private final java.lang.Object targetInstanceId;
+        private final java.lang.Object targetPath;
+        private final java.lang.Object vaultId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -186,21 +276,21 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.restoreType = software.amazon.jsii.Kernel.get(this, "restoreType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceClientId = software.amazon.jsii.Kernel.get(this, "sourceClientId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceInstanceId = software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetClientId = software.amazon.jsii.Kernel.get(this, "targetClientId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetInstanceId = software.amazon.jsii.Kernel.get(this, "targetInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetPath = software.amazon.jsii.Kernel.get(this, "targetPath", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vaultId = software.amazon.jsii.Kernel.get(this, "vaultId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.restoreType = software.amazon.jsii.Kernel.get(this, "restoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceClientId = software.amazon.jsii.Kernel.get(this, "sourceClientId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceInstanceId = software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetClientId = software.amazon.jsii.Kernel.get(this, "targetClientId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetInstanceId = software.amazon.jsii.Kernel.get(this, "targetInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetPath = software.amazon.jsii.Kernel.get(this, "targetPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vaultId = software.amazon.jsii.Kernel.get(this, "vaultId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String restoreType, final java.lang.String snapshotId, final java.lang.String sourceClientId, final java.lang.String sourceInstanceId, final java.lang.String sourceType, final java.lang.String targetClientId, final java.lang.String targetInstanceId, final java.lang.String targetPath, final java.lang.String vaultId) {
+        protected Jsii$Proxy(final java.lang.Object restoreType, final java.lang.Object snapshotId, final java.lang.Object sourceClientId, final java.lang.Object sourceInstanceId, final java.lang.Object sourceType, final java.lang.Object targetClientId, final java.lang.Object targetInstanceId, final java.lang.Object targetPath, final java.lang.Object vaultId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.restoreType = java.util.Objects.requireNonNull(restoreType, "restoreType is required");
             this.snapshotId = java.util.Objects.requireNonNull(snapshotId, "snapshotId is required");
@@ -214,47 +304,47 @@ public interface RosRestoreJobProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getRestoreType() {
+        public final java.lang.Object getRestoreType() {
             return this.restoreType;
         }
 
         @Override
-        public final java.lang.String getSnapshotId() {
+        public final java.lang.Object getSnapshotId() {
             return this.snapshotId;
         }
 
         @Override
-        public final java.lang.String getSourceClientId() {
+        public final java.lang.Object getSourceClientId() {
             return this.sourceClientId;
         }
 
         @Override
-        public final java.lang.String getSourceInstanceId() {
+        public final java.lang.Object getSourceInstanceId() {
             return this.sourceInstanceId;
         }
 
         @Override
-        public final java.lang.String getSourceType() {
+        public final java.lang.Object getSourceType() {
             return this.sourceType;
         }
 
         @Override
-        public final java.lang.String getTargetClientId() {
+        public final java.lang.Object getTargetClientId() {
             return this.targetClientId;
         }
 
         @Override
-        public final java.lang.String getTargetInstanceId() {
+        public final java.lang.Object getTargetInstanceId() {
             return this.targetInstanceId;
         }
 
         @Override
-        public final java.lang.String getTargetPath() {
+        public final java.lang.Object getTargetPath() {
             return this.targetPath;
         }
 
         @Override
-        public final java.lang.String getVaultId() {
+        public final java.lang.Object getVaultId() {
             return this.vaultId;
         }
 

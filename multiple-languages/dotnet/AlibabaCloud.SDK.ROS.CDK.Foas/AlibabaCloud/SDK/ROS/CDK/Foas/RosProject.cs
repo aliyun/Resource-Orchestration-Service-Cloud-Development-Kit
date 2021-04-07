@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Attribute</strong>: State: Project state.
         /// </remarks>
-        [JsiiProperty(name: "attrState", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrState
+        [JsiiProperty(name: "attrState", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrState
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -64,10 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// Exclusive cluster: cell
         /// Shared cluster: public
         /// </remarks>
-        [JsiiProperty(name: "deployType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DeployType
+        [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DeployType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -81,20 +81,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Property</strong>: managerIds: Comma delimited account Id list of managers.
         /// </remarks>
-        [JsiiProperty(name: "managerIds", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ManagerIds
+        [JsiiProperty(name: "managerIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ManagerIds
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Name
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -102,10 +102,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: clusterId: Cluster ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ClusterId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -113,10 +113,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: description: Project description.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -124,10 +124,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <strong>Property</strong>: orderId: Order Id of Shared cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "orderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? OrderId
+        [JsiiProperty(name: "orderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? OrderId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

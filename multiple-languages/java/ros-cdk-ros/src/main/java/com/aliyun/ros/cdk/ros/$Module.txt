@@ -5,6 +5,7 @@
 @alicloud/ros-cdk-ros.RosAutoEnableService=com.aliyun.ros.cdk.ros.RosAutoEnableService
 @alicloud/ros-cdk-ros.RosAutoEnableServiceProps=com.aliyun.ros.cdk.ros.RosAutoEnableServiceProps
 @alicloud/ros-cdk-ros.RosCustomResource=com.aliyun.ros.cdk.ros.RosCustomResource
+@alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty=com.aliyun.ros.cdk.ros.RosCustomResource$HttpConfigProperty
 @alicloud/ros-cdk-ros.RosCustomResourceProps=com.aliyun.ros.cdk.ros.RosCustomResourceProps
 @alicloud/ros-cdk-ros.RosStack=com.aliyun.ros.cdk.ros.RosStack
 @alicloud/ros-cdk-ros.RosStackProps=com.aliyun.ros.cdk.ros.RosStackProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS template type:  `ALIYUN::IOT::ProductTopic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.041Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosProductTopic")
 public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTopicId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTopicId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopicId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopicId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getOperation() {
-        return software.amazon.jsii.Kernel.get(this, "operation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getOperation() {
+        return software.amazon.jsii.Kernel.get(this, "operation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProductKey() {
-        return software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOperation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "operation", java.util.Objects.requireNonNull(value, "operation is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProductKey() {
+        return software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTopicShortName() {
-        return software.amazon.jsii.Kernel.get(this, "topicShortName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProductKey(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "productKey", java.util.Objects.requireNonNull(value, "productKey is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTopicShortName() {
+        return software.amazon.jsii.Kernel.get(this, "topicShortName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDesc() {
-        return software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTopicShortName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "topicShortName", java.util.Objects.requireNonNull(value, "topicShortName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDesc() {
+        return software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,13 +129,25 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDesc(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "desc", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setIotInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "iotInstanceId", value);
+    }
+
+    /**
+     */
+    public void setIotInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "iotInstanceId", value);
     }
 
@@ -155,12 +185,28 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.operation(operation);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param operation This parameter is required.
+         */
+        public Builder operation(final com.aliyun.ros.cdk.core.IResolvable operation) {
+            this.props.operation(operation);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param productKey This parameter is required.
          */
         public Builder productKey(final java.lang.String productKey) {
+            this.props.productKey(productKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param productKey This parameter is required.
+         */
+        public Builder productKey(final com.aliyun.ros.cdk.core.IResolvable productKey) {
             this.props.productKey(productKey);
             return this;
         }
@@ -173,6 +219,14 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.topicShortName(topicShortName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param topicShortName This parameter is required.
+         */
+        public Builder topicShortName(final com.aliyun.ros.cdk.core.IResolvable topicShortName) {
+            this.props.topicShortName(topicShortName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -182,12 +236,28 @@ public class RosProductTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.desc(desc);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param desc This parameter is required.
+         */
+        public Builder desc(final com.aliyun.ros.cdk.core.IResolvable desc) {
+            this.props.desc(desc);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param iotInstanceId This parameter is required.
          */
         public Builder iotInstanceId(final java.lang.String iotInstanceId) {
+            this.props.iotInstanceId(iotInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param iotInstanceId This parameter is required.
+         */
+        public Builder iotInstanceId(final com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
             this.props.iotInstanceId(iotInstanceId);
             return this;
         }

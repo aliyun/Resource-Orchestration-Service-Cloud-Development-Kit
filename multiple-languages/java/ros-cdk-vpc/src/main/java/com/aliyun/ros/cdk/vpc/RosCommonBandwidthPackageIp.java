@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::CommonBandwidthPackageIp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.181Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIp")
 public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllocationIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllocationIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllocationIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllocationIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setBandwidthPackageId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", java.util.Objects.requireNonNull(value, "bandwidthPackageId is required"));
+    }
+
+    /**
+     */
+    public void setBandwidthPackageId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "bandwidthPackageId", java.util.Objects.requireNonNull(value, "bandwidthPackageId is required"));
     }
 
@@ -106,12 +112,12 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getAllocationId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getAllocationId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getBandwidth() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
             return null;
         }
 
@@ -127,8 +133,8 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EipsProperty> {
-            private java.lang.String allocationId;
-            private java.lang.Number bandwidth;
+            private java.lang.Object allocationId;
+            private java.lang.Object bandwidth;
 
             /**
              * Sets the value of {@link EipsProperty#getAllocationId}
@@ -142,12 +148,34 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link EipsProperty#getAllocationId}
+             * @param allocationId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(com.aliyun.ros.cdk.core.IResolvable allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EipsProperty#getBandwidth}
              * @param bandwidth the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder bandwidth(java.lang.Number bandwidth) {
+                this.bandwidth = bandwidth;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EipsProperty#getBandwidth}
+             * @param bandwidth the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
                 this.bandwidth = bandwidth;
                 return this;
             }
@@ -170,8 +198,8 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EipsProperty {
-            private final java.lang.String allocationId;
-            private final java.lang.Number bandwidth;
+            private final java.lang.Object allocationId;
+            private final java.lang.Object bandwidth;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -179,26 +207,26 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String allocationId, final java.lang.Number bandwidth) {
+            protected Jsii$Proxy(final java.lang.Object allocationId, final java.lang.Object bandwidth) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.allocationId = java.util.Objects.requireNonNull(allocationId, "allocationId is required");
                 this.bandwidth = bandwidth;
             }
 
             @Override
-            public final java.lang.String getAllocationId() {
+            public final java.lang.Object getAllocationId() {
                 return this.allocationId;
             }
 
             @Override
-            public final java.lang.Number getBandwidth() {
+            public final java.lang.Object getBandwidth() {
                 return this.bandwidth;
             }
 
@@ -274,6 +302,14 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
          * @param bandwidthPackageId This parameter is required.
          */
         public Builder bandwidthPackageId(final java.lang.String bandwidthPackageId) {
+            this.props.bandwidthPackageId(bandwidthPackageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidthPackageId This parameter is required.
+         */
+        public Builder bandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
             this.props.bandwidthPackageId(bandwidthPackageId);
             return this;
         }

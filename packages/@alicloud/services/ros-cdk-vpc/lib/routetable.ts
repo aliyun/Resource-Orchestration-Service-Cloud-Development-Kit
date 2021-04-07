@@ -11,24 +11,24 @@ export interface RouteTableProps {
     /**
      * Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * Property description: The description of the route table.
      * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property routeTableName: The name of the route table.
      * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
      */
-    readonly routeTableName?: string;
+    readonly routeTableName?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosRouteTable.TagsProperty[];
 }
 
 /**
@@ -44,27 +44,27 @@ export class RouteTable extends ros.Resource {
     /**
      * Attribute RouteTableId: The ID of the route table.
      */
-    public readonly attrRouteTableId: any;
+    public readonly attrRouteTableId: ros.IResolvable;
 
     /**
      * Attribute RouteTableName: The name of the route table.
      */
-    public readonly attrRouteTableName: any;
+    public readonly attrRouteTableName: ros.IResolvable;
 
     /**
      * Attribute RouteTableType: The type of the route table.
      */
-    public readonly attrRouteTableType: any;
+    public readonly attrRouteTableType: ros.IResolvable;
 
     /**
      * Attribute VSwitchIds: A list of VSwitches under the VPC.
      */
-    public readonly attrVSwitchIds: any;
+    public readonly attrVSwitchIds: ros.IResolvable;
 
     /**
      * Attribute VpcId: The ID of the VRouter to which the route table belongs.
      */
-    public readonly attrVpcId: any;
+    public readonly attrVpcId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTable`.
@@ -80,7 +80,7 @@ export class RouteTable extends ros.Resource {
             description: props.description,
             vpcId: props.vpcId,
             routeTableName: props.routeTableName,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRouteTable;
         this.attrRouteTableId = rosRouteTable.attrRouteTableId;

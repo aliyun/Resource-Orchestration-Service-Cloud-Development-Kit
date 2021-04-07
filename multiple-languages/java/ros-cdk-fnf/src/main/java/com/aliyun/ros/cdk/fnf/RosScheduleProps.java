@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Properties for defining a `ALIYUN::FNF::Schedule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosScheduleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduleProps.Jsii$Proxy.class)
 public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCronExpression();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCronExpression();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFlowName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFlowName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScheduleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScheduleName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -34,7 +34,7 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayload() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayload() {
         return null;
     }
 
@@ -48,12 +48,12 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosScheduleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScheduleProps> {
-        private java.lang.String cronExpression;
-        private java.lang.String flowName;
-        private java.lang.String scheduleName;
-        private java.lang.String description;
+        private java.lang.Object cronExpression;
+        private java.lang.Object flowName;
+        private java.lang.Object scheduleName;
+        private java.lang.Object description;
         private java.lang.Object enable;
-        private java.lang.String payload;
+        private java.lang.Object payload;
 
         /**
          * Sets the value of {@link RosScheduleProps#getCronExpression}
@@ -61,6 +61,16 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder cronExpression(java.lang.String cronExpression) {
+            this.cronExpression = cronExpression;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduleProps#getCronExpression}
+         * @param cronExpression the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cronExpression(com.aliyun.ros.cdk.core.IResolvable cronExpression) {
             this.cronExpression = cronExpression;
             return this;
         }
@@ -76,6 +86,16 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosScheduleProps#getFlowName}
+         * @param flowName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder flowName(com.aliyun.ros.cdk.core.IResolvable flowName) {
+            this.flowName = flowName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduleProps#getScheduleName}
          * @param scheduleName the value to be set. This parameter is required.
          * @return {@code this}
@@ -86,11 +106,31 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosScheduleProps#getScheduleName}
+         * @param scheduleName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scheduleName(com.aliyun.ros.cdk.core.IResolvable scheduleName) {
+            this.scheduleName = scheduleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduleProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduleProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -126,6 +166,16 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosScheduleProps#getPayload}
+         * @param payload the value to be set.
+         * @return {@code this}
+         */
+        public Builder payload(com.aliyun.ros.cdk.core.IResolvable payload) {
+            this.payload = payload;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosScheduleProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -141,12 +191,12 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScheduleProps {
-        private final java.lang.String cronExpression;
-        private final java.lang.String flowName;
-        private final java.lang.String scheduleName;
-        private final java.lang.String description;
+        private final java.lang.Object cronExpression;
+        private final java.lang.Object flowName;
+        private final java.lang.Object scheduleName;
+        private final java.lang.Object description;
         private final java.lang.Object enable;
-        private final java.lang.String payload;
+        private final java.lang.Object payload;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,18 +204,18 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cronExpression = software.amazon.jsii.Kernel.get(this, "cronExpression", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.flowName = software.amazon.jsii.Kernel.get(this, "flowName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scheduleName = software.amazon.jsii.Kernel.get(this, "scheduleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cronExpression = software.amazon.jsii.Kernel.get(this, "cronExpression", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.flowName = software.amazon.jsii.Kernel.get(this, "flowName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduleName = software.amazon.jsii.Kernel.get(this, "scheduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.payload = software.amazon.jsii.Kernel.get(this, "payload", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.payload = software.amazon.jsii.Kernel.get(this, "payload", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String cronExpression, final java.lang.String flowName, final java.lang.String scheduleName, final java.lang.String description, final java.lang.Object enable, final java.lang.String payload) {
+        protected Jsii$Proxy(final java.lang.Object cronExpression, final java.lang.Object flowName, final java.lang.Object scheduleName, final java.lang.Object description, final java.lang.Object enable, final java.lang.Object payload) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cronExpression = java.util.Objects.requireNonNull(cronExpression, "cronExpression is required");
             this.flowName = java.util.Objects.requireNonNull(flowName, "flowName is required");
@@ -176,22 +226,22 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getCronExpression() {
+        public final java.lang.Object getCronExpression() {
             return this.cronExpression;
         }
 
         @Override
-        public final java.lang.String getFlowName() {
+        public final java.lang.Object getFlowName() {
             return this.flowName;
         }
 
         @Override
-        public final java.lang.String getScheduleName() {
+        public final java.lang.Object getScheduleName() {
             return this.scheduleName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -201,7 +251,7 @@ public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getPayload() {
+        public final java.lang.Object getPayload() {
             return this.payload;
         }
 

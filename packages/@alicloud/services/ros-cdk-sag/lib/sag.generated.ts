@@ -11,7 +11,7 @@ export interface RosACLProps {
      * @Property name: Access control name.
      * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -64,7 +64,7 @@ export class RosACL extends ros.RosResource {
     /**
      * @Attribute AclId: Access control set ID.
      */
-    public readonly attrAclId: any;
+    public readonly attrAclId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -73,7 +73,7 @@ export class RosACL extends ros.RosResource {
      * @Property name: Access control name.
      * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::ACL`.
@@ -84,7 +84,7 @@ export class RosACL extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosACLProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosACL.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAclId = ros.Token.asString(this.getAtt('AclId'));
+        this.attrAclId = this.getAtt('AclId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -109,12 +109,12 @@ export interface RosACLAssociationProps {
     /**
      * @Property aclId: Access control ID.
      */
-    readonly aclId: string;
+    readonly aclId: string | ros.IResolvable;
 
     /**
      * @Property smartAgId: An intelligent gateway instance that needs to bind access control.
      */
-    readonly smartAgId: string;
+    readonly smartAgId: string | ros.IResolvable;
 }
 
 /**
@@ -173,12 +173,12 @@ export class RosACLAssociation extends ros.RosResource {
     /**
      * @Property aclId: Access control ID.
      */
-    public aclId: string;
+    public aclId: string | ros.IResolvable;
 
     /**
      * @Property smartAgId: An intelligent gateway instance that needs to bind access control.
      */
-    public smartAgId: string;
+    public smartAgId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::ACLAssociation`.
@@ -215,54 +215,54 @@ export interface RosACLRuleProps {
     /**
      * @Property aclId: Access control ID.
      */
-    readonly aclId: string;
+    readonly aclId: string | ros.IResolvable;
 
     /**
      * @Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.
      */
-    readonly destCidr: string;
+    readonly destCidr: string | ros.IResolvable;
 
     /**
      * @Property destPortRange: Destination port range, 80/80.
      */
-    readonly destPortRange: string;
+    readonly destPortRange: string | ros.IResolvable;
 
     /**
      * @Property direction: Regular direction.
      * Value: in|out
      */
-    readonly direction: string;
+    readonly direction: string | ros.IResolvable;
 
     /**
      * @Property ipProtocol: Protocol, not case sensitive.
      */
-    readonly ipProtocol: string;
+    readonly ipProtocol: string | ros.IResolvable;
 
     /**
      * @Property policy: Access: accept|drop
      */
-    readonly policy: string;
+    readonly policy: string | ros.IResolvable;
 
     /**
      * @Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
      */
-    readonly sourceCidr: string;
+    readonly sourceCidr: string | ros.IResolvable;
 
     /**
      * @Property sourcePortRange: Source port range, 80/80.
      */
-    readonly sourcePortRange: string;
+    readonly sourcePortRange: string | ros.IResolvable;
 
     /**
      * @Property description: Rule description information, ranging from 1 to 512 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 }
 
 /**
@@ -366,7 +366,7 @@ export class RosACLRule extends ros.RosResource {
     /**
      * @Attribute AcrId: Access control rule ID.
      */
-    public readonly attrAcrId: any;
+    public readonly attrAcrId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -374,54 +374,54 @@ export class RosACLRule extends ros.RosResource {
     /**
      * @Property aclId: Access control ID.
      */
-    public aclId: string;
+    public aclId: string | ros.IResolvable;
 
     /**
      * @Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.
      */
-    public destCidr: string;
+    public destCidr: string | ros.IResolvable;
 
     /**
      * @Property destPortRange: Destination port range, 80/80.
      */
-    public destPortRange: string;
+    public destPortRange: string | ros.IResolvable;
 
     /**
      * @Property direction: Regular direction.
      * Value: in|out
      */
-    public direction: string;
+    public direction: string | ros.IResolvable;
 
     /**
      * @Property ipProtocol: Protocol, not case sensitive.
      */
-    public ipProtocol: string;
+    public ipProtocol: string | ros.IResolvable;
 
     /**
      * @Property policy: Access: accept|drop
      */
-    public policy: string;
+    public policy: string | ros.IResolvable;
 
     /**
      * @Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
      */
-    public sourceCidr: string;
+    public sourceCidr: string | ros.IResolvable;
 
     /**
      * @Property sourcePortRange: Source port range, 80/80.
      */
-    public sourcePortRange: string;
+    public sourcePortRange: string | ros.IResolvable;
 
     /**
      * @Property description: Rule description information, ranging from 1 to 512 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
-    public priority: number | undefined;
+    public priority: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SAG::ACLRule`.
@@ -432,7 +432,7 @@ export class RosACLRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosACLRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosACLRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAcrId = ros.Token.asString(this.getAtt('AcrId'));
+        this.attrAcrId = this.getAtt('AcrId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclId = props.aclId;
@@ -476,7 +476,7 @@ export interface RosCloudConnectNetworkProps {
      * @Property description: The description of the CCN instance.
      * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property isDefault: Whether is created by system
@@ -487,7 +487,12 @@ export interface RosCloudConnectNetworkProps {
      * @Property name: The name of the CCN instance.
      * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCloudConnectNetwork.TagsProperty[];
 }
 
 /**
@@ -502,6 +507,14 @@ function RosCloudConnectNetworkPropsValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCloudConnectNetwork_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosCloudConnectNetworkProps"');
 }
@@ -523,6 +536,7 @@ function rosCloudConnectNetworkPropsToRosTemplate(properties: any, enableResourc
       Description: ros.stringToRosTemplate(properties.description),
       IsDefault: ros.booleanToRosTemplate(properties.isDefault),
       Name: ros.stringToRosTemplate(properties.name),
+      Tags: ros.listMapper(rosCloudConnectNetworkTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -543,7 +557,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
     /**
      * @Attribute CcnId: The ID of the CCN instance.
      */
-    public readonly attrCcnId: any;
+    public readonly attrCcnId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -552,7 +566,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
      * @Property description: The description of the CCN instance.
      * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property isDefault: Whether is created by system
@@ -563,7 +577,12 @@ export class RosCloudConnectNetwork extends ros.RosResource {
      * @Property name: The name of the CCN instance.
      * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCloudConnectNetwork.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::SAG::CloudConnectNetwork`.
@@ -574,12 +593,13 @@ export class RosCloudConnectNetwork extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCloudConnectNetworkProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCloudConnectNetwork.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCcnId = ros.Token.asString(this.getAtt('CcnId'));
+        this.attrCcnId = this.getAtt('CcnId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
         this.isDefault = props.isDefault;
         this.name = props.name;
+        this.tags = props.tags;
     }
 
 
@@ -588,11 +608,60 @@ export class RosCloudConnectNetwork extends ros.RosResource {
             description: this.description,
             isDefault: this.isDefault,
             name: this.name,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCloudConnectNetworkPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCloudConnectNetwork {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCloudConnectNetwork_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAG::CloudConnectNetwork.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAG::CloudConnectNetwork.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCloudConnectNetworkTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCloudConnectNetwork_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -603,17 +672,17 @@ export interface RosGrantCcnToCenProps {
     /**
      * @Property ccnInstanceId: The ID of the CCN instance.
      */
-    readonly ccnInstanceId: string;
+    readonly ccnInstanceId: string | ros.IResolvable;
 
     /**
      * @Property cenInstanceId: The ID of the CEN instance.
      */
-    readonly cenInstanceId: string;
+    readonly cenInstanceId: string | ros.IResolvable;
 
     /**
      * @Property cenUid: The ID of the account to which the CEN instance belongs.
      */
-    readonly cenUid: string;
+    readonly cenUid: string | ros.IResolvable;
 }
 
 /**
@@ -672,12 +741,12 @@ export class RosGrantCcnToCen extends ros.RosResource {
     /**
      * @Attribute CcnInstanceId: The ID of the CCN instance.
      */
-    public readonly attrCcnInstanceId: any;
+    public readonly attrCcnInstanceId: ros.IResolvable;
 
     /**
      * @Attribute CenInstanceId: The ID of the CEN instance.
      */
-    public readonly attrCenInstanceId: any;
+    public readonly attrCenInstanceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -685,17 +754,17 @@ export class RosGrantCcnToCen extends ros.RosResource {
     /**
      * @Property ccnInstanceId: The ID of the CCN instance.
      */
-    public ccnInstanceId: string;
+    public ccnInstanceId: string | ros.IResolvable;
 
     /**
      * @Property cenInstanceId: The ID of the CEN instance.
      */
-    public cenInstanceId: string;
+    public cenInstanceId: string | ros.IResolvable;
 
     /**
      * @Property cenUid: The ID of the account to which the CEN instance belongs.
      */
-    public cenUid: string;
+    public cenUid: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::GrantCcnToCen`.
@@ -706,8 +775,8 @@ export class RosGrantCcnToCen extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGrantCcnToCenProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGrantCcnToCen.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCcnInstanceId = ros.Token.asString(this.getAtt('CcnInstanceId'));
-        this.attrCenInstanceId = ros.Token.asString(this.getAtt('CenInstanceId'));
+        this.attrCcnInstanceId = this.getAtt('CcnInstanceId');
+        this.attrCenInstanceId = this.getAtt('CenInstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ccnInstanceId = props.ccnInstanceId;
@@ -736,12 +805,12 @@ export interface RosSmartAccessGatewayBindingProps {
     /**
      * @Property ccnId: The ID of the CCN instance to bind.
      */
-    readonly ccnId: string;
+    readonly ccnId: string | ros.IResolvable;
 
     /**
      * @Property smartAgId: The ID of the Smart Access Gateway instance.
      */
-    readonly smartAgId: string;
+    readonly smartAgId: string | ros.IResolvable;
 }
 
 /**
@@ -797,7 +866,7 @@ export class RosSmartAccessGatewayBinding extends ros.RosResource {
     /**
      * @Attribute SmartAGId: The ID of the Smart Access Gateway instance.
      */
-    public readonly attrSmartAgId: any;
+    public readonly attrSmartAgId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -805,12 +874,12 @@ export class RosSmartAccessGatewayBinding extends ros.RosResource {
     /**
      * @Property ccnId: The ID of the CCN instance to bind.
      */
-    public ccnId: string;
+    public ccnId: string | ros.IResolvable;
 
     /**
      * @Property smartAgId: The ID of the Smart Access Gateway instance.
      */
-    public smartAgId: string;
+    public smartAgId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.
@@ -821,7 +890,7 @@ export class RosSmartAccessGatewayBinding extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSmartAccessGatewayBindingProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSmartAccessGatewayBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSmartAgId = ros.Token.asString(this.getAtt('SmartAGId'));
+        this.attrSmartAgId = this.getAtt('SmartAGId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ccnId = props.ccnId;

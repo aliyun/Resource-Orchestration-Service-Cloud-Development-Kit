@@ -11,17 +11,17 @@ export interface CommandProps {
     /**
      * Property type: The type of command.
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property commandContent: The content of command. Content requires base64 encoding. Maximum size support 16KB.
      */
-    readonly commandContent?: string;
+    readonly commandContent?: string | ros.IResolvable;
 
     /**
      * Property description: The description of command.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property enableParameter: Specifies whether the script contains custom parameters.
@@ -32,17 +32,17 @@ export interface CommandProps {
     /**
      * Property name: The name of command.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
      */
-    readonly timeout?: number;
+    readonly timeout?: number | ros.IResolvable;
 
     /**
      * Property workingDir: The path where command will be executed in the instance.
      */
-    readonly workingDir?: string;
+    readonly workingDir?: string | ros.IResolvable;
 }
 
 /**
@@ -58,7 +58,7 @@ export class Command extends ros.Resource {
     /**
      * Attribute CommandId: The id of command created.
      */
-    public readonly attrCommandId: any;
+    public readonly attrCommandId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::Command`.

@@ -11,27 +11,27 @@ export interface TrafficControlProps {
     /**
      * Property apiDefault: Default API traffic value.
      */
-    readonly apiDefault: number;
+    readonly apiDefault: number | ros.IResolvable;
 
     /**
      * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly trafficControlName: string;
+    readonly trafficControlName: string | ros.IResolvable;
 
     /**
      * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
      */
-    readonly trafficControlUnit: string;
+    readonly trafficControlUnit: string | ros.IResolvable;
 
     /**
      * Property appDefault: Default APP traffic value.
      */
-    readonly appDefault?: string;
+    readonly appDefault?: string | ros.IResolvable;
 
     /**
      * Property description: Description of the traffic control, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property special: Special traffic controls.
@@ -41,7 +41,7 @@ export interface TrafficControlProps {
     /**
      * Property userDefault: Default user traffic value.
      */
-    readonly userDefault?: string;
+    readonly userDefault?: string | ros.IResolvable;
 }
 
 /**
@@ -57,7 +57,7 @@ export class TrafficControl extends ros.Resource {
     /**
      * Attribute TrafficControlId: The id of the traffic control
      */
-    public readonly attrTrafficControlId: any;
+    public readonly attrTrafficControlId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::TrafficControl`.

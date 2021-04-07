@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: ccnInstanceId: The ID of the CCN instance.
         /// </remarks>
-        [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string CcnInstanceId
+        [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CcnInstanceId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: cenInstanceId: The ID of the CEN instance.
         /// </remarks>
-        [JsiiProperty(name: "cenInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string CenInstanceId
+        [JsiiProperty(name: "cenInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenInstanceId
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: cenUid: The ID of the account to which the CEN instance belongs.
         /// </remarks>
-        [JsiiProperty(name: "cenUid", typeJson: "{\"primitive\":\"string\"}")]
-        string CenUid
+        [JsiiProperty(name: "cenUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenUid
         {
             get;
         }
@@ -46,28 +46,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             /// <remarks>
             /// <strong>Property</strong>: ccnInstanceId: The ID of the CCN instance.
             /// </remarks>
-            [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CcnInstanceId
+            [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CcnInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: cenInstanceId: The ID of the CEN instance.
             /// </remarks>
-            [JsiiProperty(name: "cenInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenInstanceId
+            [JsiiProperty(name: "cenInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: cenUid: The ID of the account to which the CEN instance belongs.
             /// </remarks>
-            [JsiiProperty(name: "cenUid", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenUid
+            [JsiiProperty(name: "cenUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenUid
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.151Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex")
 public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIndexName() {
-        return software.amazon.jsii.Kernel.get(this, "attrIndexName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIndexName() {
+        return software.amazon.jsii.Kernel.get(this, "attrIndexName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,20 +69,20 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setFieldSchemas(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        software.amazon.jsii.Kernel.set(this, "fieldSchemas", java.util.Objects.requireNonNull(value, "fieldSchemas is required"));
-    }
-
-    /**
-     */
     public void setFieldSchemas(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "fieldSchemas", java.util.Objects.requireNonNull(value, "fieldSchemas is required"));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getIndexName() {
-        return software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFieldSchemas(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "fieldSchemas", java.util.Objects.requireNonNull(value, "fieldSchemas is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getIndexName() {
+        return software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +93,14 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIndexName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "indexName", java.util.Objects.requireNonNull(value, "indexName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +111,25 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTableName() {
-        return software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceName", java.util.Objects.requireNonNull(value, "instanceName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTableName() {
+        return software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTableName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tableName", java.util.Objects.requireNonNull(value, "tableName is required"));
+    }
+
+    /**
+     */
+    public void setTableName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "tableName", java.util.Objects.requireNonNull(value, "tableName is required"));
     }
 
@@ -152,6 +170,428 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty")
+    @software.amazon.jsii.Jsii.Proxy(FieldSchemasProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface FieldSchemasProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAnalyzer() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSortAndAgg() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIndex() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIsArray() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStore() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSubFieldSchemas() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link FieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link FieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<FieldSchemasProperty> {
+            private java.lang.Object fieldName;
+            private java.lang.Object fieldType;
+            private java.lang.Object analyzer;
+            private java.lang.Object enableSortAndAgg;
+            private java.lang.Object index;
+            private java.lang.Object isArray;
+            private java.lang.Object store;
+            private java.lang.Object subFieldSchemas;
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(java.lang.String fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(com.aliyun.ros.cdk.core.IResolvable fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getFieldType}
+             * @param fieldType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldType(java.lang.String fieldType) {
+                this.fieldType = fieldType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getFieldType}
+             * @param fieldType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldType(com.aliyun.ros.cdk.core.IResolvable fieldType) {
+                this.fieldType = fieldType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getAnalyzer}
+             * @param analyzer the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder analyzer(java.lang.String analyzer) {
+                this.analyzer = analyzer;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getAnalyzer}
+             * @param analyzer the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder analyzer(com.aliyun.ros.cdk.core.IResolvable analyzer) {
+                this.analyzer = analyzer;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getEnableSortAndAgg}
+             * @param enableSortAndAgg the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableSortAndAgg(java.lang.Boolean enableSortAndAgg) {
+                this.enableSortAndAgg = enableSortAndAgg;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getEnableSortAndAgg}
+             * @param enableSortAndAgg the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableSortAndAgg(com.aliyun.ros.cdk.core.IResolvable enableSortAndAgg) {
+                this.enableSortAndAgg = enableSortAndAgg;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getIndex}
+             * @param index the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder index(java.lang.Boolean index) {
+                this.index = index;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getIndex}
+             * @param index the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder index(com.aliyun.ros.cdk.core.IResolvable index) {
+                this.index = index;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getIsArray}
+             * @param isArray the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isArray(java.lang.Boolean isArray) {
+                this.isArray = isArray;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getIsArray}
+             * @param isArray the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isArray(com.aliyun.ros.cdk.core.IResolvable isArray) {
+                this.isArray = isArray;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(java.lang.Boolean store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(com.aliyun.ros.cdk.core.IResolvable store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getSubFieldSchemas}
+             * @param subFieldSchemas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder subFieldSchemas(com.aliyun.ros.cdk.core.IResolvable subFieldSchemas) {
+                this.subFieldSchemas = subFieldSchemas;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSchemasProperty#getSubFieldSchemas}
+             * @param subFieldSchemas the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder subFieldSchemas(java.util.List<? extends java.lang.Object> subFieldSchemas) {
+                this.subFieldSchemas = subFieldSchemas;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link FieldSchemasProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public FieldSchemasProperty build() {
+                return new Jsii$Proxy(fieldName, fieldType, analyzer, enableSortAndAgg, index, isArray, store, subFieldSchemas);
+            }
+        }
+
+        /**
+         * An implementation for {@link FieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FieldSchemasProperty {
+            private final java.lang.Object fieldName;
+            private final java.lang.Object fieldType;
+            private final java.lang.Object analyzer;
+            private final java.lang.Object enableSortAndAgg;
+            private final java.lang.Object index;
+            private final java.lang.Object isArray;
+            private final java.lang.Object store;
+            private final java.lang.Object subFieldSchemas;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.fieldType = software.amazon.jsii.Kernel.get(this, "fieldType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.analyzer = software.amazon.jsii.Kernel.get(this, "analyzer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableSortAndAgg = software.amazon.jsii.Kernel.get(this, "enableSortAndAgg", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.index = software.amazon.jsii.Kernel.get(this, "index", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.isArray = software.amazon.jsii.Kernel.get(this, "isArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.store = software.amazon.jsii.Kernel.get(this, "store", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.subFieldSchemas = software.amazon.jsii.Kernel.get(this, "subFieldSchemas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object fieldType, final java.lang.Object analyzer, final java.lang.Object enableSortAndAgg, final java.lang.Object index, final java.lang.Object isArray, final java.lang.Object store, final java.lang.Object subFieldSchemas) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
+                this.fieldType = java.util.Objects.requireNonNull(fieldType, "fieldType is required");
+                this.analyzer = analyzer;
+                this.enableSortAndAgg = enableSortAndAgg;
+                this.index = index;
+                this.isArray = isArray;
+                this.store = store;
+                this.subFieldSchemas = subFieldSchemas;
+            }
+
+            @Override
+            public final java.lang.Object getFieldName() {
+                return this.fieldName;
+            }
+
+            @Override
+            public final java.lang.Object getFieldType() {
+                return this.fieldType;
+            }
+
+            @Override
+            public final java.lang.Object getAnalyzer() {
+                return this.analyzer;
+            }
+
+            @Override
+            public final java.lang.Object getEnableSortAndAgg() {
+                return this.enableSortAndAgg;
+            }
+
+            @Override
+            public final java.lang.Object getIndex() {
+                return this.index;
+            }
+
+            @Override
+            public final java.lang.Object getIsArray() {
+                return this.isArray;
+            }
+
+            @Override
+            public final java.lang.Object getStore() {
+                return this.store;
+            }
+
+            @Override
+            public final java.lang.Object getSubFieldSchemas() {
+                return this.subFieldSchemas;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("fieldName", om.valueToTree(this.getFieldName()));
+                data.set("fieldType", om.valueToTree(this.getFieldType()));
+                if (this.getAnalyzer() != null) {
+                    data.set("analyzer", om.valueToTree(this.getAnalyzer()));
+                }
+                if (this.getEnableSortAndAgg() != null) {
+                    data.set("enableSortAndAgg", om.valueToTree(this.getEnableSortAndAgg()));
+                }
+                if (this.getIndex() != null) {
+                    data.set("index", om.valueToTree(this.getIndex()));
+                }
+                if (this.getIsArray() != null) {
+                    data.set("isArray", om.valueToTree(this.getIsArray()));
+                }
+                if (this.getStore() != null) {
+                    data.set("store", om.valueToTree(this.getStore()));
+                }
+                if (this.getSubFieldSchemas() != null) {
+                    data.set("subFieldSchemas", om.valueToTree(this.getSubFieldSchemas()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                FieldSchemasProperty.Jsii$Proxy that = (FieldSchemasProperty.Jsii$Proxy) o;
+
+                if (!fieldName.equals(that.fieldName)) return false;
+                if (!fieldType.equals(that.fieldType)) return false;
+                if (this.analyzer != null ? !this.analyzer.equals(that.analyzer) : that.analyzer != null) return false;
+                if (this.enableSortAndAgg != null ? !this.enableSortAndAgg.equals(that.enableSortAndAgg) : that.enableSortAndAgg != null) return false;
+                if (this.index != null ? !this.index.equals(that.index) : that.index != null) return false;
+                if (this.isArray != null ? !this.isArray.equals(that.isArray) : that.isArray != null) return false;
+                if (this.store != null ? !this.store.equals(that.store) : that.store != null) return false;
+                return this.subFieldSchemas != null ? this.subFieldSchemas.equals(that.subFieldSchemas) : that.subFieldSchemas == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.fieldName.hashCode();
+                result = 31 * result + (this.fieldType.hashCode());
+                result = 31 * result + (this.analyzer != null ? this.analyzer.hashCode() : 0);
+                result = 31 * result + (this.enableSortAndAgg != null ? this.enableSortAndAgg.hashCode() : 0);
+                result = 31 * result + (this.index != null ? this.index.hashCode() : 0);
+                result = 31 * result + (this.isArray != null ? this.isArray.hashCode() : 0);
+                result = 31 * result + (this.store != null ? this.store.hashCode() : 0);
+                result = 31 * result + (this.subFieldSchemas != null ? this.subFieldSchemas.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex.FieldSortProperty")
     @software.amazon.jsii.Jsii.Proxy(FieldSortProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -160,19 +600,19 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getFieldName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortMode() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortMode() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortOrder() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortOrder() {
             return null;
         }
 
@@ -188,9 +628,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FieldSortProperty> {
-            private java.lang.String fieldName;
-            private java.lang.String sortMode;
-            private java.lang.String sortOrder;
+            private java.lang.Object fieldName;
+            private java.lang.Object sortMode;
+            private java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link FieldSortProperty#getFieldName}
@@ -199,6 +639,17 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder fieldName(java.lang.String fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSortProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(com.aliyun.ros.cdk.core.IResolvable fieldName) {
                 this.fieldName = fieldName;
                 return this;
             }
@@ -215,12 +666,34 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link FieldSortProperty#getSortMode}
+             * @param sortMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortMode(com.aliyun.ros.cdk.core.IResolvable sortMode) {
+                this.sortMode = sortMode;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link FieldSortProperty#getSortOrder}
              * @param sortOrder the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sortOrder(java.lang.String sortOrder) {
+                this.sortOrder = sortOrder;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FieldSortProperty#getSortOrder}
+             * @param sortOrder the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortOrder(com.aliyun.ros.cdk.core.IResolvable sortOrder) {
                 this.sortOrder = sortOrder;
                 return this;
             }
@@ -243,9 +716,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FieldSortProperty {
-            private final java.lang.String fieldName;
-            private final java.lang.String sortMode;
-            private final java.lang.String sortOrder;
+            private final java.lang.Object fieldName;
+            private final java.lang.Object sortMode;
+            private final java.lang.Object sortOrder;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -253,15 +726,15 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.sortMode = software.amazon.jsii.Kernel.get(this, "sortMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sortMode = software.amazon.jsii.Kernel.get(this, "sortMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String fieldName, final java.lang.String sortMode, final java.lang.String sortOrder) {
+            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object sortMode, final java.lang.Object sortOrder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
                 this.sortMode = sortMode;
@@ -269,17 +742,17 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getFieldName() {
+            public final java.lang.Object getFieldName() {
                 return this.fieldName;
             }
 
             @Override
-            public final java.lang.String getSortMode() {
+            public final java.lang.Object getSortMode() {
                 return this.sortMode;
             }
 
             @Override
-            public final java.lang.String getSortOrder() {
+            public final java.lang.Object getSortOrder() {
                 return this.sortOrder;
             }
 
@@ -338,7 +811,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getFieldName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldName();
 
         /**
          */
@@ -348,14 +821,14 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortMode() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortMode() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortOrder() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortOrder() {
             return null;
         }
 
@@ -371,10 +844,10 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<GeoDistanceSortProperty> {
-            private java.lang.String fieldName;
+            private java.lang.Object fieldName;
             private java.lang.Object points;
-            private java.lang.String sortMode;
-            private java.lang.String sortOrder;
+            private java.lang.Object sortMode;
+            private java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link GeoDistanceSortProperty#getFieldName}
@@ -383,6 +856,17 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder fieldName(java.lang.String fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GeoDistanceSortProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(com.aliyun.ros.cdk.core.IResolvable fieldName) {
                 this.fieldName = fieldName;
                 return this;
             }
@@ -421,12 +905,34 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link GeoDistanceSortProperty#getSortMode}
+             * @param sortMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortMode(com.aliyun.ros.cdk.core.IResolvable sortMode) {
+                this.sortMode = sortMode;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link GeoDistanceSortProperty#getSortOrder}
              * @param sortOrder the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sortOrder(java.lang.String sortOrder) {
+                this.sortOrder = sortOrder;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GeoDistanceSortProperty#getSortOrder}
+             * @param sortOrder the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortOrder(com.aliyun.ros.cdk.core.IResolvable sortOrder) {
                 this.sortOrder = sortOrder;
                 return this;
             }
@@ -449,10 +955,10 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GeoDistanceSortProperty {
-            private final java.lang.String fieldName;
+            private final java.lang.Object fieldName;
             private final java.lang.Object points;
-            private final java.lang.String sortMode;
-            private final java.lang.String sortOrder;
+            private final java.lang.Object sortMode;
+            private final java.lang.Object sortOrder;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -460,16 +966,16 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.points = software.amazon.jsii.Kernel.get(this, "points", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.sortMode = software.amazon.jsii.Kernel.get(this, "sortMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.sortMode = software.amazon.jsii.Kernel.get(this, "sortMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String fieldName, final java.lang.Object points, final java.lang.String sortMode, final java.lang.String sortOrder) {
+            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object points, final java.lang.Object sortMode, final java.lang.Object sortOrder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
                 this.points = java.util.Objects.requireNonNull(points, "points is required");
@@ -478,7 +984,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getFieldName() {
+            public final java.lang.Object getFieldName() {
                 return this.fieldName;
             }
 
@@ -488,12 +994,12 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getSortMode() {
+            public final java.lang.Object getSortMode() {
                 return this.sortMode;
             }
 
             @Override
-            public final java.lang.String getSortOrder() {
+            public final java.lang.Object getSortOrder() {
                 return this.sortOrder;
             }
 
@@ -809,7 +1315,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortOrder() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortOrder() {
             return null;
         }
 
@@ -825,7 +1331,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrimaryKeySortProperty> {
-            private java.lang.String sortOrder;
+            private java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link PrimaryKeySortProperty#getSortOrder}
@@ -834,6 +1340,17 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sortOrder(java.lang.String sortOrder) {
+                this.sortOrder = sortOrder;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrimaryKeySortProperty#getSortOrder}
+             * @param sortOrder the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortOrder(com.aliyun.ros.cdk.core.IResolvable sortOrder) {
                 this.sortOrder = sortOrder;
                 return this;
             }
@@ -856,7 +1373,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrimaryKeySortProperty {
-            private final java.lang.String sortOrder;
+            private final java.lang.Object sortOrder;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -864,19 +1381,19 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String sortOrder) {
+            protected Jsii$Proxy(final java.lang.Object sortOrder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.sortOrder = sortOrder;
             }
 
             @Override
-            public final java.lang.String getSortOrder() {
+            public final java.lang.Object getSortOrder() {
                 return this.sortOrder;
             }
 
@@ -927,7 +1444,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSortOrder() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSortOrder() {
             return null;
         }
 
@@ -943,7 +1460,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ScoreSortProperty> {
-            private java.lang.String sortOrder;
+            private java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link ScoreSortProperty#getSortOrder}
@@ -952,6 +1469,17 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sortOrder(java.lang.String sortOrder) {
+                this.sortOrder = sortOrder;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ScoreSortProperty#getSortOrder}
+             * @param sortOrder the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sortOrder(com.aliyun.ros.cdk.core.IResolvable sortOrder) {
                 this.sortOrder = sortOrder;
                 return this;
             }
@@ -974,7 +1502,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScoreSortProperty {
-            private final java.lang.String sortOrder;
+            private final java.lang.Object sortOrder;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -982,19 +1510,19 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.sortOrder = software.amazon.jsii.Kernel.get(this, "sortOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String sortOrder) {
+            protected Jsii$Proxy(final java.lang.Object sortOrder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.sortOrder = sortOrder;
             }
 
             @Override
-            public final java.lang.String getSortOrder() {
+            public final java.lang.Object getSortOrder() {
                 return this.sortOrder;
             }
 
@@ -1293,6 +1821,385 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty")
+    @software.amazon.jsii.Jsii.Proxy(SubFieldSchemasProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SubFieldSchemasProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getFieldType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAnalyzer() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSortAndAgg() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIndex() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIsArray() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStore() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SubFieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SubFieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SubFieldSchemasProperty> {
+            private java.lang.Object fieldName;
+            private java.lang.Object fieldType;
+            private java.lang.Object analyzer;
+            private java.lang.Object enableSortAndAgg;
+            private java.lang.Object index;
+            private java.lang.Object isArray;
+            private java.lang.Object store;
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(java.lang.String fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getFieldName}
+             * @param fieldName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldName(com.aliyun.ros.cdk.core.IResolvable fieldName) {
+                this.fieldName = fieldName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getFieldType}
+             * @param fieldType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldType(java.lang.String fieldType) {
+                this.fieldType = fieldType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getFieldType}
+             * @param fieldType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldType(com.aliyun.ros.cdk.core.IResolvable fieldType) {
+                this.fieldType = fieldType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getAnalyzer}
+             * @param analyzer the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder analyzer(java.lang.String analyzer) {
+                this.analyzer = analyzer;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getAnalyzer}
+             * @param analyzer the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder analyzer(com.aliyun.ros.cdk.core.IResolvable analyzer) {
+                this.analyzer = analyzer;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getEnableSortAndAgg}
+             * @param enableSortAndAgg the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableSortAndAgg(java.lang.Boolean enableSortAndAgg) {
+                this.enableSortAndAgg = enableSortAndAgg;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getEnableSortAndAgg}
+             * @param enableSortAndAgg the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableSortAndAgg(com.aliyun.ros.cdk.core.IResolvable enableSortAndAgg) {
+                this.enableSortAndAgg = enableSortAndAgg;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getIndex}
+             * @param index the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder index(java.lang.Boolean index) {
+                this.index = index;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getIndex}
+             * @param index the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder index(com.aliyun.ros.cdk.core.IResolvable index) {
+                this.index = index;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getIsArray}
+             * @param isArray the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isArray(java.lang.Boolean isArray) {
+                this.isArray = isArray;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getIsArray}
+             * @param isArray the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder isArray(com.aliyun.ros.cdk.core.IResolvable isArray) {
+                this.isArray = isArray;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(java.lang.Boolean store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SubFieldSchemasProperty#getStore}
+             * @param store the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder store(com.aliyun.ros.cdk.core.IResolvable store) {
+                this.store = store;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SubFieldSchemasProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SubFieldSchemasProperty build() {
+                return new Jsii$Proxy(fieldName, fieldType, analyzer, enableSortAndAgg, index, isArray, store);
+            }
+        }
+
+        /**
+         * An implementation for {@link SubFieldSchemasProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SubFieldSchemasProperty {
+            private final java.lang.Object fieldName;
+            private final java.lang.Object fieldType;
+            private final java.lang.Object analyzer;
+            private final java.lang.Object enableSortAndAgg;
+            private final java.lang.Object index;
+            private final java.lang.Object isArray;
+            private final java.lang.Object store;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.fieldName = software.amazon.jsii.Kernel.get(this, "fieldName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.fieldType = software.amazon.jsii.Kernel.get(this, "fieldType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.analyzer = software.amazon.jsii.Kernel.get(this, "analyzer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableSortAndAgg = software.amazon.jsii.Kernel.get(this, "enableSortAndAgg", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.index = software.amazon.jsii.Kernel.get(this, "index", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.isArray = software.amazon.jsii.Kernel.get(this, "isArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.store = software.amazon.jsii.Kernel.get(this, "store", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object fieldType, final java.lang.Object analyzer, final java.lang.Object enableSortAndAgg, final java.lang.Object index, final java.lang.Object isArray, final java.lang.Object store) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
+                this.fieldType = java.util.Objects.requireNonNull(fieldType, "fieldType is required");
+                this.analyzer = analyzer;
+                this.enableSortAndAgg = enableSortAndAgg;
+                this.index = index;
+                this.isArray = isArray;
+                this.store = store;
+            }
+
+            @Override
+            public final java.lang.Object getFieldName() {
+                return this.fieldName;
+            }
+
+            @Override
+            public final java.lang.Object getFieldType() {
+                return this.fieldType;
+            }
+
+            @Override
+            public final java.lang.Object getAnalyzer() {
+                return this.analyzer;
+            }
+
+            @Override
+            public final java.lang.Object getEnableSortAndAgg() {
+                return this.enableSortAndAgg;
+            }
+
+            @Override
+            public final java.lang.Object getIndex() {
+                return this.index;
+            }
+
+            @Override
+            public final java.lang.Object getIsArray() {
+                return this.isArray;
+            }
+
+            @Override
+            public final java.lang.Object getStore() {
+                return this.store;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("fieldName", om.valueToTree(this.getFieldName()));
+                data.set("fieldType", om.valueToTree(this.getFieldType()));
+                if (this.getAnalyzer() != null) {
+                    data.set("analyzer", om.valueToTree(this.getAnalyzer()));
+                }
+                if (this.getEnableSortAndAgg() != null) {
+                    data.set("enableSortAndAgg", om.valueToTree(this.getEnableSortAndAgg()));
+                }
+                if (this.getIndex() != null) {
+                    data.set("index", om.valueToTree(this.getIndex()));
+                }
+                if (this.getIsArray() != null) {
+                    data.set("isArray", om.valueToTree(this.getIsArray()));
+                }
+                if (this.getStore() != null) {
+                    data.set("store", om.valueToTree(this.getStore()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ots.RosSearchIndex.SubFieldSchemasProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SubFieldSchemasProperty.Jsii$Proxy that = (SubFieldSchemasProperty.Jsii$Proxy) o;
+
+                if (!fieldName.equals(that.fieldName)) return false;
+                if (!fieldType.equals(that.fieldType)) return false;
+                if (this.analyzer != null ? !this.analyzer.equals(that.analyzer) : that.analyzer != null) return false;
+                if (this.enableSortAndAgg != null ? !this.enableSortAndAgg.equals(that.enableSortAndAgg) : that.enableSortAndAgg != null) return false;
+                if (this.index != null ? !this.index.equals(that.index) : that.index != null) return false;
+                if (this.isArray != null ? !this.isArray.equals(that.isArray) : that.isArray != null) return false;
+                return this.store != null ? this.store.equals(that.store) : that.store == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.fieldName.hashCode();
+                result = 31 * result + (this.fieldType.hashCode());
+                result = 31 * result + (this.analyzer != null ? this.analyzer.hashCode() : 0);
+                result = 31 * result + (this.enableSortAndAgg != null ? this.enableSortAndAgg.hashCode() : 0);
+                result = 31 * result + (this.index != null ? this.index.hashCode() : 0);
+                result = 31 * result + (this.isArray != null ? this.isArray.hashCode() : 0);
+                result = 31 * result + (this.store != null ? this.store.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ots.RosSearchIndex}.
@@ -1324,7 +2231,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param fieldSchemas This parameter is required.
          */
-        public Builder fieldSchemas(final java.util.List<? extends java.lang.Object> fieldSchemas) {
+        public Builder fieldSchemas(final com.aliyun.ros.cdk.core.IResolvable fieldSchemas) {
             this.props.fieldSchemas(fieldSchemas);
             return this;
         }
@@ -1332,7 +2239,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param fieldSchemas This parameter is required.
          */
-        public Builder fieldSchemas(final com.aliyun.ros.cdk.core.IResolvable fieldSchemas) {
+        public Builder fieldSchemas(final java.util.List<? extends java.lang.Object> fieldSchemas) {
             this.props.fieldSchemas(fieldSchemas);
             return this;
         }
@@ -1345,6 +2252,14 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             this.props.indexName(indexName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param indexName This parameter is required.
+         */
+        public Builder indexName(final com.aliyun.ros.cdk.core.IResolvable indexName) {
+            this.props.indexName(indexName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1354,12 +2269,28 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceName This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param tableName This parameter is required.
          */
         public Builder tableName(final java.lang.String tableName) {
+            this.props.tableName(tableName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tableName This parameter is required.
+         */
+        public Builder tableName(final com.aliyun.ros.cdk.core.IResolvable tableName) {
             this.props.tableName(tableName);
             return this;
         }

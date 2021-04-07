@@ -11,17 +11,17 @@ export interface DBInstanceSecurityIpsProps {
     /**
      * Property dbInstanceId: Database instance id to update security ips.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property dbInstanceIpArrayAttribute: Security ips to add or remove.
      */
-    readonly dbInstanceIpArrayAttribute: string;
+    readonly dbInstanceIpArrayAttribute: string | ros.IResolvable;
 
     /**
      * Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
      */
-    readonly dbInstanceIpArrayName?: string;
+    readonly dbInstanceIpArrayName?: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class DBInstanceSecurityIps extends ros.Resource {
     /**
      * Attribute SecurityIps: The security ips of selected database instance.
      */
-    public readonly attrSecurityIps: any;
+    public readonly attrSecurityIps: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.

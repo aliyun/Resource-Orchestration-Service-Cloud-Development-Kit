@@ -10,22 +10,22 @@ export interface RosOrderProps {
     /**
      * @Property productCode: Product code for the resource.
      */
-    readonly productCode: string;
+    readonly productCode: string | ros.IResolvable;
 
     /**
      * @Property skuCode: Sku code for the resource.
      */
-    readonly skuCode: string;
+    readonly skuCode: string | ros.IResolvable;
 
     /**
      * @Property chargeType: The resource charge type. Default value is Prepaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * @Property duration: Duration of the resource. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * @Property preference: Customized parameters.
@@ -35,12 +35,12 @@ export interface RosOrderProps {
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property quantity: Resource number. Default value is 1
      */
-    readonly quantity?: number;
+    readonly quantity?: number | ros.IResolvable;
 }
 
 /**
@@ -125,7 +125,7 @@ export class RosOrder extends ros.RosResource {
     /**
      * @Attribute OrderId: Order ID of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -133,22 +133,22 @@ export class RosOrder extends ros.RosResource {
     /**
      * @Property productCode: Product code for the resource.
      */
-    public productCode: string;
+    public productCode: string | ros.IResolvable;
 
     /**
      * @Property skuCode: Sku code for the resource.
      */
-    public skuCode: string;
+    public skuCode: string | ros.IResolvable;
 
     /**
      * @Property chargeType: The resource charge type. Default value is Prepaid
      */
-    public chargeType: string | undefined;
+    public chargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property duration: Duration of the resource. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    public duration: number | undefined;
+    public duration: number | ros.IResolvable | undefined;
 
     /**
      * @Property preference: Customized parameters.
@@ -158,12 +158,12 @@ export class RosOrder extends ros.RosResource {
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property quantity: Resource number. Default value is 1
      */
-    public quantity: number | undefined;
+    public quantity: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MarketPlace::Order`.
@@ -174,7 +174,7 @@ export class RosOrder extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosOrderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosOrder.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+        this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.productCode = props.productCode;

@@ -36,10 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// Each element of rules contains "RuleId".
         /// </remarks>
-        [JsiiProperty(name: "attrRules", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRules
+        [JsiiProperty(name: "attrRules", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRules
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

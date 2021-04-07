@@ -11,17 +11,17 @@ export interface RosClusterProps {
      * @Property chargeType: The billing method. Valid values: PostPaid and PrePaid. PostPaid: pay-as-you-go. PrePaid:
      * subscription.
      */
-    readonly chargeType: string;
+    readonly chargeType: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY.
+     * @Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY etc.
      */
-    readonly clusterType: string;
+    readonly clusterType: string | ros.IResolvable;
 
     /**
      * @Property emrVer: The version of EMR.
      */
-    readonly emrVer: string;
+    readonly emrVer: string | ros.IResolvable;
 
     /**
      * @Property hostGroup:
@@ -32,12 +32,12 @@ export interface RosClusterProps {
      * @Property name: The name of the cluster. The name can be 1 to 64 characters in length and only contain
      * Chinese characters, letters, numbers, hyphens (-), and underscores (_).
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property netType: The type of the network.
      */
-    readonly netType: string;
+    readonly netType: string | ros.IResolvable;
 
     /**
      * @Property useLocalMetaDb: Indicates whether the local Hive metadatabase is used.
@@ -47,12 +47,12 @@ export interface RosClusterProps {
     /**
      * @Property zoneId: The zone ID.
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
      * @Property authorizeContent: Not required.
      */
-    readonly authorizeContent?: string;
+    readonly authorizeContent?: string | ros.IResolvable;
 
     /**
      * @Property autoRenew: Indicates whether the subscription cluster is auto-renewed.
@@ -72,12 +72,12 @@ export interface RosClusterProps {
     /**
      * @Property configurations: Not required.
      */
-    readonly configurations?: string;
+    readonly configurations?: string | ros.IResolvable;
 
     /**
      * @Property depositType: The hosting type.
      */
-    readonly depositType?: string;
+    readonly depositType?: string | ros.IResolvable;
 
     /**
      * @Property easEnable: Indicates whether the cluster is a high-security cluster.
@@ -98,7 +98,7 @@ export interface RosClusterProps {
     /**
      * @Property instanceGeneration: The generation of the ECS instances.
      */
-    readonly instanceGeneration?: string;
+    readonly instanceGeneration?: string | ros.IResolvable;
 
     /**
      * @Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
@@ -114,17 +114,17 @@ export interface RosClusterProps {
     /**
      * @Property keyPairName: The name of the key pair.
      */
-    readonly keyPairName?: string;
+    readonly keyPairName?: string | ros.IResolvable;
 
     /**
      * @Property logPath: The log path in OSS.
      */
-    readonly logPath?: string;
+    readonly logPath?: string | ros.IResolvable;
 
     /**
      * @Property machineType: The type of the machine.
      */
-    readonly machineType?: string;
+    readonly machineType?: string | ros.IResolvable;
 
     /**
      * @Property masterPwd: The SSH password for the master node. The password must meet the following requirements.
@@ -132,12 +132,12 @@ export interface RosClusterProps {
      * It must contain three types of characters (uppercase letters, lowercase letters, numbers,
      * and special symbols).
      */
-    readonly masterPwd?: string;
+    readonly masterPwd?: string | ros.IResolvable;
 
     /**
      * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
-    readonly metaStoreConf?: string;
+    readonly metaStoreConf?: string | ros.IResolvable;
 
     /**
      * @Property metaStoreType: Meta store type. Allow types:
@@ -145,23 +145,23 @@ export interface RosClusterProps {
      * unified: Unified meta data
      * user_rds: User's RDS
      */
-    readonly metaStoreType?: string;
+    readonly metaStoreType?: string | ros.IResolvable;
 
     /**
      * @Property optionSoftWareList: The list of optional services.
      */
-    readonly optionSoftWareList?: string[];
+    readonly optionSoftWareList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
      * 9, 12, 24, and 36. A value is required when ChargeType=PrePaid.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property relatedClusterId: The ID of the primary cluster (when the cluster that you create is a Gateway cluster).
      */
-    readonly relatedClusterId?: string;
+    readonly relatedClusterId?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
@@ -169,7 +169,7 @@ export interface RosClusterProps {
      * is applied to this security group: Only port 22 is open at the inbound and all ports
      * are open at the outbound. You need to specify either SecurityGroupId or SecurityGroupName.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupName: The name of the security group to create. If the ID of the security group is not specified,
@@ -179,7 +179,7 @@ export interface RosClusterProps {
      * inbound and all ports are open at the outbound. You need to specify either SecurityGroupId
      * or SecurityGroupName.
      */
-    readonly securityGroupName?: string;
+    readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * @Property sshEnable: Indicates whether SSH is enabled.
@@ -194,7 +194,7 @@ export interface RosClusterProps {
     /**
      * @Property userDefinedEmrEcsRole: The role that is assigned to EMR for calling ECS resources.
      */
-    readonly userDefinedEmrEcsRole?: string;
+    readonly userDefinedEmrEcsRole?: string | ros.IResolvable;
 
     /**
      * @Property userInfo:
@@ -204,17 +204,17 @@ export interface RosClusterProps {
     /**
      * @Property vpcId: The ID of the VPC. A value is required when NetType=vpc.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the Vswitch. A value is required when NetType=vpc.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property whiteListType: Not required.
      */
-    readonly whiteListType?: string;
+    readonly whiteListType?: string | ros.IResolvable;
 }
 
 /**
@@ -275,12 +275,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('emrVer', ros.requiredValidator)(properties.emrVer));
     errors.collect(ros.propertyValidator('emrVer', ros.validateString)(properties.emrVer));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
-    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
-          data: properties.clusterType,
-          allowedValues: ["HADOOP","KAFKA","DRUID","ZOOKEEPER","DATA_SCIENCE","GATEWAY"],
-        }));
-    }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
     errors.collect(ros.propertyValidator('easEnable', ros.validateBoolean)(properties.easEnable));
     errors.collect(ros.propertyValidator('relatedClusterId', ros.validateString)(properties.relatedClusterId));
@@ -289,7 +283,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -373,22 +367,22 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute HostGroups: The host group list of the cluster.
      */
-    public readonly attrHostGroups: any;
+    public readonly attrHostGroups: ros.IResolvable;
 
     /**
      * @Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.
      */
-    public readonly attrMasterNodeInnerIps: any;
+    public readonly attrMasterNodeInnerIps: ros.IResolvable;
 
     /**
      * @Attribute MasterNodePubIps: The public ip list of the cluster master nodes.
      */
-    public readonly attrMasterNodePubIps: any;
+    public readonly attrMasterNodePubIps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -397,17 +391,17 @@ export class RosCluster extends ros.RosResource {
      * @Property chargeType: The billing method. Valid values: PostPaid and PrePaid. PostPaid: pay-as-you-go. PrePaid:
      * subscription.
      */
-    public chargeType: string;
+    public chargeType: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY.
+     * @Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY etc.
      */
-    public clusterType: string;
+    public clusterType: string | ros.IResolvable;
 
     /**
      * @Property emrVer: The version of EMR.
      */
-    public emrVer: string;
+    public emrVer: string | ros.IResolvable;
 
     /**
      * @Property hostGroup:
@@ -418,12 +412,12 @@ export class RosCluster extends ros.RosResource {
      * @Property name: The name of the cluster. The name can be 1 to 64 characters in length and only contain
      * Chinese characters, letters, numbers, hyphens (-), and underscores (_).
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property netType: The type of the network.
      */
-    public netType: string;
+    public netType: string | ros.IResolvable;
 
     /**
      * @Property useLocalMetaDb: Indicates whether the local Hive metadatabase is used.
@@ -433,12 +427,12 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property zoneId: The zone ID.
      */
-    public zoneId: string;
+    public zoneId: string | ros.IResolvable;
 
     /**
      * @Property authorizeContent: Not required.
      */
-    public authorizeContent: string | undefined;
+    public authorizeContent: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoRenew: Indicates whether the subscription cluster is auto-renewed.
@@ -458,12 +452,12 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property configurations: Not required.
      */
-    public configurations: string | undefined;
+    public configurations: string | ros.IResolvable | undefined;
 
     /**
      * @Property depositType: The hosting type.
      */
-    public depositType: string | undefined;
+    public depositType: string | ros.IResolvable | undefined;
 
     /**
      * @Property easEnable: Indicates whether the cluster is a high-security cluster.
@@ -484,7 +478,7 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property instanceGeneration: The generation of the ECS instances.
      */
-    public instanceGeneration: string | undefined;
+    public instanceGeneration: string | ros.IResolvable | undefined;
 
     /**
      * @Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
@@ -500,17 +494,17 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property keyPairName: The name of the key pair.
      */
-    public keyPairName: string | undefined;
+    public keyPairName: string | ros.IResolvable | undefined;
 
     /**
      * @Property logPath: The log path in OSS.
      */
-    public logPath: string | undefined;
+    public logPath: string | ros.IResolvable | undefined;
 
     /**
      * @Property machineType: The type of the machine.
      */
-    public machineType: string | undefined;
+    public machineType: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterPwd: The SSH password for the master node. The password must meet the following requirements.
@@ -518,12 +512,12 @@ export class RosCluster extends ros.RosResource {
      * It must contain three types of characters (uppercase letters, lowercase letters, numbers,
      * and special symbols).
      */
-    public masterPwd: string | undefined;
+    public masterPwd: string | ros.IResolvable | undefined;
 
     /**
      * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
-    public metaStoreConf: string | undefined;
+    public metaStoreConf: string | ros.IResolvable | undefined;
 
     /**
      * @Property metaStoreType: Meta store type. Allow types:
@@ -531,23 +525,23 @@ export class RosCluster extends ros.RosResource {
      * unified: Unified meta data
      * user_rds: User's RDS
      */
-    public metaStoreType: string | undefined;
+    public metaStoreType: string | ros.IResolvable | undefined;
 
     /**
      * @Property optionSoftWareList: The list of optional services.
      */
-    public optionSoftWareList: string[] | undefined;
+    public optionSoftWareList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
      * 9, 12, 24, and 36. A value is required when ChargeType=PrePaid.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property relatedClusterId: The ID of the primary cluster (when the cluster that you create is a Gateway cluster).
      */
-    public relatedClusterId: string | undefined;
+    public relatedClusterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
@@ -555,7 +549,7 @@ export class RosCluster extends ros.RosResource {
      * is applied to this security group: Only port 22 is open at the inbound and all ports
      * are open at the outbound. You need to specify either SecurityGroupId or SecurityGroupName.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupName: The name of the security group to create. If the ID of the security group is not specified,
@@ -565,7 +559,7 @@ export class RosCluster extends ros.RosResource {
      * inbound and all ports are open at the outbound. You need to specify either SecurityGroupId
      * or SecurityGroupName.
      */
-    public securityGroupName: string | undefined;
+    public securityGroupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property sshEnable: Indicates whether SSH is enabled.
@@ -580,7 +574,7 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property userDefinedEmrEcsRole: The role that is assigned to EMR for calling ECS resources.
      */
-    public userDefinedEmrEcsRole: string | undefined;
+    public userDefinedEmrEcsRole: string | ros.IResolvable | undefined;
 
     /**
      * @Property userInfo:
@@ -590,17 +584,17 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property vpcId: The ID of the VPC. A value is required when NetType=vpc.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The ID of the Vswitch. A value is required when NetType=vpc.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property whiteListType: Not required.
      */
-    public whiteListType: string | undefined;
+    public whiteListType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::EMR::Cluster`.
@@ -611,10 +605,10 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrHostGroups = ros.Token.asString(this.getAtt('HostGroups'));
-        this.attrMasterNodeInnerIps = ros.Token.asString(this.getAtt('MasterNodeInnerIps'));
-        this.attrMasterNodePubIps = ros.Token.asString(this.getAtt('MasterNodePubIps'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrHostGroups = this.getAtt('HostGroups');
+        this.attrMasterNodeInnerIps = this.getAtt('MasterNodeInnerIps');
+        this.attrMasterNodePubIps = this.getAtt('MasterNodePubIps');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.chargeType = props.chargeType;
@@ -713,15 +707,15 @@ export namespace RosCluster {
         /**
          * @Property path: The path where the bootstrap action script is stored.
          */
-        readonly path?: string;
+        readonly path?: string | ros.IResolvable;
         /**
          * @Property arg: The argument that you pass into the bootstrap action.
          */
-        readonly arg?: string;
+        readonly arg?: string | ros.IResolvable;
         /**
          * @Property name: The name of the bootstrap action.
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -766,28 +760,28 @@ export namespace RosCluster {
         /**
          * @Property replace: A reserved parameter.
          */
-        readonly replace?: string;
+        readonly replace?: string | ros.IResolvable;
         /**
          * @Property configValue: The value of the custom configuration item.
          */
-        readonly configValue?: string;
+        readonly configValue?: string | ros.IResolvable;
         /**
          * @Property configKey: The key of the custom configuration item.
          */
-        readonly configKey?: string;
+        readonly configKey?: string | ros.IResolvable;
         /**
          * @Property serviceName: The name (capitalized) of the service that is configured by using the custom configuration
      * item.
          */
-        readonly serviceName?: string;
+        readonly serviceName?: string | ros.IResolvable;
         /**
          * @Property fileName: The name of the file that contains the configuration item.
          */
-        readonly fileName?: string;
+        readonly fileName?: string | ros.IResolvable;
         /**
          * @Property encrypt: A reserved parameter.
          */
-        readonly encrypt?: string;
+        readonly encrypt?: string | ros.IResolvable;
     }
 }
 /**
@@ -839,27 +833,27 @@ export namespace RosCluster {
          * @Property hostGroupType: The type of the instance group. Valid values: MASTER, CORE, and TASK. Currently, you
      * can only create a maximum of one master instance group and core instance group.
          */
-        readonly hostGroupType: string;
+        readonly hostGroupType: string | ros.IResolvable;
         /**
          * @Property comment: A reserved parameter. Not required.
          */
-        readonly comment?: string;
+        readonly comment?: string | ros.IResolvable;
         /**
          * @Property diskCount: The data disk number of the instance group.
          */
-        readonly diskCount: number;
+        readonly diskCount: number | ros.IResolvable;
         /**
          * @Property nodeCount: The number of nodes in the node group.
          */
-        readonly nodeCount: number;
+        readonly nodeCount: number | ros.IResolvable;
         /**
          * @Property sysDiskType: The system disk type of the instance group.
          */
-        readonly sysDiskType: string;
+        readonly sysDiskType: string | ros.IResolvable;
         /**
          * @Property clusterId: A reserved parameter. Not required.
          */
-        readonly clusterId?: string;
+        readonly clusterId?: string | ros.IResolvable;
         /**
          * @Property autoRenew: Indicates whether the instance group is auto-renewed.
          */
@@ -867,56 +861,56 @@ export namespace RosCluster {
         /**
          * @Property vSwitchId: The ID of the VSwitch. A value is required when NetType=vpc.
          */
-        readonly vSwitchId?: string;
+        readonly vSwitchId?: string | ros.IResolvable;
         /**
          * @Property hostPassword: The password of the host. Currently, only gateways are supported.
          */
-        readonly hostPassword?: string;
+        readonly hostPassword?: string | ros.IResolvable;
         /**
          * @Property period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
      * 9, 12, 24, and 36. A value is required when HostGroup.n.ChargeType=PrePaid.
          */
-        readonly period?: number;
+        readonly period?: number | ros.IResolvable;
         /**
          * @Property hostGroupName: The name of the instance group.
          */
-        readonly hostGroupName?: string;
+        readonly hostGroupName?: string | ros.IResolvable;
         /**
          * @Property gpuDriver: The GPU driver.
          */
-        readonly gpuDriver?: string;
+        readonly gpuDriver?: string | ros.IResolvable;
         /**
-         * @Property diskType: The data disk type of the instance group.
+         * @Property diskType: The data disk type of the instance group. Valid values: CLOUD, CLOUD_EFFICIENCY, CLOUD_SSD, CLOUD_ESSD etc.
          */
-        readonly diskType: string;
+        readonly diskType: string | ros.IResolvable;
         /**
          * @Property diskCapacity: The data disk capacity of the instance group.
          */
-        readonly diskCapacity: number;
+        readonly diskCapacity: number | ros.IResolvable;
         /**
          * @Property hostGroupId: A reserved parameter.
          */
-        readonly hostGroupId?: string;
+        readonly hostGroupId?: string | ros.IResolvable;
         /**
          * @Property chargeType: The billing method for the instance group.
          */
-        readonly chargeType: string;
+        readonly chargeType: string | ros.IResolvable;
         /**
          * @Property createType: A reserved parameter. Not required.
          */
-        readonly createType?: string;
+        readonly createType?: string | ros.IResolvable;
         /**
          * @Property hostKeyPairName: The key pair name of the host group. Currently, only gateways are supported.
          */
-        readonly hostKeyPairName?: string;
+        readonly hostKeyPairName?: string | ros.IResolvable;
         /**
          * @Property sysDiskCapacity: The system disk capacity of the instance group.
          */
-        readonly sysDiskCapacity: number;
+        readonly sysDiskCapacity: number | ros.IResolvable;
         /**
          * @Property instanceType: The instance type of the instance group.
          */
-        readonly instanceType: string;
+        readonly instanceType: string | ros.IResolvable;
     }
 }
 /**
@@ -965,12 +959,6 @@ function RosCluster_HostGroupPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('hostGroupName', ros.validateString)(properties.hostGroupName));
     errors.collect(ros.propertyValidator('gpuDriver', ros.validateString)(properties.gpuDriver));
     errors.collect(ros.propertyValidator('diskType', ros.requiredValidator)(properties.diskType));
-    if(properties.diskType && (typeof properties.diskType) !== 'object') {
-        errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
-          data: properties.diskType,
-          allowedValues: ["CLOUD","CLOUD_EFFICIENCY","CLOUD_SSD"],
-        }));
-    }
     errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
     errors.collect(ros.propertyValidator('diskCapacity', ros.requiredValidator)(properties.diskCapacity));
     errors.collect(ros.propertyValidator('diskCapacity', ros.validateNumber)(properties.diskCapacity));
@@ -979,7 +967,7 @@ function RosCluster_HostGroupPropertyValidator(properties: any): ros.ValidationR
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PostPaid","PrePaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1035,15 +1023,15 @@ export namespace RosCluster {
         /**
          * @Property userName: The username for Knox.
          */
-        readonly userName?: string;
+        readonly userName?: string | ros.IResolvable;
         /**
          * @Property userId: The ID of the Alibaba Cloud account for Knox.
          */
-        readonly userId?: string;
+        readonly userId?: string | ros.IResolvable;
         /**
          * @Property password: The password of the cluster.
          */
-        readonly password?: string;
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**

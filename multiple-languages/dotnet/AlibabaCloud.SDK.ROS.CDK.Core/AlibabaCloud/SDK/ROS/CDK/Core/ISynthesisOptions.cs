@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>(deprecated) The output directory into which to synthesize the cloud assembly.</summary>
         /// <remarks>
         /// <strong>Default</strong>: - creates a temporary directory
-        /// 
+        ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiProperty(name: "outdir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>(deprecated) Whether synthesis should skip the validation phase.</summary>
         /// <remarks>
         /// <strong>Default</strong>: false
-        /// 
+        ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiProperty(name: "skipValidation", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
@@ -61,7 +61,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             /// <summary>(deprecated) The output directory into which to synthesize the cloud assembly.</summary>
             /// <remarks>
             /// <strong>Default</strong>: - creates a temporary directory
-            /// 
+            ///
             /// <strong>Stability</strong>: Deprecated
             /// </remarks>
             [JsiiOptional]
@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             /// <summary>(deprecated) Whether synthesis should skip the validation phase.</summary>
             /// <remarks>
             /// <strong>Default</strong>: false
-            /// 
+            ///
             /// <strong>Stability</strong>: Deprecated
             /// </remarks>
             [JsiiOptional]

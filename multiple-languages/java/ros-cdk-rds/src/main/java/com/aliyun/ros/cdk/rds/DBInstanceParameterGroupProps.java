@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.911Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceParameterGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceParameterGroupProps.Jsii$Proxy.class)
 public interface DBInstanceParameterGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbInstanceId: Database InstanceId to update properties.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
+     * Property parameters: Parameters to update for selected database instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getParameters();
 
     /**
+     * Property forcerestart: whether restart database instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getForcerestart() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getForcerestart() {
         return null;
     }
 
@@ -32,13 +35,13 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
      * A builder for {@link DBInstanceParameterGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBInstanceParameterGroupProps> {
-        private java.lang.String dbInstanceId;
+        private java.lang.Object dbInstanceId;
         private java.lang.Object parameters;
-        private java.lang.String forcerestart;
+        private java.lang.Object forcerestart;
 
         /**
          * Sets the value of {@link DBInstanceParameterGroupProps#getDbInstanceId}
-         * @param dbInstanceId the value to be set. This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Database InstanceId to update properties. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
@@ -47,8 +50,18 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBInstanceParameterGroupProps#getDbInstanceId}
+         * @param dbInstanceId Property dbInstanceId: Database InstanceId to update properties. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceParameterGroupProps#getParameters}
-         * @param parameters the value to be set. This parameter is required.
+         * @param parameters Property parameters: Parameters to update for selected database instance. This parameter is required.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -58,7 +71,7 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link DBInstanceParameterGroupProps#getParameters}
-         * @param parameters the value to be set. This parameter is required.
+         * @param parameters Property parameters: Parameters to update for selected database instance. This parameter is required.
          * @return {@code this}
          */
         public Builder parameters(java.util.List<? extends java.lang.Object> parameters) {
@@ -68,10 +81,20 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link DBInstanceParameterGroupProps#getForcerestart}
-         * @param forcerestart the value to be set.
+         * @param forcerestart Property forcerestart: whether restart database instance.
          * @return {@code this}
          */
         public Builder forcerestart(java.lang.String forcerestart) {
+            this.forcerestart = forcerestart;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceParameterGroupProps#getForcerestart}
+         * @param forcerestart Property forcerestart: whether restart database instance.
+         * @return {@code this}
+         */
+        public Builder forcerestart(com.aliyun.ros.cdk.core.IResolvable forcerestart) {
             this.forcerestart = forcerestart;
             return this;
         }
@@ -92,9 +115,9 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBInstanceParameterGroupProps {
-        private final java.lang.String dbInstanceId;
+        private final java.lang.Object dbInstanceId;
         private final java.lang.Object parameters;
-        private final java.lang.String forcerestart;
+        private final java.lang.Object forcerestart;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,15 +125,15 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.forcerestart = software.amazon.jsii.Kernel.get(this, "forcerestart", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.forcerestart = software.amazon.jsii.Kernel.get(this, "forcerestart", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbInstanceId, final java.lang.Object parameters, final java.lang.String forcerestart) {
+        protected Jsii$Proxy(final java.lang.Object dbInstanceId, final java.lang.Object parameters, final java.lang.Object forcerestart) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
             this.parameters = java.util.Objects.requireNonNull(parameters, "parameters is required");
@@ -118,7 +141,7 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
@@ -128,7 +151,7 @@ public interface DBInstanceParameterGroupProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getForcerestart() {
+        public final java.lang.Object getForcerestart() {
             return this.forcerestart;
         }
 

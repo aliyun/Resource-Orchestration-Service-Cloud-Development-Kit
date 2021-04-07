@@ -3,38 +3,48 @@ package com.aliyun.ros.cdk.uis;
 /**
  * Properties for defining a `ALIYUN::UIS::UisConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.431Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.UisConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(UisConnectionProps.Jsii$Proxy.class)
 public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property uisNodeId: Node instance ID.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisNodeId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeId();
 
     /**
+     * Property uisProtocol: The protocol name used by the software and server.
+     * <p>
+     * The default value is SSLVPN.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisProtocol();
 
     /**
+     * Property description: A description of the tunnel connection.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property greConfig: The config for GRE.
+     * <p>
+     * Item can be overwritten, but removed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGreConfig() {
         return null;
     }
 
     /**
+     * Property name: The name of the tunnel connection.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property sslConfig: The config for SSLVPN.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSslConfig() {
         return null;
@@ -50,16 +60,16 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link UisConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<UisConnectionProps> {
-        private java.lang.String uisNodeId;
-        private java.lang.String uisProtocol;
-        private java.lang.String description;
+        private java.lang.Object uisNodeId;
+        private java.lang.Object uisProtocol;
+        private java.lang.Object description;
         private java.lang.Object greConfig;
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object sslConfig;
 
         /**
          * Sets the value of {@link UisConnectionProps#getUisNodeId}
-         * @param uisNodeId the value to be set. This parameter is required.
+         * @param uisNodeId Property uisNodeId: Node instance ID. This parameter is required.
          * @return {@code this}
          */
         public Builder uisNodeId(java.lang.String uisNodeId) {
@@ -68,8 +78,19 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link UisConnectionProps#getUisNodeId}
+         * @param uisNodeId Property uisNodeId: Node instance ID. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisNodeId(com.aliyun.ros.cdk.core.IResolvable uisNodeId) {
+            this.uisNodeId = uisNodeId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UisConnectionProps#getUisProtocol}
-         * @param uisProtocol the value to be set. This parameter is required.
+         * @param uisProtocol Property uisProtocol: The protocol name used by the software and server. This parameter is required.
+         *                    The default value is SSLVPN.
          * @return {@code this}
          */
         public Builder uisProtocol(java.lang.String uisProtocol) {
@@ -78,8 +99,19 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link UisConnectionProps#getUisProtocol}
+         * @param uisProtocol Property uisProtocol: The protocol name used by the software and server. This parameter is required.
+         *                    The default value is SSLVPN.
+         * @return {@code this}
+         */
+        public Builder uisProtocol(com.aliyun.ros.cdk.core.IResolvable uisProtocol) {
+            this.uisProtocol = uisProtocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UisConnectionProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: A description of the tunnel connection.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -88,8 +120,19 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link UisConnectionProps#getDescription}
+         * @param description Property description: A description of the tunnel connection.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UisConnectionProps#getGreConfig}
-         * @param greConfig the value to be set.
+         * @param greConfig Property greConfig: The config for GRE.
+         *                  Item can be overwritten, but removed.
          * @return {@code this}
          */
         public Builder greConfig(com.aliyun.ros.cdk.core.IResolvable greConfig) {
@@ -99,7 +142,8 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link UisConnectionProps#getGreConfig}
-         * @param greConfig the value to be set.
+         * @param greConfig Property greConfig: The config for GRE.
+         *                  Item can be overwritten, but removed.
          * @return {@code this}
          */
         public Builder greConfig(java.util.List<? extends java.lang.Object> greConfig) {
@@ -109,7 +153,7 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link UisConnectionProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the tunnel connection.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -118,8 +162,18 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link UisConnectionProps#getName}
+         * @param name Property name: The name of the tunnel connection.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UisConnectionProps#getSslConfig}
-         * @param sslConfig the value to be set.
+         * @param sslConfig Property sslConfig: The config for SSLVPN.
          * @return {@code this}
          */
         public Builder sslConfig(com.aliyun.ros.cdk.core.IResolvable sslConfig) {
@@ -129,7 +183,7 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link UisConnectionProps#getSslConfig}
-         * @param sslConfig the value to be set.
+         * @param sslConfig Property sslConfig: The config for SSLVPN.
          * @return {@code this}
          */
         public Builder sslConfig(com.aliyun.ros.cdk.uis.RosUisConnection.SslConfigProperty sslConfig) {
@@ -153,11 +207,11 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UisConnectionProps {
-        private final java.lang.String uisNodeId;
-        private final java.lang.String uisProtocol;
-        private final java.lang.String description;
+        private final java.lang.Object uisNodeId;
+        private final java.lang.Object uisProtocol;
+        private final java.lang.Object description;
         private final java.lang.Object greConfig;
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object sslConfig;
 
         /**
@@ -166,18 +220,18 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.uisNodeId = software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.uisProtocol = software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.uisNodeId = software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uisProtocol = software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.greConfig = software.amazon.jsii.Kernel.get(this, "greConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslConfig = software.amazon.jsii.Kernel.get(this, "sslConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String uisNodeId, final java.lang.String uisProtocol, final java.lang.String description, final java.lang.Object greConfig, final java.lang.String name, final java.lang.Object sslConfig) {
+        protected Jsii$Proxy(final java.lang.Object uisNodeId, final java.lang.Object uisProtocol, final java.lang.Object description, final java.lang.Object greConfig, final java.lang.Object name, final java.lang.Object sslConfig) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.uisNodeId = java.util.Objects.requireNonNull(uisNodeId, "uisNodeId is required");
             this.uisProtocol = java.util.Objects.requireNonNull(uisProtocol, "uisProtocol is required");
@@ -188,17 +242,17 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getUisNodeId() {
+        public final java.lang.Object getUisNodeId() {
             return this.uisNodeId;
         }
 
         @Override
-        public final java.lang.String getUisProtocol() {
+        public final java.lang.Object getUisProtocol() {
             return this.uisProtocol;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -208,7 +262,7 @@ public interface UisConnectionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

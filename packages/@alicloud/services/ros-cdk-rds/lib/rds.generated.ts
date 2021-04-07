@@ -10,27 +10,27 @@ export interface RosADInfoProps {
     /**
      * @Property adAccountName: Domain account name.
      */
-    readonly adAccountName: string;
+    readonly adAccountName: string | ros.IResolvable;
 
     /**
      * @Property addns: Active directory domain name.
      */
-    readonly addns: string;
+    readonly addns: string | ros.IResolvable;
 
     /**
      * @Property adPassword: Domain password.
      */
-    readonly adPassword: string;
+    readonly adPassword: string | ros.IResolvable;
 
     /**
      * @Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
      */
-    readonly adServerIpAddress: string;
+    readonly adServerIpAddress: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 }
 
 /**
@@ -95,12 +95,12 @@ export class RosADInfo extends ros.RosResource {
     /**
      * @Attribute ADDNS: Active directory domain name.
      */
-    public readonly attrAddns: any;
+    public readonly attrAddns: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -108,27 +108,27 @@ export class RosADInfo extends ros.RosResource {
     /**
      * @Property adAccountName: Domain account name.
      */
-    public adAccountName: string;
+    public adAccountName: string | ros.IResolvable;
 
     /**
      * @Property addns: Active directory domain name.
      */
-    public addns: string;
+    public addns: string | ros.IResolvable;
 
     /**
      * @Property adPassword: Domain password.
      */
-    public adPassword: string;
+    public adPassword: string | ros.IResolvable;
 
     /**
      * @Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
      */
-    public adServerIpAddress: string;
+    public adServerIpAddress: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the instance.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::ADInfo`.
@@ -139,8 +139,8 @@ export class RosADInfo extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosADInfoProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosADInfo.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAddns = ros.Token.asString(this.getAtt('ADDNS'));
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
+        this.attrAddns = this.getAtt('ADDNS');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.adAccountName = props.adAccountName;
@@ -177,17 +177,17 @@ export interface RosAccountProps {
      * Contain no more than 16 characters.
      * For other invalid characters, see Forbidden keywords table.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The account password for the database instance. It may consist of letters, digits, or underlines, with a length of 8 to 32 characters.
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: RDS instance ID.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: Account remarks.
@@ -196,7 +196,7 @@ export interface RosAccountProps {
      * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * @Property accountType: Privilege type of account.
@@ -205,7 +205,7 @@ export interface RosAccountProps {
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 }
 
 /**
@@ -281,7 +281,7 @@ export class RosAccount extends ros.RosResource {
     /**
      * @Attribute AccountName: Account name
      */
-    public readonly attrAccountName: any;
+    public readonly attrAccountName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -293,17 +293,17 @@ export class RosAccount extends ros.RosResource {
      * Contain no more than 16 characters.
      * For other invalid characters, see Forbidden keywords table.
      */
-    public accountName: string;
+    public accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The account password for the database instance. It may consist of letters, digits, or underlines, with a length of 8 to 32 characters.
      */
-    public accountPassword: string;
+    public accountPassword: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: RDS instance ID.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: Account remarks.
@@ -312,7 +312,7 @@ export class RosAccount extends ros.RosResource {
      * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
-    public accountDescription: string | undefined;
+    public accountDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountType: Privilege type of account.
@@ -321,7 +321,7 @@ export class RosAccount extends ros.RosResource {
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
-    public accountType: string | undefined;
+    public accountType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::Account`.
@@ -332,7 +332,7 @@ export class RosAccount extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccountName = ros.Token.asString(this.getAtt('AccountName'));
+        this.attrAccountName = this.getAtt('AccountName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accountName = props.accountName;
@@ -365,22 +365,22 @@ export interface RosAccountPrivilegeProps {
     /**
      * @Property accountName: RDS account name.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: RDS account privilege
      */
-    readonly accountPrivilege: string;
+    readonly accountPrivilege: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: RDS instance ID.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbName: RDS database name
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 }
 
 /**
@@ -451,22 +451,22 @@ export class RosAccountPrivilege extends ros.RosResource {
     /**
      * @Property accountName: RDS account name.
      */
-    public accountName: string;
+    public accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: RDS account privilege
      */
-    public accountPrivilege: string;
+    public accountPrivilege: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: RDS instance ID.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbName: RDS database name
      */
-    public dbName: string;
+    public dbName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::AccountPrivilege`.
@@ -507,17 +507,17 @@ export interface RosDBInstanceProps {
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
      */
-    readonly engine: string;
+    readonly engine: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
@@ -526,12 +526,12 @@ export interface RosDBInstanceProps {
      * PPAS: 9.3/10.0;
      * MariaDB: 10.3.
      */
-    readonly engineVersion: string;
+    readonly engineVersion: string | ros.IResolvable;
 
     /**
      * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
      */
-    readonly securityIpList: string;
+    readonly securityIpList: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
@@ -539,9 +539,58 @@ export interface RosDBInstanceProps {
     readonly allocatePublicConnection?: boolean | ros.IResolvable;
 
     /**
+     * @Property archiveBackupKeepCount: The number of archived backups that can be retained. Default value: 1. Valid values: 
+     * The value of this parameter ranges from 1 to 31 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByMonth. 
+     * The value of this parameter ranges from 1 to 7 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByWeek. 
+     * Note You do not need to specify this parameter when the ArchiveBackupKeepPolicy 
+     * parameter is set to KeepAll.
+     */
+    readonly archiveBackupKeepCount?: number | ros.IResolvable;
+
+    /**
+     * @Property archiveBackupKeepPolicy: The period for which to retain archived backups. The number of archived backups that can 
+     *  be retained within the specified period is determined by the ArchiveBackupKeepCount parameter. 
+     *  Default value: 0. Valid values: 
+     * ByMonth 
+     *  ByWeek 
+     *  KeepAll
+     */
+    readonly archiveBackupKeepPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property archiveBackupRetentionPeriod: The number of days for which to retain archived backups. 
+     *  The default value 0 specifies not to enable the backup archiving function. Valid values: 30 to 1095.
+     */
+    readonly archiveBackupRetentionPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
+     * to be completed within seconds. Valid values: 
+     * Flash: specifies to enable the second-level backup function. 
+     *  Standard: specifies to disable the second-level backup function.
+     */
+    readonly backUpCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property backupPolicyMode: Backup type, 
+     * DataBackupPolicy: data backup 
+     * LogBackupPolicy: log backup
+     */
+    readonly backupPolicyMode?: string | ros.IResolvable;
+
+    /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    readonly backupRetentionPeriod?: number;
+    readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -550,34 +599,46 @@ export interface RosDBInstanceProps {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    readonly category?: string;
+    readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property compressType: The format used to compress backups. Valid values: 
+     *  1: The zlib tool is used to compress backups into .tar.gz files. 
+     *  4: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     * This compression format is supported only when the instance runs MySQL 5.6 or 5.7. 
+     * It can be used to restore individual databases and tables. 
+     *  8: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     *  This compression format is supported only when the instance runs MySQL 8.0. 
+     * It cannot be used to restore individual databases or tables.
+     */
+    readonly compressType?: number | ros.IResolvable;
 
     /**
      * @Property connectionMode: Connection Mode for database instance,support 'Standard' and 'Safe' mode. Default is RDS system assigns.
      */
-    readonly connectionMode?: string;
+    readonly connectionMode?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    readonly connectionStringPrefix?: string;
+    readonly connectionStringPrefix?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    readonly connectionStringType?: string;
+    readonly connectionStringType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceNetType: Database instance net type, default is Intranet.Internet for public access, Intranet for private access.
      */
-    readonly dbInstanceNetType?: string;
+    readonly dbInstanceNetType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -585,14 +646,14 @@ export interface RosDBInstanceProps {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    readonly dbInstanceStorageType?: string;
+    readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
      * @Property dbIsIgnoreCase: Specifies whether table names are case-sensitive. Valid values:
      * 1: Table names are not case-sensitive. This is the default value.
      * 0: Table names are case-sensitive.
      */
-    readonly dbIsIgnoreCase?: number;
+    readonly dbIsIgnoreCase?: number | ros.IResolvable;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -602,37 +663,92 @@ export interface RosDBInstanceProps {
     /**
      * @Property dbParamGroupId: The ID of the parameter template used by the instance.
      */
-    readonly dbParamGroupId?: string;
+    readonly dbParamGroupId?: string | ros.IResolvable;
 
     /**
      * @Property dbTimeZone: The UTC time zone of the instance. Valid values: -12:00 to +12:00. The time zone must be an integer value such as +08:00. Values such as +08:30 are not allowed.
      */
-    readonly dbTimeZone?: string;
+    readonly dbTimeZone?: string | ros.IResolvable;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    readonly dedicatedHostGroupId?: string;
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
+     * True: specifies to enable the log backup function. 
+     * False: specifies to disable the log backup function. 
+     * Note You must specify this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly enableBackupLog?: boolean | ros.IResolvable;
 
     /**
      * @Property encryptionKey: The ID of the encryption key that is used to encrypt data on SSDs in the region. You can view the encryption key ID in the Key Management Service (KMS) console. You can also create an encryption key.
      */
-    readonly encryptionKey?: string;
+    readonly encryptionKey?: string | ros.IResolvable;
+
+    /**
+     * @Property highSpaceUsageProtection: Specifies whether to forcibly delete log backup files when the space usage of the 
+     *  instance exceeds 80% or the remaining space is less than 5 GB. Valid values: 
+     *  Enable and Disable. You can retain the default value. Note You must specify 
+     *  this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly highSpaceUsageProtection?: string | ros.IResolvable;
+
+    /**
+     * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
+     * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
+     * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
+     * parameter is set to LogBackupPolicy.
+     */
+    readonly localLogRetentionHours?: number | ros.IResolvable;
+
+    /**
+     * @Property localLogRetentionSpace: The maximum percentage of space that is allowed to store log backup files on the instance. 
+     *  If the space usage for log backup files exceeds this percentage, the system deletes earlier 
+     *  log backup files until the space usage falls below this percentage. Valid values:0 to 50. 
+     *  You can retain the default value. Note You must specify this parameter when the 
+     *  BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly localLogRetentionSpace?: number | ros.IResolvable;
+
+    /**
+     * @Property logBackupFrequency: The frequency at which to back up logs. Valid values: 
+     * The value LogInterval specifies to back up logs every 30 minutes. 
+     *  The default value of this parameter is the same as the data backup frequency. 
+     * Note The value LogInterval is supported only when the instance runs SQL Server.
+     */
+    readonly logBackupFrequency?: string | ros.IResolvable;
+
+    /**
+     * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
+     * Default value: 60. Valid values: 6 to 100.
+     */
+    readonly logBackupLocalRetentionNumber?: number | ros.IResolvable;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730. The log backup 
+     *  retention period cannot be longer than the data backup retention period.Note If you enable the log 
+     *  backup function, you can specify the log backup retention period. This applies only when the 
+     *  instance runs MySQL, PostgreSQL, or PPAS.
+     */
+    readonly logBackupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    readonly maintainTime?: string;
+    readonly maintainTime?: string | ros.IResolvable;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    readonly masterUsername?: string;
+    readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    readonly masterUserPassword?: string;
+    readonly masterUserPassword?: string | ros.IResolvable;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -641,7 +757,7 @@ export interface RosDBInstanceProps {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    readonly masterUserType?: string;
+    readonly masterUserType?: string | ros.IResolvable;
 
     /**
      * @Property multiAz: Specifies if the database instance is a multiple Availability Zone deployment.
@@ -651,22 +767,22 @@ export interface RosDBInstanceProps {
     /**
      * @Property payType: The charge type of created instance.
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    readonly periodType?: string;
+    readonly periodType?: string | ros.IResolvable;
 
     /**
      * @Property port: The port of the database service.
      */
-    readonly port?: number;
+    readonly port?: number | ros.IResolvable;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -676,22 +792,30 @@ export interface RosDBInstanceProps {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupTime?: string;
+    readonly preferredBackupTime?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     *  Valid values: 
+     * Lastest: Only the last archived backup is retained. 
+     *  All: All of the archived backups are retained.
+     */
+    readonly releasedKeepPolicy?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property roleArn: The Alibaba Cloud Resource Name (ARN) provided to the service account of the instance by your Alibaba Cloud account to connect to KMS. You can copy the ARN from the RAM console.
      */
-    readonly roleArn?: string;
+    readonly roleArn?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -700,18 +824,18 @@ export interface RosDBInstanceProps {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
      */
-    readonly slaveZoneIds?: string[];
+    readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    readonly sqlCollectorStatus?: string;
+    readonly sqlCollectorStatus?: string | ros.IResolvable;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -720,7 +844,7 @@ export interface RosDBInstanceProps {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    readonly sslSetting?: string;
+    readonly sslSetting?: string | ros.IResolvable;
 
     /**
      * @Property tags: The tags of an instance.
@@ -737,37 +861,37 @@ export interface RosDBInstanceProps {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property targetDedicatedHostIdForLog: The ID of the host to which the instance belongs if you create a log instance in a host group.
      */
-    readonly targetDedicatedHostIdForLog?: string;
+    readonly targetDedicatedHostIdForLog?: string | ros.IResolvable;
 
     /**
      * @Property targetDedicatedHostIdForMaster: The ID of the host to which the instance belongs if you create a primary instance in a host group.
      */
-    readonly targetDedicatedHostIdForMaster?: string;
+    readonly targetDedicatedHostIdForMaster?: string | ros.IResolvable;
 
     /**
      * @Property targetDedicatedHostIdForSlave: The ID of the host to which the instance belongs if you create a secondary instance in a host group.
      */
-    readonly targetDedicatedHostIdForSlave?: string;
+    readonly targetDedicatedHostIdForSlave?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -787,25 +911,16 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
-    if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
-        errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
-          data: properties.dbInstanceNetType,
-          allowedValues: ["Internet","Intranet"],
-        }));
+    if(properties.archiveBackupRetentionPeriod && (typeof properties.archiveBackupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupRetentionPeriod', ros.validateRange)({
+            data: properties.archiveBackupRetentionPeriod,
+            min: 30,
+            max: 1095,
+          }));
     }
-    errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    errors.collect(ros.propertyValidator('archiveBackupRetentionPeriod', ros.validateNumber)(properties.archiveBackupRetentionPeriod));
     errors.collect(ros.propertyValidator('dbTimeZone', ros.validateString)(properties.dbTimeZone));
-    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
             data: properties.port,
@@ -814,19 +929,22 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
-    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
-    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
-        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
-            data: properties.slaveZoneIds.length,
-            min: undefined,
-            max: 2,
+    if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
+            data: properties.archiveBackupKeepCount,
+            min: 1,
+            max: 31,
           }));
     }
-    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
-    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
+    errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateNumber)(properties.archiveBackupKeepCount));
+    if(properties.logBackupRetentionPeriod && (typeof properties.logBackupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateRange)({
+            data: properties.logBackupRetentionPeriod,
+            min: 7,
+            max: 730,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateNumber)(properties.logBackupRetentionPeriod));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
@@ -838,7 +956,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
     errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
-    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -847,20 +964,28 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
-    errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    if(properties.archiveBackupKeepPolicy && (typeof properties.archiveBackupKeepPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateAllowedValues)({
+          data: properties.archiveBackupKeepPolicy,
+          allowedValues: ["ByMonth","ByWeek","KeepAll"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateString)(properties.archiveBackupKeepPolicy));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.backupPolicyMode && (typeof properties.backupPolicyMode) !== 'object') {
+        errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateAllowedValues)({
+          data: properties.backupPolicyMode,
+          allowedValues: ["DataBackupPolicy","LogBackupPolicy"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateString)(properties.backupPolicyMode));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
             data: properties.period,
@@ -869,22 +994,29 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.localLogRetentionHours && (typeof properties.localLogRetentionHours) !== 'object') {
+        errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateRange)({
+            data: properties.localLogRetentionHours,
+            min: 0,
+            max: 168,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateNumber)(properties.localLogRetentionHours));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Prepaid","Postpaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
-    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
-    if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
-        errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
-          data: properties.connectionStringType,
-          allowedValues: ["Inner","Public"],
+    if(properties.highSpaceUsageProtection && (typeof properties.highSpaceUsageProtection) !== 'object') {
+        errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateAllowedValues)({
+          data: properties.highSpaceUsageProtection,
+          allowedValues: ["Enable","Disable"],
         }));
     }
-    errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateString)(properties.highSpaceUsageProtection));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
     if(properties.masterUserPassword && (Array.isArray(properties.masterUserPassword) || (typeof properties.masterUserPassword) === 'string')) {
         errors.collect(ros.propertyValidator('masterUserPassword', ros.validateLength)({
             data: properties.masterUserPassword.length,
@@ -893,13 +1025,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
-    if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
-        errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
-          data: properties.masterUserType,
-          allowedValues: ["Normal","Super","Sysadmin"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
@@ -910,6 +1035,92 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
+    if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
+        errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateRange)({
+            data: properties.localLogRetentionSpace,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
+    if(properties.category && (typeof properties.category) !== 'object') {
+        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
+          data: properties.category,
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
+    if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
+          data: properties.dbInstanceNetType,
+          allowedValues: ["Internet","Intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
+          data: properties.releasedKeepPolicy,
+          allowedValues: ["Lastest","All"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
+            data: properties.logBackupLocalRetentionNumber,
+            min: 6,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateNumber)(properties.logBackupLocalRetentionNumber));
+    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
+            data: properties.slaveZoneIds.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
+    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
+    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
+    errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
+    errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
+    if(properties.backUpCategory && (typeof properties.backUpCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('backUpCategory', ros.validateAllowedValues)({
+          data: properties.backUpCategory,
+          allowedValues: ["Flash","Standard"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
+    errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
+          data: properties.connectionStringType,
+          allowedValues: ["Inner","Public"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
+    if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
+        errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
+          data: properties.masterUserType,
+          allowedValues: ["Normal","Super","Sysadmin"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
+    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
           data: properties.sqlCollectorStatus,
@@ -941,8 +1152,15 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
       AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
+      ArchiveBackupKeepCount: ros.numberToRosTemplate(properties.archiveBackupKeepCount),
+      ArchiveBackupKeepPolicy: ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
+      ArchiveBackupRetentionPeriod: ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
+      BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
       BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
       Category: ros.stringToRosTemplate(properties.category),
+      CompressType: ros.numberToRosTemplate(properties.compressType),
       ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
       ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
       ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
@@ -954,7 +1172,14 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       DBParamGroupId: ros.stringToRosTemplate(properties.dbParamGroupId),
       DBTimeZone: ros.stringToRosTemplate(properties.dbTimeZone),
       DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
+      HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
+      LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
+      LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
+      LogBackupLocalRetentionNumber: ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
+      LogBackupRetentionPeriod: ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
       MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
       MasterUsername: ros.stringToRosTemplate(properties.masterUsername),
       MasterUserPassword: ros.stringToRosTemplate(properties.masterUserPassword),
@@ -967,13 +1192,14 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       PreferredBackupPeriod: ros.listMapper(ros.objectToRosTemplate)(properties.preferredBackupPeriod),
       PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      ReleasedKeepPolicy: ros.stringToRosTemplate(properties.releasedKeepPolicy),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RoleARN: ros.stringToRosTemplate(properties.roleArn),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
       TargetDedicatedHostIdForSlave: ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
@@ -1000,37 +1226,37 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrInnerConnectionString: any;
+    public readonly attrInnerConnectionString: ros.IResolvable;
 
     /**
      * @Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public readonly attrInnerIpAddress: any;
+    public readonly attrInnerIpAddress: ros.IResolvable;
 
     /**
      * @Attribute InnerPort: Intranet port of created DB instance.
      */
-    public readonly attrInnerPort: any;
+    public readonly attrInnerPort: ros.IResolvable;
 
     /**
      * @Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public readonly attrPublicConnectionString: any;
+    public readonly attrPublicConnectionString: ros.IResolvable;
 
     /**
      * @Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public readonly attrPublicIpAddress: any;
+    public readonly attrPublicIpAddress: ros.IResolvable;
 
     /**
      * @Attribute PublicPort: Internet port of created DB instance.
      */
-    public readonly attrPublicPort: any;
+    public readonly attrPublicPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1038,17 +1264,17 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    public dbInstanceClass: string;
+    public dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
      */
-    public dbInstanceStorage: number;
+    public dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
      */
-    public engine: string;
+    public engine: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
@@ -1057,12 +1283,12 @@ export class RosDBInstance extends ros.RosResource {
      * PPAS: 9.3/10.0;
      * MariaDB: 10.3.
      */
-    public engineVersion: string;
+    public engineVersion: string | ros.IResolvable;
 
     /**
      * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
      */
-    public securityIpList: string;
+    public securityIpList: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
@@ -1070,9 +1296,58 @@ export class RosDBInstance extends ros.RosResource {
     public allocatePublicConnection: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property archiveBackupKeepCount: The number of archived backups that can be retained. Default value: 1. Valid values: 
+     * The value of this parameter ranges from 1 to 31 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByMonth. 
+     * The value of this parameter ranges from 1 to 7 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByWeek. 
+     * Note You do not need to specify this parameter when the ArchiveBackupKeepPolicy 
+     * parameter is set to KeepAll.
+     */
+    public archiveBackupKeepCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property archiveBackupKeepPolicy: The period for which to retain archived backups. The number of archived backups that can 
+     *  be retained within the specified period is determined by the ArchiveBackupKeepCount parameter. 
+     *  Default value: 0. Valid values: 
+     * ByMonth 
+     *  ByWeek 
+     *  KeepAll
+     */
+    public archiveBackupKeepPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property archiveBackupRetentionPeriod: The number of days for which to retain archived backups. 
+     *  The default value 0 specifies not to enable the backup archiving function. Valid values: 30 to 1095.
+     */
+    public archiveBackupRetentionPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenew: Specifies whether to enable auto-renewal. Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
+     * to be completed within seconds. Valid values: 
+     * Flash: specifies to enable the second-level backup function. 
+     *  Standard: specifies to disable the second-level backup function.
+     */
+    public backUpCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property backupPolicyMode: Backup type, 
+     * DataBackupPolicy: data backup 
+     * LogBackupPolicy: log backup
+     */
+    public backupPolicyMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    public backupRetentionPeriod: number | undefined;
+    public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -1081,34 +1356,46 @@ export class RosDBInstance extends ros.RosResource {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    public category: string | undefined;
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property compressType: The format used to compress backups. Valid values: 
+     *  1: The zlib tool is used to compress backups into .tar.gz files. 
+     *  4: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     * This compression format is supported only when the instance runs MySQL 5.6 or 5.7. 
+     * It can be used to restore individual databases and tables. 
+     *  8: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     *  This compression format is supported only when the instance runs MySQL 8.0. 
+     * It cannot be used to restore individual databases or tables.
+     */
+    public compressType: number | ros.IResolvable | undefined;
 
     /**
      * @Property connectionMode: Connection Mode for database instance,support 'Standard' and 'Safe' mode. Default is RDS system assigns.
      */
-    public connectionMode: string | undefined;
+    public connectionMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    public connectionStringPrefix: string | undefined;
+    public connectionStringPrefix: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    public connectionStringType: string | undefined;
+    public connectionStringType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceNetType: Database instance net type, default is Intranet.Internet for public access, Intranet for private access.
      */
-    public dbInstanceNetType: string | undefined;
+    public dbInstanceNetType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -1116,14 +1403,14 @@ export class RosDBInstance extends ros.RosResource {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    public dbInstanceStorageType: string | undefined;
+    public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbIsIgnoreCase: Specifies whether table names are case-sensitive. Valid values:
      * 1: Table names are not case-sensitive. This is the default value.
      * 0: Table names are case-sensitive.
      */
-    public dbIsIgnoreCase: number | undefined;
+    public dbIsIgnoreCase: number | ros.IResolvable | undefined;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -1133,37 +1420,92 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property dbParamGroupId: The ID of the parameter template used by the instance.
      */
-    public dbParamGroupId: string | undefined;
+    public dbParamGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbTimeZone: The UTC time zone of the instance. Valid values: -12:00 to +12:00. The time zone must be an integer value such as +08:00. Values such as +08:30 are not allowed.
      */
-    public dbTimeZone: string | undefined;
+    public dbTimeZone: string | ros.IResolvable | undefined;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    public dedicatedHostGroupId: string | undefined;
+    public dedicatedHostGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
+     * True: specifies to enable the log backup function. 
+     * False: specifies to disable the log backup function. 
+     * Note You must specify this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public enableBackupLog: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property encryptionKey: The ID of the encryption key that is used to encrypt data on SSDs in the region. You can view the encryption key ID in the Key Management Service (KMS) console. You can also create an encryption key.
      */
-    public encryptionKey: string | undefined;
+    public encryptionKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property highSpaceUsageProtection: Specifies whether to forcibly delete log backup files when the space usage of the 
+     *  instance exceeds 80% or the remaining space is less than 5 GB. Valid values: 
+     *  Enable and Disable. You can retain the default value. Note You must specify 
+     *  this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public highSpaceUsageProtection: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
+     * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
+     * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
+     * parameter is set to LogBackupPolicy.
+     */
+    public localLogRetentionHours: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property localLogRetentionSpace: The maximum percentage of space that is allowed to store log backup files on the instance. 
+     *  If the space usage for log backup files exceeds this percentage, the system deletes earlier 
+     *  log backup files until the space usage falls below this percentage. Valid values:0 to 50. 
+     *  You can retain the default value. Note You must specify this parameter when the 
+     *  BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public localLogRetentionSpace: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupFrequency: The frequency at which to back up logs. Valid values: 
+     * The value LogInterval specifies to back up logs every 30 minutes. 
+     *  The default value of this parameter is the same as the data backup frequency. 
+     * Note The value LogInterval is supported only when the instance runs SQL Server.
+     */
+    public logBackupFrequency: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
+     * Default value: 60. Valid values: 6 to 100.
+     */
+    public logBackupLocalRetentionNumber: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730. The log backup 
+     *  retention period cannot be longer than the data backup retention period.Note If you enable the log 
+     *  backup function, you can specify the log backup retention period. This applies only when the 
+     *  instance runs MySQL, PostgreSQL, or PPAS.
+     */
+    public logBackupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    public maintainTime: string | undefined;
+    public maintainTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    public masterUsername: string | undefined;
+    public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    public masterUserPassword: string | undefined;
+    public masterUserPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -1172,7 +1514,7 @@ export class RosDBInstance extends ros.RosResource {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    public masterUserType: string | undefined;
+    public masterUserType: string | ros.IResolvable | undefined;
 
     /**
      * @Property multiAz: Specifies if the database instance is a multiple Availability Zone deployment.
@@ -1182,22 +1524,22 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property payType: The charge type of created instance.
      */
-    public payType: string | undefined;
+    public payType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    public periodType: string | undefined;
+    public periodType: string | ros.IResolvable | undefined;
 
     /**
      * @Property port: The port of the database service.
      */
-    public port: number | undefined;
+    public port: number | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -1207,22 +1549,30 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupTime: string | undefined;
+    public preferredBackupTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     *  Valid values: 
+     * Lastest: Only the last archived backup is retained. 
+     *  All: All of the archived backups are retained.
+     */
+    public releasedKeepPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property roleArn: The Alibaba Cloud Resource Name (ARN) provided to the service account of the instance by your Alibaba Cloud account to connect to KMS. You can copy the ARN from the RAM console.
      */
-    public roleArn: string | undefined;
+    public roleArn: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -1231,18 +1581,18 @@ export class RosDBInstance extends ros.RosResource {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
      */
-    public slaveZoneIds: string[] | undefined;
+    public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    public sqlCollectorStatus: string | undefined;
+    public sqlCollectorStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -1251,7 +1601,7 @@ export class RosDBInstance extends ros.RosResource {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    public sslSetting: string | undefined;
+    public sslSetting: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The tags of an instance.
@@ -1268,37 +1618,37 @@ export class RosDBInstance extends ros.RosResource {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property targetDedicatedHostIdForLog: The ID of the host to which the instance belongs if you create a log instance in a host group.
      */
-    public targetDedicatedHostIdForLog: string | undefined;
+    public targetDedicatedHostIdForLog: string | ros.IResolvable | undefined;
 
     /**
      * @Property targetDedicatedHostIdForMaster: The ID of the host to which the instance belongs if you create a primary instance in a host group.
      */
-    public targetDedicatedHostIdForMaster: string | undefined;
+    public targetDedicatedHostIdForMaster: string | ros.IResolvable | undefined;
 
     /**
      * @Property targetDedicatedHostIdForSlave: The ID of the host to which the instance belongs if you create a secondary instance in a host group.
      */
-    public targetDedicatedHostIdForSlave: string | undefined;
+    public targetDedicatedHostIdForSlave: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstance`.
@@ -1309,13 +1659,13 @@ export class RosDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrInnerConnectionString = ros.Token.asString(this.getAtt('InnerConnectionString'));
-        this.attrInnerIpAddress = ros.Token.asString(this.getAtt('InnerIPAddress'));
-        this.attrInnerPort = ros.Token.asString(this.getAtt('InnerPort'));
-        this.attrPublicConnectionString = ros.Token.asString(this.getAtt('PublicConnectionString'));
-        this.attrPublicIpAddress = ros.Token.asString(this.getAtt('PublicIPAddress'));
-        this.attrPublicPort = ros.Token.asString(this.getAtt('PublicPort'));
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrInnerConnectionString = this.getAtt('InnerConnectionString');
+        this.attrInnerIpAddress = this.getAtt('InnerIPAddress');
+        this.attrInnerPort = this.getAtt('InnerPort');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
+        this.attrPublicIpAddress = this.getAtt('PublicIPAddress');
+        this.attrPublicPort = this.getAtt('PublicPort');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceClass = props.dbInstanceClass;
@@ -1324,8 +1674,15 @@ export class RosDBInstance extends ros.RosResource {
         this.engineVersion = props.engineVersion;
         this.securityIpList = props.securityIpList;
         this.allocatePublicConnection = props.allocatePublicConnection;
+        this.archiveBackupKeepCount = props.archiveBackupKeepCount;
+        this.archiveBackupKeepPolicy = props.archiveBackupKeepPolicy;
+        this.archiveBackupRetentionPeriod = props.archiveBackupRetentionPeriod;
+        this.autoRenew = props.autoRenew;
+        this.backUpCategory = props.backUpCategory;
+        this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
         this.category = props.category;
+        this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
         this.connectionStringType = props.connectionStringType;
@@ -1337,7 +1694,14 @@ export class RosDBInstance extends ros.RosResource {
         this.dbParamGroupId = props.dbParamGroupId;
         this.dbTimeZone = props.dbTimeZone;
         this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
+        this.highSpaceUsageProtection = props.highSpaceUsageProtection;
+        this.localLogRetentionHours = props.localLogRetentionHours;
+        this.localLogRetentionSpace = props.localLogRetentionSpace;
+        this.logBackupFrequency = props.logBackupFrequency;
+        this.logBackupLocalRetentionNumber = props.logBackupLocalRetentionNumber;
+        this.logBackupRetentionPeriod = props.logBackupRetentionPeriod;
         this.maintainTime = props.maintainTime;
         this.masterUsername = props.masterUsername;
         this.masterUserPassword = props.masterUserPassword;
@@ -1350,13 +1714,14 @@ export class RosDBInstance extends ros.RosResource {
         this.preferredBackupPeriod = props.preferredBackupPeriod;
         this.preferredBackupTime = props.preferredBackupTime;
         this.privateIpAddress = props.privateIpAddress;
+        this.releasedKeepPolicy = props.releasedKeepPolicy;
         this.resourceGroupId = props.resourceGroupId;
         this.roleArn = props.roleArn;
         this.securityGroupId = props.securityGroupId;
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::RDS::DBInstance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
         this.targetDedicatedHostIdForSlave = props.targetDedicatedHostIdForSlave;
@@ -1374,8 +1739,15 @@ export class RosDBInstance extends ros.RosResource {
             engineVersion: this.engineVersion,
             securityIpList: this.securityIpList,
             allocatePublicConnection: this.allocatePublicConnection,
+            archiveBackupKeepCount: this.archiveBackupKeepCount,
+            archiveBackupKeepPolicy: this.archiveBackupKeepPolicy,
+            archiveBackupRetentionPeriod: this.archiveBackupRetentionPeriod,
+            autoRenew: this.autoRenew,
+            backUpCategory: this.backUpCategory,
+            backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
             category: this.category,
+            compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
             connectionStringType: this.connectionStringType,
@@ -1387,7 +1759,14 @@ export class RosDBInstance extends ros.RosResource {
             dbParamGroupId: this.dbParamGroupId,
             dbTimeZone: this.dbTimeZone,
             dedicatedHostGroupId: this.dedicatedHostGroupId,
+            enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
+            highSpaceUsageProtection: this.highSpaceUsageProtection,
+            localLogRetentionHours: this.localLogRetentionHours,
+            localLogRetentionSpace: this.localLogRetentionSpace,
+            logBackupFrequency: this.logBackupFrequency,
+            logBackupLocalRetentionNumber: this.logBackupLocalRetentionNumber,
+            logBackupRetentionPeriod: this.logBackupRetentionPeriod,
             maintainTime: this.maintainTime,
             masterUsername: this.masterUsername,
             masterUserPassword: this.masterUserPassword,
@@ -1400,13 +1779,14 @@ export class RosDBInstance extends ros.RosResource {
             preferredBackupPeriod: this.preferredBackupPeriod,
             preferredBackupTime: this.preferredBackupTime,
             privateIpAddress: this.privateIpAddress,
+            releasedKeepPolicy: this.releasedKeepPolicy,
             resourceGroupId: this.resourceGroupId,
             roleArn: this.roleArn,
             securityGroupId: this.securityGroupId,
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
             targetDedicatedHostIdForSlave: this.targetDedicatedHostIdForSlave,
@@ -1428,15 +1808,15 @@ export namespace RosDBInstance {
         /**
          * @Property characterSetName: For supported engines, specifies the character set to associate with the database instance.
          */
-        readonly characterSetName: string;
+        readonly characterSetName: string | ros.IResolvable;
         /**
          * @Property dbDescription: Specifies the database description, containing up to 256 characters.
          */
-        readonly dbDescription?: string;
+        readonly dbDescription?: string | ros.IResolvable;
         /**
          * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
          */
-        readonly dbName: string;
+        readonly dbName: string | ros.IResolvable;
     }
 }
 /**
@@ -1490,17 +1870,12 @@ export interface RosDBInstanceCloneProps {
     /**
      * @Property dbInstanceId: Instance id
      */
-    readonly dbInstanceId: string;
-
-    /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
-     */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property payType: The charge type of created instance.
      */
-    readonly payType: string;
+    readonly payType: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
@@ -1512,19 +1887,19 @@ export interface RosDBInstanceCloneProps {
      * You can call the DescribeBackups operation to query the most recent backup set list. 
      * Note You must specify at least one of the BackupId and RestoreTime parameters.
      */
-    readonly backupId?: string;
+    readonly backupId?: string | ros.IResolvable;
 
     /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    readonly backupRetentionPeriod?: number;
+    readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property backupType: The type of backup used by the new instance. Valid values: 
      *  - FullBackup: full backup 
      *  - IncrementalBackup: incremental backup
      */
-    readonly backupType?: string;
+    readonly backupType?: string | ros.IResolvable;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -1533,29 +1908,34 @@ export interface RosDBInstanceCloneProps {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    readonly category?: string;
+    readonly category?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    readonly connectionStringPrefix?: string;
+    readonly connectionStringPrefix?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    readonly connectionStringType?: string;
+    readonly connectionStringType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    readonly dbInstanceClass?: string;
+    readonly dbInstanceClass?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     */
+    readonly dbInstanceStorage?: number | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -1563,7 +1943,7 @@ export interface RosDBInstanceCloneProps {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    readonly dbInstanceStorageType?: string;
+    readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -1573,12 +1953,12 @@ export interface RosDBInstanceCloneProps {
     /**
      * @Property dbNames: The names of the databases that you want to create on the new instance.
      */
-    readonly dbNames?: string;
+    readonly dbNames?: string | ros.IResolvable;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    readonly dedicatedHostGroupId?: string;
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
 
     /**
      * @Property instanceNetworkType: The network type of the new instance. Valid values: 
@@ -1586,22 +1966,22 @@ export interface RosDBInstanceCloneProps {
      * - Classic 
      * The default value is the network type of the original instance.
      */
-    readonly instanceNetworkType?: string;
+    readonly instanceNetworkType?: string | ros.IResolvable;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    readonly maintainTime?: string;
+    readonly maintainTime?: string | ros.IResolvable;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    readonly masterUsername?: string;
+    readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    readonly masterUserPassword?: string;
+    readonly masterUserPassword?: string | ros.IResolvable;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -1610,22 +1990,22 @@ export interface RosDBInstanceCloneProps {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    readonly masterUserType?: string;
+    readonly masterUserType?: string | ros.IResolvable;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    readonly periodType?: string;
+    readonly periodType?: string | ros.IResolvable;
 
     /**
      * @Property port: The port of the database service.
      */
-    readonly port?: number;
+    readonly port?: number | ros.IResolvable;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -1635,19 +2015,19 @@ export interface RosDBInstanceCloneProps {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupTime?: string;
+    readonly preferredBackupTime?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * @Property restoreTable: Specifies whether to restore specific databases and tables. 
      * The value 1 specifies to restore specific databases and tables. 
      * If you do not want to restore specific databases or tables, you can choose not to specify this parameter.
      */
-    readonly restoreTable?: string;
+    readonly restoreTable?: string | ros.IResolvable;
 
     /**
      * @Property restoreTime: The point in time to which you want to restore the data of the original instance. 
@@ -1655,7 +2035,7 @@ export interface RosDBInstanceCloneProps {
      * The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. 
      * The time must be in UTC.
      */
-    readonly restoreTime?: string;
+    readonly restoreTime?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -1664,18 +2044,23 @@ export interface RosDBInstanceCloneProps {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
      */
-    readonly securityIpList?: string;
+    readonly securityIpList?: string | ros.IResolvable;
+
+    /**
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     */
+    readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    readonly sqlCollectorStatus?: string;
+    readonly sqlCollectorStatus?: string | ros.IResolvable;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -1684,7 +2069,7 @@ export interface RosDBInstanceCloneProps {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    readonly sslSetting?: string;
+    readonly sslSetting?: string | ros.IResolvable;
 
     /**
      * @Property tableMeta: The information about the databases and tables that you want to restore.
@@ -1706,27 +2091,27 @@ export interface RosDBInstanceCloneProps {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property timeoutInMinutes: The timeout period for creating the clone instance resource. Unit: Minute. Default: 120.
      */
-    readonly timeoutInMinutes?: number;
+    readonly timeoutInMinutes?: number | ros.IResolvable;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -1768,10 +2153,17 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
     errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
+            data: properties.slaveZoneIds.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     if(properties.backupType && (typeof properties.backupType) !== 'object') {
         errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
@@ -1789,7 +2181,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
     errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
@@ -1809,7 +2201,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Prepaid","Postpaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1880,7 +2272,6 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
     }
     return {
       DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
       PayType: ros.stringToRosTemplate(properties.payType),
       AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
       BackupId: ros.stringToRosTemplate(properties.backupId),
@@ -1891,6 +2282,7 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
       ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
       DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
+      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
       DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
       DBMappings: ros.listMapper(rosDBInstanceCloneDBMappingsPropertyToRosTemplate)(properties.dbMappings),
       DbNames: ros.stringToRosTemplate(properties.dbNames),
@@ -1910,10 +2302,11 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
       RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
       TableMeta: ros.listMapper(rosDBInstanceCloneTableMetaPropertyToRosTemplate)(properties.tableMeta),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TimeoutInMinutes: ros.numberToRosTemplate(properties.timeoutInMinutes),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -1938,37 +2331,37 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrInnerConnectionString: any;
+    public readonly attrInnerConnectionString: ros.IResolvable;
 
     /**
      * @Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public readonly attrInnerIpAddress: any;
+    public readonly attrInnerIpAddress: ros.IResolvable;
 
     /**
      * @Attribute InnerPort: Intranet port of created DB instance.
      */
-    public readonly attrInnerPort: any;
+    public readonly attrInnerPort: ros.IResolvable;
 
     /**
      * @Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public readonly attrPublicConnectionString: any;
+    public readonly attrPublicConnectionString: ros.IResolvable;
 
     /**
      * @Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public readonly attrPublicIpAddress: any;
+    public readonly attrPublicIpAddress: ros.IResolvable;
 
     /**
      * @Attribute PublicPort: Internet port of created DB instance.
      */
-    public readonly attrPublicPort: any;
+    public readonly attrPublicPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1976,17 +2369,12 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Property dbInstanceId: Instance id
      */
-    public dbInstanceId: string;
-
-    /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
-     */
-    public dbInstanceStorage: number;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property payType: The charge type of created instance.
      */
-    public payType: string;
+    public payType: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
@@ -1998,19 +2386,19 @@ export class RosDBInstanceClone extends ros.RosResource {
      * You can call the DescribeBackups operation to query the most recent backup set list. 
      * Note You must specify at least one of the BackupId and RestoreTime parameters.
      */
-    public backupId: string | undefined;
+    public backupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    public backupRetentionPeriod: number | undefined;
+    public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property backupType: The type of backup used by the new instance. Valid values: 
      *  - FullBackup: full backup 
      *  - IncrementalBackup: incremental backup
      */
-    public backupType: string | undefined;
+    public backupType: string | ros.IResolvable | undefined;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -2019,29 +2407,34 @@ export class RosDBInstanceClone extends ros.RosResource {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    public category: string | undefined;
+    public category: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    public connectionStringPrefix: string | undefined;
+    public connectionStringPrefix: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    public connectionStringType: string | undefined;
+    public connectionStringType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    public dbInstanceClass: string | undefined;
+    public dbInstanceClass: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     */
+    public dbInstanceStorage: number | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -2049,7 +2442,7 @@ export class RosDBInstanceClone extends ros.RosResource {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    public dbInstanceStorageType: string | undefined;
+    public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -2059,12 +2452,12 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Property dbNames: The names of the databases that you want to create on the new instance.
      */
-    public dbNames: string | undefined;
+    public dbNames: string | ros.IResolvable | undefined;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    public dedicatedHostGroupId: string | undefined;
+    public dedicatedHostGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceNetworkType: The network type of the new instance. Valid values: 
@@ -2072,22 +2465,22 @@ export class RosDBInstanceClone extends ros.RosResource {
      * - Classic 
      * The default value is the network type of the original instance.
      */
-    public instanceNetworkType: string | undefined;
+    public instanceNetworkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    public maintainTime: string | undefined;
+    public maintainTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    public masterUsername: string | undefined;
+    public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    public masterUserPassword: string | undefined;
+    public masterUserPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -2096,22 +2489,22 @@ export class RosDBInstanceClone extends ros.RosResource {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    public masterUserType: string | undefined;
+    public masterUserType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    public periodType: string | undefined;
+    public periodType: string | ros.IResolvable | undefined;
 
     /**
      * @Property port: The port of the database service.
      */
-    public port: number | undefined;
+    public port: number | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -2121,19 +2514,19 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupTime: string | undefined;
+    public preferredBackupTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreTable: Specifies whether to restore specific databases and tables. 
      * The value 1 specifies to restore specific databases and tables. 
      * If you do not want to restore specific databases or tables, you can choose not to specify this parameter.
      */
-    public restoreTable: string | undefined;
+    public restoreTable: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreTime: The point in time to which you want to restore the data of the original instance. 
@@ -2141,7 +2534,7 @@ export class RosDBInstanceClone extends ros.RosResource {
      * The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. 
      * The time must be in UTC.
      */
-    public restoreTime: string | undefined;
+    public restoreTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -2150,18 +2543,23 @@ export class RosDBInstanceClone extends ros.RosResource {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
      */
-    public securityIpList: string | undefined;
+    public securityIpList: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     */
+    public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    public sqlCollectorStatus: string | undefined;
+    public sqlCollectorStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -2170,7 +2568,7 @@ export class RosDBInstanceClone extends ros.RosResource {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    public sslSetting: string | undefined;
+    public sslSetting: string | ros.IResolvable | undefined;
 
     /**
      * @Property tableMeta: The information about the databases and tables that you want to restore.
@@ -2192,27 +2590,27 @@ export class RosDBInstanceClone extends ros.RosResource {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property timeoutInMinutes: The timeout period for creating the clone instance resource. Unit: Minute. Default: 120.
      */
-    public timeoutInMinutes: number | undefined;
+    public timeoutInMinutes: number | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstanceClone`.
@@ -2223,17 +2621,16 @@ export class RosDBInstanceClone extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBInstanceCloneProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBInstanceClone.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrInnerConnectionString = ros.Token.asString(this.getAtt('InnerConnectionString'));
-        this.attrInnerIpAddress = ros.Token.asString(this.getAtt('InnerIPAddress'));
-        this.attrInnerPort = ros.Token.asString(this.getAtt('InnerPort'));
-        this.attrPublicConnectionString = ros.Token.asString(this.getAtt('PublicConnectionString'));
-        this.attrPublicIpAddress = ros.Token.asString(this.getAtt('PublicIPAddress'));
-        this.attrPublicPort = ros.Token.asString(this.getAtt('PublicPort'));
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrInnerConnectionString = this.getAtt('InnerConnectionString');
+        this.attrInnerIpAddress = this.getAtt('InnerIPAddress');
+        this.attrInnerPort = this.getAtt('InnerPort');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
+        this.attrPublicIpAddress = this.getAtt('PublicIPAddress');
+        this.attrPublicPort = this.getAtt('PublicPort');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceId = props.dbInstanceId;
-        this.dbInstanceStorage = props.dbInstanceStorage;
         this.payType = props.payType;
         this.allocatePublicConnection = props.allocatePublicConnection;
         this.backupId = props.backupId;
@@ -2244,6 +2641,7 @@ export class RosDBInstanceClone extends ros.RosResource {
         this.connectionStringType = props.connectionStringType;
         this.dbInstanceClass = props.dbInstanceClass;
         this.dbInstanceDescription = props.dbInstanceDescription;
+        this.dbInstanceStorage = props.dbInstanceStorage;
         this.dbInstanceStorageType = props.dbInstanceStorageType;
         this.dbMappings = props.dbMappings;
         this.dbNames = props.dbNames;
@@ -2263,10 +2661,11 @@ export class RosDBInstanceClone extends ros.RosResource {
         this.restoreTime = props.restoreTime;
         this.securityGroupId = props.securityGroupId;
         this.securityIpList = props.securityIpList;
+        this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
         this.tableMeta = props.tableMeta;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::RDS::DBInstanceClone", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.timeoutInMinutes = props.timeoutInMinutes;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -2277,7 +2676,6 @@ export class RosDBInstanceClone extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             dbInstanceId: this.dbInstanceId,
-            dbInstanceStorage: this.dbInstanceStorage,
             payType: this.payType,
             allocatePublicConnection: this.allocatePublicConnection,
             backupId: this.backupId,
@@ -2288,6 +2686,7 @@ export class RosDBInstanceClone extends ros.RosResource {
             connectionStringType: this.connectionStringType,
             dbInstanceClass: this.dbInstanceClass,
             dbInstanceDescription: this.dbInstanceDescription,
+            dbInstanceStorage: this.dbInstanceStorage,
             dbInstanceStorageType: this.dbInstanceStorageType,
             dbMappings: this.dbMappings,
             dbNames: this.dbNames,
@@ -2307,10 +2706,11 @@ export class RosDBInstanceClone extends ros.RosResource {
             restoreTime: this.restoreTime,
             securityGroupId: this.securityGroupId,
             securityIpList: this.securityIpList,
+            slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
             tableMeta: this.tableMeta,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             timeoutInMinutes: this.timeoutInMinutes,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -2330,15 +2730,15 @@ export namespace RosDBInstanceClone {
         /**
          * @Property characterSetName: For supported engines, specifies the character set to associate with the database instance.
          */
-        readonly characterSetName: string;
+        readonly characterSetName: string | ros.IResolvable;
         /**
          * @Property dbDescription: Specifies the database description, containing up to 256 characters.
          */
-        readonly dbDescription?: string;
+        readonly dbDescription?: string | ros.IResolvable;
         /**
          * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
          */
-        readonly dbName: string;
+        readonly dbName: string | ros.IResolvable;
     }
 }
 /**
@@ -2392,7 +2792,7 @@ export namespace RosDBInstanceClone {
         /**
          * @Property type: Restore type, db
          */
-        readonly type?: string;
+        readonly type?: string | ros.IResolvable;
         /**
          * @Property tables: The table information that you want to restore.
          */
@@ -2400,11 +2800,11 @@ export namespace RosDBInstanceClone {
         /**
          * @Property newName: New database name in clone instance.
          */
-        readonly newName?: string;
+        readonly newName?: string | ros.IResolvable;
         /**
          * @Property name: Name of database you want to restore.
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -2451,15 +2851,15 @@ export namespace RosDBInstanceClone {
         /**
          * @Property type: Restore type, table
          */
-        readonly type?: string;
+        readonly type?: string | ros.IResolvable;
         /**
          * @Property newName: New name of the table in db
          */
-        readonly newName?: string;
+        readonly newName?: string | ros.IResolvable;
         /**
          * @Property name: Name of table you want to restore
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -2504,7 +2904,7 @@ export interface RosDBInstanceParameterGroupProps {
     /**
      * @Property dbInstanceId: Database InstanceId to update properties.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property parameters: Parameters to update for selected database instance.
@@ -2514,7 +2914,7 @@ export interface RosDBInstanceParameterGroupProps {
     /**
      * @Property forcerestart: whether restart database instance.
      */
-    readonly forcerestart?: string;
+    readonly forcerestart?: string | ros.IResolvable;
 }
 
 /**
@@ -2581,7 +2981,7 @@ export class RosDBInstanceParameterGroup extends ros.RosResource {
     /**
      * @Property dbInstanceId: Database InstanceId to update properties.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property parameters: Parameters to update for selected database instance.
@@ -2591,7 +2991,7 @@ export class RosDBInstanceParameterGroup extends ros.RosResource {
     /**
      * @Property forcerestart: whether restart database instance.
      */
-    public forcerestart: string | undefined;
+    public forcerestart: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
@@ -2630,11 +3030,11 @@ export namespace RosDBInstanceParameterGroup {
         /**
          * @Property value: Value to update for instance property.
          */
-        readonly value: string;
+        readonly value: string | ros.IResolvable;
         /**
          * @Property key: Key to update for instance property.
          */
-        readonly key: string;
+        readonly key: string | ros.IResolvable;
     }
 }
 /**
@@ -2679,17 +3079,17 @@ export interface RosDBInstanceSecurityIpsProps {
     /**
      * @Property dbInstanceId: Database instance id to update security ips.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceIpArrayAttribute: Security ips to add or remove.
      */
-    readonly dbInstanceIpArrayAttribute: string;
+    readonly dbInstanceIpArrayAttribute: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
      */
-    readonly dbInstanceIpArrayName?: string;
+    readonly dbInstanceIpArrayName?: string | ros.IResolvable;
 }
 
 /**
@@ -2747,7 +3147,7 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
     /**
      * @Attribute SecurityIps: The security ips of selected database instance.
      */
-    public readonly attrSecurityIps: any;
+    public readonly attrSecurityIps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2755,17 +3155,17 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
     /**
      * @Property dbInstanceId: Database instance id to update security ips.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceIpArrayAttribute: Security ips to add or remove.
      */
-    public dbInstanceIpArrayAttribute: string;
+    public dbInstanceIpArrayAttribute: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
      */
-    public dbInstanceIpArrayName: string | undefined;
+    public dbInstanceIpArrayName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.
@@ -2776,7 +3176,7 @@ export class RosDBInstanceSecurityIps extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBInstanceSecurityIpsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBInstanceSecurityIps.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSecurityIps = ros.Token.asString(this.getAtt('SecurityIps'));
+        this.attrSecurityIps = this.getAtt('SecurityIps');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceId = props.dbInstanceId;
@@ -2813,12 +3213,12 @@ export interface RosDatabaseProps {
      * | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
      * SQL_ASCII.
      */
-    readonly characterSetName: string;
+    readonly characterSetName: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database you want to create.
@@ -2829,7 +3229,7 @@ export interface RosDatabaseProps {
      * The name must be unique in the instance.
      * For more information about invalid characters, see Forbidden keywords table.
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 
     /**
      * @Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
@@ -2837,7 +3237,7 @@ export interface RosDatabaseProps {
      * (_), and hyphens (-).
      * Note The description cannot start with http:// or https://.
      */
-    readonly dbDescription?: string;
+    readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**
@@ -2898,12 +3298,12 @@ export class RosDatabase extends ros.RosResource {
     /**
      * @Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute DBName: The name of the database.
      */
-    public readonly attrDbName: any;
+    public readonly attrDbName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2919,12 +3319,12 @@ export class RosDatabase extends ros.RosResource {
      * | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
      * SQL_ASCII.
      */
-    public characterSetName: string;
+    public characterSetName: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the instance.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbName: The name of the database you want to create.
@@ -2935,7 +3335,7 @@ export class RosDatabase extends ros.RosResource {
      * The name must be unique in the instance.
      * For more information about invalid characters, see Forbidden keywords table.
      */
-    public dbName: string;
+    public dbName: string | ros.IResolvable;
 
     /**
      * @Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
@@ -2943,7 +3343,7 @@ export class RosDatabase extends ros.RosResource {
      * (_), and hyphens (-).
      * Note The description cannot start with http:// or https://.
      */
-    public dbDescription: string | undefined;
+    public dbDescription: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::Database`.
@@ -2954,8 +3354,8 @@ export class RosDatabase extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDatabaseProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDatabase.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrDbName = ros.Token.asString(this.getAtt('DBName'));
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDbName = this.getAtt('DBName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.characterSetName = props.characterSetName;
@@ -2986,22 +3386,22 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property commodityCode: The CommodityCode of the order.
      */
-    readonly commodityCode: string;
+    readonly commodityCode: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
      */
-    readonly engine: string;
+    readonly engine: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
@@ -3010,22 +3410,49 @@ export interface RosPrepayDBInstanceProps {
      * PPAS: 9.3/10.0;
      * MariaDB: 10.3.
      */
-    readonly engineVersion: string;
+    readonly engineVersion: string | ros.IResolvable;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    readonly period: number;
+    readonly period: number | ros.IResolvable;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    readonly periodType: string;
+    readonly periodType: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
      */
     readonly allocatePublicConnection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property archiveBackupKeepCount: The number of archived backups that can be retained. Default value: 1. Valid values: 
+     * The value of this parameter ranges from 1 to 31 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByMonth. 
+     * The value of this parameter ranges from 1 to 7 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByWeek. 
+     * Note You do not need to specify this parameter when the ArchiveBackupKeepPolicy 
+     * parameter is set to KeepAll.
+     */
+    readonly archiveBackupKeepCount?: number | ros.IResolvable;
+
+    /**
+     * @Property archiveBackupKeepPolicy: The period for which to retain archived backups. The number of archived backups that can 
+     *  be retained within the specified period is determined by the ArchiveBackupKeepCount parameter. 
+     *  Default value: 0. Valid values: 
+     * ByMonth 
+     *  ByWeek 
+     *  KeepAll
+     */
+    readonly archiveBackupKeepPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property archiveBackupRetentionPeriod: The number of days for which to retain archived backups. 
+     *  The default value 0 specifies not to enable the backup archiving function. Valid values: 30 to 1095.
+     */
+    readonly archiveBackupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property autoPay: Automatic Payment. Default is false.
@@ -3038,9 +3465,24 @@ export interface RosPrepayDBInstanceProps {
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
+     * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
+     * to be completed within seconds. Valid values: 
+     * Flash: specifies to enable the second-level backup function. 
+     *  Standard: specifies to disable the second-level backup function.
+     */
+    readonly backUpCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property backupPolicyMode: Backup type, 
+     * DataBackupPolicy: data backup 
+     * LogBackupPolicy: log backup
+     */
+    readonly backupPolicyMode?: string | ros.IResolvable;
+
+    /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    readonly backupRetentionPeriod?: number;
+    readonly backupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -3049,39 +3491,51 @@ export interface RosPrepayDBInstanceProps {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    readonly category?: string;
+    readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property compressType: The format used to compress backups. Valid values: 
+     *  1: The zlib tool is used to compress backups into .tar.gz files. 
+     *  4: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     * This compression format is supported only when the instance runs MySQL 5.6 or 5.7. 
+     * It can be used to restore individual databases and tables. 
+     *  8: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     *  This compression format is supported only when the instance runs MySQL 8.0. 
+     * It cannot be used to restore individual databases or tables.
+     */
+    readonly compressType?: number | ros.IResolvable;
 
     /**
      * @Property connectionMode: Connection Mode for database instance,support 'Standard' and 'Safe' mode. Default is RDS system assigns.
      */
-    readonly connectionMode?: string;
+    readonly connectionMode?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    readonly connectionStringPrefix?: string;
+    readonly connectionStringPrefix?: string | ros.IResolvable;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    readonly connectionStringType?: string;
+    readonly connectionStringType?: string | ros.IResolvable;
 
     /**
      * @Property couponCode: The coupon code of the order.
      */
-    readonly couponCode?: string;
+    readonly couponCode?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceNetType: Database instance net type, default is Intranet.Internet for public access, Intranet for private access.
      */
-    readonly dbInstanceNetType?: string;
+    readonly dbInstanceNetType?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -3089,14 +3543,14 @@ export interface RosPrepayDBInstanceProps {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    readonly dbInstanceStorageType?: string;
+    readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
      * @Property dbIsIgnoreCase: Specifies whether table names are case-sensitive. Valid values:
      * 1: Table names are not case-sensitive. This is the default value.
      * 0: Table names are case-sensitive.
      */
-    readonly dbIsIgnoreCase?: number;
+    readonly dbIsIgnoreCase?: number | ros.IResolvable;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -3106,37 +3560,92 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property dbParamGroupId: The ID of the parameter template used by the instance.
      */
-    readonly dbParamGroupId?: string;
+    readonly dbParamGroupId?: string | ros.IResolvable;
 
     /**
      * @Property dbTimeZone: The UTC time zone of the instance. Valid values: -12:00 to +12:00. The time zone must be an integer value such as +08:00. Values such as +08:30 are not allowed.
      */
-    readonly dbTimeZone?: string;
+    readonly dbTimeZone?: string | ros.IResolvable;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    readonly dedicatedHostGroupId?: string;
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
+     * True: specifies to enable the log backup function. 
+     * False: specifies to disable the log backup function. 
+     * Note You must specify this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly enableBackupLog?: boolean | ros.IResolvable;
 
     /**
      * @Property encryptionKey: The ID of the encryption key that is used to encrypt data on SSDs in the region. You can view the encryption key ID in the Key Management Service (KMS) console. You can also create an encryption key.
      */
-    readonly encryptionKey?: string;
+    readonly encryptionKey?: string | ros.IResolvable;
+
+    /**
+     * @Property highSpaceUsageProtection: Specifies whether to forcibly delete log backup files when the space usage of the 
+     *  instance exceeds 80% or the remaining space is less than 5 GB. Valid values: 
+     *  Enable and Disable. You can retain the default value. Note You must specify 
+     *  this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly highSpaceUsageProtection?: string | ros.IResolvable;
+
+    /**
+     * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
+     * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
+     * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
+     * parameter is set to LogBackupPolicy.
+     */
+    readonly localLogRetentionHours?: number | ros.IResolvable;
+
+    /**
+     * @Property localLogRetentionSpace: The maximum percentage of space that is allowed to store log backup files on the instance. 
+     *  If the space usage for log backup files exceeds this percentage, the system deletes earlier 
+     *  log backup files until the space usage falls below this percentage. Valid values:0 to 50. 
+     *  You can retain the default value. Note You must specify this parameter when the 
+     *  BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    readonly localLogRetentionSpace?: number | ros.IResolvable;
+
+    /**
+     * @Property logBackupFrequency: The frequency at which to back up logs. Valid values: 
+     * The value LogInterval specifies to back up logs every 30 minutes. 
+     *  The default value of this parameter is the same as the data backup frequency. 
+     * Note The value LogInterval is supported only when the instance runs SQL Server.
+     */
+    readonly logBackupFrequency?: string | ros.IResolvable;
+
+    /**
+     * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
+     * Default value: 60. Valid values: 6 to 100.
+     */
+    readonly logBackupLocalRetentionNumber?: number | ros.IResolvable;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730. The log backup 
+     *  retention period cannot be longer than the data backup retention period.Note If you enable the log 
+     *  backup function, you can specify the log backup retention period. This applies only when the 
+     *  instance runs MySQL, PostgreSQL, or PPAS.
+     */
+    readonly logBackupRetentionPeriod?: number | ros.IResolvable;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    readonly maintainTime?: string;
+    readonly maintainTime?: string | ros.IResolvable;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    readonly masterUsername?: string;
+    readonly masterUsername?: string | ros.IResolvable;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    readonly masterUserPassword?: string;
+    readonly masterUserPassword?: string | ros.IResolvable;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -3145,7 +3654,7 @@ export interface RosPrepayDBInstanceProps {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    readonly masterUserType?: string;
+    readonly masterUserType?: string | ros.IResolvable;
 
     /**
      * @Property multiAz: Specifies if the database instance is a multiple Availability Zone deployment.
@@ -3155,7 +3664,7 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property port: The port of the database service.
      */
-    readonly port?: number;
+    readonly port?: number | ros.IResolvable;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -3165,27 +3674,35 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    readonly preferredBackupTime?: string;
+    readonly preferredBackupTime?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * @Property quantity: The number of instance to be created, default is 1, max number is 99
      */
-    readonly quantity?: number;
+    readonly quantity?: number | ros.IResolvable;
+
+    /**
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     *  Valid values: 
+     * Lastest: Only the last archived backup is retained. 
+     *  All: All of the archived backups are retained.
+     */
+    readonly releasedKeepPolicy?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property roleArn: The Alibaba Cloud Resource Name (ARN) provided to the service account of the instance by your Alibaba Cloud account to connect to KMS. You can copy the ARN from the RAM console.
      */
-    readonly roleArn?: string;
+    readonly roleArn?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -3194,18 +3711,18 @@ export interface RosPrepayDBInstanceProps {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
      */
-    readonly slaveZoneIds?: string[];
+    readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    readonly sqlCollectorStatus?: string;
+    readonly sqlCollectorStatus?: string | ros.IResolvable;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -3214,7 +3731,7 @@ export interface RosPrepayDBInstanceProps {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    readonly sslSetting?: string;
+    readonly sslSetting?: string | ros.IResolvable;
 
     /**
      * @Property tags: The tags of an instance.
@@ -3231,37 +3748,37 @@ export interface RosPrepayDBInstanceProps {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property targetDedicatedHostIdForLog: The ID of the host to which the instance belongs if you create a log instance in a host group.
      */
-    readonly targetDedicatedHostIdForLog?: string;
+    readonly targetDedicatedHostIdForLog?: string | ros.IResolvable;
 
     /**
      * @Property targetDedicatedHostIdForMaster: The ID of the host to which the instance belongs if you create a primary instance in a host group.
      */
-    readonly targetDedicatedHostIdForMaster?: string;
+    readonly targetDedicatedHostIdForMaster?: string | ros.IResolvable;
 
     /**
      * @Property targetDedicatedHostIdForSlave: The ID of the host to which the instance belongs if you create a secondary instance in a host group.
      */
-    readonly targetDedicatedHostIdForSlave?: string;
+    readonly targetDedicatedHostIdForSlave?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -3282,26 +3799,16 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
-    if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
-        errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
-          data: properties.dbInstanceNetType,
-          allowedValues: ["Internet","Intranet"],
-        }));
+    if(properties.archiveBackupRetentionPeriod && (typeof properties.archiveBackupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupRetentionPeriod', ros.validateRange)({
+            data: properties.archiveBackupRetentionPeriod,
+            min: 30,
+            max: 1095,
+          }));
     }
-    errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    errors.collect(ros.propertyValidator('archiveBackupRetentionPeriod', ros.validateNumber)(properties.archiveBackupRetentionPeriod));
     errors.collect(ros.propertyValidator('dbTimeZone', ros.validateString)(properties.dbTimeZone));
-    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
             data: properties.port,
@@ -3310,27 +3817,24 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
-    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
-    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
-        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
-            data: properties.slaveZoneIds.length,
-            min: undefined,
-            max: 2,
+    if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
+            data: properties.archiveBackupKeepCount,
+            min: 1,
+            max: 31,
           }));
     }
-    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
-    errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
+    errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateNumber)(properties.archiveBackupKeepCount));
+    if(properties.logBackupRetentionPeriod && (typeof properties.logBackupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateRange)({
+            data: properties.logBackupRetentionPeriod,
+            min: 7,
+            max: 730,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateNumber)(properties.logBackupRetentionPeriod));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
-    errors.collect(ros.propertyValidator('commodityCode', ros.requiredValidator)(properties.commodityCode));
-    if(properties.commodityCode && (typeof properties.commodityCode) !== 'object') {
-        errors.collect(ros.propertyValidator('commodityCode', ros.validateAllowedValues)({
-          data: properties.commodityCode,
-          allowedValues: ["rds","bards","rords"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('commodityCode', ros.validateString)(properties.commodityCode));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosPrepayDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
@@ -3340,7 +3844,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
     errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
-    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -3349,28 +3852,28 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
-    errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    if(properties.quantity && (typeof properties.quantity) !== 'object') {
-        errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
-            data: properties.quantity,
-            min: 1,
-            max: 99,
-          }));
+    if(properties.archiveBackupKeepPolicy && (typeof properties.archiveBackupKeepPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateAllowedValues)({
+          data: properties.archiveBackupKeepPolicy,
+          allowedValues: ["ByMonth","ByWeek","KeepAll"],
+        }));
     }
-    errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
+    errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateString)(properties.archiveBackupKeepPolicy));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.backupPolicyMode && (typeof properties.backupPolicyMode) !== 'object') {
+        errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateAllowedValues)({
+          data: properties.backupPolicyMode,
+          allowedValues: ["DataBackupPolicy","LogBackupPolicy"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateString)(properties.backupPolicyMode));
     errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
@@ -3380,16 +3883,22 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
-    errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
-    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
-    if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
-        errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
-          data: properties.connectionStringType,
-          allowedValues: ["Inner","Public"],
+    if(properties.localLogRetentionHours && (typeof properties.localLogRetentionHours) !== 'object') {
+        errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateRange)({
+            data: properties.localLogRetentionHours,
+            min: 0,
+            max: 168,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateNumber)(properties.localLogRetentionHours));
+    if(properties.highSpaceUsageProtection && (typeof properties.highSpaceUsageProtection) !== 'object') {
+        errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateAllowedValues)({
+          data: properties.highSpaceUsageProtection,
+          allowedValues: ["Enable","Disable"],
         }));
     }
-    errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateString)(properties.highSpaceUsageProtection));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
     if(properties.masterUserPassword && (Array.isArray(properties.masterUserPassword) || (typeof properties.masterUserPassword) === 'string')) {
         errors.collect(ros.propertyValidator('masterUserPassword', ros.validateLength)({
             data: properties.masterUserPassword.length,
@@ -3398,14 +3907,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
-    errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
-    if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
-        errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
-          data: properties.masterUserType,
-          allowedValues: ["Normal","Super","Sysadmin"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
@@ -3416,6 +3917,108 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
+    if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
+        errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateRange)({
+            data: properties.localLogRetentionSpace,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
+    if(properties.category && (typeof properties.category) !== 'object') {
+        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
+          data: properties.category,
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
+    if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
+          data: properties.dbInstanceNetType,
+          allowedValues: ["Internet","Intranet"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
+          data: properties.releasedKeepPolicy,
+          allowedValues: ["Lastest","All"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
+    if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
+            data: properties.logBackupLocalRetentionNumber,
+            min: 6,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateNumber)(properties.logBackupLocalRetentionNumber));
+    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
+            data: properties.slaveZoneIds.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
+    errors.collect(ros.propertyValidator('dbIsIgnoreCase', ros.validateNumber)(properties.dbIsIgnoreCase));
+    errors.collect(ros.propertyValidator('commodityCode', ros.requiredValidator)(properties.commodityCode));
+    if(properties.commodityCode && (typeof properties.commodityCode) !== 'object') {
+        errors.collect(ros.propertyValidator('commodityCode', ros.validateAllowedValues)({
+          data: properties.commodityCode,
+          allowedValues: ["rds","bards","rords"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('commodityCode', ros.validateString)(properties.commodityCode));
+    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
+    errors.collect(ros.propertyValidator('dbParamGroupId', ros.validateString)(properties.dbParamGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
+    errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    if(properties.quantity && (typeof properties.quantity) !== 'object') {
+        errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
+            data: properties.quantity,
+            min: 1,
+            max: 99,
+          }));
+    }
+    errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
+    if(properties.backUpCategory && (typeof properties.backUpCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('backUpCategory', ros.validateAllowedValues)({
+          data: properties.backUpCategory,
+          allowedValues: ["Flash","Standard"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
+    errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
+    if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
+          data: properties.connectionStringType,
+          allowedValues: ["Inner","Public"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
+    errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
+    if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
+        errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
+          data: properties.masterUserType,
+          allowedValues: ["Normal","Super","Sysadmin"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
+    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
           data: properties.sqlCollectorStatus,
@@ -3449,10 +4052,16 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       Period: ros.numberToRosTemplate(properties.period),
       PeriodType: ros.stringToRosTemplate(properties.periodType),
       AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
+      ArchiveBackupKeepCount: ros.numberToRosTemplate(properties.archiveBackupKeepCount),
+      ArchiveBackupKeepPolicy: ros.stringToRosTemplate(properties.archiveBackupKeepPolicy),
+      ArchiveBackupRetentionPeriod: ros.numberToRosTemplate(properties.archiveBackupRetentionPeriod),
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      BackUpCategory: ros.stringToRosTemplate(properties.backUpCategory),
+      BackupPolicyMode: ros.stringToRosTemplate(properties.backupPolicyMode),
       BackupRetentionPeriod: ros.numberToRosTemplate(properties.backupRetentionPeriod),
       Category: ros.stringToRosTemplate(properties.category),
+      CompressType: ros.numberToRosTemplate(properties.compressType),
       ConnectionMode: ros.stringToRosTemplate(properties.connectionMode),
       ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
       ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
@@ -3465,7 +4074,14 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       DBParamGroupId: ros.stringToRosTemplate(properties.dbParamGroupId),
       DBTimeZone: ros.stringToRosTemplate(properties.dbTimeZone),
       DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
+      HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
+      LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
+      LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
+      LogBackupLocalRetentionNumber: ros.numberToRosTemplate(properties.logBackupLocalRetentionNumber),
+      LogBackupRetentionPeriod: ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
       MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
       MasterUsername: ros.stringToRosTemplate(properties.masterUsername),
       MasterUserPassword: ros.stringToRosTemplate(properties.masterUserPassword),
@@ -3476,13 +4092,14 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       Quantity: ros.numberToRosTemplate(properties.quantity),
+      ReleasedKeepPolicy: ros.stringToRosTemplate(properties.releasedKeepPolicy),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RoleARN: ros.stringToRosTemplate(properties.roleArn),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TargetDedicatedHostIdForLog: ros.stringToRosTemplate(properties.targetDedicatedHostIdForLog),
       TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
       TargetDedicatedHostIdForSlave: ros.stringToRosTemplate(properties.targetDedicatedHostIdForSlave),
@@ -3509,42 +4126,42 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrInnerConnectionString: any;
+    public readonly attrInnerConnectionString: ros.IResolvable;
 
     /**
      * @Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public readonly attrInnerIpAddress: any;
+    public readonly attrInnerIpAddress: ros.IResolvable;
 
     /**
      * @Attribute InnerPort: Intranet port of created DB instance.
      */
-    public readonly attrInnerPort: any;
+    public readonly attrInnerPort: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The order id list of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public readonly attrPublicConnectionString: any;
+    public readonly attrPublicConnectionString: ros.IResolvable;
 
     /**
      * @Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public readonly attrPublicIpAddress: any;
+    public readonly attrPublicIpAddress: ros.IResolvable;
 
     /**
      * @Attribute PublicPort: Internet port of created DB instance.
      */
-    public readonly attrPublicPort: any;
+    public readonly attrPublicPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3552,22 +4169,22 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property commodityCode: The CommodityCode of the order.
      */
-    public commodityCode: string;
+    public commodityCode: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceClass: Database instance type. Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
      */
-    public dbInstanceClass: string;
+    public dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
      */
-    public dbInstanceStorage: number;
+    public dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
      */
-    public engine: string;
+    public engine: string | ros.IResolvable;
 
     /**
      * @Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0;
@@ -3576,22 +4193,49 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * PPAS: 9.3/10.0;
      * MariaDB: 10.3.
      */
-    public engineVersion: string;
+    public engineVersion: string | ros.IResolvable;
 
     /**
      * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
      */
-    public period: number;
+    public period: number | ros.IResolvable;
 
     /**
      * @Property periodType: Charge period for created instances.
      */
-    public periodType: string;
+    public periodType: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicConnection: If true, allocate public connection automate.
      */
     public allocatePublicConnection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property archiveBackupKeepCount: The number of archived backups that can be retained. Default value: 1. Valid values: 
+     * The value of this parameter ranges from 1 to 31 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByMonth. 
+     * The value of this parameter ranges from 1 to 7 when the ArchiveBackupKeepPolicy 
+     *  parameter is set to ByWeek. 
+     * Note You do not need to specify this parameter when the ArchiveBackupKeepPolicy 
+     * parameter is set to KeepAll.
+     */
+    public archiveBackupKeepCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property archiveBackupKeepPolicy: The period for which to retain archived backups. The number of archived backups that can 
+     *  be retained within the specified period is determined by the ArchiveBackupKeepCount parameter. 
+     *  Default value: 0. Valid values: 
+     * ByMonth 
+     *  ByWeek 
+     *  KeepAll
+     */
+    public archiveBackupKeepPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property archiveBackupRetentionPeriod: The number of days for which to retain archived backups. 
+     *  The default value 0 specifies not to enable the backup archiving function. Valid values: 30 to 1095.
+     */
+    public archiveBackupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property autoPay: Automatic Payment. Default is false.
@@ -3604,9 +4248,24 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public autoRenew: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property backUpCategory: Specifies whether to enable the second-level backup function. This function allows a backup 
+     * to be completed within seconds. Valid values: 
+     * Flash: specifies to enable the second-level backup function. 
+     *  Standard: specifies to disable the second-level backup function.
+     */
+    public backUpCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property backupPolicyMode: Backup type, 
+     * DataBackupPolicy: data backup 
+     * LogBackupPolicy: log backup
+     */
+    public backupPolicyMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property backupRetentionPeriod: The retention period of the data backup. Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
      */
-    public backupRetentionPeriod: number | undefined;
+    public backupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -3615,39 +4274,51 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * AlwaysOn: specifies to use the Cluster Edition.
      * Finance: specifies to use the Enterprise Edition.
      */
-    public category: string | undefined;
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property compressType: The format used to compress backups. Valid values: 
+     *  1: The zlib tool is used to compress backups into .tar.gz files. 
+     *  4: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     * This compression format is supported only when the instance runs MySQL 5.6 or 5.7. 
+     * It can be used to restore individual databases and tables. 
+     *  8: The QuickLZ tool is used to compress backups into .xb.gz files. 
+     *  This compression format is supported only when the instance runs MySQL 8.0. 
+     * It cannot be used to restore individual databases or tables.
+     */
+    public compressType: number | ros.IResolvable | undefined;
 
     /**
      * @Property connectionMode: Connection Mode for database instance,support 'Standard' and 'Safe' mode. Default is RDS system assigns.
      */
-    public connectionMode: string | undefined;
+    public connectionMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringPrefix: The prefix of the endpoint. 
      * Only the prefix of the CurrentConnectionString parameter value can be modified.
      * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
      */
-    public connectionStringPrefix: string | undefined;
+    public connectionStringPrefix: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public
      */
-    public connectionStringType: string | undefined;
+    public connectionStringType: string | ros.IResolvable | undefined;
 
     /**
      * @Property couponCode: The coupon code of the order.
      */
-    public couponCode: string | undefined;
+    public couponCode: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceNetType: Database instance net type, default is Intranet.Internet for public access, Intranet for private access.
      */
-    public dbInstanceNetType: string | undefined;
+    public dbInstanceNetType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -3655,14 +4326,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * cloud_ssd: specifies to use standard SSDs.
      * cloud_essd: specifies to use enhanced SSDs.
      */
-    public dbInstanceStorageType: string | undefined;
+    public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbIsIgnoreCase: Specifies whether table names are case-sensitive. Valid values:
      * 1: Table names are not case-sensitive. This is the default value.
      * 0: Table names are case-sensitive.
      */
-    public dbIsIgnoreCase: number | undefined;
+    public dbIsIgnoreCase: number | ros.IResolvable | undefined;
 
     /**
      * @Property dbMappings: Database mappings to attach to db instance.
@@ -3672,37 +4343,92 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property dbParamGroupId: The ID of the parameter template used by the instance.
      */
-    public dbParamGroupId: string | undefined;
+    public dbParamGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbTimeZone: The UTC time zone of the instance. Valid values: -12:00 to +12:00. The time zone must be an integer value such as +08:00. Values such as +08:30 are not allowed.
      */
-    public dbTimeZone: string | undefined;
+    public dbTimeZone: string | ros.IResolvable | undefined;
 
     /**
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
-    public dedicatedHostGroupId: string | undefined;
+    public dedicatedHostGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
+     * True: specifies to enable the log backup function. 
+     * False: specifies to disable the log backup function. 
+     * Note You must specify this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public enableBackupLog: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property encryptionKey: The ID of the encryption key that is used to encrypt data on SSDs in the region. You can view the encryption key ID in the Key Management Service (KMS) console. You can also create an encryption key.
      */
-    public encryptionKey: string | undefined;
+    public encryptionKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property highSpaceUsageProtection: Specifies whether to forcibly delete log backup files when the space usage of the 
+     *  instance exceeds 80% or the remaining space is less than 5 GB. Valid values: 
+     *  Enable and Disable. You can retain the default value. Note You must specify 
+     *  this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public highSpaceUsageProtection: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
+     * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
+     * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
+     * parameter is set to LogBackupPolicy.
+     */
+    public localLogRetentionHours: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property localLogRetentionSpace: The maximum percentage of space that is allowed to store log backup files on the instance. 
+     *  If the space usage for log backup files exceeds this percentage, the system deletes earlier 
+     *  log backup files until the space usage falls below this percentage. Valid values:0 to 50. 
+     *  You can retain the default value. Note You must specify this parameter when the 
+     *  BackupPolicyMode parameter is set to LogBackupPolicy.
+     */
+    public localLogRetentionSpace: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupFrequency: The frequency at which to back up logs. Valid values: 
+     * The value LogInterval specifies to back up logs every 30 minutes. 
+     *  The default value of this parameter is the same as the data backup frequency. 
+     * Note The value LogInterval is supported only when the instance runs SQL Server.
+     */
+    public logBackupFrequency: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
+     * Default value: 60. Valid values: 6 to 100.
+     */
+    public logBackupLocalRetentionNumber: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which to retain log backup files. Valid values: 7 to 730. The log backup 
+     *  retention period cannot be longer than the data backup retention period.Note If you enable the log 
+     *  backup function, you can specify the log backup retention period. This applies only when the 
+     *  instance runs MySQL, PostgreSQL, or PPAS.
+     */
+    public logBackupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property maintainTime: The period during which the maintenance performs. The format is HH:mmZ-HH:mmZ.
      */
-    public maintainTime: string | undefined;
+    public maintainTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUsername: The master user name for the database instance.
      */
-    public masterUsername: string | undefined;
+    public masterUsername: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserPassword: The master password for the database instance.
      */
-    public masterUserPassword: string | undefined;
+    public masterUserPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterUserType: Privilege type of account.
@@ -3711,7 +4437,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * The default value is Normal.
      */
-    public masterUserType: string | undefined;
+    public masterUserType: string | ros.IResolvable | undefined;
 
     /**
      * @Property multiAz: Specifies if the database instance is a multiple Availability Zone deployment.
@@ -3721,7 +4447,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property port: The port of the database service.
      */
-    public port: number | undefined;
+    public port: number | ros.IResolvable | undefined;
 
     /**
      * @Property preferredBackupPeriod: The backup period. Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
@@ -3731,27 +4457,35 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property preferredBackupTime: The time when the backup task is performed. Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
      */
-    public preferredBackupTime: string | undefined;
+    public preferredBackupTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The private ip for created instance.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * @Property quantity: The number of instance to be created, default is 1, max number is 99
      */
-    public quantity: number | undefined;
+    public quantity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released. Default value: None. 
+     *  Valid values: 
+     * Lastest: Only the last archived backup is retained. 
+     *  All: All of the archived backups are retained.
+     */
+    public releasedKeepPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property roleArn: The Alibaba Cloud Resource Name (ARN) provided to the service account of the instance by your Alibaba Cloud account to connect to KMS. You can copy the ARN from the RAM console.
      */
-    public roleArn: string | undefined;
+    public roleArn: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The ID of the ECS security groups. 
@@ -3760,18 +4494,18 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * To delete an ECS Security group, leave this parameter empty. 
      *
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
      */
-    public slaveZoneIds: string[] | undefined;
+    public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
-    public sqlCollectorStatus: string | undefined;
+    public sqlCollectorStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. Valid values:
@@ -3780,7 +4514,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
      * Default value is Disabled.
      */
-    public sslSetting: string | undefined;
+    public sslSetting: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The tags of an instance.
@@ -3797,37 +4531,37 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property targetDedicatedHostIdForLog: The ID of the host to which the instance belongs if you create a log instance in a host group.
      */
-    public targetDedicatedHostIdForLog: string | undefined;
+    public targetDedicatedHostIdForLog: string | ros.IResolvable | undefined;
 
     /**
      * @Property targetDedicatedHostIdForMaster: The ID of the host to which the instance belongs if you create a primary instance in a host group.
      */
-    public targetDedicatedHostIdForMaster: string | undefined;
+    public targetDedicatedHostIdForMaster: string | ros.IResolvable | undefined;
 
     /**
      * @Property targetDedicatedHostIdForSlave: The ID of the host to which the instance belongs if you create a secondary instance in a host group.
      */
-    public targetDedicatedHostIdForSlave: string | undefined;
+    public targetDedicatedHostIdForSlave: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC id of created database instance. For VPC network, the property is required.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The vSwitch id of created instance. For VPC network, the property is required.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: selected zone to create database instance. You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::PrepayDBInstance`.
@@ -3838,14 +4572,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPrepayDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPrepayDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrInnerConnectionString = ros.Token.asString(this.getAtt('InnerConnectionString'));
-        this.attrInnerIpAddress = ros.Token.asString(this.getAtt('InnerIPAddress'));
-        this.attrInnerPort = ros.Token.asString(this.getAtt('InnerPort'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPublicConnectionString = ros.Token.asString(this.getAtt('PublicConnectionString'));
-        this.attrPublicIpAddress = ros.Token.asString(this.getAtt('PublicIPAddress'));
-        this.attrPublicPort = ros.Token.asString(this.getAtt('PublicPort'));
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrInnerConnectionString = this.getAtt('InnerConnectionString');
+        this.attrInnerIpAddress = this.getAtt('InnerIPAddress');
+        this.attrInnerPort = this.getAtt('InnerPort');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
+        this.attrPublicIpAddress = this.getAtt('PublicIPAddress');
+        this.attrPublicPort = this.getAtt('PublicPort');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.commodityCode = props.commodityCode;
@@ -3856,10 +4590,16 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.period = props.period;
         this.periodType = props.periodType;
         this.allocatePublicConnection = props.allocatePublicConnection;
+        this.archiveBackupKeepCount = props.archiveBackupKeepCount;
+        this.archiveBackupKeepPolicy = props.archiveBackupKeepPolicy;
+        this.archiveBackupRetentionPeriod = props.archiveBackupRetentionPeriod;
         this.autoPay = props.autoPay;
         this.autoRenew = props.autoRenew;
+        this.backUpCategory = props.backUpCategory;
+        this.backupPolicyMode = props.backupPolicyMode;
         this.backupRetentionPeriod = props.backupRetentionPeriod;
         this.category = props.category;
+        this.compressType = props.compressType;
         this.connectionMode = props.connectionMode;
         this.connectionStringPrefix = props.connectionStringPrefix;
         this.connectionStringType = props.connectionStringType;
@@ -3872,7 +4612,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.dbParamGroupId = props.dbParamGroupId;
         this.dbTimeZone = props.dbTimeZone;
         this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
+        this.highSpaceUsageProtection = props.highSpaceUsageProtection;
+        this.localLogRetentionHours = props.localLogRetentionHours;
+        this.localLogRetentionSpace = props.localLogRetentionSpace;
+        this.logBackupFrequency = props.logBackupFrequency;
+        this.logBackupLocalRetentionNumber = props.logBackupLocalRetentionNumber;
+        this.logBackupRetentionPeriod = props.logBackupRetentionPeriod;
         this.maintainTime = props.maintainTime;
         this.masterUsername = props.masterUsername;
         this.masterUserPassword = props.masterUserPassword;
@@ -3883,13 +4630,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.preferredBackupTime = props.preferredBackupTime;
         this.privateIpAddress = props.privateIpAddress;
         this.quantity = props.quantity;
+        this.releasedKeepPolicy = props.releasedKeepPolicy;
         this.resourceGroupId = props.resourceGroupId;
         this.roleArn = props.roleArn;
         this.securityGroupId = props.securityGroupId;
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::RDS::PrepayDBInstance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.targetDedicatedHostIdForLog = props.targetDedicatedHostIdForLog;
         this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
         this.targetDedicatedHostIdForSlave = props.targetDedicatedHostIdForSlave;
@@ -3909,10 +4657,16 @@ export class RosPrepayDBInstance extends ros.RosResource {
             period: this.period,
             periodType: this.periodType,
             allocatePublicConnection: this.allocatePublicConnection,
+            archiveBackupKeepCount: this.archiveBackupKeepCount,
+            archiveBackupKeepPolicy: this.archiveBackupKeepPolicy,
+            archiveBackupRetentionPeriod: this.archiveBackupRetentionPeriod,
             autoPay: this.autoPay,
             autoRenew: this.autoRenew,
+            backUpCategory: this.backUpCategory,
+            backupPolicyMode: this.backupPolicyMode,
             backupRetentionPeriod: this.backupRetentionPeriod,
             category: this.category,
+            compressType: this.compressType,
             connectionMode: this.connectionMode,
             connectionStringPrefix: this.connectionStringPrefix,
             connectionStringType: this.connectionStringType,
@@ -3925,7 +4679,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
             dbParamGroupId: this.dbParamGroupId,
             dbTimeZone: this.dbTimeZone,
             dedicatedHostGroupId: this.dedicatedHostGroupId,
+            enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
+            highSpaceUsageProtection: this.highSpaceUsageProtection,
+            localLogRetentionHours: this.localLogRetentionHours,
+            localLogRetentionSpace: this.localLogRetentionSpace,
+            logBackupFrequency: this.logBackupFrequency,
+            logBackupLocalRetentionNumber: this.logBackupLocalRetentionNumber,
+            logBackupRetentionPeriod: this.logBackupRetentionPeriod,
             maintainTime: this.maintainTime,
             masterUsername: this.masterUsername,
             masterUserPassword: this.masterUserPassword,
@@ -3936,13 +4697,14 @@ export class RosPrepayDBInstance extends ros.RosResource {
             preferredBackupTime: this.preferredBackupTime,
             privateIpAddress: this.privateIpAddress,
             quantity: this.quantity,
+            releasedKeepPolicy: this.releasedKeepPolicy,
             resourceGroupId: this.resourceGroupId,
             roleArn: this.roleArn,
             securityGroupId: this.securityGroupId,
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             targetDedicatedHostIdForLog: this.targetDedicatedHostIdForLog,
             targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
             targetDedicatedHostIdForSlave: this.targetDedicatedHostIdForSlave,
@@ -3964,15 +4726,15 @@ export namespace RosPrepayDBInstance {
         /**
          * @Property characterSetName: For supported engines, specifies the character set to associate with the database instance.
          */
-        readonly characterSetName: string;
+        readonly characterSetName: string | ros.IResolvable;
         /**
          * @Property dbDescription: Specifies the database description, containing up to 256 characters.
          */
-        readonly dbDescription?: string;
+        readonly dbDescription?: string | ros.IResolvable;
         /**
          * @Property dbName: Consists of [2, 64] lower case letters, numbers, underscores, lines, letters. Must start with a letter, end with letters or numbers
          */
-        readonly dbName: string;
+        readonly dbName: string | ros.IResolvable;
     }
 }
 /**
@@ -4026,17 +4788,17 @@ export interface RosReadOnlyDBInstanceProps {
     /**
      * @Property dbInstanceClass: The type of the instance. For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the master instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: The storage space of the instance. Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
@@ -4045,12 +4807,12 @@ export interface RosReadOnlyDBInstanceProps {
      * - 8.0
      * - 2017_ent
      */
-    readonly engineVersion: string;
+    readonly engineVersion: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The ID of the zone. You can call the DescribeRegions API operation to view the latest zones.
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -4058,12 +4820,12 @@ export interface RosReadOnlyDBInstanceProps {
      * - HighAvailability
      * - AlwaysOn
      */
-    readonly category?: string;
+    readonly category?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -4071,22 +4833,22 @@ export interface RosReadOnlyDBInstanceProps {
      * - cloud_ssd: SSDs.
      * - cloud_essd: ESSDs.
      */
-    readonly dbInstanceStorageType?: string;
+    readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
      * @Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property tags: The tags of an instance.
@@ -4103,17 +4865,17 @@ export interface RosReadOnlyDBInstanceProps {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property vpcId: The ID of the VPC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -4168,7 +4930,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosReadOnlyDBInstanceProps"');
 }
 
@@ -4197,7 +4959,7 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
       PayType: ros.stringToRosTemplate(properties.payType),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
@@ -4220,17 +4982,17 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     /**
      * @Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * @Attribute Port: Intranet port of created DB instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -4238,17 +5000,17 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     /**
      * @Property dbInstanceClass: The type of the instance. For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
      */
-    public dbInstanceClass: string;
+    public dbInstanceClass: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceId: The ID of the master instance.
      */
-    public dbInstanceId: string;
+    public dbInstanceId: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceStorage: The storage space of the instance. Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
      */
-    public dbInstanceStorage: number;
+    public dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
@@ -4257,12 +5019,12 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      * - 8.0
      * - 2017_ent
      */
-    public engineVersion: string;
+    public engineVersion: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The ID of the zone. You can call the DescribeRegions API operation to view the latest zones.
      */
-    public zoneId: string;
+    public zoneId: string | ros.IResolvable;
 
     /**
      * @Property category: The edition of the instance. Valid values:
@@ -4270,12 +5032,12 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      * - HighAvailability
      * - AlwaysOn
      */
-    public category: string | undefined;
+    public category: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceDescription: Description of created database instance.
      */
-    public dbInstanceDescription: string | undefined;
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -4283,22 +5045,22 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      * - cloud_ssd: SSDs.
      * - cloud_essd: ESSDs.
      */
-    public dbInstanceStorageType: string | undefined;
+    public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
      * @Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
      */
-    public payType: string | undefined;
+    public payType: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The tags of an instance.
@@ -4315,17 +5077,17 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property vpcId: The ID of the VPC.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RDS::ReadOnlyDBInstance`.
@@ -4336,9 +5098,9 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosReadOnlyDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosReadOnlyDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionString = ros.Token.asString(this.getAtt('ConnectionString'));
-        this.attrDbInstanceId = ros.Token.asString(this.getAtt('DBInstanceId'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
+        this.attrConnectionString = this.getAtt('ConnectionString');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceClass = props.dbInstanceClass;
@@ -4352,7 +5114,7 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
         this.payType = props.payType;
         this.privateIpAddress = props.privateIpAddress;
         this.resourceGroupId = props.resourceGroupId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::RDS::ReadOnlyDBInstance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
     }
@@ -4371,7 +5133,7 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
             payType: this.payType,
             privateIpAddress: this.privateIpAddress,
             resourceGroupId: this.resourceGroupId,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
         };

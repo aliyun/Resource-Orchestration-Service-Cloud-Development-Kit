@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::IpSets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.999Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.589Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IpSetsProps")
 @software.amazon.jsii.Jsii.Proxy(IpSetsProps.Jsii$Proxy.class)
 public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property accelerateRegion:.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccelerateRegion();
 
     /**
+     * Property acceleratorId: The ID of the GA instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId();
 
     /**
      * @return a {@link Builder} of {@link IpSetsProps}
@@ -27,11 +29,11 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<IpSetsProps> {
         private java.lang.Object accelerateRegion;
-        private java.lang.String acceleratorId;
+        private java.lang.Object acceleratorId;
 
         /**
          * Sets the value of {@link IpSetsProps#getAccelerateRegion}
-         * @param accelerateRegion the value to be set. This parameter is required.
+         * @param accelerateRegion Property accelerateRegion:. This parameter is required.
          * @return {@code this}
          */
         public Builder accelerateRegion(com.aliyun.ros.cdk.core.IResolvable accelerateRegion) {
@@ -41,7 +43,7 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IpSetsProps#getAccelerateRegion}
-         * @param accelerateRegion the value to be set. This parameter is required.
+         * @param accelerateRegion Property accelerateRegion:. This parameter is required.
          * @return {@code this}
          */
         public Builder accelerateRegion(java.util.List<? extends java.lang.Object> accelerateRegion) {
@@ -51,10 +53,20 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IpSetsProps#getAcceleratorId}
-         * @param acceleratorId the value to be set. This parameter is required.
+         * @param acceleratorId Property acceleratorId: The ID of the GA instance. This parameter is required.
          * @return {@code this}
          */
         public Builder acceleratorId(java.lang.String acceleratorId) {
+            this.acceleratorId = acceleratorId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link IpSetsProps#getAcceleratorId}
+         * @param acceleratorId Property acceleratorId: The ID of the GA instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder acceleratorId(com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
             this.acceleratorId = acceleratorId;
             return this;
         }
@@ -76,7 +88,7 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements IpSetsProps {
         private final java.lang.Object accelerateRegion;
-        private final java.lang.String acceleratorId;
+        private final java.lang.Object acceleratorId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +97,13 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.accelerateRegion = software.amazon.jsii.Kernel.get(this, "accelerateRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accelerateRegion, final java.lang.String acceleratorId) {
+        protected Jsii$Proxy(final java.lang.Object accelerateRegion, final java.lang.Object acceleratorId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accelerateRegion = java.util.Objects.requireNonNull(accelerateRegion, "accelerateRegion is required");
             this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
@@ -103,7 +115,7 @@ public interface IpSetsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAcceleratorId() {
+        public final java.lang.Object getAcceleratorId() {
             return this.acceleratorId;
         }
 

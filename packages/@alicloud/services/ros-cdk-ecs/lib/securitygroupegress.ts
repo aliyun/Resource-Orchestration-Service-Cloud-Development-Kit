@@ -11,58 +11,58 @@ export interface SecurityGroupEgressProps {
     /**
      * Property ipProtocol: Ip protocol for in rule.
      */
-    readonly ipProtocol: string;
+    readonly ipProtocol: string | ros.IResolvable;
 
     /**
      * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
      */
-    readonly portRange: string;
+    readonly portRange: string | ros.IResolvable;
 
     /**
      * Property description: Description of the security group rule, [1, 512] characters. The default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
      */
-    readonly destCidrIp?: string;
+    readonly destCidrIp?: string | ros.IResolvable;
 
     /**
      * Property destGroupId: Dest Group Id
      */
-    readonly destGroupId?: string;
+    readonly destGroupId?: string | ros.IResolvable;
 
     /**
      * Property destGroupOwnerId: Dest Group Owner Account ID
      */
-    readonly destGroupOwnerId?: string;
+    readonly destGroupOwnerId?: string | ros.IResolvable;
 
     /**
      * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
-    readonly ipv6DestCidrIp?: string;
+    readonly ipv6DestCidrIp?: string | ros.IResolvable;
 
     /**
      * Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
      */
-    readonly nicType?: string;
+    readonly nicType?: string | ros.IResolvable;
 
     /**
      * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
      */
-    readonly policy?: string;
+    readonly policy?: string | ros.IResolvable;
 
     /**
      * Property priority: Authorization policies priority range[1, 100]
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * Property securityGroupId: Id of the security group.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 }
 
 /**

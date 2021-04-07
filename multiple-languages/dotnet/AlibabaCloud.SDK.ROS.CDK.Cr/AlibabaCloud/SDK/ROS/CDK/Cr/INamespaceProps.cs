@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     public interface INamespaceProps
     {
         /// <summary>Property namespace: domain name.</summary>
-        [JsiiProperty(name: "namespace", typeJson: "{\"primitive\":\"string\"}")]
-        string Namespace
+        [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Namespace
         {
             get;
         }
@@ -27,9 +27,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <summary>Property defaultVisibility: repository default visibility, public or private.</summary>
-        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DefaultVisibility
+        object? DefaultVisibility
         {
             get
             {
@@ -46,10 +46,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             }
 
             /// <summary>Property namespace: domain name.</summary>
-            [JsiiProperty(name: "namespace", typeJson: "{\"primitive\":\"string\"}")]
-            public string Namespace
+            [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Namespace
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property autoCreate: whether auto create repository.</summary>
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 
             /// <summary>Property defaultVisibility: repository default visibility, public or private.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "defaultVisibility", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DefaultVisibility
+            [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DefaultVisibility
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

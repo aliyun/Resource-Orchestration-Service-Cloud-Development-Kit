@@ -3,26 +3,30 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControlBindingProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficControlBindingProps.Jsii$Proxy.class)
 public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property apiIds: APIs to bind with the traffic control.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getApiIds();
 
     /**
+     * Property groupId: The id of group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property stageName: Bind traffic in this stage.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
+     * Property trafficControlId: The id of traffic control.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTrafficControlId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlId();
 
     /**
      * @return a {@link Builder} of {@link TrafficControlBindingProps}
@@ -35,13 +39,13 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
      */
     public static final class Builder implements software.amazon.jsii.Builder<TrafficControlBindingProps> {
         private java.lang.Object apiIds;
-        private java.lang.String groupId;
-        private java.lang.String stageName;
-        private java.lang.String trafficControlId;
+        private java.lang.Object groupId;
+        private java.lang.Object stageName;
+        private java.lang.Object trafficControlId;
 
         /**
          * Sets the value of {@link TrafficControlBindingProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to bind with the traffic control. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(java.util.List<? extends java.lang.Object> apiIds) {
@@ -51,7 +55,7 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link TrafficControlBindingProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to bind with the traffic control. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(com.aliyun.ros.cdk.core.IResolvable apiIds) {
@@ -61,7 +65,7 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link TrafficControlBindingProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The id of group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -70,8 +74,18 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link TrafficControlBindingProps#getGroupId}
+         * @param groupId Property groupId: The id of group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlBindingProps#getStageName}
-         * @param stageName the value to be set. This parameter is required.
+         * @param stageName Property stageName: Bind traffic in this stage. This parameter is required.
          * @return {@code this}
          */
         public Builder stageName(java.lang.String stageName) {
@@ -80,11 +94,31 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link TrafficControlBindingProps#getStageName}
+         * @param stageName Property stageName: Bind traffic in this stage. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlBindingProps#getTrafficControlId}
-         * @param trafficControlId the value to be set. This parameter is required.
+         * @param trafficControlId Property trafficControlId: The id of traffic control. This parameter is required.
          * @return {@code this}
          */
         public Builder trafficControlId(java.lang.String trafficControlId) {
+            this.trafficControlId = trafficControlId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TrafficControlBindingProps#getTrafficControlId}
+         * @param trafficControlId Property trafficControlId: The id of traffic control. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder trafficControlId(com.aliyun.ros.cdk.core.IResolvable trafficControlId) {
             this.trafficControlId = trafficControlId;
             return this;
         }
@@ -106,9 +140,9 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficControlBindingProps {
         private final java.lang.Object apiIds;
-        private final java.lang.String groupId;
-        private final java.lang.String stageName;
-        private final java.lang.String trafficControlId;
+        private final java.lang.Object groupId;
+        private final java.lang.Object stageName;
+        private final java.lang.Object trafficControlId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -117,15 +151,15 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.apiIds = software.amazon.jsii.Kernel.get(this, "apiIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.trafficControlId = software.amazon.jsii.Kernel.get(this, "trafficControlId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.trafficControlId = software.amazon.jsii.Kernel.get(this, "trafficControlId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.String groupId, final java.lang.String stageName, final java.lang.String trafficControlId) {
+        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object trafficControlId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiIds = java.util.Objects.requireNonNull(apiIds, "apiIds is required");
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
@@ -139,17 +173,17 @@ public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 
         @Override
-        public final java.lang.String getTrafficControlId() {
+        public final java.lang.Object getTrafficControlId() {
             return this.trafficControlId;
         }
 

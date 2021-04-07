@@ -34,6 +34,7 @@
 @alicloud/ros-cdk-sls.RosMachineGroup=com.aliyun.ros.cdk.sls.RosMachineGroup
 @alicloud/ros-cdk-sls.RosMachineGroupProps=com.aliyun.ros.cdk.sls.RosMachineGroupProps
 @alicloud/ros-cdk-sls.RosProject=com.aliyun.ros.cdk.sls.RosProject
+@alicloud/ros-cdk-sls.RosProject.TagsProperty=com.aliyun.ros.cdk.sls.RosProject$TagsProperty
 @alicloud/ros-cdk-sls.RosProjectProps=com.aliyun.ros.cdk.sls.RosProjectProps
 @alicloud/ros-cdk-sls.RosSavedsearch=com.aliyun.ros.cdk.sls.RosSavedsearch
 @alicloud/ros-cdk-sls.RosSavedsearch.DetailProperty=com.aliyun.ros.cdk.sls.RosSavedsearch$DetailProperty

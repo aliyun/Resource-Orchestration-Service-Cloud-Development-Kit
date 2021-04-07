@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     public interface IACLAssociationProps
     {
         /// <summary>Property aclId: Access control ID.</summary>
-        [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}")]
-        string AclId
+        [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AclId
         {
             get;
         }
 
         /// <summary>Property smartAgId: An intelligent gateway instance that needs to bind access control.</summary>
-        [JsiiProperty(name: "smartAgId", typeJson: "{\"primitive\":\"string\"}")]
-        string SmartAgId
+        [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SmartAgId
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
 
             /// <summary>Property aclId: Access control ID.</summary>
-            [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}")]
-            public string AclId
+            [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AclId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property smartAgId: An intelligent gateway instance that needs to bind access control.</summary>
-            [JsiiProperty(name: "smartAgId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SmartAgId
+            [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SmartAgId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

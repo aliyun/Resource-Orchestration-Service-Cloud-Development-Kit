@@ -3,36 +3,36 @@ package com.aliyun.ros.cdk.uis;
 /**
  * Properties for defining a `ALIYUN::UIS::UisNode`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.430Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.133Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.RosUisNodeProps")
 @software.amazon.jsii.Jsii.Proxy(RosUisNodeProps.Jsii$Proxy.class)
 public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getIpAddrsNum();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpAddrsNum();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisNodeAreaId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeAreaId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getUisNodeBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeBandwidth();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -46,12 +46,12 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosUisNodeProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUisNodeProps> {
-        private java.lang.Number ipAddrsNum;
-        private java.lang.String uisId;
-        private java.lang.String uisNodeAreaId;
-        private java.lang.Number uisNodeBandwidth;
-        private java.lang.String description;
-        private java.lang.String name;
+        private java.lang.Object ipAddrsNum;
+        private java.lang.Object uisId;
+        private java.lang.Object uisNodeAreaId;
+        private java.lang.Object uisNodeBandwidth;
+        private java.lang.Object description;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link RosUisNodeProps#getIpAddrsNum}
@@ -59,6 +59,16 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder ipAddrsNum(java.lang.Number ipAddrsNum) {
+            this.ipAddrsNum = ipAddrsNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisNodeProps#getIpAddrsNum}
+         * @param ipAddrsNum the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipAddrsNum(com.aliyun.ros.cdk.core.IResolvable ipAddrsNum) {
             this.ipAddrsNum = ipAddrsNum;
             return this;
         }
@@ -74,11 +84,31 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUisNodeProps#getUisId}
+         * @param uisId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisId(com.aliyun.ros.cdk.core.IResolvable uisId) {
+            this.uisId = uisId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUisNodeProps#getUisNodeAreaId}
          * @param uisNodeAreaId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder uisNodeAreaId(java.lang.String uisNodeAreaId) {
+            this.uisNodeAreaId = uisNodeAreaId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisNodeProps#getUisNodeAreaId}
+         * @param uisNodeAreaId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisNodeAreaId(com.aliyun.ros.cdk.core.IResolvable uisNodeAreaId) {
             this.uisNodeAreaId = uisNodeAreaId;
             return this;
         }
@@ -94,6 +124,16 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUisNodeProps#getUisNodeBandwidth}
+         * @param uisNodeBandwidth the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisNodeBandwidth(com.aliyun.ros.cdk.core.IResolvable uisNodeBandwidth) {
+            this.uisNodeBandwidth = uisNodeBandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUisNodeProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -104,11 +144,31 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUisNodeProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUisNodeProps#getName}
          * @param name the value to be set.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisNodeProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -129,12 +189,12 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosUisNodeProps {
-        private final java.lang.Number ipAddrsNum;
-        private final java.lang.String uisId;
-        private final java.lang.String uisNodeAreaId;
-        private final java.lang.Number uisNodeBandwidth;
-        private final java.lang.String description;
-        private final java.lang.String name;
+        private final java.lang.Object ipAddrsNum;
+        private final java.lang.Object uisId;
+        private final java.lang.Object uisNodeAreaId;
+        private final java.lang.Object uisNodeBandwidth;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -142,18 +202,18 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ipAddrsNum = software.amazon.jsii.Kernel.get(this, "ipAddrsNum", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.uisId = software.amazon.jsii.Kernel.get(this, "uisId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.uisNodeAreaId = software.amazon.jsii.Kernel.get(this, "uisNodeAreaId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.uisNodeBandwidth = software.amazon.jsii.Kernel.get(this, "uisNodeBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ipAddrsNum = software.amazon.jsii.Kernel.get(this, "ipAddrsNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uisId = software.amazon.jsii.Kernel.get(this, "uisId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uisNodeAreaId = software.amazon.jsii.Kernel.get(this, "uisNodeAreaId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uisNodeBandwidth = software.amazon.jsii.Kernel.get(this, "uisNodeBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number ipAddrsNum, final java.lang.String uisId, final java.lang.String uisNodeAreaId, final java.lang.Number uisNodeBandwidth, final java.lang.String description, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object ipAddrsNum, final java.lang.Object uisId, final java.lang.Object uisNodeAreaId, final java.lang.Object uisNodeBandwidth, final java.lang.Object description, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ipAddrsNum = java.util.Objects.requireNonNull(ipAddrsNum, "ipAddrsNum is required");
             this.uisId = java.util.Objects.requireNonNull(uisId, "uisId is required");
@@ -164,32 +224,32 @@ public interface RosUisNodeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getIpAddrsNum() {
+        public final java.lang.Object getIpAddrsNum() {
             return this.ipAddrsNum;
         }
 
         @Override
-        public final java.lang.String getUisId() {
+        public final java.lang.Object getUisId() {
             return this.uisId;
         }
 
         @Override
-        public final java.lang.String getUisNodeAreaId() {
+        public final java.lang.Object getUisNodeAreaId() {
             return this.uisNodeAreaId;
         }
 
         @Override
-        public final java.lang.Number getUisNodeBandwidth() {
+        public final java.lang.Object getUisNodeBandwidth() {
             return this.uisNodeBandwidth;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

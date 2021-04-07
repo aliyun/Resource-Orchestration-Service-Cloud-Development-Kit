@@ -3,30 +3,48 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Snapshot`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.707Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSnapshotProps")
 @software.amazon.jsii.Jsii.Proxy(RosSnapshotProps.Jsii$Proxy.class)
 public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDiskId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDiskId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstantAccess() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstantAccessRetentionDays() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
@@ -40,10 +58,13 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosSnapshotProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSnapshotProps> {
-        private java.lang.String diskId;
-        private java.lang.String description;
-        private java.lang.String snapshotName;
-        private java.lang.Number timeout;
+        private java.lang.Object diskId;
+        private java.lang.Object description;
+        private java.lang.Object instantAccess;
+        private java.lang.Object instantAccessRetentionDays;
+        private java.lang.Object snapshotName;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
+        private java.lang.Object timeout;
 
         /**
          * Sets the value of {@link RosSnapshotProps#getDiskId}
@@ -51,6 +72,16 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder diskId(java.lang.String diskId) {
+            this.diskId = diskId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getDiskId}
+         * @param diskId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder diskId(com.aliyun.ros.cdk.core.IResolvable diskId) {
             this.diskId = diskId;
             return this;
         }
@@ -66,12 +97,83 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosSnapshotProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getInstantAccess}
+         * @param instantAccess the value to be set.
+         * @return {@code this}
+         */
+        public Builder instantAccess(java.lang.Boolean instantAccess) {
+            this.instantAccess = instantAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getInstantAccess}
+         * @param instantAccess the value to be set.
+         * @return {@code this}
+         */
+        public Builder instantAccess(com.aliyun.ros.cdk.core.IResolvable instantAccess) {
+            this.instantAccess = instantAccess;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getInstantAccessRetentionDays}
+         * @param instantAccessRetentionDays the value to be set.
+         * @return {@code this}
+         */
+        public Builder instantAccessRetentionDays(java.lang.Number instantAccessRetentionDays) {
+            this.instantAccessRetentionDays = instantAccessRetentionDays;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getInstantAccessRetentionDays}
+         * @param instantAccessRetentionDays the value to be set.
+         * @return {@code this}
+         */
+        public Builder instantAccessRetentionDays(com.aliyun.ros.cdk.core.IResolvable instantAccessRetentionDays) {
+            this.instantAccessRetentionDays = instantAccessRetentionDays;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSnapshotProps#getSnapshotName}
          * @param snapshotName the value to be set.
          * @return {@code this}
          */
         public Builder snapshotName(java.lang.String snapshotName) {
             this.snapshotName = snapshotName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getSnapshotName}
+         * @param snapshotName the value to be set.
+         * @return {@code this}
+         */
+        public Builder snapshotName(com.aliyun.ros.cdk.core.IResolvable snapshotName) {
+            this.snapshotName = snapshotName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSnapshotProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty>)tags;
             return this;
         }
 
@@ -86,13 +188,23 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosSnapshotProps#getTimeout}
+         * @param timeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosSnapshotProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosSnapshotProps build() {
-            return new Jsii$Proxy(diskId, description, snapshotName, timeout);
+            return new Jsii$Proxy(diskId, description, instantAccess, instantAccessRetentionDays, snapshotName, tags, timeout);
         }
     }
 
@@ -101,10 +213,13 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSnapshotProps {
-        private final java.lang.String diskId;
-        private final java.lang.String description;
-        private final java.lang.String snapshotName;
-        private final java.lang.Number timeout;
+        private final java.lang.Object diskId;
+        private final java.lang.Object description;
+        private final java.lang.Object instantAccess;
+        private final java.lang.Object instantAccessRetentionDays;
+        private final java.lang.Object snapshotName;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
+        private final java.lang.Object timeout;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -112,40 +227,62 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.diskId = software.amazon.jsii.Kernel.get(this, "diskId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.snapshotName = software.amazon.jsii.Kernel.get(this, "snapshotName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.diskId = software.amazon.jsii.Kernel.get(this, "diskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instantAccess = software.amazon.jsii.Kernel.get(this, "instantAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instantAccessRetentionDays = software.amazon.jsii.Kernel.get(this, "instantAccessRetentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snapshotName = software.amazon.jsii.Kernel.get(this, "snapshotName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty.class)));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String diskId, final java.lang.String description, final java.lang.String snapshotName, final java.lang.Number timeout) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object diskId, final java.lang.Object description, final java.lang.Object instantAccess, final java.lang.Object instantAccessRetentionDays, final java.lang.Object snapshotName, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags, final java.lang.Object timeout) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.diskId = java.util.Objects.requireNonNull(diskId, "diskId is required");
             this.description = description;
+            this.instantAccess = instantAccess;
+            this.instantAccessRetentionDays = instantAccessRetentionDays;
             this.snapshotName = snapshotName;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty>)tags;
             this.timeout = timeout;
         }
 
         @Override
-        public final java.lang.String getDiskId() {
+        public final java.lang.Object getDiskId() {
             return this.diskId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getSnapshotName() {
+        public final java.lang.Object getInstantAccess() {
+            return this.instantAccess;
+        }
+
+        @Override
+        public final java.lang.Object getInstantAccessRetentionDays() {
+            return this.instantAccessRetentionDays;
+        }
+
+        @Override
+        public final java.lang.Object getSnapshotName() {
             return this.snapshotName;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
@@ -159,8 +296,17 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getInstantAccess() != null) {
+                data.set("instantAccess", om.valueToTree(this.getInstantAccess()));
+            }
+            if (this.getInstantAccessRetentionDays() != null) {
+                data.set("instantAccessRetentionDays", om.valueToTree(this.getInstantAccessRetentionDays()));
+            }
             if (this.getSnapshotName() != null) {
                 data.set("snapshotName", om.valueToTree(this.getSnapshotName()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getTimeout() != null) {
                 data.set("timeout", om.valueToTree(this.getTimeout()));
@@ -185,7 +331,10 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
 
             if (!diskId.equals(that.diskId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.instantAccess != null ? !this.instantAccess.equals(that.instantAccess) : that.instantAccess != null) return false;
+            if (this.instantAccessRetentionDays != null ? !this.instantAccessRetentionDays.equals(that.instantAccessRetentionDays) : that.instantAccessRetentionDays != null) return false;
             if (this.snapshotName != null ? !this.snapshotName.equals(that.snapshotName) : that.snapshotName != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
         }
 
@@ -193,7 +342,10 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
         public final int hashCode() {
             int result = this.diskId.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.instantAccess != null ? this.instantAccess.hashCode() : 0);
+            result = 31 * result + (this.instantAccessRetentionDays != null ? this.instantAccessRetentionDays.hashCode() : 0);
             result = 31 * result + (this.snapshotName != null ? this.snapshotName.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             return result;
         }

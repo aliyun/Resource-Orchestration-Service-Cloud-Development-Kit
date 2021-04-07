@@ -3,6 +3,7 @@
 @alicloud/ros-cdk-sae.Namespace=com.aliyun.ros.cdk.sae.Namespace
 @alicloud/ros-cdk-sae.NamespaceProps=com.aliyun.ros.cdk.sae.NamespaceProps
 @alicloud/ros-cdk-sae.RosApplication=com.aliyun.ros.cdk.sae.RosApplication
+@alicloud/ros-cdk-sae.RosApplication.TagsProperty=com.aliyun.ros.cdk.sae.RosApplication$TagsProperty
 @alicloud/ros-cdk-sae.RosApplicationProps=com.aliyun.ros.cdk.sae.RosApplicationProps
 @alicloud/ros-cdk-sae.RosNamespace=com.aliyun.ros.cdk.sae.RosNamespace
 @alicloud/ros-cdk-sae.RosNamespaceProps=com.aliyun.ros.cdk.sae.RosNamespaceProps

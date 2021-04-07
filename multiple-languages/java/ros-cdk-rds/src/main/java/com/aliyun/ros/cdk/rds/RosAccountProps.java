@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.256Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.951Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountPassword();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountPassword();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountType() {
         return null;
     }
 
@@ -42,11 +42,11 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAccountProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccountProps> {
-        private java.lang.String accountName;
-        private java.lang.String accountPassword;
-        private java.lang.String dbInstanceId;
-        private java.lang.String accountDescription;
-        private java.lang.String accountType;
+        private java.lang.Object accountName;
+        private java.lang.Object accountPassword;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object accountDescription;
+        private java.lang.Object accountType;
 
         /**
          * Sets the value of {@link RosAccountProps#getAccountName}
@@ -54,6 +54,16 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getAccountName}
+         * @param accountName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
             this.accountName = accountName;
             return this;
         }
@@ -69,11 +79,31 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAccountProps#getAccountPassword}
+         * @param accountPassword the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {
+            this.accountPassword = accountPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccountProps#getDbInstanceId}
          * @param dbInstanceId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getDbInstanceId}
+         * @param dbInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
             this.dbInstanceId = dbInstanceId;
             return this;
         }
@@ -89,11 +119,31 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAccountProps#getAccountDescription}
+         * @param accountDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder accountDescription(com.aliyun.ros.cdk.core.IResolvable accountDescription) {
+            this.accountDescription = accountDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccountProps#getAccountType}
          * @param accountType the value to be set.
          * @return {@code this}
          */
         public Builder accountType(java.lang.String accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getAccountType}
+         * @param accountType the value to be set.
+         * @return {@code this}
+         */
+        public Builder accountType(com.aliyun.ros.cdk.core.IResolvable accountType) {
             this.accountType = accountType;
             return this;
         }
@@ -114,11 +164,11 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccountProps {
-        private final java.lang.String accountName;
-        private final java.lang.String accountPassword;
-        private final java.lang.String dbInstanceId;
-        private final java.lang.String accountDescription;
-        private final java.lang.String accountType;
+        private final java.lang.Object accountName;
+        private final java.lang.Object accountPassword;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object accountDescription;
+        private final java.lang.Object accountType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +176,17 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountDescription = software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountDescription = software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accountName, final java.lang.String accountPassword, final java.lang.String dbInstanceId, final java.lang.String accountDescription, final java.lang.String accountType) {
+        protected Jsii$Proxy(final java.lang.Object accountName, final java.lang.Object accountPassword, final java.lang.Object dbInstanceId, final java.lang.Object accountDescription, final java.lang.Object accountType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accountName = java.util.Objects.requireNonNull(accountName, "accountName is required");
             this.accountPassword = java.util.Objects.requireNonNull(accountPassword, "accountPassword is required");
@@ -146,27 +196,27 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAccountName() {
+        public final java.lang.Object getAccountName() {
             return this.accountName;
         }
 
         @Override
-        public final java.lang.String getAccountPassword() {
+        public final java.lang.Object getAccountPassword() {
             return this.accountPassword;
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.String getAccountDescription() {
+        public final java.lang.Object getAccountDescription() {
             return this.accountDescription;
         }
 
         @Override
-        public final java.lang.String getAccountType() {
+        public final java.lang.Object getAccountType() {
             return this.accountType;
         }
 

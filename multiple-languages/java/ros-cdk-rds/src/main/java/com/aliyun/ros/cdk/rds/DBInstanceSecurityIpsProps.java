@@ -3,22 +3,27 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceSecurityIpsProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceSecurityIpsProps.Jsii$Proxy.class)
 public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbInstanceId: Database instance id to update security ips.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
+     * Property dbInstanceIpArrayAttribute: Security ips to add or remove.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceIpArrayAttribute();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceIpArrayAttribute();
 
     /**
+     * Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'.
+     * <p>
+     * Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceIpArrayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceIpArrayName() {
         return null;
     }
 
@@ -32,13 +37,13 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link DBInstanceSecurityIpsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBInstanceSecurityIpsProps> {
-        private java.lang.String dbInstanceId;
-        private java.lang.String dbInstanceIpArrayAttribute;
-        private java.lang.String dbInstanceIpArrayName;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object dbInstanceIpArrayAttribute;
+        private java.lang.Object dbInstanceIpArrayName;
 
         /**
          * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceId}
-         * @param dbInstanceId the value to be set. This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Database instance id to update security ips. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
@@ -47,8 +52,18 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceId}
+         * @param dbInstanceId Property dbInstanceId: Database instance id to update security ips. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceIpArrayAttribute}
-         * @param dbInstanceIpArrayAttribute the value to be set. This parameter is required.
+         * @param dbInstanceIpArrayAttribute Property dbInstanceIpArrayAttribute: Security ips to add or remove. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceIpArrayAttribute(java.lang.String dbInstanceIpArrayAttribute) {
@@ -57,11 +72,33 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceIpArrayAttribute}
+         * @param dbInstanceIpArrayAttribute Property dbInstanceIpArrayAttribute: Security ips to add or remove. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceIpArrayAttribute(com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayAttribute) {
+            this.dbInstanceIpArrayAttribute = dbInstanceIpArrayAttribute;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceIpArrayName}
-         * @param dbInstanceIpArrayName the value to be set.
+         * @param dbInstanceIpArrayName Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'.
+         *                              Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
          * @return {@code this}
          */
         public Builder dbInstanceIpArrayName(java.lang.String dbInstanceIpArrayName) {
+            this.dbInstanceIpArrayName = dbInstanceIpArrayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceSecurityIpsProps#getDbInstanceIpArrayName}
+         * @param dbInstanceIpArrayName Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'.
+         *                              Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
+         * @return {@code this}
+         */
+        public Builder dbInstanceIpArrayName(com.aliyun.ros.cdk.core.IResolvable dbInstanceIpArrayName) {
             this.dbInstanceIpArrayName = dbInstanceIpArrayName;
             return this;
         }
@@ -82,9 +119,9 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBInstanceSecurityIpsProps {
-        private final java.lang.String dbInstanceId;
-        private final java.lang.String dbInstanceIpArrayAttribute;
-        private final java.lang.String dbInstanceIpArrayName;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object dbInstanceIpArrayAttribute;
+        private final java.lang.Object dbInstanceIpArrayName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +129,15 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceIpArrayAttribute = software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayAttribute", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceIpArrayName = software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceIpArrayAttribute = software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayAttribute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceIpArrayName = software.amazon.jsii.Kernel.get(this, "dbInstanceIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbInstanceId, final java.lang.String dbInstanceIpArrayAttribute, final java.lang.String dbInstanceIpArrayName) {
+        protected Jsii$Proxy(final java.lang.Object dbInstanceId, final java.lang.Object dbInstanceIpArrayAttribute, final java.lang.Object dbInstanceIpArrayName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
             this.dbInstanceIpArrayAttribute = java.util.Objects.requireNonNull(dbInstanceIpArrayAttribute, "dbInstanceIpArrayAttribute is required");
@@ -108,17 +145,17 @@ public interface DBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.String getDbInstanceIpArrayAttribute() {
+        public final java.lang.Object getDbInstanceIpArrayAttribute() {
             return this.dbInstanceIpArrayAttribute;
         }
 
         @Override
-        public final java.lang.String getDbInstanceIpArrayName() {
+        public final java.lang.Object getDbInstanceIpArrayName() {
             return this.dbInstanceIpArrayName;
         }
 

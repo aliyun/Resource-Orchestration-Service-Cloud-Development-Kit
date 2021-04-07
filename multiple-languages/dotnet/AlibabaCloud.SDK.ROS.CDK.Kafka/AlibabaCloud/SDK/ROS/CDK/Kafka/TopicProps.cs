@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// <remarks>
         /// You can call the GetInstanceList operation to query instances.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceId
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// The value can only contain letters, digits, hyphens (-), and underscores (_).
         /// The value must be 3 to 64 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Remark
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Remark
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// if it contains more characters.
         /// The name cannot be modified after being created.
         /// </remarks>
-        [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Topic
+        [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Topic
         {
             get;
             set;
@@ -58,8 +58,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// risk of data skew.Note:For special requirements,submit a ticket.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "partitionNum", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? PartitionNum
+        [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PartitionNum
         {
             get;
             set;

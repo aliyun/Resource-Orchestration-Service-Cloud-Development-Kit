@@ -11,12 +11,12 @@ export interface InstanceProps {
     /**
      * Property databasePassword: The logon password of the database instance.
      */
-    readonly databasePassword: string;
+    readonly databasePassword: string | ros.IResolvable;
 
     /**
      * Property databaseUser: The logon username of the database instance.
      */
-    readonly databaseUser: string;
+    readonly databaseUser: string | ros.IResolvable;
 
     /**
      * Property dbaUid: The Alibaba Cloud unique ID (UID) of the database administrator (DBA) of the database
@@ -24,30 +24,30 @@ export interface InstanceProps {
      * Note To query the UID, log on to the DMS Enterprise console and choose System Management
      * > User Management.
      */
-    readonly dbaUid: number;
+    readonly dbaUid: number | ros.IResolvable;
 
     /**
      * Property envType: The type of the environment to which the database instance belongs. Valid values:
      * product: the production environment.
      * dev: the test environment.
      */
-    readonly envType: string;
+    readonly envType: string | ros.IResolvable;
 
     /**
      * Property exportTimeout: The timeout period for exporting the database instance. Unit: seconds.
      */
-    readonly exportTimeout: number;
+    readonly exportTimeout: number | ros.IResolvable;
 
     /**
      * Property host: The endpoint of the database instance.
      */
-    readonly host: string;
+    readonly host: string | ros.IResolvable;
 
     /**
      * Property instanceAlias: The alias of the database instance. The alias helps you quickly find the required
      * instance.
      */
-    readonly instanceAlias: string;
+    readonly instanceAlias: string | ros.IResolvable;
 
     /**
      * Property instanceSource: The source of the database instance. Valid values:
@@ -57,29 +57,29 @@ export interface InstanceProps {
      * VPC_IDC: an on-premises database built in an Internet data center (IDC) in Virtual Private
      * Cloud (VPC).
      */
-    readonly instanceSource: string;
+    readonly instanceSource: string | ros.IResolvable;
 
     /**
      * Property instanceType: The type of the database instance. Valid values: MySQL, SQLServer, PostgreSQL, Oracle, DRDS, OceanBase, Mongo, Redis
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 
     /**
      * Property networkType: The network type of the database instance. Valid values:
      * CLASSIC
      * VPC
      */
-    readonly networkType: string;
+    readonly networkType: string | ros.IResolvable;
 
     /**
      * Property port: The connection port of the database instance.
      */
-    readonly port: number;
+    readonly port: number | ros.IResolvable;
 
     /**
      * Property queryTimeout: The timeout period for querying the database instance. Unit: seconds.
      */
-    readonly queryTimeout: number;
+    readonly queryTimeout: number | ros.IResolvable;
 
     /**
      * Property safeRule: The security rule of the database instance. Enter the name of the security rule for
@@ -88,7 +88,7 @@ export interface InstanceProps {
      * System Management > Security Rules. The security rule appears in the security rule
      * list.
      */
-    readonly safeRule: string;
+    readonly safeRule: string | ros.IResolvable;
 
     /**
      * Property tid: The ID of the tenant.
@@ -96,12 +96,12 @@ export interface InstanceProps {
      * > Instance Management or System Management > User Management. The ID of the tenant
      * appears in the Service Specification section.
      */
-    readonly tid: number;
+    readonly tid: number | ros.IResolvable;
 
     /**
      * Property dataLinkName: The name of the data link for cross-database query.
      */
-    readonly dataLinkName?: string;
+    readonly dataLinkName?: string | ros.IResolvable;
 
     /**
      * Property ddlOnline: [Important] Specifies whether to enable the online data description language (DDL)
@@ -110,25 +110,25 @@ export interface InstanceProps {
      * 1: The native online DDL service prevails.
      * 2: Data change without table locking provided by DMS prevails.
      */
-    readonly ddlOnline?: number;
+    readonly ddlOnline?: number | ros.IResolvable;
 
     /**
      * Property ecsInstanceId: The ID of the ECS instance to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN.
      */
-    readonly ecsInstanceId?: string;
+    readonly ecsInstanceId?: string | ros.IResolvable;
 
     /**
      * Property ecsRegion: The region where the database instance resides.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN or VPC_IDC.
      */
-    readonly ecsRegion?: string;
+    readonly ecsRegion?: string | ros.IResolvable;
 
     /**
      * Property sid: The system ID (SID) of the database instance.
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
-    readonly sid?: string;
+    readonly sid?: string | ros.IResolvable;
 
     /**
      * Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid
@@ -136,13 +136,13 @@ export interface InstanceProps {
      * 0: disabled
      * 1: enabled
      */
-    readonly useDsql?: number;
+    readonly useDsql?: number | ros.IResolvable;
 
     /**
      * Property vpcId: The ID of the VPC to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -158,17 +158,17 @@ export class Instance extends ros.Resource {
     /**
      * Attribute Host: The endpoint of the database instance.
      */
-    public readonly attrHost: any;
+    public readonly attrHost: ros.IResolvable;
 
     /**
      * Attribute InstanceId: The ID of the database instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute Port: The connection port of the database instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DMS::Instance`.

@@ -12,23 +12,23 @@ export interface SecretProps {
      * Property secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
      * value and stores it in the initial version.
      */
-    readonly secretData: string;
+    readonly secretData: string | ros.IResolvable;
 
     /**
      * Property secretName: The name of the secret.
      */
-    readonly secretName: string;
+    readonly secretName: string | ros.IResolvable;
 
     /**
      * Property versionId: The version number of the initial version. Version numbers are unique in each secret
      * object.
      */
-    readonly versionId: string;
+    readonly versionId: string | ros.IResolvable;
 
     /**
      * Property description: The description of the secret.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
@@ -36,7 +36,7 @@ export interface SecretProps {
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
-    readonly encryptionKeyId?: string;
+    readonly encryptionKeyId?: string | ros.IResolvable;
 
     /**
      * Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -48,19 +48,19 @@ export interface SecretProps {
     /**
      * Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
-    readonly recoveryWindowInDays?: number;
+    readonly recoveryWindowInDays?: number | ros.IResolvable;
 
     /**
      * Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
-    readonly secretDataType?: string;
+    readonly secretDataType?: string | ros.IResolvable;
 
     /**
      * Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
-    readonly versionStages?: string[];
+    readonly versionStages?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -76,12 +76,12 @@ export class Secret extends ros.Resource {
     /**
      * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * Attribute SecretName: The name of the secret.
      */
-    public readonly attrSecretName: any;
+    public readonly attrSecretName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::KMS::Secret`.

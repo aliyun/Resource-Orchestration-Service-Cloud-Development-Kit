@@ -3,76 +3,88 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.586Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageProps.Jsii$Proxy.class)
 public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
+     * Property type: The type of the bandwidth plan.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
+     * Property autoPay: The AutoPay of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoPay() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property autoUseCoupon: The AutoUseCoupon  of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoUseCoupon() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoUseCoupon() {
         return null;
     }
 
     /**
+     * Property bandwidthType: the bandwidth BandwidthType of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBandwidthType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthType() {
         return null;
     }
 
     /**
+     * Property billingType: The BillingType of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBillingType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBillingType() {
         return null;
     }
 
     /**
+     * Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCbnGeographicRegionIdA() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCbnGeographicRegionIdA() {
         return null;
     }
 
     /**
+     * Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCbnGeographicRegionIdB() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCbnGeographicRegionIdB() {
         return null;
     }
 
     /**
+     * Property chargeType: The ChargeType of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
     /**
+     * Property duration:.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
+     * Property pricingCycle:.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property ratio: The Ratio of the bandwidth.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRatio() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRatio() {
         return null;
     }
 
@@ -86,22 +98,22 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link BandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BandwidthPackageProps> {
-        private java.lang.Number bandwidth;
-        private java.lang.String type;
-        private java.lang.String autoPay;
-        private java.lang.String autoUseCoupon;
-        private java.lang.String bandwidthType;
-        private java.lang.String billingType;
-        private java.lang.String cbnGeographicRegionIdA;
-        private java.lang.String cbnGeographicRegionIdB;
-        private java.lang.String chargeType;
-        private java.lang.String duration;
-        private java.lang.String pricingCycle;
-        private java.lang.String ratio;
+        private java.lang.Object bandwidth;
+        private java.lang.Object type;
+        private java.lang.Object autoPay;
+        private java.lang.Object autoUseCoupon;
+        private java.lang.Object bandwidthType;
+        private java.lang.Object billingType;
+        private java.lang.Object cbnGeographicRegionIdA;
+        private java.lang.Object cbnGeographicRegionIdB;
+        private java.lang.Object chargeType;
+        private java.lang.Object duration;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object ratio;
 
         /**
          * Sets the value of {@link BandwidthPackageProps#getBandwidth}
-         * @param bandwidth the value to be set. This parameter is required.
+         * @param bandwidth Property bandwidth: The bandwidth provided by the bandwidth plan. This parameter is required.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -110,8 +122,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth provided by the bandwidth plan. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getType}
-         * @param type the value to be set. This parameter is required.
+         * @param type Property type: The type of the bandwidth plan. This parameter is required.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -120,8 +142,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getType}
+         * @param type Property type: The type of the bandwidth plan. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: The AutoPay of the bandwidth.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.String autoPay) {
@@ -130,8 +162,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getAutoPay}
+         * @param autoPay Property autoPay: The AutoPay of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.autoPay = autoPay;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getAutoUseCoupon}
-         * @param autoUseCoupon the value to be set.
+         * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon  of the bandwidth.
          * @return {@code this}
          */
         public Builder autoUseCoupon(java.lang.String autoUseCoupon) {
@@ -140,8 +182,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getAutoUseCoupon}
+         * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon  of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder autoUseCoupon(com.aliyun.ros.cdk.core.IResolvable autoUseCoupon) {
+            this.autoUseCoupon = autoUseCoupon;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getBandwidthType}
-         * @param bandwidthType the value to be set.
+         * @param bandwidthType Property bandwidthType: the bandwidth BandwidthType of the bandwidth.
          * @return {@code this}
          */
         public Builder bandwidthType(java.lang.String bandwidthType) {
@@ -150,8 +202,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getBandwidthType}
+         * @param bandwidthType Property bandwidthType: the bandwidth BandwidthType of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder bandwidthType(com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.bandwidthType = bandwidthType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getBillingType}
-         * @param billingType the value to be set.
+         * @param billingType Property billingType: The BillingType of the bandwidth.
          * @return {@code this}
          */
         public Builder billingType(java.lang.String billingType) {
@@ -160,8 +222,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getBillingType}
+         * @param billingType Property billingType: The BillingType of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder billingType(com.aliyun.ros.cdk.core.IResolvable billingType) {
+            this.billingType = billingType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getCbnGeographicRegionIdA}
-         * @param cbnGeographicRegionIdA the value to be set.
+         * @param cbnGeographicRegionIdA Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth.
          * @return {@code this}
          */
         public Builder cbnGeographicRegionIdA(java.lang.String cbnGeographicRegionIdA) {
@@ -170,8 +242,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getCbnGeographicRegionIdA}
+         * @param cbnGeographicRegionIdA Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder cbnGeographicRegionIdA(com.aliyun.ros.cdk.core.IResolvable cbnGeographicRegionIdA) {
+            this.cbnGeographicRegionIdA = cbnGeographicRegionIdA;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getCbnGeographicRegionIdB}
-         * @param cbnGeographicRegionIdB the value to be set.
+         * @param cbnGeographicRegionIdB Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth.
          * @return {@code this}
          */
         public Builder cbnGeographicRegionIdB(java.lang.String cbnGeographicRegionIdB) {
@@ -180,8 +262,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getCbnGeographicRegionIdB}
+         * @param cbnGeographicRegionIdB Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder cbnGeographicRegionIdB(com.aliyun.ros.cdk.core.IResolvable cbnGeographicRegionIdB) {
+            this.cbnGeographicRegionIdB = cbnGeographicRegionIdB;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getChargeType}
-         * @param chargeType the value to be set.
+         * @param chargeType Property chargeType: The ChargeType of the bandwidth.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -190,8 +282,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getChargeType}
+         * @param chargeType Property chargeType: The ChargeType of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getDuration}
-         * @param duration the value to be set.
+         * @param duration Property duration:.
          * @return {@code this}
          */
         public Builder duration(java.lang.String duration) {
@@ -200,8 +302,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getDuration}
+         * @param duration Property duration:.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle:.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -210,11 +322,31 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle:.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getRatio}
-         * @param ratio the value to be set.
+         * @param ratio Property ratio: The Ratio of the bandwidth.
          * @return {@code this}
          */
         public Builder ratio(java.lang.String ratio) {
+            this.ratio = ratio;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BandwidthPackageProps#getRatio}
+         * @param ratio Property ratio: The Ratio of the bandwidth.
+         * @return {@code this}
+         */
+        public Builder ratio(com.aliyun.ros.cdk.core.IResolvable ratio) {
             this.ratio = ratio;
             return this;
         }
@@ -235,18 +367,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BandwidthPackageProps {
-        private final java.lang.Number bandwidth;
-        private final java.lang.String type;
-        private final java.lang.String autoPay;
-        private final java.lang.String autoUseCoupon;
-        private final java.lang.String bandwidthType;
-        private final java.lang.String billingType;
-        private final java.lang.String cbnGeographicRegionIdA;
-        private final java.lang.String cbnGeographicRegionIdB;
-        private final java.lang.String chargeType;
-        private final java.lang.String duration;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String ratio;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object type;
+        private final java.lang.Object autoPay;
+        private final java.lang.Object autoUseCoupon;
+        private final java.lang.Object bandwidthType;
+        private final java.lang.Object billingType;
+        private final java.lang.Object cbnGeographicRegionIdA;
+        private final java.lang.Object cbnGeographicRegionIdB;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object duration;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object ratio;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -254,24 +386,24 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.bandwidthType = software.amazon.jsii.Kernel.get(this, "bandwidthType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.billingType = software.amazon.jsii.Kernel.get(this, "billingType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cbnGeographicRegionIdA = software.amazon.jsii.Kernel.get(this, "cbnGeographicRegionIdA", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cbnGeographicRegionIdB = software.amazon.jsii.Kernel.get(this, "cbnGeographicRegionIdB", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ratio = software.amazon.jsii.Kernel.get(this, "ratio", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthType = software.amazon.jsii.Kernel.get(this, "bandwidthType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.billingType = software.amazon.jsii.Kernel.get(this, "billingType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cbnGeographicRegionIdA = software.amazon.jsii.Kernel.get(this, "cbnGeographicRegionIdA", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cbnGeographicRegionIdB = software.amazon.jsii.Kernel.get(this, "cbnGeographicRegionIdB", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ratio = software.amazon.jsii.Kernel.get(this, "ratio", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number bandwidth, final java.lang.String type, final java.lang.String autoPay, final java.lang.String autoUseCoupon, final java.lang.String bandwidthType, final java.lang.String billingType, final java.lang.String cbnGeographicRegionIdA, final java.lang.String cbnGeographicRegionIdB, final java.lang.String chargeType, final java.lang.String duration, final java.lang.String pricingCycle, final java.lang.String ratio) {
+        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object type, final java.lang.Object autoPay, final java.lang.Object autoUseCoupon, final java.lang.Object bandwidthType, final java.lang.Object billingType, final java.lang.Object cbnGeographicRegionIdA, final java.lang.Object cbnGeographicRegionIdB, final java.lang.Object chargeType, final java.lang.Object duration, final java.lang.Object pricingCycle, final java.lang.Object ratio) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
             this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -288,62 +420,62 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getAutoPay() {
+        public final java.lang.Object getAutoPay() {
             return this.autoPay;
         }
 
         @Override
-        public final java.lang.String getAutoUseCoupon() {
+        public final java.lang.Object getAutoUseCoupon() {
             return this.autoUseCoupon;
         }
 
         @Override
-        public final java.lang.String getBandwidthType() {
+        public final java.lang.Object getBandwidthType() {
             return this.bandwidthType;
         }
 
         @Override
-        public final java.lang.String getBillingType() {
+        public final java.lang.Object getBillingType() {
             return this.billingType;
         }
 
         @Override
-        public final java.lang.String getCbnGeographicRegionIdA() {
+        public final java.lang.Object getCbnGeographicRegionIdA() {
             return this.cbnGeographicRegionIdA;
         }
 
         @Override
-        public final java.lang.String getCbnGeographicRegionIdB() {
+        public final java.lang.Object getCbnGeographicRegionIdB() {
             return this.cbnGeographicRegionIdB;
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.String getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getRatio() {
+        public final java.lang.Object getRatio() {
             return this.ratio;
         }
 

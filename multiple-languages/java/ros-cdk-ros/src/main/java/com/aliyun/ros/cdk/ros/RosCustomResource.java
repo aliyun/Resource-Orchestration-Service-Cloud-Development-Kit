@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::CustomResource`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.020Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosCustomResource")
 public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutputs() {
-        return software.amazon.jsii.Kernel.get(this, "attrOutputs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOutputs() {
+        return software.amazon.jsii.Kernel.get(this, "attrOutputs", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getServiceToken() {
-        return software.amazon.jsii.Kernel.get(this, "serviceToken", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getServiceToken() {
+        return software.amazon.jsii.Kernel.get(this, "serviceToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,14 +75,44 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setServiceToken(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serviceToken", java.util.Objects.requireNonNull(value, "serviceToken is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTimeout(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
         software.amazon.jsii.Kernel.set(this, "timeout", java.util.Objects.requireNonNull(value, "timeout is required"));
+    }
+
+    /**
+     */
+    public void setTimeout(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "timeout", java.util.Objects.requireNonNull(value, "timeout is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpConfig() {
+        return software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpConfig", value);
+    }
+
+    /**
+     */
+    public void setHttpConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "httpConfig", value);
     }
 
     /**
@@ -101,6 +131,221 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setParameters(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "parameters", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(HttpConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface HttpConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getContentType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHeaders() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSignKey() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link HttpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link HttpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<HttpConfigProperty> {
+            private java.lang.Object contentType;
+            private java.lang.Object headers;
+            private java.lang.Object signKey;
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getContentType}
+             * @param contentType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder contentType(java.lang.String contentType) {
+                this.contentType = contentType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getContentType}
+             * @param contentType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder contentType(com.aliyun.ros.cdk.core.IResolvable contentType) {
+                this.contentType = contentType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getHeaders}
+             * @param headers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder headers(com.aliyun.ros.cdk.core.IResolvable headers) {
+                this.headers = headers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getHeaders}
+             * @param headers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder headers(java.util.Map<java.lang.String, ? extends java.lang.Object> headers) {
+                this.headers = headers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getSignKey}
+             * @param signKey the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder signKey(java.lang.String signKey) {
+                this.signKey = signKey;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HttpConfigProperty#getSignKey}
+             * @param signKey the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder signKey(com.aliyun.ros.cdk.core.IResolvable signKey) {
+                this.signKey = signKey;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link HttpConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public HttpConfigProperty build() {
+                return new Jsii$Proxy(contentType, headers, signKey);
+            }
+        }
+
+        /**
+         * An implementation for {@link HttpConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HttpConfigProperty {
+            private final java.lang.Object contentType;
+            private final java.lang.Object headers;
+            private final java.lang.Object signKey;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.contentType = software.amazon.jsii.Kernel.get(this, "contentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.headers = software.amazon.jsii.Kernel.get(this, "headers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.signKey = software.amazon.jsii.Kernel.get(this, "signKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object contentType, final java.lang.Object headers, final java.lang.Object signKey) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.contentType = contentType;
+                this.headers = headers;
+                this.signKey = signKey;
+            }
+
+            @Override
+            public final java.lang.Object getContentType() {
+                return this.contentType;
+            }
+
+            @Override
+            public final java.lang.Object getHeaders() {
+                return this.headers;
+            }
+
+            @Override
+            public final java.lang.Object getSignKey() {
+                return this.signKey;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getContentType() != null) {
+                    data.set("contentType", om.valueToTree(this.getContentType()));
+                }
+                if (this.getHeaders() != null) {
+                    data.set("headers", om.valueToTree(this.getHeaders()));
+                }
+                if (this.getSignKey() != null) {
+                    data.set("signKey", om.valueToTree(this.getSignKey()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                HttpConfigProperty.Jsii$Proxy that = (HttpConfigProperty.Jsii$Proxy) o;
+
+                if (this.contentType != null ? !this.contentType.equals(that.contentType) : that.contentType != null) return false;
+                if (this.headers != null ? !this.headers.equals(that.headers) : that.headers != null) return false;
+                return this.signKey != null ? this.signKey.equals(that.signKey) : that.signKey == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.contentType != null ? this.contentType.hashCode() : 0;
+                result = 31 * result + (this.headers != null ? this.headers.hashCode() : 0);
+                result = 31 * result + (this.signKey != null ? this.signKey.hashCode() : 0);
+                return result;
+            }
+        }
     }
 
     /**
@@ -137,6 +382,14 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
             this.props.serviceToken(serviceToken);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param serviceToken This parameter is required.
+         */
+        public Builder serviceToken(final com.aliyun.ros.cdk.core.IResolvable serviceToken) {
+            this.props.serviceToken(serviceToken);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -144,6 +397,31 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder timeout(final java.lang.Number timeout) {
             this.props.timeout(timeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param timeout This parameter is required.
+         */
+        public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.props.timeout(timeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param httpConfig This parameter is required.
+         */
+        public Builder httpConfig(final com.aliyun.ros.cdk.core.IResolvable httpConfig) {
+            this.props.httpConfig(httpConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpConfig This parameter is required.
+         */
+        public Builder httpConfig(final com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty httpConfig) {
+            this.props.httpConfig(httpConfig);
             return this;
         }
 

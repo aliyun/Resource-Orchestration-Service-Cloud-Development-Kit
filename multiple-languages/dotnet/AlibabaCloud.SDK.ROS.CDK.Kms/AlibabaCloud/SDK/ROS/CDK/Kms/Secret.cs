@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
-        [JsiiProperty(name: "attrArn", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArn
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecretName: The name of the secret.</summary>
-        [JsiiProperty(name: "attrSecretName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecretName
+        [JsiiProperty(name: "attrSecretName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecretName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

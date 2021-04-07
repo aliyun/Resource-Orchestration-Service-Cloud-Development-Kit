@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::DomainExtension`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.378Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.055Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.DomainExtension")
 public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLB::DomainExtension`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DomainExtension(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.DomainExtensionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLB::DomainExtension`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DomainExtension(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.DomainExtensionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,20 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DomainExtensionId: The ID of the created domain name extension.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomainExtensionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomainExtensionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomainExtensionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomainExtensionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+     * <p>
+     * Valid value:
+     * 1-65535
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrListenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrListenerPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +71,8 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.slb.DomainExtension> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +80,8 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,37 +100,91 @@ public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property domain: The domain name.
+         * <p>
          * @return {@code this}
-         * @param domain This parameter is required.
+         * @param domain Property domain: The domain name. This parameter is required.
          */
         public Builder domain(final java.lang.String domain) {
             this.props.domain(domain);
             return this;
         }
+        /**
+         * Property domain: The domain name.
+         * <p>
+         * @return {@code this}
+         * @param domain Property domain: The domain name. This parameter is required.
+         */
+        public Builder domain(final com.aliyun.ros.cdk.core.IResolvable domain) {
+            this.props.domain(domain);
+            return this;
+        }
 
         /**
+         * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+         * <p>
+         * Valid value:
+         * 1-65535
+         * <p>
          * @return {@code this}
-         * @param listenerPort This parameter is required.
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
          */
         public Builder listenerPort(final java.lang.Number listenerPort) {
             this.props.listenerPort(listenerPort);
             return this;
         }
+        /**
+         * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+         * <p>
+         * Valid value:
+         * 1-65535
+         * <p>
+         * @return {@code this}
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
 
         /**
+         * Property loadBalancerId: The ID of Server Load Balancer instance.
+         * <p>
          * @return {@code this}
-         * @param loadBalancerId This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
          */
         public Builder loadBalancerId(final java.lang.String loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }
+        /**
+         * Property loadBalancerId: The ID of Server Load Balancer instance.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
 
         /**
+         * Property serverCertificateId: The ID of the certificate corresponding to the domain name.
+         * <p>
          * @return {@code this}
-         * @param serverCertificateId This parameter is required.
+         * @param serverCertificateId Property serverCertificateId: The ID of the certificate corresponding to the domain name. This parameter is required.
          */
         public Builder serverCertificateId(final java.lang.String serverCertificateId) {
+            this.props.serverCertificateId(serverCertificateId);
+            return this;
+        }
+        /**
+         * Property serverCertificateId: The ID of the certificate corresponding to the domain name.
+         * <p>
+         * @return {@code this}
+         * @param serverCertificateId Property serverCertificateId: The ID of the certificate corresponding to the domain name. This parameter is required.
+         */
+        public Builder serverCertificateId(final com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.props.serverCertificateId(serverCertificateId);
             return this;
         }

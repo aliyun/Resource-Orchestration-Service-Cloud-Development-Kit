@@ -47,73 +47,73 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster ID.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: EngineVersions: Engine Versions.
         /// </remarks>
-        [JsiiProperty(name: "attrEngineVersions", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEngineVersions
+        [JsiiProperty(name: "attrEngineVersions", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEngineVersions
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: MasterInstanceInfos: Master instance infos.
         /// </remarks>
-        [JsiiProperty(name: "attrMasterInstanceInfos", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterInstanceInfos
+        [JsiiProperty(name: "attrMasterInstanceInfos", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterInstanceInfos
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: OrderId: Order ID.
         /// </remarks>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SecurityGroupId: Security group Id.
         /// </remarks>
-        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityGroupId
+        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SlaveInstanceInfos: Slave instance infos.
         /// </remarks>
-        [JsiiProperty(name: "attrSlaveInstanceInfos", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSlaveInstanceInfos
+        [JsiiProperty(name: "attrSlaveInstanceInfos", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSlaveInstanceInfos
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: State: Cluster status.
         /// </remarks>
-        [JsiiProperty(name: "attrState", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrState
+        [JsiiProperty(name: "attrState", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrState
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: VSwitchIds: VSwitch Ids.
         /// </remarks>
-        [JsiiProperty(name: "attrVSwitchIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVSwitchIds
+        [JsiiProperty(name: "attrVSwitchIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -125,20 +125,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Property</strong>: clusterName: Cluster name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
         /// </remarks>
-        [JsiiProperty(name: "clusterName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClusterName
+        [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: description: Cluster description.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Description
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -152,20 +152,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// <remarks>
         /// <strong>Property</strong>: ossBucket: Bucket name in your OSS.
         /// </remarks>
-        [JsiiProperty(name: "ossBucket", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string OssBucket
+        [JsiiProperty(name: "ossBucket", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object OssBucket
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: vSwitchId: VSwitch ID.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object VSwitchId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -176,7 +176,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// The order can not be cancelled.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-foas.RosCluster.OrderProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "order", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-foas.RosCluster.OrderProperty\"}]}}", isOptional: true)]
         public virtual object? Order
         {
             get => GetInstanceProperty<object?>();
@@ -188,10 +188,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         /// OrderId is suggested.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "orderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? OrderId
+        [JsiiProperty(name: "orderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? OrderId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IOrderProperty), fullyQualifiedName: "@alicloud/ros-cdk-foas.RosCluster.OrderProperty")]
@@ -200,8 +200,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: masterSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "masterSpec", typeJson: "{\"primitive\":\"string\"}")]
-            string MasterSpec
+            [JsiiProperty(name: "masterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object MasterSpec
             {
                 get;
             }
@@ -209,8 +209,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: slaveSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "slaveSpec", typeJson: "{\"primitive\":\"string\"}")]
-            string SlaveSpec
+            [JsiiProperty(name: "slaveSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SlaveSpec
             {
                 get;
             }
@@ -218,9 +218,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: masterNumber: Number of masters. Valid values: 1, 3. Default to 3.
             /// </remarks>
-            [JsiiProperty(name: "masterNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "masterNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? MasterNumber
+            object? MasterNumber
             {
                 get
                 {
@@ -231,9 +231,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: payModel: Pay model. Valid values: pre, post. Default to post.
             /// </remarks>
-            [JsiiProperty(name: "payModel", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "payModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? PayModel
+            object? PayModel
             {
                 get
                 {
@@ -244,9 +244,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: period: Pre paid time period. Unit is month. Default to 1.
             /// </remarks>
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Period
+            object? Period
             {
                 get
                 {
@@ -257,9 +257,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: slaveNumber: Number of masters. Valid values: 2-1000. Default to 2.
             /// </remarks>
-            [JsiiProperty(name: "slaveNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "slaveNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? SlaveNumber
+            object? SlaveNumber
             {
                 get
                 {
@@ -277,59 +277,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
                 /// <remarks>
                 /// <strong>Property</strong>: masterSpec: Master spec, such as Ecs_4c16g.
                 /// </remarks>
-                [JsiiProperty(name: "masterSpec", typeJson: "{\"primitive\":\"string\"}")]
-                public string MasterSpec
+                [JsiiProperty(name: "masterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object MasterSpec
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: slaveSpec: Master spec, such as Ecs_4c16g.
                 /// </remarks>
-                [JsiiProperty(name: "slaveSpec", typeJson: "{\"primitive\":\"string\"}")]
-                public string SlaveSpec
+                [JsiiProperty(name: "slaveSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SlaveSpec
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: masterNumber: Number of masters. Valid values: 1, 3. Default to 3.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "masterNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? MasterNumber
+                [JsiiProperty(name: "masterNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MasterNumber
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: payModel: Pay model. Valid values: pre, post. Default to post.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "payModel", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? PayModel
+                [JsiiProperty(name: "payModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PayModel
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: period: Pre paid time period. Unit is month. Default to 1.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Period
+                [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Period
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: slaveNumber: Number of masters. Valid values: 2-1000. Default to 2.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "slaveNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? SlaveNumber
+                [JsiiProperty(name: "slaveNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SlaveNumber
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -341,8 +341,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: masterSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "masterSpec", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string MasterSpec
+            [JsiiProperty(name: "masterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object MasterSpec
             {
                 get;
                 set;
@@ -351,8 +351,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <remarks>
             /// <strong>Property</strong>: slaveSpec: Master spec, such as Ecs_4c16g.
             /// </remarks>
-            [JsiiProperty(name: "slaveSpec", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string SlaveSpec
+            [JsiiProperty(name: "slaveSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object SlaveSpec
             {
                 get;
                 set;
@@ -362,8 +362,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: masterNumber: Number of masters. Valid values: 1, 3. Default to 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? MasterNumber
+            [JsiiProperty(name: "masterNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? MasterNumber
             {
                 get;
                 set;
@@ -373,8 +373,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: payModel: Pay model. Valid values: pre, post. Default to post.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "payModel", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? PayModel
+            [JsiiProperty(name: "payModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PayModel
             {
                 get;
                 set;
@@ -384,8 +384,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: period: Pre paid time period. Unit is month. Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Period
             {
                 get;
                 set;
@@ -395,8 +395,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             /// <strong>Property</strong>: slaveNumber: Number of masters. Valid values: 2-1000. Default to 2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "slaveNumber", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? SlaveNumber
+            [JsiiProperty(name: "slaveNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? SlaveNumber
             {
                 get;
                 set;

@@ -3,24 +3,32 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.089Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.706Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property topicName: Topic name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopicName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopicName();
 
     /**
+     * Property loggingEnabled: Whether to enable log management.
+     * <p>
+     * "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
+     * The default value is false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoggingEnabled() {
         return null;
     }
 
     /**
+     * Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
+     * <p>
+     * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaximumMessageSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaximumMessageSize() {
         return null;
     }
 
@@ -34,13 +42,13 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TopicProps> {
-        private java.lang.String topicName;
+        private java.lang.Object topicName;
         private java.lang.Object loggingEnabled;
-        private java.lang.Number maximumMessageSize;
+        private java.lang.Object maximumMessageSize;
 
         /**
          * Sets the value of {@link TopicProps#getTopicName}
-         * @param topicName the value to be set. This parameter is required.
+         * @param topicName Property topicName: Topic name. This parameter is required.
          * @return {@code this}
          */
         public Builder topicName(java.lang.String topicName) {
@@ -49,8 +57,20 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getTopicName}
+         * @param topicName Property topicName: Topic name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder topicName(com.aliyun.ros.cdk.core.IResolvable topicName) {
+            this.topicName = topicName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getLoggingEnabled}
-         * @param loggingEnabled the value to be set.
+         * @param loggingEnabled Property loggingEnabled: Whether to enable log management.
+         *                       "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
+         *                       The default value is false
          * @return {@code this}
          */
         public Builder loggingEnabled(java.lang.Boolean loggingEnabled) {
@@ -60,7 +80,9 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TopicProps#getLoggingEnabled}
-         * @param loggingEnabled the value to be set.
+         * @param loggingEnabled Property loggingEnabled: Whether to enable log management.
+         *                       "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
+         *                       The default value is false
          * @return {@code this}
          */
         public Builder loggingEnabled(com.aliyun.ros.cdk.core.IResolvable loggingEnabled) {
@@ -70,10 +92,22 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TopicProps#getMaximumMessageSize}
-         * @param maximumMessageSize the value to be set.
+         * @param maximumMessageSize Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
+         *                           An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
          * @return {@code this}
          */
         public Builder maximumMessageSize(java.lang.Number maximumMessageSize) {
+            this.maximumMessageSize = maximumMessageSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getMaximumMessageSize}
+         * @param maximumMessageSize Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
+         *                           An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
+         * @return {@code this}
+         */
+        public Builder maximumMessageSize(com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
             this.maximumMessageSize = maximumMessageSize;
             return this;
         }
@@ -94,9 +128,9 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TopicProps {
-        private final java.lang.String topicName;
+        private final java.lang.Object topicName;
         private final java.lang.Object loggingEnabled;
-        private final java.lang.Number maximumMessageSize;
+        private final java.lang.Object maximumMessageSize;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,15 +138,15 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingEnabled = software.amazon.jsii.Kernel.get(this, "loggingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maximumMessageSize = software.amazon.jsii.Kernel.get(this, "maximumMessageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String topicName, final java.lang.Object loggingEnabled, final java.lang.Number maximumMessageSize) {
+        protected Jsii$Proxy(final java.lang.Object topicName, final java.lang.Object loggingEnabled, final java.lang.Object maximumMessageSize) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.topicName = java.util.Objects.requireNonNull(topicName, "topicName is required");
             this.loggingEnabled = loggingEnabled;
@@ -120,7 +154,7 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTopicName() {
+        public final java.lang.Object getTopicName() {
             return this.topicName;
         }
 
@@ -130,7 +164,7 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getMaximumMessageSize() {
+        public final java.lang.Object getMaximumMessageSize() {
             return this.maximumMessageSize;
         }
 

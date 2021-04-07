@@ -15,8 +15,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
         /// The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
         /// </remarks>
-        [JsiiProperty(name: "totalTargetCapacity", typeJson: "{\"primitive\":\"string\"}")]
-        string TotalTargetCapacity
+        [JsiiProperty(name: "totalTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TotalTargetCapacity
         {
             get;
         }
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// in length. It must start with a letter but cannot start with http:// or https://.
         /// It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
-        [JsiiProperty(name: "autoProvisioningGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoProvisioningGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoProvisioningGroupName
+        object? AutoProvisioningGroupName
         {
             get
             {
@@ -48,9 +48,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// until the cluster meets the target capacity.
         /// Default value: maintain
         /// </remarks>
-        [JsiiProperty(name: "autoProvisioningGroupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoProvisioningGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoProvisioningGroupType
+        object? AutoProvisioningGroupType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: checkExecutionStatus: Whether check execution status. If set true, ROS will check the state of AutoProvisioningGroup to be fulfilled. Otherwise ROS will regard AutoProvisioningGroup create failed.
+        /// </remarks>
+        [JsiiProperty(name: "checkExecutionStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CheckExecutionStatus
         {
             get
             {
@@ -65,9 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Spot: Preemptible instances.
         /// Default value: Spot
         /// </remarks>
-        [JsiiProperty(name: "defaultTargetCapacityType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "defaultTargetCapacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DefaultTargetCapacityType
+        object? DefaultTargetCapacityType
         {
             get
             {
@@ -78,9 +91,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the auto provisioning group.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -96,9 +109,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
         /// Default value: no-termination
         /// </remarks>
-        [JsiiProperty(name: "excessCapacityTerminationPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "excessCapacityTerminationPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ExcessCapacityTerminationPolicy
+        object? ExcessCapacityTerminationPolicy
         {
             get
             {
@@ -139,9 +152,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// But you can configure multiple extended configurations for the launch template through
         /// the LaunchTemplateConfig parameter.
         /// </remarks>
-        [JsiiProperty(name: "launchTemplateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "launchTemplateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? LaunchTemplateId
+        object? LaunchTemplateId
         {
             get
             {
@@ -153,9 +166,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
         /// group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
         /// </remarks>
-        [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? LaunchTemplateVersion
+        object? LaunchTemplateVersion
         {
             get
             {
@@ -167,9 +180,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: maxSpotPrice: The global maximum price for preemptible instances in the auto provisioning group.
         /// If both the MaxSpotPrice and LaunchTemplateConfig.N.MaxPrice parameters are specified, the maximum price is the lower value of the two.
         /// </remarks>
-        [JsiiProperty(name: "maxSpotPrice", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "maxSpotPrice", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MaxSpotPrice
+        object? MaxSpotPrice
         {
             get
             {
@@ -185,9 +198,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// The priority of an instance type is specified by the LaunchTemplateConfig.N.Priority parameter.
         /// Default value: lowest-price
         /// </remarks>
-        [JsiiProperty(name: "payAsYouGoAllocationStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "payAsYouGoAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PayAsYouGoAllocationStrategy
+        object? PayAsYouGoAllocationStrategy
         {
             get
             {
@@ -198,9 +211,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
         /// </remarks>
-        [JsiiProperty(name: "payAsYouGoTargetCapacity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "payAsYouGoTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PayAsYouGoTargetCapacity
+        object? PayAsYouGoTargetCapacity
         {
             get
             {
@@ -216,9 +229,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// instances across zones specified in multiple extended template configurations.
         /// Default value: lowest-price
         /// </remarks>
-        [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SpotAllocationStrategy
+        object? SpotAllocationStrategy
         {
             get
             {
@@ -232,9 +245,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// terminate: releases preemptible instances.
         /// Default value: stop
         /// </remarks>
-        [JsiiProperty(name: "spotInstanceInterruptionBehavior", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "spotInstanceInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SpotInstanceInterruptionBehavior
+        object? SpotInstanceInterruptionBehavior
         {
             get
             {
@@ -246,9 +259,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. The auto provisioning group selects instance types of the lowest cost to create
         /// instances.
         /// </remarks>
-        [JsiiProperty(name: "spotInstancePoolsToUseCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "spotInstancePoolsToUseCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? SpotInstancePoolsToUseCount
+        object? SpotInstancePoolsToUseCount
         {
             get
             {
@@ -259,9 +272,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
         /// </remarks>
-        [JsiiProperty(name: "spotTargetCapacity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "spotTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SpotTargetCapacity
+        object? SpotTargetCapacity
         {
             get
             {
@@ -308,9 +321,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
         /// By default, an auto provisioning group is immediately started after creation.
         /// </remarks>
-        [JsiiProperty(name: "validFrom", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "validFrom", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ValidFrom
+        object? ValidFrom
         {
             get
             {
@@ -323,9 +336,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
         /// By default, an auto provisioning group never expires.
         /// </remarks>
-        [JsiiProperty(name: "validUntil", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "validUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ValidUntil
+        object? ValidUntil
         {
             get
             {
@@ -348,10 +361,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
             /// The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
             /// </remarks>
-            [JsiiProperty(name: "totalTargetCapacity", typeJson: "{\"primitive\":\"string\"}")]
-            public string TotalTargetCapacity
+            [JsiiProperty(name: "totalTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TotalTargetCapacity
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -360,10 +373,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoProvisioningGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoProvisioningGroupName
+            [JsiiProperty(name: "autoProvisioningGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoProvisioningGroupName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -379,10 +392,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: maintain
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoProvisioningGroupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoProvisioningGroupType
+            [JsiiProperty(name: "autoProvisioningGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoProvisioningGroupType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: checkExecutionStatus: Whether check execution status. If set true, ROS will check the state of AutoProvisioningGroup to be fulfilled. Otherwise ROS will regard AutoProvisioningGroup create failed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "checkExecutionStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CheckExecutionStatus
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -393,20 +416,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: Spot
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "defaultTargetCapacityType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DefaultTargetCapacityType
+            [JsiiProperty(name: "defaultTargetCapacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DefaultTargetCapacityType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: description: The description of the auto provisioning group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -418,10 +441,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: no-termination
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "excessCapacityTerminationPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ExcessCapacityTerminationPolicy
+            [JsiiProperty(name: "excessCapacityTerminationPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ExcessCapacityTerminationPolicy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -452,10 +475,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// the LaunchTemplateConfig parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "launchTemplateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? LaunchTemplateId
+            [JsiiProperty(name: "launchTemplateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LaunchTemplateId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -463,10 +486,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? LaunchTemplateVersion
+            [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LaunchTemplateVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -474,10 +497,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// If both the MaxSpotPrice and LaunchTemplateConfig.N.MaxPrice parameters are specified, the maximum price is the lower value of the two.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxSpotPrice", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MaxSpotPrice
+            [JsiiProperty(name: "maxSpotPrice", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxSpotPrice
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -489,20 +512,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: lowest-price
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "payAsYouGoAllocationStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PayAsYouGoAllocationStrategy
+            [JsiiProperty(name: "payAsYouGoAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PayAsYouGoAllocationStrategy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "payAsYouGoTargetCapacity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PayAsYouGoTargetCapacity
+            [JsiiProperty(name: "payAsYouGoTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PayAsYouGoTargetCapacity
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -514,10 +537,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: lowest-price
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SpotAllocationStrategy
+            [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotAllocationStrategy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -527,10 +550,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Default value: stop
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotInstanceInterruptionBehavior", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SpotInstanceInterruptionBehavior
+            [JsiiProperty(name: "spotInstanceInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotInstanceInterruptionBehavior
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -538,20 +561,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// instances.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotInstancePoolsToUseCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? SpotInstancePoolsToUseCount
+            [JsiiProperty(name: "spotInstancePoolsToUseCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotInstancePoolsToUseCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotTargetCapacity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SpotTargetCapacity
+            [JsiiProperty(name: "spotTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotTargetCapacity
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -588,10 +611,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// By default, an auto provisioning group is immediately started after creation.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "validFrom", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ValidFrom
+            [JsiiProperty(name: "validFrom", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ValidFrom
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -600,10 +623,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// By default, an auto provisioning group never expires.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "validUntil", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ValidUntil
+            [JsiiProperty(name: "validUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ValidUntil
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

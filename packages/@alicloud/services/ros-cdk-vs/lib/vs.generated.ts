@@ -11,48 +11,48 @@ export interface RosGroupProps {
      * @Property inProtocol: Access protocol used by the space.
      * Value: gb28181, rtmp
      */
-    readonly inProtocol: string;
+    readonly inProtocol: string | ros.IResolvable;
 
     /**
      * @Property name: Space name.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property outProtocol: Play protocol used by the space, multivalued separated by commas.
      * Value: flv, hls, rtmp
      */
-    readonly outProtocol: string;
+    readonly outProtocol: string | ros.IResolvable;
 
     /**
      * @Property playDomain: Use of the domain name space broadcast stream.
      */
-    readonly playDomain: string;
+    readonly playDomain: string | ros.IResolvable;
 
     /**
      * @Property pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
      */
-    readonly pushDomain: string;
+    readonly pushDomain: string | ros.IResolvable;
 
     /**
      * @Property region: Space belongs to the region, as a service center.
      */
-    readonly region: string;
+    readonly region: string | ros.IResolvable;
 
     /**
      * @Property app: Application name space used, the default live.
      */
-    readonly app?: string;
+    readonly app?: string | ros.IResolvable;
 
     /**
      * @Property callback: Updating the space callback device / flow state
      */
-    readonly callback?: string;
+    readonly callback?: string | ros.IResolvable;
 
     /**
      * @Property description: Space description.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property enabled: Space is enabled.
@@ -140,22 +140,22 @@ export class RosGroup extends ros.RosResource {
     /**
      * @Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbId: any;
+    public readonly attrGbId: ros.IResolvable;
 
     /**
      * @Attribute GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbIp: any;
+    public readonly attrGbIp: ros.IResolvable;
 
     /**
      * @Attribute GbPort: GB Port space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbPort: any;
+    public readonly attrGbPort: ros.IResolvable;
 
     /**
      * @Attribute Id: Space ID.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -164,48 +164,48 @@ export class RosGroup extends ros.RosResource {
      * @Property inProtocol: Access protocol used by the space.
      * Value: gb28181, rtmp
      */
-    public inProtocol: string;
+    public inProtocol: string | ros.IResolvable;
 
     /**
      * @Property name: Space name.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property outProtocol: Play protocol used by the space, multivalued separated by commas.
      * Value: flv, hls, rtmp
      */
-    public outProtocol: string;
+    public outProtocol: string | ros.IResolvable;
 
     /**
      * @Property playDomain: Use of the domain name space broadcast stream.
      */
-    public playDomain: string;
+    public playDomain: string | ros.IResolvable;
 
     /**
      * @Property pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
      */
-    public pushDomain: string;
+    public pushDomain: string | ros.IResolvable;
 
     /**
      * @Property region: Space belongs to the region, as a service center.
      */
-    public region: string;
+    public region: string | ros.IResolvable;
 
     /**
      * @Property app: Application name space used, the default live.
      */
-    public app: string | undefined;
+    public app: string | ros.IResolvable | undefined;
 
     /**
      * @Property callback: Updating the space callback device / flow state
      */
-    public callback: string | undefined;
+    public callback: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Space description.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property enabled: Space is enabled.
@@ -226,10 +226,10 @@ export class RosGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGbId = ros.Token.asString(this.getAtt('GbId'));
-        this.attrGbIp = ros.Token.asString(this.getAtt('GbIp'));
-        this.attrGbPort = ros.Token.asString(this.getAtt('GbPort'));
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
+        this.attrGbId = this.getAtt('GbId');
+        this.attrGbIp = this.getAtt('GbIp');
+        this.attrGbPort = this.getAtt('GbPort');
+        this.attrId = this.getAtt('Id');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.inProtocol = props.inProtocol;

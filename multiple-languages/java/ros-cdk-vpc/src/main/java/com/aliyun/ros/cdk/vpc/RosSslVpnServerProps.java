@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::SslVpnServer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSslVpnServerProps")
 @software.amazon.jsii.Jsii.Proxy(RosSslVpnServerProps.Jsii$Proxy.class)
 public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClientIpPool();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClientIpPool();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLocalSubnet();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpnGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpnGatewayId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCipher() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCipher() {
         return null;
     }
 
@@ -34,19 +34,19 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProto() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProto() {
         return null;
     }
 
@@ -60,14 +60,14 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosSslVpnServerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSslVpnServerProps> {
-        private java.lang.String clientIpPool;
-        private java.lang.String localSubnet;
-        private java.lang.String vpnGatewayId;
-        private java.lang.String cipher;
+        private java.lang.Object clientIpPool;
+        private java.lang.Object localSubnet;
+        private java.lang.Object vpnGatewayId;
+        private java.lang.Object cipher;
         private java.lang.Object compress;
-        private java.lang.String name;
-        private java.lang.Number port;
-        private java.lang.String proto;
+        private java.lang.Object name;
+        private java.lang.Object port;
+        private java.lang.Object proto;
 
         /**
          * Sets the value of {@link RosSslVpnServerProps#getClientIpPool}
@@ -75,6 +75,16 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder clientIpPool(java.lang.String clientIpPool) {
+            this.clientIpPool = clientIpPool;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSslVpnServerProps#getClientIpPool}
+         * @param clientIpPool the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clientIpPool(com.aliyun.ros.cdk.core.IResolvable clientIpPool) {
             this.clientIpPool = clientIpPool;
             return this;
         }
@@ -90,6 +100,16 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSslVpnServerProps#getLocalSubnet}
+         * @param localSubnet the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder localSubnet(com.aliyun.ros.cdk.core.IResolvable localSubnet) {
+            this.localSubnet = localSubnet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSslVpnServerProps#getVpnGatewayId}
          * @param vpnGatewayId the value to be set. This parameter is required.
          * @return {@code this}
@@ -100,11 +120,31 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSslVpnServerProps#getVpnGatewayId}
+         * @param vpnGatewayId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpnGatewayId(com.aliyun.ros.cdk.core.IResolvable vpnGatewayId) {
+            this.vpnGatewayId = vpnGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSslVpnServerProps#getCipher}
          * @param cipher the value to be set.
          * @return {@code this}
          */
         public Builder cipher(java.lang.String cipher) {
+            this.cipher = cipher;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSslVpnServerProps#getCipher}
+         * @param cipher the value to be set.
+         * @return {@code this}
+         */
+        public Builder cipher(com.aliyun.ros.cdk.core.IResolvable cipher) {
             this.cipher = cipher;
             return this;
         }
@@ -140,6 +180,16 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSslVpnServerProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSslVpnServerProps#getPort}
          * @param port the value to be set.
          * @return {@code this}
@@ -150,11 +200,31 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSslVpnServerProps#getPort}
+         * @param port the value to be set.
+         * @return {@code this}
+         */
+        public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+            this.port = port;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSslVpnServerProps#getProto}
          * @param proto the value to be set.
          * @return {@code this}
          */
         public Builder proto(java.lang.String proto) {
+            this.proto = proto;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSslVpnServerProps#getProto}
+         * @param proto the value to be set.
+         * @return {@code this}
+         */
+        public Builder proto(com.aliyun.ros.cdk.core.IResolvable proto) {
             this.proto = proto;
             return this;
         }
@@ -175,14 +245,14 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSslVpnServerProps {
-        private final java.lang.String clientIpPool;
-        private final java.lang.String localSubnet;
-        private final java.lang.String vpnGatewayId;
-        private final java.lang.String cipher;
+        private final java.lang.Object clientIpPool;
+        private final java.lang.Object localSubnet;
+        private final java.lang.Object vpnGatewayId;
+        private final java.lang.Object cipher;
         private final java.lang.Object compress;
-        private final java.lang.String name;
-        private final java.lang.Number port;
-        private final java.lang.String proto;
+        private final java.lang.Object name;
+        private final java.lang.Object port;
+        private final java.lang.Object proto;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -190,20 +260,20 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clientIpPool = software.amazon.jsii.Kernel.get(this, "clientIpPool", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cipher = software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clientIpPool = software.amazon.jsii.Kernel.get(this, "clientIpPool", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cipher = software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.compress = software.amazon.jsii.Kernel.get(this, "compress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.proto = software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proto = software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clientIpPool, final java.lang.String localSubnet, final java.lang.String vpnGatewayId, final java.lang.String cipher, final java.lang.Object compress, final java.lang.String name, final java.lang.Number port, final java.lang.String proto) {
+        protected Jsii$Proxy(final java.lang.Object clientIpPool, final java.lang.Object localSubnet, final java.lang.Object vpnGatewayId, final java.lang.Object cipher, final java.lang.Object compress, final java.lang.Object name, final java.lang.Object port, final java.lang.Object proto) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clientIpPool = java.util.Objects.requireNonNull(clientIpPool, "clientIpPool is required");
             this.localSubnet = java.util.Objects.requireNonNull(localSubnet, "localSubnet is required");
@@ -216,22 +286,22 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getClientIpPool() {
+        public final java.lang.Object getClientIpPool() {
             return this.clientIpPool;
         }
 
         @Override
-        public final java.lang.String getLocalSubnet() {
+        public final java.lang.Object getLocalSubnet() {
             return this.localSubnet;
         }
 
         @Override
-        public final java.lang.String getVpnGatewayId() {
+        public final java.lang.Object getVpnGatewayId() {
             return this.vpnGatewayId;
         }
 
         @Override
-        public final java.lang.String getCipher() {
+        public final java.lang.Object getCipher() {
             return this.cipher;
         }
 
@@ -241,17 +311,17 @@ public interface RosSslVpnServerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getPort() {
+        public final java.lang.Object getPort() {
             return this.port;
         }
 
         @Override
-        public final java.lang.String getProto() {
+        public final java.lang.Object getProto() {
             return this.proto;
         }
 

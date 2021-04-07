@@ -3,18 +3,24 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Alert`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.399Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.AlertProps")
 @software.amazon.jsii.Jsii.Proxy(AlertProps.Jsii$Proxy.class)
 public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property detail:.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDetail();
 
     /**
+     * Property project: Project name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProject();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProject();
 
     /**
      * @return a {@link Builder} of {@link AlertProps}
@@ -27,11 +33,11 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlertProps> {
         private java.lang.Object detail;
-        private java.lang.String project;
+        private java.lang.Object project;
 
         /**
          * Sets the value of {@link AlertProps#getDetail}
-         * @param detail the value to be set. This parameter is required.
+         * @param detail Property detail:. This parameter is required.
          * @return {@code this}
          */
         public Builder detail(com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
@@ -41,7 +47,7 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AlertProps#getDetail}
-         * @param detail the value to be set. This parameter is required.
+         * @param detail Property detail:. This parameter is required.
          * @return {@code this}
          */
         public Builder detail(com.aliyun.ros.cdk.core.IResolvable detail) {
@@ -51,10 +57,26 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AlertProps#getProject}
-         * @param project the value to be set. This parameter is required.
+         * @param project Property project: Project name: 1. This parameter is required.
+         *                Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                2. Must start and end with lowercase letters and numbers.
+         *                3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder project(java.lang.String project) {
+            this.project = project;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AlertProps#getProject}
+         * @param project Property project: Project name: 1. This parameter is required.
+         *                Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                2. Must start and end with lowercase letters and numbers.
+         *                3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder project(com.aliyun.ros.cdk.core.IResolvable project) {
             this.project = project;
             return this;
         }
@@ -76,7 +98,7 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AlertProps {
         private final java.lang.Object detail;
-        private final java.lang.String project;
+        private final java.lang.Object project;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +107,13 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object detail, final java.lang.String project) {
+        protected Jsii$Proxy(final java.lang.Object detail, final java.lang.Object project) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.detail = java.util.Objects.requireNonNull(detail, "detail is required");
             this.project = java.util.Objects.requireNonNull(project, "project is required");
@@ -103,7 +125,7 @@ public interface AlertProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getProject() {
+        public final java.lang.Object getProject() {
             return this.project;
         }
 

@@ -3,24 +3,24 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CustomerGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCustomerGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomerGatewayProps.Jsii$Proxy.class)
 public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getIpAddress();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpAddress();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -34,9 +34,9 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosCustomerGatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomerGatewayProps> {
-        private java.lang.String ipAddress;
-        private java.lang.String description;
-        private java.lang.String name;
+        private java.lang.Object ipAddress;
+        private java.lang.Object description;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link RosCustomerGatewayProps#getIpAddress}
@@ -44,6 +44,16 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder ipAddress(java.lang.String ipAddress) {
+            this.ipAddress = ipAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomerGatewayProps#getIpAddress}
+         * @param ipAddress the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipAddress(com.aliyun.ros.cdk.core.IResolvable ipAddress) {
             this.ipAddress = ipAddress;
             return this;
         }
@@ -59,11 +69,31 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosCustomerGatewayProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCustomerGatewayProps#getName}
          * @param name the value to be set.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomerGatewayProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -84,9 +114,9 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCustomerGatewayProps {
-        private final java.lang.String ipAddress;
-        private final java.lang.String description;
-        private final java.lang.String name;
+        private final java.lang.Object ipAddress;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -94,15 +124,15 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ipAddress = software.amazon.jsii.Kernel.get(this, "ipAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ipAddress = software.amazon.jsii.Kernel.get(this, "ipAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ipAddress, final java.lang.String description, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object ipAddress, final java.lang.Object description, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ipAddress = java.util.Objects.requireNonNull(ipAddress, "ipAddress is required");
             this.description = description;
@@ -110,17 +140,17 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getIpAddress() {
+        public final java.lang.Object getIpAddress() {
             return this.ipAddress;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

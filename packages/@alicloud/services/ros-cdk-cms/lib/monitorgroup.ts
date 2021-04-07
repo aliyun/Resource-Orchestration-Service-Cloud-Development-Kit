@@ -11,13 +11,13 @@ export interface MonitorGroupProps {
     /**
      * Property groupName: The name of the application group.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * Property contactGroups: The alert contact group. Alert notifications for the application group are sent to
      * the specified alert contact group.
      */
-    readonly contactGroups?: string;
+    readonly contactGroups?: string | ros.IResolvable;
 }
 
 /**
@@ -33,7 +33,7 @@ export class MonitorGroup extends ros.Resource {
     /**
      * Attribute GroupId: Application group ID generated after the group is created.
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::MonitorGroup`.

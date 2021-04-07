@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.uis;
 /**
  * A ROS template type:  `ALIYUN::UIS::UisConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.131Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.RosUisConnection")
 public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUisConnectionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUisConnectionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUisConnectionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUisConnectionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getUisNodeId() {
-        return software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeId() {
+        return software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getUisProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUisNodeId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uisNodeId", java.util.Objects.requireNonNull(value, "uisNodeId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUisProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUisProtocol(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uisProtocol", java.util.Objects.requireNonNull(value, "uisProtocol is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -117,13 +135,19 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
     }
 
@@ -154,27 +178,27 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCustomerIp();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCustomerIp();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCustomerSubnet();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCustomerSubnet();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCustomerTunnelIp();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCustomerTunnelIp();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getLocalIp();
+        @org.jetbrains.annotations.NotNull java.lang.Object getLocalIp();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getLocalTunnelIp();
+        @org.jetbrains.annotations.NotNull java.lang.Object getLocalTunnelIp();
 
         /**
          * @return a {@link Builder} of {@link GreConfigProperty}
@@ -188,11 +212,11 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<GreConfigProperty> {
-            private java.lang.String customerIp;
-            private java.lang.String customerSubnet;
-            private java.lang.String customerTunnelIp;
-            private java.lang.String localIp;
-            private java.lang.String localTunnelIp;
+            private java.lang.Object customerIp;
+            private java.lang.Object customerSubnet;
+            private java.lang.Object customerTunnelIp;
+            private java.lang.Object localIp;
+            private java.lang.Object localTunnelIp;
 
             /**
              * Sets the value of {@link GreConfigProperty#getCustomerIp}
@@ -201,6 +225,17 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder customerIp(java.lang.String customerIp) {
+                this.customerIp = customerIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GreConfigProperty#getCustomerIp}
+             * @param customerIp the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder customerIp(com.aliyun.ros.cdk.core.IResolvable customerIp) {
                 this.customerIp = customerIp;
                 return this;
             }
@@ -217,12 +252,34 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link GreConfigProperty#getCustomerSubnet}
+             * @param customerSubnet the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder customerSubnet(com.aliyun.ros.cdk.core.IResolvable customerSubnet) {
+                this.customerSubnet = customerSubnet;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link GreConfigProperty#getCustomerTunnelIp}
              * @param customerTunnelIp the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder customerTunnelIp(java.lang.String customerTunnelIp) {
+                this.customerTunnelIp = customerTunnelIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GreConfigProperty#getCustomerTunnelIp}
+             * @param customerTunnelIp the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder customerTunnelIp(com.aliyun.ros.cdk.core.IResolvable customerTunnelIp) {
                 this.customerTunnelIp = customerTunnelIp;
                 return this;
             }
@@ -239,12 +296,34 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link GreConfigProperty#getLocalIp}
+             * @param localIp the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder localIp(com.aliyun.ros.cdk.core.IResolvable localIp) {
+                this.localIp = localIp;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link GreConfigProperty#getLocalTunnelIp}
              * @param localTunnelIp the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder localTunnelIp(java.lang.String localTunnelIp) {
+                this.localTunnelIp = localTunnelIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link GreConfigProperty#getLocalTunnelIp}
+             * @param localTunnelIp the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder localTunnelIp(com.aliyun.ros.cdk.core.IResolvable localTunnelIp) {
                 this.localTunnelIp = localTunnelIp;
                 return this;
             }
@@ -267,11 +346,11 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GreConfigProperty {
-            private final java.lang.String customerIp;
-            private final java.lang.String customerSubnet;
-            private final java.lang.String customerTunnelIp;
-            private final java.lang.String localIp;
-            private final java.lang.String localTunnelIp;
+            private final java.lang.Object customerIp;
+            private final java.lang.Object customerSubnet;
+            private final java.lang.Object customerTunnelIp;
+            private final java.lang.Object localIp;
+            private final java.lang.Object localTunnelIp;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -279,17 +358,17 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.customerIp = software.amazon.jsii.Kernel.get(this, "customerIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.customerSubnet = software.amazon.jsii.Kernel.get(this, "customerSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.customerTunnelIp = software.amazon.jsii.Kernel.get(this, "customerTunnelIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.localIp = software.amazon.jsii.Kernel.get(this, "localIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.localTunnelIp = software.amazon.jsii.Kernel.get(this, "localTunnelIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.customerIp = software.amazon.jsii.Kernel.get(this, "customerIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.customerSubnet = software.amazon.jsii.Kernel.get(this, "customerSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.customerTunnelIp = software.amazon.jsii.Kernel.get(this, "customerTunnelIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.localIp = software.amazon.jsii.Kernel.get(this, "localIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.localTunnelIp = software.amazon.jsii.Kernel.get(this, "localTunnelIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String customerIp, final java.lang.String customerSubnet, final java.lang.String customerTunnelIp, final java.lang.String localIp, final java.lang.String localTunnelIp) {
+            protected Jsii$Proxy(final java.lang.Object customerIp, final java.lang.Object customerSubnet, final java.lang.Object customerTunnelIp, final java.lang.Object localIp, final java.lang.Object localTunnelIp) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.customerIp = java.util.Objects.requireNonNull(customerIp, "customerIp is required");
                 this.customerSubnet = java.util.Objects.requireNonNull(customerSubnet, "customerSubnet is required");
@@ -299,27 +378,27 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getCustomerIp() {
+            public final java.lang.Object getCustomerIp() {
                 return this.customerIp;
             }
 
             @Override
-            public final java.lang.String getCustomerSubnet() {
+            public final java.lang.Object getCustomerSubnet() {
                 return this.customerSubnet;
             }
 
             @Override
-            public final java.lang.String getCustomerTunnelIp() {
+            public final java.lang.Object getCustomerTunnelIp() {
                 return this.customerTunnelIp;
             }
 
             @Override
-            public final java.lang.String getLocalIp() {
+            public final java.lang.Object getLocalIp() {
                 return this.localIp;
             }
 
             @Override
-            public final java.lang.String getLocalTunnelIp() {
+            public final java.lang.Object getLocalTunnelIp() {
                 return this.localTunnelIp;
             }
 
@@ -380,17 +459,17 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCipher();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCipher();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPort();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getProtocol();
+        @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
         /**
          * @return a {@link Builder} of {@link SslConfigProperty}
@@ -404,9 +483,9 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SslConfigProperty> {
-            private java.lang.String cipher;
-            private java.lang.Number port;
-            private java.lang.String protocol;
+            private java.lang.Object cipher;
+            private java.lang.Object port;
+            private java.lang.Object protocol;
 
             /**
              * Sets the value of {@link SslConfigProperty#getCipher}
@@ -415,6 +494,17 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder cipher(java.lang.String cipher) {
+                this.cipher = cipher;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SslConfigProperty#getCipher}
+             * @param cipher the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cipher(com.aliyun.ros.cdk.core.IResolvable cipher) {
                 this.cipher = cipher;
                 return this;
             }
@@ -431,12 +521,34 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SslConfigProperty#getPort}
+             * @param port the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SslConfigProperty#getProtocol}
              * @param protocol the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder protocol(java.lang.String protocol) {
+                this.protocol = protocol;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SslConfigProperty#getProtocol}
+             * @param protocol the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
                 this.protocol = protocol;
                 return this;
             }
@@ -459,9 +571,9 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SslConfigProperty {
-            private final java.lang.String cipher;
-            private final java.lang.Number port;
-            private final java.lang.String protocol;
+            private final java.lang.Object cipher;
+            private final java.lang.Object port;
+            private final java.lang.Object protocol;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -469,15 +581,15 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.cipher = software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.cipher = software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String cipher, final java.lang.Number port, final java.lang.String protocol) {
+            protected Jsii$Proxy(final java.lang.Object cipher, final java.lang.Object port, final java.lang.Object protocol) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.cipher = java.util.Objects.requireNonNull(cipher, "cipher is required");
                 this.port = java.util.Objects.requireNonNull(port, "port is required");
@@ -485,17 +597,17 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getCipher() {
+            public final java.lang.Object getCipher() {
                 return this.cipher;
             }
 
             @Override
-            public final java.lang.Number getPort() {
+            public final java.lang.Object getPort() {
                 return this.port;
             }
 
             @Override
-            public final java.lang.String getProtocol() {
+            public final java.lang.Object getProtocol() {
                 return this.protocol;
             }
 
@@ -575,6 +687,14 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             this.props.uisNodeId(uisNodeId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param uisNodeId This parameter is required.
+         */
+        public Builder uisNodeId(final com.aliyun.ros.cdk.core.IResolvable uisNodeId) {
+            this.props.uisNodeId(uisNodeId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -584,12 +704,28 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
             this.props.uisProtocol(uisProtocol);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param uisProtocol This parameter is required.
+         */
+        public Builder uisProtocol(final com.aliyun.ros.cdk.core.IResolvable uisProtocol) {
+            this.props.uisProtocol(uisProtocol);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -616,6 +752,14 @@ public class RosUisConnection extends com.aliyun.ros.cdk.core.RosResource {
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

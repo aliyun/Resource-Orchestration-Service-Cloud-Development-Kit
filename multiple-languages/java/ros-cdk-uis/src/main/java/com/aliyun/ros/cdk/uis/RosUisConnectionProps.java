@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.uis;
 /**
  * Properties for defining a `ALIYUN::UIS::UisConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.429Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.132Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.RosUisConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(RosUisConnectionProps.Jsii$Proxy.class)
 public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisNodeId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUisProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUisProtocol();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -30,7 +30,7 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -50,11 +50,11 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosUisConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUisConnectionProps> {
-        private java.lang.String uisNodeId;
-        private java.lang.String uisProtocol;
-        private java.lang.String description;
+        private java.lang.Object uisNodeId;
+        private java.lang.Object uisProtocol;
+        private java.lang.Object description;
         private java.lang.Object greConfig;
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object sslConfig;
 
         /**
@@ -63,6 +63,16 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder uisNodeId(java.lang.String uisNodeId) {
+            this.uisNodeId = uisNodeId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisConnectionProps#getUisNodeId}
+         * @param uisNodeId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisNodeId(com.aliyun.ros.cdk.core.IResolvable uisNodeId) {
             this.uisNodeId = uisNodeId;
             return this;
         }
@@ -78,11 +88,31 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosUisConnectionProps#getUisProtocol}
+         * @param uisProtocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder uisProtocol(com.aliyun.ros.cdk.core.IResolvable uisProtocol) {
+            this.uisProtocol = uisProtocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUisConnectionProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisConnectionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -113,6 +143,16 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUisConnectionProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -153,11 +193,11 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosUisConnectionProps {
-        private final java.lang.String uisNodeId;
-        private final java.lang.String uisProtocol;
-        private final java.lang.String description;
+        private final java.lang.Object uisNodeId;
+        private final java.lang.Object uisProtocol;
+        private final java.lang.Object description;
         private final java.lang.Object greConfig;
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object sslConfig;
 
         /**
@@ -166,18 +206,18 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.uisNodeId = software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.uisProtocol = software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.uisNodeId = software.amazon.jsii.Kernel.get(this, "uisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.uisProtocol = software.amazon.jsii.Kernel.get(this, "uisProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.greConfig = software.amazon.jsii.Kernel.get(this, "greConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslConfig = software.amazon.jsii.Kernel.get(this, "sslConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String uisNodeId, final java.lang.String uisProtocol, final java.lang.String description, final java.lang.Object greConfig, final java.lang.String name, final java.lang.Object sslConfig) {
+        protected Jsii$Proxy(final java.lang.Object uisNodeId, final java.lang.Object uisProtocol, final java.lang.Object description, final java.lang.Object greConfig, final java.lang.Object name, final java.lang.Object sslConfig) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.uisNodeId = java.util.Objects.requireNonNull(uisNodeId, "uisNodeId is required");
             this.uisProtocol = java.util.Objects.requireNonNull(uisProtocol, "uisProtocol is required");
@@ -188,17 +228,17 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getUisNodeId() {
+        public final java.lang.Object getUisNodeId() {
             return this.uisNodeId;
         }
 
         @Override
-        public final java.lang.String getUisProtocol() {
+        public final java.lang.Object getUisProtocol() {
             return this.uisProtocol;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -208,7 +248,7 @@ public interface RosUisConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

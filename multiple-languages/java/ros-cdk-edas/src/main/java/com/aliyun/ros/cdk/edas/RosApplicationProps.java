@@ -3,58 +3,58 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.737Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getApplicationName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBuildPackId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBuildPackId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComponentIds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComponentIds() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEcuInfo() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcuInfo() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckUrl() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLogicalRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogicalRegionId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPackageType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPackageType() {
         return null;
     }
 
@@ -68,15 +68,15 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplicationProps> {
-        private java.lang.String applicationName;
-        private java.lang.String clusterId;
-        private java.lang.Number buildPackId;
-        private java.lang.String componentIds;
-        private java.lang.String description;
-        private java.lang.String ecuInfo;
-        private java.lang.String healthCheckUrl;
-        private java.lang.String logicalRegionId;
-        private java.lang.String packageType;
+        private java.lang.Object applicationName;
+        private java.lang.Object clusterId;
+        private java.lang.Object buildPackId;
+        private java.lang.Object componentIds;
+        private java.lang.Object description;
+        private java.lang.Object ecuInfo;
+        private java.lang.Object healthCheckUrl;
+        private java.lang.Object logicalRegionId;
+        private java.lang.Object packageType;
 
         /**
          * Sets the value of {@link RosApplicationProps#getApplicationName}
@@ -84,6 +84,16 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder applicationName(java.lang.String applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getApplicationName}
+         * @param applicationName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.applicationName = applicationName;
             return this;
         }
@@ -99,11 +109,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getClusterId}
+         * @param clusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getBuildPackId}
          * @param buildPackId the value to be set.
          * @return {@code this}
          */
         public Builder buildPackId(java.lang.Number buildPackId) {
+            this.buildPackId = buildPackId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getBuildPackId}
+         * @param buildPackId the value to be set.
+         * @return {@code this}
+         */
+        public Builder buildPackId(com.aliyun.ros.cdk.core.IResolvable buildPackId) {
             this.buildPackId = buildPackId;
             return this;
         }
@@ -119,11 +149,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getComponentIds}
+         * @param componentIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder componentIds(com.aliyun.ros.cdk.core.IResolvable componentIds) {
+            this.componentIds = componentIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -139,11 +189,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getEcuInfo}
+         * @param ecuInfo the value to be set.
+         * @return {@code this}
+         */
+        public Builder ecuInfo(com.aliyun.ros.cdk.core.IResolvable ecuInfo) {
+            this.ecuInfo = ecuInfo;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getHealthCheckUrl}
          * @param healthCheckUrl the value to be set.
          * @return {@code this}
          */
         public Builder healthCheckUrl(java.lang.String healthCheckUrl) {
+            this.healthCheckUrl = healthCheckUrl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getHealthCheckUrl}
+         * @param healthCheckUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckUrl(com.aliyun.ros.cdk.core.IResolvable healthCheckUrl) {
             this.healthCheckUrl = healthCheckUrl;
             return this;
         }
@@ -159,11 +229,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getLogicalRegionId}
+         * @param logicalRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder logicalRegionId(com.aliyun.ros.cdk.core.IResolvable logicalRegionId) {
+            this.logicalRegionId = logicalRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getPackageType}
          * @param packageType the value to be set.
          * @return {@code this}
          */
         public Builder packageType(java.lang.String packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getPackageType}
+         * @param packageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder packageType(com.aliyun.ros.cdk.core.IResolvable packageType) {
             this.packageType = packageType;
             return this;
         }
@@ -184,15 +274,15 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosApplicationProps {
-        private final java.lang.String applicationName;
-        private final java.lang.String clusterId;
-        private final java.lang.Number buildPackId;
-        private final java.lang.String componentIds;
-        private final java.lang.String description;
-        private final java.lang.String ecuInfo;
-        private final java.lang.String healthCheckUrl;
-        private final java.lang.String logicalRegionId;
-        private final java.lang.String packageType;
+        private final java.lang.Object applicationName;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object buildPackId;
+        private final java.lang.Object componentIds;
+        private final java.lang.Object description;
+        private final java.lang.Object ecuInfo;
+        private final java.lang.Object healthCheckUrl;
+        private final java.lang.Object logicalRegionId;
+        private final java.lang.Object packageType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -200,21 +290,21 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.buildPackId = software.amazon.jsii.Kernel.get(this, "buildPackId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.componentIds = software.amazon.jsii.Kernel.get(this, "componentIds", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ecuInfo = software.amazon.jsii.Kernel.get(this, "ecuInfo", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.buildPackId = software.amazon.jsii.Kernel.get(this, "buildPackId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.componentIds = software.amazon.jsii.Kernel.get(this, "componentIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecuInfo = software.amazon.jsii.Kernel.get(this, "ecuInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String applicationName, final java.lang.String clusterId, final java.lang.Number buildPackId, final java.lang.String componentIds, final java.lang.String description, final java.lang.String ecuInfo, final java.lang.String healthCheckUrl, final java.lang.String logicalRegionId, final java.lang.String packageType) {
+        protected Jsii$Proxy(final java.lang.Object applicationName, final java.lang.Object clusterId, final java.lang.Object buildPackId, final java.lang.Object componentIds, final java.lang.Object description, final java.lang.Object ecuInfo, final java.lang.Object healthCheckUrl, final java.lang.Object logicalRegionId, final java.lang.Object packageType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
             this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
@@ -228,47 +318,47 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getApplicationName() {
+        public final java.lang.Object getApplicationName() {
             return this.applicationName;
         }
 
         @Override
-        public final java.lang.String getClusterId() {
+        public final java.lang.Object getClusterId() {
             return this.clusterId;
         }
 
         @Override
-        public final java.lang.Number getBuildPackId() {
+        public final java.lang.Object getBuildPackId() {
             return this.buildPackId;
         }
 
         @Override
-        public final java.lang.String getComponentIds() {
+        public final java.lang.Object getComponentIds() {
             return this.componentIds;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getEcuInfo() {
+        public final java.lang.Object getEcuInfo() {
             return this.ecuInfo;
         }
 
         @Override
-        public final java.lang.String getHealthCheckUrl() {
+        public final java.lang.Object getHealthCheckUrl() {
             return this.healthCheckUrl;
         }
 
         @Override
-        public final java.lang.String getLogicalRegionId() {
+        public final java.lang.Object getLogicalRegionId() {
             return this.logicalRegionId;
         }
 
         @Override
-        public final java.lang.String getPackageType() {
+        public final java.lang.Object getPackageType() {
             return this.packageType;
         }
 

@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Property</strong>: queueName: Queue name
         /// </remarks>
-        [JsiiProperty(name: "queueName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string QueueName
+        [JsiiProperty(name: "queueName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object QueueName
         {
             get;
             set;
@@ -25,15 +25,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 0 and 604800 (7 days). The default value is 0
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "delaySeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DelaySeconds
+        [JsiiProperty(name: "delaySeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DelaySeconds
         {
             get;
             set;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
+        /// <strong>Property</strong>: loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
         /// The default value is false
         /// </remarks>
         [JsiiOptional]
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? MaximumMessageSize
+        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MaximumMessageSize
         {
             get;
             set;
@@ -61,8 +61,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "messageRetentionPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? MessageRetentionPeriod
+        [JsiiProperty(name: "messageRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MessageRetentionPeriod
         {
             get;
             set;
@@ -73,8 +73,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 0 and 30 seconds. The default value is 0 (seconds)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pollingWaitSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? PollingWaitSeconds
+        [JsiiProperty(name: "pollingWaitSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PollingWaitSeconds
         {
             get;
             set;
@@ -85,8 +85,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "visibilityTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? VisibilityTimeout
+        [JsiiProperty(name: "visibilityTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VisibilityTimeout
         {
             get;
             set;

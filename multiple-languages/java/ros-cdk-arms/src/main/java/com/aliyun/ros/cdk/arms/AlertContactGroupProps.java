@@ -3,28 +3,34 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::AlertContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.168Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AlertContactGroupProps.Jsii$Proxy.class)
 public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property contactGroupName: The name of the alert contact group that you want to create.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContactGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupName();
 
     /**
+     * Property contactIds: The list of alert contact ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getContactIds();
 
     /**
+     * Property proxyUserId: Internal parameters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProxyUserId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyUserId() {
         return null;
     }
 
     /**
+     * Property regionId: Region ID.
+     * <p>
+     * Default to region of stack.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
@@ -38,14 +44,14 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link AlertContactGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlertContactGroupProps> {
-        private java.lang.String contactGroupName;
+        private java.lang.Object contactGroupName;
         private java.lang.Object contactIds;
-        private java.lang.String proxyUserId;
-        private java.lang.String regionId;
+        private java.lang.Object proxyUserId;
+        private java.lang.Object regionId;
 
         /**
          * Sets the value of {@link AlertContactGroupProps#getContactGroupName}
-         * @param contactGroupName the value to be set. This parameter is required.
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group that you want to create. This parameter is required.
          * @return {@code this}
          */
         public Builder contactGroupName(java.lang.String contactGroupName) {
@@ -54,18 +60,18 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
-         * Sets the value of {@link AlertContactGroupProps#getContactIds}
-         * @param contactIds the value to be set. This parameter is required.
+         * Sets the value of {@link AlertContactGroupProps#getContactGroupName}
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group that you want to create. This parameter is required.
          * @return {@code this}
          */
-        public Builder contactIds(java.util.List<? extends java.lang.Number> contactIds) {
-            this.contactIds = contactIds;
+        public Builder contactGroupName(com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
+            this.contactGroupName = contactGroupName;
             return this;
         }
 
         /**
          * Sets the value of {@link AlertContactGroupProps#getContactIds}
-         * @param contactIds the value to be set. This parameter is required.
+         * @param contactIds Property contactIds: The list of alert contact ID. This parameter is required.
          * @return {@code this}
          */
         public Builder contactIds(com.aliyun.ros.cdk.core.IResolvable contactIds) {
@@ -74,8 +80,18 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link AlertContactGroupProps#getContactIds}
+         * @param contactIds Property contactIds: The list of alert contact ID. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactIds(java.util.List<? extends java.lang.Object> contactIds) {
+            this.contactIds = contactIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactGroupProps#getProxyUserId}
-         * @param proxyUserId the value to be set.
+         * @param proxyUserId Property proxyUserId: Internal parameters.
          * @return {@code this}
          */
         public Builder proxyUserId(java.lang.String proxyUserId) {
@@ -84,11 +100,33 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link AlertContactGroupProps#getProxyUserId}
+         * @param proxyUserId Property proxyUserId: Internal parameters.
+         * @return {@code this}
+         */
+        public Builder proxyUserId(com.aliyun.ros.cdk.core.IResolvable proxyUserId) {
+            this.proxyUserId = proxyUserId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactGroupProps#getRegionId}
-         * @param regionId the value to be set.
+         * @param regionId Property regionId: Region ID.
+         *                 Default to region of stack.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AlertContactGroupProps#getRegionId}
+         * @param regionId Property regionId: Region ID.
+         *                 Default to region of stack.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.regionId = regionId;
             return this;
         }
@@ -109,10 +147,10 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AlertContactGroupProps {
-        private final java.lang.String contactGroupName;
+        private final java.lang.Object contactGroupName;
         private final java.lang.Object contactIds;
-        private final java.lang.String proxyUserId;
-        private final java.lang.String regionId;
+        private final java.lang.Object proxyUserId;
+        private final java.lang.Object regionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -120,16 +158,16 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.contactIds = software.amazon.jsii.Kernel.get(this, "contactIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.proxyUserId = software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.proxyUserId = software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String contactGroupName, final java.lang.Object contactIds, final java.lang.String proxyUserId, final java.lang.String regionId) {
+        protected Jsii$Proxy(final java.lang.Object contactGroupName, final java.lang.Object contactIds, final java.lang.Object proxyUserId, final java.lang.Object regionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactGroupName = java.util.Objects.requireNonNull(contactGroupName, "contactGroupName is required");
             this.contactIds = java.util.Objects.requireNonNull(contactIds, "contactIds is required");
@@ -138,7 +176,7 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getContactGroupName() {
+        public final java.lang.Object getContactGroupName() {
             return this.contactGroupName;
         }
 
@@ -148,12 +186,12 @@ public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getProxyUserId() {
+        public final java.lang.Object getProxyUserId() {
             return this.proxyUserId;
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 

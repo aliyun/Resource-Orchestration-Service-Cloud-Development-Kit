@@ -11,44 +11,44 @@ export interface SecurityGroupCloneProps {
     /**
      * Property sourceSecurityGroupId: Source security group ID is used to copy properties to clone new security group. If the NetworkType and VpcId is not specified, the same security group will be cloned. If NetworkType or VpcId is specified, only proper security group rules will be cloned.
      */
-    readonly sourceSecurityGroupId: string;
+    readonly sourceSecurityGroupId: string | ros.IResolvable;
 
     /**
      * Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property destinationRegionId: Clone security group to the specified region. Default to current region.
      */
-    readonly destinationRegionId?: string;
+    readonly destinationRegionId?: string | ros.IResolvable;
 
     /**
      * Property networkType: Clone new security group as classic network type. If the VpcId is specified, the value will be ignored.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly securityGroupName?: string;
+    readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * Property securityGroupType: The type of the security group. Valid values:
      * normal: basic security group
      * enterprise: advanced security group
      */
-    readonly securityGroupType?: string;
+    readonly securityGroupType?: string | ros.IResolvable;
 
     /**
      * Property vpcId: Physical ID of the VPC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -64,7 +64,7 @@ export class SecurityGroupClone extends ros.Resource {
     /**
      * Attribute SecurityGroupId: Generated security group id of new security group.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupClone`.

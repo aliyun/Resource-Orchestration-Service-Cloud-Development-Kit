@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Interface for values that can be resolvable later&#xD; &#xD; Tokens are special objects that participate in synthesis.</summary>
+    /// <summary>Interface for values that can be resolvable later.</summary>
+    /// <remarks>
+    /// Tokens are special objects that participate in synthesis.
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IResolvable), fullyQualifiedName: "@alicloud/ros-cdk-core.IResolvable")]
     public interface IResolvable
     {
-        /// <summary>The creation stack of this resolvable which will be appended to errors&#xD; thrown during resolution.</summary>
+        /// <summary>The creation stack of this resolvable which will be appended to errors thrown during resolution.</summary>
         /// <remarks>
         /// If this returns an empty array the stack will not be attached.
         /// </remarks>
@@ -27,7 +30,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}")]
         string ToString();
 
-        /// <summary>Interface for values that can be resolvable later&#xD; &#xD; Tokens are special objects that participate in synthesis.</summary>
+        /// <summary>Interface for values that can be resolvable later.</summary>
+        /// <remarks>
+        /// Tokens are special objects that participate in synthesis.
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IResolvable), fullyQualifiedName: "@alicloud/ros-cdk-core.IResolvable")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Core.IResolvable
         {
@@ -35,7 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             {
             }
 
-            /// <summary>The creation stack of this resolvable which will be appended to errors&#xD; thrown during resolution.</summary>
+            /// <summary>The creation stack of this resolvable which will be appended to errors thrown during resolution.</summary>
             /// <remarks>
             /// If this returns an empty array the stack will not be attached.
             /// </remarks>

@@ -11,32 +11,32 @@ export interface AcceleratorProps {
     /**
      * Property duration: The Duration of the GA instance
      */
-    readonly duration: string;
+    readonly duration: string | ros.IResolvable;
 
     /**
      * Property pricingCycle: The PricingCycle of the GA instance.
      */
-    readonly pricingCycle: string;
+    readonly pricingCycle: string | ros.IResolvable;
 
     /**
      * Property spec: The instance type of the GA instance
      */
-    readonly spec: string;
+    readonly spec: string | ros.IResolvable;
 
     /**
      * Property acceleratorName: The Name of the GA instance
      */
-    readonly acceleratorName?: string;
+    readonly acceleratorName?: string | ros.IResolvable;
 
     /**
      * Property autoPay: The AutoPay of the GA instance.
      */
-    readonly autoPay?: string;
+    readonly autoPay?: string | ros.IResolvable;
 
     /**
      * Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    readonly autoUseCoupon?: string;
+    readonly autoUseCoupon?: string | ros.IResolvable;
 }
 
 /**
@@ -52,47 +52,47 @@ export class Accelerator extends ros.Resource {
     /**
      * Attribute AcceleratorId: The ID of the GA instance to query.
      */
-    public readonly attrAcceleratorId: any;
+    public readonly attrAcceleratorId: ros.IResolvable;
 
     /**
      * Attribute AcceleratorName: The Name of the GA instance
      */
-    public readonly attrAcceleratorName: any;
+    public readonly attrAcceleratorName: ros.IResolvable;
 
     /**
      * Attribute AutoPay: The AutoPay of the GA instance.
      */
-    public readonly attrAutoPay: any;
+    public readonly attrAutoPay: ros.IResolvable;
 
     /**
      * Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    public readonly attrAutoUseCoupon: any;
+    public readonly attrAutoUseCoupon: ros.IResolvable;
 
     /**
      * Attribute Duration: The Duration of the GA instance
      */
-    public readonly attrDuration: any;
+    public readonly attrDuration: ros.IResolvable;
 
     /**
      * Attribute OrderId: The OrderId of the GA instance
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Attribute PaymentType: The Payment Typethe GA instance
      */
-    public readonly attrPaymentType: any;
+    public readonly attrPaymentType: ros.IResolvable;
 
     /**
      * Attribute PricingCycle: The PricingCycle of the GA instance.
      */
-    public readonly attrPricingCycle: any;
+    public readonly attrPricingCycle: ros.IResolvable;
 
     /**
      * Attribute Spec: The instance type of the GA instance
      */
-    public readonly attrSpec: any;
+    public readonly attrSpec: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::Accelerator`.

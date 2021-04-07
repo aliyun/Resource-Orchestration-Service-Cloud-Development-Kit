@@ -11,17 +11,17 @@ export interface AppProps {
     /**
      * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly appName: string;
+    readonly appName: string | ros.IResolvable;
 
     /**
      * Property description: Description of the App, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to app. Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosApp.TagsProperty[];
 }
 
 /**
@@ -37,22 +37,22 @@ export class App extends ros.Resource {
     /**
      * Attribute AppId: The id of the created APP
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * Attribute AppKey: The key of the APP
      */
-    public readonly attrAppKey: any;
+    public readonly attrAppKey: ros.IResolvable;
 
     /**
      * Attribute AppSecret: The secret of the APP
      */
-    public readonly attrAppSecret: any;
+    public readonly attrAppSecret: ros.IResolvable;
 
     /**
      * Attribute Tags: Tags of app
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::App`.
@@ -66,7 +66,7 @@ export class App extends ros.Resource {
 
         const rosApp = new RosApp(this, id,  {
             description: props.description,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             appName: props.appName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApp;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::ManagedPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.869Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicy")
 public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPolicyName() {
-        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPolicyName() {
+        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getPolicyName() {
-        return software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName() {
+        return software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,13 +75,25 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPolicyName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "policyName", java.util.Objects.requireNonNull(value, "policyName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -191,7 +203,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getVersion() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
             return null;
         }
 
@@ -208,7 +220,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentProperty> {
             private java.lang.Object statement;
-            private java.lang.String version;
+            private java.lang.Object version;
 
             /**
              * Sets the value of {@link PolicyDocumentProperty#getStatement}
@@ -244,6 +256,17 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PolicyDocumentProperty#getVersion}
+             * @param version the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder version(com.aliyun.ros.cdk.core.IResolvable version) {
+                this.version = version;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link PolicyDocumentProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -262,7 +285,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyDocumentProperty {
             private final java.lang.Object statement;
-            private final java.lang.String version;
+            private final java.lang.Object version;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -271,13 +294,13 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.statement = software.amazon.jsii.Kernel.get(this, "statement", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.String version) {
+            protected Jsii$Proxy(final java.lang.Object statement, final java.lang.Object version) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.statement = statement;
                 this.version = version;
@@ -289,7 +312,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getVersion() {
+            public final java.lang.Object getVersion() {
                 return this.version;
             }
 
@@ -359,7 +382,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEffect() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEffect() {
             return null;
         }
 
@@ -384,7 +407,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<StatementProperty> {
             private java.lang.Object action;
             private java.lang.Object condition;
-            private java.lang.String effect;
+            private java.lang.Object effect;
             private java.lang.Object resource;
 
             /**
@@ -443,6 +466,17 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link StatementProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link StatementProperty#getResource}
              * @param resource the value to be set.
              * @return {@code this}
@@ -484,7 +518,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StatementProperty {
             private final java.lang.Object action;
             private final java.lang.Object condition;
-            private final java.lang.String effect;
+            private final java.lang.Object effect;
             private final java.lang.Object resource;
 
             /**
@@ -495,14 +529,14 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.String effect, final java.lang.Object resource) {
+            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.action = action;
                 this.condition = condition;
@@ -521,7 +555,7 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getEffect() {
+            public final java.lang.Object getEffect() {
                 return this.effect;
             }
 
@@ -617,12 +651,28 @@ public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.policyName(policyName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param policyName This parameter is required.
+         */
+        public Builder policyName(final com.aliyun.ros.cdk.core.IResolvable policyName) {
+            this.props.policyName(policyName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }

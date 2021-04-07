@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::AssignIpv6Addresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.519Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6Addresses")
 public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AssignIpv6Addresses(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AssignIpv6Addresses(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Ipv6Addresses: Assigned IPv6 addresses.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpv6Addresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6Addresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpv6AddressIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6AddressIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute NetworkInterfaceId: Elastic network interface ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.AssignIpv6Addresses> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,34 +104,72 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property networkInterfaceId: Elastic network interface ID.
+         * <p>
          * @return {@code this}
-         * @param networkInterfaceId This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: Elastic network interface ID. This parameter is required.
          */
         public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * Property networkInterfaceId: Elastic network interface ID.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: Elastic network interface ID. This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
+         * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+         * <p>
+         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * <p>
          * @return {@code this}
-         * @param ipv6AddressCount This parameter is required.
+         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity. This parameter is required.
          */
         public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
             this.props.ipv6AddressCount(ipv6AddressCount);
             return this;
         }
+        /**
+         * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+         * <p>
+         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity. This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
 
         /**
+         * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
+         * <p>
+         * Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * <p>
          * @return {@code this}
-         * @param ipv6Addresses This parameter is required.
+         * @param ipv6Addresses Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. This parameter is required.
          */
         public Builder ipv6Addresses(final java.util.List<? extends java.lang.Object> ipv6Addresses) {
             this.props.ipv6Addresses(ipv6Addresses);
             return this;
         }
         /**
+         * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
+         * <p>
+         * Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * <p>
          * @return {@code this}
-         * @param ipv6Addresses This parameter is required.
+         * @param ipv6Addresses Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. This parameter is required.
          */
         public Builder ipv6Addresses(final com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
             this.props.ipv6Addresses(ipv6Addresses);

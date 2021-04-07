@@ -14,6 +14,11 @@ export interface StackProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: Resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property templateBody: Structure containing the template body.
      * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
@@ -23,23 +28,23 @@ export interface StackProps {
     /**
      * Property templateId: Template ID of template containing the template body.
      */
-    readonly templateId?: string;
+    readonly templateId?: string | ros.IResolvable;
 
     /**
      * Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
-    readonly templateUrl?: string;
+    readonly templateUrl?: string | ros.IResolvable;
 
     /**
      * Property templateVersion: Template version of template containing the template body.
      */
-    readonly templateVersion?: string;
+    readonly templateVersion?: string | ros.IResolvable;
 
     /**
      * Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update. Default to 60 minutes.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 }
 
 /**
@@ -65,6 +70,7 @@ export class Stack extends ros.Resource {
         const rosStack = new RosStack(this, id,  {
             templateUrl: props.templateUrl,
             parameters: props.parameters,
+            resourceGroupId: props.resourceGroupId,
             timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
             templateVersion: props.templateVersion,
             templateBody: props.templateBody,

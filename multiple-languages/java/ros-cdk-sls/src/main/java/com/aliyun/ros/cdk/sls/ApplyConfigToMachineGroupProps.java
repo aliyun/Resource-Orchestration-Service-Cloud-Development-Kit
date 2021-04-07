@@ -3,26 +3,29 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.399Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ApplyConfigToMachineGroupProps.Jsii$Proxy.class)
 public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property configName: Apply config to the config name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConfigName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfigName() {
         return null;
     }
 
     /**
+     * Property groupName: Apply config to the group name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupName() {
         return null;
     }
 
     /**
+     * Property projectName: Apply config to the project name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProjectName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
         return null;
     }
 
@@ -36,13 +39,13 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
      * A builder for {@link ApplyConfigToMachineGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ApplyConfigToMachineGroupProps> {
-        private java.lang.String configName;
-        private java.lang.String groupName;
-        private java.lang.String projectName;
+        private java.lang.Object configName;
+        private java.lang.Object groupName;
+        private java.lang.Object projectName;
 
         /**
          * Sets the value of {@link ApplyConfigToMachineGroupProps#getConfigName}
-         * @param configName the value to be set.
+         * @param configName Property configName: Apply config to the config name.
          * @return {@code this}
          */
         public Builder configName(java.lang.String configName) {
@@ -51,8 +54,18 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link ApplyConfigToMachineGroupProps#getConfigName}
+         * @param configName Property configName: Apply config to the config name.
+         * @return {@code this}
+         */
+        public Builder configName(com.aliyun.ros.cdk.core.IResolvable configName) {
+            this.configName = configName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplyConfigToMachineGroupProps#getGroupName}
-         * @param groupName the value to be set.
+         * @param groupName Property groupName: Apply config to the group name.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -61,11 +74,31 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link ApplyConfigToMachineGroupProps#getGroupName}
+         * @param groupName Property groupName: Apply config to the group name.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplyConfigToMachineGroupProps#getProjectName}
-         * @param projectName the value to be set.
+         * @param projectName Property projectName: Apply config to the project name.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApplyConfigToMachineGroupProps#getProjectName}
+         * @param projectName Property projectName: Apply config to the project name.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.projectName = projectName;
             return this;
         }
@@ -86,9 +119,9 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ApplyConfigToMachineGroupProps {
-        private final java.lang.String configName;
-        private final java.lang.String groupName;
-        private final java.lang.String projectName;
+        private final java.lang.Object configName;
+        private final java.lang.Object groupName;
+        private final java.lang.Object projectName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,15 +129,15 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.configName = software.amazon.jsii.Kernel.get(this, "configName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.configName = software.amazon.jsii.Kernel.get(this, "configName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String configName, final java.lang.String groupName, final java.lang.String projectName) {
+        protected Jsii$Proxy(final java.lang.Object configName, final java.lang.Object groupName, final java.lang.Object projectName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.configName = configName;
             this.groupName = groupName;
@@ -112,17 +145,17 @@ public interface ApplyConfigToMachineGroupProps extends software.amazon.jsii.Jsi
         }
 
         @Override
-        public final java.lang.String getConfigName() {
+        public final java.lang.Object getConfigName() {
             return this.configName;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         }
 
         /// <summary>Attribute FlowName: Flow name.</summary>
-        [JsiiProperty(name: "attrFlowName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFlowName
+        [JsiiProperty(name: "attrFlowName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFlowName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScheduleId: Schedule Id.</summary>
-        [JsiiProperty(name: "attrScheduleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScheduleId
+        [JsiiProperty(name: "attrScheduleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScheduleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScheduleName: Schedule name.</summary>
-        [JsiiProperty(name: "attrScheduleName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScheduleName
+        [JsiiProperty(name: "attrScheduleName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScheduleName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

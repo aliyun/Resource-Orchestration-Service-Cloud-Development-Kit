@@ -3,36 +3,43 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.772Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceName: The name of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
+     * Property clusterType: Cluster type, the default is SSD.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getClusterType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClusterType() {
         return null;
     }
 
     /**
+     * Property description: Instance description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property network: Instance network type, default is NORMAL.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetwork() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetwork() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> getTags() {
         return null;
     }
 
@@ -46,15 +53,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.String instanceName;
-        private java.lang.String clusterType;
-        private java.lang.String description;
-        private java.lang.String network;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object instanceName;
+        private java.lang.Object clusterType;
+        private java.lang.Object description;
+        private java.lang.Object network;
+        private java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
-         * @param instanceName the value to be set. This parameter is required.
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -63,8 +70,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getInstanceName}
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getClusterType}
-         * @param clusterType the value to be set.
+         * @param clusterType Property clusterType: Cluster type, the default is SSD.
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -73,8 +90,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getClusterType}
+         * @param clusterType Property clusterType: Cluster type, the default is SSD.
+         * @return {@code this}
+         */
+        public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.clusterType = clusterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Instance description.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -83,8 +110,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getDescription}
+         * @param description Property description: Instance description.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getNetwork}
-         * @param network the value to be set.
+         * @param network Property network: Instance network type, default is NORMAL.
          * @return {@code this}
          */
         public Builder network(java.lang.String network) {
@@ -93,13 +130,24 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getNetwork}
+         * @param network Property network: Instance network type, default is NORMAL.
+         * @return {@code this}
+         */
+        public Builder network(com.aliyun.ros.cdk.core.IResolvable network) {
+            this.network = network;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty>)tags;
             return this;
         }
 
@@ -119,11 +167,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
-        private final java.lang.String instanceName;
-        private final java.lang.String clusterType;
-        private final java.lang.String description;
-        private final java.lang.String network;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object clusterType;
+        private final java.lang.Object description;
+        private final java.lang.Object network;
+        private final java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -131,48 +179,48 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.network = software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.network = software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ots.RosInstance.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String instanceName, final java.lang.String clusterType, final java.lang.String description, final java.lang.String network, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object clusterType, final java.lang.Object description, final java.lang.Object network, final java.util.List<? extends com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
             this.clusterType = clusterType;
             this.description = description;
             this.network = network;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getClusterType() {
+        public final java.lang.Object getClusterType() {
             return this.clusterType;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getNetwork() {
+        public final java.lang.Object getNetwork() {
             return this.network;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ots.RosInstance.TagsProperty> getTags() {
             return this.tags;
         }
 

@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: slsLogStore: Logstore name of SLS
         /// </remarks>
-        [JsiiProperty(name: "slsLogStore", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SlsLogStore
+        [JsiiProperty(name: "slsLogStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SlsLogStore
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: slsProject: Project name of SLS
         /// </remarks>
-        [JsiiProperty(name: "slsProject", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SlsProject
+        [JsiiProperty(name: "slsProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SlsProject
         {
             get;
             set;

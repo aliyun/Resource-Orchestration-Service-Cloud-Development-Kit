@@ -3,40 +3,40 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::ZoneRecord`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.193Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneRecordProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneRecordProps.Jsii$Proxy.class)
 public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRr();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRr();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStatus();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStatus();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getValue();
+    @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTtl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
     }
 
@@ -50,13 +50,13 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosZoneRecordProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosZoneRecordProps> {
-        private java.lang.String rr;
-        private java.lang.String status;
-        private java.lang.String type;
-        private java.lang.String value;
-        private java.lang.String zoneId;
-        private java.lang.Number priority;
-        private java.lang.Number ttl;
+        private java.lang.Object rr;
+        private java.lang.Object status;
+        private java.lang.Object type;
+        private java.lang.Object value;
+        private java.lang.Object zoneId;
+        private java.lang.Object priority;
+        private java.lang.Object ttl;
 
         /**
          * Sets the value of {@link RosZoneRecordProps#getRr}
@@ -64,6 +64,16 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder rr(java.lang.String rr) {
+            this.rr = rr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneRecordProps#getRr}
+         * @param rr the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder rr(com.aliyun.ros.cdk.core.IResolvable rr) {
             this.rr = rr;
             return this;
         }
@@ -79,11 +89,31 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosZoneRecordProps#getStatus}
+         * @param status the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosZoneRecordProps#getType}
          * @param type the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneRecordProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
             this.type = type;
             return this;
         }
@@ -99,11 +129,31 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosZoneRecordProps#getValue}
+         * @param value the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+            this.value = value;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosZoneRecordProps#getZoneId}
          * @param zoneId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneRecordProps#getZoneId}
+         * @param zoneId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -119,11 +169,31 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosZoneRecordProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosZoneRecordProps#getTtl}
          * @param ttl the value to be set.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
+            this.ttl = ttl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZoneRecordProps#getTtl}
+         * @param ttl the value to be set.
+         * @return {@code this}
+         */
+        public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {
             this.ttl = ttl;
             return this;
         }
@@ -144,13 +214,13 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosZoneRecordProps {
-        private final java.lang.String rr;
-        private final java.lang.String status;
-        private final java.lang.String type;
-        private final java.lang.String value;
-        private final java.lang.String zoneId;
-        private final java.lang.Number priority;
-        private final java.lang.Number ttl;
+        private final java.lang.Object rr;
+        private final java.lang.Object status;
+        private final java.lang.Object type;
+        private final java.lang.Object value;
+        private final java.lang.Object zoneId;
+        private final java.lang.Object priority;
+        private final java.lang.Object ttl;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -158,19 +228,19 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.rr = software.amazon.jsii.Kernel.get(this, "rr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.rr = software.amazon.jsii.Kernel.get(this, "rr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String rr, final java.lang.String status, final java.lang.String type, final java.lang.String value, final java.lang.String zoneId, final java.lang.Number priority, final java.lang.Number ttl) {
+        protected Jsii$Proxy(final java.lang.Object rr, final java.lang.Object status, final java.lang.Object type, final java.lang.Object value, final java.lang.Object zoneId, final java.lang.Object priority, final java.lang.Object ttl) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.rr = java.util.Objects.requireNonNull(rr, "rr is required");
             this.status = java.util.Objects.requireNonNull(status, "status is required");
@@ -182,37 +252,37 @@ public interface RosZoneRecordProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getRr() {
+        public final java.lang.Object getRr() {
             return this.rr;
         }
 
         @Override
-        public final java.lang.String getStatus() {
+        public final java.lang.Object getStatus() {
             return this.status;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getValue() {
+        public final java.lang.Object getValue() {
             return this.value;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
         @Override
-        public final java.lang.Number getPriority() {
+        public final java.lang.Object getPriority() {
             return this.priority;
         }
 
         @Override
-        public final java.lang.Number getTtl() {
+        public final java.lang.Object getTtl() {
             return this.ttl;
         }
 

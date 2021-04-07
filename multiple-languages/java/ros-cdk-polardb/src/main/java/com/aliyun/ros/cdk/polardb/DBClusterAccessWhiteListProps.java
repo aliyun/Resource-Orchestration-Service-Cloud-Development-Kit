@@ -3,22 +3,37 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.816Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterAccessWhiteListProps.Jsii$Proxy.class)
 public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     * Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified.
+     * <p>
+     * Each
+     * whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
+     * addresses with a comma (,). The following two formats are supported:
+     * IP address: for example, 10.23.12.24.
+     * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
+     * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+     * ranges from 1 to 32.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecurityIps();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityIps();
 
     /**
+     * Property dbClusterIpArrayName: The name of the IP address whitelist group.
+     * <p>
+     * If you do not specify this parameter,
+     * the Default whitelist group is modified by default.
+     * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbClusterIpArrayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterIpArrayName() {
         return null;
     }
 
@@ -32,13 +47,13 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
      * A builder for {@link DBClusterAccessWhiteListProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterAccessWhiteListProps> {
-        private java.lang.String dbClusterId;
-        private java.lang.String securityIps;
-        private java.lang.String dbClusterIpArrayName;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object securityIps;
+        private java.lang.Object dbClusterIpArrayName;
 
         /**
          * Sets the value of {@link DBClusterAccessWhiteListProps#getDbClusterId}
-         * @param dbClusterId the value to be set. This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
@@ -47,8 +62,25 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBClusterAccessWhiteListProps#getDbClusterId}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterAccessWhiteListProps#getSecurityIps}
-         * @param securityIps the value to be set. This parameter is required.
+         * @param securityIps Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. This parameter is required.
+         *                    Each
+         *                    whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
+         *                    addresses with a comma (,). The following two formats are supported:
+         *                    IP address: for example, 10.23.12.24.
+         *                    Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
+         *                    suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+         *                    ranges from 1 to 32.
          * @return {@code this}
          */
         public Builder securityIps(java.lang.String securityIps) {
@@ -57,11 +89,44 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBClusterAccessWhiteListProps#getSecurityIps}
+         * @param securityIps Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. This parameter is required.
+         *                    Each
+         *                    whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
+         *                    addresses with a comma (,). The following two formats are supported:
+         *                    IP address: for example, 10.23.12.24.
+         *                    Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
+         *                    suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+         *                    ranges from 1 to 32.
+         * @return {@code this}
+         */
+        public Builder securityIps(com.aliyun.ros.cdk.core.IResolvable securityIps) {
+            this.securityIps = securityIps;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterAccessWhiteListProps#getDbClusterIpArrayName}
-         * @param dbClusterIpArrayName the value to be set.
+         * @param dbClusterIpArrayName Property dbClusterIpArrayName: The name of the IP address whitelist group.
+         *                             If you do not specify this parameter,
+         *                             the Default whitelist group is modified by default.
+         *                             Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
          * @return {@code this}
          */
         public Builder dbClusterIpArrayName(java.lang.String dbClusterIpArrayName) {
+            this.dbClusterIpArrayName = dbClusterIpArrayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterAccessWhiteListProps#getDbClusterIpArrayName}
+         * @param dbClusterIpArrayName Property dbClusterIpArrayName: The name of the IP address whitelist group.
+         *                             If you do not specify this parameter,
+         *                             the Default whitelist group is modified by default.
+         *                             Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
+         * @return {@code this}
+         */
+        public Builder dbClusterIpArrayName(com.aliyun.ros.cdk.core.IResolvable dbClusterIpArrayName) {
             this.dbClusterIpArrayName = dbClusterIpArrayName;
             return this;
         }
@@ -82,9 +147,9 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBClusterAccessWhiteListProps {
-        private final java.lang.String dbClusterId;
-        private final java.lang.String securityIps;
-        private final java.lang.String dbClusterIpArrayName;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object securityIps;
+        private final java.lang.Object dbClusterIpArrayName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +157,15 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityIps = software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbClusterIpArrayName = software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityIps = software.amazon.jsii.Kernel.get(this, "securityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterIpArrayName = software.amazon.jsii.Kernel.get(this, "dbClusterIpArrayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbClusterId, final java.lang.String securityIps, final java.lang.String dbClusterIpArrayName) {
+        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object securityIps, final java.lang.Object dbClusterIpArrayName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
             this.securityIps = java.util.Objects.requireNonNull(securityIps, "securityIps is required");
@@ -108,17 +173,17 @@ public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getSecurityIps() {
+        public final java.lang.Object getSecurityIps() {
             return this.securityIps;
         }
 
         @Override
-        public final java.lang.String getDbClusterIpArrayName() {
+        public final java.lang.Object getDbClusterIpArrayName() {
             return this.dbClusterIpArrayName;
         }
 

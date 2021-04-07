@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Accessor for pseudo parameters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.164Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosPseudo")
 public class RosPseudo extends software.amazon.jsii.JsiiObject {
 
@@ -19,8 +19,12 @@ public class RosPseudo extends software.amazon.jsii.JsiiObject {
         return software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosPseudo.class, "accountId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
-    public static @org.jetbrains.annotations.NotNull java.lang.String getNoValue() {
-        return software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosPseudo.class, "noValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public static @org.jetbrains.annotations.NotNull java.lang.Number getIndex() {
+        return software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosPseudo.class, "index", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    }
+
+    public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getNoValue() {
+        return software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosPseudo.class, "noValue", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     public static @org.jetbrains.annotations.NotNull java.lang.String getRegion() {

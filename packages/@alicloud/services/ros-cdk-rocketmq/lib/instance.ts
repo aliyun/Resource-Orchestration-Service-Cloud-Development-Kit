@@ -11,12 +11,17 @@ export interface InstanceProps {
     /**
      * Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * Property remark: The remark of instance.
      */
-    readonly remark?: string;
+    readonly remark?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -32,32 +37,37 @@ export class Instance extends ros.Resource {
     /**
      * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternalEndpoint: any;
+    public readonly attrHttpInternalEndpoint: ros.IResolvable;
 
     /**
      * Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternetEndpoint: any;
+    public readonly attrHttpInternetEndpoint: ros.IResolvable;
 
     /**
      * Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternetSecureEndpoint: any;
+    public readonly attrHttpInternetSecureEndpoint: ros.IResolvable;
 
     /**
      * Attribute InstanceId: Instance ID created
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * Attribute InstanceName: Instance name
+     */
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * Attribute InstanceType: Instance Type
      */
-    public readonly attrInstanceType: any;
+    public readonly attrInstanceType: ros.IResolvable;
 
     /**
      * Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrTcpEndpoint: any;
+    public readonly attrTcpEndpoint: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ROCKETMQ::Instance`.
@@ -71,6 +81,7 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
+            tags: props.tags,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
@@ -78,6 +89,7 @@ export class Instance extends ros.Resource {
         this.attrHttpInternetEndpoint = rosInstance.attrHttpInternetEndpoint;
         this.attrHttpInternetSecureEndpoint = rosInstance.attrHttpInternetSecureEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;
+        this.attrInstanceName = rosInstance.attrInstanceName;
         this.attrInstanceType = rosInstance.attrInstanceType;
         this.attrTcpEndpoint = rosInstance.attrTcpEndpoint;
     }

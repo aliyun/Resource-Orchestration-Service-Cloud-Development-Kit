@@ -11,7 +11,7 @@ export interface TopicProps {
     /**
      * Property topicName: Topic name
      */
-    readonly topicName: string;
+    readonly topicName: string | ros.IResolvable;
 
     /**
      * Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
@@ -23,7 +23,7 @@ export interface TopicProps {
      * Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
-    readonly maximumMessageSize?: number;
+    readonly maximumMessageSize?: number | ros.IResolvable;
 }
 
 /**
@@ -39,17 +39,17 @@ export class Topic extends ros.Resource {
     /**
      * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
      */
-    public readonly attrArnWithSlash: any;
+    public readonly attrArnWithSlash: ros.IResolvable;
 
     /**
      * Attribute TopicName: Topic name
      */
-    public readonly attrTopicName: any;
+    public readonly attrTopicName: ros.IResolvable;
 
     /**
      * Attribute TopicUrl: URL of created topic
      */
-    public readonly attrTopicUrl: any;
+    public readonly attrTopicUrl: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MNS::Topic`.

@@ -3,24 +3,27 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.294Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.966Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.NamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(NamespaceProps.Jsii$Proxy.class)
 public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property namespace: domain name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespace();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespace();
 
     /**
+     * Property autoCreate: whether auto create repository.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoCreate() {
         return null;
     }
 
     /**
+     * Property defaultVisibility: repository default visibility, public or private.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDefaultVisibility() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultVisibility() {
         return null;
     }
 
@@ -34,13 +37,13 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NamespaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NamespaceProps> {
-        private java.lang.String namespace;
+        private java.lang.Object namespace;
         private java.lang.Object autoCreate;
-        private java.lang.String defaultVisibility;
+        private java.lang.Object defaultVisibility;
 
         /**
          * Sets the value of {@link NamespaceProps#getNamespace}
-         * @param namespace the value to be set. This parameter is required.
+         * @param namespace Property namespace: domain name. This parameter is required.
          * @return {@code this}
          */
         public Builder namespace(java.lang.String namespace) {
@@ -49,8 +52,18 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link NamespaceProps#getNamespace}
+         * @param namespace Property namespace: domain name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder namespace(com.aliyun.ros.cdk.core.IResolvable namespace) {
+            this.namespace = namespace;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NamespaceProps#getAutoCreate}
-         * @param autoCreate the value to be set.
+         * @param autoCreate Property autoCreate: whether auto create repository.
          * @return {@code this}
          */
         public Builder autoCreate(java.lang.Boolean autoCreate) {
@@ -60,7 +73,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NamespaceProps#getAutoCreate}
-         * @param autoCreate the value to be set.
+         * @param autoCreate Property autoCreate: whether auto create repository.
          * @return {@code this}
          */
         public Builder autoCreate(com.aliyun.ros.cdk.core.IResolvable autoCreate) {
@@ -70,10 +83,20 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link NamespaceProps#getDefaultVisibility}
-         * @param defaultVisibility the value to be set.
+         * @param defaultVisibility Property defaultVisibility: repository default visibility, public or private.
          * @return {@code this}
          */
         public Builder defaultVisibility(java.lang.String defaultVisibility) {
+            this.defaultVisibility = defaultVisibility;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NamespaceProps#getDefaultVisibility}
+         * @param defaultVisibility Property defaultVisibility: repository default visibility, public or private.
+         * @return {@code this}
+         */
+        public Builder defaultVisibility(com.aliyun.ros.cdk.core.IResolvable defaultVisibility) {
             this.defaultVisibility = defaultVisibility;
             return this;
         }
@@ -94,9 +117,9 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NamespaceProps {
-        private final java.lang.String namespace;
+        private final java.lang.Object namespace;
         private final java.lang.Object autoCreate;
-        private final java.lang.String defaultVisibility;
+        private final java.lang.Object defaultVisibility;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,15 +127,15 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoCreate = software.amazon.jsii.Kernel.get(this, "autoCreate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.defaultVisibility = software.amazon.jsii.Kernel.get(this, "defaultVisibility", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.defaultVisibility = software.amazon.jsii.Kernel.get(this, "defaultVisibility", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String namespace, final java.lang.Object autoCreate, final java.lang.String defaultVisibility) {
+        protected Jsii$Proxy(final java.lang.Object namespace, final java.lang.Object autoCreate, final java.lang.Object defaultVisibility) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.namespace = java.util.Objects.requireNonNull(namespace, "namespace is required");
             this.autoCreate = autoCreate;
@@ -120,7 +143,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getNamespace() {
+        public final java.lang.Object getNamespace() {
             return this.namespace;
         }
 
@@ -130,7 +153,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDefaultVisibility() {
+        public final java.lang.Object getDefaultVisibility() {
             return this.defaultVisibility;
         }
 

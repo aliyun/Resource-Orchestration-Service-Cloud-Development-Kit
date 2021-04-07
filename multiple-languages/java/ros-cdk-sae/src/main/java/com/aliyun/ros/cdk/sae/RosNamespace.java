@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS template type:  `ALIYUN::SAE::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.041Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosNamespace")
 public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNamespaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNamespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNamespaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNamespaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNamespaceId() {
-        return software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceId() {
+        return software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNamespaceName() {
-        return software.amazon.jsii.Kernel.get(this, "namespaceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNamespaceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "namespaceId", java.util.Objects.requireNonNull(value, "namespaceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceName() {
+        return software.amazon.jsii.Kernel.get(this, "namespaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNamespaceDescription() {
-        return software.amazon.jsii.Kernel.get(this, "namespaceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNamespaceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "namespaceName", java.util.Objects.requireNonNull(value, "namespaceName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNamespaceDescription() {
+        return software.amazon.jsii.Kernel.get(this, "namespaceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNamespaceDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "namespaceDescription", value);
+    }
+
+    /**
+     */
+    public void setNamespaceDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "namespaceDescription", value);
     }
 
@@ -131,6 +149,14 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
             this.props.namespaceId(namespaceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param namespaceId This parameter is required.
+         */
+        public Builder namespaceId(final com.aliyun.ros.cdk.core.IResolvable namespaceId) {
+            this.props.namespaceId(namespaceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -140,12 +166,28 @@ public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
             this.props.namespaceName(namespaceName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param namespaceName This parameter is required.
+         */
+        public Builder namespaceName(final com.aliyun.ros.cdk.core.IResolvable namespaceName) {
+            this.props.namespaceName(namespaceName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param namespaceDescription This parameter is required.
          */
         public Builder namespaceDescription(final java.lang.String namespaceDescription) {
+            this.props.namespaceDescription(namespaceDescription);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param namespaceDescription This parameter is required.
+         */
+        public Builder namespaceDescription(final com.aliyun.ros.cdk.core.IResolvable namespaceDescription) {
             this.props.namespaceDescription(namespaceDescription);
             return this;
         }

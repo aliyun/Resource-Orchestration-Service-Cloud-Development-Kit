@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute DefaultVersionNumber: The default version number of launch template.</summary>
-        [JsiiProperty(name: "attrDefaultVersionNumber", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDefaultVersionNumber
+        [JsiiProperty(name: "attrDefaultVersionNumber", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDefaultVersionNumber
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LatestVersionNumber: The latest version number of launch template.</summary>
-        [JsiiProperty(name: "attrLatestVersionNumber", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLatestVersionNumber
+        [JsiiProperty(name: "attrLatestVersionNumber", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLatestVersionNumber
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LaunchTemplateId: The id of launch template.</summary>
-        [JsiiProperty(name: "attrLaunchTemplateId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLaunchTemplateId
+        [JsiiProperty(name: "attrLaunchTemplateId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLaunchTemplateId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LaunchTemplateName: The name of launch template.</summary>
-        [JsiiProperty(name: "attrLaunchTemplateName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLaunchTemplateName
+        [JsiiProperty(name: "attrLaunchTemplateName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLaunchTemplateName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

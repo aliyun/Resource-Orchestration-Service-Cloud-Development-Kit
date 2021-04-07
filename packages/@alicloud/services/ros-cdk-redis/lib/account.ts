@@ -13,7 +13,7 @@ export interface AccountProps {
      * lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
      * in length.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * Property accountPassword: The password of the account. The password can be 8 to 32 characters in length and
@@ -22,12 +22,12 @@ export interface AccountProps {
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
      * hyphens (-), and equal signs (=).
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * Property instanceId: The ID of the instance for which you want to create the account.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property accountDescription: The description of the account.
@@ -35,7 +35,7 @@ export interface AccountProps {
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * Property accountPrivilege: The permission of the account. Valid values:
@@ -47,12 +47,12 @@ export interface AccountProps {
      * permission can be granted to an account only in an ApsaraDB for Redis instance of
      * the standard edition in Redis 4.0.
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * Property accountType: The type of the account. Set this parameter to Normal.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 }
 
 /**
@@ -68,12 +68,12 @@ export class Account extends ros.Resource {
     /**
      * Attribute AccountName: The name of the account.
      */
-    public readonly attrAccountName: any;
+    public readonly attrAccountName: ros.IResolvable;
 
     /**
      * Attribute InstanceId: The name of the instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::REDIS::Account`.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * A ROS resource type:  `ALIYUN::MNS::Queue`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.696Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Queue")
 public class Queue extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::MNS::Queue`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Queue(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.mns.QueueProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::MNS::Queue`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Queue(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.mns.QueueProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,24 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArnWithSlash() {
-        return software.amazon.jsii.Kernel.get(this, "attrArnWithSlash", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArnWithSlash() {
+        return software.amazon.jsii.Kernel.get(this, "attrArnWithSlash", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute QueueName: Queue name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrQueueUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrQueueUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQueueName() {
+        return software.amazon.jsii.Kernel.get(this, "attrQueueName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute QueueUrl: URL of created queue.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQueueUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrQueueUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +75,8 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.mns.Queue> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +84,8 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,34 +104,74 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property queueName: Queue name.
+         * <p>
          * @return {@code this}
-         * @param queueName This parameter is required.
+         * @param queueName Property queueName: Queue name. This parameter is required.
          */
         public Builder queueName(final java.lang.String queueName) {
             this.props.queueName(queueName);
             return this;
         }
+        /**
+         * Property queueName: Queue name.
+         * <p>
+         * @return {@code this}
+         * @param queueName Property queueName: Queue name. This parameter is required.
+         */
+        public Builder queueName(final com.aliyun.ros.cdk.core.IResolvable queueName) {
+            this.props.queueName(queueName);
+            return this;
+        }
 
         /**
+         * Property delaySeconds: It is measured in seconds.
+         * <p>
+         * All messages sent to the queue can be consumed until the DelaySeconds expires.
+         * An integer between 0 and 604800 (7 days). The default value is 0
+         * <p>
          * @return {@code this}
-         * @param delaySeconds This parameter is required.
+         * @param delaySeconds Property delaySeconds: It is measured in seconds. This parameter is required.
          */
         public Builder delaySeconds(final java.lang.Number delaySeconds) {
             this.props.delaySeconds(delaySeconds);
             return this;
         }
+        /**
+         * Property delaySeconds: It is measured in seconds.
+         * <p>
+         * All messages sent to the queue can be consumed until the DelaySeconds expires.
+         * An integer between 0 and 604800 (7 days). The default value is 0
+         * <p>
+         * @return {@code this}
+         * @param delaySeconds Property delaySeconds: It is measured in seconds. This parameter is required.
+         */
+        public Builder delaySeconds(final com.aliyun.ros.cdk.core.IResolvable delaySeconds) {
+            this.props.delaySeconds(delaySeconds);
+            return this;
+        }
 
         /**
+         * Property loggingEnabled: Whether to enable log management.
+         * <p>
+         * "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
+         * The default value is false
+         * <p>
          * @return {@code this}
-         * @param loggingEnabled This parameter is required.
+         * @param loggingEnabled Property loggingEnabled: Whether to enable log management. This parameter is required.
          */
         public Builder loggingEnabled(final java.lang.Boolean loggingEnabled) {
             this.props.loggingEnabled(loggingEnabled);
             return this;
         }
         /**
+         * Property loggingEnabled: Whether to enable log management.
+         * <p>
+         * "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
+         * The default value is false
+         * <p>
          * @return {@code this}
-         * @param loggingEnabled This parameter is required.
+         * @param loggingEnabled Property loggingEnabled: Whether to enable log management. This parameter is required.
          */
         public Builder loggingEnabled(final com.aliyun.ros.cdk.core.IResolvable loggingEnabled) {
             this.props.loggingEnabled(loggingEnabled);
@@ -122,37 +179,107 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes.
+         * <p>
+         * An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
+         * <p>
          * @return {@code this}
-         * @param maximumMessageSize This parameter is required.
+         * @param maximumMessageSize Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes. This parameter is required.
          */
         public Builder maximumMessageSize(final java.lang.Number maximumMessageSize) {
             this.props.maximumMessageSize(maximumMessageSize);
             return this;
         }
+        /**
+         * Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes.
+         * <p>
+         * An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
+         * <p>
+         * @return {@code this}
+         * @param maximumMessageSize Property maximumMessageSize: Maximum body length of a message sent to the queue, measured in bytes. This parameter is required.
+         */
+        public Builder maximumMessageSize(final com.aliyun.ros.cdk.core.IResolvable maximumMessageSize) {
+            this.props.maximumMessageSize(maximumMessageSize);
+            return this;
+        }
 
         /**
+         * Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds.
+         * <p>
+         * After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
+         * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+         * <p>
          * @return {@code this}
-         * @param messageRetentionPeriod This parameter is required.
+         * @param messageRetentionPeriod Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. This parameter is required.
          */
         public Builder messageRetentionPeriod(final java.lang.Number messageRetentionPeriod) {
             this.props.messageRetentionPeriod(messageRetentionPeriod);
             return this;
         }
+        /**
+         * Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds.
+         * <p>
+         * After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
+         * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+         * <p>
+         * @return {@code this}
+         * @param messageRetentionPeriod Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. This parameter is required.
+         */
+        public Builder messageRetentionPeriod(final com.aliyun.ros.cdk.core.IResolvable messageRetentionPeriod) {
+            this.props.messageRetentionPeriod(messageRetentionPeriod);
+            return this;
+        }
 
         /**
+         * Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue.
+         * <p>
+         * Measured in seconds.
+         * An integer between 0 and 30 seconds. The default value is 0 (seconds)
+         * <p>
          * @return {@code this}
-         * @param pollingWaitSeconds This parameter is required.
+         * @param pollingWaitSeconds Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue. This parameter is required.
          */
         public Builder pollingWaitSeconds(final java.lang.Number pollingWaitSeconds) {
             this.props.pollingWaitSeconds(pollingWaitSeconds);
             return this;
         }
+        /**
+         * Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue.
+         * <p>
+         * Measured in seconds.
+         * An integer between 0 and 30 seconds. The default value is 0 (seconds)
+         * <p>
+         * @return {@code this}
+         * @param pollingWaitSeconds Property pollingWaitSeconds: It is the maximum time that a ReceiveMessage request could be waiting for any incoming messages, while there are no message in the queue. This parameter is required.
+         */
+        public Builder pollingWaitSeconds(final com.aliyun.ros.cdk.core.IResolvable pollingWaitSeconds) {
+            this.props.pollingWaitSeconds(pollingWaitSeconds);
+            return this;
+        }
 
         /**
+         * Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.
+         * <p>
+         * Measured in seconds.
+         * An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
+         * <p>
          * @return {@code this}
-         * @param visibilityTimeout This parameter is required.
+         * @param visibilityTimeout Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. This parameter is required.
          */
         public Builder visibilityTimeout(final java.lang.Number visibilityTimeout) {
+            this.props.visibilityTimeout(visibilityTimeout);
+            return this;
+        }
+        /**
+         * Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue.
+         * <p>
+         * Measured in seconds.
+         * An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
+         * <p>
+         * @return {@code this}
+         * @param visibilityTimeout Property visibilityTimeout: Duration in which a message stays in Inactive status after it is consumed from the queue. This parameter is required.
+         */
+        public Builder visibilityTimeout(final com.aliyun.ros.cdk.core.IResolvable visibilityTimeout) {
             this.props.visibilityTimeout(visibilityTimeout);
             return this;
         }

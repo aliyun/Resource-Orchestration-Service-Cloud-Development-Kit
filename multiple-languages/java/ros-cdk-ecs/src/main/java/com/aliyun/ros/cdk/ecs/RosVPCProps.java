@@ -3,20 +3,20 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::VPC`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.709Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosVPCProps")
 @software.amazon.jsii.Jsii.Proxy(RosVPCProps.Jsii$Proxy.class)
 public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCidrBlock() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCidrBlock() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -28,25 +28,25 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIpv6CidrBlock() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6CidrBlock() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcName() {
         return null;
     }
 
@@ -60,13 +60,13 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosVPCProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVPCProps> {
-        private java.lang.String cidrBlock;
-        private java.lang.String description;
+        private java.lang.Object cidrBlock;
+        private java.lang.Object description;
         private java.lang.Object enableIpv6;
-        private java.lang.String ipv6CidrBlock;
-        private java.lang.String resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String vpcName;
+        private java.lang.Object ipv6CidrBlock;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags;
+        private java.lang.Object vpcName;
 
         /**
          * Sets the value of {@link RosVPCProps#getCidrBlock}
@@ -79,11 +79,31 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosVPCProps#getCidrBlock}
+         * @param cidrBlock the value to be set.
+         * @return {@code this}
+         */
+        public Builder cidrBlock(com.aliyun.ros.cdk.core.IResolvable cidrBlock) {
+            this.cidrBlock = cidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVPCProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVPCProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -119,6 +139,16 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosVPCProps#getIpv6CidrBlock}
+         * @param ipv6CidrBlock the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6CidrBlock(com.aliyun.ros.cdk.core.IResolvable ipv6CidrBlock) {
+            this.ipv6CidrBlock = ipv6CidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVPCProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -129,13 +159,23 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosVPCProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVPCProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty>)tags;
             return this;
         }
 
@@ -145,6 +185,16 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder vpcName(java.lang.String vpcName) {
+            this.vpcName = vpcName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVPCProps#getVpcName}
+         * @param vpcName the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcName(com.aliyun.ros.cdk.core.IResolvable vpcName) {
             this.vpcName = vpcName;
             return this;
         }
@@ -165,13 +215,13 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVPCProps {
-        private final java.lang.String cidrBlock;
-        private final java.lang.String description;
+        private final java.lang.Object cidrBlock;
+        private final java.lang.Object description;
         private final java.lang.Object enableIpv6;
-        private final java.lang.String ipv6CidrBlock;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String vpcName;
+        private final java.lang.Object ipv6CidrBlock;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags;
+        private final java.lang.Object vpcName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -179,37 +229,37 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cidrBlock = software.amazon.jsii.Kernel.get(this, "cidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cidrBlock = software.amazon.jsii.Kernel.get(this, "cidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableIpv6 = software.amazon.jsii.Kernel.get(this, "enableIpv6", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.vpcName = software.amazon.jsii.Kernel.get(this, "vpcName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty.class)));
+            this.vpcName = software.amazon.jsii.Kernel.get(this, "vpcName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String cidrBlock, final java.lang.String description, final java.lang.Object enableIpv6, final java.lang.String ipv6CidrBlock, final java.lang.String resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String vpcName) {
+        protected Jsii$Proxy(final java.lang.Object cidrBlock, final java.lang.Object description, final java.lang.Object enableIpv6, final java.lang.Object ipv6CidrBlock, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags, final java.lang.Object vpcName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cidrBlock = cidrBlock;
             this.description = description;
             this.enableIpv6 = enableIpv6;
             this.ipv6CidrBlock = ipv6CidrBlock;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty>)tags;
             this.vpcName = vpcName;
         }
 
         @Override
-        public final java.lang.String getCidrBlock() {
+        public final java.lang.Object getCidrBlock() {
             return this.cidrBlock;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -219,22 +269,22 @@ public interface RosVPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getIpv6CidrBlock() {
+        public final java.lang.Object getIpv6CidrBlock() {
             return this.ipv6CidrBlock;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcName() {
+        public final java.lang.Object getVpcName() {
             return this.vpcName;
         }
 

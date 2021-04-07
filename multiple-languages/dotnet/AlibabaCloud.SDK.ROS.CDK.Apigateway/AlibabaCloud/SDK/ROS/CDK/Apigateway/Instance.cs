@@ -33,59 +33,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute EgressIpv6Enable: Whether enable egress IPV6.</summary>
-        [JsiiProperty(name: "attrEgressIpv6Enable", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEgressIpv6Enable
+        [JsiiProperty(name: "attrEgressIpv6Enable", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEgressIpv6Enable
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceId: Instance ID.</summary>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceType: Instance type.</summary>
-        [JsiiProperty(name: "attrInstanceType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceType
+        [JsiiProperty(name: "attrInstanceType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InternetEgressAddress: Internet egress dddress.</summary>
-        [JsiiProperty(name: "attrInternetEgressAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInternetEgressAddress
+        [JsiiProperty(name: "attrInternetEgressAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetEgressAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SupportIpv6: Whether support IPV6.</summary>
-        [JsiiProperty(name: "attrSupportIpv6", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSupportIpv6
+        [JsiiProperty(name: "attrSupportIpv6", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSupportIpv6
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VpcEgressAddress: VPC network egress address.</summary>
-        [JsiiProperty(name: "attrVpcEgressAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcEgressAddress
+        [JsiiProperty(name: "attrVpcEgressAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcEgressAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VpcIntranetEnable: Whether enable VPC intranet.</summary>
-        [JsiiProperty(name: "attrVpcIntranetEnable", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcIntranetEnable
+        [JsiiProperty(name: "attrVpcIntranetEnable", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcIntranetEnable
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VpcSlbIntranetEnable: Whether enable VPC SLB intranet.</summary>
-        [JsiiProperty(name: "attrVpcSlbIntranetEnable", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcSlbIntranetEnable
+        [JsiiProperty(name: "attrVpcSlbIntranetEnable", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcSlbIntranetEnable
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,32 +3,49 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::ProductTopic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.ProductTopicProps")
 @software.amazon.jsii.Jsii.Proxy(ProductTopicProps.Jsii$Proxy.class)
 public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property operation: Operation permissions of devices on the topic category.
+     * <p>
+     * Value options:
+     * SUB: Subscribe. Devices can subscribe to the topics of this category.
+     * PUB: Publish. Devices can publish messages using the topics of this category.
+     * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOperation();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOperation();
 
     /**
+     * Property productKey: The unique identifier of the product for which you want to create a topic category.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductKey();
 
     /**
+     * Property topicShortName: The custom category hierarchy in the topic category.
+     * <p>
+     * By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+     * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopicShortName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopicShortName();
 
     /**
+     * Property desc: The description of the topic category.
+     * <p>
+     * You can enter a description with up to 100 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesc() {
         return null;
     }
 
     /**
+     * Property iotInstanceId: Instance ID you purchased.
+     * <p>
+     * Public instances do not need pass this property.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
@@ -42,15 +59,19 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link ProductTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ProductTopicProps> {
-        private java.lang.String operation;
-        private java.lang.String productKey;
-        private java.lang.String topicShortName;
-        private java.lang.String desc;
-        private java.lang.String iotInstanceId;
+        private java.lang.Object operation;
+        private java.lang.Object productKey;
+        private java.lang.Object topicShortName;
+        private java.lang.Object desc;
+        private java.lang.Object iotInstanceId;
 
         /**
          * Sets the value of {@link ProductTopicProps#getOperation}
-         * @param operation the value to be set. This parameter is required.
+         * @param operation Property operation: Operation permissions of devices on the topic category. This parameter is required.
+         *                  Value options:
+         *                  SUB: Subscribe. Devices can subscribe to the topics of this category.
+         *                  PUB: Publish. Devices can publish messages using the topics of this category.
+         *                  ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
          * @return {@code this}
          */
         public Builder operation(java.lang.String operation) {
@@ -59,8 +80,22 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ProductTopicProps#getOperation}
+         * @param operation Property operation: Operation permissions of devices on the topic category. This parameter is required.
+         *                  Value options:
+         *                  SUB: Subscribe. Devices can subscribe to the topics of this category.
+         *                  PUB: Publish. Devices can publish messages using the topics of this category.
+         *                  ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
+         * @return {@code this}
+         */
+        public Builder operation(com.aliyun.ros.cdk.core.IResolvable operation) {
+            this.operation = operation;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductTopicProps#getProductKey}
-         * @param productKey the value to be set. This parameter is required.
+         * @param productKey Property productKey: The unique identifier of the product for which you want to create a topic category. This parameter is required.
          * @return {@code this}
          */
         public Builder productKey(java.lang.String productKey) {
@@ -69,8 +104,20 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ProductTopicProps#getProductKey}
+         * @param productKey Property productKey: The unique identifier of the product for which you want to create a topic category. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder productKey(com.aliyun.ros.cdk.core.IResolvable productKey) {
+            this.productKey = productKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductTopicProps#getTopicShortName}
-         * @param topicShortName the value to be set. This parameter is required.
+         * @param topicShortName Property topicShortName: The custom category hierarchy in the topic category. This parameter is required.
+         *                       By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+         *                       Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
          * @return {@code this}
          */
         public Builder topicShortName(java.lang.String topicShortName) {
@@ -79,8 +126,21 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ProductTopicProps#getTopicShortName}
+         * @param topicShortName Property topicShortName: The custom category hierarchy in the topic category. This parameter is required.
+         *                       By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+         *                       Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
+         * @return {@code this}
+         */
+        public Builder topicShortName(com.aliyun.ros.cdk.core.IResolvable topicShortName) {
+            this.topicShortName = topicShortName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductTopicProps#getDesc}
-         * @param desc the value to be set.
+         * @param desc Property desc: The description of the topic category.
+         *             You can enter a description with up to 100 characters.
          * @return {@code this}
          */
         public Builder desc(java.lang.String desc) {
@@ -89,11 +149,34 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ProductTopicProps#getDesc}
+         * @param desc Property desc: The description of the topic category.
+         *             You can enter a description with up to 100 characters.
+         * @return {@code this}
+         */
+        public Builder desc(com.aliyun.ros.cdk.core.IResolvable desc) {
+            this.desc = desc;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ProductTopicProps#getIotInstanceId}
-         * @param iotInstanceId the value to be set.
+         * @param iotInstanceId Property iotInstanceId: Instance ID you purchased.
+         *                      Public instances do not need pass this property.
          * @return {@code this}
          */
         public Builder iotInstanceId(java.lang.String iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ProductTopicProps#getIotInstanceId}
+         * @param iotInstanceId Property iotInstanceId: Instance ID you purchased.
+         *                      Public instances do not need pass this property.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
             this.iotInstanceId = iotInstanceId;
             return this;
         }
@@ -114,11 +197,11 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ProductTopicProps {
-        private final java.lang.String operation;
-        private final java.lang.String productKey;
-        private final java.lang.String topicShortName;
-        private final java.lang.String desc;
-        private final java.lang.String iotInstanceId;
+        private final java.lang.Object operation;
+        private final java.lang.Object productKey;
+        private final java.lang.Object topicShortName;
+        private final java.lang.Object desc;
+        private final java.lang.Object iotInstanceId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +209,17 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.operation = software.amazon.jsii.Kernel.get(this, "operation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topicShortName = software.amazon.jsii.Kernel.get(this, "topicShortName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.operation = software.amazon.jsii.Kernel.get(this, "operation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topicShortName = software.amazon.jsii.Kernel.get(this, "topicShortName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String operation, final java.lang.String productKey, final java.lang.String topicShortName, final java.lang.String desc, final java.lang.String iotInstanceId) {
+        protected Jsii$Proxy(final java.lang.Object operation, final java.lang.Object productKey, final java.lang.Object topicShortName, final java.lang.Object desc, final java.lang.Object iotInstanceId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.operation = java.util.Objects.requireNonNull(operation, "operation is required");
             this.productKey = java.util.Objects.requireNonNull(productKey, "productKey is required");
@@ -146,27 +229,27 @@ public interface ProductTopicProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getOperation() {
+        public final java.lang.Object getOperation() {
             return this.operation;
         }
 
         @Override
-        public final java.lang.String getProductKey() {
+        public final java.lang.Object getProductKey() {
             return this.productKey;
         }
 
         @Override
-        public final java.lang.String getTopicShortName() {
+        public final java.lang.Object getTopicShortName() {
             return this.topicShortName;
         }
 
         @Override
-        public final java.lang.String getDesc() {
+        public final java.lang.Object getDesc() {
             return this.desc;
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 

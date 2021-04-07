@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS resource type:  `ALIYUN::DTS::MigrationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.101Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.MigrationJob")
 public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DTS::MigrationJob`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public MigrationJob(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dts.MigrationJobProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DTS::MigrationJob`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public MigrationJob(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dts.MigrationJobProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute MigrationJobId: Migration tasks task ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMigrationJobId() {
-        return software.amazon.jsii.Kernel.get(this, "attrMigrationJobId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMigrationJobId() {
+        return software.amazon.jsii.Kernel.get(this, "attrMigrationJobId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.dts.MigrationJob> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,25 +90,45 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property migrationJobClass: Migrating instance specifications, which can be: small, medium, large and so on.
+         * <p>
+         * Various specifications of the reference data migration test performance specifications
+         * <p>
          * @return {@code this}
-         * @param migrationJobClass This parameter is required.
+         * @param migrationJobClass Property migrationJobClass: Migrating instance specifications, which can be: small, medium, large and so on. This parameter is required.
          */
         public Builder migrationJobClass(final java.lang.String migrationJobClass) {
             this.props.migrationJobClass(migrationJobClass);
             return this;
         }
+        /**
+         * Property migrationJobClass: Migrating instance specifications, which can be: small, medium, large and so on.
+         * <p>
+         * Various specifications of the reference data migration test performance specifications
+         * <p>
+         * @return {@code this}
+         * @param migrationJobClass Property migrationJobClass: Migrating instance specifications, which can be: small, medium, large and so on. This parameter is required.
+         */
+        public Builder migrationJobClass(final com.aliyun.ros.cdk.core.IResolvable migrationJobClass) {
+            this.props.migrationJobClass(migrationJobClass);
+            return this;
+        }
 
         /**
+         * Property destinationEndpoint: Migration target configuration.
+         * <p>
          * @return {@code this}
-         * @param destinationEndpoint This parameter is required.
+         * @param destinationEndpoint Property destinationEndpoint: Migration target configuration. This parameter is required.
          */
         public Builder destinationEndpoint(final com.aliyun.ros.cdk.core.IResolvable destinationEndpoint) {
             this.props.destinationEndpoint(destinationEndpoint);
             return this;
         }
         /**
+         * Property destinationEndpoint: Migration target configuration.
+         * <p>
          * @return {@code this}
-         * @param destinationEndpoint This parameter is required.
+         * @param destinationEndpoint Property destinationEndpoint: Migration target configuration. This parameter is required.
          */
         public Builder destinationEndpoint(final com.aliyun.ros.cdk.dts.RosMigrationJob.DestinationEndpointProperty destinationEndpoint) {
             this.props.destinationEndpoint(destinationEndpoint);
@@ -107,25 +136,41 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property migrationJobName: Migrating job name.
+         * <p>
          * @return {@code this}
-         * @param migrationJobName This parameter is required.
+         * @param migrationJobName Property migrationJobName: Migrating job name. This parameter is required.
          */
         public Builder migrationJobName(final java.lang.String migrationJobName) {
             this.props.migrationJobName(migrationJobName);
             return this;
         }
+        /**
+         * Property migrationJobName: Migrating job name.
+         * <p>
+         * @return {@code this}
+         * @param migrationJobName Property migrationJobName: Migrating job name. This parameter is required.
+         */
+        public Builder migrationJobName(final com.aliyun.ros.cdk.core.IResolvable migrationJobName) {
+            this.props.migrationJobName(migrationJobName);
+            return this;
+        }
 
         /**
+         * Property migrationMode: Migration mode.
+         * <p>
          * @return {@code this}
-         * @param migrationMode This parameter is required.
+         * @param migrationMode Property migrationMode: Migration mode. This parameter is required.
          */
         public Builder migrationMode(final com.aliyun.ros.cdk.core.IResolvable migrationMode) {
             this.props.migrationMode(migrationMode);
             return this;
         }
         /**
+         * Property migrationMode: Migration mode.
+         * <p>
          * @return {@code this}
-         * @param migrationMode This parameter is required.
+         * @param migrationMode Property migrationMode: Migration mode. This parameter is required.
          */
         public Builder migrationMode(final com.aliyun.ros.cdk.dts.RosMigrationJob.MigrationModeProperty migrationMode) {
             this.props.migrationMode(migrationMode);
@@ -133,16 +178,20 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property migrationObject: Objects that need to be migrated.
+         * <p>
          * @return {@code this}
-         * @param migrationObject This parameter is required.
+         * @param migrationObject Property migrationObject: Objects that need to be migrated. This parameter is required.
          */
         public Builder migrationObject(final com.aliyun.ros.cdk.core.IResolvable migrationObject) {
             this.props.migrationObject(migrationObject);
             return this;
         }
         /**
+         * Property migrationObject: Objects that need to be migrated.
+         * <p>
          * @return {@code this}
-         * @param migrationObject This parameter is required.
+         * @param migrationObject Property migrationObject: Objects that need to be migrated. This parameter is required.
          */
         public Builder migrationObject(final java.util.List<? extends java.lang.Object> migrationObject) {
             this.props.migrationObject(migrationObject);
@@ -150,16 +199,20 @@ public class MigrationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property sourceEndpoint: Migration source configuration.
+         * <p>
          * @return {@code this}
-         * @param sourceEndpoint This parameter is required.
+         * @param sourceEndpoint Property sourceEndpoint: Migration source configuration. This parameter is required.
          */
         public Builder sourceEndpoint(final com.aliyun.ros.cdk.core.IResolvable sourceEndpoint) {
             this.props.sourceEndpoint(sourceEndpoint);
             return this;
         }
         /**
+         * Property sourceEndpoint: Migration source configuration.
+         * <p>
          * @return {@code this}
-         * @param sourceEndpoint This parameter is required.
+         * @param sourceEndpoint Property sourceEndpoint: Migration source configuration. This parameter is required.
          */
         public Builder sourceEndpoint(final com.aliyun.ros.cdk.dts.RosMigrationJob.SourceEndpointProperty sourceEndpoint) {
             this.props.sourceEndpoint(sourceEndpoint);

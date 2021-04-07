@@ -11,12 +11,12 @@ export interface DomainConfigProps {
     /**
      * Property domainNames: Your accelerated domain name, separated by commas in English.
      */
-    readonly domainNames: string;
+    readonly domainNames: string | ros.IResolvable;
 
     /**
      * Property functions: function list, please refer to the CDN documentation for details.
      */
-    readonly functions: string;
+    readonly functions: string | ros.IResolvable;
 }
 
 /**

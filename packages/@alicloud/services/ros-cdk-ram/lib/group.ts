@@ -11,12 +11,12 @@ export interface GroupProps {
     /**
      * Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * Property comments: Remark information, up to 128 characters or Chinese characters.
      */
-    readonly comments?: string;
+    readonly comments?: string | ros.IResolvable;
 
     /**
      * Property policies: Describes what actions are allowed on what resources.
@@ -37,7 +37,7 @@ export class Group extends ros.Resource {
     /**
      * Attribute GroupName: Id of ram group.
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::Group`.

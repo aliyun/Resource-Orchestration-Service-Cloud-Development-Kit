@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupName
         {
             get;
         }
@@ -22,9 +22,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// You can enter a description with up to 100 characters.
         /// </remarks>
-        [JsiiProperty(name: "groupDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupDesc
+        object? GroupDesc
         {
             get
             {
@@ -36,9 +36,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// instance that you need to buy the incoming instance ID.
         /// </remarks>
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IotInstanceId
+        object? IotInstanceId
         {
             get
             {
@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// If you want to create a first-level group, do not enter this parameter.
         /// </remarks>
-        [JsiiProperty(name: "superGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "superGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SuperGroupId
+        object? SuperGroupId
         {
             get
             {
@@ -72,10 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// <remarks>
             /// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
             /// </remarks>
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property groupDesc: The description of the group.</summary>
@@ -83,10 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// You can enter a description with up to 100 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "groupDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupDesc
+            [JsiiProperty(name: "groupDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupDesc
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property iotInstanceId: Public instance does not pass this parameter;</summary>
@@ -94,10 +94,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// instance that you need to buy the incoming instance ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IotInstanceId
+            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IotInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property superGroupId: The ID of the parent group.</summary>
@@ -105,10 +105,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// If you want to create a first-level group, do not enter this parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "superGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SuperGroupId
+            [JsiiProperty(name: "superGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SuperGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

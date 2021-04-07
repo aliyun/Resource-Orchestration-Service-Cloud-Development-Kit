@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.198Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.GroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.GroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute GroupName: Id of ram group.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.Group> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,34 +90,62 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupName: Specifies the group name, containing up to 64 characters.
+         * <p>
          * @return {@code this}
-         * @param groupName This parameter is required.
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
             this.props.groupName(groupName);
             return this;
         }
+        /**
+         * Property groupName: Specifies the group name, containing up to 64 characters.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
 
         /**
+         * Property comments: Remark information, up to 128 characters or Chinese characters.
+         * <p>
          * @return {@code this}
-         * @param comments This parameter is required.
+         * @param comments Property comments: Remark information, up to 128 characters or Chinese characters. This parameter is required.
          */
         public Builder comments(final java.lang.String comments) {
             this.props.comments(comments);
             return this;
         }
+        /**
+         * Property comments: Remark information, up to 128 characters or Chinese characters.
+         * <p>
+         * @return {@code this}
+         * @param comments Property comments: Remark information, up to 128 characters or Chinese characters. This parameter is required.
+         */
+        public Builder comments(final com.aliyun.ros.cdk.core.IResolvable comments) {
+            this.props.comments(comments);
+            return this;
+        }
 
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final com.aliyun.ros.cdk.core.IResolvable policies) {
             this.props.policies(policies);
             return this;
         }
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final java.util.List<? extends java.lang.Object> policies) {
             this.props.policies(policies);

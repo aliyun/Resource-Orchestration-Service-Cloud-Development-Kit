@@ -11,17 +11,17 @@ export interface ClusterMemberProps {
     /**
      * Property clusterId: Cluster ID to import ECS instance
      */
-    readonly clusterId: string;
+    readonly clusterId: string | ros.IResolvable;
 
     /**
      * Property instanceIds: ECS instance ID list to import.
      */
-    readonly instanceIds: string[];
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property password: Password ECS hosts need to import (ECS settings can continue to use purchased)
      */
-    readonly password: string;
+    readonly password: string | ros.IResolvable;
 }
 
 /**
@@ -37,17 +37,17 @@ export class ClusterMember extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
      */
-    public readonly attrClusterMemberIds: any;
+    public readonly attrClusterMemberIds: ros.IResolvable;
 
     /**
      * Attribute InstanceIds: ECS instance IDs.
      */
-    public readonly attrInstanceIds: any;
+    public readonly attrInstanceIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::ClusterMember`.

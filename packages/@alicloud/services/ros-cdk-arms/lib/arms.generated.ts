@@ -10,32 +10,32 @@ export interface RosAlertContactProps {
     /**
      * @Property contactName: The name of the alert contact that you want to create.
      */
-    readonly contactName: string;
+    readonly contactName: string | ros.IResolvable;
 
     /**
      * @Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
      */
-    readonly dingRobotWebhookUrl?: string;
+    readonly dingRobotWebhookUrl?: string | ros.IResolvable;
 
     /**
      * @Property email: The email address of the contact.
      */
-    readonly email?: string;
+    readonly email?: string | ros.IResolvable;
 
     /**
      * @Property phoneNum: The phone number of the contact.
      */
-    readonly phoneNum?: string;
+    readonly phoneNum?: string | ros.IResolvable;
 
     /**
      * @Property proxyUserId: Internal parameters
      */
-    readonly proxyUserId?: string;
+    readonly proxyUserId?: string | ros.IResolvable;
 
     /**
      * @Property regionId: Region ID. Default to region of stack.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 
     /**
      * @Property systemNoc: Specifies whether to receive system alerts.
@@ -111,7 +111,7 @@ export class RosAlertContact extends ros.RosResource {
     /**
      * @Attribute ContactId: The ID of the alert contact that you created.
      */
-    public readonly attrContactId: any;
+    public readonly attrContactId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -119,32 +119,32 @@ export class RosAlertContact extends ros.RosResource {
     /**
      * @Property contactName: The name of the alert contact that you want to create.
      */
-    public contactName: string;
+    public contactName: string | ros.IResolvable;
 
     /**
      * @Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
      */
-    public dingRobotWebhookUrl: string | undefined;
+    public dingRobotWebhookUrl: string | ros.IResolvable | undefined;
 
     /**
      * @Property email: The email address of the contact.
      */
-    public email: string | undefined;
+    public email: string | ros.IResolvable | undefined;
 
     /**
      * @Property phoneNum: The phone number of the contact.
      */
-    public phoneNum: string | undefined;
+    public phoneNum: string | ros.IResolvable | undefined;
 
     /**
      * @Property proxyUserId: Internal parameters
      */
-    public proxyUserId: string | undefined;
+    public proxyUserId: string | ros.IResolvable | undefined;
 
     /**
      * @Property regionId: Region ID. Default to region of stack.
      */
-    public regionId: string | undefined;
+    public regionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property systemNoc: Specifies whether to receive system alerts.
@@ -160,7 +160,7 @@ export class RosAlertContact extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAlertContactProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAlertContact.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactId = ros.Token.asString(this.getAtt('ContactId'));
+        this.attrContactId = this.getAtt('ContactId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.contactName = props.contactName;
@@ -197,22 +197,22 @@ export interface RosAlertContactGroupProps {
     /**
      * @Property contactGroupName: The name of the alert contact group that you want to create.
      */
-    readonly contactGroupName: string;
+    readonly contactGroupName: string | ros.IResolvable;
 
     /**
      * @Property contactIds: The list of alert contact ID.
      */
-    readonly contactIds: number[] | ros.IResolvable;
+    readonly contactIds: Array<number | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property proxyUserId: Internal parameters
      */
-    readonly proxyUserId?: string;
+    readonly proxyUserId?: string | ros.IResolvable;
 
     /**
      * @Property regionId: Region ID. Default to region of stack.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 }
 
 /**
@@ -278,7 +278,7 @@ export class RosAlertContactGroup extends ros.RosResource {
     /**
      * @Attribute ContactGroupId: The ID of the alert contact group that you created.
      */
-    public readonly attrContactGroupId: any;
+    public readonly attrContactGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -286,22 +286,22 @@ export class RosAlertContactGroup extends ros.RosResource {
     /**
      * @Property contactGroupName: The name of the alert contact group that you want to create.
      */
-    public contactGroupName: string;
+    public contactGroupName: string | ros.IResolvable;
 
     /**
      * @Property contactIds: The list of alert contact ID.
      */
-    public contactIds: number[] | ros.IResolvable;
+    public contactIds: Array<number | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property proxyUserId: Internal parameters
      */
-    public proxyUserId: string | undefined;
+    public proxyUserId: string | ros.IResolvable | undefined;
 
     /**
      * @Property regionId: Region ID. Default to region of stack.
      */
-    public regionId: string | undefined;
+    public regionId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ARMS::AlertContactGroup`.
@@ -312,7 +312,7 @@ export class RosAlertContactGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAlertContactGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAlertContactGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactGroupId = ros.Token.asString(this.getAtt('ContactGroupId'));
+        this.attrContactGroupId = this.getAtt('ContactGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.contactGroupName = props.contactGroupName;
@@ -343,17 +343,17 @@ export interface RosRetcodeAppProps {
     /**
      * @Property regionId: Region ID. Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
      */
-    readonly regionId: string;
+    readonly regionId: string | ros.IResolvable;
 
     /**
      * @Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
      */
-    readonly retcodeAppName: string;
+    readonly retcodeAppName: string | ros.IResolvable;
 
     /**
      * @Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
      */
-    readonly retcodeAppType: string;
+    readonly retcodeAppType: string | ros.IResolvable;
 }
 
 /**
@@ -418,12 +418,12 @@ export class RosRetcodeApp extends ros.RosResource {
     /**
      * @Attribute AppId: The ID of the application for which you created the browser monitoring job.
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute Pid: The PID.
      */
-    public readonly attrPid: any;
+    public readonly attrPid: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -431,17 +431,17 @@ export class RosRetcodeApp extends ros.RosResource {
     /**
      * @Property regionId: Region ID. Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
      */
-    public regionId: string;
+    public regionId: string | ros.IResolvable;
 
     /**
      * @Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
      */
-    public retcodeAppName: string;
+    public retcodeAppName: string | ros.IResolvable;
 
     /**
      * @Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
      */
-    public retcodeAppType: string;
+    public retcodeAppType: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ARMS::RetcodeApp`.
@@ -452,8 +452,8 @@ export class RosRetcodeApp extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRetcodeAppProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRetcodeApp.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrPid = ros.Token.asString(this.getAtt('Pid'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrPid = this.getAtt('Pid');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.regionId = props.regionId;

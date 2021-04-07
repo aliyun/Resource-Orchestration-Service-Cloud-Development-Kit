@@ -11,22 +11,22 @@ export interface WhitelistProps {
     /**
      * Property instanceId: Instance ID (globally unique)
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property securityIps: IP address whitelist to be modified
      */
-    readonly securityIps: string;
+    readonly securityIps: string | ros.IResolvable;
 
     /**
      * Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    readonly securityIpGroupAttribute?: string;
+    readonly securityIpGroupAttribute?: string | ros.IResolvable;
 
     /**
      * Property securityIpGroupName: Whitelist group
      */
-    readonly securityIpGroupName?: string;
+    readonly securityIpGroupName?: string | ros.IResolvable;
 }
 
 /**
@@ -42,17 +42,17 @@ export class Whitelist extends ros.Resource {
     /**
      * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public readonly attrSecurityIpGroupAttribute: any;
+    public readonly attrSecurityIpGroupAttribute: ros.IResolvable;
 
     /**
      * Attribute SecurityIpGroupName: Whitelist group
      */
-    public readonly attrSecurityIpGroupName: any;
+    public readonly attrSecurityIpGroupName: ros.IResolvable;
 
     /**
      * Attribute SecurityIps: IP address whitelist to be modified
      */
-    public readonly attrSecurityIps: any;
+    public readonly attrSecurityIps: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::REDIS::Whitelist`.

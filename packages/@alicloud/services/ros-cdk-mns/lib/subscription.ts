@@ -16,35 +16,35 @@ export interface SubscriptionProps {
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
-    readonly endpoint: string;
+    readonly endpoint: string | ros.IResolvable;
 
     /**
      * Property subscriptionName: Subscription name
      */
-    readonly subscriptionName: string;
+    readonly subscriptionName: string | ros.IResolvable;
 
     /**
      * Property topicName: Topic name
      */
-    readonly topicName: string;
+    readonly topicName: string | ros.IResolvable;
 
     /**
      * Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.)
      * The value is a string of no more than 16 characters. The default value is no message filter.
      */
-    readonly filterTag?: string;
+    readonly filterTag?: string | ros.IResolvable;
 
     /**
      * Property notifyContentFormat: Format of the message content pushed to the endpoint.
      * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
      */
-    readonly notifyContentFormat?: string;
+    readonly notifyContentFormat?: string | ros.IResolvable;
 
     /**
      * Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
      * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
      */
-    readonly notifyStrategy?: string;
+    readonly notifyStrategy?: string | ros.IResolvable;
 }
 
 /**
@@ -58,9 +58,19 @@ export class Subscription extends ros.Resource {
      */
 
     /**
+     * Attribute SubscriptionName: Subscription name
+     */
+    public readonly attrSubscriptionName: ros.IResolvable;
+
+    /**
      * Attribute SubscriptionUrl: URL of created subscription
      */
-    public readonly attrSubscriptionUrl: any;
+    public readonly attrSubscriptionUrl: ros.IResolvable;
+
+    /**
+     * Attribute TopicName: Topic name
+     */
+    public readonly attrTopicName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MNS::Subscription`.
@@ -81,6 +91,8 @@ export class Subscription extends ros.Resource {
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscription;
+        this.attrSubscriptionName = rosSubscription.attrSubscriptionName;
         this.attrSubscriptionUrl = rosSubscription.attrSubscriptionUrl;
+        this.attrTopicName = rosSubscription.attrTopicName;
     }
 }

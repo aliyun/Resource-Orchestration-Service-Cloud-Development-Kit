@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosApplyConfigToMachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplyConfigToMachineGroupProps.Jsii$Proxy.class)
 public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConfigName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfigName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProjectName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
         return null;
     }
 
@@ -36,9 +36,9 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
      * A builder for {@link RosApplyConfigToMachineGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplyConfigToMachineGroupProps> {
-        private java.lang.String configName;
-        private java.lang.String groupName;
-        private java.lang.String projectName;
+        private java.lang.Object configName;
+        private java.lang.Object groupName;
+        private java.lang.Object projectName;
 
         /**
          * Sets the value of {@link RosApplyConfigToMachineGroupProps#getConfigName}
@@ -46,6 +46,16 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
          * @return {@code this}
          */
         public Builder configName(java.lang.String configName) {
+            this.configName = configName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplyConfigToMachineGroupProps#getConfigName}
+         * @param configName the value to be set.
+         * @return {@code this}
+         */
+        public Builder configName(com.aliyun.ros.cdk.core.IResolvable configName) {
             this.configName = configName;
             return this;
         }
@@ -61,11 +71,31 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
         }
 
         /**
+         * Sets the value of {@link RosApplyConfigToMachineGroupProps#getGroupName}
+         * @param groupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplyConfigToMachineGroupProps#getProjectName}
          * @param projectName the value to be set.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplyConfigToMachineGroupProps#getProjectName}
+         * @param projectName the value to be set.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.projectName = projectName;
             return this;
         }
@@ -86,9 +116,9 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosApplyConfigToMachineGroupProps {
-        private final java.lang.String configName;
-        private final java.lang.String groupName;
-        private final java.lang.String projectName;
+        private final java.lang.Object configName;
+        private final java.lang.Object groupName;
+        private final java.lang.Object projectName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,15 +126,15 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.configName = software.amazon.jsii.Kernel.get(this, "configName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.configName = software.amazon.jsii.Kernel.get(this, "configName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String configName, final java.lang.String groupName, final java.lang.String projectName) {
+        protected Jsii$Proxy(final java.lang.Object configName, final java.lang.Object groupName, final java.lang.Object projectName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.configName = configName;
             this.groupName = groupName;
@@ -112,17 +142,17 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
         }
 
         @Override
-        public final java.lang.String getConfigName() {
+        public final java.lang.Object getConfigName() {
             return this.configName;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

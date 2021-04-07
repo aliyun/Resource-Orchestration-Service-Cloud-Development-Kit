@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IMissingContext)}, new object[]{missing});
         }
 
-        /// <summary>Finalizes the cloud assembly into the output directory returns a&#xD; 'CloudAssembly' object that can be used to inspect the assembly.</summary>
+        /// <summary>Finalizes the cloud assembly into the output directory returns a 'CloudAssembly' object that can be used to inspect the assembly.</summary>
         [JsiiMethod(name: "buildAssembly", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-cxapi.CloudAssembly\"}}", parametersJson: "[{\"name\":\"options\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-cxapi.AssemblyBuildOptions\"}}]")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly BuildAssembly(AlibabaCloud.SDK.ROS.CDK.Cxapi.IAssemblyBuildOptions? options = null)
         {

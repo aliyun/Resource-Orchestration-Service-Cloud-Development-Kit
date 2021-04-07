@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthLimitProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenBandwidthLimitProps.Jsii$Proxy.class)
 public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidthLimit();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthLimit();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLocalRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLocalRegionId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOppositeRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOppositeRegionId();
 
     /**
      * @return a {@link Builder} of {@link RosCenBandwidthLimitProps}
@@ -34,10 +34,10 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosCenBandwidthLimitProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCenBandwidthLimitProps> {
-        private java.lang.Number bandwidthLimit;
-        private java.lang.String cenId;
-        private java.lang.String localRegionId;
-        private java.lang.String oppositeRegionId;
+        private java.lang.Object bandwidthLimit;
+        private java.lang.Object cenId;
+        private java.lang.Object localRegionId;
+        private java.lang.Object oppositeRegionId;
 
         /**
          * Sets the value of {@link RosCenBandwidthLimitProps#getBandwidthLimit}
@@ -45,6 +45,16 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder bandwidthLimit(java.lang.Number bandwidthLimit) {
+            this.bandwidthLimit = bandwidthLimit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenBandwidthLimitProps#getBandwidthLimit}
+         * @param bandwidthLimit the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidthLimit(com.aliyun.ros.cdk.core.IResolvable bandwidthLimit) {
             this.bandwidthLimit = bandwidthLimit;
             return this;
         }
@@ -60,6 +70,16 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosCenBandwidthLimitProps#getCenId}
+         * @param cenId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.cenId = cenId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCenBandwidthLimitProps#getLocalRegionId}
          * @param localRegionId the value to be set. This parameter is required.
          * @return {@code this}
@@ -70,11 +90,31 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosCenBandwidthLimitProps#getLocalRegionId}
+         * @param localRegionId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder localRegionId(com.aliyun.ros.cdk.core.IResolvable localRegionId) {
+            this.localRegionId = localRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCenBandwidthLimitProps#getOppositeRegionId}
          * @param oppositeRegionId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder oppositeRegionId(java.lang.String oppositeRegionId) {
+            this.oppositeRegionId = oppositeRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenBandwidthLimitProps#getOppositeRegionId}
+         * @param oppositeRegionId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder oppositeRegionId(com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
             this.oppositeRegionId = oppositeRegionId;
             return this;
         }
@@ -95,10 +135,10 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCenBandwidthLimitProps {
-        private final java.lang.Number bandwidthLimit;
-        private final java.lang.String cenId;
-        private final java.lang.String localRegionId;
-        private final java.lang.String oppositeRegionId;
+        private final java.lang.Object bandwidthLimit;
+        private final java.lang.Object cenId;
+        private final java.lang.Object localRegionId;
+        private final java.lang.Object oppositeRegionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -106,16 +146,16 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidthLimit = software.amazon.jsii.Kernel.get(this, "bandwidthLimit", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.localRegionId = software.amazon.jsii.Kernel.get(this, "localRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidthLimit = software.amazon.jsii.Kernel.get(this, "bandwidthLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localRegionId = software.amazon.jsii.Kernel.get(this, "localRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number bandwidthLimit, final java.lang.String cenId, final java.lang.String localRegionId, final java.lang.String oppositeRegionId) {
+        protected Jsii$Proxy(final java.lang.Object bandwidthLimit, final java.lang.Object cenId, final java.lang.Object localRegionId, final java.lang.Object oppositeRegionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidthLimit = java.util.Objects.requireNonNull(bandwidthLimit, "bandwidthLimit is required");
             this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
@@ -124,22 +164,22 @@ public interface RosCenBandwidthLimitProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.Number getBandwidthLimit() {
+        public final java.lang.Object getBandwidthLimit() {
             return this.bandwidthLimit;
         }
 
         @Override
-        public final java.lang.String getCenId() {
+        public final java.lang.Object getCenId() {
             return this.cenId;
         }
 
         @Override
-        public final java.lang.String getLocalRegionId() {
+        public final java.lang.Object getLocalRegionId() {
             return this.localRegionId;
         }
 
         @Override
-        public final java.lang.String getOppositeRegionId() {
+        public final java.lang.Object getOppositeRegionId() {
             return this.oppositeRegionId;
         }
 

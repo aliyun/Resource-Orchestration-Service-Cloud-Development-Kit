@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     public class AccessRuleProps : AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps
     {
         /// <summary>Property accessGroupName: Permission group name.</summary>
-        [JsiiProperty(name: "accessGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccessGroupName
+        [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccessGroupName
         {
             get;
             set;
         }
 
         /// <summary>Property sourceCidrIp: Address or address segment.</summary>
-        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SourceCidrIp
+        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SourceCidrIp
         {
             get;
             set;
@@ -31,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// Range: 1-100. Default value: 1
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Priority
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Priority
         {
             get;
             set;
@@ -40,8 +40,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         /// <summary>Property rwAccessType: Read-write permission type: RDWR (default), RDONLY.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "rwAccessType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RwAccessType
+        [JsiiProperty(name: "rwAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RwAccessType
         {
             get;
             set;
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         /// <summary>Property userAccessType: User permission type: no_squash (default), root_squash, all_squash.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "userAccessType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? UserAccessType
+        [JsiiProperty(name: "userAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UserAccessType
         {
             get;
             set;

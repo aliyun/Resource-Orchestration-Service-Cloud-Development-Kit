@@ -16,15 +16,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Property contactName: The name of the alarm contact.</summary>
-        [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}")]
-        string ContactName
+        [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ContactName
         {
             get;
         }
 
         /// <summary>Property describe: The description of the alert contact.</summary>
-        [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}")]
-        string Describe
+        [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Describe
         {
             get;
         }
@@ -45,17 +45,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <summary>Property contactName: The name of the alarm contact.</summary>
-            [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ContactName
+            [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ContactName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property describe: The description of the alert contact.</summary>
-            [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}")]
-            public string Describe
+            [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Describe
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

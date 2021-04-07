@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS resource type:  `ALIYUN::ARMS::AlertContact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.724Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContact")
 public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ARMS::AlertContact`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AlertContact(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.AlertContactProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ARMS::AlertContact`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AlertContact(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.AlertContactProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ContactId: The ID of the alert contact that you created.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactId() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactId() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.arms.AlertContact> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,70 +90,150 @@ public class AlertContact extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property contactName: The name of the alert contact that you want to create.
+         * <p>
          * @return {@code this}
-         * @param contactName This parameter is required.
+         * @param contactName Property contactName: The name of the alert contact that you want to create. This parameter is required.
          */
         public Builder contactName(final java.lang.String contactName) {
             this.props.contactName(contactName);
             return this;
         }
+        /**
+         * Property contactName: The name of the alert contact that you want to create.
+         * <p>
+         * @return {@code this}
+         * @param contactName Property contactName: The name of the alert contact that you want to create. This parameter is required.
+         */
+        public Builder contactName(final com.aliyun.ros.cdk.core.IResolvable contactName) {
+            this.props.contactName(contactName);
+            return this;
+        }
 
         /**
+         * Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
+         * <p>
          * @return {@code this}
-         * @param dingRobotWebhookUrl This parameter is required.
+         * @param dingRobotWebhookUrl Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact. This parameter is required.
          */
         public Builder dingRobotWebhookUrl(final java.lang.String dingRobotWebhookUrl) {
             this.props.dingRobotWebhookUrl(dingRobotWebhookUrl);
             return this;
         }
+        /**
+         * Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
+         * <p>
+         * @return {@code this}
+         * @param dingRobotWebhookUrl Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact. This parameter is required.
+         */
+        public Builder dingRobotWebhookUrl(final com.aliyun.ros.cdk.core.IResolvable dingRobotWebhookUrl) {
+            this.props.dingRobotWebhookUrl(dingRobotWebhookUrl);
+            return this;
+        }
 
         /**
+         * Property email: The email address of the contact.
+         * <p>
          * @return {@code this}
-         * @param email This parameter is required.
+         * @param email Property email: The email address of the contact. This parameter is required.
          */
         public Builder email(final java.lang.String email) {
             this.props.email(email);
             return this;
         }
+        /**
+         * Property email: The email address of the contact.
+         * <p>
+         * @return {@code this}
+         * @param email Property email: The email address of the contact. This parameter is required.
+         */
+        public Builder email(final com.aliyun.ros.cdk.core.IResolvable email) {
+            this.props.email(email);
+            return this;
+        }
 
         /**
+         * Property phoneNum: The phone number of the contact.
+         * <p>
          * @return {@code this}
-         * @param phoneNum This parameter is required.
+         * @param phoneNum Property phoneNum: The phone number of the contact. This parameter is required.
          */
         public Builder phoneNum(final java.lang.String phoneNum) {
             this.props.phoneNum(phoneNum);
             return this;
         }
+        /**
+         * Property phoneNum: The phone number of the contact.
+         * <p>
+         * @return {@code this}
+         * @param phoneNum Property phoneNum: The phone number of the contact. This parameter is required.
+         */
+        public Builder phoneNum(final com.aliyun.ros.cdk.core.IResolvable phoneNum) {
+            this.props.phoneNum(phoneNum);
+            return this;
+        }
 
         /**
+         * Property proxyUserId: Internal parameters.
+         * <p>
          * @return {@code this}
-         * @param proxyUserId This parameter is required.
+         * @param proxyUserId Property proxyUserId: Internal parameters. This parameter is required.
          */
         public Builder proxyUserId(final java.lang.String proxyUserId) {
             this.props.proxyUserId(proxyUserId);
             return this;
         }
+        /**
+         * Property proxyUserId: Internal parameters.
+         * <p>
+         * @return {@code this}
+         * @param proxyUserId Property proxyUserId: Internal parameters. This parameter is required.
+         */
+        public Builder proxyUserId(final com.aliyun.ros.cdk.core.IResolvable proxyUserId) {
+            this.props.proxyUserId(proxyUserId);
+            return this;
+        }
 
         /**
+         * Property regionId: Region ID.
+         * <p>
+         * Default to region of stack.
+         * <p>
          * @return {@code this}
-         * @param regionId This parameter is required.
+         * @param regionId Property regionId: Region ID. This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
             this.props.regionId(regionId);
             return this;
         }
+        /**
+         * Property regionId: Region ID.
+         * <p>
+         * Default to region of stack.
+         * <p>
+         * @return {@code this}
+         * @param regionId Property regionId: Region ID. This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
 
         /**
+         * Property systemNoc: Specifies whether to receive system alerts.
+         * <p>
          * @return {@code this}
-         * @param systemNoc This parameter is required.
+         * @param systemNoc Property systemNoc: Specifies whether to receive system alerts. This parameter is required.
          */
         public Builder systemNoc(final java.lang.Boolean systemNoc) {
             this.props.systemNoc(systemNoc);
             return this;
         }
         /**
+         * Property systemNoc: Specifies whether to receive system alerts.
+         * <p>
          * @return {@code this}
-         * @param systemNoc This parameter is required.
+         * @param systemNoc Property systemNoc: Specifies whether to receive system alerts. This parameter is required.
          */
         public Builder systemNoc(final com.aliyun.ros.cdk.core.IResolvable systemNoc) {
             this.props.systemNoc(systemNoc);

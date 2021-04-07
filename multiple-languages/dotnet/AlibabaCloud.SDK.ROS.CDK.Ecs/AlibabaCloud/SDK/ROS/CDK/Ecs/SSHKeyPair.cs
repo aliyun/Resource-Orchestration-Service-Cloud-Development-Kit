@@ -36,27 +36,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
         /// </remarks>
-        [JsiiProperty(name: "attrKeyPairFingerPrint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrKeyPairFingerPrint
+        [JsiiProperty(name: "attrKeyPairFingerPrint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrKeyPairFingerPrint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute KeyPairName: SSH Key pair name.</summary>
-        [JsiiProperty(name: "attrKeyPairName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrKeyPairName
+        [JsiiProperty(name: "attrKeyPairName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrKeyPairName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PrivateKeyBody: The private key of the key pair.</summary>
         /// <remarks>
         /// Content of the RSA private key in the PKCS#8 format of the unencrypted PEM encoding. Refer to: https://www.openssl.org/docs/apps/pkcs8.html.User only can get the private key one time when and only when SSH key pair is created.
         /// </remarks>
-        [JsiiProperty(name: "attrPrivateKeyBody", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrivateKeyBody
+        [JsiiProperty(name: "attrPrivateKeyBody", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateKeyBody
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

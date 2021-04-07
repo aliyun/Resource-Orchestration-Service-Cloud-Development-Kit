@@ -3,38 +3,38 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.738Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.428Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getClusterType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getNetworkMode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkMode();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLogicalRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogicalRegionId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getOversoldFactor() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOversoldFactor() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
@@ -48,12 +48,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.String clusterName;
-        private java.lang.Number clusterType;
-        private java.lang.Number networkMode;
-        private java.lang.String logicalRegionId;
-        private java.lang.Number oversoldFactor;
-        private java.lang.String vpcId;
+        private java.lang.Object clusterName;
+        private java.lang.Object clusterType;
+        private java.lang.Object networkMode;
+        private java.lang.Object logicalRegionId;
+        private java.lang.Object oversoldFactor;
+        private java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterName}
@@ -61,6 +61,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder clusterName(java.lang.String clusterName) {
+            this.clusterName = clusterName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterName}
+         * @param clusterName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterName(com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.clusterName = clusterName;
             return this;
         }
@@ -76,11 +86,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getClusterType}
+         * @param clusterType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.clusterType = clusterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getNetworkMode}
          * @param networkMode the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder networkMode(java.lang.Number networkMode) {
+            this.networkMode = networkMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getNetworkMode}
+         * @param networkMode the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkMode(com.aliyun.ros.cdk.core.IResolvable networkMode) {
             this.networkMode = networkMode;
             return this;
         }
@@ -96,6 +126,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getLogicalRegionId}
+         * @param logicalRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder logicalRegionId(com.aliyun.ros.cdk.core.IResolvable logicalRegionId) {
+            this.logicalRegionId = logicalRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getOversoldFactor}
          * @param oversoldFactor the value to be set.
          * @return {@code this}
@@ -106,11 +146,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getOversoldFactor}
+         * @param oversoldFactor the value to be set.
+         * @return {@code this}
+         */
+        public Builder oversoldFactor(com.aliyun.ros.cdk.core.IResolvable oversoldFactor) {
+            this.oversoldFactor = oversoldFactor;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -131,12 +191,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterProps {
-        private final java.lang.String clusterName;
-        private final java.lang.Number clusterType;
-        private final java.lang.Number networkMode;
-        private final java.lang.String logicalRegionId;
-        private final java.lang.Number oversoldFactor;
-        private final java.lang.String vpcId;
+        private final java.lang.Object clusterName;
+        private final java.lang.Object clusterType;
+        private final java.lang.Object networkMode;
+        private final java.lang.Object logicalRegionId;
+        private final java.lang.Object oversoldFactor;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +204,18 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.networkMode = software.amazon.jsii.Kernel.get(this, "networkMode", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oversoldFactor = software.amazon.jsii.Kernel.get(this, "oversoldFactor", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkMode = software.amazon.jsii.Kernel.get(this, "networkMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oversoldFactor = software.amazon.jsii.Kernel.get(this, "oversoldFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterName, final java.lang.Number clusterType, final java.lang.Number networkMode, final java.lang.String logicalRegionId, final java.lang.Number oversoldFactor, final java.lang.String vpcId) {
+        protected Jsii$Proxy(final java.lang.Object clusterName, final java.lang.Object clusterType, final java.lang.Object networkMode, final java.lang.Object logicalRegionId, final java.lang.Object oversoldFactor, final java.lang.Object vpcId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterName = java.util.Objects.requireNonNull(clusterName, "clusterName is required");
             this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
@@ -166,32 +226,32 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getClusterName() {
+        public final java.lang.Object getClusterName() {
             return this.clusterName;
         }
 
         @Override
-        public final java.lang.Number getClusterType() {
+        public final java.lang.Object getClusterType() {
             return this.clusterType;
         }
 
         @Override
-        public final java.lang.Number getNetworkMode() {
+        public final java.lang.Object getNetworkMode() {
             return this.networkMode;
         }
 
         @Override
-        public final java.lang.String getLogicalRegionId() {
+        public final java.lang.Object getLogicalRegionId() {
             return this.logicalRegionId;
         }
 
         @Override
-        public final java.lang.Number getOversoldFactor() {
+        public final java.lang.Object getOversoldFactor() {
             return this.oversoldFactor;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 

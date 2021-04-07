@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.488Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.193Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouterInterface")
 public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRouterInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRouterInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRole() {
-        return software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRole() {
+        return software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRouterId() {
-        return software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRole(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "role", java.util.Objects.requireNonNull(value, "role is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRouterId() {
+        return software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAccessPointId() {
-        return software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRouterId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routerId", java.util.Objects.requireNonNull(value, "routerId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccessPointId() {
+        return software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAccessPointId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "accessPointId", value);
+    }
+
+    /**
+     */
+    public void setAccessPointId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "accessPointId", value);
     }
 
@@ -117,8 +135,8 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +147,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckSourceIp() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckSourceIp() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckTargetIp() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHealthCheckSourceIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckSourceIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckTargetIp() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,8 +183,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHealthCheckTargetIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckTargetIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -165,8 +201,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceChargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -177,8 +219,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeAccessPointId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeAccessPointId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -189,8 +237,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeAccessPointId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeAccessPointId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -201,8 +255,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceOwnerId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeInterfaceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeInterfaceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceOwnerId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -213,8 +273,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeInterfaceOwnerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeInterfaceOwnerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -225,8 +291,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeRegionId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -237,8 +309,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterType() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeRouterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeRouterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterType() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -249,8 +327,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setOppositeRouterType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeRouterType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -261,8 +345,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
-        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
+        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -273,8 +363,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRouterType() {
-        return software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRouterType() {
+        return software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -285,13 +381,25 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSpec() {
-        return software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRouterType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routerType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
+        return software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "spec", value);
+    }
+
+    /**
+     */
+    public void setSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "spec", value);
     }
 
@@ -329,6 +437,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.role(role);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param role This parameter is required.
+         */
+        public Builder role(final com.aliyun.ros.cdk.core.IResolvable role) {
+            this.props.role(role);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -338,12 +454,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.routerId(routerId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param routerId This parameter is required.
+         */
+        public Builder routerId(final com.aliyun.ros.cdk.core.IResolvable routerId) {
+            this.props.routerId(routerId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param accessPointId This parameter is required.
          */
         public Builder accessPointId(final java.lang.String accessPointId) {
+            this.props.accessPointId(accessPointId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accessPointId This parameter is required.
+         */
+        public Builder accessPointId(final com.aliyun.ros.cdk.core.IResolvable accessPointId) {
             this.props.accessPointId(accessPointId);
             return this;
         }
@@ -373,12 +505,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param healthCheckSourceIp This parameter is required.
          */
         public Builder healthCheckSourceIp(final java.lang.String healthCheckSourceIp) {
+            this.props.healthCheckSourceIp(healthCheckSourceIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckSourceIp This parameter is required.
+         */
+        public Builder healthCheckSourceIp(final com.aliyun.ros.cdk.core.IResolvable healthCheckSourceIp) {
             this.props.healthCheckSourceIp(healthCheckSourceIp);
             return this;
         }
@@ -391,12 +539,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.healthCheckTargetIp(healthCheckTargetIp);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param healthCheckTargetIp This parameter is required.
+         */
+        public Builder healthCheckTargetIp(final com.aliyun.ros.cdk.core.IResolvable healthCheckTargetIp) {
+            this.props.healthCheckTargetIp(healthCheckTargetIp);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceChargeType This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceChargeType This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.props.instanceChargeType(instanceChargeType);
             return this;
         }
@@ -409,12 +573,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param oppositeAccessPointId This parameter is required.
          */
         public Builder oppositeAccessPointId(final java.lang.String oppositeAccessPointId) {
+            this.props.oppositeAccessPointId(oppositeAccessPointId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param oppositeAccessPointId This parameter is required.
+         */
+        public Builder oppositeAccessPointId(final com.aliyun.ros.cdk.core.IResolvable oppositeAccessPointId) {
             this.props.oppositeAccessPointId(oppositeAccessPointId);
             return this;
         }
@@ -427,12 +607,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.oppositeInterfaceId(oppositeInterfaceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param oppositeInterfaceId This parameter is required.
+         */
+        public Builder oppositeInterfaceId(final com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.props.oppositeInterfaceId(oppositeInterfaceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param oppositeInterfaceOwnerId This parameter is required.
          */
         public Builder oppositeInterfaceOwnerId(final java.lang.String oppositeInterfaceOwnerId) {
+            this.props.oppositeInterfaceOwnerId(oppositeInterfaceOwnerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param oppositeInterfaceOwnerId This parameter is required.
+         */
+        public Builder oppositeInterfaceOwnerId(final com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceOwnerId) {
             this.props.oppositeInterfaceOwnerId(oppositeInterfaceOwnerId);
             return this;
         }
@@ -445,12 +641,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.oppositeRegionId(oppositeRegionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param oppositeRegionId This parameter is required.
+         */
+        public Builder oppositeRegionId(final com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
+            this.props.oppositeRegionId(oppositeRegionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param oppositeRouterId This parameter is required.
          */
         public Builder oppositeRouterId(final java.lang.String oppositeRouterId) {
+            this.props.oppositeRouterId(oppositeRouterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param oppositeRouterId This parameter is required.
+         */
+        public Builder oppositeRouterId(final com.aliyun.ros.cdk.core.IResolvable oppositeRouterId) {
             this.props.oppositeRouterId(oppositeRouterId);
             return this;
         }
@@ -463,12 +675,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.oppositeRouterType(oppositeRouterType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param oppositeRouterType This parameter is required.
+         */
+        public Builder oppositeRouterType(final com.aliyun.ros.cdk.core.IResolvable oppositeRouterType) {
+            this.props.oppositeRouterType(oppositeRouterType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param period This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
             return this;
         }
@@ -481,6 +709,14 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.pricingCycle(pricingCycle);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param pricingCycle This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.props.pricingCycle(pricingCycle);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -490,12 +726,28 @@ public class RosRouterInterface extends com.aliyun.ros.cdk.core.RosResource {
             this.props.routerType(routerType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param routerType This parameter is required.
+         */
+        public Builder routerType(final com.aliyun.ros.cdk.core.IResolvable routerType) {
+            this.props.routerType(routerType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param spec This parameter is required.
          */
         public Builder spec(final java.lang.String spec) {
+            this.props.spec(spec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spec This parameter is required.
+         */
+        public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
             this.props.spec(spec);
             return this;
         }

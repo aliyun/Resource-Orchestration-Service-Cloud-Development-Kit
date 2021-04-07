@@ -1,19 +1,16 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * A construct which represents an entire CDK app.
+ * A construct which represents an entire CDK app. This construct is normally the root of the construct tree.
  * <p>
- * This construct is normally
- * the root of the construct tree.
- * <p>
- * You would normally define an <code>App</code> instance in your program's entrypoint,
+ * You would normally define an 'App' instance in your program's entrypoint,
  * then define constructs where the app is used as the parent scope.
  * <p>
  * After all the child constructs are defined within the app, you should call
- * <code>app.synth()</code> which will emit a "ros template" from this app into the
- * directory specified by <code>outdir</code>.
+ * 'app.synth()' which will emit a "ros template" from this app into the
+ * directory specified by 'outdir'.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.289Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.App")
 public class App extends com.aliyun.ros.cdk.core.Stage {
 
@@ -44,10 +41,12 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
     }
 
     /**
-     * Checks if an object is an instance of the `App` class.
+     * Checks if an object is an instance of the 'App' class.
      * <p>
-     * @return `true` if `obj` is an `App`.
-     * @param obj The object to evaluate. This parameter is required.
+     * Returns 'true' if 'obj' is an 'App'.
+     * Param obj The object to evaluate
+     * <p>
+     * @param obj This parameter is required.
      */
     public static @org.jetbrains.annotations.NotNull java.lang.Boolean isApp(final @org.jetbrains.annotations.NotNull java.lang.Object obj) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.App.class, "isApp", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class), new Object[] { obj });
@@ -70,16 +69,17 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
         }
 
         /**
-         * Automatically call `synth()` before the program exits.
+         * Automatically call 'synth()' before the program exits.
          * <p>
-         * If you set this, you don't have to call <code>synth()</code> explicitly. Note that
+         * If you set this, you don't have to call 'synth()' explicitly. Note that
          * this feature is only available for certain programming languages, and
-         * calling <code>synth()</code> is still recommended.
+         * calling 'synth()' is still recommended.
          * <p>
-         * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`otherwise
+         * Default true if running via CDK CLI ('CDK_OUTDIR' is set), 'false'
+         * otherwise
          * <p>
          * @return {@code this}
-         * @param autoSynth Automatically call `synth()` before the program exits. This parameter is required.
+         * @param autoSynth Automatically call 'synth()' before the program exits. This parameter is required.
          */
         public Builder autoSynth(final java.lang.Boolean autoSynth) {
             this.props().autoSynth(autoSynth);
@@ -89,9 +89,9 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
         /**
          * Additional context values for the application.
          * <p>
-         * Context set by the CLI or the <code>context</code> key in <code>cdk.json</code> has precedence.
+         * Context set by the CLI or the 'context' key in 'cdk.json' has precedence.
          * <p>
-         * Context can be read from any construct using <code>node.getContext(key)</code>.
+         * Context can be read from any construct using 'node.getContext(key)'.
          * <p>
          * Default: - no additional context
          * <p>
@@ -106,7 +106,8 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
         /**
          * The output directory into which to emit synthesized artifacts.
          * <p>
-         * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.  If `CDK_OUTDIR` is not defined, uses a temp directory.
+         * Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
+         * If 'CDK_OUTDIR' is not defined, uses a temp directory.
          * <p>
          * @return {@code this}
          * @param outdir The output directory into which to emit synthesized artifacts. This parameter is required.

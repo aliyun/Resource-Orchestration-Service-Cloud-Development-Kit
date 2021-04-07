@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-apigateway.DeploymentProps=com.aliyun.ros.cdk.apigateway.DeploymentProps
 @alicloud/ros-cdk-apigateway.Group=com.aliyun.ros.cdk.apigateway.Group
 @alicloud/ros-cdk-apigateway.GroupProps=com.aliyun.ros.cdk.apigateway.GroupProps
+@alicloud/ros-cdk-apigateway.Instance=com.aliyun.ros.cdk.apigateway.Instance
+@alicloud/ros-cdk-apigateway.InstanceProps=com.aliyun.ros.cdk.apigateway.InstanceProps
 @alicloud/ros-cdk-apigateway.LogConfig=com.aliyun.ros.cdk.apigateway.LogConfig
 @alicloud/ros-cdk-apigateway.LogConfigProps=com.aliyun.ros.cdk.apigateway.LogConfigProps
 @alicloud/ros-cdk-apigateway.RosApi=com.aliyun.ros.cdk.apigateway.RosApi
@@ -24,9 +26,11 @@
 @alicloud/ros-cdk-apigateway.RosApi.ServiceParametersMapProperty=com.aliyun.ros.cdk.apigateway.RosApi$ServiceParametersMapProperty
 @alicloud/ros-cdk-apigateway.RosApi.ServiceParametersProperty=com.aliyun.ros.cdk.apigateway.RosApi$ServiceParametersProperty
 @alicloud/ros-cdk-apigateway.RosApi.SystemParametersProperty=com.aliyun.ros.cdk.apigateway.RosApi$SystemParametersProperty
+@alicloud/ros-cdk-apigateway.RosApi.TagsProperty=com.aliyun.ros.cdk.apigateway.RosApi$TagsProperty
 @alicloud/ros-cdk-apigateway.RosApi.VpcConfigProperty=com.aliyun.ros.cdk.apigateway.RosApi$VpcConfigProperty
 @alicloud/ros-cdk-apigateway.RosApiProps=com.aliyun.ros.cdk.apigateway.RosApiProps
 @alicloud/ros-cdk-apigateway.RosApp=com.aliyun.ros.cdk.apigateway.RosApp
+@alicloud/ros-cdk-apigateway.RosApp.TagsProperty=com.aliyun.ros.cdk.apigateway.RosApp$TagsProperty
 @alicloud/ros-cdk-apigateway.RosAppProps=com.aliyun.ros.cdk.apigateway.RosAppProps
 @alicloud/ros-cdk-apigateway.RosAuthorization=com.aliyun.ros.cdk.apigateway.RosAuthorization
 @alicloud/ros-cdk-apigateway.RosAuthorizationProps=com.aliyun.ros.cdk.apigateway.RosAuthorizationProps
@@ -35,7 +39,10 @@
 @alicloud/ros-cdk-apigateway.RosDeployment=com.aliyun.ros.cdk.apigateway.RosDeployment
 @alicloud/ros-cdk-apigateway.RosDeploymentProps=com.aliyun.ros.cdk.apigateway.RosDeploymentProps
 @alicloud/ros-cdk-apigateway.RosGroup=com.aliyun.ros.cdk.apigateway.RosGroup
+@alicloud/ros-cdk-apigateway.RosGroup.TagsProperty=com.aliyun.ros.cdk.apigateway.RosGroup$TagsProperty
 @alicloud/ros-cdk-apigateway.RosGroupProps=com.aliyun.ros.cdk.apigateway.RosGroupProps
+@alicloud/ros-cdk-apigateway.RosInstance=com.aliyun.ros.cdk.apigateway.RosInstance
+@alicloud/ros-cdk-apigateway.RosInstanceProps=com.aliyun.ros.cdk.apigateway.RosInstanceProps
 @alicloud/ros-cdk-apigateway.RosLogConfig=com.aliyun.ros.cdk.apigateway.RosLogConfig
 @alicloud/ros-cdk-apigateway.RosLogConfigProps=com.aliyun.ros.cdk.apigateway.RosLogConfigProps
 @alicloud/ros-cdk-apigateway.RosSignature=com.aliyun.ros.cdk.apigateway.RosSignature

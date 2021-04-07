@@ -3,42 +3,60 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.298Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.964Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrepayDBInstanceProps.Jsii$Proxy.class)
 public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCommodityCode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCommodityCode();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceClass();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceClass();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getDbInstanceStorage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceStorage();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEngine();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEngine();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEngineVersion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getPeriod();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPeriod();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPeriodType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPeriodType();
 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAllocatePublicConnection() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchiveBackupKeepCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchiveBackupKeepPolicy() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchiveBackupRetentionPeriod() {
         return null;
     }
 
@@ -56,61 +74,79 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBackupRetentionPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackUpCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupPolicyMode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupRetentionPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringPrefix() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCompressType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCouponCode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionMode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringPrefix() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceNetType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceStorageType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCouponCode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDbIsIgnoreCase() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceNetType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorageType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbIsIgnoreCase() {
         return null;
     }
 
@@ -122,49 +158,91 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbParamGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbParamGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbTimeZone() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbTimeZone() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDedicatedHostGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEncryptionKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableBackupLog() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMaintainTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUsername() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHighSpaceUsageProtection() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUserPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLocalLogRetentionHours() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUserType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLocalLogRetentionSpace() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupFrequency() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupLocalRetentionNumber() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupRetentionPeriod() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaintainTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUsername() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUserPassword() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUserType() {
         return null;
     }
 
@@ -176,7 +254,7 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
         return null;
     }
 
@@ -188,97 +266,103 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPreferredBackupTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPreferredBackupTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getQuantity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQuantity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReleasedKeepPolicy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRoleArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRoleArn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getSlaveZoneIds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSqlCollectorStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlaveZoneIds() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSslSetting() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSqlCollectorStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSslSetting() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTargetDedicatedHostIdForLog() {
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTargetDedicatedHostIdForMaster() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetDedicatedHostIdForLog() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTargetDedicatedHostIdForSlave() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetDedicatedHostIdForMaster() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetDedicatedHostIdForSlave() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -292,54 +376,68 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosPrepayDBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosPrepayDBInstanceProps> {
-        private java.lang.String commodityCode;
-        private java.lang.String dbInstanceClass;
-        private java.lang.Number dbInstanceStorage;
-        private java.lang.String engine;
-        private java.lang.String engineVersion;
-        private java.lang.Number period;
-        private java.lang.String periodType;
+        private java.lang.Object commodityCode;
+        private java.lang.Object dbInstanceClass;
+        private java.lang.Object dbInstanceStorage;
+        private java.lang.Object engine;
+        private java.lang.Object engineVersion;
+        private java.lang.Object period;
+        private java.lang.Object periodType;
         private java.lang.Object allocatePublicConnection;
+        private java.lang.Object archiveBackupKeepCount;
+        private java.lang.Object archiveBackupKeepPolicy;
+        private java.lang.Object archiveBackupRetentionPeriod;
         private java.lang.Object autoPay;
         private java.lang.Object autoRenew;
-        private java.lang.Number backupRetentionPeriod;
-        private java.lang.String category;
-        private java.lang.String connectionMode;
-        private java.lang.String connectionStringPrefix;
-        private java.lang.String connectionStringType;
-        private java.lang.String couponCode;
-        private java.lang.String dbInstanceDescription;
-        private java.lang.String dbInstanceNetType;
-        private java.lang.String dbInstanceStorageType;
-        private java.lang.Number dbIsIgnoreCase;
+        private java.lang.Object backUpCategory;
+        private java.lang.Object backupPolicyMode;
+        private java.lang.Object backupRetentionPeriod;
+        private java.lang.Object category;
+        private java.lang.Object compressType;
+        private java.lang.Object connectionMode;
+        private java.lang.Object connectionStringPrefix;
+        private java.lang.Object connectionStringType;
+        private java.lang.Object couponCode;
+        private java.lang.Object dbInstanceDescription;
+        private java.lang.Object dbInstanceNetType;
+        private java.lang.Object dbInstanceStorageType;
+        private java.lang.Object dbIsIgnoreCase;
         private java.lang.Object dbMappings;
-        private java.lang.String dbParamGroupId;
-        private java.lang.String dbTimeZone;
-        private java.lang.String dedicatedHostGroupId;
-        private java.lang.String encryptionKey;
-        private java.lang.String maintainTime;
-        private java.lang.String masterUsername;
-        private java.lang.String masterUserPassword;
-        private java.lang.String masterUserType;
+        private java.lang.Object dbParamGroupId;
+        private java.lang.Object dbTimeZone;
+        private java.lang.Object dedicatedHostGroupId;
+        private java.lang.Object enableBackupLog;
+        private java.lang.Object encryptionKey;
+        private java.lang.Object highSpaceUsageProtection;
+        private java.lang.Object localLogRetentionHours;
+        private java.lang.Object localLogRetentionSpace;
+        private java.lang.Object logBackupFrequency;
+        private java.lang.Object logBackupLocalRetentionNumber;
+        private java.lang.Object logBackupRetentionPeriod;
+        private java.lang.Object maintainTime;
+        private java.lang.Object masterUsername;
+        private java.lang.Object masterUserPassword;
+        private java.lang.Object masterUserType;
         private java.lang.Object multiAz;
-        private java.lang.Number port;
+        private java.lang.Object port;
         private java.lang.Object preferredBackupPeriod;
-        private java.lang.String preferredBackupTime;
-        private java.lang.String privateIpAddress;
-        private java.lang.Number quantity;
-        private java.lang.String resourceGroupId;
-        private java.lang.String roleArn;
-        private java.lang.String securityGroupId;
-        private java.util.List<java.lang.String> slaveZoneIds;
-        private java.lang.String sqlCollectorStatus;
-        private java.lang.String sslSetting;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String targetDedicatedHostIdForLog;
-        private java.lang.String targetDedicatedHostIdForMaster;
-        private java.lang.String targetDedicatedHostIdForSlave;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object preferredBackupTime;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object quantity;
+        private java.lang.Object releasedKeepPolicy;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object roleArn;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object slaveZoneIds;
+        private java.lang.Object sqlCollectorStatus;
+        private java.lang.Object sslSetting;
+        private java.util.Map<java.lang.String, java.lang.Object> tags;
+        private java.lang.Object targetDedicatedHostIdForLog;
+        private java.lang.Object targetDedicatedHostIdForMaster;
+        private java.lang.Object targetDedicatedHostIdForSlave;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getCommodityCode}
@@ -347,6 +445,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
          * @return {@code this}
          */
         public Builder commodityCode(java.lang.String commodityCode) {
+            this.commodityCode = commodityCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getCommodityCode}
+         * @param commodityCode the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder commodityCode(com.aliyun.ros.cdk.core.IResolvable commodityCode) {
             this.commodityCode = commodityCode;
             return this;
         }
@@ -362,11 +470,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceClass}
+         * @param dbInstanceClass the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceClass(com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.dbInstanceClass = dbInstanceClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceStorage}
          * @param dbInstanceStorage the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
+            this.dbInstanceStorage = dbInstanceStorage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceStorage}
+         * @param dbInstanceStorage the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorage(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
             this.dbInstanceStorage = dbInstanceStorage;
             return this;
         }
@@ -382,11 +510,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getEngine}
+         * @param engine the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder engine(com.aliyun.ros.cdk.core.IResolvable engine) {
+            this.engine = engine;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getEngineVersion}
          * @param engineVersion the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
+            this.engineVersion = engineVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getEngineVersion}
+         * @param engineVersion the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.engineVersion = engineVersion;
             return this;
         }
@@ -402,11 +550,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getPeriod}
+         * @param period the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getPeriodType}
          * @param periodType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder periodType(java.lang.String periodType) {
+            this.periodType = periodType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getPeriodType}
+         * @param periodType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder periodType(com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.periodType = periodType;
             return this;
         }
@@ -428,6 +596,66 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
          */
         public Builder allocatePublicConnection(com.aliyun.ros.cdk.core.IResolvable allocatePublicConnection) {
             this.allocatePublicConnection = allocatePublicConnection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupKeepCount}
+         * @param archiveBackupKeepCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupKeepCount(java.lang.Number archiveBackupKeepCount) {
+            this.archiveBackupKeepCount = archiveBackupKeepCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupKeepCount}
+         * @param archiveBackupKeepCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupKeepCount(com.aliyun.ros.cdk.core.IResolvable archiveBackupKeepCount) {
+            this.archiveBackupKeepCount = archiveBackupKeepCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupKeepPolicy}
+         * @param archiveBackupKeepPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupKeepPolicy(java.lang.String archiveBackupKeepPolicy) {
+            this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupKeepPolicy}
+         * @param archiveBackupKeepPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupKeepPolicy(com.aliyun.ros.cdk.core.IResolvable archiveBackupKeepPolicy) {
+            this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupRetentionPeriod}
+         * @param archiveBackupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupRetentionPeriod(java.lang.Number archiveBackupRetentionPeriod) {
+            this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getArchiveBackupRetentionPeriod}
+         * @param archiveBackupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder archiveBackupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable archiveBackupRetentionPeriod) {
+            this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
             return this;
         }
 
@@ -472,11 +700,61 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getBackUpCategory}
+         * @param backUpCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder backUpCategory(java.lang.String backUpCategory) {
+            this.backUpCategory = backUpCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getBackUpCategory}
+         * @param backUpCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder backUpCategory(com.aliyun.ros.cdk.core.IResolvable backUpCategory) {
+            this.backUpCategory = backUpCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getBackupPolicyMode}
+         * @param backupPolicyMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupPolicyMode(java.lang.String backupPolicyMode) {
+            this.backupPolicyMode = backupPolicyMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getBackupPolicyMode}
+         * @param backupPolicyMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupPolicyMode(com.aliyun.ros.cdk.core.IResolvable backupPolicyMode) {
+            this.backupPolicyMode = backupPolicyMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getBackupRetentionPeriod}
          * @param backupRetentionPeriod the value to be set.
          * @return {@code this}
          */
         public Builder backupRetentionPeriod(java.lang.Number backupRetentionPeriod) {
+            this.backupRetentionPeriod = backupRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getBackupRetentionPeriod}
+         * @param backupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
             this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
@@ -492,11 +770,51 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getCategory}
+         * @param category the value to be set.
+         * @return {@code this}
+         */
+        public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getCompressType}
+         * @param compressType the value to be set.
+         * @return {@code this}
+         */
+        public Builder compressType(java.lang.Number compressType) {
+            this.compressType = compressType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getCompressType}
+         * @param compressType the value to be set.
+         * @return {@code this}
+         */
+        public Builder compressType(com.aliyun.ros.cdk.core.IResolvable compressType) {
+            this.compressType = compressType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getConnectionMode}
          * @param connectionMode the value to be set.
          * @return {@code this}
          */
         public Builder connectionMode(java.lang.String connectionMode) {
+            this.connectionMode = connectionMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getConnectionMode}
+         * @param connectionMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionMode(com.aliyun.ros.cdk.core.IResolvable connectionMode) {
             this.connectionMode = connectionMode;
             return this;
         }
@@ -512,11 +830,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getConnectionStringPrefix}
+         * @param connectionStringPrefix the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionStringPrefix(com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
+            this.connectionStringPrefix = connectionStringPrefix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getConnectionStringType}
          * @param connectionStringType the value to be set.
          * @return {@code this}
          */
         public Builder connectionStringType(java.lang.String connectionStringType) {
+            this.connectionStringType = connectionStringType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getConnectionStringType}
+         * @param connectionStringType the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionStringType(com.aliyun.ros.cdk.core.IResolvable connectionStringType) {
             this.connectionStringType = connectionStringType;
             return this;
         }
@@ -532,11 +870,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getCouponCode}
+         * @param couponCode the value to be set.
+         * @return {@code this}
+         */
+        public Builder couponCode(com.aliyun.ros.cdk.core.IResolvable couponCode) {
+            this.couponCode = couponCode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceDescription}
          * @param dbInstanceDescription the value to be set.
          * @return {@code this}
          */
         public Builder dbInstanceDescription(java.lang.String dbInstanceDescription) {
+            this.dbInstanceDescription = dbInstanceDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceDescription}
+         * @param dbInstanceDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.dbInstanceDescription = dbInstanceDescription;
             return this;
         }
@@ -552,6 +910,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceNetType}
+         * @param dbInstanceNetType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceNetType(com.aliyun.ros.cdk.core.IResolvable dbInstanceNetType) {
+            this.dbInstanceNetType = dbInstanceNetType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceStorageType}
          * @param dbInstanceStorageType the value to be set.
          * @return {@code this}
@@ -562,11 +930,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbInstanceStorageType}
+         * @param dbInstanceStorageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorageType(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
+            this.dbInstanceStorageType = dbInstanceStorageType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getDbIsIgnoreCase}
          * @param dbIsIgnoreCase the value to be set.
          * @return {@code this}
          */
         public Builder dbIsIgnoreCase(java.lang.Number dbIsIgnoreCase) {
+            this.dbIsIgnoreCase = dbIsIgnoreCase;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbIsIgnoreCase}
+         * @param dbIsIgnoreCase the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbIsIgnoreCase(com.aliyun.ros.cdk.core.IResolvable dbIsIgnoreCase) {
             this.dbIsIgnoreCase = dbIsIgnoreCase;
             return this;
         }
@@ -602,11 +990,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbParamGroupId}
+         * @param dbParamGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbParamGroupId(com.aliyun.ros.cdk.core.IResolvable dbParamGroupId) {
+            this.dbParamGroupId = dbParamGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getDbTimeZone}
          * @param dbTimeZone the value to be set.
          * @return {@code this}
          */
         public Builder dbTimeZone(java.lang.String dbTimeZone) {
+            this.dbTimeZone = dbTimeZone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDbTimeZone}
+         * @param dbTimeZone the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbTimeZone(com.aliyun.ros.cdk.core.IResolvable dbTimeZone) {
             this.dbTimeZone = dbTimeZone;
             return this;
         }
@@ -622,6 +1030,36 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getDedicatedHostGroupId}
+         * @param dedicatedHostGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostGroupId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
+            this.dedicatedHostGroupId = dedicatedHostGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getEnableBackupLog}
+         * @param enableBackupLog the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableBackupLog(java.lang.Boolean enableBackupLog) {
+            this.enableBackupLog = enableBackupLog;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getEnableBackupLog}
+         * @param enableBackupLog the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableBackupLog(com.aliyun.ros.cdk.core.IResolvable enableBackupLog) {
+            this.enableBackupLog = enableBackupLog;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getEncryptionKey}
          * @param encryptionKey the value to be set.
          * @return {@code this}
@@ -632,11 +1070,151 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getEncryptionKey}
+         * @param encryptionKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionKey(com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getHighSpaceUsageProtection}
+         * @param highSpaceUsageProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder highSpaceUsageProtection(java.lang.String highSpaceUsageProtection) {
+            this.highSpaceUsageProtection = highSpaceUsageProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getHighSpaceUsageProtection}
+         * @param highSpaceUsageProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder highSpaceUsageProtection(com.aliyun.ros.cdk.core.IResolvable highSpaceUsageProtection) {
+            this.highSpaceUsageProtection = highSpaceUsageProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLocalLogRetentionHours}
+         * @param localLogRetentionHours the value to be set.
+         * @return {@code this}
+         */
+        public Builder localLogRetentionHours(java.lang.Number localLogRetentionHours) {
+            this.localLogRetentionHours = localLogRetentionHours;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLocalLogRetentionHours}
+         * @param localLogRetentionHours the value to be set.
+         * @return {@code this}
+         */
+        public Builder localLogRetentionHours(com.aliyun.ros.cdk.core.IResolvable localLogRetentionHours) {
+            this.localLogRetentionHours = localLogRetentionHours;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLocalLogRetentionSpace}
+         * @param localLogRetentionSpace the value to be set.
+         * @return {@code this}
+         */
+        public Builder localLogRetentionSpace(java.lang.Number localLogRetentionSpace) {
+            this.localLogRetentionSpace = localLogRetentionSpace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLocalLogRetentionSpace}
+         * @param localLogRetentionSpace the value to be set.
+         * @return {@code this}
+         */
+        public Builder localLogRetentionSpace(com.aliyun.ros.cdk.core.IResolvable localLogRetentionSpace) {
+            this.localLogRetentionSpace = localLogRetentionSpace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupFrequency}
+         * @param logBackupFrequency the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupFrequency(java.lang.String logBackupFrequency) {
+            this.logBackupFrequency = logBackupFrequency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupFrequency}
+         * @param logBackupFrequency the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupFrequency(com.aliyun.ros.cdk.core.IResolvable logBackupFrequency) {
+            this.logBackupFrequency = logBackupFrequency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupLocalRetentionNumber}
+         * @param logBackupLocalRetentionNumber the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupLocalRetentionNumber(java.lang.Number logBackupLocalRetentionNumber) {
+            this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupLocalRetentionNumber}
+         * @param logBackupLocalRetentionNumber the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupLocalRetentionNumber(com.aliyun.ros.cdk.core.IResolvable logBackupLocalRetentionNumber) {
+            this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupRetentionPeriod}
+         * @param logBackupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupRetentionPeriod(java.lang.Number logBackupRetentionPeriod) {
+            this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getLogBackupRetentionPeriod}
+         * @param logBackupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder logBackupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable logBackupRetentionPeriod) {
+            this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getMaintainTime}
          * @param maintainTime the value to be set.
          * @return {@code this}
          */
         public Builder maintainTime(java.lang.String maintainTime) {
+            this.maintainTime = maintainTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getMaintainTime}
+         * @param maintainTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintainTime(com.aliyun.ros.cdk.core.IResolvable maintainTime) {
             this.maintainTime = maintainTime;
             return this;
         }
@@ -652,6 +1230,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getMasterUsername}
+         * @param masterUsername the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUsername(com.aliyun.ros.cdk.core.IResolvable masterUsername) {
+            this.masterUsername = masterUsername;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getMasterUserPassword}
          * @param masterUserPassword the value to be set.
          * @return {@code this}
@@ -662,11 +1250,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getMasterUserPassword}
+         * @param masterUserPassword the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUserPassword(com.aliyun.ros.cdk.core.IResolvable masterUserPassword) {
+            this.masterUserPassword = masterUserPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getMasterUserType}
          * @param masterUserType the value to be set.
          * @return {@code this}
          */
         public Builder masterUserType(java.lang.String masterUserType) {
+            this.masterUserType = masterUserType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getMasterUserType}
+         * @param masterUserType the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUserType(com.aliyun.ros.cdk.core.IResolvable masterUserType) {
             this.masterUserType = masterUserType;
             return this;
         }
@@ -702,6 +1310,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getPort}
+         * @param port the value to be set.
+         * @return {@code this}
+         */
+        public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+            this.port = port;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getPreferredBackupPeriod}
          * @param preferredBackupPeriod the value to be set.
          * @return {@code this}
@@ -732,11 +1350,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getPreferredBackupTime}
+         * @param preferredBackupTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder preferredBackupTime(com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
+            this.preferredBackupTime = preferredBackupTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getPrivateIpAddress}
          * @param privateIpAddress the value to be set.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             return this;
         }
@@ -752,11 +1390,51 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getQuantity}
+         * @param quantity the value to be set.
+         * @return {@code this}
+         */
+        public Builder quantity(com.aliyun.ros.cdk.core.IResolvable quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getReleasedKeepPolicy}
+         * @param releasedKeepPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder releasedKeepPolicy(java.lang.String releasedKeepPolicy) {
+            this.releasedKeepPolicy = releasedKeepPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getReleasedKeepPolicy}
+         * @param releasedKeepPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder releasedKeepPolicy(com.aliyun.ros.cdk.core.IResolvable releasedKeepPolicy) {
+            this.releasedKeepPolicy = releasedKeepPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
             return this;
         }
@@ -772,6 +1450,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getRoleArn}
+         * @param roleArn the value to be set.
+         * @return {@code this}
+         */
+        public Builder roleArn(com.aliyun.ros.cdk.core.IResolvable roleArn) {
+            this.roleArn = roleArn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getSecurityGroupId}
          * @param securityGroupId the value to be set.
          * @return {@code this}
@@ -782,11 +1470,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getSlaveZoneIds}
          * @param slaveZoneIds the value to be set.
          * @return {@code this}
          */
-        public Builder slaveZoneIds(java.util.List<java.lang.String> slaveZoneIds) {
+        public Builder slaveZoneIds(com.aliyun.ros.cdk.core.IResolvable slaveZoneIds) {
+            this.slaveZoneIds = slaveZoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getSlaveZoneIds}
+         * @param slaveZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder slaveZoneIds(java.util.List<? extends java.lang.Object> slaveZoneIds) {
             this.slaveZoneIds = slaveZoneIds;
             return this;
         }
@@ -802,6 +1510,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getSqlCollectorStatus}
+         * @param sqlCollectorStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder sqlCollectorStatus(com.aliyun.ros.cdk.core.IResolvable sqlCollectorStatus) {
+            this.sqlCollectorStatus = sqlCollectorStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getSslSetting}
          * @param sslSetting the value to be set.
          * @return {@code this}
@@ -812,13 +1530,23 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getSslSetting}
+         * @param sslSetting the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslSetting(com.aliyun.ros.cdk.core.IResolvable sslSetting) {
+            this.sslSetting = sslSetting;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             return this;
         }
 
@@ -828,6 +1556,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
          * @return {@code this}
          */
         public Builder targetDedicatedHostIdForLog(java.lang.String targetDedicatedHostIdForLog) {
+            this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getTargetDedicatedHostIdForLog}
+         * @param targetDedicatedHostIdForLog the value to be set.
+         * @return {@code this}
+         */
+        public Builder targetDedicatedHostIdForLog(com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForLog) {
             this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
             return this;
         }
@@ -843,11 +1581,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getTargetDedicatedHostIdForMaster}
+         * @param targetDedicatedHostIdForMaster the value to be set.
+         * @return {@code this}
+         */
+        public Builder targetDedicatedHostIdForMaster(com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForMaster) {
+            this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getTargetDedicatedHostIdForSlave}
          * @param targetDedicatedHostIdForSlave the value to be set.
          * @return {@code this}
          */
         public Builder targetDedicatedHostIdForSlave(java.lang.String targetDedicatedHostIdForSlave) {
+            this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getTargetDedicatedHostIdForSlave}
+         * @param targetDedicatedHostIdForSlave the value to be set.
+         * @return {@code this}
+         */
+        public Builder targetDedicatedHostIdForSlave(com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForSlave) {
             this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
             return this;
         }
@@ -863,11 +1621,31 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPrepayDBInstanceProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -883,13 +1661,23 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosPrepayDBInstanceProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosPrepayDBInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosPrepayDBInstanceProps build() {
-            return new Jsii$Proxy(commodityCode, dbInstanceClass, dbInstanceStorage, engine, engineVersion, period, periodType, allocatePublicConnection, autoPay, autoRenew, backupRetentionPeriod, category, connectionMode, connectionStringPrefix, connectionStringType, couponCode, dbInstanceDescription, dbInstanceNetType, dbInstanceStorageType, dbIsIgnoreCase, dbMappings, dbParamGroupId, dbTimeZone, dedicatedHostGroupId, encryptionKey, maintainTime, masterUsername, masterUserPassword, masterUserType, multiAz, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, quantity, resourceGroupId, roleArn, securityGroupId, slaveZoneIds, sqlCollectorStatus, sslSetting, tags, targetDedicatedHostIdForLog, targetDedicatedHostIdForMaster, targetDedicatedHostIdForSlave, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(commodityCode, dbInstanceClass, dbInstanceStorage, engine, engineVersion, period, periodType, allocatePublicConnection, archiveBackupKeepCount, archiveBackupKeepPolicy, archiveBackupRetentionPeriod, autoPay, autoRenew, backUpCategory, backupPolicyMode, backupRetentionPeriod, category, compressType, connectionMode, connectionStringPrefix, connectionStringType, couponCode, dbInstanceDescription, dbInstanceNetType, dbInstanceStorageType, dbIsIgnoreCase, dbMappings, dbParamGroupId, dbTimeZone, dedicatedHostGroupId, enableBackupLog, encryptionKey, highSpaceUsageProtection, localLogRetentionHours, localLogRetentionSpace, logBackupFrequency, logBackupLocalRetentionNumber, logBackupRetentionPeriod, maintainTime, masterUsername, masterUserPassword, masterUserType, multiAz, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, quantity, releasedKeepPolicy, resourceGroupId, roleArn, securityGroupId, slaveZoneIds, sqlCollectorStatus, sslSetting, tags, targetDedicatedHostIdForLog, targetDedicatedHostIdForMaster, targetDedicatedHostIdForSlave, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -898,54 +1686,68 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosPrepayDBInstanceProps {
-        private final java.lang.String commodityCode;
-        private final java.lang.String dbInstanceClass;
-        private final java.lang.Number dbInstanceStorage;
-        private final java.lang.String engine;
-        private final java.lang.String engineVersion;
-        private final java.lang.Number period;
-        private final java.lang.String periodType;
+        private final java.lang.Object commodityCode;
+        private final java.lang.Object dbInstanceClass;
+        private final java.lang.Object dbInstanceStorage;
+        private final java.lang.Object engine;
+        private final java.lang.Object engineVersion;
+        private final java.lang.Object period;
+        private final java.lang.Object periodType;
         private final java.lang.Object allocatePublicConnection;
+        private final java.lang.Object archiveBackupKeepCount;
+        private final java.lang.Object archiveBackupKeepPolicy;
+        private final java.lang.Object archiveBackupRetentionPeriod;
         private final java.lang.Object autoPay;
         private final java.lang.Object autoRenew;
-        private final java.lang.Number backupRetentionPeriod;
-        private final java.lang.String category;
-        private final java.lang.String connectionMode;
-        private final java.lang.String connectionStringPrefix;
-        private final java.lang.String connectionStringType;
-        private final java.lang.String couponCode;
-        private final java.lang.String dbInstanceDescription;
-        private final java.lang.String dbInstanceNetType;
-        private final java.lang.String dbInstanceStorageType;
-        private final java.lang.Number dbIsIgnoreCase;
+        private final java.lang.Object backUpCategory;
+        private final java.lang.Object backupPolicyMode;
+        private final java.lang.Object backupRetentionPeriod;
+        private final java.lang.Object category;
+        private final java.lang.Object compressType;
+        private final java.lang.Object connectionMode;
+        private final java.lang.Object connectionStringPrefix;
+        private final java.lang.Object connectionStringType;
+        private final java.lang.Object couponCode;
+        private final java.lang.Object dbInstanceDescription;
+        private final java.lang.Object dbInstanceNetType;
+        private final java.lang.Object dbInstanceStorageType;
+        private final java.lang.Object dbIsIgnoreCase;
         private final java.lang.Object dbMappings;
-        private final java.lang.String dbParamGroupId;
-        private final java.lang.String dbTimeZone;
-        private final java.lang.String dedicatedHostGroupId;
-        private final java.lang.String encryptionKey;
-        private final java.lang.String maintainTime;
-        private final java.lang.String masterUsername;
-        private final java.lang.String masterUserPassword;
-        private final java.lang.String masterUserType;
+        private final java.lang.Object dbParamGroupId;
+        private final java.lang.Object dbTimeZone;
+        private final java.lang.Object dedicatedHostGroupId;
+        private final java.lang.Object enableBackupLog;
+        private final java.lang.Object encryptionKey;
+        private final java.lang.Object highSpaceUsageProtection;
+        private final java.lang.Object localLogRetentionHours;
+        private final java.lang.Object localLogRetentionSpace;
+        private final java.lang.Object logBackupFrequency;
+        private final java.lang.Object logBackupLocalRetentionNumber;
+        private final java.lang.Object logBackupRetentionPeriod;
+        private final java.lang.Object maintainTime;
+        private final java.lang.Object masterUsername;
+        private final java.lang.Object masterUserPassword;
+        private final java.lang.Object masterUserType;
         private final java.lang.Object multiAz;
-        private final java.lang.Number port;
+        private final java.lang.Object port;
         private final java.lang.Object preferredBackupPeriod;
-        private final java.lang.String preferredBackupTime;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.Number quantity;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String roleArn;
-        private final java.lang.String securityGroupId;
-        private final java.util.List<java.lang.String> slaveZoneIds;
-        private final java.lang.String sqlCollectorStatus;
-        private final java.lang.String sslSetting;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String targetDedicatedHostIdForLog;
-        private final java.lang.String targetDedicatedHostIdForMaster;
-        private final java.lang.String targetDedicatedHostIdForSlave;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object preferredBackupTime;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object quantity;
+        private final java.lang.Object releasedKeepPolicy;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object roleArn;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object slaveZoneIds;
+        private final java.lang.Object sqlCollectorStatus;
+        private final java.lang.Object sslSetting;
+        private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object targetDedicatedHostIdForLog;
+        private final java.lang.Object targetDedicatedHostIdForMaster;
+        private final java.lang.Object targetDedicatedHostIdForSlave;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -953,61 +1755,75 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commodityCode = software.amazon.jsii.Kernel.get(this, "commodityCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.engine = software.amazon.jsii.Kernel.get(this, "engine", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.commodityCode = software.amazon.jsii.Kernel.get(this, "commodityCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.engine = software.amazon.jsii.Kernel.get(this, "engine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicConnection = software.amazon.jsii.Kernel.get(this, "allocatePublicConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.archiveBackupKeepCount = software.amazon.jsii.Kernel.get(this, "archiveBackupKeepCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.archiveBackupKeepPolicy = software.amazon.jsii.Kernel.get(this, "archiveBackupKeepPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.archiveBackupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "archiveBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionMode = software.amazon.jsii.Kernel.get(this, "connectionMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionStringType = software.amazon.jsii.Kernel.get(this, "connectionStringType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.couponCode = software.amazon.jsii.Kernel.get(this, "couponCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceNetType = software.amazon.jsii.Kernel.get(this, "dbInstanceNetType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbIsIgnoreCase = software.amazon.jsii.Kernel.get(this, "dbIsIgnoreCase", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.backUpCategory = software.amazon.jsii.Kernel.get(this, "backUpCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupPolicyMode = software.amazon.jsii.Kernel.get(this, "backupPolicyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.compressType = software.amazon.jsii.Kernel.get(this, "compressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionMode = software.amazon.jsii.Kernel.get(this, "connectionMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionStringType = software.amazon.jsii.Kernel.get(this, "connectionStringType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.couponCode = software.amazon.jsii.Kernel.get(this, "couponCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceNetType = software.amazon.jsii.Kernel.get(this, "dbInstanceNetType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbIsIgnoreCase = software.amazon.jsii.Kernel.get(this, "dbIsIgnoreCase", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbMappings = software.amazon.jsii.Kernel.get(this, "dbMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.dbParamGroupId = software.amazon.jsii.Kernel.get(this, "dbParamGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbTimeZone = software.amazon.jsii.Kernel.get(this, "dbTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUsername = software.amazon.jsii.Kernel.get(this, "masterUsername", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUserPassword = software.amazon.jsii.Kernel.get(this, "masterUserPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUserType = software.amazon.jsii.Kernel.get(this, "masterUserType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbParamGroupId = software.amazon.jsii.Kernel.get(this, "dbParamGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbTimeZone = software.amazon.jsii.Kernel.get(this, "dbTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableBackupLog = software.amazon.jsii.Kernel.get(this, "enableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.highSpaceUsageProtection = software.amazon.jsii.Kernel.get(this, "highSpaceUsageProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localLogRetentionHours = software.amazon.jsii.Kernel.get(this, "localLogRetentionHours", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localLogRetentionSpace = software.amazon.jsii.Kernel.get(this, "localLogRetentionSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logBackupFrequency = software.amazon.jsii.Kernel.get(this, "logBackupFrequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logBackupLocalRetentionNumber = software.amazon.jsii.Kernel.get(this, "logBackupLocalRetentionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logBackupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "logBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUsername = software.amazon.jsii.Kernel.get(this, "masterUsername", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUserPassword = software.amazon.jsii.Kernel.get(this, "masterUserPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUserType = software.amazon.jsii.Kernel.get(this, "masterUserType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.multiAz = software.amazon.jsii.Kernel.get(this, "multiAz", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preferredBackupPeriod = software.amazon.jsii.Kernel.get(this, "preferredBackupPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.preferredBackupTime = software.amazon.jsii.Kernel.get(this, "preferredBackupTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slaveZoneIds = software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.targetDedicatedHostIdForLog = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForLog", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetDedicatedHostIdForMaster = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.targetDedicatedHostIdForSlave = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForSlave", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.preferredBackupTime = software.amazon.jsii.Kernel.get(this, "preferredBackupTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.releasedKeepPolicy = software.amazon.jsii.Kernel.get(this, "releasedKeepPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slaveZoneIds = software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.targetDedicatedHostIdForLog = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetDedicatedHostIdForMaster = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.targetDedicatedHostIdForSlave = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForSlave", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String commodityCode, final java.lang.String dbInstanceClass, final java.lang.Number dbInstanceStorage, final java.lang.String engine, final java.lang.String engineVersion, final java.lang.Number period, final java.lang.String periodType, final java.lang.Object allocatePublicConnection, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Number backupRetentionPeriod, final java.lang.String category, final java.lang.String connectionMode, final java.lang.String connectionStringPrefix, final java.lang.String connectionStringType, final java.lang.String couponCode, final java.lang.String dbInstanceDescription, final java.lang.String dbInstanceNetType, final java.lang.String dbInstanceStorageType, final java.lang.Number dbIsIgnoreCase, final java.lang.Object dbMappings, final java.lang.String dbParamGroupId, final java.lang.String dbTimeZone, final java.lang.String dedicatedHostGroupId, final java.lang.String encryptionKey, final java.lang.String maintainTime, final java.lang.String masterUsername, final java.lang.String masterUserPassword, final java.lang.String masterUserType, final java.lang.Object multiAz, final java.lang.Number port, final java.lang.Object preferredBackupPeriod, final java.lang.String preferredBackupTime, final java.lang.String privateIpAddress, final java.lang.Number quantity, final java.lang.String resourceGroupId, final java.lang.String roleArn, final java.lang.String securityGroupId, final java.util.List<java.lang.String> slaveZoneIds, final java.lang.String sqlCollectorStatus, final java.lang.String sslSetting, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String targetDedicatedHostIdForLog, final java.lang.String targetDedicatedHostIdForMaster, final java.lang.String targetDedicatedHostIdForSlave, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object commodityCode, final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceStorage, final java.lang.Object engine, final java.lang.Object engineVersion, final java.lang.Object period, final java.lang.Object periodType, final java.lang.Object allocatePublicConnection, final java.lang.Object archiveBackupKeepCount, final java.lang.Object archiveBackupKeepPolicy, final java.lang.Object archiveBackupRetentionPeriod, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Object backUpCategory, final java.lang.Object backupPolicyMode, final java.lang.Object backupRetentionPeriod, final java.lang.Object category, final java.lang.Object compressType, final java.lang.Object connectionMode, final java.lang.Object connectionStringPrefix, final java.lang.Object connectionStringType, final java.lang.Object couponCode, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceNetType, final java.lang.Object dbInstanceStorageType, final java.lang.Object dbIsIgnoreCase, final java.lang.Object dbMappings, final java.lang.Object dbParamGroupId, final java.lang.Object dbTimeZone, final java.lang.Object dedicatedHostGroupId, final java.lang.Object enableBackupLog, final java.lang.Object encryptionKey, final java.lang.Object highSpaceUsageProtection, final java.lang.Object localLogRetentionHours, final java.lang.Object localLogRetentionSpace, final java.lang.Object logBackupFrequency, final java.lang.Object logBackupLocalRetentionNumber, final java.lang.Object logBackupRetentionPeriod, final java.lang.Object maintainTime, final java.lang.Object masterUsername, final java.lang.Object masterUserPassword, final java.lang.Object masterUserType, final java.lang.Object multiAz, final java.lang.Object port, final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object privateIpAddress, final java.lang.Object quantity, final java.lang.Object releasedKeepPolicy, final java.lang.Object resourceGroupId, final java.lang.Object roleArn, final java.lang.Object securityGroupId, final java.lang.Object slaveZoneIds, final java.lang.Object sqlCollectorStatus, final java.lang.Object sslSetting, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object targetDedicatedHostIdForLog, final java.lang.Object targetDedicatedHostIdForMaster, final java.lang.Object targetDedicatedHostIdForSlave, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commodityCode = java.util.Objects.requireNonNull(commodityCode, "commodityCode is required");
             this.dbInstanceClass = java.util.Objects.requireNonNull(dbInstanceClass, "dbInstanceClass is required");
@@ -1017,10 +1833,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             this.period = java.util.Objects.requireNonNull(period, "period is required");
             this.periodType = java.util.Objects.requireNonNull(periodType, "periodType is required");
             this.allocatePublicConnection = allocatePublicConnection;
+            this.archiveBackupKeepCount = archiveBackupKeepCount;
+            this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
+            this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
             this.autoPay = autoPay;
             this.autoRenew = autoRenew;
+            this.backUpCategory = backUpCategory;
+            this.backupPolicyMode = backupPolicyMode;
             this.backupRetentionPeriod = backupRetentionPeriod;
             this.category = category;
+            this.compressType = compressType;
             this.connectionMode = connectionMode;
             this.connectionStringPrefix = connectionStringPrefix;
             this.connectionStringType = connectionStringType;
@@ -1033,7 +1855,14 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             this.dbParamGroupId = dbParamGroupId;
             this.dbTimeZone = dbTimeZone;
             this.dedicatedHostGroupId = dedicatedHostGroupId;
+            this.enableBackupLog = enableBackupLog;
             this.encryptionKey = encryptionKey;
+            this.highSpaceUsageProtection = highSpaceUsageProtection;
+            this.localLogRetentionHours = localLogRetentionHours;
+            this.localLogRetentionSpace = localLogRetentionSpace;
+            this.logBackupFrequency = logBackupFrequency;
+            this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
+            this.logBackupRetentionPeriod = logBackupRetentionPeriod;
             this.maintainTime = maintainTime;
             this.masterUsername = masterUsername;
             this.masterUserPassword = masterUserPassword;
@@ -1044,13 +1873,14 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             this.preferredBackupTime = preferredBackupTime;
             this.privateIpAddress = privateIpAddress;
             this.quantity = quantity;
+            this.releasedKeepPolicy = releasedKeepPolicy;
             this.resourceGroupId = resourceGroupId;
             this.roleArn = roleArn;
             this.securityGroupId = securityGroupId;
             this.slaveZoneIds = slaveZoneIds;
             this.sqlCollectorStatus = sqlCollectorStatus;
             this.sslSetting = sslSetting;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
             this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
             this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
@@ -1060,43 +1890,58 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getCommodityCode() {
+        public final java.lang.Object getCommodityCode() {
             return this.commodityCode;
         }
 
         @Override
-        public final java.lang.String getDbInstanceClass() {
+        public final java.lang.Object getDbInstanceClass() {
             return this.dbInstanceClass;
         }
 
         @Override
-        public final java.lang.Number getDbInstanceStorage() {
+        public final java.lang.Object getDbInstanceStorage() {
             return this.dbInstanceStorage;
         }
 
         @Override
-        public final java.lang.String getEngine() {
+        public final java.lang.Object getEngine() {
             return this.engine;
         }
 
         @Override
-        public final java.lang.String getEngineVersion() {
+        public final java.lang.Object getEngineVersion() {
             return this.engineVersion;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodType() {
+        public final java.lang.Object getPeriodType() {
             return this.periodType;
         }
 
         @Override
         public final java.lang.Object getAllocatePublicConnection() {
             return this.allocatePublicConnection;
+        }
+
+        @Override
+        public final java.lang.Object getArchiveBackupKeepCount() {
+            return this.archiveBackupKeepCount;
+        }
+
+        @Override
+        public final java.lang.Object getArchiveBackupKeepPolicy() {
+            return this.archiveBackupKeepPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getArchiveBackupRetentionPeriod() {
+            return this.archiveBackupRetentionPeriod;
         }
 
         @Override
@@ -1110,52 +1955,67 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.Number getBackupRetentionPeriod() {
+        public final java.lang.Object getBackUpCategory() {
+            return this.backUpCategory;
+        }
+
+        @Override
+        public final java.lang.Object getBackupPolicyMode() {
+            return this.backupPolicyMode;
+        }
+
+        @Override
+        public final java.lang.Object getBackupRetentionPeriod() {
             return this.backupRetentionPeriod;
         }
 
         @Override
-        public final java.lang.String getCategory() {
+        public final java.lang.Object getCategory() {
             return this.category;
         }
 
         @Override
-        public final java.lang.String getConnectionMode() {
+        public final java.lang.Object getCompressType() {
+            return this.compressType;
+        }
+
+        @Override
+        public final java.lang.Object getConnectionMode() {
             return this.connectionMode;
         }
 
         @Override
-        public final java.lang.String getConnectionStringPrefix() {
+        public final java.lang.Object getConnectionStringPrefix() {
             return this.connectionStringPrefix;
         }
 
         @Override
-        public final java.lang.String getConnectionStringType() {
+        public final java.lang.Object getConnectionStringType() {
             return this.connectionStringType;
         }
 
         @Override
-        public final java.lang.String getCouponCode() {
+        public final java.lang.Object getCouponCode() {
             return this.couponCode;
         }
 
         @Override
-        public final java.lang.String getDbInstanceDescription() {
+        public final java.lang.Object getDbInstanceDescription() {
             return this.dbInstanceDescription;
         }
 
         @Override
-        public final java.lang.String getDbInstanceNetType() {
+        public final java.lang.Object getDbInstanceNetType() {
             return this.dbInstanceNetType;
         }
 
         @Override
-        public final java.lang.String getDbInstanceStorageType() {
+        public final java.lang.Object getDbInstanceStorageType() {
             return this.dbInstanceStorageType;
         }
 
         @Override
-        public final java.lang.Number getDbIsIgnoreCase() {
+        public final java.lang.Object getDbIsIgnoreCase() {
             return this.dbIsIgnoreCase;
         }
 
@@ -1165,42 +2025,77 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getDbParamGroupId() {
+        public final java.lang.Object getDbParamGroupId() {
             return this.dbParamGroupId;
         }
 
         @Override
-        public final java.lang.String getDbTimeZone() {
+        public final java.lang.Object getDbTimeZone() {
             return this.dbTimeZone;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostGroupId() {
+        public final java.lang.Object getDedicatedHostGroupId() {
             return this.dedicatedHostGroupId;
         }
 
         @Override
-        public final java.lang.String getEncryptionKey() {
+        public final java.lang.Object getEnableBackupLog() {
+            return this.enableBackupLog;
+        }
+
+        @Override
+        public final java.lang.Object getEncryptionKey() {
             return this.encryptionKey;
         }
 
         @Override
-        public final java.lang.String getMaintainTime() {
+        public final java.lang.Object getHighSpaceUsageProtection() {
+            return this.highSpaceUsageProtection;
+        }
+
+        @Override
+        public final java.lang.Object getLocalLogRetentionHours() {
+            return this.localLogRetentionHours;
+        }
+
+        @Override
+        public final java.lang.Object getLocalLogRetentionSpace() {
+            return this.localLogRetentionSpace;
+        }
+
+        @Override
+        public final java.lang.Object getLogBackupFrequency() {
+            return this.logBackupFrequency;
+        }
+
+        @Override
+        public final java.lang.Object getLogBackupLocalRetentionNumber() {
+            return this.logBackupLocalRetentionNumber;
+        }
+
+        @Override
+        public final java.lang.Object getLogBackupRetentionPeriod() {
+            return this.logBackupRetentionPeriod;
+        }
+
+        @Override
+        public final java.lang.Object getMaintainTime() {
             return this.maintainTime;
         }
 
         @Override
-        public final java.lang.String getMasterUsername() {
+        public final java.lang.Object getMasterUsername() {
             return this.masterUsername;
         }
 
         @Override
-        public final java.lang.String getMasterUserPassword() {
+        public final java.lang.Object getMasterUserPassword() {
             return this.masterUserPassword;
         }
 
         @Override
-        public final java.lang.String getMasterUserType() {
+        public final java.lang.Object getMasterUserType() {
             return this.masterUserType;
         }
 
@@ -1210,7 +2105,7 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.Number getPort() {
+        public final java.lang.Object getPort() {
             return this.port;
         }
 
@@ -1220,82 +2115,87 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getPreferredBackupTime() {
+        public final java.lang.Object getPreferredBackupTime() {
             return this.preferredBackupTime;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.Number getQuantity() {
+        public final java.lang.Object getQuantity() {
             return this.quantity;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getReleasedKeepPolicy() {
+            return this.releasedKeepPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getRoleArn() {
+        public final java.lang.Object getRoleArn() {
             return this.roleArn;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getSlaveZoneIds() {
+        public final java.lang.Object getSlaveZoneIds() {
             return this.slaveZoneIds;
         }
 
         @Override
-        public final java.lang.String getSqlCollectorStatus() {
+        public final java.lang.Object getSqlCollectorStatus() {
             return this.sqlCollectorStatus;
         }
 
         @Override
-        public final java.lang.String getSslSetting() {
+        public final java.lang.Object getSslSetting() {
             return this.sslSetting;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getTargetDedicatedHostIdForLog() {
+        public final java.lang.Object getTargetDedicatedHostIdForLog() {
             return this.targetDedicatedHostIdForLog;
         }
 
         @Override
-        public final java.lang.String getTargetDedicatedHostIdForMaster() {
+        public final java.lang.Object getTargetDedicatedHostIdForMaster() {
             return this.targetDedicatedHostIdForMaster;
         }
 
         @Override
-        public final java.lang.String getTargetDedicatedHostIdForSlave() {
+        public final java.lang.Object getTargetDedicatedHostIdForSlave() {
             return this.targetDedicatedHostIdForSlave;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
@@ -1315,17 +2215,35 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.getAllocatePublicConnection() != null) {
                 data.set("allocatePublicConnection", om.valueToTree(this.getAllocatePublicConnection()));
             }
+            if (this.getArchiveBackupKeepCount() != null) {
+                data.set("archiveBackupKeepCount", om.valueToTree(this.getArchiveBackupKeepCount()));
+            }
+            if (this.getArchiveBackupKeepPolicy() != null) {
+                data.set("archiveBackupKeepPolicy", om.valueToTree(this.getArchiveBackupKeepPolicy()));
+            }
+            if (this.getArchiveBackupRetentionPeriod() != null) {
+                data.set("archiveBackupRetentionPeriod", om.valueToTree(this.getArchiveBackupRetentionPeriod()));
+            }
             if (this.getAutoPay() != null) {
                 data.set("autoPay", om.valueToTree(this.getAutoPay()));
             }
             if (this.getAutoRenew() != null) {
                 data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
             }
+            if (this.getBackUpCategory() != null) {
+                data.set("backUpCategory", om.valueToTree(this.getBackUpCategory()));
+            }
+            if (this.getBackupPolicyMode() != null) {
+                data.set("backupPolicyMode", om.valueToTree(this.getBackupPolicyMode()));
+            }
             if (this.getBackupRetentionPeriod() != null) {
                 data.set("backupRetentionPeriod", om.valueToTree(this.getBackupRetentionPeriod()));
             }
             if (this.getCategory() != null) {
                 data.set("category", om.valueToTree(this.getCategory()));
+            }
+            if (this.getCompressType() != null) {
+                data.set("compressType", om.valueToTree(this.getCompressType()));
             }
             if (this.getConnectionMode() != null) {
                 data.set("connectionMode", om.valueToTree(this.getConnectionMode()));
@@ -1363,8 +2281,29 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.getDedicatedHostGroupId() != null) {
                 data.set("dedicatedHostGroupId", om.valueToTree(this.getDedicatedHostGroupId()));
             }
+            if (this.getEnableBackupLog() != null) {
+                data.set("enableBackupLog", om.valueToTree(this.getEnableBackupLog()));
+            }
             if (this.getEncryptionKey() != null) {
                 data.set("encryptionKey", om.valueToTree(this.getEncryptionKey()));
+            }
+            if (this.getHighSpaceUsageProtection() != null) {
+                data.set("highSpaceUsageProtection", om.valueToTree(this.getHighSpaceUsageProtection()));
+            }
+            if (this.getLocalLogRetentionHours() != null) {
+                data.set("localLogRetentionHours", om.valueToTree(this.getLocalLogRetentionHours()));
+            }
+            if (this.getLocalLogRetentionSpace() != null) {
+                data.set("localLogRetentionSpace", om.valueToTree(this.getLocalLogRetentionSpace()));
+            }
+            if (this.getLogBackupFrequency() != null) {
+                data.set("logBackupFrequency", om.valueToTree(this.getLogBackupFrequency()));
+            }
+            if (this.getLogBackupLocalRetentionNumber() != null) {
+                data.set("logBackupLocalRetentionNumber", om.valueToTree(this.getLogBackupLocalRetentionNumber()));
+            }
+            if (this.getLogBackupRetentionPeriod() != null) {
+                data.set("logBackupRetentionPeriod", om.valueToTree(this.getLogBackupRetentionPeriod()));
             }
             if (this.getMaintainTime() != null) {
                 data.set("maintainTime", om.valueToTree(this.getMaintainTime()));
@@ -1395,6 +2334,9 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getQuantity() != null) {
                 data.set("quantity", om.valueToTree(this.getQuantity()));
+            }
+            if (this.getReleasedKeepPolicy() != null) {
+                data.set("releasedKeepPolicy", om.valueToTree(this.getReleasedKeepPolicy()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -1461,10 +2403,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             if (!period.equals(that.period)) return false;
             if (!periodType.equals(that.periodType)) return false;
             if (this.allocatePublicConnection != null ? !this.allocatePublicConnection.equals(that.allocatePublicConnection) : that.allocatePublicConnection != null) return false;
+            if (this.archiveBackupKeepCount != null ? !this.archiveBackupKeepCount.equals(that.archiveBackupKeepCount) : that.archiveBackupKeepCount != null) return false;
+            if (this.archiveBackupKeepPolicy != null ? !this.archiveBackupKeepPolicy.equals(that.archiveBackupKeepPolicy) : that.archiveBackupKeepPolicy != null) return false;
+            if (this.archiveBackupRetentionPeriod != null ? !this.archiveBackupRetentionPeriod.equals(that.archiveBackupRetentionPeriod) : that.archiveBackupRetentionPeriod != null) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
+            if (this.backUpCategory != null ? !this.backUpCategory.equals(that.backUpCategory) : that.backUpCategory != null) return false;
+            if (this.backupPolicyMode != null ? !this.backupPolicyMode.equals(that.backupPolicyMode) : that.backupPolicyMode != null) return false;
             if (this.backupRetentionPeriod != null ? !this.backupRetentionPeriod.equals(that.backupRetentionPeriod) : that.backupRetentionPeriod != null) return false;
             if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
+            if (this.compressType != null ? !this.compressType.equals(that.compressType) : that.compressType != null) return false;
             if (this.connectionMode != null ? !this.connectionMode.equals(that.connectionMode) : that.connectionMode != null) return false;
             if (this.connectionStringPrefix != null ? !this.connectionStringPrefix.equals(that.connectionStringPrefix) : that.connectionStringPrefix != null) return false;
             if (this.connectionStringType != null ? !this.connectionStringType.equals(that.connectionStringType) : that.connectionStringType != null) return false;
@@ -1477,7 +2425,14 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.dbParamGroupId != null ? !this.dbParamGroupId.equals(that.dbParamGroupId) : that.dbParamGroupId != null) return false;
             if (this.dbTimeZone != null ? !this.dbTimeZone.equals(that.dbTimeZone) : that.dbTimeZone != null) return false;
             if (this.dedicatedHostGroupId != null ? !this.dedicatedHostGroupId.equals(that.dedicatedHostGroupId) : that.dedicatedHostGroupId != null) return false;
+            if (this.enableBackupLog != null ? !this.enableBackupLog.equals(that.enableBackupLog) : that.enableBackupLog != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
+            if (this.highSpaceUsageProtection != null ? !this.highSpaceUsageProtection.equals(that.highSpaceUsageProtection) : that.highSpaceUsageProtection != null) return false;
+            if (this.localLogRetentionHours != null ? !this.localLogRetentionHours.equals(that.localLogRetentionHours) : that.localLogRetentionHours != null) return false;
+            if (this.localLogRetentionSpace != null ? !this.localLogRetentionSpace.equals(that.localLogRetentionSpace) : that.localLogRetentionSpace != null) return false;
+            if (this.logBackupFrequency != null ? !this.logBackupFrequency.equals(that.logBackupFrequency) : that.logBackupFrequency != null) return false;
+            if (this.logBackupLocalRetentionNumber != null ? !this.logBackupLocalRetentionNumber.equals(that.logBackupLocalRetentionNumber) : that.logBackupLocalRetentionNumber != null) return false;
+            if (this.logBackupRetentionPeriod != null ? !this.logBackupRetentionPeriod.equals(that.logBackupRetentionPeriod) : that.logBackupRetentionPeriod != null) return false;
             if (this.maintainTime != null ? !this.maintainTime.equals(that.maintainTime) : that.maintainTime != null) return false;
             if (this.masterUsername != null ? !this.masterUsername.equals(that.masterUsername) : that.masterUsername != null) return false;
             if (this.masterUserPassword != null ? !this.masterUserPassword.equals(that.masterUserPassword) : that.masterUserPassword != null) return false;
@@ -1488,6 +2443,7 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.preferredBackupTime != null ? !this.preferredBackupTime.equals(that.preferredBackupTime) : that.preferredBackupTime != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.quantity != null ? !this.quantity.equals(that.quantity) : that.quantity != null) return false;
+            if (this.releasedKeepPolicy != null ? !this.releasedKeepPolicy.equals(that.releasedKeepPolicy) : that.releasedKeepPolicy != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.roleArn != null ? !this.roleArn.equals(that.roleArn) : that.roleArn != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
@@ -1513,10 +2469,16 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.period.hashCode());
             result = 31 * result + (this.periodType.hashCode());
             result = 31 * result + (this.allocatePublicConnection != null ? this.allocatePublicConnection.hashCode() : 0);
+            result = 31 * result + (this.archiveBackupKeepCount != null ? this.archiveBackupKeepCount.hashCode() : 0);
+            result = 31 * result + (this.archiveBackupKeepPolicy != null ? this.archiveBackupKeepPolicy.hashCode() : 0);
+            result = 31 * result + (this.archiveBackupRetentionPeriod != null ? this.archiveBackupRetentionPeriod.hashCode() : 0);
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
+            result = 31 * result + (this.backUpCategory != null ? this.backUpCategory.hashCode() : 0);
+            result = 31 * result + (this.backupPolicyMode != null ? this.backupPolicyMode.hashCode() : 0);
             result = 31 * result + (this.backupRetentionPeriod != null ? this.backupRetentionPeriod.hashCode() : 0);
             result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
+            result = 31 * result + (this.compressType != null ? this.compressType.hashCode() : 0);
             result = 31 * result + (this.connectionMode != null ? this.connectionMode.hashCode() : 0);
             result = 31 * result + (this.connectionStringPrefix != null ? this.connectionStringPrefix.hashCode() : 0);
             result = 31 * result + (this.connectionStringType != null ? this.connectionStringType.hashCode() : 0);
@@ -1529,7 +2491,14 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.dbParamGroupId != null ? this.dbParamGroupId.hashCode() : 0);
             result = 31 * result + (this.dbTimeZone != null ? this.dbTimeZone.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostGroupId != null ? this.dedicatedHostGroupId.hashCode() : 0);
+            result = 31 * result + (this.enableBackupLog != null ? this.enableBackupLog.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
+            result = 31 * result + (this.highSpaceUsageProtection != null ? this.highSpaceUsageProtection.hashCode() : 0);
+            result = 31 * result + (this.localLogRetentionHours != null ? this.localLogRetentionHours.hashCode() : 0);
+            result = 31 * result + (this.localLogRetentionSpace != null ? this.localLogRetentionSpace.hashCode() : 0);
+            result = 31 * result + (this.logBackupFrequency != null ? this.logBackupFrequency.hashCode() : 0);
+            result = 31 * result + (this.logBackupLocalRetentionNumber != null ? this.logBackupLocalRetentionNumber.hashCode() : 0);
+            result = 31 * result + (this.logBackupRetentionPeriod != null ? this.logBackupRetentionPeriod.hashCode() : 0);
             result = 31 * result + (this.maintainTime != null ? this.maintainTime.hashCode() : 0);
             result = 31 * result + (this.masterUsername != null ? this.masterUsername.hashCode() : 0);
             result = 31 * result + (this.masterUserPassword != null ? this.masterUserPassword.hashCode() : 0);
@@ -1540,6 +2509,7 @@ public interface RosPrepayDBInstanceProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.preferredBackupTime != null ? this.preferredBackupTime.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.quantity != null ? this.quantity.hashCode() : 0);
+            result = 31 * result + (this.releasedKeepPolicy != null ? this.releasedKeepPolicy.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.roleArn != null ? this.roleArn.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);

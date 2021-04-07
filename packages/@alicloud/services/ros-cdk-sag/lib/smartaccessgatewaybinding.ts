@@ -11,12 +11,12 @@ export interface SmartAccessGatewayBindingProps {
     /**
      * Property ccnId: The ID of the CCN instance to bind.
      */
-    readonly ccnId: string;
+    readonly ccnId: string | ros.IResolvable;
 
     /**
      * Property smartAgId: The ID of the Smart Access Gateway instance.
      */
-    readonly smartAgId: string;
+    readonly smartAgId: string | ros.IResolvable;
 }
 
 /**
@@ -32,7 +32,7 @@ export class SmartAccessGatewayBinding extends ros.Resource {
     /**
      * Attribute SmartAGId: The ID of the Smart Access Gateway instance.
      */
-    public readonly attrSmartAgId: any;
+    public readonly attrSmartAgId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.

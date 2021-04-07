@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::CommonBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.433Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackage")
 public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CommonBandwidthPackage(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.CommonBandwidthPackageProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CommonBandwidthPackage(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.CommonBandwidthPackageProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBandwidthPackageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBandwidthPackageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrBandwidthPackageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.CommonBandwidthPackage> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,73 +90,214 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.
+         * <p>
+         * Unit: Mbit/s.
+         * <p>
          * @return {@code this}
-         * @param bandwidth This parameter is required.
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
+        /**
+         * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.
+         * <p>
+         * Unit: Mbit/s.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
 
         /**
+         * Property description: The description of the Internet Shared Bandwidth instance.
+         * <p>
+         * The description must be 2 to 256 characters in length. It must start with a letter,
+         * and cannot start with http:// or https://.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: The description of the Internet Shared Bandwidth instance.
+         * <p>
+         * The description must be 2 to 256 characters in length. It must start with a letter,
+         * and cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
+         * <p>
+         * Allowed values:
+         * PayByBandwidth (default): Billed by bandwidth.
+         * PayBy95: Charged at Enhanced 95.
+         * <p>
          * @return {@code this}
-         * @param internetChargeType This parameter is required.
+         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
             this.props.internetChargeType(internetChargeType);
             return this;
         }
+        /**
+         * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
+         * <p>
+         * Allowed values:
+         * PayByBandwidth (default): Billed by bandwidth.
+         * PayBy95: Charged at Enhanced 95.
+         * <p>
+         * @return {@code this}
+         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.props.internetChargeType(internetChargeType);
+            return this;
+        }
 
         /**
+         * Property isp: Line type of EIP, value: BGP (multi-line).
+         * <p>
          * @return {@code this}
-         * @param isp This parameter is required.
+         * @param isp Property isp: Line type of EIP, value: BGP (multi-line). This parameter is required.
          */
         public Builder isp(final java.lang.String isp) {
             this.props.isp(isp);
             return this;
         }
+        /**
+         * Property isp: Line type of EIP, value: BGP (multi-line).
+         * <p>
+         * @return {@code this}
+         * @param isp Property isp: Line type of EIP, value: BGP (multi-line). This parameter is required.
+         */
+        public Builder isp(final com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.props.isp(isp);
+            return this;
+        }
 
         /**
+         * Property name: The name of the Internet Shared Bandwidth instance.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
+         * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
+         * start with http:// or https://.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
+        /**
+         * Property name: The name of the Internet Shared Bandwidth instance.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
+         * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
+         * start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
+         * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
+         * <p>
+         * Default to 100.
+         * Note This parameter is only supported on the China site.
+         * <p>
          * @return {@code this}
-         * @param ratio This parameter is required.
+         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder ratio(final java.lang.Number ratio) {
             this.props.ratio(ratio);
             return this;
         }
+        /**
+         * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
+         * <p>
+         * Default to 100.
+         * Note This parameter is only supported on the China site.
+         * <p>
+         * @return {@code this}
+         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. This parameter is required.
+         */
+        public Builder ratio(final com.aliyun.ros.cdk.core.IResolvable ratio) {
+            this.props.ratio(ratio);
+            return this;
+        }
 
         /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
          * @return {@code this}
-         * @param resourceGroupId This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param zone This parameter is required.
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosCommonBandwidthPackage.TagsProperty> tags) {
+            this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property zone: Zone Id.
+         * <p>
+         * @return {@code this}
+         * @param zone Property zone: Zone Id. This parameter is required.
          */
         public Builder zone(final java.lang.String zone) {
+            this.props.zone(zone);
+            return this;
+        }
+        /**
+         * Property zone: Zone Id.
+         * <p>
+         * @return {@code this}
+         * @param zone Property zone: Zone Id. This parameter is required.
+         */
+        public Builder zone(final com.aliyun.ros.cdk.core.IResolvable zone) {
             this.props.zone(zone);
             return this;
         }

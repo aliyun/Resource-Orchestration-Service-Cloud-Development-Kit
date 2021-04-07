@@ -3,32 +3,52 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.119Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.759Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ParameterProps")
 @software.amazon.jsii.Jsii.Proxy(ParameterProps.Jsii$Proxy.class)
 public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property name: The name of the parameter.
+     * <p>
+     * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
+     * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
+     * Property type: The data type of the common parameter.
+     * <p>
+     * Valid values: String and StringList.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
+     * Property value: The value of the parameter.
+     * <p>
+     * The value must be 1 to 4096 characters in length.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getValue();
+    @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
+     * Property constraints: The constraints of the parameter.
+     * <p>
+     * By default, this parameter is null. Valid values:
+     * AllowedValues: The value that is allowed for the parameter. It must be an array string.
+     * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
+     * MinLength: The minimum length of the parameter.
+     * MaxLength: The maximum length of the parameter.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConstraints() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConstraints() {
         return null;
     }
 
     /**
+     * Property description: The description of the parameter.
+     * <p>
+     * The description must be 1 to 200 characters in length.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -42,15 +62,17 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ParameterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ParameterProps> {
-        private java.lang.String name;
-        private java.lang.String type;
-        private java.lang.String value;
-        private java.lang.String constraints;
-        private java.lang.String description;
+        private java.lang.Object name;
+        private java.lang.Object type;
+        private java.lang.Object value;
+        private java.lang.Object constraints;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link ParameterProps#getName}
-         * @param name the value to be set. This parameter is required.
+         * @param name Property name: The name of the parameter. This parameter is required.
+         *             The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
+         *             It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -59,8 +81,21 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ParameterProps#getName}
+         * @param name Property name: The name of the parameter. This parameter is required.
+         *             The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
+         *             It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ParameterProps#getType}
-         * @param type the value to be set. This parameter is required.
+         * @param type Property type: The data type of the common parameter. This parameter is required.
+         *             Valid values: String and StringList.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -69,8 +104,20 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ParameterProps#getType}
+         * @param type Property type: The data type of the common parameter. This parameter is required.
+         *             Valid values: String and StringList.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ParameterProps#getValue}
-         * @param value the value to be set. This parameter is required.
+         * @param value Property value: The value of the parameter. This parameter is required.
+         *              The value must be 1 to 4096 characters in length.
          * @return {@code this}
          */
         public Builder value(java.lang.String value) {
@@ -79,8 +126,24 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ParameterProps#getValue}
+         * @param value Property value: The value of the parameter. This parameter is required.
+         *              The value must be 1 to 4096 characters in length.
+         * @return {@code this}
+         */
+        public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+            this.value = value;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ParameterProps#getConstraints}
-         * @param constraints the value to be set.
+         * @param constraints Property constraints: The constraints of the parameter.
+         *                    By default, this parameter is null. Valid values:
+         *                    AllowedValues: The value that is allowed for the parameter. It must be an array string.
+         *                    AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
+         *                    MinLength: The minimum length of the parameter.
+         *                    MaxLength: The maximum length of the parameter.
          * @return {@code this}
          */
         public Builder constraints(java.lang.String constraints) {
@@ -89,11 +152,38 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ParameterProps#getConstraints}
+         * @param constraints Property constraints: The constraints of the parameter.
+         *                    By default, this parameter is null. Valid values:
+         *                    AllowedValues: The value that is allowed for the parameter. It must be an array string.
+         *                    AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
+         *                    MinLength: The minimum length of the parameter.
+         *                    MaxLength: The maximum length of the parameter.
+         * @return {@code this}
+         */
+        public Builder constraints(com.aliyun.ros.cdk.core.IResolvable constraints) {
+            this.constraints = constraints;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ParameterProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the parameter.
+         *                    The description must be 1 to 200 characters in length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ParameterProps#getDescription}
+         * @param description Property description: The description of the parameter.
+         *                    The description must be 1 to 200 characters in length.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -114,11 +204,11 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ParameterProps {
-        private final java.lang.String name;
-        private final java.lang.String type;
-        private final java.lang.String value;
-        private final java.lang.String constraints;
-        private final java.lang.String description;
+        private final java.lang.Object name;
+        private final java.lang.Object type;
+        private final java.lang.Object value;
+        private final java.lang.Object constraints;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +216,17 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.constraints = software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.constraints = software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.String type, final java.lang.String value, final java.lang.String constraints, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object value, final java.lang.Object constraints, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -146,27 +236,27 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getValue() {
+        public final java.lang.Object getValue() {
             return this.value;
         }
 
         @Override
-        public final java.lang.String getConstraints() {
+        public final java.lang.Object getConstraints() {
             return this.constraints;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

@@ -11,12 +11,12 @@ export interface DiskAttachmentProps {
     /**
      * Property diskId: The disk id to attached.
      */
-    readonly diskId: string;
+    readonly diskId: string | ros.IResolvable;
 
     /**
      * Property instanceId: The instanceId to attach the disk.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
@@ -31,7 +31,7 @@ export interface DiskAttachmentProps {
     /**
      * Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
      */
-    readonly device?: string;
+    readonly device?: string | ros.IResolvable;
 }
 
 /**
@@ -47,17 +47,17 @@ export class DiskAttachment extends ros.Resource {
     /**
      * Attribute Device: The device where the volume is exposed on ecs instance.
      */
-    public readonly attrDevice: any;
+    public readonly attrDevice: ros.IResolvable;
 
     /**
      * Attribute DiskId: The disk id of created disk
      */
-    public readonly attrDiskId: any;
+    public readonly attrDiskId: ros.IResolvable;
 
     /**
      * Attribute Status: The disk status now.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::DiskAttachment`.

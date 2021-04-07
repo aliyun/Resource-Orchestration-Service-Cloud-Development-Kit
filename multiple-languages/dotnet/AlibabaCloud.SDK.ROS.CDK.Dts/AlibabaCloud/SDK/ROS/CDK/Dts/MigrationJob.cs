@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Attribute MigrationJobId: Migration tasks task ID.</summary>
-        [JsiiProperty(name: "attrMigrationJobId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMigrationJobId
+        [JsiiProperty(name: "attrMigrationJobId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMigrationJobId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

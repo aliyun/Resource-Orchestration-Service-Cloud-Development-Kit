@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: ccnInstanceId: The ID of the CCN instance.
         /// </remarks>
-        [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CcnInstanceId
+        [JsiiProperty(name: "ccnInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CcnInstanceId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: cenInstanceId: The ID of the CEN instance.
         /// </remarks>
-        [JsiiProperty(name: "cenInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenInstanceId
+        [JsiiProperty(name: "cenInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenInstanceId
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: cenUid: The ID of the account to which the CEN instance belongs.
         /// </remarks>
-        [JsiiProperty(name: "cenUid", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenUid
+        [JsiiProperty(name: "cenUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenUid
         {
             get;
             set;

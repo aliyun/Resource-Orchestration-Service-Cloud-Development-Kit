@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Attribute</strong>: Addresses: The address items of the db cluster endpoint.
         /// </remarks>
-        [JsiiProperty(name: "attrAddresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAddresses
+        [JsiiProperty(name: "attrAddresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAddresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ConnectionString: The first connection string of the db cluster endpoint.
         /// </remarks>
-        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionString
+        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: DBEndpointId: DB cluster endpoint ID. E.g. pe-xxxxxxxx.
         /// </remarks>
-        [JsiiProperty(name: "attrDbEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbEndpointId
+        [JsiiProperty(name: "attrDbEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbClusterId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Default value: Disable.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoAddNewNodes", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AutoAddNewNodes
+        [JsiiProperty(name: "autoAddNewNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoAddNewNodes
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -111,7 +111,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: endpointConfig:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "endpointConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBClusterEndpoint.EndpointConfigProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "endpointConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBClusterEndpoint.EndpointConfigProperty\"}]}}", isOptional: true)]
         public virtual object? EndpointConfig
         {
             get => GetInstanceProperty<object?>();
@@ -122,10 +122,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: endpointType: The type of the cluster connection point. Set this parameter to Custom.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "endpointType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EndpointType
+        [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EndpointType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -148,10 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Default value: ReadOnly.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "readWriteMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ReadWriteMode
+        [JsiiProperty(name: "readWriteMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ReadWriteMode
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IEndpointConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpoint.EndpointConfigProperty")]
@@ -164,9 +164,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// For example, {"ConsistLevel": "0"}.
             /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
             /// </remarks>
-            [JsiiProperty(name: "consistLevel", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "consistLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ConsistLevel
+            object? ConsistLevel
             {
                 get
                 {
@@ -189,10 +189,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "consistLevel", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ConsistLevel
+                [JsiiProperty(name: "consistLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConsistLevel
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -207,8 +207,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "consistLevel", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ConsistLevel
+            [JsiiProperty(name: "consistLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ConsistLevel
             {
                 get;
                 set;

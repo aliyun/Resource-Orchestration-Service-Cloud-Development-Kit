@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouteTableAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.206Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTableAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RouteTableAssociationProps.Jsii$Proxy.class)
 public interface RouteTableAssociationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property routeTableId: The ID of the route table.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouteTableId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouteTableId();
 
     /**
+     * Property vSwitchId: The ID of the VSwitch.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      * @return a {@link Builder} of {@link RouteTableAssociationProps}
@@ -26,12 +28,12 @@ public interface RouteTableAssociationProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RouteTableAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteTableAssociationProps> {
-        private java.lang.String routeTableId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object routeTableId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RouteTableAssociationProps#getRouteTableId}
-         * @param routeTableId the value to be set. This parameter is required.
+         * @param routeTableId Property routeTableId: The ID of the route table. This parameter is required.
          * @return {@code this}
          */
         public Builder routeTableId(java.lang.String routeTableId) {
@@ -40,11 +42,31 @@ public interface RouteTableAssociationProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RouteTableAssociationProps#getRouteTableId}
+         * @param routeTableId Property routeTableId: The ID of the route table. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routeTableId(com.aliyun.ros.cdk.core.IResolvable routeTableId) {
+            this.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteTableAssociationProps#getVSwitchId}
-         * @param vSwitchId the value to be set. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouteTableAssociationProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -65,8 +87,8 @@ public interface RouteTableAssociationProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouteTableAssociationProps {
-        private final java.lang.String routeTableId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object routeTableId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface RouteTableAssociationProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.routeTableId = software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.routeTableId = software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String routeTableId, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object routeTableId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.routeTableId = java.util.Objects.requireNonNull(routeTableId, "routeTableId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
         }
 
         @Override
-        public final java.lang.String getRouteTableId() {
+        public final java.lang.Object getRouteTableId() {
             return this.routeTableId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: contactName: The name of the alarm contact.
         /// </remarks>
-        [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}")]
-        string ContactName
+        [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ContactName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: describe: The description of the alert contact.
         /// </remarks>
-        [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}")]
-        string Describe
+        [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Describe
         {
             get;
         }
@@ -55,19 +55,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: contactName: The name of the alarm contact.
             /// </remarks>
-            [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ContactName
+            [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ContactName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: describe: The description of the alert contact.
             /// </remarks>
-            [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}")]
-            public string Describe
+            [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Describe
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

@@ -11,37 +11,37 @@ export interface TopicProps {
     /**
      * Property comment: The comment of topic.
      */
-    readonly comment: string;
+    readonly comment: string | ros.IResolvable;
 
     /**
      * Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * Property recordType: Record type. TUPLE: structured data, BLOB: unstructured data.
      */
-    readonly recordType: string;
+    readonly recordType: string | ros.IResolvable;
 
     /**
      * Property topicName: The name of the topic. Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
      */
-    readonly topicName: string;
+    readonly topicName: string | ros.IResolvable;
 
     /**
      * Property lifecycle: Data storage life cycle.
      */
-    readonly lifecycle?: number;
+    readonly lifecycle?: number | ros.IResolvable;
 
     /**
      * Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
      */
-    readonly recordSchema?: string;
+    readonly recordSchema?: string | ros.IResolvable;
 
     /**
      * Property shardCount: Initial shard number.
      */
-    readonly shardCount?: number;
+    readonly shardCount?: number | ros.IResolvable;
 }
 
 /**
@@ -57,12 +57,12 @@ export class Topic extends ros.Resource {
     /**
      * Attribute ProjectName: Project name
      */
-    public readonly attrProjectName: any;
+    public readonly attrProjectName: ros.IResolvable;
 
     /**
      * Attribute TopicName: Topic name
      */
-    public readonly attrTopicName: any;
+    public readonly attrTopicName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DATAHUB::Topic`.

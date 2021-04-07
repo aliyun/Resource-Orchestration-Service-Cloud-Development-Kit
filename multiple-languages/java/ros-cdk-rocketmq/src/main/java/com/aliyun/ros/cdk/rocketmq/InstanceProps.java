@@ -3,18 +3,29 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.336Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.000Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
+     * Property remark: The remark of instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRemark() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> getTags() {
         return null;
     }
 
@@ -28,12 +39,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.String instanceName;
-        private java.lang.String remark;
+        private java.lang.Object instanceName;
+        private java.lang.Object remark;
+        private java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
-         * @param instanceName the value to be set. This parameter is required.
+         * @param instanceName Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -42,12 +54,44 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getInstanceName}
+         * @param instanceName Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getRemark}
-         * @param remark the value to be set.
+         * @param remark Property remark: The remark of instance.
          * @return {@code this}
          */
         public Builder remark(java.lang.String remark) {
             this.remark = remark;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getRemark}
+         * @param remark Property remark: The remark of instance.
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty>)tags;
             return this;
         }
 
@@ -58,7 +102,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(instanceName, remark);
+            return new Jsii$Proxy(instanceName, remark, tags);
         }
     }
 
@@ -67,8 +111,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
-        private final java.lang.String instanceName;
-        private final java.lang.String remark;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object remark;
+        private final java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -76,27 +121,35 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceName, final java.lang.String remark) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object remark, final java.util.List<? extends com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
             this.remark = remark;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -108,6 +161,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             data.set("instanceName", om.valueToTree(this.getInstanceName()));
             if (this.getRemark() != null) {
                 data.set("remark", om.valueToTree(this.getRemark()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -128,13 +184,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             InstanceProps.Jsii$Proxy that = (InstanceProps.Jsii$Proxy) o;
 
             if (!instanceName.equals(that.instanceName)) return false;
-            return this.remark != null ? this.remark.equals(that.remark) : that.remark == null;
+            if (this.remark != null ? !this.remark.equals(that.remark) : that.remark != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceName.hashCode();
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

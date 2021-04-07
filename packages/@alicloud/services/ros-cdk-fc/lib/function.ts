@@ -11,22 +11,22 @@ export interface FunctionProps {
     /**
      * Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * Property handler: The function execution entry point.
      */
-    readonly handler: string;
+    readonly handler: string | ros.IResolvable;
 
     /**
      * Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
      */
-    readonly runtime: string;
+    readonly runtime: string | ros.IResolvable;
 
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property asyncConfiguration: Configuration of asynchronous function calls
@@ -36,7 +36,7 @@ export interface FunctionProps {
     /**
      * Property caPort: Custom runtime and custom container runtime dedicated fields, which represent the port that the started custom http server listens to. The default value is 9000
      */
-    readonly caPort?: number;
+    readonly caPort?: number | ros.IResolvable;
 
     /**
      * Property code: The code that contains the function implementation.
@@ -51,7 +51,7 @@ export interface FunctionProps {
     /**
      * Property description: Function description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
@@ -61,27 +61,32 @@ export interface FunctionProps {
     /**
      * Property initializationTimeout: the max execution time of the initializer, in second
      */
-    readonly initializationTimeout?: number;
+    readonly initializationTimeout?: number | ros.IResolvable;
 
     /**
      * Property initializer: the entry point of the initializer
      */
-    readonly initializer?: string;
+    readonly initializer?: string | ros.IResolvable;
 
     /**
      * Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
-    readonly instanceConcurrency?: number;
+    readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     */
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
-    readonly memorySize?: number;
+    readonly memorySize?: number | ros.IResolvable;
 
     /**
      * Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
      */
-    readonly timeout?: number;
+    readonly timeout?: number | ros.IResolvable;
 }
 
 /**
@@ -97,22 +102,27 @@ export class Function extends ros.Resource {
     /**
      * Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * Attribute FunctionId: The function ID
      */
-    public readonly attrFunctionId: any;
+    public readonly attrFunctionId: ros.IResolvable;
 
     /**
      * Attribute FunctionName: The function name
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
+
+    /**
+     * Attribute ServiceId: The service ID
+     */
+    public readonly attrServiceId: ros.IResolvable;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::Function`.
@@ -132,19 +142,21 @@ export class Function extends ros.Resource {
             customContainerConfig: props.customContainerConfig,
             code: props.code,
             asyncConfiguration: props.asyncConfiguration,
-            functionName: props.functionName,
             caPort: props.caPort ? props.caPort : 9000,
+            functionName: props.functionName,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
             initializer: props.initializer,
             serviceName: props.serviceName,
             initializationTimeout: props.initializationTimeout,
             instanceConcurrency: props.instanceConcurrency,
+            instanceType: props.instanceType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunction;
         this.attrArn = rosFunction.attrArn;
         this.attrFunctionId = rosFunction.attrFunctionId;
         this.attrFunctionName = rosFunction.attrFunctionName;
+        this.attrServiceId = rosFunction.attrServiceId;
         this.attrServiceName = rosFunction.attrServiceName;
     }
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * A ROS resource type:  `ALIYUN::CDN::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.785Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfig")
 public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CDN::DomainConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DomainConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cdn.DomainConfigProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CDN::DomainConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DomainConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cdn.DomainConfigProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cdn.DomainConfig> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,19 +83,43 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property domainNames: Your accelerated domain name, separated by commas in English.
+         * <p>
          * @return {@code this}
-         * @param domainNames This parameter is required.
+         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
          */
         public Builder domainNames(final java.lang.String domainNames) {
             this.props.domainNames(domainNames);
             return this;
         }
+        /**
+         * Property domainNames: Your accelerated domain name, separated by commas in English.
+         * <p>
+         * @return {@code this}
+         * @param domainNames Property domainNames: Your accelerated domain name, separated by commas in English. This parameter is required.
+         */
+        public Builder domainNames(final com.aliyun.ros.cdk.core.IResolvable domainNames) {
+            this.props.domainNames(domainNames);
+            return this;
+        }
 
         /**
+         * Property functions: function list, please refer to the CDN documentation for details.
+         * <p>
          * @return {@code this}
-         * @param functions This parameter is required.
+         * @param functions Property functions: function list, please refer to the CDN documentation for details. This parameter is required.
          */
         public Builder functions(final java.lang.String functions) {
+            this.props.functions(functions);
+            return this;
+        }
+        /**
+         * Property functions: function list, please refer to the CDN documentation for details.
+         * <p>
+         * @return {@code this}
+         * @param functions Property functions: function list, please refer to the CDN documentation for details. This parameter is required.
+         */
+        public Builder functions(final com.aliyun.ros.cdk.core.IResolvable functions) {
             this.props.functions(functions);
             return this;
         }

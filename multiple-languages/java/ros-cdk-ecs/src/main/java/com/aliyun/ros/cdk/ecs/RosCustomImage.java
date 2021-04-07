@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosCustomImage")
 public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageId() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageId() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getArchitecture() {
-        return software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getArchitecture() {
+        return software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,13 +75,25 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setArchitecture(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "architecture", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -105,8 +117,8 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getImageName() {
-        return software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageName() {
+        return software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +147,14 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPlatform() {
-        return software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPlatform() {
+        return software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPlatform(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "platform", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,13 +183,25 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
-        return software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
+        return software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSnapshotId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "snapshotId", value);
+    }
+
+    /**
+     */
+    public void setSnapshotId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "snapshotId", value);
     }
 
@@ -190,28 +232,28 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDevice() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDevice() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDiskType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getSize() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
             return null;
         }
 
@@ -227,10 +269,10 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskDeviceMappingProperty> {
-            private java.lang.String device;
-            private java.lang.String diskType;
-            private java.lang.Number size;
-            private java.lang.String snapshotId;
+            private java.lang.Object device;
+            private java.lang.Object diskType;
+            private java.lang.Object size;
+            private java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskDeviceMappingProperty#getDevice}
@@ -239,6 +281,17 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder device(java.lang.String device) {
+                this.device = device;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskDeviceMappingProperty#getDevice}
+             * @param device the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder device(com.aliyun.ros.cdk.core.IResolvable device) {
                 this.device = device;
                 return this;
             }
@@ -255,6 +308,17 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DiskDeviceMappingProperty#getDiskType}
+             * @param diskType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
+                this.diskType = diskType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskDeviceMappingProperty#getSize}
              * @param size the value to be set.
              * @return {@code this}
@@ -266,12 +330,34 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DiskDeviceMappingProperty#getSize}
+             * @param size the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
+                this.size = size;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskDeviceMappingProperty#getSnapshotId}
              * @param snapshotId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder snapshotId(java.lang.String snapshotId) {
+                this.snapshotId = snapshotId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskDeviceMappingProperty#getSnapshotId}
+             * @param snapshotId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
                 this.snapshotId = snapshotId;
                 return this;
             }
@@ -294,10 +380,10 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskDeviceMappingProperty {
-            private final java.lang.String device;
-            private final java.lang.String diskType;
-            private final java.lang.Number size;
-            private final java.lang.String snapshotId;
+            private final java.lang.Object device;
+            private final java.lang.Object diskType;
+            private final java.lang.Object size;
+            private final java.lang.Object snapshotId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -305,16 +391,16 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String device, final java.lang.String diskType, final java.lang.Number size, final java.lang.String snapshotId) {
+            protected Jsii$Proxy(final java.lang.Object device, final java.lang.Object diskType, final java.lang.Object size, final java.lang.Object snapshotId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.device = device;
                 this.diskType = diskType;
@@ -323,22 +409,22 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getDevice() {
+            public final java.lang.Object getDevice() {
                 return this.device;
             }
 
             @Override
-            public final java.lang.String getDiskType() {
+            public final java.lang.Object getDiskType() {
                 return this.diskType;
             }
 
             @Override
-            public final java.lang.Number getSize() {
+            public final java.lang.Object getSize() {
                 return this.size;
             }
 
             @Override
-            public final java.lang.String getSnapshotId() {
+            public final java.lang.Object getSnapshotId() {
                 return this.snapshotId;
             }
 
@@ -404,14 +490,14 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getKey() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKey() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getValue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
             return null;
         }
 
@@ -427,8 +513,8 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagProperty> {
-            private java.lang.String key;
-            private java.lang.String value;
+            private java.lang.Object key;
+            private java.lang.Object value;
 
             /**
              * Sets the value of {@link TagProperty#getKey}
@@ -442,12 +528,34 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TagProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TagProperty#getValue}
              * @param value the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
                 this.value = value;
                 return this;
             }
@@ -470,8 +578,8 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagProperty {
-            private final java.lang.String key;
-            private final java.lang.String value;
+            private final java.lang.Object key;
+            private final java.lang.Object value;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -479,26 +587,26 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String key, final java.lang.String value) {
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.key = key;
                 this.value = value;
             }
 
             @Override
-            public final java.lang.String getKey() {
+            public final java.lang.Object getKey() {
                 return this.key;
             }
 
             @Override
-            public final java.lang.String getValue() {
+            public final java.lang.Object getValue() {
                 return this.value;
             }
 
@@ -579,12 +687,28 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.architecture(architecture);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param architecture This parameter is required.
+         */
+        public Builder architecture(final com.aliyun.ros.cdk.core.IResolvable architecture) {
+            this.props.architecture(architecture);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -614,12 +738,28 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.imageName(imageName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param imageName This parameter is required.
+         */
+        public Builder imageName(final com.aliyun.ros.cdk.core.IResolvable imageName) {
+            this.props.imageName(imageName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceId This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
@@ -632,6 +772,14 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.platform(platform);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param platform This parameter is required.
+         */
+        public Builder platform(final com.aliyun.ros.cdk.core.IResolvable platform) {
+            this.props.platform(platform);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -641,12 +789,28 @@ public class RosCustomImage extends com.aliyun.ros.cdk.core.RosResource {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param snapshotId This parameter is required.
          */
         public Builder snapshotId(final java.lang.String snapshotId) {
+            this.props.snapshotId(snapshotId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param snapshotId This parameter is required.
+         */
+        public Builder snapshotId(final com.aliyun.ros.cdk.core.IResolvable snapshotId) {
             this.props.snapshotId(snapshotId);
             return this;
         }

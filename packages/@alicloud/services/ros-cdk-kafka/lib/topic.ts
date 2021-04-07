@@ -12,7 +12,7 @@ export interface TopicProps {
      * Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
      * You can call the GetInstanceList operation to query instances.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property remark: The description of the topic. The value of this parameter must meet the following
@@ -20,7 +20,7 @@ export interface TopicProps {
      * The value can only contain letters, digits, hyphens (-), and underscores (_).
      * The value must be 3 to 64 characters in length.
      */
-    readonly remark: string;
+    readonly remark: string | ros.IResolvable;
 
     /**
      * Property topic: The name of the topic. The value of this parameter must meet the following requirements:
@@ -29,7 +29,7 @@ export interface TopicProps {
      * if it contains more characters.
      * The name cannot be modified after being created.
      */
-    readonly topic: string;
+    readonly topic: string | ros.IResolvable;
 
     /**
      * Property partitionNum: The number of partitions in the topic. Valid values:
@@ -37,7 +37,7 @@ export interface TopicProps {
      * We recommend that you set the number of partitions to a multiple of 6 to reduce the
      * risk of data skew.Note:For special requirements,submit a ticket.
      */
-    readonly partitionNum?: number;
+    readonly partitionNum?: number | ros.IResolvable;
 }
 
 /**
@@ -54,12 +54,12 @@ export class Topic extends ros.Resource {
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
 You can call the GetInstanceList operation to query instances.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute Topic: Topic name.
      */
-    public readonly attrTopic: any;
+    public readonly attrTopic: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::KAFKA::Topic`.

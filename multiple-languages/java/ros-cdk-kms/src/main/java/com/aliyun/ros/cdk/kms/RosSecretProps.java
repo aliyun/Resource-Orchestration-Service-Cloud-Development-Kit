@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.050Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.673Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosSecretProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecretProps.Jsii$Proxy.class)
 public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecretData();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecretData();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecretName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecretName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVersionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVersionId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEncryptionKeyId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKeyId() {
         return null;
     }
 
@@ -40,19 +40,19 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRecoveryWindowInDays() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecoveryWindowInDays() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecretDataType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecretDataType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getVersionStages() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVersionStages() {
         return null;
     }
 
@@ -66,15 +66,15 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosSecretProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecretProps> {
-        private java.lang.String secretData;
-        private java.lang.String secretName;
-        private java.lang.String versionId;
-        private java.lang.String description;
-        private java.lang.String encryptionKeyId;
+        private java.lang.Object secretData;
+        private java.lang.Object secretName;
+        private java.lang.Object versionId;
+        private java.lang.Object description;
+        private java.lang.Object encryptionKeyId;
         private java.lang.Object forceDeleteWithoutRecovery;
-        private java.lang.Number recoveryWindowInDays;
-        private java.lang.String secretDataType;
-        private java.util.List<java.lang.String> versionStages;
+        private java.lang.Object recoveryWindowInDays;
+        private java.lang.Object secretDataType;
+        private java.lang.Object versionStages;
 
         /**
          * Sets the value of {@link RosSecretProps#getSecretData}
@@ -82,6 +82,16 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder secretData(java.lang.String secretData) {
+            this.secretData = secretData;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecretProps#getSecretData}
+         * @param secretData the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder secretData(com.aliyun.ros.cdk.core.IResolvable secretData) {
             this.secretData = secretData;
             return this;
         }
@@ -97,11 +107,31 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosSecretProps#getSecretName}
+         * @param secretName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder secretName(com.aliyun.ros.cdk.core.IResolvable secretName) {
+            this.secretName = secretName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecretProps#getVersionId}
          * @param versionId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder versionId(java.lang.String versionId) {
+            this.versionId = versionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecretProps#getVersionId}
+         * @param versionId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder versionId(com.aliyun.ros.cdk.core.IResolvable versionId) {
             this.versionId = versionId;
             return this;
         }
@@ -117,11 +147,31 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosSecretProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecretProps#getEncryptionKeyId}
          * @param encryptionKeyId the value to be set.
          * @return {@code this}
          */
         public Builder encryptionKeyId(java.lang.String encryptionKeyId) {
+            this.encryptionKeyId = encryptionKeyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecretProps#getEncryptionKeyId}
+         * @param encryptionKeyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionKeyId(com.aliyun.ros.cdk.core.IResolvable encryptionKeyId) {
             this.encryptionKeyId = encryptionKeyId;
             return this;
         }
@@ -157,6 +207,16 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosSecretProps#getRecoveryWindowInDays}
+         * @param recoveryWindowInDays the value to be set.
+         * @return {@code this}
+         */
+        public Builder recoveryWindowInDays(com.aliyun.ros.cdk.core.IResolvable recoveryWindowInDays) {
+            this.recoveryWindowInDays = recoveryWindowInDays;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecretProps#getSecretDataType}
          * @param secretDataType the value to be set.
          * @return {@code this}
@@ -167,11 +227,31 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosSecretProps#getSecretDataType}
+         * @param secretDataType the value to be set.
+         * @return {@code this}
+         */
+        public Builder secretDataType(com.aliyun.ros.cdk.core.IResolvable secretDataType) {
+            this.secretDataType = secretDataType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecretProps#getVersionStages}
          * @param versionStages the value to be set.
          * @return {@code this}
          */
-        public Builder versionStages(java.util.List<java.lang.String> versionStages) {
+        public Builder versionStages(com.aliyun.ros.cdk.core.IResolvable versionStages) {
+            this.versionStages = versionStages;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecretProps#getVersionStages}
+         * @param versionStages the value to be set.
+         * @return {@code this}
+         */
+        public Builder versionStages(java.util.List<? extends java.lang.Object> versionStages) {
             this.versionStages = versionStages;
             return this;
         }
@@ -192,15 +272,15 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSecretProps {
-        private final java.lang.String secretData;
-        private final java.lang.String secretName;
-        private final java.lang.String versionId;
-        private final java.lang.String description;
-        private final java.lang.String encryptionKeyId;
+        private final java.lang.Object secretData;
+        private final java.lang.Object secretName;
+        private final java.lang.Object versionId;
+        private final java.lang.Object description;
+        private final java.lang.Object encryptionKeyId;
         private final java.lang.Object forceDeleteWithoutRecovery;
-        private final java.lang.Number recoveryWindowInDays;
-        private final java.lang.String secretDataType;
-        private final java.util.List<java.lang.String> versionStages;
+        private final java.lang.Object recoveryWindowInDays;
+        private final java.lang.Object secretDataType;
+        private final java.lang.Object versionStages;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -208,21 +288,21 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.secretData = software.amazon.jsii.Kernel.get(this, "secretData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.secretName = software.amazon.jsii.Kernel.get(this, "secretName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.versionId = software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.encryptionKeyId = software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.secretData = software.amazon.jsii.Kernel.get(this, "secretData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.secretName = software.amazon.jsii.Kernel.get(this, "secretName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.versionId = software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptionKeyId = software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.forceDeleteWithoutRecovery = software.amazon.jsii.Kernel.get(this, "forceDeleteWithoutRecovery", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.recoveryWindowInDays = software.amazon.jsii.Kernel.get(this, "recoveryWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.secretDataType = software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.versionStages = software.amazon.jsii.Kernel.get(this, "versionStages", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.recoveryWindowInDays = software.amazon.jsii.Kernel.get(this, "recoveryWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.secretDataType = software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.versionStages = software.amazon.jsii.Kernel.get(this, "versionStages", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String secretData, final java.lang.String secretName, final java.lang.String versionId, final java.lang.String description, final java.lang.String encryptionKeyId, final java.lang.Object forceDeleteWithoutRecovery, final java.lang.Number recoveryWindowInDays, final java.lang.String secretDataType, final java.util.List<java.lang.String> versionStages) {
+        protected Jsii$Proxy(final java.lang.Object secretData, final java.lang.Object secretName, final java.lang.Object versionId, final java.lang.Object description, final java.lang.Object encryptionKeyId, final java.lang.Object forceDeleteWithoutRecovery, final java.lang.Object recoveryWindowInDays, final java.lang.Object secretDataType, final java.lang.Object versionStages) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.secretData = java.util.Objects.requireNonNull(secretData, "secretData is required");
             this.secretName = java.util.Objects.requireNonNull(secretName, "secretName is required");
@@ -236,27 +316,27 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getSecretData() {
+        public final java.lang.Object getSecretData() {
             return this.secretData;
         }
 
         @Override
-        public final java.lang.String getSecretName() {
+        public final java.lang.Object getSecretName() {
             return this.secretName;
         }
 
         @Override
-        public final java.lang.String getVersionId() {
+        public final java.lang.Object getVersionId() {
             return this.versionId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getEncryptionKeyId() {
+        public final java.lang.Object getEncryptionKeyId() {
             return this.encryptionKeyId;
         }
 
@@ -266,17 +346,17 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getRecoveryWindowInDays() {
+        public final java.lang.Object getRecoveryWindowInDays() {
             return this.recoveryWindowInDays;
         }
 
         @Override
-        public final java.lang.String getSecretDataType() {
+        public final java.lang.Object getSecretDataType() {
             return this.secretDataType;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getVersionStages() {
+        public final java.lang.Object getVersionStages() {
             return this.versionStages;
         }
 

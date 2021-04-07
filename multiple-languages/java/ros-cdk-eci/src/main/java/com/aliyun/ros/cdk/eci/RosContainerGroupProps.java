@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ContainerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.513Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosContainerGroupProps.Jsii$Proxy.class)
 public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,19 +14,25 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContainerGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContainerGroupName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecurityGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getActiveDeadlineSeconds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAcrRegistryInfo() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getActiveDeadlineSeconds() {
         return null;
     }
 
@@ -38,7 +44,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCpu() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpu() {
         return null;
     }
 
@@ -50,7 +56,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEipInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipInstanceId() {
         return null;
     }
 
@@ -68,7 +74,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageSnapshotId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageSnapshotId() {
         return null;
     }
 
@@ -80,31 +86,31 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIpv6AddressCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMemory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMemory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestartPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestartPolicy() {
         return null;
     }
 
@@ -122,13 +128,13 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSpotPriceLimit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
         return null;
     }
 
@@ -140,7 +146,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTerminationGracePeriodSeconds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTerminationGracePeriodSeconds() {
         return null;
     }
 
@@ -152,7 +158,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -167,31 +173,32 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosContainerGroupProps> {
         private java.lang.Object container;
-        private java.lang.String containerGroupName;
-        private java.lang.String securityGroupId;
-        private java.lang.String vSwitchId;
-        private java.lang.Number activeDeadlineSeconds;
+        private java.lang.Object containerGroupName;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object acrRegistryInfo;
+        private java.lang.Object activeDeadlineSeconds;
         private java.lang.Object autoMatchImageCache;
-        private java.lang.Number cpu;
+        private java.lang.Object cpu;
         private java.lang.Object dnsConfig;
-        private java.lang.String eipInstanceId;
+        private java.lang.Object eipInstanceId;
         private java.lang.Object hostAliase;
         private java.lang.Object imageRegistryCredential;
-        private java.lang.String imageSnapshotId;
+        private java.lang.Object imageSnapshotId;
         private java.lang.Object initContainer;
-        private java.lang.String instanceType;
-        private java.lang.Number ipv6AddressCount;
-        private java.lang.Number memory;
-        private java.lang.String ramRoleName;
-        private java.lang.String restartPolicy;
+        private java.lang.Object instanceType;
+        private java.lang.Object ipv6AddressCount;
+        private java.lang.Object memory;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object restartPolicy;
         private java.lang.Object securityContextSysctl;
         private java.lang.Object slsEnable;
-        private java.lang.Number spotPriceLimit;
-        private java.lang.String spotStrategy;
+        private java.lang.Object spotPriceLimit;
+        private java.lang.Object spotStrategy;
         private java.lang.Object tag;
-        private java.lang.Number terminationGracePeriodSeconds;
+        private java.lang.Object terminationGracePeriodSeconds;
         private java.lang.Object volume;
-        private java.lang.String zoneId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosContainerGroupProps#getContainer}
@@ -224,11 +231,31 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getContainerGroupName}
+         * @param containerGroupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder containerGroupName(com.aliyun.ros.cdk.core.IResolvable containerGroupName) {
+            this.containerGroupName = containerGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
          * @param securityGroupId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
             return this;
         }
@@ -244,11 +271,51 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getVSwitchId}
+         * @param vSwitchId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getAcrRegistryInfo}
+         * @param acrRegistryInfo the value to be set.
+         * @return {@code this}
+         */
+        public Builder acrRegistryInfo(com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
+            this.acrRegistryInfo = acrRegistryInfo;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getAcrRegistryInfo}
+         * @param acrRegistryInfo the value to be set.
+         * @return {@code this}
+         */
+        public Builder acrRegistryInfo(java.util.List<? extends java.lang.Object> acrRegistryInfo) {
+            this.acrRegistryInfo = acrRegistryInfo;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getActiveDeadlineSeconds}
          * @param activeDeadlineSeconds the value to be set.
          * @return {@code this}
          */
         public Builder activeDeadlineSeconds(java.lang.Number activeDeadlineSeconds) {
+            this.activeDeadlineSeconds = activeDeadlineSeconds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getActiveDeadlineSeconds}
+         * @param activeDeadlineSeconds the value to be set.
+         * @return {@code this}
+         */
+        public Builder activeDeadlineSeconds(com.aliyun.ros.cdk.core.IResolvable activeDeadlineSeconds) {
             this.activeDeadlineSeconds = activeDeadlineSeconds;
             return this;
         }
@@ -284,6 +351,16 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getCpu}
+         * @param cpu the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.cpu = cpu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getDnsConfig}
          * @param dnsConfig the value to be set.
          * @return {@code this}
@@ -309,6 +386,16 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
          * @return {@code this}
          */
         public Builder eipInstanceId(java.lang.String eipInstanceId) {
+            this.eipInstanceId = eipInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getEipInstanceId}
+         * @param eipInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder eipInstanceId(com.aliyun.ros.cdk.core.IResolvable eipInstanceId) {
             this.eipInstanceId = eipInstanceId;
             return this;
         }
@@ -364,6 +451,16 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getImageSnapshotId}
+         * @param imageSnapshotId the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageSnapshotId(com.aliyun.ros.cdk.core.IResolvable imageSnapshotId) {
+            this.imageSnapshotId = imageSnapshotId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getInitContainer}
          * @param initContainer the value to be set.
          * @return {@code this}
@@ -394,11 +491,31 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getInstanceType}
+         * @param instanceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getIpv6AddressCount}
          * @param ipv6AddressCount the value to be set.
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
             this.ipv6AddressCount = ipv6AddressCount;
             return this;
         }
@@ -414,6 +531,16 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getMemory}
+         * @param memory the value to be set.
+         * @return {@code this}
+         */
+        public Builder memory(com.aliyun.ros.cdk.core.IResolvable memory) {
+            this.memory = memory;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getRamRoleName}
          * @param ramRoleName the value to be set.
          * @return {@code this}
@@ -424,11 +551,31 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getRamRoleName}
+         * @param ramRoleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getRestartPolicy}
          * @param restartPolicy the value to be set.
          * @return {@code this}
          */
         public Builder restartPolicy(java.lang.String restartPolicy) {
+            this.restartPolicy = restartPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getRestartPolicy}
+         * @param restartPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder restartPolicy(com.aliyun.ros.cdk.core.IResolvable restartPolicy) {
             this.restartPolicy = restartPolicy;
             return this;
         }
@@ -484,11 +631,31 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getSpotPriceLimit}
+         * @param spotPriceLimit the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
+            this.spotPriceLimit = spotPriceLimit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getSpotStrategy}
          * @param spotStrategy the value to be set.
          * @return {@code this}
          */
         public Builder spotStrategy(java.lang.String spotStrategy) {
+            this.spotStrategy = spotStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getSpotStrategy}
+         * @param spotStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotStrategy(com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
             this.spotStrategy = spotStrategy;
             return this;
         }
@@ -524,6 +691,16 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getTerminationGracePeriodSeconds}
+         * @param terminationGracePeriodSeconds the value to be set.
+         * @return {@code this}
+         */
+        public Builder terminationGracePeriodSeconds(com.aliyun.ros.cdk.core.IResolvable terminationGracePeriodSeconds) {
+            this.terminationGracePeriodSeconds = terminationGracePeriodSeconds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getVolume}
          * @param volume the value to be set.
          * @return {@code this}
@@ -554,13 +731,23 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosContainerGroupProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosContainerGroupProps build() {
-            return new Jsii$Proxy(container, containerGroupName, securityGroupId, vSwitchId, activeDeadlineSeconds, autoMatchImageCache, cpu, dnsConfig, eipInstanceId, hostAliase, imageRegistryCredential, imageSnapshotId, initContainer, instanceType, ipv6AddressCount, memory, ramRoleName, restartPolicy, securityContextSysctl, slsEnable, spotPriceLimit, spotStrategy, tag, terminationGracePeriodSeconds, volume, zoneId);
+            return new Jsii$Proxy(container, containerGroupName, securityGroupId, vSwitchId, acrRegistryInfo, activeDeadlineSeconds, autoMatchImageCache, cpu, dnsConfig, eipInstanceId, hostAliase, imageRegistryCredential, imageSnapshotId, initContainer, instanceType, ipv6AddressCount, memory, ramRoleName, restartPolicy, securityContextSysctl, slsEnable, spotPriceLimit, spotStrategy, tag, terminationGracePeriodSeconds, volume, zoneId);
         }
     }
 
@@ -570,31 +757,32 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosContainerGroupProps {
         private final java.lang.Object container;
-        private final java.lang.String containerGroupName;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.Number activeDeadlineSeconds;
+        private final java.lang.Object containerGroupName;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object acrRegistryInfo;
+        private final java.lang.Object activeDeadlineSeconds;
         private final java.lang.Object autoMatchImageCache;
-        private final java.lang.Number cpu;
+        private final java.lang.Object cpu;
         private final java.lang.Object dnsConfig;
-        private final java.lang.String eipInstanceId;
+        private final java.lang.Object eipInstanceId;
         private final java.lang.Object hostAliase;
         private final java.lang.Object imageRegistryCredential;
-        private final java.lang.String imageSnapshotId;
+        private final java.lang.Object imageSnapshotId;
         private final java.lang.Object initContainer;
-        private final java.lang.String instanceType;
-        private final java.lang.Number ipv6AddressCount;
-        private final java.lang.Number memory;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String restartPolicy;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object ipv6AddressCount;
+        private final java.lang.Object memory;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object restartPolicy;
         private final java.lang.Object securityContextSysctl;
         private final java.lang.Object slsEnable;
-        private final java.lang.Number spotPriceLimit;
-        private final java.lang.String spotStrategy;
+        private final java.lang.Object spotPriceLimit;
+        private final java.lang.Object spotStrategy;
         private final java.lang.Object tag;
-        private final java.lang.Number terminationGracePeriodSeconds;
+        private final java.lang.Object terminationGracePeriodSeconds;
         private final java.lang.Object volume;
-        private final java.lang.String zoneId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -603,42 +791,44 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.container = software.amazon.jsii.Kernel.get(this, "container", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.containerGroupName = software.amazon.jsii.Kernel.get(this, "containerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.activeDeadlineSeconds = software.amazon.jsii.Kernel.get(this, "activeDeadlineSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.containerGroupName = software.amazon.jsii.Kernel.get(this, "containerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.acrRegistryInfo = software.amazon.jsii.Kernel.get(this, "acrRegistryInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.activeDeadlineSeconds = software.amazon.jsii.Kernel.get(this, "activeDeadlineSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoMatchImageCache = software.amazon.jsii.Kernel.get(this, "autoMatchImageCache", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dnsConfig = software.amazon.jsii.Kernel.get(this, "dnsConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.eipInstanceId = software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.eipInstanceId = software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostAliase = software.amazon.jsii.Kernel.get(this, "hostAliase", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageRegistryCredential = software.amazon.jsii.Kernel.get(this, "imageRegistryCredential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.imageSnapshotId = software.amazon.jsii.Kernel.get(this, "imageSnapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.imageSnapshotId = software.amazon.jsii.Kernel.get(this, "imageSnapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.initContainer = software.amazon.jsii.Kernel.get(this, "initContainer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restartPolicy = software.amazon.jsii.Kernel.get(this, "restartPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restartPolicy = software.amazon.jsii.Kernel.get(this, "restartPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityContextSysctl = software.amazon.jsii.Kernel.get(this, "securityContextSysctl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsEnable = software.amazon.jsii.Kernel.get(this, "slsEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.terminationGracePeriodSeconds = software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.terminationGracePeriodSeconds = software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.volume = software.amazon.jsii.Kernel.get(this, "volume", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object container, final java.lang.String containerGroupName, final java.lang.String securityGroupId, final java.lang.String vSwitchId, final java.lang.Number activeDeadlineSeconds, final java.lang.Object autoMatchImageCache, final java.lang.Number cpu, final java.lang.Object dnsConfig, final java.lang.String eipInstanceId, final java.lang.Object hostAliase, final java.lang.Object imageRegistryCredential, final java.lang.String imageSnapshotId, final java.lang.Object initContainer, final java.lang.String instanceType, final java.lang.Number ipv6AddressCount, final java.lang.Number memory, final java.lang.String ramRoleName, final java.lang.String restartPolicy, final java.lang.Object securityContextSysctl, final java.lang.Object slsEnable, final java.lang.Number spotPriceLimit, final java.lang.String spotStrategy, final java.lang.Object tag, final java.lang.Number terminationGracePeriodSeconds, final java.lang.Object volume, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object container, final java.lang.Object containerGroupName, final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object acrRegistryInfo, final java.lang.Object activeDeadlineSeconds, final java.lang.Object autoMatchImageCache, final java.lang.Object cpu, final java.lang.Object dnsConfig, final java.lang.Object eipInstanceId, final java.lang.Object hostAliase, final java.lang.Object imageRegistryCredential, final java.lang.Object imageSnapshotId, final java.lang.Object initContainer, final java.lang.Object instanceType, final java.lang.Object ipv6AddressCount, final java.lang.Object memory, final java.lang.Object ramRoleName, final java.lang.Object restartPolicy, final java.lang.Object securityContextSysctl, final java.lang.Object slsEnable, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object tag, final java.lang.Object terminationGracePeriodSeconds, final java.lang.Object volume, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.container = java.util.Objects.requireNonNull(container, "container is required");
             this.containerGroupName = java.util.Objects.requireNonNull(containerGroupName, "containerGroupName is required");
             this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
+            this.acrRegistryInfo = acrRegistryInfo;
             this.activeDeadlineSeconds = activeDeadlineSeconds;
             this.autoMatchImageCache = autoMatchImageCache;
             this.cpu = cpu;
@@ -669,22 +859,27 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getContainerGroupName() {
+        public final java.lang.Object getContainerGroupName() {
             return this.containerGroupName;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.Number getActiveDeadlineSeconds() {
+        public final java.lang.Object getAcrRegistryInfo() {
+            return this.acrRegistryInfo;
+        }
+
+        @Override
+        public final java.lang.Object getActiveDeadlineSeconds() {
             return this.activeDeadlineSeconds;
         }
 
@@ -694,7 +889,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.Number getCpu() {
+        public final java.lang.Object getCpu() {
             return this.cpu;
         }
 
@@ -704,7 +899,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getEipInstanceId() {
+        public final java.lang.Object getEipInstanceId() {
             return this.eipInstanceId;
         }
 
@@ -719,7 +914,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getImageSnapshotId() {
+        public final java.lang.Object getImageSnapshotId() {
             return this.imageSnapshotId;
         }
 
@@ -729,27 +924,27 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.Number getIpv6AddressCount() {
+        public final java.lang.Object getIpv6AddressCount() {
             return this.ipv6AddressCount;
         }
 
         @Override
-        public final java.lang.Number getMemory() {
+        public final java.lang.Object getMemory() {
             return this.memory;
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getRestartPolicy() {
+        public final java.lang.Object getRestartPolicy() {
             return this.restartPolicy;
         }
 
@@ -764,12 +959,12 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.Number getSpotPriceLimit() {
+        public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
 
         @Override
-        public final java.lang.String getSpotStrategy() {
+        public final java.lang.Object getSpotStrategy() {
             return this.spotStrategy;
         }
 
@@ -779,7 +974,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.Number getTerminationGracePeriodSeconds() {
+        public final java.lang.Object getTerminationGracePeriodSeconds() {
             return this.terminationGracePeriodSeconds;
         }
 
@@ -789,7 +984,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
@@ -803,6 +998,9 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             data.set("containerGroupName", om.valueToTree(this.getContainerGroupName()));
             data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+            if (this.getAcrRegistryInfo() != null) {
+                data.set("acrRegistryInfo", om.valueToTree(this.getAcrRegistryInfo()));
+            }
             if (this.getActiveDeadlineSeconds() != null) {
                 data.set("activeDeadlineSeconds", om.valueToTree(this.getActiveDeadlineSeconds()));
             }
@@ -891,6 +1089,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             if (!containerGroupName.equals(that.containerGroupName)) return false;
             if (!securityGroupId.equals(that.securityGroupId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
+            if (this.acrRegistryInfo != null ? !this.acrRegistryInfo.equals(that.acrRegistryInfo) : that.acrRegistryInfo != null) return false;
             if (this.activeDeadlineSeconds != null ? !this.activeDeadlineSeconds.equals(that.activeDeadlineSeconds) : that.activeDeadlineSeconds != null) return false;
             if (this.autoMatchImageCache != null ? !this.autoMatchImageCache.equals(that.autoMatchImageCache) : that.autoMatchImageCache != null) return false;
             if (this.cpu != null ? !this.cpu.equals(that.cpu) : that.cpu != null) return false;
@@ -921,6 +1120,7 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.containerGroupName.hashCode());
             result = 31 * result + (this.securityGroupId.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
+            result = 31 * result + (this.acrRegistryInfo != null ? this.acrRegistryInfo.hashCode() : 0);
             result = 31 * result + (this.activeDeadlineSeconds != null ? this.activeDeadlineSeconds.hashCode() : 0);
             result = 31 * result + (this.autoMatchImageCache != null ? this.autoMatchImageCache.hashCode() : 0);
             result = 31 * result + (this.cpu != null ? this.cpu.hashCode() : 0);

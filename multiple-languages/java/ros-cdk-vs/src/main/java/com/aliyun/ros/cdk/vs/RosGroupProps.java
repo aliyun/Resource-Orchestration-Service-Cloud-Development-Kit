@@ -3,50 +3,50 @@ package com.aliyun.ros.cdk.vs;
 /**
  * Properties for defining a `ALIYUN::VS::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.236Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vs.$Module.class, fqn = "@alicloud/ros-cdk-vs.RosGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupProps.Jsii$Proxy.class)
 public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInProtocol();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOutProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOutProtocol();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPlayDomain();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPlayDomain();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPushDomain();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPushDomain();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRegion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRegion();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getApp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getApp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCallback() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCallback() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -72,15 +72,15 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosGroupProps> {
-        private java.lang.String inProtocol;
-        private java.lang.String name;
-        private java.lang.String outProtocol;
-        private java.lang.String playDomain;
-        private java.lang.String pushDomain;
-        private java.lang.String region;
-        private java.lang.String app;
-        private java.lang.String callback;
-        private java.lang.String description;
+        private java.lang.Object inProtocol;
+        private java.lang.Object name;
+        private java.lang.Object outProtocol;
+        private java.lang.Object playDomain;
+        private java.lang.Object pushDomain;
+        private java.lang.Object region;
+        private java.lang.Object app;
+        private java.lang.Object callback;
+        private java.lang.Object description;
         private java.lang.Object enabled;
         private java.lang.Object lazyPull;
 
@@ -90,6 +90,16 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder inProtocol(java.lang.String inProtocol) {
+            this.inProtocol = inProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupProps#getInProtocol}
+         * @param inProtocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder inProtocol(com.aliyun.ros.cdk.core.IResolvable inProtocol) {
             this.inProtocol = inProtocol;
             return this;
         }
@@ -105,11 +115,31 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGroupProps#getOutProtocol}
          * @param outProtocol the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder outProtocol(java.lang.String outProtocol) {
+            this.outProtocol = outProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupProps#getOutProtocol}
+         * @param outProtocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder outProtocol(com.aliyun.ros.cdk.core.IResolvable outProtocol) {
             this.outProtocol = outProtocol;
             return this;
         }
@@ -125,11 +155,31 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupProps#getPlayDomain}
+         * @param playDomain the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder playDomain(com.aliyun.ros.cdk.core.IResolvable playDomain) {
+            this.playDomain = playDomain;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGroupProps#getPushDomain}
          * @param pushDomain the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder pushDomain(java.lang.String pushDomain) {
+            this.pushDomain = pushDomain;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupProps#getPushDomain}
+         * @param pushDomain the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder pushDomain(com.aliyun.ros.cdk.core.IResolvable pushDomain) {
             this.pushDomain = pushDomain;
             return this;
         }
@@ -145,11 +195,31 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupProps#getRegion}
+         * @param region the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
+            this.region = region;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGroupProps#getApp}
          * @param app the value to be set.
          * @return {@code this}
          */
         public Builder app(java.lang.String app) {
+            this.app = app;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupProps#getApp}
+         * @param app the value to be set.
+         * @return {@code this}
+         */
+        public Builder app(com.aliyun.ros.cdk.core.IResolvable app) {
             this.app = app;
             return this;
         }
@@ -165,11 +235,31 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosGroupProps#getCallback}
+         * @param callback the value to be set.
+         * @return {@code this}
+         */
+        public Builder callback(com.aliyun.ros.cdk.core.IResolvable callback) {
+            this.callback = callback;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGroupProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGroupProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -230,15 +320,15 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosGroupProps {
-        private final java.lang.String inProtocol;
-        private final java.lang.String name;
-        private final java.lang.String outProtocol;
-        private final java.lang.String playDomain;
-        private final java.lang.String pushDomain;
-        private final java.lang.String region;
-        private final java.lang.String app;
-        private final java.lang.String callback;
-        private final java.lang.String description;
+        private final java.lang.Object inProtocol;
+        private final java.lang.Object name;
+        private final java.lang.Object outProtocol;
+        private final java.lang.Object playDomain;
+        private final java.lang.Object pushDomain;
+        private final java.lang.Object region;
+        private final java.lang.Object app;
+        private final java.lang.Object callback;
+        private final java.lang.Object description;
         private final java.lang.Object enabled;
         private final java.lang.Object lazyPull;
 
@@ -248,15 +338,15 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.inProtocol = software.amazon.jsii.Kernel.get(this, "inProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.outProtocol = software.amazon.jsii.Kernel.get(this, "outProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.playDomain = software.amazon.jsii.Kernel.get(this, "playDomain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pushDomain = software.amazon.jsii.Kernel.get(this, "pushDomain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.app = software.amazon.jsii.Kernel.get(this, "app", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.callback = software.amazon.jsii.Kernel.get(this, "callback", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.inProtocol = software.amazon.jsii.Kernel.get(this, "inProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.outProtocol = software.amazon.jsii.Kernel.get(this, "outProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.playDomain = software.amazon.jsii.Kernel.get(this, "playDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pushDomain = software.amazon.jsii.Kernel.get(this, "pushDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.app = software.amazon.jsii.Kernel.get(this, "app", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.callback = software.amazon.jsii.Kernel.get(this, "callback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enabled = software.amazon.jsii.Kernel.get(this, "enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lazyPull = software.amazon.jsii.Kernel.get(this, "lazyPull", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -264,7 +354,7 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String inProtocol, final java.lang.String name, final java.lang.String outProtocol, final java.lang.String playDomain, final java.lang.String pushDomain, final java.lang.String region, final java.lang.String app, final java.lang.String callback, final java.lang.String description, final java.lang.Object enabled, final java.lang.Object lazyPull) {
+        protected Jsii$Proxy(final java.lang.Object inProtocol, final java.lang.Object name, final java.lang.Object outProtocol, final java.lang.Object playDomain, final java.lang.Object pushDomain, final java.lang.Object region, final java.lang.Object app, final java.lang.Object callback, final java.lang.Object description, final java.lang.Object enabled, final java.lang.Object lazyPull) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.inProtocol = java.util.Objects.requireNonNull(inProtocol, "inProtocol is required");
             this.name = java.util.Objects.requireNonNull(name, "name is required");
@@ -280,47 +370,47 @@ public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInProtocol() {
+        public final java.lang.Object getInProtocol() {
             return this.inProtocol;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getOutProtocol() {
+        public final java.lang.Object getOutProtocol() {
             return this.outProtocol;
         }
 
         @Override
-        public final java.lang.String getPlayDomain() {
+        public final java.lang.Object getPlayDomain() {
             return this.playDomain;
         }
 
         @Override
-        public final java.lang.String getPushDomain() {
+        public final java.lang.Object getPushDomain() {
             return this.pushDomain;
         }
 
         @Override
-        public final java.lang.String getRegion() {
+        public final java.lang.Object getRegion() {
             return this.region;
         }
 
         @Override
-        public final java.lang.String getApp() {
+        public final java.lang.Object getApp() {
             return this.app;
         }
 
         @Override
-        public final java.lang.String getCallback() {
+        public final java.lang.Object getCallback() {
             return this.callback;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

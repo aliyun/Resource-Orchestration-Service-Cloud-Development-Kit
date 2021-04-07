@@ -10,27 +10,27 @@ export interface RosCertificateProps {
     /**
      * @Property cert: Specify the content of the certificate. To use the PEM encoding format.
      */
-    readonly cert: string;
+    readonly cert: string | ros.IResolvable;
 
     /**
      * @Property key: Specify the certificate private key content. To use the PEM encoding format.
      */
-    readonly key: string;
+    readonly key: string | ros.IResolvable;
 
     /**
      * @Property name: Custom certificate name. The certificate name under a user cannot be duplicated.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property lang: Specifies the language type for requesting and receiving messages.
      */
-    readonly lang?: string;
+    readonly lang?: string | ros.IResolvable;
 
     /**
      * @Property sourceIp: Specifies the source IP address of the request.
      */
-    readonly sourceIp?: string;
+    readonly sourceIp?: string | ros.IResolvable;
 }
 
 /**
@@ -93,7 +93,7 @@ export class RosCertificate extends ros.RosResource {
     /**
      * @Attribute CertId: Certificate ID.
      */
-    public readonly attrCertId: any;
+    public readonly attrCertId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -101,27 +101,27 @@ export class RosCertificate extends ros.RosResource {
     /**
      * @Property cert: Specify the content of the certificate. To use the PEM encoding format.
      */
-    public cert: string;
+    public cert: string | ros.IResolvable;
 
     /**
      * @Property key: Specify the certificate private key content. To use the PEM encoding format.
      */
-    public key: string;
+    public key: string | ros.IResolvable;
 
     /**
      * @Property name: Custom certificate name. The certificate name under a user cannot be duplicated.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property lang: Specifies the language type for requesting and receiving messages.
      */
-    public lang: string | undefined;
+    public lang: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceIp: Specifies the source IP address of the request.
      */
-    public sourceIp: string | undefined;
+    public sourceIp: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CAS::Certificate`.
@@ -132,7 +132,7 @@ export class RosCertificate extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCertificateProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCertId = ros.Token.asString(this.getAtt('CertId'));
+        this.attrCertId = this.getAtt('CertId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cert = props.cert;

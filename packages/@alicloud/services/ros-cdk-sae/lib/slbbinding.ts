@@ -11,27 +11,27 @@ export interface SlbBindingProps {
     /**
      * Property appId: Successful application deployment target ID
      */
-    readonly appId: string;
+    readonly appId: string | ros.IResolvable;
 
     /**
      * Property internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    readonly internet?: string;
+    readonly internet?: string | ros.IResolvable;
 
     /**
      * Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    readonly internetSlbId?: string;
+    readonly internetSlbId?: string | ros.IResolvable;
 
     /**
      * Property intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    readonly intranet?: string;
+    readonly intranet?: string | ros.IResolvable;
 
     /**
      * Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    readonly intranetSlbId?: string;
+    readonly intranetSlbId?: string | ros.IResolvable;
 }
 
 /**
@@ -47,12 +47,12 @@ export class SlbBinding extends ros.Resource {
     /**
      * Attribute AppId: Successful application deployment target ID
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public readonly attrChangeOrderId: any;
+    public readonly attrChangeOrderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAE::SlbBinding`.

@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::FileSystem`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosFileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(RosFileSystemProps.Jsii$Proxy.class)
 public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocolType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocolType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStorageType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStorageType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBandwidth() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
@@ -42,49 +42,55 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getEncryptType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFileSystemType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFileSystemType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -98,20 +104,21 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosFileSystemProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFileSystemProps> {
-        private java.lang.String protocolType;
-        private java.lang.String storageType;
-        private java.lang.Number bandwidth;
-        private java.lang.Number capacity;
-        private java.lang.String chargeType;
+        private java.lang.Object protocolType;
+        private java.lang.Object storageType;
+        private java.lang.Object bandwidth;
+        private java.lang.Object capacity;
+        private java.lang.Object chargeType;
         private java.lang.Object deletionForce;
-        private java.lang.String description;
-        private java.lang.Number duration;
-        private java.lang.Number encryptType;
-        private java.lang.String fileSystemType;
-        private java.lang.String snapshotId;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object description;
+        private java.lang.Object duration;
+        private java.lang.Object encryptType;
+        private java.lang.Object fileSystemType;
+        private java.lang.Object snapshotId;
+        private java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosFileSystemProps#getProtocolType}
@@ -119,6 +126,16 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
+            this.protocolType = protocolType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getProtocolType}
+         * @param protocolType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.protocolType = protocolType;
             return this;
         }
@@ -134,11 +151,31 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getStorageType}
+         * @param storageType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder storageType(com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getBandwidth}
          * @param bandwidth the value to be set.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getBandwidth}
+         * @param bandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.bandwidth = bandwidth;
             return this;
         }
@@ -154,11 +191,31 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getCapacity}
+         * @param capacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder capacity(com.aliyun.ros.cdk.core.IResolvable capacity) {
+            this.capacity = capacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getChargeType}
          * @param chargeType the value to be set.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getChargeType}
+         * @param chargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
             return this;
         }
@@ -194,11 +251,31 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getDuration}
          * @param duration the value to be set.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getDuration}
+         * @param duration the value to be set.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
             return this;
         }
@@ -214,11 +291,31 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getEncryptType}
+         * @param encryptType the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptType(com.aliyun.ros.cdk.core.IResolvable encryptType) {
+            this.encryptType = encryptType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getFileSystemType}
          * @param fileSystemType the value to be set.
          * @return {@code this}
          */
         public Builder fileSystemType(java.lang.String fileSystemType) {
+            this.fileSystemType = fileSystemType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getFileSystemType}
+         * @param fileSystemType the value to be set.
+         * @return {@code this}
+         */
+        public Builder fileSystemType(com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
             this.fileSystemType = fileSystemType;
             return this;
         }
@@ -234,11 +331,42 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getSnapshotId}
+         * @param snapshotId the value to be set.
+         * @return {@code this}
+         */
+        public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
+            this.snapshotId = snapshotId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -254,11 +382,31 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosFileSystemProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFileSystemProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFileSystemProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -270,7 +418,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosFileSystemProps build() {
-            return new Jsii$Proxy(protocolType, storageType, bandwidth, capacity, chargeType, deletionForce, description, duration, encryptType, fileSystemType, snapshotId, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(protocolType, storageType, bandwidth, capacity, chargeType, deletionForce, description, duration, encryptType, fileSystemType, snapshotId, tags, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -279,20 +427,21 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFileSystemProps {
-        private final java.lang.String protocolType;
-        private final java.lang.String storageType;
-        private final java.lang.Number bandwidth;
-        private final java.lang.Number capacity;
-        private final java.lang.String chargeType;
+        private final java.lang.Object protocolType;
+        private final java.lang.Object storageType;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object capacity;
+        private final java.lang.Object chargeType;
         private final java.lang.Object deletionForce;
-        private final java.lang.String description;
-        private final java.lang.Number duration;
-        private final java.lang.Number encryptType;
-        private final java.lang.String fileSystemType;
-        private final java.lang.String snapshotId;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object description;
+        private final java.lang.Object duration;
+        private final java.lang.Object encryptType;
+        private final java.lang.Object fileSystemType;
+        private final java.lang.Object snapshotId;
+        private final java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -300,26 +449,28 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.encryptType = software.amazon.jsii.Kernel.get(this, "encryptType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.fileSystemType = software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptType = software.amazon.jsii.Kernel.get(this, "encryptType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.fileSystemType = software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String protocolType, final java.lang.String storageType, final java.lang.Number bandwidth, final java.lang.Number capacity, final java.lang.String chargeType, final java.lang.Object deletionForce, final java.lang.String description, final java.lang.Number duration, final java.lang.Number encryptType, final java.lang.String fileSystemType, final java.lang.String snapshotId, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object protocolType, final java.lang.Object storageType, final java.lang.Object bandwidth, final java.lang.Object capacity, final java.lang.Object chargeType, final java.lang.Object deletionForce, final java.lang.Object description, final java.lang.Object duration, final java.lang.Object encryptType, final java.lang.Object fileSystemType, final java.lang.Object snapshotId, final java.util.List<? extends com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.protocolType = java.util.Objects.requireNonNull(protocolType, "protocolType is required");
             this.storageType = java.util.Objects.requireNonNull(storageType, "storageType is required");
@@ -332,33 +483,34 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             this.encryptType = encryptType;
             this.fileSystemType = fileSystemType;
             this.snapshotId = snapshotId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.zoneId = zoneId;
         }
 
         @Override
-        public final java.lang.String getProtocolType() {
+        public final java.lang.Object getProtocolType() {
             return this.protocolType;
         }
 
         @Override
-        public final java.lang.String getStorageType() {
+        public final java.lang.Object getStorageType() {
             return this.storageType;
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.Number getCapacity() {
+        public final java.lang.Object getCapacity() {
             return this.capacity;
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
@@ -368,42 +520,47 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
         @Override
-        public final java.lang.Number getEncryptType() {
+        public final java.lang.Object getEncryptType() {
             return this.encryptType;
         }
 
         @Override
-        public final java.lang.String getFileSystemType() {
+        public final java.lang.Object getFileSystemType() {
             return this.fileSystemType;
         }
 
         @Override
-        public final java.lang.String getSnapshotId() {
+        public final java.lang.Object getSnapshotId() {
             return this.snapshotId;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.util.List<com.aliyun.ros.cdk.nas.RosFileSystem.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
@@ -441,6 +598,9 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getSnapshotId() != null) {
                 data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -480,6 +640,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             if (this.encryptType != null ? !this.encryptType.equals(that.encryptType) : that.encryptType != null) return false;
             if (this.fileSystemType != null ? !this.fileSystemType.equals(that.fileSystemType) : that.fileSystemType != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -498,6 +659,7 @@ public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.encryptType != null ? this.encryptType.hashCode() : 0);
             result = 31 * result + (this.fileSystemType != null ? this.fileSystemType.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

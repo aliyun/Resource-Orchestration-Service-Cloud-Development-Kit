@@ -11,7 +11,7 @@ export interface MasterSlaveServerGroupProps {
     /**
      * Property loadBalancerId: The ID of the Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * Property masterSlaveBackendServers: A list of active/standby server group.
@@ -22,7 +22,7 @@ export interface MasterSlaveServerGroupProps {
     /**
      * Property masterSlaveServerGroupName: The name of the active/standby server group.
      */
-    readonly masterSlaveServerGroupName?: string;
+    readonly masterSlaveServerGroupName?: string | ros.IResolvable;
 }
 
 /**
@@ -38,7 +38,7 @@ export class MasterSlaveServerGroup extends ros.Resource {
     /**
      * Attribute MasterSlaveServerGroupId: Active/standby server group ID.
      */
-    public readonly attrMasterSlaveServerGroupId: any;
+    public readonly attrMasterSlaveServerGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::MasterSlaveServerGroup`.

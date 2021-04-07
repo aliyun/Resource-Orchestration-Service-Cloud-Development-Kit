@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DeploymentSet`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.285Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDeploymentSetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeploymentSetProps.Jsii$Proxy.class)
 public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOnUnableToRedeployFailedInstance() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOnUnableToRedeployFailedInstance() {
         return null;
     }
 
@@ -36,9 +36,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosDeploymentSetProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeploymentSetProps> {
-        private java.lang.String deploymentSetName;
-        private java.lang.String description;
-        private java.lang.String onUnableToRedeployFailedInstance;
+        private java.lang.Object deploymentSetName;
+        private java.lang.Object description;
+        private java.lang.Object onUnableToRedeployFailedInstance;
 
         /**
          * Sets the value of {@link RosDeploymentSetProps#getDeploymentSetName}
@@ -46,6 +46,16 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder deploymentSetName(java.lang.String deploymentSetName) {
+            this.deploymentSetName = deploymentSetName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentSetProps#getDeploymentSetName}
+         * @param deploymentSetName the value to be set.
+         * @return {@code this}
+         */
+        public Builder deploymentSetName(com.aliyun.ros.cdk.core.IResolvable deploymentSetName) {
             this.deploymentSetName = deploymentSetName;
             return this;
         }
@@ -61,11 +71,31 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosDeploymentSetProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeploymentSetProps#getOnUnableToRedeployFailedInstance}
          * @param onUnableToRedeployFailedInstance the value to be set.
          * @return {@code this}
          */
         public Builder onUnableToRedeployFailedInstance(java.lang.String onUnableToRedeployFailedInstance) {
+            this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentSetProps#getOnUnableToRedeployFailedInstance}
+         * @param onUnableToRedeployFailedInstance the value to be set.
+         * @return {@code this}
+         */
+        public Builder onUnableToRedeployFailedInstance(com.aliyun.ros.cdk.core.IResolvable onUnableToRedeployFailedInstance) {
             this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
             return this;
         }
@@ -86,9 +116,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeploymentSetProps {
-        private final java.lang.String deploymentSetName;
-        private final java.lang.String description;
-        private final java.lang.String onUnableToRedeployFailedInstance;
+        private final java.lang.Object deploymentSetName;
+        private final java.lang.Object description;
+        private final java.lang.Object onUnableToRedeployFailedInstance;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,15 +126,15 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.deploymentSetName = software.amazon.jsii.Kernel.get(this, "deploymentSetName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.onUnableToRedeployFailedInstance = software.amazon.jsii.Kernel.get(this, "onUnableToRedeployFailedInstance", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.deploymentSetName = software.amazon.jsii.Kernel.get(this, "deploymentSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.onUnableToRedeployFailedInstance = software.amazon.jsii.Kernel.get(this, "onUnableToRedeployFailedInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String deploymentSetName, final java.lang.String description, final java.lang.String onUnableToRedeployFailedInstance) {
+        protected Jsii$Proxy(final java.lang.Object deploymentSetName, final java.lang.Object description, final java.lang.Object onUnableToRedeployFailedInstance) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.deploymentSetName = deploymentSetName;
             this.description = description;
@@ -112,17 +142,17 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getDeploymentSetName() {
+        public final java.lang.Object getDeploymentSetName() {
             return this.deploymentSetName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getOnUnableToRedeployFailedInstance() {
+        public final java.lang.Object getOnUnableToRedeployFailedInstance() {
             return this.onUnableToRedeployFailedInstance;
         }
 

@@ -45,12 +45,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Mns.RosSubscription))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: SubscriptionName: Subscription name
+        /// </remarks>
+        [JsiiProperty(name: "attrSubscriptionName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: SubscriptionUrl: URL of created subscription
         /// </remarks>
-        [JsiiProperty(name: "attrSubscriptionUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionUrl
+        [JsiiProperty(name: "attrSubscriptionUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: TopicName: Topic name
+        /// </remarks>
+        [JsiiProperty(name: "attrTopicName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -68,36 +86,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 
         /// <remarks>
         /// <strong>Property</strong>: endpoint: Terminal address of the message recipient for the created subscription.
-        /// Currently, four types of endpoints are supported: 
-        /// 1. HttpEndpoint, which must be prefixed with "http://"; 
-        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName}; 
-        /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
+        /// Currently, four types of endpoints are supported:
+        /// 1. HttpEndpoint, which must be prefixed with "http://";
+        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};
+        /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress};
         /// 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
         /// </remarks>
-        [JsiiProperty(name: "endpoint", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Endpoint
+        [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Endpoint
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: subscriptionName: Subscription name
         /// </remarks>
-        [JsiiProperty(name: "subscriptionName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SubscriptionName
+        [JsiiProperty(name: "subscriptionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SubscriptionName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: topicName: Topic name
         /// </remarks>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TopicName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -106,10 +124,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// The value is a string of no more than 16 characters. The default value is no message filter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "filterTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? FilterTag
+        [JsiiProperty(name: "filterTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? FilterTag
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -118,10 +136,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NotifyContentFormat
+        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NotifyContentFormat
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -130,10 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NotifyStrategy
+        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NotifyStrategy
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

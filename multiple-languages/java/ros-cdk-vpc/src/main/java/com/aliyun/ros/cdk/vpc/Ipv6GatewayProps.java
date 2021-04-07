@@ -3,30 +3,51 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::Ipv6Gateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.446Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(Ipv6GatewayProps.Jsii$Proxy.class)
 public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property vpcId: To open VPC ID IPv6 gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
+     * Property description: Description of IPv6 gateway.
+     * <p>
+     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property name: Name of the IPv6 gateway.
+     * <p>
+     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property spec: Specifications IPv6 gateway, the value: Small (default): Free.
+     * <p>
+     * Medium: Enterprise Edition.
+     * Large: Enterprise Enhanced Edition.
+     * Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> getTags() {
         return null;
     }
 
@@ -40,14 +61,15 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link Ipv6GatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<Ipv6GatewayProps> {
-        private java.lang.String vpcId;
-        private java.lang.String description;
-        private java.lang.String name;
-        private java.lang.String spec;
+        private java.lang.Object vpcId;
+        private java.lang.Object description;
+        private java.lang.Object name;
+        private java.lang.Object spec;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
 
         /**
          * Sets the value of {@link Ipv6GatewayProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
+         * @param vpcId Property vpcId: To open VPC ID IPv6 gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -56,8 +78,19 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link Ipv6GatewayProps#getVpcId}
+         * @param vpcId Property vpcId: To open VPC ID IPv6 gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Ipv6GatewayProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of IPv6 gateway.
+         *                    Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -66,8 +99,20 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link Ipv6GatewayProps#getDescription}
+         * @param description Property description: Description of IPv6 gateway.
+         *                    Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Ipv6GatewayProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: Name of the IPv6 gateway.
+         *             Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -76,12 +121,51 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link Ipv6GatewayProps#getName}
+         * @param name Property name: Name of the IPv6 gateway.
+         *             Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link Ipv6GatewayProps#getSpec}
-         * @param spec the value to be set.
+         * @param spec Property spec: Specifications IPv6 gateway, the value: Small (default): Free.
+         *             Medium: Enterprise Edition.
+         *             Large: Enterprise Enhanced Edition.
+         *             Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
          * @return {@code this}
          */
         public Builder spec(java.lang.String spec) {
             this.spec = spec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link Ipv6GatewayProps#getSpec}
+         * @param spec Property spec: Specifications IPv6 gateway, the value: Small (default): Free.
+         *             Medium: Enterprise Edition.
+         *             Large: Enterprise Enhanced Edition.
+         *             Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
+         * @return {@code this}
+         */
+        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
+            this.spec = spec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link Ipv6GatewayProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty>)tags;
             return this;
         }
 
@@ -92,7 +176,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public Ipv6GatewayProps build() {
-            return new Jsii$Proxy(vpcId, description, name, spec);
+            return new Jsii$Proxy(vpcId, description, name, spec, tags);
         }
     }
 
@@ -101,10 +185,11 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements Ipv6GatewayProps {
-        private final java.lang.String vpcId;
-        private final java.lang.String description;
-        private final java.lang.String name;
-        private final java.lang.String spec;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
+        private final java.lang.Object spec;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -112,41 +197,49 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String vpcId, final java.lang.String description, final java.lang.String name, final java.lang.String spec) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object description, final java.lang.Object name, final java.lang.Object spec, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
             this.description = description;
             this.name = name;
             this.spec = spec;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getSpec() {
+        public final java.lang.Object getSpec() {
             return this.spec;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6Gateway.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -164,6 +257,9 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getSpec() != null) {
                 data.set("spec", om.valueToTree(this.getSpec()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -186,7 +282,8 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
-            return this.spec != null ? this.spec.equals(that.spec) : that.spec == null;
+            if (this.spec != null ? !this.spec.equals(that.spec) : that.spec != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -195,6 +292,7 @@ public interface Ipv6GatewayProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.spec != null ? this.spec.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

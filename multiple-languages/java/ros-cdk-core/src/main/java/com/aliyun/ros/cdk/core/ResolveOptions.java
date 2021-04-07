@@ -1,14 +1,14 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Options to the resolve() operation  NOT the same as the ResolveContext;
+ * Options to the resolve() operation.
  * <p>
- * ResolveContext is exposed to Token
+ * NOT the same as the ResolveContext; ResolveContext is exposed to Token
  * implementors and resolution hooks, whereas this struct is just to bundle
  * a number of things that would otherwise be arguments to resolve() in a
  * readable way.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.315Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ResolveOptions")
 @software.amazon.jsii.Jsii.Proxy(ResolveOptions.Jsii$Proxy.class)
 public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {

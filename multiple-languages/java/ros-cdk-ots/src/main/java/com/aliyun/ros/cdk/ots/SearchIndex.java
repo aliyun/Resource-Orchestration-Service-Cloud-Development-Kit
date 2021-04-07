@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS resource type:  `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.159Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.SearchIndex")
 public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::SearchIndex`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public SearchIndex(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.SearchIndexProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::SearchIndex`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public SearchIndex(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.SearchIndexProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute IndexName: Index name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIndexName() {
-        return software.amazon.jsii.Kernel.get(this, "attrIndexName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIndexName() {
+        return software.amazon.jsii.Kernel.get(this, "attrIndexName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ots.SearchIndex> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,60 +90,104 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property fieldSchemas: list of field_schema.
+         * <p>
          * @return {@code this}
-         * @param fieldSchemas This parameter is required.
-         */
-        public Builder fieldSchemas(final java.util.List<? extends java.lang.Object> fieldSchemas) {
-            this.props.fieldSchemas(fieldSchemas);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param fieldSchemas This parameter is required.
+         * @param fieldSchemas Property fieldSchemas: list of field_schema. This parameter is required.
          */
         public Builder fieldSchemas(final com.aliyun.ros.cdk.core.IResolvable fieldSchemas) {
             this.props.fieldSchemas(fieldSchemas);
             return this;
         }
+        /**
+         * Property fieldSchemas: list of field_schema.
+         * <p>
+         * @return {@code this}
+         * @param fieldSchemas Property fieldSchemas: list of field_schema. This parameter is required.
+         */
+        public Builder fieldSchemas(final java.util.List<? extends java.lang.Object> fieldSchemas) {
+            this.props.fieldSchemas(fieldSchemas);
+            return this;
+        }
 
         /**
+         * Property indexName: The index name.
+         * <p>
          * @return {@code this}
-         * @param indexName This parameter is required.
+         * @param indexName Property indexName: The index name. This parameter is required.
          */
         public Builder indexName(final java.lang.String indexName) {
             this.props.indexName(indexName);
             return this;
         }
+        /**
+         * Property indexName: The index name.
+         * <p>
+         * @return {@code this}
+         * @param indexName Property indexName: The index name. This parameter is required.
+         */
+        public Builder indexName(final com.aliyun.ros.cdk.core.IResolvable indexName) {
+            this.props.indexName(indexName);
+            return this;
+        }
 
         /**
+         * Property instanceName: The name of the OTS instance in which table will locate.
+         * <p>
          * @return {@code this}
-         * @param instanceName This parameter is required.
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * Property instanceName: The name of the OTS instance in which table will locate.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
+         * Property tableName: The table name of the OTS instance.
+         * <p>
          * @return {@code this}
-         * @param tableName This parameter is required.
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
          */
         public Builder tableName(final java.lang.String tableName) {
             this.props.tableName(tableName);
             return this;
         }
+        /**
+         * Property tableName: The table name of the OTS instance.
+         * <p>
+         * @return {@code this}
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
+         */
+        public Builder tableName(final com.aliyun.ros.cdk.core.IResolvable tableName) {
+            this.props.tableName(tableName);
+            return this;
+        }
 
         /**
+         * Property indexSetting: Index settings.
+         * <p>
          * @return {@code this}
-         * @param indexSetting This parameter is required.
+         * @param indexSetting Property indexSetting: Index settings. This parameter is required.
          */
         public Builder indexSetting(final com.aliyun.ros.cdk.core.IResolvable indexSetting) {
             this.props.indexSetting(indexSetting);
             return this;
         }
         /**
+         * Property indexSetting: Index settings.
+         * <p>
          * @return {@code this}
-         * @param indexSetting This parameter is required.
+         * @param indexSetting Property indexSetting: Index settings. This parameter is required.
          */
         public Builder indexSetting(final com.aliyun.ros.cdk.ots.RosSearchIndex.IndexSettingProperty indexSetting) {
             this.props.indexSetting(indexSetting);
@@ -142,16 +195,26 @@ public class SearchIndex extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property indexSort: This parameter specifies how data is sorted.
+         * <p>
+         * By default, the data is sorted in the same way as the primary key of the table.
+         * If the search index contains NESTED fields, data is not sorted by default.
+         * <p>
          * @return {@code this}
-         * @param indexSort This parameter is required.
+         * @param indexSort Property indexSort: This parameter specifies how data is sorted. This parameter is required.
          */
         public Builder indexSort(final com.aliyun.ros.cdk.core.IResolvable indexSort) {
             this.props.indexSort(indexSort);
             return this;
         }
         /**
+         * Property indexSort: This parameter specifies how data is sorted.
+         * <p>
+         * By default, the data is sorted in the same way as the primary key of the table.
+         * If the search index contains NESTED fields, data is not sorted by default.
+         * <p>
          * @return {@code this}
-         * @param indexSort This parameter is required.
+         * @param indexSort Property indexSort: This parameter specifies how data is sorted. This parameter is required.
          */
         public Builder indexSort(final com.aliyun.ros.cdk.ots.RosSearchIndex.IndexSortProperty indexSort) {
             this.props.indexSort(indexSort);

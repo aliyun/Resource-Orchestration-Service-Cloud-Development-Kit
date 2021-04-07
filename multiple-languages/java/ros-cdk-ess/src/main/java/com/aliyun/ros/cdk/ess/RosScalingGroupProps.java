@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMaxSize();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMaxSize();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMinSize();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMinSize();
 
     /**
      */
@@ -24,13 +24,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDefaultCooldown() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultCooldown() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDesiredCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesiredCapacity() {
         return null;
     }
 
@@ -42,25 +42,25 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
         return null;
     }
 
@@ -72,7 +72,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMultiAzPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMultiAzPolicy() {
         return null;
     }
 
@@ -96,7 +96,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupName() {
         return null;
     }
 
@@ -108,7 +108,13 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -128,24 +134,25 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosScalingGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingGroupProps> {
-        private java.lang.Number maxSize;
-        private java.lang.Number minSize;
+        private java.lang.Object maxSize;
+        private java.lang.Object minSize;
         private java.lang.Object dbInstanceIds;
-        private java.lang.Number defaultCooldown;
-        private java.lang.Number desiredCapacity;
+        private java.lang.Object defaultCooldown;
+        private java.lang.Object desiredCapacity;
         private java.lang.Object groupDeletionProtection;
-        private java.lang.String healthCheckType;
-        private java.lang.String instanceId;
-        private java.lang.String launchTemplateId;
-        private java.lang.String launchTemplateVersion;
+        private java.lang.Object healthCheckType;
+        private java.lang.Object instanceId;
+        private java.lang.Object launchTemplateId;
+        private java.lang.Object launchTemplateVersion;
         private java.lang.Object loadBalancerIds;
-        private java.lang.String multiAzPolicy;
+        private java.lang.Object multiAzPolicy;
         private java.lang.Object notificationConfigurations;
         private java.lang.Object protectedInstances;
         private java.lang.Object removalPolicys;
-        private java.lang.String scalingGroupName;
+        private java.lang.Object scalingGroupName;
         private java.lang.Object standbyInstances;
-        private java.lang.String vSwitchId;
+        private java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
+        private java.lang.Object vSwitchId;
         private java.lang.Object vSwitchIds;
 
         /**
@@ -159,11 +166,31 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getMaxSize}
+         * @param maxSize the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder maxSize(com.aliyun.ros.cdk.core.IResolvable maxSize) {
+            this.maxSize = maxSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getMinSize}
          * @param minSize the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder minSize(java.lang.Number minSize) {
+            this.minSize = minSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getMinSize}
+         * @param minSize the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder minSize(com.aliyun.ros.cdk.core.IResolvable minSize) {
             this.minSize = minSize;
             return this;
         }
@@ -199,11 +226,31 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getDefaultCooldown}
+         * @param defaultCooldown the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultCooldown(com.aliyun.ros.cdk.core.IResolvable defaultCooldown) {
+            this.defaultCooldown = defaultCooldown;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getDesiredCapacity}
          * @param desiredCapacity the value to be set.
          * @return {@code this}
          */
         public Builder desiredCapacity(java.lang.Number desiredCapacity) {
+            this.desiredCapacity = desiredCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getDesiredCapacity}
+         * @param desiredCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder desiredCapacity(com.aliyun.ros.cdk.core.IResolvable desiredCapacity) {
             this.desiredCapacity = desiredCapacity;
             return this;
         }
@@ -239,11 +286,31 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getHealthCheckType}
+         * @param healthCheckType the value to be set.
+         * @return {@code this}
+         */
+        public Builder healthCheckType(com.aliyun.ros.cdk.core.IResolvable healthCheckType) {
+            this.healthCheckType = healthCheckType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getInstanceId}
          * @param instanceId the value to be set.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
             return this;
         }
@@ -259,11 +326,31 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getLaunchTemplateId}
+         * @param launchTemplateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateId(com.aliyun.ros.cdk.core.IResolvable launchTemplateId) {
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getLaunchTemplateVersion}
          * @param launchTemplateVersion the value to be set.
          * @return {@code this}
          */
         public Builder launchTemplateVersion(java.lang.String launchTemplateVersion) {
+            this.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getLaunchTemplateVersion}
+         * @param launchTemplateVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateVersion(com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
             this.launchTemplateVersion = launchTemplateVersion;
             return this;
         }
@@ -294,6 +381,16 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder multiAzPolicy(java.lang.String multiAzPolicy) {
+            this.multiAzPolicy = multiAzPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getMultiAzPolicy}
+         * @param multiAzPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder multiAzPolicy(com.aliyun.ros.cdk.core.IResolvable multiAzPolicy) {
             this.multiAzPolicy = multiAzPolicy;
             return this;
         }
@@ -369,6 +466,16 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getScalingGroupName}
+         * @param scalingGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingGroupName(com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
+            this.scalingGroupName = scalingGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getStandbyInstances}
          * @param standbyInstances the value to be set.
          * @return {@code this}
@@ -389,11 +496,32 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosScalingGroupProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingGroupProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -425,7 +553,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosScalingGroupProps build() {
-            return new Jsii$Proxy(maxSize, minSize, dbInstanceIds, defaultCooldown, desiredCapacity, groupDeletionProtection, healthCheckType, instanceId, launchTemplateId, launchTemplateVersion, loadBalancerIds, multiAzPolicy, notificationConfigurations, protectedInstances, removalPolicys, scalingGroupName, standbyInstances, vSwitchId, vSwitchIds);
+            return new Jsii$Proxy(maxSize, minSize, dbInstanceIds, defaultCooldown, desiredCapacity, groupDeletionProtection, healthCheckType, instanceId, launchTemplateId, launchTemplateVersion, loadBalancerIds, multiAzPolicy, notificationConfigurations, protectedInstances, removalPolicys, scalingGroupName, standbyInstances, tags, vSwitchId, vSwitchIds);
         }
     }
 
@@ -434,24 +562,25 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScalingGroupProps {
-        private final java.lang.Number maxSize;
-        private final java.lang.Number minSize;
+        private final java.lang.Object maxSize;
+        private final java.lang.Object minSize;
         private final java.lang.Object dbInstanceIds;
-        private final java.lang.Number defaultCooldown;
-        private final java.lang.Number desiredCapacity;
+        private final java.lang.Object defaultCooldown;
+        private final java.lang.Object desiredCapacity;
         private final java.lang.Object groupDeletionProtection;
-        private final java.lang.String healthCheckType;
-        private final java.lang.String instanceId;
-        private final java.lang.String launchTemplateId;
-        private final java.lang.String launchTemplateVersion;
+        private final java.lang.Object healthCheckType;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object launchTemplateId;
+        private final java.lang.Object launchTemplateVersion;
         private final java.lang.Object loadBalancerIds;
-        private final java.lang.String multiAzPolicy;
+        private final java.lang.Object multiAzPolicy;
         private final java.lang.Object notificationConfigurations;
         private final java.lang.Object protectedInstances;
         private final java.lang.Object removalPolicys;
-        private final java.lang.String scalingGroupName;
+        private final java.lang.Object scalingGroupName;
         private final java.lang.Object standbyInstances;
-        private final java.lang.String vSwitchId;
+        private final java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object vSwitchIds;
 
         /**
@@ -460,31 +589,33 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceIds = software.amazon.jsii.Kernel.get(this, "dbInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupDeletionProtection = software.amazon.jsii.Kernel.get(this, "groupDeletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerIds = software.amazon.jsii.Kernel.get(this, "loadBalancerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notificationConfigurations = software.amazon.jsii.Kernel.get(this, "notificationConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedInstances = software.amazon.jsii.Kernel.get(this, "protectedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removalPolicys = software.amazon.jsii.Kernel.get(this, "removalPolicys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyInstances = software.amazon.jsii.Kernel.get(this, "standbyInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty.class)));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number maxSize, final java.lang.Number minSize, final java.lang.Object dbInstanceIds, final java.lang.Number defaultCooldown, final java.lang.Number desiredCapacity, final java.lang.Object groupDeletionProtection, final java.lang.String healthCheckType, final java.lang.String instanceId, final java.lang.String launchTemplateId, final java.lang.String launchTemplateVersion, final java.lang.Object loadBalancerIds, final java.lang.String multiAzPolicy, final java.lang.Object notificationConfigurations, final java.lang.Object protectedInstances, final java.lang.Object removalPolicys, final java.lang.String scalingGroupName, final java.lang.Object standbyInstances, final java.lang.String vSwitchId, final java.lang.Object vSwitchIds) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object maxSize, final java.lang.Object minSize, final java.lang.Object dbInstanceIds, final java.lang.Object defaultCooldown, final java.lang.Object desiredCapacity, final java.lang.Object groupDeletionProtection, final java.lang.Object healthCheckType, final java.lang.Object instanceId, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateVersion, final java.lang.Object loadBalancerIds, final java.lang.Object multiAzPolicy, final java.lang.Object notificationConfigurations, final java.lang.Object protectedInstances, final java.lang.Object removalPolicys, final java.lang.Object scalingGroupName, final java.lang.Object standbyInstances, final java.util.List<? extends com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags, final java.lang.Object vSwitchId, final java.lang.Object vSwitchIds) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.maxSize = java.util.Objects.requireNonNull(maxSize, "maxSize is required");
             this.minSize = java.util.Objects.requireNonNull(minSize, "minSize is required");
@@ -503,17 +634,18 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             this.removalPolicys = removalPolicys;
             this.scalingGroupName = scalingGroupName;
             this.standbyInstances = standbyInstances;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)tags;
             this.vSwitchId = vSwitchId;
             this.vSwitchIds = vSwitchIds;
         }
 
         @Override
-        public final java.lang.Number getMaxSize() {
+        public final java.lang.Object getMaxSize() {
             return this.maxSize;
         }
 
         @Override
-        public final java.lang.Number getMinSize() {
+        public final java.lang.Object getMinSize() {
             return this.minSize;
         }
 
@@ -523,12 +655,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.Number getDefaultCooldown() {
+        public final java.lang.Object getDefaultCooldown() {
             return this.defaultCooldown;
         }
 
         @Override
-        public final java.lang.Number getDesiredCapacity() {
+        public final java.lang.Object getDesiredCapacity() {
             return this.desiredCapacity;
         }
 
@@ -538,22 +670,22 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getHealthCheckType() {
+        public final java.lang.Object getHealthCheckType() {
             return this.healthCheckType;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateId() {
+        public final java.lang.Object getLaunchTemplateId() {
             return this.launchTemplateId;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateVersion() {
+        public final java.lang.Object getLaunchTemplateVersion() {
             return this.launchTemplateVersion;
         }
 
@@ -563,7 +695,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getMultiAzPolicy() {
+        public final java.lang.Object getMultiAzPolicy() {
             return this.multiAzPolicy;
         }
 
@@ -583,7 +715,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getScalingGroupName() {
+        public final java.lang.Object getScalingGroupName() {
             return this.scalingGroupName;
         }
 
@@ -593,7 +725,12 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -655,6 +792,9 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.getStandbyInstances() != null) {
                 data.set("standbyInstances", om.valueToTree(this.getStandbyInstances()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getVSwitchId() != null) {
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
@@ -696,6 +836,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             if (this.removalPolicys != null ? !this.removalPolicys.equals(that.removalPolicys) : that.removalPolicys != null) return false;
             if (this.scalingGroupName != null ? !this.scalingGroupName.equals(that.scalingGroupName) : that.scalingGroupName != null) return false;
             if (this.standbyInstances != null ? !this.standbyInstances.equals(that.standbyInstances) : that.standbyInstances != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.vSwitchIds != null ? this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds == null;
         }
@@ -719,6 +860,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.removalPolicys != null ? this.removalPolicys.hashCode() : 0);
             result = 31 * result + (this.scalingGroupName != null ? this.scalingGroupName.hashCode() : 0);
             result = 31 * result + (this.standbyInstances != null ? this.standbyInstances.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
             return result;

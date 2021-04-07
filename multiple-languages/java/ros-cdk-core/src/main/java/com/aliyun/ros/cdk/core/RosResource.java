@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -40,6 +40,10 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
         software.amazon.jsii.Kernel.call(this, "addCondition", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(con, "con is required") });
     }
 
+    public void addCount(final @org.jetbrains.annotations.NotNull java.lang.Object count) {
+        software.amazon.jsii.Kernel.call(this, "addCount", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(count, "count is required") });
+    }
+
     /**
      * Syntactic sugar for `addOverride(path, undefined)`.
      * <p>
@@ -50,7 +54,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     /**
-     * Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+     * Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
      * <p>
      * This can be used for resources across stacks (or nested stack) boundaries
      * and the dependency will automatically be transferred to the relevant scope.
@@ -108,7 +112,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
      * }
      * </pre></blockquote>
      * <p>
-     * @param path - The path of the property, you can use dot notation tooverride values in complex types. This parameter is required.
+     * @param path - The path of the property, you can use dot notation to override values in complex types. This parameter is required.
      * @param value - The value. This parameter is required.
      */
     public void addOverride(final @org.jetbrains.annotations.NotNull java.lang.String path, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
@@ -215,7 +219,10 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     /**
-     * Return properties modified after initiation  Resources that expose mutable properties should override this function to collect and return the properties object for this resource.
+     * Return properties modified after initiation.
+     * <p>
+     * Resources that expose mutable properties should override this function to
+     * collect and return the properties object for this resource.
      */
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getUpdatedProperites() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "updatedProperites", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));

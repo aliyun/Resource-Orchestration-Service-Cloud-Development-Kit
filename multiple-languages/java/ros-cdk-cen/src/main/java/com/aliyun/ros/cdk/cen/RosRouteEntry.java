@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::RouteEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosRouteEntry")
 public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCenId() {
-        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCenId() {
+        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,8 +61,14 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCenId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cenId", java.util.Objects.requireNonNull(value, "cenId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +79,14 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceId", java.util.Objects.requireNonNull(value, "childInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,8 +97,14 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceRouteTableId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceRegionId", java.util.Objects.requireNonNull(value, "childInstanceRegionId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRouteTableId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -97,8 +115,14 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceRouteTableId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceRouteTableId", java.util.Objects.requireNonNull(value, "childInstanceRouteTableId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -109,8 +133,14 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestinationCidrBlock() {
-        return software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceType", java.util.Objects.requireNonNull(value, "childInstanceType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -120,14 +150,20 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setDestinationCidrBlock(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationCidrBlock", java.util.Objects.requireNonNull(value, "destinationCidrBlock is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -167,12 +203,28 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.cenId(cenId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param cenId This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param childInstanceId This parameter is required.
          */
         public Builder childInstanceId(final java.lang.String childInstanceId) {
+            this.props.childInstanceId(childInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param childInstanceId This parameter is required.
+         */
+        public Builder childInstanceId(final com.aliyun.ros.cdk.core.IResolvable childInstanceId) {
             this.props.childInstanceId(childInstanceId);
             return this;
         }
@@ -185,12 +237,28 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.childInstanceRegionId(childInstanceRegionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param childInstanceRegionId This parameter is required.
+         */
+        public Builder childInstanceRegionId(final com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
+            this.props.childInstanceRegionId(childInstanceRegionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param childInstanceRouteTableId This parameter is required.
          */
         public Builder childInstanceRouteTableId(final java.lang.String childInstanceRouteTableId) {
+            this.props.childInstanceRouteTableId(childInstanceRouteTableId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param childInstanceRouteTableId This parameter is required.
+         */
+        public Builder childInstanceRouteTableId(final com.aliyun.ros.cdk.core.IResolvable childInstanceRouteTableId) {
             this.props.childInstanceRouteTableId(childInstanceRouteTableId);
             return this;
         }
@@ -203,12 +271,28 @@ public class RosRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.childInstanceType(childInstanceType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param childInstanceType This parameter is required.
+         */
+        public Builder childInstanceType(final com.aliyun.ros.cdk.core.IResolvable childInstanceType) {
+            this.props.childInstanceType(childInstanceType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationCidrBlock This parameter is required.
          */
         public Builder destinationCidrBlock(final java.lang.String destinationCidrBlock) {
+            this.props.destinationCidrBlock(destinationCidrBlock);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationCidrBlock This parameter is required.
+         */
+        public Builder destinationCidrBlock(final com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
             this.props.destinationCidrBlock(destinationCidrBlock);
             return this;
         }

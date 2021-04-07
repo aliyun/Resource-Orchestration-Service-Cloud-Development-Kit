@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class FunctionProps : AlibabaCloud.SDK.ROS.CDK.Fc.IFunctionProps
     {
         /// <summary>Property functionName: Function name.</summary>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object FunctionName
         {
             get;
             set;
         }
 
         /// <summary>Property handler: The function execution entry point.</summary>
-        [JsiiProperty(name: "handler", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Handler
+        [JsiiProperty(name: "handler", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Handler
         {
             get;
             set;
@@ -30,16 +30,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
         /// </remarks>
-        [JsiiProperty(name: "runtime", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Runtime
+        [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Runtime
         {
             get;
             set;
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ServiceName
         {
             get;
             set;
@@ -59,8 +59,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// The default value is 9000
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "caPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? CaPort
+        [JsiiProperty(name: "caPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CaPort
         {
             get;
             set;
@@ -89,8 +89,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property description: Function description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -107,8 +107,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property initializationTimeout: the max execution time of the initializer, in second.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "initializationTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? InitializationTimeout
+        [JsiiProperty(name: "initializationTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InitializationTimeout
         {
             get;
             set;
@@ -116,8 +116,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property initializer: the entry point of the initializer.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "initializer", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Initializer
+        [JsiiProperty(name: "initializer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Initializer
         {
             get;
             set;
@@ -128,8 +128,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Value can be between 1 to 100.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceConcurrency", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? InstanceConcurrency
+        [JsiiProperty(name: "instanceConcurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceConcurrency
         {
             get;
             set;
@@ -140,8 +140,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceType
         {
             get;
             set;
@@ -152,8 +152,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "memorySize", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? MemorySize
+        [JsiiProperty(name: "memorySize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MemorySize
         {
             get;
             set;
@@ -164,8 +164,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Timeout
         {
             get;
             set;

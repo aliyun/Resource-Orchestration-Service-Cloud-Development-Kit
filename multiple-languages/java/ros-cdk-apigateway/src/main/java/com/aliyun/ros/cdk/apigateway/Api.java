@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Api`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.060Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Api")
 public class Api extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Api(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.ApiProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Api(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.ApiProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ApiId: The id of the API.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiId() {
-        return software.amazon.jsii.Kernel.get(this, "attrApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiId() {
+        return software.amazon.jsii.Kernel.get(this, "attrApiId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.Api> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,34 +90,62 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
          * @return {@code this}
-         * @param apiName This parameter is required.
+         * @param apiName Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder apiName(final java.lang.String apiName) {
             this.props.apiName(apiName);
             return this;
         }
+        /**
+         * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
+         * @return {@code this}
+         * @param apiName Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         */
+        public Builder apiName(final com.aliyun.ros.cdk.core.IResolvable apiName) {
+            this.props.apiName(apiName);
+            return this;
+        }
 
         /**
+         * Property groupId: The id of the Group.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The id of the Group.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property requestConfig: The configuration of the request.
+         * <p>
          * @return {@code this}
-         * @param requestConfig This parameter is required.
+         * @param requestConfig Property requestConfig: The configuration of the request. This parameter is required.
          */
         public Builder requestConfig(final com.aliyun.ros.cdk.core.IResolvable requestConfig) {
             this.props.requestConfig(requestConfig);
             return this;
         }
         /**
+         * Property requestConfig: The configuration of the request.
+         * <p>
          * @return {@code this}
-         * @param requestConfig This parameter is required.
+         * @param requestConfig Property requestConfig: The configuration of the request. This parameter is required.
          */
         public Builder requestConfig(final com.aliyun.ros.cdk.apigateway.RosApi.RequestConfigProperty requestConfig) {
             this.props.requestConfig(requestConfig);
@@ -116,34 +153,66 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property resultSample: The sample of the result.
+         * <p>
          * @return {@code this}
-         * @param resultSample This parameter is required.
+         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
          */
         public Builder resultSample(final java.lang.String resultSample) {
             this.props.resultSample(resultSample);
             return this;
         }
+        /**
+         * Property resultSample: The sample of the result.
+         * <p>
+         * @return {@code this}
+         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
+         */
+        public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
+            this.props.resultSample(resultSample);
+            return this;
+        }
 
         /**
+         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
+         * <p>
+         * Default is "JSON".
+         * <p>
          * @return {@code this}
-         * @param resultType This parameter is required.
+         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
          */
         public Builder resultType(final java.lang.String resultType) {
             this.props.resultType(resultType);
             return this;
         }
+        /**
+         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
+         * <p>
+         * Default is "JSON".
+         * <p>
+         * @return {@code this}
+         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
+         */
+        public Builder resultType(final com.aliyun.ros.cdk.core.IResolvable resultType) {
+            this.props.resultType(resultType);
+            return this;
+        }
 
         /**
+         * Property serviceConfig: The configuration of the service.
+         * <p>
          * @return {@code this}
-         * @param serviceConfig This parameter is required.
+         * @param serviceConfig Property serviceConfig: The configuration of the service. This parameter is required.
          */
         public Builder serviceConfig(final com.aliyun.ros.cdk.core.IResolvable serviceConfig) {
             this.props.serviceConfig(serviceConfig);
             return this;
         }
         /**
+         * Property serviceConfig: The configuration of the service.
+         * <p>
          * @return {@code this}
-         * @param serviceConfig This parameter is required.
+         * @param serviceConfig Property serviceConfig: The configuration of the service. This parameter is required.
          */
         public Builder serviceConfig(final com.aliyun.ros.cdk.apigateway.RosApi.ServiceConfigProperty serviceConfig) {
             this.props.serviceConfig(serviceConfig);
@@ -151,43 +220,99 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property visibility: Whether to make the API public.
+         * <p>
+         * "PUBLIC" or "PRIVATE".
+         * <p>
          * @return {@code this}
-         * @param visibility This parameter is required.
+         * @param visibility Property visibility: Whether to make the API public. This parameter is required.
          */
         public Builder visibility(final java.lang.String visibility) {
             this.props.visibility(visibility);
             return this;
         }
+        /**
+         * Property visibility: Whether to make the API public.
+         * <p>
+         * "PUBLIC" or "PRIVATE".
+         * <p>
+         * @return {@code this}
+         * @param visibility Property visibility: Whether to make the API public. This parameter is required.
+         */
+        public Builder visibility(final com.aliyun.ros.cdk.core.IResolvable visibility) {
+            this.props.visibility(visibility);
+            return this;
+        }
 
         /**
+         * Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT: DEFAULT: Default (set by group).
+         * <p>
+         * DISABLE: Not allowed
+         * HEADER: Allow AppCode header authentication
+         * HEADER_QUERY: Allow AppCode header and query authentication
+         * <p>
          * @return {@code this}
-         * @param appCodeAuthType This parameter is required.
+         * @param appCodeAuthType Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT: DEFAULT: Default (set by group). This parameter is required.
          */
         public Builder appCodeAuthType(final java.lang.String appCodeAuthType) {
             this.props.appCodeAuthType(appCodeAuthType);
             return this;
         }
+        /**
+         * Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT: DEFAULT: Default (set by group).
+         * <p>
+         * DISABLE: Not allowed
+         * HEADER: Allow AppCode header authentication
+         * HEADER_QUERY: Allow AppCode header and query authentication
+         * <p>
+         * @return {@code this}
+         * @param appCodeAuthType Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT: DEFAULT: Default (set by group). This parameter is required.
+         */
+        public Builder appCodeAuthType(final com.aliyun.ros.cdk.core.IResolvable appCodeAuthType) {
+            this.props.appCodeAuthType(appCodeAuthType);
+            return this;
+        }
 
         /**
+         * Property authType: Type of authorization of the API .
+         * <p>
+         * "APP","ANONYMOUS", or "APPOPENID"
+         * <p>
          * @return {@code this}
-         * @param authType This parameter is required.
+         * @param authType Property authType: Type of authorization of the API . This parameter is required.
          */
         public Builder authType(final java.lang.String authType) {
             this.props.authType(authType);
             return this;
         }
+        /**
+         * Property authType: Type of authorization of the API .
+         * <p>
+         * "APP","ANONYMOUS", or "APPOPENID"
+         * <p>
+         * @return {@code this}
+         * @param authType Property authType: Type of authorization of the API . This parameter is required.
+         */
+        public Builder authType(final com.aliyun.ros.cdk.core.IResolvable authType) {
+            this.props.authType(authType);
+            return this;
+        }
 
         /**
+         * Property constParameters: The const parameters.
+         * <p>
          * @return {@code this}
-         * @param constParameters This parameter is required.
+         * @param constParameters Property constParameters: The const parameters. This parameter is required.
          */
         public Builder constParameters(final com.aliyun.ros.cdk.core.IResolvable constParameters) {
             this.props.constParameters(constParameters);
             return this;
         }
         /**
+         * Property constParameters: The const parameters.
+         * <p>
          * @return {@code this}
-         * @param constParameters This parameter is required.
+         * @param constParameters Property constParameters: The const parameters. This parameter is required.
          */
         public Builder constParameters(final java.util.List<? extends java.lang.Object> constParameters) {
             this.props.constParameters(constParameters);
@@ -195,25 +320,66 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: Description of the API, less than 180 characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description of the API, less than 180 characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description of the API, less than 180 characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description of the API, less than 180 characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property disableInternet: Set DisableInternet to true, only support intranet to call API.
+         * <p>
+         * Set DisableInternet to false, then the call is not restricted.
+         * <p>
          * @return {@code this}
-         * @param errorCodeSamples This parameter is required.
+         * @param disableInternet Property disableInternet: Set DisableInternet to true, only support intranet to call API. This parameter is required.
+         */
+        public Builder disableInternet(final java.lang.Boolean disableInternet) {
+            this.props.disableInternet(disableInternet);
+            return this;
+        }
+        /**
+         * Property disableInternet: Set DisableInternet to true, only support intranet to call API.
+         * <p>
+         * Set DisableInternet to false, then the call is not restricted.
+         * <p>
+         * @return {@code this}
+         * @param disableInternet Property disableInternet: Set DisableInternet to true, only support intranet to call API. This parameter is required.
+         */
+        public Builder disableInternet(final com.aliyun.ros.cdk.core.IResolvable disableInternet) {
+            this.props.disableInternet(disableInternet);
+            return this;
+        }
+
+        /**
+         * Property errorCodeSamples: The Error Code samples.
+         * <p>
+         * @return {@code this}
+         * @param errorCodeSamples Property errorCodeSamples: The Error Code samples. This parameter is required.
          */
         public Builder errorCodeSamples(final com.aliyun.ros.cdk.core.IResolvable errorCodeSamples) {
             this.props.errorCodeSamples(errorCodeSamples);
             return this;
         }
         /**
+         * Property errorCodeSamples: The Error Code samples.
+         * <p>
          * @return {@code this}
-         * @param errorCodeSamples This parameter is required.
+         * @param errorCodeSamples Property errorCodeSamples: The Error Code samples. This parameter is required.
          */
         public Builder errorCodeSamples(final java.util.List<? extends java.lang.Object> errorCodeSamples) {
             this.props.errorCodeSamples(errorCodeSamples);
@@ -221,25 +387,70 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property failResultSample: The sample of the fail result.
+         * <p>
          * @return {@code this}
-         * @param failResultSample This parameter is required.
+         * @param failResultSample Property failResultSample: The sample of the fail result. This parameter is required.
          */
         public Builder failResultSample(final java.lang.String failResultSample) {
             this.props.failResultSample(failResultSample);
             return this;
         }
+        /**
+         * Property failResultSample: The sample of the fail result.
+         * <p>
+         * @return {@code this}
+         * @param failResultSample Property failResultSample: The sample of the fail result. This parameter is required.
+         */
+        public Builder failResultSample(final com.aliyun.ros.cdk.core.IResolvable failResultSample) {
+            this.props.failResultSample(failResultSample);
+            return this;
+        }
 
         /**
+         * Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,  this is the unique identifier of the request, generally using UUID to identify.
+         * <p>
+         * The API gateway will verify the validity of this parameter after receiving this parameter.
+         * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+         * Set ForceNonceCheck to false, then no check.
+         * <p>
          * @return {@code this}
-         * @param openIdConnectConfig This parameter is required.
+         * @param forceNonceCheck Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,  this is the unique identifier of the request, generally using UUID to identify. This parameter is required.
+         */
+        public Builder forceNonceCheck(final java.lang.Boolean forceNonceCheck) {
+            this.props.forceNonceCheck(forceNonceCheck);
+            return this;
+        }
+        /**
+         * Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,  this is the unique identifier of the request, generally using UUID to identify.
+         * <p>
+         * The API gateway will verify the validity of this parameter after receiving this parameter.
+         * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+         * Set ForceNonceCheck to false, then no check.
+         * <p>
+         * @return {@code this}
+         * @param forceNonceCheck Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,  this is the unique identifier of the request, generally using UUID to identify. This parameter is required.
+         */
+        public Builder forceNonceCheck(final com.aliyun.ros.cdk.core.IResolvable forceNonceCheck) {
+            this.props.forceNonceCheck(forceNonceCheck);
+            return this;
+        }
+
+        /**
+         * Property openIdConnectConfig: The configuration of the open id.
+         * <p>
+         * @return {@code this}
+         * @param openIdConnectConfig Property openIdConnectConfig: The configuration of the open id. This parameter is required.
          */
         public Builder openIdConnectConfig(final com.aliyun.ros.cdk.core.IResolvable openIdConnectConfig) {
             this.props.openIdConnectConfig(openIdConnectConfig);
             return this;
         }
         /**
+         * Property openIdConnectConfig: The configuration of the open id.
+         * <p>
          * @return {@code this}
-         * @param openIdConnectConfig This parameter is required.
+         * @param openIdConnectConfig Property openIdConnectConfig: The configuration of the open id. This parameter is required.
          */
         public Builder openIdConnectConfig(final com.aliyun.ros.cdk.apigateway.RosApi.OpenIdConnectConfigProperty openIdConnectConfig) {
             this.props.openIdConnectConfig(openIdConnectConfig);
@@ -247,16 +458,20 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property requestParameters: The request parameters.
+         * <p>
          * @return {@code this}
-         * @param requestParameters This parameter is required.
+         * @param requestParameters Property requestParameters: The request parameters. This parameter is required.
          */
         public Builder requestParameters(final com.aliyun.ros.cdk.core.IResolvable requestParameters) {
             this.props.requestParameters(requestParameters);
             return this;
         }
         /**
+         * Property requestParameters: The request parameters.
+         * <p>
          * @return {@code this}
-         * @param requestParameters This parameter is required.
+         * @param requestParameters Property requestParameters: The request parameters. This parameter is required.
          */
         public Builder requestParameters(final java.util.List<? extends java.lang.Object> requestParameters) {
             this.props.requestParameters(requestParameters);
@@ -264,16 +479,20 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serviceParameters: The service parameters.
+         * <p>
          * @return {@code this}
-         * @param serviceParameters This parameter is required.
+         * @param serviceParameters Property serviceParameters: The service parameters. This parameter is required.
          */
         public Builder serviceParameters(final com.aliyun.ros.cdk.core.IResolvable serviceParameters) {
             this.props.serviceParameters(serviceParameters);
             return this;
         }
         /**
+         * Property serviceParameters: The service parameters.
+         * <p>
          * @return {@code this}
-         * @param serviceParameters This parameter is required.
+         * @param serviceParameters Property serviceParameters: The service parameters. This parameter is required.
          */
         public Builder serviceParameters(final java.util.List<? extends java.lang.Object> serviceParameters) {
             this.props.serviceParameters(serviceParameters);
@@ -281,16 +500,20 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters.
+         * <p>
          * @return {@code this}
-         * @param serviceParametersMap This parameter is required.
+         * @param serviceParametersMap Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters. This parameter is required.
          */
         public Builder serviceParametersMap(final com.aliyun.ros.cdk.core.IResolvable serviceParametersMap) {
             this.props.serviceParametersMap(serviceParametersMap);
             return this;
         }
         /**
+         * Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters.
+         * <p>
          * @return {@code this}
-         * @param serviceParametersMap This parameter is required.
+         * @param serviceParametersMap Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters. This parameter is required.
          */
         public Builder serviceParametersMap(final java.util.List<? extends java.lang.Object> serviceParametersMap) {
             this.props.serviceParametersMap(serviceParametersMap);
@@ -298,19 +521,36 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property systemParameters: The system parameters.
+         * <p>
          * @return {@code this}
-         * @param systemParameters This parameter is required.
+         * @param systemParameters Property systemParameters: The system parameters. This parameter is required.
          */
         public Builder systemParameters(final com.aliyun.ros.cdk.core.IResolvable systemParameters) {
             this.props.systemParameters(systemParameters);
             return this;
         }
         /**
+         * Property systemParameters: The system parameters.
+         * <p>
          * @return {@code this}
-         * @param systemParameters This parameter is required.
+         * @param systemParameters Property systemParameters: The system parameters. This parameter is required.
          */
         public Builder systemParameters(final java.util.List<? extends java.lang.Object> systemParameters) {
             this.props.systemParameters(systemParameters);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

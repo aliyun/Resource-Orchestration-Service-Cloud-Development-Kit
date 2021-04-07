@@ -11,17 +11,17 @@ export interface NamespaceProps {
     /**
      * Property namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
      */
-    readonly namespaceId: string;
+    readonly namespaceId: string | ros.IResolvable;
 
     /**
      * Property namespaceName: Namespace name
      */
-    readonly namespaceName: string;
+    readonly namespaceName: string | ros.IResolvable;
 
     /**
      * Property namespaceDescription: Namespace description
      */
-    readonly namespaceDescription?: string;
+    readonly namespaceDescription?: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class Namespace extends ros.Resource {
     /**
      * Attribute NamespaceId: Namespace ID
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAE::Namespace`.

@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.861Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosAddressBookProps")
 @software.amazon.jsii.Jsii.Proxy(RosAddressBookProps.Jsii$Proxy.class)
 public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescription();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAddressList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressList() {
         return null;
     }
 
@@ -34,7 +34,7 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
@@ -46,7 +46,7 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTagRelation() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTagRelation() {
         return null;
     }
 
@@ -60,14 +60,14 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosAddressBookProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAddressBookProps> {
-        private java.lang.String description;
-        private java.lang.String groupName;
-        private java.lang.String groupType;
-        private java.lang.String addressList;
+        private java.lang.Object description;
+        private java.lang.Object groupName;
+        private java.lang.Object groupType;
+        private java.lang.Object addressList;
         private java.lang.Object autoAddTagEcs;
-        private java.lang.String regionId;
+        private java.lang.Object regionId;
         private java.lang.Object tagList;
-        private java.lang.String tagRelation;
+        private java.lang.Object tagRelation;
 
         /**
          * Sets the value of {@link RosAddressBookProps#getDescription}
@@ -75,6 +75,16 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAddressBookProps#getDescription}
+         * @param description the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -90,6 +100,16 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosAddressBookProps#getGroupName}
+         * @param groupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAddressBookProps#getGroupType}
          * @param groupType the value to be set. This parameter is required.
          * @return {@code this}
@@ -100,11 +120,31 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosAddressBookProps#getGroupType}
+         * @param groupType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.groupType = groupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAddressBookProps#getAddressList}
          * @param addressList the value to be set.
          * @return {@code this}
          */
         public Builder addressList(java.lang.String addressList) {
+            this.addressList = addressList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAddressBookProps#getAddressList}
+         * @param addressList the value to be set.
+         * @return {@code this}
+         */
+        public Builder addressList(com.aliyun.ros.cdk.core.IResolvable addressList) {
             this.addressList = addressList;
             return this;
         }
@@ -140,6 +180,16 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosAddressBookProps#getRegionId}
+         * @param regionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAddressBookProps#getTagList}
          * @param tagList the value to be set.
          * @return {@code this}
@@ -170,6 +220,16 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosAddressBookProps#getTagRelation}
+         * @param tagRelation the value to be set.
+         * @return {@code this}
+         */
+        public Builder tagRelation(com.aliyun.ros.cdk.core.IResolvable tagRelation) {
+            this.tagRelation = tagRelation;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAddressBookProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -185,14 +245,14 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAddressBookProps {
-        private final java.lang.String description;
-        private final java.lang.String groupName;
-        private final java.lang.String groupType;
-        private final java.lang.String addressList;
+        private final java.lang.Object description;
+        private final java.lang.Object groupName;
+        private final java.lang.Object groupType;
+        private final java.lang.Object addressList;
         private final java.lang.Object autoAddTagEcs;
-        private final java.lang.String regionId;
+        private final java.lang.Object regionId;
         private final java.lang.Object tagList;
-        private final java.lang.String tagRelation;
+        private final java.lang.Object tagRelation;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -200,20 +260,20 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.addressList = software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.addressList = software.amazon.jsii.Kernel.get(this, "addressList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoAddTagEcs = software.amazon.jsii.Kernel.get(this, "autoAddTagEcs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tagList = software.amazon.jsii.Kernel.get(this, "tagList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tagRelation = software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tagRelation = software.amazon.jsii.Kernel.get(this, "tagRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.String groupName, final java.lang.String groupType, final java.lang.String addressList, final java.lang.Object autoAddTagEcs, final java.lang.String regionId, final java.lang.Object tagList, final java.lang.String tagRelation) {
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object groupName, final java.lang.Object groupType, final java.lang.Object addressList, final java.lang.Object autoAddTagEcs, final java.lang.Object regionId, final java.lang.Object tagList, final java.lang.Object tagRelation) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = java.util.Objects.requireNonNull(description, "description is required");
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
@@ -226,22 +286,22 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getGroupType() {
+        public final java.lang.Object getGroupType() {
             return this.groupType;
         }
 
         @Override
-        public final java.lang.String getAddressList() {
+        public final java.lang.Object getAddressList() {
             return this.addressList;
         }
 
@@ -251,7 +311,7 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 
@@ -261,7 +321,7 @@ public interface RosAddressBookProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getTagRelation() {
+        public final java.lang.Object getTagRelation() {
             return this.tagRelation;
         }
 

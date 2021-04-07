@@ -11,6 +11,7 @@
 @alicloud/ros-cdk-nas.RosAccessRule=com.aliyun.ros.cdk.nas.RosAccessRule
 @alicloud/ros-cdk-nas.RosAccessRuleProps=com.aliyun.ros.cdk.nas.RosAccessRuleProps
 @alicloud/ros-cdk-nas.RosFileSystem=com.aliyun.ros.cdk.nas.RosFileSystem
+@alicloud/ros-cdk-nas.RosFileSystem.TagsProperty=com.aliyun.ros.cdk.nas.RosFileSystem$TagsProperty
 @alicloud/ros-cdk-nas.RosFileSystemProps=com.aliyun.ros.cdk.nas.RosFileSystemProps
 @alicloud/ros-cdk-nas.RosMountTarget=com.aliyun.ros.cdk.nas.RosMountTarget
 @alicloud/ros-cdk-nas.RosMountTargetProps=com.aliyun.ros.cdk.nas.RosMountTargetProps

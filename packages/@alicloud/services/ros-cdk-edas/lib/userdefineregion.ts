@@ -11,12 +11,12 @@ export interface UserDefineRegionProps {
     /**
      * Property regionName: Logical region (or namespace) name
      */
-    readonly regionName: string;
+    readonly regionName: string | ros.IResolvable;
 
     /**
      * Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier")
      */
-    readonly regionTag: string;
+    readonly regionTag: string | ros.IResolvable;
 
     /**
      * Property debugEnable: Whether debug is enable
@@ -26,7 +26,7 @@ export interface UserDefineRegionProps {
     /**
      * Property description: Logic region (or namespace) description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -42,27 +42,27 @@ export class UserDefineRegion extends ros.Resource {
     /**
      * Attribute BelongRegion: Under the physical region ID
      */
-    public readonly attrBelongRegion: any;
+    public readonly attrBelongRegion: ros.IResolvable;
 
     /**
      * Attribute DebugEnable: Whether debug is enable
      */
-    public readonly attrDebugEnable: any;
+    public readonly attrDebugEnable: ros.IResolvable;
 
     /**
      * Attribute Id: Resource ID
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * Attribute RegionName: Region name
      */
-    public readonly attrRegionName: any;
+    public readonly attrRegionName: ros.IResolvable;
 
     /**
      * Attribute UserId: User account ID
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::UserDefineRegion`.

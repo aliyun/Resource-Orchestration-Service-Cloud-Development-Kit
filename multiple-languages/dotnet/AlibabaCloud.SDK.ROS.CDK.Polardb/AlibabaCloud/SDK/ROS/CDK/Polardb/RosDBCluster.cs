@@ -47,82 +47,82 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterConnectionString: The cluster connection string of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterConnectionString
+        [JsiiProperty(name: "attrClusterConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterEndpointId: The cluster endpoint ID of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterEndpointId
+        [JsiiProperty(name: "attrClusterEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: CustomConnectionStrings: The custom connection strings of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCustomConnectionStrings
+        [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomConnectionStrings
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: CustomEndpointIds: The custom endpoint IDs of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrCustomEndpointIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCustomEndpointIds
+        [JsiiProperty(name: "attrCustomEndpointIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomEndpointIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbClusterId
+        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: DBNodeIds: The ID list of cluster nodes.
         /// </remarks>
-        [JsiiProperty(name: "attrDbNodeIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbNodeIds
+        [JsiiProperty(name: "attrDbNodeIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbNodeIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: OrderId: The Order ID.
         /// </remarks>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: PrimaryConnectionString: The primary connection string of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrPrimaryConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrimaryConnectionString
+        [JsiiProperty(name: "attrPrimaryConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: PrimaryEndpointId: The primary endpoint ID of the db cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrPrimaryEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrimaryEndpointId
+        [JsiiProperty(name: "attrPrimaryEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -132,21 +132,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-        /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
         /// </remarks>
-        [JsiiProperty(name: "dbNodeClass", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbNodeClass
+        [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbNodeClass
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -156,10 +147,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// PostgreSQL
         /// Oracle
         /// </remarks>
-        [JsiiProperty(name: "dbType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbType
+        [JsiiProperty(name: "dbType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -169,10 +160,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// PostgreSQL: 11
         /// Oracle: 11
         /// </remarks>
-        [JsiiProperty(name: "dbVersion", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbVersion
+        [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbVersion
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -188,10 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Postpaid: pay-as-you-go
         /// Prepaid: subscription
         /// </remarks>
-        [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string PayType
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object PayType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -199,10 +190,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? AutoRenewPeriod
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoRenewPeriod
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -215,10 +206,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Note: This parameter takes effect only when the value of DBType is MySQL.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? BackupRetentionPolicyOnClusterDeletion
+        [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? BackupRetentionPolicyOnClusterDeletion
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -234,10 +225,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? CloneDataPoint
+        [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CloneDataPoint
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -245,10 +236,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: clusterNetworkType: The network type of the cluster. Currently, only VPC is supported. Default value: VPC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ClusterNetworkType
+        [JsiiProperty(name: "clusterNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ClusterNetworkType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -256,10 +247,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "creationCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? CreationCategory
+        [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CreationCategory
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -277,10 +268,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "creationOption", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? CreationOption
+        [JsiiProperty(name: "creationOption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CreationOption
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -292,10 +283,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DbClusterDescription
+        [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DbClusterDescription
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -317,10 +308,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Note: This parameter takes effect only when DBType is MySQL.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DefaultTimeZone
+        [JsiiProperty(name: "defaultTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DefaultTimeZone
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -329,10 +320,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Note: This parameter is required when the CreationOption is CreateGdnStandby.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "gdnId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? GdnId
+        [JsiiProperty(name: "gdnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? GdnId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -343,10 +334,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Note: This parameter takes effect only when the value of DBType is MySQL.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? LowerCaseTableNames
+        [JsiiProperty(name: "lowerCaseTableNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? LowerCaseTableNames
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -356,10 +347,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maintainTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MaintainTime
+        [JsiiProperty(name: "maintainTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MaintainTime
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -367,10 +358,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -385,10 +376,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// that the cluster is not renewed.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "renewalStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RenewalStatus
+        [JsiiProperty(name: "renewalStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RenewalStatus
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -396,22 +387,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupIds: The ID of the security group. 
+        /// <strong>Property</strong>: securityGroupIds: The ID of the security group.
         /// You can add up to three security groups to a cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? SecurityGroupIds
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? SecurityGroupIds
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -419,10 +410,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: securityIpList: The whitelist of the Apsara PolarDB cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityIpList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SecurityIpList
+        [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecurityIpList
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -433,10 +424,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// This parameter is required if the CreationOption parameter is not set to Normal.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sourceResourceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SourceResourceId
+        [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SourceResourceId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
 
@@ -458,10 +460,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: vpcId: The ID of the VPC to connect to.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VpcId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -469,10 +471,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch to connect to.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VSwitchId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -480,33 +482,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query available zones.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IDBClusterParametersProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.DBClusterParametersProperty")]
         public interface IDBClusterParametersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values: 
+            /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values:
             /// - Auto: The system automatically determines how the modified values of parameters take effect.
-            /// If all the modified values of parameters can take effect without a cluster restart, 
-            /// they immediately take effect. If a cluster restart is required to make the modified values  
-            /// of some parameters take effect, all of them take effect after a cluster restart 
-            /// is performed within the maintenance window. 
-            /// - Immediately: If all the modified values of parameters can take effect without a 
-            /// cluster restart, the modifications immediately take effect. If a cluster restart is 
-            /// required to make the modified values of some parameters take effect, 
-            /// the cluster is immediately restarted for the modifications to take effect. 
-            /// - MaintainTime: The modified values of parameters take effect within the maintenance window. 
+            /// If all the modified values of parameters can take effect without a cluster restart,
+            /// they immediately take effect. If a cluster restart is required to make the modified values
+            /// of some parameters take effect, all of them take effect after a cluster restart
+            /// is performed within the maintenance window.
+            /// - Immediately: If all the modified values of parameters can take effect without a
+            /// cluster restart, the modifications immediately take effect. If a cluster restart is
+            /// required to make the modified values of some parameters take effect,
+            /// the cluster is immediately restarted for the modifications to take effect.
+            /// - MaintainTime: The modified values of parameters take effect within the maintenance window.
             /// All the modified values of parameters take effect within the maintenance window.
             /// Default value: Auto.
             /// </remarks>
-            [JsiiProperty(name: "effectiveTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "effectiveTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? EffectiveTime
+            object? EffectiveTime
             {
                 get
                 {
@@ -515,15 +517,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values. 
-            /// The parameter values are strings, for example, 
+            /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values.
+            /// The parameter values are strings, for example,
             /// {"auto_increment_increment":"1","character_set_filesystem":"utf8"}.
-            /// You can call the DescribeDBClusterParameters operation to 
+            /// You can call the DescribeDBClusterParameters operation to
             /// view the parameters of the PolarDB cluster.
             /// </remarks>
-            [JsiiProperty(name: "parameters", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Parameters
+            object? Parameters
             {
                 get
                 {
@@ -539,39 +541,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values: 
+                /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values:
                 /// - Auto: The system automatically determines how the modified values of parameters take effect.
-                /// If all the modified values of parameters can take effect without a cluster restart, 
-                /// they immediately take effect. If a cluster restart is required to make the modified values  
-                /// of some parameters take effect, all of them take effect after a cluster restart 
-                /// is performed within the maintenance window. 
-                /// - Immediately: If all the modified values of parameters can take effect without a 
-                /// cluster restart, the modifications immediately take effect. If a cluster restart is 
-                /// required to make the modified values of some parameters take effect, 
-                /// the cluster is immediately restarted for the modifications to take effect. 
-                /// - MaintainTime: The modified values of parameters take effect within the maintenance window. 
+                /// If all the modified values of parameters can take effect without a cluster restart,
+                /// they immediately take effect. If a cluster restart is required to make the modified values
+                /// of some parameters take effect, all of them take effect after a cluster restart
+                /// is performed within the maintenance window.
+                /// - Immediately: If all the modified values of parameters can take effect without a
+                /// cluster restart, the modifications immediately take effect. If a cluster restart is
+                /// required to make the modified values of some parameters take effect,
+                /// the cluster is immediately restarted for the modifications to take effect.
+                /// - MaintainTime: The modified values of parameters take effect within the maintenance window.
                 /// All the modified values of parameters take effect within the maintenance window.
                 /// Default value: Auto.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "effectiveTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? EffectiveTime
+                [JsiiProperty(name: "effectiveTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EffectiveTime
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values. 
-                /// The parameter values are strings, for example, 
+                /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values.
+                /// The parameter values are strings, for example,
                 /// {"auto_increment_increment":"1","character_set_filesystem":"utf8"}.
-                /// You can call the DescribeDBClusterParameters operation to 
+                /// You can call the DescribeDBClusterParameters operation to
                 /// view the parameters of the PolarDB cluster.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "parameters", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Parameters
+                [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Parameters
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -579,38 +581,116 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         public class DBClusterParametersProperty : AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IDBClusterParametersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values: 
+            /// <strong>Property</strong>: effectiveTime: The time when the modified values of parameters take effect. Valid values:
             /// - Auto: The system automatically determines how the modified values of parameters take effect.
-            /// If all the modified values of parameters can take effect without a cluster restart, 
-            /// they immediately take effect. If a cluster restart is required to make the modified values  
-            /// of some parameters take effect, all of them take effect after a cluster restart 
-            /// is performed within the maintenance window. 
-            /// - Immediately: If all the modified values of parameters can take effect without a 
-            /// cluster restart, the modifications immediately take effect. If a cluster restart is 
-            /// required to make the modified values of some parameters take effect, 
-            /// the cluster is immediately restarted for the modifications to take effect. 
-            /// - MaintainTime: The modified values of parameters take effect within the maintenance window. 
+            /// If all the modified values of parameters can take effect without a cluster restart,
+            /// they immediately take effect. If a cluster restart is required to make the modified values
+            /// of some parameters take effect, all of them take effect after a cluster restart
+            /// is performed within the maintenance window.
+            /// - Immediately: If all the modified values of parameters can take effect without a
+            /// cluster restart, the modifications immediately take effect. If a cluster restart is
+            /// required to make the modified values of some parameters take effect,
+            /// the cluster is immediately restarted for the modifications to take effect.
+            /// - MaintainTime: The modified values of parameters take effect within the maintenance window.
             /// All the modified values of parameters take effect within the maintenance window.
             /// Default value: Auto.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "effectiveTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? EffectiveTime
+            [JsiiProperty(name: "effectiveTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? EffectiveTime
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values. 
-            /// The parameter values are strings, for example, 
+            /// <strong>Property</strong>: parameters: The JSON string that consists of parameters and values.
+            /// The parameter values are strings, for example,
             /// {"auto_increment_increment":"1","character_set_filesystem":"utf8"}.
-            /// You can call the DescribeDBClusterParameters operation to 
+            /// You can call the DescribeDBClusterParameters operation to
             /// view the parameters of the PolarDB cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parameters", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Parameters
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Parameters
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Value
             {
                 get;
                 set;

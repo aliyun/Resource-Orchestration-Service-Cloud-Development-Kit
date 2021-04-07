@@ -16,16 +16,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// 4: Instance of the public type
         /// 5: Instance of the VPC type
         /// </remarks>
-        [JsiiProperty(name: "deployType", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double DeployType
+        [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DeployType
         {
             get;
             set;
         }
 
         /// <summary>Property diskSize: The size of the disk to be configured for the Message Queue for Apache Kafka instance.</summary>
-        [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double DiskSize
+        [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DiskSize
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// 0: Ultra disk
         /// 1: SSD
         /// </remarks>
-        [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DiskType
+        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DiskType
         {
             get;
             set;
@@ -51,8 +51,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// Different specifications have different default values, and extra fees are charged.
         /// For more information, see Billing.
         /// </remarks>
-        [JsiiProperty(name: "topicQuota", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double TopicQuota
+        [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TopicQuota
         {
             get;
             set;
@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         /// <summary>Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "deployOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "deployOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty\"}]}}", isOptional: true, isOverride: true)]
         public object? DeployOption
         {
             get;
@@ -72,8 +72,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// This parameter must be specified when the DeployType parameter is set to 4.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "eipMax", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? EipMax
+        [JsiiProperty(name: "eipMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EipMax
         {
             get;
             set;
@@ -84,8 +84,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// For more information about the value range, see Billing.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ioMax", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? IoMax
+        [JsiiProperty(name: "ioMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IoMax
         {
             get;
             set;
@@ -97,8 +97,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// It is recommended that you only fill in the flow specification
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ioMaxSpec", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IoMaxSpec
+        [JsiiProperty(name: "ioMaxSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IoMaxSpec
         {
             get;
             set;
@@ -106,8 +106,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         /// <summary>Property payType: Pay by hour or month.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PayType
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PayType
         {
             get;
             set;
@@ -120,8 +120,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// normal: Normal version
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "specType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SpecType
+        [JsiiProperty(name: "specType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SpecType
         {
             get;
             set;
@@ -132,8 +132,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.ITagsProperty[]? Tags
         {
             get;
             set;

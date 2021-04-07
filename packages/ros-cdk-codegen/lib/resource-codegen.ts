@@ -210,7 +210,7 @@ export default class ResourceCodeGenerator {
         this.docLink(undefined, `Attribute ${attributeName}: ${(attributeSpec as schema.Description).Description}`);
         const attr = genspec.attributeDefinition(attributeName);
 
-        this.code.line(`public readonly ${attr.propertyName}: any;`);
+        this.code.line(`public readonly ${attr.propertyName}: ${CORE}.IResolvable;`);
         attributes.push(attr);
       }
     }
@@ -359,6 +359,9 @@ export default class ResourceCodeGenerator {
 
       if (schema.isMapProperty(propSpec)) {
         alternatives.push(`{ [key: string]: (${union}) }`);
+      } else if (schema.isListProperty(propSpec) &&
+          (propSpec as schema.PrimitiveListProperty).PrimitiveItemType === schema.PrimitiveType.AnyDict) {
+        alternatives.push(`Array<{ [key: string]: any }>`);
       } else {
         // To make TSLint happy, we have to either emit: SingleType[] or Array<Alt1 | Alt2>
         if (union.indexOf('|') !== -1) {
@@ -435,18 +438,19 @@ function tokenizableType(alternatives: string[]): boolean {
     return false;
   }
 
-  const type = alternatives[0];
-  if (type === 'string') {
-    return true;
-  }
-
-  if (type === 'string[]') {
-    return true;
-  }
-
-  if (type === 'number') {
-    return true;
-  }
+  // 支持IResolvable隐式转换
+  // const type = alternatives[0];
+  // if (type === 'string') {
+  //   return true;
+  // }
+  //
+  // if (type === 'string[]') {
+  //   return true;
+  // }
+  //
+  // if (type === 'number') {
+  //   return true;
+  // }
 
   return false;
 }

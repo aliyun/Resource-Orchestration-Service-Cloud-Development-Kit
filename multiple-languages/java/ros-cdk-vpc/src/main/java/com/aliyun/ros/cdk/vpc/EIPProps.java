@@ -3,86 +3,124 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPProps")
 @software.amazon.jsii.Jsii.Proxy(EIPProps.Jsii$Proxy.class)
 public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property autoPay: Automatic Payment.
+     * <p>
+     * Default is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property bandwidth: Bandwidth for the output network.
+     * <p>
+     * Default is 5MB.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBandwidth() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return null;
     }
 
     /**
+     * Property deletionProtection: Whether to enable deletion protection.
+     * <p>
+     * Default to False.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
     /**
+     * Property description: Optional.
+     * <p>
+     * The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property instanceChargeType: The resource charge type.
+     * <p>
+     * Default value is Postpaid
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
+     * Property internetChargeType: The network charge type.
+     * <p>
+     * Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property isp: ISP tag for finance cloud region.
+     * <p>
+     * only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIsp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
         return null;
     }
 
     /**
+     * Property name: The name of the EIP.
+     * <p>
+     * The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property netmode: The network type.
+     * <p>
+     * Valid value: public (public network).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetmode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetmode() {
         return null;
     }
 
     /**
+     * Property period: Prepaid time period.
+     * <p>
+     * While choose by pay by month, it could be from 1 to 9 or 12, 24, 36.
+     * While choose pay by year, it could be from 1 to 3.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property pricingCycle: Price cycle of the resource.
+     * <p>
+     * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to eip.
+     * <p>
+     * Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> getTags() {
         return null;
     }
 
@@ -97,22 +135,23 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<EIPProps> {
         private java.lang.Object autoPay;
-        private java.lang.Number bandwidth;
+        private java.lang.Object bandwidth;
         private java.lang.Object deletionProtection;
-        private java.lang.String description;
-        private java.lang.String instanceChargeType;
-        private java.lang.String internetChargeType;
-        private java.lang.String isp;
-        private java.lang.String name;
-        private java.lang.String netmode;
-        private java.lang.Number period;
-        private java.lang.String pricingCycle;
-        private java.lang.String resourceGroupId;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object description;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object isp;
+        private java.lang.Object name;
+        private java.lang.Object netmode;
+        private java.lang.Object period;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
          * Sets the value of {@link EIPProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Automatic Payment.
+         *                Default is false.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -122,7 +161,8 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Automatic Payment.
+         *                Default is false.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -132,7 +172,8 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getBandwidth}
-         * @param bandwidth the value to be set.
+         * @param bandwidth Property bandwidth: Bandwidth for the output network.
+         *                  Default is 5MB.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -141,8 +182,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getBandwidth}
+         * @param bandwidth Property bandwidth: Bandwidth for the output network.
+         *                  Default is 5MB.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
+         *                           Default to False.
          * @return {@code this}
          */
         public Builder deletionProtection(java.lang.Boolean deletionProtection) {
@@ -152,7 +205,8 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
+         *                           Default to False.
          * @return {@code this}
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
@@ -162,7 +216,8 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Optional.
+         *                    The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -171,8 +226,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getDescription}
+         * @param description Property description: Optional.
+         *                    The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getInstanceChargeType}
-         * @param instanceChargeType the value to be set.
+         * @param instanceChargeType Property instanceChargeType: The resource charge type.
+         *                           Default value is Postpaid
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -181,8 +248,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getInstanceChargeType}
+         * @param instanceChargeType Property instanceChargeType: The resource charge type.
+         *                           Default value is Postpaid
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: The network charge type.
+         *                           Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -191,8 +270,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: The network charge type.
+         *                           Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getIsp}
-         * @param isp the value to be set.
+         * @param isp Property isp: ISP tag for finance cloud region.
+         *            only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
          * @return {@code this}
          */
         public Builder isp(java.lang.String isp) {
@@ -201,8 +292,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getIsp}
+         * @param isp Property isp: ISP tag for finance cloud region.
+         *            only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+         * @return {@code this}
+         */
+        public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the EIP.
+         *             The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -211,8 +314,20 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getName}
+         * @param name Property name: The name of the EIP.
+         *             The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getNetmode}
-         * @param netmode the value to be set.
+         * @param netmode Property netmode: The network type.
+         *                Valid value: public (public network).
          * @return {@code this}
          */
         public Builder netmode(java.lang.String netmode) {
@@ -221,8 +336,21 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getNetmode}
+         * @param netmode Property netmode: The network type.
+         *                Valid value: public (public network).
+         * @return {@code this}
+         */
+        public Builder netmode(com.aliyun.ros.cdk.core.IResolvable netmode) {
+            this.netmode = netmode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: Prepaid time period.
+         *               While choose by pay by month, it could be from 1 to 9 or 12, 24, 36.
+         *               While choose pay by year, it could be from 1 to 3.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -231,8 +359,21 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getPeriod}
+         * @param period Property period: Prepaid time period.
+         *               While choose by pay by month, it could be from 1 to 9 or 12, 24, 36.
+         *               While choose pay by year, it could be from 1 to 3.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -241,8 +382,19 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -251,13 +403,24 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EIPProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EIPProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to eip.
+         *             Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)tags;
             return this;
         }
 
@@ -278,18 +441,18 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EIPProps {
         private final java.lang.Object autoPay;
-        private final java.lang.Number bandwidth;
+        private final java.lang.Object bandwidth;
         private final java.lang.Object deletionProtection;
-        private final java.lang.String description;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String isp;
-        private final java.lang.String name;
-        private final java.lang.String netmode;
-        private final java.lang.Number period;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object description;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object isp;
+        private final java.lang.Object name;
+        private final java.lang.Object netmode;
+        private final java.lang.Object period;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -298,25 +461,25 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object autoPay, final java.lang.Number bandwidth, final java.lang.Object deletionProtection, final java.lang.String description, final java.lang.String instanceChargeType, final java.lang.String internetChargeType, final java.lang.String isp, final java.lang.String name, final java.lang.String netmode, final java.lang.Number period, final java.lang.String pricingCycle, final java.lang.String resourceGroupId, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        protected Jsii$Proxy(final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object isp, final java.lang.Object name, final java.lang.Object netmode, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.autoPay = autoPay;
             this.bandwidth = bandwidth;
@@ -330,7 +493,7 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
             this.period = period;
             this.pricingCycle = pricingCycle;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)tags;
         }
 
         @Override
@@ -339,7 +502,7 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
@@ -349,52 +512,52 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getIsp() {
+        public final java.lang.Object getIsp() {
             return this.isp;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getNetmode() {
+        public final java.lang.Object getNetmode() {
             return this.netmode;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> getTags() {
             return this.tags;
         }
 

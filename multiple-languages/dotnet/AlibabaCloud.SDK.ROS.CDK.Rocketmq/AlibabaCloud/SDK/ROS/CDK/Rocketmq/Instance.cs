@@ -33,52 +33,52 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         }
 
         /// <summary>Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.</summary>
-        [JsiiProperty(name: "attrHttpInternalEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpInternalEndpoint
+        [JsiiProperty(name: "attrHttpInternalEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpInternalEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.</summary>
-        [JsiiProperty(name: "attrHttpInternetEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpInternetEndpoint
+        [JsiiProperty(name: "attrHttpInternetEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpInternetEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.</summary>
-        [JsiiProperty(name: "attrHttpInternetSecureEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpInternetSecureEndpoint
+        [JsiiProperty(name: "attrHttpInternetSecureEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpInternetSecureEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceId: Instance ID created.</summary>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceName: Instance name.</summary>
-        [JsiiProperty(name: "attrInstanceName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceName
+        [JsiiProperty(name: "attrInstanceName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceType: Instance Type.</summary>
-        [JsiiProperty(name: "attrInstanceType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceType
+        [JsiiProperty(name: "attrInstanceType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.</summary>
-        [JsiiProperty(name: "attrTcpEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTcpEndpoint
+        [JsiiProperty(name: "attrTcpEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTcpEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

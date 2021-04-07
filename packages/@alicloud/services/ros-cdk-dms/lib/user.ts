@@ -11,32 +11,32 @@ export interface UserProps {
     /**
      * Property uid: UserAliYunUid
      */
-    readonly uid: string;
+    readonly uid: string | ros.IResolvable;
 
     /**
      * Property mobile: UserMobile
      */
-    readonly mobile?: string;
+    readonly mobile?: string | ros.IResolvable;
 
     /**
      * Property roleNames: UserRole
      */
-    readonly roleNames?: string[];
+    readonly roleNames?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property status: UserStatus
      */
-    readonly status?: string;
+    readonly status?: string | ros.IResolvable;
 
     /**
      * Property tid:
      */
-    readonly tid?: string;
+    readonly tid?: string | ros.IResolvable;
 
     /**
      * Property userName: UserNickName
      */
-    readonly userName?: string;
+    readonly userName?: string | ros.IResolvable;
 }
 
 /**
@@ -52,37 +52,37 @@ export class User extends ros.Resource {
     /**
      * Attribute Mobile: UserMobile
      */
-    public readonly attrMobile: any;
+    public readonly attrMobile: ros.IResolvable;
 
     /**
      * Attribute ParentUid: ParentAliYunUid
      */
-    public readonly attrParentUid: any;
+    public readonly attrParentUid: ros.IResolvable;
 
     /**
      * Attribute RoleIds: UserRoleId
      */
-    public readonly attrRoleIds: any;
+    public readonly attrRoleIds: ros.IResolvable;
 
     /**
      * Attribute RoleNames: UserRole
      */
-    public readonly attrRoleNames: any;
+    public readonly attrRoleNames: ros.IResolvable;
 
     /**
      * Attribute Uid: UserAliYunUid
      */
-    public readonly attrUid: any;
+    public readonly attrUid: ros.IResolvable;
 
     /**
      * Attribute UserId: UserId
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     /**
      * Attribute UserName: UserNickName
      */
-    public readonly attrUserName: any;
+    public readonly attrUserName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DMS::User`.

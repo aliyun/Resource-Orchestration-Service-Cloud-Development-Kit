@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     public interface IVServerGroupProps
     {
         /// <summary>Property loadBalancerId: The id of load balancer.</summary>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LoadBalancerId
         {
             get;
         }
 
         /// <summary>Property vServerGroupName: Display name of the VServerGroup.</summary>
-        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        string VServerGroupName
+        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VServerGroupName
         {
             get;
         }
@@ -42,17 +42,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <summary>Property loadBalancerId: The id of load balancer.</summary>
-            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-            public string LoadBalancerId
+            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LoadBalancerId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vServerGroupName: Display name of the VServerGroup.</summary>
-            [JsiiProperty(name: "vServerGroupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string VServerGroupName
+            [JsiiProperty(name: "vServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VServerGroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.</summary>

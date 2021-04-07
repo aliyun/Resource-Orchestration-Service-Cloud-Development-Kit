@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public class HandshakeProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IHandshakeProps
     {
         /// <summary>Property targetEntity: Invited account ID or login email.</summary>
-        [JsiiProperty(name: "targetEntity", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TargetEntity
+        [JsiiProperty(name: "targetEntity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TargetEntity
         {
             get;
             set;
@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// Valid values: Account, Email
         /// </remarks>
-        [JsiiProperty(name: "targetType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TargetType
+        [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TargetType
         {
             get;
             set;
@@ -31,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 
         /// <summary>Property note: Remarks.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "note", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Note
+        [JsiiProperty(name: "note", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Note
         {
             get;
             set;

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.595Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId();
 
     /**
      */
@@ -18,23 +18,23 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getClientAffinity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClientAffinity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -48,12 +48,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosListenerProps> {
-        private java.lang.String acceleratorId;
+        private java.lang.Object acceleratorId;
         private java.lang.Object portRanges;
-        private java.lang.String protocol;
-        private java.lang.String clientAffinity;
-        private java.lang.String description;
-        private java.lang.String name;
+        private java.lang.Object protocol;
+        private java.lang.Object clientAffinity;
+        private java.lang.Object description;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link RosListenerProps#getAcceleratorId}
@@ -61,6 +61,16 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder acceleratorId(java.lang.String acceleratorId) {
+            this.acceleratorId = acceleratorId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getAcceleratorId}
+         * @param acceleratorId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder acceleratorId(com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
             this.acceleratorId = acceleratorId;
             return this;
         }
@@ -96,11 +106,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getProtocol}
+         * @param protocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.protocol = protocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getClientAffinity}
          * @param clientAffinity the value to be set.
          * @return {@code this}
          */
         public Builder clientAffinity(java.lang.String clientAffinity) {
+            this.clientAffinity = clientAffinity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getClientAffinity}
+         * @param clientAffinity the value to be set.
+         * @return {@code this}
+         */
+        public Builder clientAffinity(com.aliyun.ros.cdk.core.IResolvable clientAffinity) {
             this.clientAffinity = clientAffinity;
             return this;
         }
@@ -116,11 +146,31 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getName}
          * @param name the value to be set.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -141,12 +191,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosListenerProps {
-        private final java.lang.String acceleratorId;
+        private final java.lang.Object acceleratorId;
         private final java.lang.Object portRanges;
-        private final java.lang.String protocol;
-        private final java.lang.String clientAffinity;
-        private final java.lang.String description;
-        private final java.lang.String name;
+        private final java.lang.Object protocol;
+        private final java.lang.Object clientAffinity;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,18 +204,18 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.portRanges = software.amazon.jsii.Kernel.get(this, "portRanges", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clientAffinity = software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clientAffinity = software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String acceleratorId, final java.lang.Object portRanges, final java.lang.String protocol, final java.lang.String clientAffinity, final java.lang.String description, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object portRanges, final java.lang.Object protocol, final java.lang.Object clientAffinity, final java.lang.Object description, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
             this.portRanges = java.util.Objects.requireNonNull(portRanges, "portRanges is required");
@@ -176,7 +226,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getAcceleratorId() {
+        public final java.lang.Object getAcceleratorId() {
             return this.acceleratorId;
         }
 
@@ -186,22 +236,22 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getProtocol() {
+        public final java.lang.Object getProtocol() {
             return this.protocol;
         }
 
         @Override
-        public final java.lang.String getClientAffinity() {
+        public final java.lang.Object getClientAffinity() {
             return this.clientAffinity;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

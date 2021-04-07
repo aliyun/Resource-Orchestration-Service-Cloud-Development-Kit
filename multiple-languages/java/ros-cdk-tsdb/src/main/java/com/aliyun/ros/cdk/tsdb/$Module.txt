@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-tsdb.HiTSDBInstance=com.aliyun.ros.cdk.tsdb.HiTSDBInstance
+@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps=com.aliyun.ros.cdk.tsdb.HiTSDBInstanceProps
+@alicloud/ros-cdk-tsdb.RosHiTSDBInstance=com.aliyun.ros.cdk.tsdb.RosHiTSDBInstance
+@alicloud/ros-cdk-tsdb.RosHiTSDBInstanceProps=com.aliyun.ros.cdk.tsdb.RosHiTSDBInstanceProps

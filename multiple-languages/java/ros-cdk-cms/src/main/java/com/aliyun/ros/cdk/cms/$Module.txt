@@ -61,3 +61,8 @@
 @alicloud/ros-cdk-cms.RosMonitorGroupProps=com.aliyun.ros.cdk.cms.RosMonitorGroupProps
 @alicloud/ros-cdk-cms.RosMonitoringAgentProcess=com.aliyun.ros.cdk.cms.RosMonitoringAgentProcess
 @alicloud/ros-cdk-cms.RosMonitoringAgentProcessProps=com.aliyun.ros.cdk.cms.RosMonitoringAgentProcessProps
+@alicloud/ros-cdk-cms.RosSiteMonitor=com.aliyun.ros.cdk.cms.RosSiteMonitor
+@alicloud/ros-cdk-cms.RosSiteMonitor.IspCitiesProperty=com.aliyun.ros.cdk.cms.RosSiteMonitor$IspCitiesProperty
+@alicloud/ros-cdk-cms.RosSiteMonitorProps=com.aliyun.ros.cdk.cms.RosSiteMonitorProps
+@alicloud/ros-cdk-cms.SiteMonitor=com.aliyun.ros.cdk.cms.SiteMonitor
+@alicloud/ros-cdk-cms.SiteMonitorProps=com.aliyun.ros.cdk.cms.SiteMonitorProps

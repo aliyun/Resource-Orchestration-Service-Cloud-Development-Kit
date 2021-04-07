@@ -18,6 +18,7 @@ export const stringToRosTemplate: Mapper = identity;
 export const booleanToRosTemplate: Mapper = identity;
 export const objectToRosTemplate: Mapper = identity;
 export const numberToRosTemplate: Mapper = identity;
+export const anyDictToRosTemplate: Mapper = identity;
 
 /**
  * The date needs to be formatted as an ISO date in UTC
@@ -346,6 +347,13 @@ export function validateDate(x: any): ValidationResult {
 export function validateObject(x: any): ValidationResult {
   if (canInspect(x) && typeof x !== "object") {
     return new ValidationResult(`${JSON.stringify(x)} should be an 'object'`);
+  }
+  return VALIDATION_SUCCESS;
+}
+
+export function validateAnyDict(x: any): ValidationResult {
+  if (canInspect(x) && typeof x !== "object") {
+    return new ValidationResult(`${JSON.stringify(x)} should be an 'Dict[str, Any]'`);
   }
   return VALIDATION_SUCCESS;
 }

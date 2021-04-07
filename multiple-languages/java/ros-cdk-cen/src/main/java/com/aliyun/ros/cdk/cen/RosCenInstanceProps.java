@@ -3,20 +3,26 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenInstanceProps.Jsii$Proxy.class)
 public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> getTags() {
         return null;
     }
 
@@ -30,8 +36,9 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosCenInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCenInstanceProps> {
-        private java.lang.String description;
-        private java.lang.String name;
+        private java.lang.Object description;
+        private java.lang.Object name;
+        private java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosCenInstanceProps#getDescription}
@@ -39,6 +46,16 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenInstanceProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -54,13 +71,34 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCenInstanceProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenInstanceProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosCenInstanceProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosCenInstanceProps build() {
-            return new Jsii$Proxy(description, name);
+            return new Jsii$Proxy(description, name, tags);
         }
     }
 
@@ -69,8 +107,9 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCenInstanceProps {
-        private final java.lang.String description;
-        private final java.lang.String name;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
+        private final java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -78,27 +117,35 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.String name) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object name, final java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = description;
             this.name = name;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -112,6 +159,9 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -132,13 +182,15 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             RosCenInstanceProps.Jsii$Proxy that = (RosCenInstanceProps.Jsii$Proxy) o;
 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

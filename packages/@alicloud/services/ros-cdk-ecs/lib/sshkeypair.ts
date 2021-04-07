@@ -11,17 +11,22 @@ export interface SSHKeyPairProps {
     /**
      * Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
      */
-    readonly keyPairName: string;
+    readonly keyPairName: string | ros.IResolvable;
 
     /**
      * Property publicKeyBody: SSH Public key. If PublicKeyBody is specified, existed public key body will be imported instead of creating new SSH key pair.
      */
-    readonly publicKeyBody?: string;
+    readonly publicKeyBody?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSSHKeyPair.TagsProperty[];
 }
 
 /**
@@ -37,17 +42,17 @@ export class SSHKeyPair extends ros.Resource {
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
      */
-    public readonly attrKeyPairFingerPrint: any;
+    public readonly attrKeyPairFingerPrint: ros.IResolvable;
 
     /**
      * Attribute KeyPairName: SSH Key pair name.
      */
-    public readonly attrKeyPairName: any;
+    public readonly attrKeyPairName: ros.IResolvable;
 
     /**
      * Attribute PrivateKeyBody: The private key of the key pair. Content of the RSA private key in the PKCS#8 format of the unencrypted PEM encoding. Refer to: https://www.openssl.org/docs/apps/pkcs8.html.User only can get the private key one time when and only when SSH key pair is created.
      */
-    public readonly attrPrivateKeyBody: any;
+    public readonly attrPrivateKeyBody: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::SSHKeyPair`.
@@ -63,6 +68,7 @@ export class SSHKeyPair extends ros.Resource {
             keyPairName: props.keyPairName,
             resourceGroupId: props.resourceGroupId,
             publicKeyBody: props.publicKeyBody,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSSHKeyPair;
         this.attrKeyPairFingerPrint = rosSSHKeyPair.attrKeyPairFingerPrint;

@@ -36,37 +36,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbId
+        [JsiiProperty(name: "attrGbId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute GbIp: GB signaling server address space provided.</summary>
         /// <remarks>
         /// (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbIp", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbIp
+        [JsiiProperty(name: "attrGbIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbIp
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute GbPort: GB Port space provided.</summary>
         /// <remarks>
         /// (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbPort
+        [JsiiProperty(name: "attrGbPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Id: Space ID.</summary>
-        [JsiiProperty(name: "attrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrId
+        [JsiiProperty(name: "attrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

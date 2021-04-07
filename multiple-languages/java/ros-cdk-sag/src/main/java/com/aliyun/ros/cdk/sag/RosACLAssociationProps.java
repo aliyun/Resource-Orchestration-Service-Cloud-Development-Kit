@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.048Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLAssociationProps.Jsii$Proxy.class)
 public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAclId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAclId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSmartAgId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSmartAgId();
 
     /**
      * @return a {@link Builder} of {@link RosACLAssociationProps}
@@ -26,8 +26,8 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosACLAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosACLAssociationProps> {
-        private java.lang.String aclId;
-        private java.lang.String smartAgId;
+        private java.lang.Object aclId;
+        private java.lang.Object smartAgId;
 
         /**
          * Sets the value of {@link RosACLAssociationProps#getAclId}
@@ -40,11 +40,31 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosACLAssociationProps#getAclId}
+         * @param aclId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclId(com.aliyun.ros.cdk.core.IResolvable aclId) {
+            this.aclId = aclId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLAssociationProps#getSmartAgId}
          * @param smartAgId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder smartAgId(java.lang.String smartAgId) {
+            this.smartAgId = smartAgId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLAssociationProps#getSmartAgId}
+         * @param smartAgId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder smartAgId(com.aliyun.ros.cdk.core.IResolvable smartAgId) {
             this.smartAgId = smartAgId;
             return this;
         }
@@ -65,8 +85,8 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosACLAssociationProps {
-        private final java.lang.String aclId;
-        private final java.lang.String smartAgId;
+        private final java.lang.Object aclId;
+        private final java.lang.Object smartAgId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +94,26 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.smartAgId = software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.smartAgId = software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aclId, final java.lang.String smartAgId) {
+        protected Jsii$Proxy(final java.lang.Object aclId, final java.lang.Object smartAgId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclId = java.util.Objects.requireNonNull(aclId, "aclId is required");
             this.smartAgId = java.util.Objects.requireNonNull(smartAgId, "smartAgId is required");
         }
 
         @Override
-        public final java.lang.String getAclId() {
+        public final java.lang.Object getAclId() {
             return this.aclId;
         }
 
         @Override
-        public final java.lang.String getSmartAgId() {
+        public final java.lang.Object getSmartAgId() {
             return this.smartAgId;
         }
 

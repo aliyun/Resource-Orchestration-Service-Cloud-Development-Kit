@@ -3,52 +3,52 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.048Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLRuleProps.Jsii$Proxy.class)
 public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAclId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAclId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestCidr();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestCidr();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestPortRange();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestPortRange();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDirection();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDirection();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getIpProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPolicy();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPolicy();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceCidr();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceCidr();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourcePortRange();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourcePortRange();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
@@ -62,16 +62,16 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosACLRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosACLRuleProps> {
-        private java.lang.String aclId;
-        private java.lang.String destCidr;
-        private java.lang.String destPortRange;
-        private java.lang.String direction;
-        private java.lang.String ipProtocol;
-        private java.lang.String policy;
-        private java.lang.String sourceCidr;
-        private java.lang.String sourcePortRange;
-        private java.lang.String description;
-        private java.lang.Number priority;
+        private java.lang.Object aclId;
+        private java.lang.Object destCidr;
+        private java.lang.Object destPortRange;
+        private java.lang.Object direction;
+        private java.lang.Object ipProtocol;
+        private java.lang.Object policy;
+        private java.lang.Object sourceCidr;
+        private java.lang.Object sourcePortRange;
+        private java.lang.Object description;
+        private java.lang.Object priority;
 
         /**
          * Sets the value of {@link RosACLRuleProps#getAclId}
@@ -79,6 +79,16 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder aclId(java.lang.String aclId) {
+            this.aclId = aclId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getAclId}
+         * @param aclId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclId(com.aliyun.ros.cdk.core.IResolvable aclId) {
             this.aclId = aclId;
             return this;
         }
@@ -94,11 +104,31 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getDestCidr}
+         * @param destCidr the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destCidr(com.aliyun.ros.cdk.core.IResolvable destCidr) {
+            this.destCidr = destCidr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getDestPortRange}
          * @param destPortRange the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder destPortRange(java.lang.String destPortRange) {
+            this.destPortRange = destPortRange;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getDestPortRange}
+         * @param destPortRange the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destPortRange(com.aliyun.ros.cdk.core.IResolvable destPortRange) {
             this.destPortRange = destPortRange;
             return this;
         }
@@ -114,11 +144,31 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getDirection}
+         * @param direction the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder direction(com.aliyun.ros.cdk.core.IResolvable direction) {
+            this.direction = direction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getIpProtocol}
          * @param ipProtocol the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder ipProtocol(java.lang.String ipProtocol) {
+            this.ipProtocol = ipProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getIpProtocol}
+         * @param ipProtocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipProtocol(com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.ipProtocol = ipProtocol;
             return this;
         }
@@ -134,11 +184,31 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getPolicy}
+         * @param policy the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getSourceCidr}
          * @param sourceCidr the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder sourceCidr(java.lang.String sourceCidr) {
+            this.sourceCidr = sourceCidr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getSourceCidr}
+         * @param sourceCidr the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceCidr(com.aliyun.ros.cdk.core.IResolvable sourceCidr) {
             this.sourceCidr = sourceCidr;
             return this;
         }
@@ -154,6 +224,16 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getSourcePortRange}
+         * @param sourcePortRange the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourcePortRange(com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
+            this.sourcePortRange = sourcePortRange;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -164,11 +244,31 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosACLRuleProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosACLRuleProps#getPriority}
          * @param priority the value to be set.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosACLRuleProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
             this.priority = priority;
             return this;
         }
@@ -189,16 +289,16 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosACLRuleProps {
-        private final java.lang.String aclId;
-        private final java.lang.String destCidr;
-        private final java.lang.String destPortRange;
-        private final java.lang.String direction;
-        private final java.lang.String ipProtocol;
-        private final java.lang.String policy;
-        private final java.lang.String sourceCidr;
-        private final java.lang.String sourcePortRange;
-        private final java.lang.String description;
-        private final java.lang.Number priority;
+        private final java.lang.Object aclId;
+        private final java.lang.Object destCidr;
+        private final java.lang.Object destPortRange;
+        private final java.lang.Object direction;
+        private final java.lang.Object ipProtocol;
+        private final java.lang.Object policy;
+        private final java.lang.Object sourceCidr;
+        private final java.lang.Object sourcePortRange;
+        private final java.lang.Object description;
+        private final java.lang.Object priority;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -206,22 +306,22 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destCidr = software.amazon.jsii.Kernel.get(this, "destCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destPortRange = software.amazon.jsii.Kernel.get(this, "destPortRange", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.direction = software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destCidr = software.amazon.jsii.Kernel.get(this, "destCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPortRange = software.amazon.jsii.Kernel.get(this, "destPortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.direction = software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourcePortRange = software.amazon.jsii.Kernel.get(this, "sourcePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aclId, final java.lang.String destCidr, final java.lang.String destPortRange, final java.lang.String direction, final java.lang.String ipProtocol, final java.lang.String policy, final java.lang.String sourceCidr, final java.lang.String sourcePortRange, final java.lang.String description, final java.lang.Number priority) {
+        protected Jsii$Proxy(final java.lang.Object aclId, final java.lang.Object destCidr, final java.lang.Object destPortRange, final java.lang.Object direction, final java.lang.Object ipProtocol, final java.lang.Object policy, final java.lang.Object sourceCidr, final java.lang.Object sourcePortRange, final java.lang.Object description, final java.lang.Object priority) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclId = java.util.Objects.requireNonNull(aclId, "aclId is required");
             this.destCidr = java.util.Objects.requireNonNull(destCidr, "destCidr is required");
@@ -236,52 +336,52 @@ public interface RosACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAclId() {
+        public final java.lang.Object getAclId() {
             return this.aclId;
         }
 
         @Override
-        public final java.lang.String getDestCidr() {
+        public final java.lang.Object getDestCidr() {
             return this.destCidr;
         }
 
         @Override
-        public final java.lang.String getDestPortRange() {
+        public final java.lang.Object getDestPortRange() {
             return this.destPortRange;
         }
 
         @Override
-        public final java.lang.String getDirection() {
+        public final java.lang.Object getDirection() {
             return this.direction;
         }
 
         @Override
-        public final java.lang.String getIpProtocol() {
+        public final java.lang.Object getIpProtocol() {
             return this.ipProtocol;
         }
 
         @Override
-        public final java.lang.String getPolicy() {
+        public final java.lang.Object getPolicy() {
             return this.policy;
         }
 
         @Override
-        public final java.lang.String getSourceCidr() {
+        public final java.lang.Object getSourceCidr() {
             return this.sourceCidr;
         }
 
         @Override
-        public final java.lang.String getSourcePortRange() {
+        public final java.lang.Object getSourcePortRange() {
             return this.sourcePortRange;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getPriority() {
+        public final java.lang.Object getPriority() {
             return this.priority;
         }
 

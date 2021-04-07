@@ -18,7 +18,7 @@ export interface RosAlertProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly project: string;
+    readonly project: string | ros.IResolvable;
 }
 
 /**
@@ -87,7 +87,7 @@ export class RosAlert extends ros.RosResource {
     /**
      * @Attribute Name: Alert name.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -103,7 +103,7 @@ export class RosAlert extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public project: string;
+    public project: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Alert`.
@@ -114,7 +114,7 @@ export class RosAlert extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAlertProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAlert.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.detail = props.detail;
@@ -141,13 +141,13 @@ export namespace RosAlert {
         /**
          * @Property throttling: Notification interval, default is no interval.
          */
-        readonly throttling: string;
+        readonly throttling: string | ros.IResolvable;
         /**
          * @Property condition: he condition that is required to trigger an alert. 
      * Log Service triggers an alert if the trigger condition is met. 
      * For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
          */
-        readonly condition: string;
+        readonly condition: string | ros.IResolvable;
         /**
          * @Property notificationList:
          */
@@ -156,11 +156,11 @@ export namespace RosAlert {
          * @Property notifyThreshold: The notification threshold, 
      * which will not be notified until the number of triggers is reached.
          */
-        readonly notifyThreshold?: number;
+        readonly notifyThreshold?: number | ros.IResolvable;
         /**
          * @Property dashboard: Alarm associated dashboard.
          */
-        readonly dashboard: string;
+        readonly dashboard: string | ros.IResolvable;
         /**
          * @Property queryList:
          */
@@ -219,11 +219,11 @@ export namespace RosAlert {
         /**
          * @Property type:
          */
-        readonly type?: string;
+        readonly type?: string | ros.IResolvable;
         /**
          * @Property description: Description of the alert.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property configuration:
          */
@@ -231,7 +231,7 @@ export namespace RosAlert {
         /**
          * @Property state:
          */
-        readonly state?: string;
+        readonly state?: string | ros.IResolvable;
         /**
          * @Property schedule: The interval at which Log Service evaluates the alert rule. 
      * Note During an alert rule evaluation, if a query returns more than 100 log entries, 
@@ -241,11 +241,11 @@ export namespace RosAlert {
         /**
          * @Property displayName: Alert name display in console. The name length is 1-64 characters.
          */
-        readonly displayName: string;
+        readonly displayName: string | ros.IResolvable;
         /**
          * @Property name: Alert name.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -312,7 +312,7 @@ export namespace RosAlert {
      * Available notification methods include emails, DingTalk chatbot webhooks, 
      * custom webhooks, and Alibaba Cloud Message Center.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property mobileList:
          */
@@ -320,11 +320,11 @@ export namespace RosAlert {
         /**
          * @Property serviceUri: The webhook URL of the DingTalk chatbot.
          */
-        readonly serviceUri?: string;
+        readonly serviceUri?: string | ros.IResolvable;
         /**
          * @Property content: The content of an alert notification
          */
-        readonly content?: string;
+        readonly content?: string | ros.IResolvable;
         /**
          * @Property emailList:
          */
@@ -378,27 +378,27 @@ export namespace RosAlert {
         /**
          * @Property query:
          */
-        readonly query: string;
+        readonly query: string | ros.IResolvable;
         /**
          * @Property logStore:
          */
-        readonly logStore: string;
+        readonly logStore: string | ros.IResolvable;
         /**
          * @Property start:
          */
-        readonly start: string;
+        readonly start: string | ros.IResolvable;
         /**
          * @Property timeSpanType:
          */
-        readonly timeSpanType: string;
+        readonly timeSpanType: string | ros.IResolvable;
         /**
          * @Property end:
          */
-        readonly end: string;
+        readonly end: string | ros.IResolvable;
         /**
          * @Property chartTitle:
          */
-        readonly chartTitle: string;
+        readonly chartTitle: string | ros.IResolvable;
     }
 }
 /**
@@ -455,11 +455,11 @@ export namespace RosAlert {
         /**
          * @Property dayOfWeek:
          */
-        readonly dayOfWeek?: number;
+        readonly dayOfWeek?: number | ros.IResolvable;
         /**
          * @Property type:
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property runImmediately:
          */
@@ -467,19 +467,19 @@ export namespace RosAlert {
         /**
          * @Property hour:
          */
-        readonly hour?: number;
+        readonly hour?: number | ros.IResolvable;
         /**
          * @Property cronExpression:
          */
-        readonly cronExpression?: string;
+        readonly cronExpression?: string | ros.IResolvable;
         /**
          * @Property delay:
          */
-        readonly delay?: number;
+        readonly delay?: number | ros.IResolvable;
         /**
          * @Property interval: Execution interval
          */
-        readonly interval?: string;
+        readonly interval?: string | ros.IResolvable;
     }
 }
 /**
@@ -533,17 +533,17 @@ export interface RosApplyConfigToMachineGroupProps {
     /**
      * @Property configName: Apply config to the config name
      */
-    readonly configName?: string;
+    readonly configName?: string | ros.IResolvable;
 
     /**
      * @Property groupName: Apply config to the group name
      */
-    readonly groupName?: string;
+    readonly groupName?: string | ros.IResolvable;
 
     /**
      * @Property projectName: Apply config to the project name.
      */
-    readonly projectName?: string;
+    readonly projectName?: string | ros.IResolvable;
 }
 
 /**
@@ -602,17 +602,17 @@ export class RosApplyConfigToMachineGroup extends ros.RosResource {
     /**
      * @Property configName: Apply config to the config name
      */
-    public configName: string | undefined;
+    public configName: string | ros.IResolvable | undefined;
 
     /**
      * @Property groupName: Apply config to the group name
      */
-    public groupName: string | undefined;
+    public groupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property projectName: Apply config to the project name.
      */
-    public projectName: string | undefined;
+    public projectName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
@@ -660,7 +660,7 @@ export interface RosIndexProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -668,7 +668,7 @@ export interface RosIndexProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * @Property keyIndices: Key index configurations.
@@ -774,7 +774,7 @@ export class RosIndex extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public logstoreName: string;
+    public logstoreName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -782,7 +782,7 @@ export class RosIndex extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public projectName: string;
+    public projectName: string | ros.IResolvable;
 
     /**
      * @Property keyIndices: Key index configurations.
@@ -836,7 +836,7 @@ export namespace RosIndex {
         /**
          * @Property delimiter: Delimiter. Default to (( , '";=()[]{}?@&<>/:\n\t\r )).
          */
-        readonly delimiter?: string;
+        readonly delimiter?: string | ros.IResolvable;
         /**
          * @Property includeChinese: Whether it contains Chinese. Default to false.
          */
@@ -896,11 +896,11 @@ export namespace RosIndex {
         /**
          * @Property type: Json key type. Allowed types: text, long, double. Default to text.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property alias: Json key alias.
          */
-        readonly alias?: string;
+        readonly alias?: string | ros.IResolvable;
         /**
          * @Property enableAnalytics: Whether this json key is enabled for statistics. Default to true.
          */
@@ -908,7 +908,7 @@ export namespace RosIndex {
         /**
          * @Property name: Json key name. It can be nested by dot(.), such as k1.k2.k3.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -963,7 +963,7 @@ export namespace RosIndex {
         /**
          * @Property type: Key type. Allowed types: text, long, double, json. Default to text.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property jsonKeyIndices: Json key index configurations.
          */
@@ -971,7 +971,7 @@ export namespace RosIndex {
         /**
          * @Property delimiter: Delimiter. It takes effect when Type is text or json. Default to (( , '";=()[]{}?@&<>/:\n\t\r )).
          */
-        readonly delimiter?: string;
+        readonly delimiter?: string | ros.IResolvable;
         /**
          * @Property includeChinese: Whether it contains Chinese. It takes effect when Type is text or json. Default to false.
          */
@@ -979,7 +979,7 @@ export namespace RosIndex {
         /**
          * @Property alias: Key alias.
          */
-        readonly alias?: string;
+        readonly alias?: string | ros.IResolvable;
         /**
          * @Property enableAnalytics: Whether this key is enabled for statistics. Default to false for json type, else true.
          */
@@ -991,7 +991,7 @@ export namespace RosIndex {
         /**
          * @Property name: Key name.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -1057,7 +1057,7 @@ export interface RosLogstoreProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -1065,7 +1065,7 @@ export interface RosLogstoreProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * @Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
@@ -1089,7 +1089,7 @@ export interface RosLogstoreProps {
      * @Property maxSplitShard: The maximum number of shards when splitting automatically. Must be specified if AutoSplit is set to true.
      * Allowed Values: 1-64.
      */
-    readonly maxSplitShard?: number;
+    readonly maxSplitShard?: number | ros.IResolvable;
 
     /**
      * @Property preserveStorage: Whether to keep the log permanently.
@@ -1102,13 +1102,13 @@ export interface RosLogstoreProps {
      * @Property shardCount: The number of Shards.
      * Allowed Values: 1-100, default to 2.
      */
-    readonly shardCount?: number;
+    readonly shardCount?: number | ros.IResolvable;
 
     /**
      * @Property ttl: The lifecycle of log in the logstore in days.
      * Allowed Values: 1-3600, default to 30.
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -1219,7 +1219,7 @@ export class RosLogstore extends ros.RosResource {
     /**
      * @Attribute LogstoreName: Logstore name.
      */
-    public readonly attrLogstoreName: any;
+    public readonly attrLogstoreName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1230,7 +1230,7 @@ export class RosLogstore extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public logstoreName: string;
+    public logstoreName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -1238,7 +1238,7 @@ export class RosLogstore extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public projectName: string;
+    public projectName: string | ros.IResolvable;
 
     /**
      * @Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
@@ -1262,7 +1262,7 @@ export class RosLogstore extends ros.RosResource {
      * @Property maxSplitShard: The maximum number of shards when splitting automatically. Must be specified if AutoSplit is set to true.
      * Allowed Values: 1-64.
      */
-    public maxSplitShard: number | undefined;
+    public maxSplitShard: number | ros.IResolvable | undefined;
 
     /**
      * @Property preserveStorage: Whether to keep the log permanently.
@@ -1275,13 +1275,13 @@ export class RosLogstore extends ros.RosResource {
      * @Property shardCount: The number of Shards.
      * Allowed Values: 1-100, default to 2.
      */
-    public shardCount: number | undefined;
+    public shardCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property ttl: The lifecycle of log in the logstore in days.
      * Allowed Values: 1-3600, default to 30.
      */
-    public ttl: number | undefined;
+    public ttl: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLS::Logstore`.
@@ -1292,7 +1292,7 @@ export class RosLogstore extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLogstoreProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLogstore.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrLogstoreName = ros.Token.asString(this.getAtt('LogstoreName'));
+        this.attrLogstoreName = this.getAtt('LogstoreName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.logstoreName = props.logstoreName;
@@ -1336,7 +1336,7 @@ export interface RosLogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * @Property logtailConfigName: Logtail config name:
@@ -1344,7 +1344,7 @@ export interface RosLogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logtailConfigName: string;
+    readonly logtailConfigName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -1352,7 +1352,7 @@ export interface RosLogtailConfigProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * @Property cloneFrom: Clone logtail config data from existing logtail config.
@@ -1519,12 +1519,17 @@ export class RosLogtailConfig extends ros.RosResource {
     /**
      * @Attribute AppliedMachineGroups: Applied machine groups.
      */
-    public readonly attrAppliedMachineGroups: any;
+    public readonly attrAppliedMachineGroups: ros.IResolvable;
 
     /**
      * @Attribute Endpoint: Endpoint address.
      */
-    public readonly attrEndpoint: any;
+    public readonly attrEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute LogtailConfigName: Logtail config name.
+     */
+    public readonly attrLogtailConfigName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1535,7 +1540,7 @@ export class RosLogtailConfig extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public logstoreName: string;
+    public logstoreName: string | ros.IResolvable;
 
     /**
      * @Property logtailConfigName: Logtail config name:
@@ -1543,7 +1548,7 @@ export class RosLogtailConfig extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public logtailConfigName: string;
+    public logtailConfigName: string | ros.IResolvable;
 
     /**
      * @Property projectName: Project name:
@@ -1551,7 +1556,7 @@ export class RosLogtailConfig extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public projectName: string;
+    public projectName: string | ros.IResolvable;
 
     /**
      * @Property cloneFrom: Clone logtail config data from existing logtail config.
@@ -1639,8 +1644,9 @@ export class RosLogtailConfig extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLogtailConfigProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLogtailConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppliedMachineGroups = ros.Token.asString(this.getAtt('AppliedMachineGroups'));
-        this.attrEndpoint = ros.Token.asString(this.getAtt('Endpoint'));
+        this.attrAppliedMachineGroups = this.getAtt('AppliedMachineGroups');
+        this.attrEndpoint = this.getAtt('Endpoint');
+        this.attrLogtailConfigName = this.getAtt('LogtailConfigName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.logstoreName = props.logstoreName;
@@ -1676,14 +1682,14 @@ export namespace RosLogtailConfig {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
          */
-        readonly logtailConfigName: string;
+        readonly logtailConfigName: string | ros.IResolvable;
         /**
          * @Property projectName: Project name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
          */
-        readonly projectName: string;
+        readonly projectName: string | ros.IResolvable;
     }
 }
 /**
@@ -1742,22 +1748,22 @@ export interface RosMachineGroupProps {
     /**
      * @Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
      */
-    readonly groupAttribute?: string;
+    readonly groupAttribute?: string | ros.IResolvable;
 
     /**
      * @Property groupName: Display name of the group name, the Project only. [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly groupName?: string;
+    readonly groupName?: string | ros.IResolvable;
 
     /**
      * @Property groupType: MachineGroup type, the value is empty or Armory
      */
-    readonly groupType?: string;
+    readonly groupType?: string | ros.IResolvable;
 
     /**
      * @Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'
      */
-    readonly machineIdentifyType?: string;
+    readonly machineIdentifyType?: string | ros.IResolvable;
 
     /**
      * @Property machineList: The machine tag, the value is ip or userdefined-id.
@@ -1767,7 +1773,7 @@ export interface RosMachineGroupProps {
     /**
      * @Property projectName: MachineGroup created in project.
      */
-    readonly projectName?: string;
+    readonly projectName?: string | ros.IResolvable;
 }
 
 /**
@@ -1841,12 +1847,12 @@ export class RosMachineGroup extends ros.RosResource {
     /**
      * @Attribute GroupName: GroupName of SLS.
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * @Attribute ProjectName: ProjectName of SLS.
      */
-    public readonly attrProjectName: any;
+    public readonly attrProjectName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1854,22 +1860,22 @@ export class RosMachineGroup extends ros.RosResource {
     /**
      * @Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
      */
-    public groupAttribute: string | undefined;
+    public groupAttribute: string | ros.IResolvable | undefined;
 
     /**
      * @Property groupName: Display name of the group name, the Project only. [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    public groupName: string | undefined;
+    public groupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property groupType: MachineGroup type, the value is empty or Armory
      */
-    public groupType: string | undefined;
+    public groupType: string | ros.IResolvable | undefined;
 
     /**
      * @Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'
      */
-    public machineIdentifyType: string | undefined;
+    public machineIdentifyType: string | ros.IResolvable | undefined;
 
     /**
      * @Property machineList: The machine tag, the value is ip or userdefined-id.
@@ -1879,7 +1885,7 @@ export class RosMachineGroup extends ros.RosResource {
     /**
      * @Property projectName: MachineGroup created in project.
      */
-    public projectName: string | undefined;
+    public projectName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.
@@ -1890,8 +1896,8 @@ export class RosMachineGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMachineGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMachineGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupName = ros.Token.asString(this.getAtt('GroupName'));
-        this.attrProjectName = ros.Token.asString(this.getAtt('ProjectName'));
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrProjectName = this.getAtt('ProjectName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupAttribute = props.groupAttribute;
@@ -1929,12 +1935,17 @@ export interface RosProjectProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosProject.TagsProperty[];
 }
 
 /**
@@ -1955,6 +1966,14 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosProject_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
@@ -1989,6 +2008,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
     return {
       Name: ros.stringToRosTemplate(properties.name),
       Description: ros.stringToRosTemplate(properties.description),
+      Tags: ros.listMapper(rosProjectTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2009,7 +2029,7 @@ export class RosProject extends ros.RosResource {
     /**
      * @Attribute Name: Project name.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2020,12 +2040,17 @@ export class RosProject extends ros.RosResource {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosProject.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::SLS::Project`.
@@ -2036,11 +2061,12 @@ export class RosProject extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProjectProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProject.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.description = props.description;
+        this.tags = props.tags;
     }
 
 
@@ -2048,11 +2074,60 @@ export class RosProject extends ros.RosResource {
         return {
             name: this.name,
             description: this.description,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosProjectPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosProject {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosProject_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Project.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Project.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosProjectTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosProject_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -2068,7 +2143,7 @@ export interface RosSavedsearchProps {
     /**
      * @Property project: Project name
      */
-    readonly project: string;
+    readonly project: string | ros.IResolvable;
 }
 
 /**
@@ -2124,7 +2199,7 @@ export class RosSavedsearch extends ros.RosResource {
     /**
      * @Attribute SavedsearchName: Savedsearch name.
      */
-    public readonly attrSavedsearchName: any;
+    public readonly attrSavedsearchName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2137,7 +2212,7 @@ export class RosSavedsearch extends ros.RosResource {
     /**
      * @Property project: Project name
      */
-    public project: string;
+    public project: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Savedsearch`.
@@ -2148,7 +2223,7 @@ export class RosSavedsearch extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSavedsearchProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSavedsearch.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSavedsearchName = ros.Token.asString(this.getAtt('SavedsearchName'));
+        this.attrSavedsearchName = this.getAtt('SavedsearchName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.detail = props.detail;
@@ -2175,23 +2250,23 @@ export namespace RosSavedsearch {
         /**
          * @Property searchQuery: Check sentence.
          */
-        readonly searchQuery: string;
+        readonly searchQuery: string | ros.IResolvable;
         /**
          * @Property logstore: Logstore name.
          */
-        readonly logstore: string;
+        readonly logstore: string | ros.IResolvable;
         /**
          * @Property displayName: Display name.
          */
-        readonly displayName?: string;
+        readonly displayName?: string | ros.IResolvable;
         /**
          * @Property savedsearchName: Savedsearch name.
          */
-        readonly savedsearchName: string;
+        readonly savedsearchName: string | ros.IResolvable;
         /**
          * @Property topic: Topic name
          */
-        readonly topic: string;
+        readonly topic: string | ros.IResolvable;
     }
 }
 /**

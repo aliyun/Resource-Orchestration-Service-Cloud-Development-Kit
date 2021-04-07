@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute ApiId: The id of the API.</summary>
-        [JsiiProperty(name: "attrApiId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrApiId
+        [JsiiProperty(name: "attrApiId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApiId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

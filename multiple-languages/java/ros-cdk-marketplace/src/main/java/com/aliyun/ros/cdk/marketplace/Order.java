@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * A ROS resource type:  `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.054Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.Order")
 public class Order extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::MarketPlace::Order`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Order(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.marketplace.OrderProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::MarketPlace::Order`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Order(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.marketplace.OrderProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute OrderId: Order ID of created instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.marketplace.Order> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,72 +90,164 @@ public class Order extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property productCode: Product code for the resource.
+         * <p>
          * @return {@code this}
-         * @param productCode This parameter is required.
+         * @param productCode Property productCode: Product code for the resource. This parameter is required.
          */
         public Builder productCode(final java.lang.String productCode) {
             this.props.productCode(productCode);
             return this;
         }
+        /**
+         * Property productCode: Product code for the resource.
+         * <p>
+         * @return {@code this}
+         * @param productCode Property productCode: Product code for the resource. This parameter is required.
+         */
+        public Builder productCode(final com.aliyun.ros.cdk.core.IResolvable productCode) {
+            this.props.productCode(productCode);
+            return this;
+        }
 
         /**
+         * Property skuCode: Sku code for the resource.
+         * <p>
          * @return {@code this}
-         * @param skuCode This parameter is required.
+         * @param skuCode Property skuCode: Sku code for the resource. This parameter is required.
          */
         public Builder skuCode(final java.lang.String skuCode) {
             this.props.skuCode(skuCode);
             return this;
         }
+        /**
+         * Property skuCode: Sku code for the resource.
+         * <p>
+         * @return {@code this}
+         * @param skuCode Property skuCode: Sku code for the resource. This parameter is required.
+         */
+        public Builder skuCode(final com.aliyun.ros.cdk.core.IResolvable skuCode) {
+            this.props.skuCode(skuCode);
+            return this;
+        }
 
         /**
+         * Property chargeType: The resource charge type.
+         * <p>
+         * Default value is Prepaid
+         * <p>
          * @return {@code this}
-         * @param chargeType This parameter is required.
+         * @param chargeType Property chargeType: The resource charge type. This parameter is required.
          */
         public Builder chargeType(final java.lang.String chargeType) {
             this.props.chargeType(chargeType);
             return this;
         }
+        /**
+         * Property chargeType: The resource charge type.
+         * <p>
+         * Default value is Prepaid
+         * <p>
+         * @return {@code this}
+         * @param chargeType Property chargeType: The resource charge type. This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
 
         /**
+         * Property duration: Duration of the resource.
+         * <p>
+         * If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
          * @return {@code this}
-         * @param duration This parameter is required.
+         * @param duration Property duration: Duration of the resource. This parameter is required.
          */
         public Builder duration(final java.lang.Number duration) {
             this.props.duration(duration);
             return this;
         }
-
         /**
+         * Property duration: Duration of the resource.
+         * <p>
+         * If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
          * @return {@code this}
-         * @param preference This parameter is required.
+         * @param duration Property duration: Duration of the resource. This parameter is required.
          */
-        public Builder preference(final java.util.Map<java.lang.String, ? extends java.lang.Object> preference) {
-            this.props.preference(preference);
+        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.props.duration(duration);
             return this;
         }
+
         /**
+         * Property preference: Customized parameters.
+         * <p>
          * @return {@code this}
-         * @param preference This parameter is required.
+         * @param preference Property preference: Customized parameters. This parameter is required.
          */
         public Builder preference(final com.aliyun.ros.cdk.core.IResolvable preference) {
             this.props.preference(preference);
             return this;
         }
+        /**
+         * Property preference: Customized parameters.
+         * <p>
+         * @return {@code this}
+         * @param preference Property preference: Customized parameters. This parameter is required.
+         */
+        public Builder preference(final java.util.Map<java.lang.String, ? extends java.lang.Object> preference) {
+            this.props.preference(preference);
+            return this;
+        }
 
         /**
+         * Property pricingCycle: Price cycle of the resource.
+         * <p>
+         * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
          * @return {@code this}
-         * @param pricingCycle This parameter is required.
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
          */
         public Builder pricingCycle(final java.lang.String pricingCycle) {
             this.props.pricingCycle(pricingCycle);
             return this;
         }
+        /**
+         * Property pricingCycle: Price cycle of the resource.
+         * <p>
+         * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * <p>
+         * @return {@code this}
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource. This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.props.pricingCycle(pricingCycle);
+            return this;
+        }
 
         /**
+         * Property quantity: Resource number.
+         * <p>
+         * Default value is 1
+         * <p>
          * @return {@code this}
-         * @param quantity This parameter is required.
+         * @param quantity Property quantity: Resource number. This parameter is required.
          */
         public Builder quantity(final java.lang.Number quantity) {
+            this.props.quantity(quantity);
+            return this;
+        }
+        /**
+         * Property quantity: Resource number.
+         * <p>
+         * Default value is 1
+         * <p>
+         * @return {@code this}
+         * @param quantity Property quantity: Resource number. This parameter is required.
+         */
+        public Builder quantity(final com.aliyun.ros.cdk.core.IResolvable quantity) {
             this.props.quantity(quantity);
             return this;
         }

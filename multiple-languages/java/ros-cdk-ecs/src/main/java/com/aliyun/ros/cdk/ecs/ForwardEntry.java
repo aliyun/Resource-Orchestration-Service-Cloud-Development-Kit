@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.538Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.193Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ForwardEntry")
 public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::ForwardEntry`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ForwardEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.ForwardEntryProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::ForwardEntry`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ForwardEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.ForwardEntryProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ForwardEntryId: The id of created forward entry.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrForwardEntryId() {
-        return software.amazon.jsii.Kernel.get(this, "attrForwardEntryId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrForwardEntryId() {
+        return software.amazon.jsii.Kernel.get(this, "attrForwardEntryId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.ForwardEntry> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,55 +90,127 @@ public class ForwardEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property externalIp: Source IP, must belongs to bandwidth package internet IP.
+         * <p>
          * @return {@code this}
-         * @param externalIp This parameter is required.
+         * @param externalIp Property externalIp: Source IP, must belongs to bandwidth package internet IP. This parameter is required.
          */
         public Builder externalIp(final java.lang.String externalIp) {
             this.props.externalIp(externalIp);
             return this;
         }
+        /**
+         * Property externalIp: Source IP, must belongs to bandwidth package internet IP.
+         * <p>
+         * @return {@code this}
+         * @param externalIp Property externalIp: Source IP, must belongs to bandwidth package internet IP. This parameter is required.
+         */
+        public Builder externalIp(final com.aliyun.ros.cdk.core.IResolvable externalIp) {
+            this.props.externalIp(externalIp);
+            return this;
+        }
 
         /**
+         * Property externalPort: Source port, now support [1-65535]|Any.
+         * <p>
          * @return {@code this}
-         * @param externalPort This parameter is required.
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
          */
         public Builder externalPort(final java.lang.String externalPort) {
             this.props.externalPort(externalPort);
             return this;
         }
+        /**
+         * Property externalPort: Source port, now support [1-65535]|Any.
+         * <p>
+         * @return {@code this}
+         * @param externalPort Property externalPort: Source port, now support [1-65535]|Any. This parameter is required.
+         */
+        public Builder externalPort(final com.aliyun.ros.cdk.core.IResolvable externalPort) {
+            this.props.externalPort(externalPort);
+            return this;
+        }
 
         /**
+         * Property forwardTableId: Create forward entry in specified forward table.
+         * <p>
          * @return {@code this}
-         * @param forwardTableId This parameter is required.
+         * @param forwardTableId Property forwardTableId: Create forward entry in specified forward table. This parameter is required.
          */
         public Builder forwardTableId(final java.lang.String forwardTableId) {
             this.props.forwardTableId(forwardTableId);
             return this;
         }
+        /**
+         * Property forwardTableId: Create forward entry in specified forward table.
+         * <p>
+         * @return {@code this}
+         * @param forwardTableId Property forwardTableId: Create forward entry in specified forward table. This parameter is required.
+         */
+        public Builder forwardTableId(final com.aliyun.ros.cdk.core.IResolvable forwardTableId) {
+            this.props.forwardTableId(forwardTableId);
+            return this;
+        }
 
         /**
+         * Property internalIp: Destination IP, must belong to VPC private IP.
+         * <p>
          * @return {@code this}
-         * @param internalIp This parameter is required.
+         * @param internalIp Property internalIp: Destination IP, must belong to VPC private IP. This parameter is required.
          */
         public Builder internalIp(final java.lang.String internalIp) {
             this.props.internalIp(internalIp);
             return this;
         }
+        /**
+         * Property internalIp: Destination IP, must belong to VPC private IP.
+         * <p>
+         * @return {@code this}
+         * @param internalIp Property internalIp: Destination IP, must belong to VPC private IP. This parameter is required.
+         */
+        public Builder internalIp(final com.aliyun.ros.cdk.core.IResolvable internalIp) {
+            this.props.internalIp(internalIp);
+            return this;
+        }
 
         /**
+         * Property internalPort: Destination port, now support [1-65535]|Any.
+         * <p>
          * @return {@code this}
-         * @param internalPort This parameter is required.
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
          */
         public Builder internalPort(final java.lang.String internalPort) {
             this.props.internalPort(internalPort);
             return this;
         }
+        /**
+         * Property internalPort: Destination port, now support [1-65535]|Any.
+         * <p>
+         * @return {@code this}
+         * @param internalPort Property internalPort: Destination port, now support [1-65535]|Any. This parameter is required.
+         */
+        public Builder internalPort(final com.aliyun.ros.cdk.core.IResolvable internalPort) {
+            this.props.internalPort(internalPort);
+            return this;
+        }
 
         /**
+         * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'.
+         * <p>
          * @return {@code this}
-         * @param ipProtocol This parameter is required.
+         * @param ipProtocol Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'. This parameter is required.
          */
         public Builder ipProtocol(final java.lang.String ipProtocol) {
+            this.props.ipProtocol(ipProtocol);
+            return this;
+        }
+        /**
+         * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'.
+         * <p>
+         * @return {@code this}
+         * @param ipProtocol Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'. This parameter is required.
+         */
+        public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.props.ipProtocol(ipProtocol);
             return this;
         }

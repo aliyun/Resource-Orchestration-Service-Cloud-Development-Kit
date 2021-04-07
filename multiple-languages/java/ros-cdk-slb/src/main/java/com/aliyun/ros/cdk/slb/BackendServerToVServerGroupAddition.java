@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.BackendServerToVServerGroupAddition")
 public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
     /**
      * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public BackendServerToVServerGroupAddition(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.BackendServerToVServerGroupAdditionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
     /**
      * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public BackendServerToVServerGroupAddition(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.BackendServerToVServerGroupAdditionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
     }
 
     /**
+     * Attribute VServerGroupId: The ID of virtual server group.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVServerGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVServerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVServerGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.slb.BackendServerToVServerGroupAddition> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,16 +90,20 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
         }
 
         /**
+         * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+         * <p>
          * @return {@code this}
-         * @param backendServers This parameter is required.
+         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't. This parameter is required.
          */
         public Builder backendServers(final com.aliyun.ros.cdk.core.IResolvable backendServers) {
             this.props.backendServers(backendServers);
             return this;
         }
         /**
+         * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+         * <p>
          * @return {@code this}
-         * @param backendServers This parameter is required.
+         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't. This parameter is required.
          */
         public Builder backendServers(final java.util.List<? extends java.lang.Object> backendServers) {
             this.props.backendServers(backendServers);
@@ -98,10 +111,22 @@ public class BackendServerToVServerGroupAddition extends com.aliyun.ros.cdk.core
         }
 
         /**
+         * Property vServerGroupId: The ID of virtual server group.
+         * <p>
          * @return {@code this}
-         * @param vServerGroupId This parameter is required.
+         * @param vServerGroupId Property vServerGroupId: The ID of virtual server group. This parameter is required.
          */
         public Builder vServerGroupId(final java.lang.String vServerGroupId) {
+            this.props.vServerGroupId(vServerGroupId);
+            return this;
+        }
+        /**
+         * Property vServerGroupId: The ID of virtual server group.
+         * <p>
+         * @return {@code this}
+         * @param vServerGroupId Property vServerGroupId: The ID of virtual server group. This parameter is required.
+         */
+        public Builder vServerGroupId(final com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
             this.props.vServerGroupId(vServerGroupId);
             return this;
         }

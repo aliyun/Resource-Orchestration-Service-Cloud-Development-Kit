@@ -2,6 +2,7 @@ import { Construct } from "./construct-compat";
 import { Token } from "./token";
 import { RosRefElement } from "./ros-element";
 import { Fn } from "./ros-fn";
+import {IResolvable} from "./resolvable";
 
 export interface RosMappingProps {
   /**
@@ -42,7 +43,7 @@ export class RosMapping extends RosRefElement {
   /**
    * @returns A reference to a value in the map based on the two keys.
    */
-  public findInMap(key1: string, key2: string): string {
+  public findInMap(key1: string, key2: string): IResolvable {
     // opportunistically check that the key exists (if the key does not contain tokens)
     if (!Token.isUnresolved(key1) && !(key1 in this.mapping)) {
       throw new Error(`Mapping doesn't contain top-level key '${key1}'`);

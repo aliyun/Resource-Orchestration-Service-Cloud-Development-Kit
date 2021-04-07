@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public interface IEventRuleTargetsProps
     {
         /// <summary>Property ruleName: The name of the alert rule.</summary>
-        [JsiiProperty(name: "ruleName", typeJson: "{\"primitive\":\"string\"}")]
-        string RuleName
+        [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RuleName
         {
             get;
         }
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <summary>Property ruleName: The name of the alert rule.</summary>
-            [JsiiProperty(name: "ruleName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RuleName
+            [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RuleName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property contactParameters: CONTACT configuration.A maximum of 5 parameters.</summary>

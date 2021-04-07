@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <summary>Attribute LifecycleHookId: The lifecycle hook ID.</summary>
-        [JsiiProperty(name: "attrLifecycleHookId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLifecycleHookId
+        [JsiiProperty(name: "attrLifecycleHookId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLifecycleHookId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

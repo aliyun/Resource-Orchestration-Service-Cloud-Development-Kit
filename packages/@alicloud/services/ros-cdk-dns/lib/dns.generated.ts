@@ -10,12 +10,17 @@ export interface RosDomainProps {
     /**
      * @Property domainName: Domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
      */
-    readonly groupId?: string;
+    readonly groupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDomain.TagsProperty[];
 }
 
 /**
@@ -30,6 +35,14 @@ function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDomain_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosDomainProps"');
 }
@@ -50,6 +63,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
     return {
       DomainName: ros.stringToRosTemplate(properties.domainName),
       GroupId: ros.stringToRosTemplate(properties.groupId),
+      Tags: ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -70,32 +84,32 @@ export class RosDomain extends ros.RosResource {
     /**
      * @Attribute DnsServers: The DNS list for the domain name under resolution
      */
-    public readonly attrDnsServers: any;
+    public readonly attrDnsServers: ros.IResolvable;
 
     /**
      * @Attribute DomainId: Domain ID
      */
-    public readonly attrDomainId: any;
+    public readonly attrDomainId: ros.IResolvable;
 
     /**
      * @Attribute DomainName: Domain name
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * @Attribute GroupId: Domain name group ID
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * @Attribute GroupName: The name of the domain name group
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * @Attribute PunyCode: punycode returned only for a Chinese domain name
      */
-    public readonly attrPunyCode: any;
+    public readonly attrPunyCode: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -103,12 +117,17 @@ export class RosDomain extends ros.RosResource {
     /**
      * @Property domainName: Domain name
      */
-    public domainName: string;
+    public domainName: string | ros.IResolvable;
 
     /**
      * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
      */
-    public groupId: string | undefined;
+    public groupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosDomain.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::DNS::Domain`.
@@ -119,16 +138,17 @@ export class RosDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDnsServers = ros.Token.asString(this.getAtt('DnsServers'));
-        this.attrDomainId = ros.Token.asString(this.getAtt('DomainId'));
-        this.attrDomainName = ros.Token.asString(this.getAtt('DomainName'));
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
-        this.attrGroupName = ros.Token.asString(this.getAtt('GroupName'));
-        this.attrPunyCode = ros.Token.asString(this.getAtt('PunyCode'));
+        this.attrDnsServers = this.getAtt('DnsServers');
+        this.attrDomainId = this.getAtt('DomainId');
+        this.attrDomainName = this.getAtt('DomainName');
+        this.attrGroupId = this.getAtt('GroupId');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrPunyCode = this.getAtt('PunyCode');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
         this.groupId = props.groupId;
+        this.tags = props.tags;
     }
 
 
@@ -136,11 +156,60 @@ export class RosDomain extends ros.RosResource {
         return {
             domainName: this.domainName,
             groupId: this.groupId,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDomain {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomain_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DNS::Domain.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DNS::Domain.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomain_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -151,7 +220,7 @@ export interface RosDomainGroupProps {
     /**
      * @Property groupName: Domain name group name
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 }
 
 /**
@@ -204,7 +273,7 @@ export class RosDomainGroup extends ros.RosResource {
     /**
      * @Attribute GroupId: Domain name group ID
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -212,7 +281,7 @@ export class RosDomainGroup extends ros.RosResource {
     /**
      * @Property groupName: Domain name group name
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DNS::DomainGroup`.
@@ -223,7 +292,7 @@ export class RosDomainGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomainGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
+        this.attrGroupId = this.getAtt('GroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
@@ -248,37 +317,37 @@ export interface RosDomainRecordProps {
     /**
      * @Property domainName: Domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    readonly rr: string;
+    readonly rr: string | ros.IResolvable;
 
     /**
      * @Property type: Parse record type, see parsing record type format
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * @Property value: Record value
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * @Property line: Parse the line, the default is default. See parsing line enumeration
      */
-    readonly line?: string;
+    readonly line?: string | ros.IResolvable;
 
     /**
      * @Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * @Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -353,7 +422,7 @@ export class RosDomainRecord extends ros.RosResource {
     /**
      * @Attribute RecordId: Parse the ID of the record
      */
-    public readonly attrRecordId: any;
+    public readonly attrRecordId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -361,37 +430,37 @@ export class RosDomainRecord extends ros.RosResource {
     /**
      * @Property domainName: Domain name
      */
-    public domainName: string;
+    public domainName: string | ros.IResolvable;
 
     /**
      * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    public rr: string;
+    public rr: string | ros.IResolvable;
 
     /**
      * @Property type: Parse record type, see parsing record type format
      */
-    public type: string;
+    public type: string | ros.IResolvable;
 
     /**
      * @Property value: Record value
      */
-    public value: string;
+    public value: string | ros.IResolvable;
 
     /**
      * @Property line: Parse the line, the default is default. See parsing line enumeration
      */
-    public line: string | undefined;
+    public line: string | ros.IResolvable | undefined;
 
     /**
      * @Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
      */
-    public priority: number | undefined;
+    public priority: number | ros.IResolvable | undefined;
 
     /**
      * @Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
      */
-    public ttl: number | undefined;
+    public ttl: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::DNS::DomainRecord`.
@@ -402,7 +471,7 @@ export class RosDomainRecord extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainRecordProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomainRecord.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRecordId = ros.Token.asString(this.getAtt('RecordId'));
+        this.attrRecordId = this.getAtt('RecordId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;

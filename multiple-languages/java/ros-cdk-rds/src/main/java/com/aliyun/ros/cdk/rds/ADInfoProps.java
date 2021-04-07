@@ -3,30 +3,35 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ADInfo`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.880Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ADInfoProps")
 @software.amazon.jsii.Jsii.Proxy(ADInfoProps.Jsii$Proxy.class)
 public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property adAccountName: Domain account name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAdAccountName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAdAccountName();
 
     /**
+     * Property addns: Active directory domain name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAddns();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAddns();
 
     /**
+     * Property adPassword: Domain password.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAdPassword();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAdPassword();
 
     /**
+     * Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAdServerIpAddress();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAdServerIpAddress();
 
     /**
+     * Property dbInstanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
      * @return a {@link Builder} of {@link ADInfoProps}
@@ -38,15 +43,15 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ADInfoProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ADInfoProps> {
-        private java.lang.String adAccountName;
-        private java.lang.String addns;
-        private java.lang.String adPassword;
-        private java.lang.String adServerIpAddress;
-        private java.lang.String dbInstanceId;
+        private java.lang.Object adAccountName;
+        private java.lang.Object addns;
+        private java.lang.Object adPassword;
+        private java.lang.Object adServerIpAddress;
+        private java.lang.Object dbInstanceId;
 
         /**
          * Sets the value of {@link ADInfoProps#getAdAccountName}
-         * @param adAccountName the value to be set. This parameter is required.
+         * @param adAccountName Property adAccountName: Domain account name. This parameter is required.
          * @return {@code this}
          */
         public Builder adAccountName(java.lang.String adAccountName) {
@@ -55,8 +60,18 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ADInfoProps#getAdAccountName}
+         * @param adAccountName Property adAccountName: Domain account name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder adAccountName(com.aliyun.ros.cdk.core.IResolvable adAccountName) {
+            this.adAccountName = adAccountName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ADInfoProps#getAddns}
-         * @param addns the value to be set. This parameter is required.
+         * @param addns Property addns: Active directory domain name. This parameter is required.
          * @return {@code this}
          */
         public Builder addns(java.lang.String addns) {
@@ -65,8 +80,18 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ADInfoProps#getAddns}
+         * @param addns Property addns: Active directory domain name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder addns(com.aliyun.ros.cdk.core.IResolvable addns) {
+            this.addns = addns;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ADInfoProps#getAdPassword}
-         * @param adPassword the value to be set. This parameter is required.
+         * @param adPassword Property adPassword: Domain password. This parameter is required.
          * @return {@code this}
          */
         public Builder adPassword(java.lang.String adPassword) {
@@ -75,8 +100,18 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ADInfoProps#getAdPassword}
+         * @param adPassword Property adPassword: Domain password. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder adPassword(com.aliyun.ros.cdk.core.IResolvable adPassword) {
+            this.adPassword = adPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ADInfoProps#getAdServerIpAddress}
-         * @param adServerIpAddress the value to be set. This parameter is required.
+         * @param adServerIpAddress Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS. This parameter is required.
          * @return {@code this}
          */
         public Builder adServerIpAddress(java.lang.String adServerIpAddress) {
@@ -85,11 +120,31 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ADInfoProps#getAdServerIpAddress}
+         * @param adServerIpAddress Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder adServerIpAddress(com.aliyun.ros.cdk.core.IResolvable adServerIpAddress) {
+            this.adServerIpAddress = adServerIpAddress;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ADInfoProps#getDbInstanceId}
-         * @param dbInstanceId the value to be set. This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ADInfoProps#getDbInstanceId}
+         * @param dbInstanceId Property dbInstanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
             this.dbInstanceId = dbInstanceId;
             return this;
         }
@@ -110,11 +165,11 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ADInfoProps {
-        private final java.lang.String adAccountName;
-        private final java.lang.String addns;
-        private final java.lang.String adPassword;
-        private final java.lang.String adServerIpAddress;
-        private final java.lang.String dbInstanceId;
+        private final java.lang.Object adAccountName;
+        private final java.lang.Object addns;
+        private final java.lang.Object adPassword;
+        private final java.lang.Object adServerIpAddress;
+        private final java.lang.Object dbInstanceId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -122,17 +177,17 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.adAccountName = software.amazon.jsii.Kernel.get(this, "adAccountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.addns = software.amazon.jsii.Kernel.get(this, "addns", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adPassword = software.amazon.jsii.Kernel.get(this, "adPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adServerIpAddress = software.amazon.jsii.Kernel.get(this, "adServerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.adAccountName = software.amazon.jsii.Kernel.get(this, "adAccountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.addns = software.amazon.jsii.Kernel.get(this, "addns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adPassword = software.amazon.jsii.Kernel.get(this, "adPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adServerIpAddress = software.amazon.jsii.Kernel.get(this, "adServerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String adAccountName, final java.lang.String addns, final java.lang.String adPassword, final java.lang.String adServerIpAddress, final java.lang.String dbInstanceId) {
+        protected Jsii$Proxy(final java.lang.Object adAccountName, final java.lang.Object addns, final java.lang.Object adPassword, final java.lang.Object adServerIpAddress, final java.lang.Object dbInstanceId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.adAccountName = java.util.Objects.requireNonNull(adAccountName, "adAccountName is required");
             this.addns = java.util.Objects.requireNonNull(addns, "addns is required");
@@ -142,27 +197,27 @@ public interface ADInfoProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAdAccountName() {
+        public final java.lang.Object getAdAccountName() {
             return this.adAccountName;
         }
 
         @Override
-        public final java.lang.String getAddns() {
+        public final java.lang.Object getAddns() {
             return this.addns;
         }
 
         @Override
-        public final java.lang.String getAdPassword() {
+        public final java.lang.Object getAdPassword() {
             return this.adPassword;
         }
 
         @Override
-        public final java.lang.String getAdServerIpAddress() {
+        public final java.lang.Object getAdServerIpAddress() {
             return this.adServerIpAddress;
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 

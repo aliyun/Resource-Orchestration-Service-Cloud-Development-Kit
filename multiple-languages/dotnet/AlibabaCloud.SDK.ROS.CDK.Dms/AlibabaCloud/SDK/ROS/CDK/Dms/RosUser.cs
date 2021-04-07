@@ -47,64 +47,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// <strong>Attribute</strong>: Mobile: UserMobile
         /// </remarks>
-        [JsiiProperty(name: "attrMobile", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMobile
+        [JsiiProperty(name: "attrMobile", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMobile
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ParentUid: ParentAliYunUid
         /// </remarks>
-        [JsiiProperty(name: "attrParentUid", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrParentUid
+        [JsiiProperty(name: "attrParentUid", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrParentUid
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: RoleIds: UserRoleId
         /// </remarks>
-        [JsiiProperty(name: "attrRoleIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRoleIds
+        [JsiiProperty(name: "attrRoleIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRoleIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: RoleNames: UserRole
         /// </remarks>
-        [JsiiProperty(name: "attrRoleNames", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRoleNames
+        [JsiiProperty(name: "attrRoleNames", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRoleNames
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Uid: UserAliYunUid
         /// </remarks>
-        [JsiiProperty(name: "attrUid", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUid
+        [JsiiProperty(name: "attrUid", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUid
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: UserId: UserId
         /// </remarks>
-        [JsiiProperty(name: "attrUserId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUserId
+        [JsiiProperty(name: "attrUserId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: UserName: UserNickName
         /// </remarks>
-        [JsiiProperty(name: "attrUserName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUserName
+        [JsiiProperty(name: "attrUserName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -123,10 +123,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// <strong>Property</strong>: uid: UserAliYunUid
         /// </remarks>
-        [JsiiProperty(name: "uid", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Uid
+        [JsiiProperty(name: "uid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Uid
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -134,10 +134,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: mobile: UserMobile
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "mobile", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Mobile
+        [JsiiProperty(name: "mobile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Mobile
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -145,10 +145,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: roleNames: UserRole
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "roleNames", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? RoleNames
+        [JsiiProperty(name: "roleNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? RoleNames
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -156,10 +156,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: status: UserStatus
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Status
+        [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Status
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -167,10 +167,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: tid:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Tid
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Tid
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -178,10 +178,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: userName: UserNickName
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? UserName
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UserName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

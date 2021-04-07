@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS template type:  `ALIYUN::SAG::GrantCcnToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.361Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.050Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosGrantCcnToCen")
 public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCcnInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCcnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCcnInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCcnInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCcnInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "ccnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCcnInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "ccnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +73,14 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCenInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "cenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCcnInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ccnInstanceId", java.util.Objects.requireNonNull(value, "ccnInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCenInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "cenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,13 +91,25 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCenUid() {
-        return software.amazon.jsii.Kernel.get(this, "cenUid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCenInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cenInstanceId", java.util.Objects.requireNonNull(value, "cenInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCenUid() {
+        return software.amazon.jsii.Kernel.get(this, "cenUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCenUid(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cenUid", java.util.Objects.requireNonNull(value, "cenUid is required"));
+    }
+
+    /**
+     */
+    public void setCenUid(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cenUid", java.util.Objects.requireNonNull(value, "cenUid is required"));
     }
 
@@ -137,6 +155,14 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ccnInstanceId(ccnInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ccnInstanceId This parameter is required.
+         */
+        public Builder ccnInstanceId(final com.aliyun.ros.cdk.core.IResolvable ccnInstanceId) {
+            this.props.ccnInstanceId(ccnInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -146,12 +172,28 @@ public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
             this.props.cenInstanceId(cenInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param cenInstanceId This parameter is required.
+         */
+        public Builder cenInstanceId(final com.aliyun.ros.cdk.core.IResolvable cenInstanceId) {
+            this.props.cenInstanceId(cenInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param cenUid This parameter is required.
          */
         public Builder cenUid(final java.lang.String cenUid) {
+            this.props.cenUid(cenUid);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cenUid This parameter is required.
+         */
+        public Builder cenUid(final com.aliyun.ros.cdk.core.IResolvable cenUid) {
             this.props.cenUid(cenUid);
             return this;
         }

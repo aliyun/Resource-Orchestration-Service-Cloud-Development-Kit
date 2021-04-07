@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * A ROS resource type:  `ALIYUN::BSS::WaitOrder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.751Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.WaitOrder")
 public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::BSS::WaitOrder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public WaitOrder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.bss.WaitOrderProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::BSS::WaitOrder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public WaitOrder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.bss.WaitOrderProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.bss.WaitOrder> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,16 +83,20 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property orderIds: A list of order ids.
+         * <p>
          * @return {@code this}
-         * @param orderIds This parameter is required.
+         * @param orderIds Property orderIds: A list of order ids. This parameter is required.
          */
         public Builder orderIds(final java.util.List<? extends java.lang.Object> orderIds) {
             this.props.orderIds(orderIds);
             return this;
         }
         /**
+         * Property orderIds: A list of order ids.
+         * <p>
          * @return {@code this}
-         * @param orderIds This parameter is required.
+         * @param orderIds Property orderIds: A list of order ids. This parameter is required.
          */
         public Builder orderIds(final com.aliyun.ros.cdk.core.IResolvable orderIds) {
             this.props.orderIds(orderIds);
@@ -92,16 +104,24 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cancelOnDelete: Cancel order where delete the resource.
+         * <p>
+         * Ignore the paid order. Default true
+         * <p>
          * @return {@code this}
-         * @param cancelOnDelete This parameter is required.
+         * @param cancelOnDelete Property cancelOnDelete: Cancel order where delete the resource. This parameter is required.
          */
         public Builder cancelOnDelete(final java.lang.Boolean cancelOnDelete) {
             this.props.cancelOnDelete(cancelOnDelete);
             return this;
         }
         /**
+         * Property cancelOnDelete: Cancel order where delete the resource.
+         * <p>
+         * Ignore the paid order. Default true
+         * <p>
          * @return {@code this}
-         * @param cancelOnDelete This parameter is required.
+         * @param cancelOnDelete Property cancelOnDelete: Cancel order where delete the resource. This parameter is required.
          */
         public Builder cancelOnDelete(final com.aliyun.ros.cdk.core.IResolvable cancelOnDelete) {
             this.props.cancelOnDelete(cancelOnDelete);
@@ -109,16 +129,24 @@ public class WaitOrder extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property waitForOrderProduced: Wait util all orders related ROS resources are produced.
+         * <p>
+         * Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
+         * <p>
          * @return {@code this}
-         * @param waitForOrderProduced This parameter is required.
+         * @param waitForOrderProduced Property waitForOrderProduced: Wait util all orders related ROS resources are produced. This parameter is required.
          */
         public Builder waitForOrderProduced(final java.lang.Boolean waitForOrderProduced) {
             this.props.waitForOrderProduced(waitForOrderProduced);
             return this;
         }
         /**
+         * Property waitForOrderProduced: Wait util all orders related ROS resources are produced.
+         * <p>
+         * Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
+         * <p>
          * @return {@code this}
-         * @param waitForOrderProduced This parameter is required.
+         * @param waitForOrderProduced Property waitForOrderProduced: Wait util all orders related ROS resources are produced. This parameter is required.
          */
         public Builder waitForOrderProduced(final com.aliyun.ros.cdk.core.IResolvable waitForOrderProduced) {
             this.props.waitForOrderProduced(waitForOrderProduced);

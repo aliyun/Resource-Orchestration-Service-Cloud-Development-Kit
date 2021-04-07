@@ -3,14 +3,47 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property serviceName: Which service to enable.
+     * <p>
+     * Valid values:
+     * AHAS: Application High Availability Service
+     * ARMS: Realtime Monitoring Service
+     * ApiGateway: API Gateway
+     * BatchCompute: Batch Compute
+     * BrainIndustrial: Brain Industrial
+     * CloudStorageGateway: Cloud Storage Gateway
+     * CMS: Cloud Monitor Service
+     * CR: Container Registry
+     * CS: Container Service
+     * DataHub: Data Hub
+     * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+     * EMAS: Enterprise Mobile Application Studio
+     * FC: Function Compute
+     * FNF: Serverless Workflow
+     * MaxCompute: MaxComputeNAS: Network Attached Storage
+     * MNS: Message Service (MNS)
+     * HBR: Hybrid Backup Recovery
+     * IMM: Intelligent Media Management
+     * IOT: IoT Platform
+     * KMS: Key Management Service
+     * NLP: Natural Language Processing
+     * OSS: Object Storage Service
+     * OTS: Table Store
+     * PrivateLink: Private Link
+     * PrivateZone: Private Zone
+     * RocketMQ: RocketMQ
+     * SAE: Serverless App Engine
+     * SLS: Log Service
+     * VS: Video Surveillance
+     * Xtrace: Tracing Anlaysis
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
      * @return a {@link Builder} of {@link AutoEnableServiceProps}
@@ -22,14 +55,86 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link AutoEnableServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AutoEnableServiceProps> {
-        private java.lang.String serviceName;
+        private java.lang.Object serviceName;
 
         /**
          * Sets the value of {@link AutoEnableServiceProps#getServiceName}
-         * @param serviceName the value to be set. This parameter is required.
+         * @param serviceName Property serviceName: Which service to enable. This parameter is required.
+         *                    Valid values:
+         *                    AHAS: Application High Availability Service
+         *                    ARMS: Realtime Monitoring Service
+         *                    ApiGateway: API Gateway
+         *                    BatchCompute: Batch Compute
+         *                    BrainIndustrial: Brain Industrial
+         *                    CloudStorageGateway: Cloud Storage Gateway
+         *                    CMS: Cloud Monitor Service
+         *                    CR: Container Registry
+         *                    CS: Container Service
+         *                    DataHub: Data Hub
+         *                    DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         *                    EMAS: Enterprise Mobile Application Studio
+         *                    FC: Function Compute
+         *                    FNF: Serverless Workflow
+         *                    MaxCompute: MaxComputeNAS: Network Attached Storage
+         *                    MNS: Message Service (MNS)
+         *                    HBR: Hybrid Backup Recovery
+         *                    IMM: Intelligent Media Management
+         *                    IOT: IoT Platform
+         *                    KMS: Key Management Service
+         *                    NLP: Natural Language Processing
+         *                    OSS: Object Storage Service
+         *                    OTS: Table Store
+         *                    PrivateLink: Private Link
+         *                    PrivateZone: Private Zone
+         *                    RocketMQ: RocketMQ
+         *                    SAE: Serverless App Engine
+         *                    SLS: Log Service
+         *                    VS: Video Surveillance
+         *                    Xtrace: Tracing Anlaysis
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoEnableServiceProps#getServiceName}
+         * @param serviceName Property serviceName: Which service to enable. This parameter is required.
+         *                    Valid values:
+         *                    AHAS: Application High Availability Service
+         *                    ARMS: Realtime Monitoring Service
+         *                    ApiGateway: API Gateway
+         *                    BatchCompute: Batch Compute
+         *                    BrainIndustrial: Brain Industrial
+         *                    CloudStorageGateway: Cloud Storage Gateway
+         *                    CMS: Cloud Monitor Service
+         *                    CR: Container Registry
+         *                    CS: Container Service
+         *                    DataHub: Data Hub
+         *                    DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         *                    EMAS: Enterprise Mobile Application Studio
+         *                    FC: Function Compute
+         *                    FNF: Serverless Workflow
+         *                    MaxCompute: MaxComputeNAS: Network Attached Storage
+         *                    MNS: Message Service (MNS)
+         *                    HBR: Hybrid Backup Recovery
+         *                    IMM: Intelligent Media Management
+         *                    IOT: IoT Platform
+         *                    KMS: Key Management Service
+         *                    NLP: Natural Language Processing
+         *                    OSS: Object Storage Service
+         *                    OTS: Table Store
+         *                    PrivateLink: Private Link
+         *                    PrivateZone: Private Zone
+         *                    RocketMQ: RocketMQ
+         *                    SAE: Serverless App Engine
+         *                    SLS: Log Service
+         *                    VS: Video Surveillance
+         *                    Xtrace: Tracing Anlaysis
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.serviceName = serviceName;
             return this;
         }
@@ -50,7 +155,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AutoEnableServiceProps {
-        private final java.lang.String serviceName;
+        private final java.lang.Object serviceName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -58,19 +163,19 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String serviceName) {
+        protected Jsii$Proxy(final java.lang.Object serviceName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 

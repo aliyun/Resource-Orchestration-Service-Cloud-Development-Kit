@@ -1,16 +1,16 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * An abstract application modeling unit consisting of Stacks that should be deployed together.
+ * An abstract application modeling unit consisting of Stacks that should be deployed together.
  * <p>
- * Derive a subclass of <code>Stage</code> and use it to model a single instance of your
+ * Derive a subclass of 'Stage' and use it to model a single instance of your
  * application.
  * <p>
  * You can then instantiate your subclass multiple times to model multiple
  * copies of your application which should be be deployed to different
  * environments.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stage")
 public class Stage extends com.aliyun.ros.cdk.core.Construct {
 
@@ -78,10 +78,7 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
-     * (experimental) Artifact ID of the assembly if it is a nested stage.
-     * <p>
-     * The root stage (app)
-     * will return an empty string.
+     * (experimental) Artifact ID of the assembly if it is a nested stage. The root stage app will return an empty string.
      * <p>
      * Derived from the construct path.
      */
@@ -102,7 +99,7 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
-     * (experimental) The parent stage or `undefined` if this is the app.
+     * (experimental) The parent stage or 'undefined' if this is the app.
      * <p>
      * <ul>
      * <li></li>
@@ -138,11 +135,13 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
         /**
          * The output directory into which to emit synthesized artifacts.
          * <p>
-         * Can only be specified if this stage is the root stage (the app). If this is
+         * Can only be specified if this stage is the root stage the app. If this is
          * specified and this stage is nested within another stage, an error will be
          * thrown.
          * <p>
-         * Default: - for nested stages, outdir will be determined as a relativedirectory to the outdir of the app. For apps, if outdir is not specified, atemporary directory will be created.
+         * Default - for nested stages, outdir will be determined as a relative
+         * directory to the outdir of the app. For apps, if outdir is not specified, a
+         * temporary directory will be created.
          * <p>
          * @return {@code this}
          * @param outdir The output directory into which to emit synthesized artifacts. This parameter is required.

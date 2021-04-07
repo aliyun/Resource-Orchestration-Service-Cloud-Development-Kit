@@ -11,17 +11,17 @@ export interface AttachPolicyToRoleProps {
     /**
      * Property policyName: Authorization policy name.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    readonly policyType: string;
+    readonly policyType: string | ros.IResolvable;
 
     /**
      * Property roleName: Role name.Example: dev.
      */
-    readonly roleName: string;
+    readonly roleName: string | ros.IResolvable;
 }
 
 /**

@@ -10,7 +10,7 @@ export interface RosRestoreTaskProps {
     /**
      * @Property backupPlanId: The ID of the backup plan.
      */
-    readonly backupPlanId: string;
+    readonly backupPlanId: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointInstanceType: The location of the database. Valid values: 
@@ -24,102 +24,102 @@ export interface RosRestoreTaskProps {
      * - drds 
      * - dg: the database is directly connected through IP Address: Port.
      */
-    readonly destinationEndpointInstanceType: string;
+    readonly destinationEndpointInstanceType: string | ros.IResolvable;
 
     /**
      * @Property restoreTaskName: The name of the restoration task.
      */
-    readonly restoreTaskName: string;
+    readonly restoreTaskName: string | ros.IResolvable;
 
     /**
      * @Property backupGatewayId: The ID of the backup gateway.
      * NoteDestinationEndpointInstanceType if you set this parameter to agent, this parameter is required.
      */
-    readonly backupGatewayId?: number;
+    readonly backupGatewayId?: number | ros.IResolvable;
 
     /**
      * @Property backupSetId: The ID of the full backup set used for restoration, which is mutually exclusive to
      * RestoreTime.
      */
-    readonly backupSetId?: string;
+    readonly backupSetId?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointDatabaseName: The name of the RDS database.
      * Note When the database type is PostgreSQL or MongoDB, this parameter is required.
      */
-    readonly destinationEndpointDatabaseName?: string;
+    readonly destinationEndpointDatabaseName?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointInstanceId: The ID of the ApsaraDB RDS instance to query.
      * NoteDestinationEndpointInstanceType if the value is RDS, ECS, DDS, or Express, this parameter is required.
      */
-    readonly destinationEndpointInstanceId?: string;
+    readonly destinationEndpointInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointIp: The endpoint used to connect to the database.
      * NoteDestinationEndpointInstanceType is express, agent, or other. This parameter is required.
      */
-    readonly destinationEndpointIp?: string;
+    readonly destinationEndpointIp?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointOracleSid: The SID of the Oracle instance.
      * Note This parameter is required if the database type is Oracle.
      */
-    readonly destinationEndpointOracleSid?: string;
+    readonly destinationEndpointOracleSid?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
      * Note You must specify this parameter when the database type is Redis, or the database location
      * is agent and the database type is MSSQL.
      */
-    readonly destinationEndpointPassword?: string;
+    readonly destinationEndpointPassword?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointPort: The port that is used to access the database of the primary MySQL server.
      * NoteDestinationEndpointInstanceType is in the format of express, agent, other, or ECS. This parameter is required.
      */
-    readonly destinationEndpointPort?: number;
+    readonly destinationEndpointPort?: number | ros.IResolvable;
 
     /**
      * @Property destinationEndpointRegion: The region of the database.
      * NoteDestinationEndpointInstanceType for RDS, ECS, DDS, Express, or Agent, this parameter is required.
      */
-    readonly destinationEndpointRegion?: string;
+    readonly destinationEndpointRegion?: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointUserName: The database account.
      * Note You must specify this parameter when the database type is Redis, or the database location
      * is agent and the database type is MSSQL.
      */
-    readonly destinationEndpointUserName?: string;
+    readonly destinationEndpointUserName?: string | ros.IResolvable;
 
     /**
      * @Property duplicateConflict: The handling method for conflicts between objects with the same name. Valid values:
      * failure: The object with the same name fails (default).
      * renamenew: renames an object with the same name.
      */
-    readonly duplicateConflict?: string;
+    readonly duplicateConflict?: string | ros.IResolvable;
 
     /**
      * @Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
      */
-    readonly restoreDir?: string;
+    readonly restoreDir?: string | ros.IResolvable;
 
     /**
      * @Property restoreHome: Database Program Directory.
      */
-    readonly restoreHome?: string;
+    readonly restoreHome?: string | ros.IResolvable;
 
     /**
      * @Property restoreObjects: Restore an object.
      * Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
      */
-    readonly restoreObjects?: string;
+    readonly restoreObjects?: string | ros.IResolvable;
 
     /**
      * @Property restoreTime: The time when the fault is restored. Set the value to 1554560477000.
      */
-    readonly restoreTime?: number;
+    readonly restoreTime?: number | ros.IResolvable;
 
     /**
      * @Property startTask: Start restore task after creating a recovery task.
@@ -221,7 +221,7 @@ export class RosRestoreTask extends ros.RosResource {
     /**
      * @Attribute RestoreTaskId: The ID of the restoration task.
      */
-    public readonly attrRestoreTaskId: any;
+    public readonly attrRestoreTaskId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -229,7 +229,7 @@ export class RosRestoreTask extends ros.RosResource {
     /**
      * @Property backupPlanId: The ID of the backup plan.
      */
-    public backupPlanId: string;
+    public backupPlanId: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpointInstanceType: The location of the database. Valid values: 
@@ -243,102 +243,102 @@ export class RosRestoreTask extends ros.RosResource {
      * - drds 
      * - dg: the database is directly connected through IP Address: Port.
      */
-    public destinationEndpointInstanceType: string;
+    public destinationEndpointInstanceType: string | ros.IResolvable;
 
     /**
      * @Property restoreTaskName: The name of the restoration task.
      */
-    public restoreTaskName: string;
+    public restoreTaskName: string | ros.IResolvable;
 
     /**
      * @Property backupGatewayId: The ID of the backup gateway.
      * NoteDestinationEndpointInstanceType if you set this parameter to agent, this parameter is required.
      */
-    public backupGatewayId: number | undefined;
+    public backupGatewayId: number | ros.IResolvable | undefined;
 
     /**
      * @Property backupSetId: The ID of the full backup set used for restoration, which is mutually exclusive to
      * RestoreTime.
      */
-    public backupSetId: string | undefined;
+    public backupSetId: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointDatabaseName: The name of the RDS database.
      * Note When the database type is PostgreSQL or MongoDB, this parameter is required.
      */
-    public destinationEndpointDatabaseName: string | undefined;
+    public destinationEndpointDatabaseName: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointInstanceId: The ID of the ApsaraDB RDS instance to query.
      * NoteDestinationEndpointInstanceType if the value is RDS, ECS, DDS, or Express, this parameter is required.
      */
-    public destinationEndpointInstanceId: string | undefined;
+    public destinationEndpointInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointIp: The endpoint used to connect to the database.
      * NoteDestinationEndpointInstanceType is express, agent, or other. This parameter is required.
      */
-    public destinationEndpointIp: string | undefined;
+    public destinationEndpointIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointOracleSid: The SID of the Oracle instance.
      * Note This parameter is required if the database type is Oracle.
      */
-    public destinationEndpointOracleSid: string | undefined;
+    public destinationEndpointOracleSid: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
      * Note You must specify this parameter when the database type is Redis, or the database location
      * is agent and the database type is MSSQL.
      */
-    public destinationEndpointPassword: string | undefined;
+    public destinationEndpointPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointPort: The port that is used to access the database of the primary MySQL server.
      * NoteDestinationEndpointInstanceType is in the format of express, agent, other, or ECS. This parameter is required.
      */
-    public destinationEndpointPort: number | undefined;
+    public destinationEndpointPort: number | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointRegion: The region of the database.
      * NoteDestinationEndpointInstanceType for RDS, ECS, DDS, Express, or Agent, this parameter is required.
      */
-    public destinationEndpointRegion: string | undefined;
+    public destinationEndpointRegion: string | ros.IResolvable | undefined;
 
     /**
      * @Property destinationEndpointUserName: The database account.
      * Note You must specify this parameter when the database type is Redis, or the database location
      * is agent and the database type is MSSQL.
      */
-    public destinationEndpointUserName: string | undefined;
+    public destinationEndpointUserName: string | ros.IResolvable | undefined;
 
     /**
      * @Property duplicateConflict: The handling method for conflicts between objects with the same name. Valid values:
      * failure: The object with the same name fails (default).
      * renamenew: renames an object with the same name.
      */
-    public duplicateConflict: string | undefined;
+    public duplicateConflict: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
      */
-    public restoreDir: string | undefined;
+    public restoreDir: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreHome: Database Program Directory.
      */
-    public restoreHome: string | undefined;
+    public restoreHome: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreObjects: Restore an object.
      * Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
      */
-    public restoreObjects: string | undefined;
+    public restoreObjects: string | ros.IResolvable | undefined;
 
     /**
      * @Property restoreTime: The time when the fault is restored. Set the value to 1554560477000.
      */
-    public restoreTime: number | undefined;
+    public restoreTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property startTask: Start restore task after creating a recovery task.
@@ -354,7 +354,7 @@ export class RosRestoreTask extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRestoreTaskProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRestoreTask.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRestoreTaskId = ros.Token.asString(this.getAtt('RestoreTaskId'));
+        this.attrRestoreTaskId = this.getAtt('RestoreTaskId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPlanId = props.backupPlanId;

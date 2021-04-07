@@ -15,8 +15,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// small, medium, large and so on.
         /// Various specifications of the reference data migration test performance specifications
         /// </remarks>
-        [JsiiProperty(name: "migrationJobClass", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string MigrationJobClass
+        [JsiiProperty(name: "migrationJobClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object MigrationJobClass
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <strong>Property</strong>: migrationJobName: Migrating job name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "migrationJobName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MigrationJobName
+        [JsiiProperty(name: "migrationJobName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MigrationJobName
         {
             get;
             set;

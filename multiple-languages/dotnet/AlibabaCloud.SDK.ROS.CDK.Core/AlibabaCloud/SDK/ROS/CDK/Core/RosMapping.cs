@@ -27,10 +27,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <returns>A reference to a value in the map based on the two keys.</returns>
-        [JsiiMethod(name: "findInMap", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"name\":\"key1\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"key2\",\"type\":{\"primitive\":\"string\"}}]")]
-        public virtual string FindInMap(string key1, string key2)
+        [JsiiMethod(name: "findInMap", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}}", parametersJson: "[{\"name\":\"key1\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"key2\",\"type\":{\"primitive\":\"string\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable FindInMap(string key1, string key2)
         {
-            return InvokeInstanceMethod<string>(new System.Type[]{typeof(string), typeof(string)}, new object[]{key1, key2})!;
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(new System.Type[]{typeof(string), typeof(string)}, new object[]{key1, key2})!;
         }
 
         /// <summary>Sets a value in the map based on the two keys.</summary>

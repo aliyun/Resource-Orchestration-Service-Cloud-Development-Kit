@@ -3,38 +3,44 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::Accelerator`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.584Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.AcceleratorProps")
 @software.amazon.jsii.Jsii.Proxy(AcceleratorProps.Jsii$Proxy.class)
 public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property duration: The Duration of the GA instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDuration();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDuration();
 
     /**
+     * Property pricingCycle: The PricingCycle of the GA instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPricingCycle();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPricingCycle();
 
     /**
+     * Property spec: The instance type of the GA instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSpec();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSpec();
 
     /**
+     * Property acceleratorName: The Name of the GA instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAcceleratorName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAcceleratorName() {
         return null;
     }
 
     /**
+     * Property autoPay: The AutoPay of the GA instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoPay() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoUseCoupon() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoUseCoupon() {
         return null;
     }
 
@@ -48,16 +54,16 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link AcceleratorProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AcceleratorProps> {
-        private java.lang.String duration;
-        private java.lang.String pricingCycle;
-        private java.lang.String spec;
-        private java.lang.String acceleratorName;
-        private java.lang.String autoPay;
-        private java.lang.String autoUseCoupon;
+        private java.lang.Object duration;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object spec;
+        private java.lang.Object acceleratorName;
+        private java.lang.Object autoPay;
+        private java.lang.Object autoUseCoupon;
 
         /**
          * Sets the value of {@link AcceleratorProps#getDuration}
-         * @param duration the value to be set. This parameter is required.
+         * @param duration Property duration: The Duration of the GA instance. This parameter is required.
          * @return {@code this}
          */
         public Builder duration(java.lang.String duration) {
@@ -66,8 +72,18 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AcceleratorProps#getDuration}
+         * @param duration Property duration: The Duration of the GA instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AcceleratorProps#getPricingCycle}
-         * @param pricingCycle the value to be set. This parameter is required.
+         * @param pricingCycle Property pricingCycle: The PricingCycle of the GA instance. This parameter is required.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -76,8 +92,18 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AcceleratorProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: The PricingCycle of the GA instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AcceleratorProps#getSpec}
-         * @param spec the value to be set. This parameter is required.
+         * @param spec Property spec: The instance type of the GA instance. This parameter is required.
          * @return {@code this}
          */
         public Builder spec(java.lang.String spec) {
@@ -86,8 +112,18 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AcceleratorProps#getSpec}
+         * @param spec Property spec: The instance type of the GA instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
+            this.spec = spec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AcceleratorProps#getAcceleratorName}
-         * @param acceleratorName the value to be set.
+         * @param acceleratorName Property acceleratorName: The Name of the GA instance.
          * @return {@code this}
          */
         public Builder acceleratorName(java.lang.String acceleratorName) {
@@ -96,8 +132,18 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AcceleratorProps#getAcceleratorName}
+         * @param acceleratorName Property acceleratorName: The Name of the GA instance.
+         * @return {@code this}
+         */
+        public Builder acceleratorName(com.aliyun.ros.cdk.core.IResolvable acceleratorName) {
+            this.acceleratorName = acceleratorName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AcceleratorProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: The AutoPay of the GA instance.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.String autoPay) {
@@ -106,11 +152,31 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link AcceleratorProps#getAutoPay}
+         * @param autoPay Property autoPay: The AutoPay of the GA instance.
+         * @return {@code this}
+         */
+        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.autoPay = autoPay;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AcceleratorProps#getAutoUseCoupon}
-         * @param autoUseCoupon the value to be set.
+         * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon of the GA instance.
          * @return {@code this}
          */
         public Builder autoUseCoupon(java.lang.String autoUseCoupon) {
+            this.autoUseCoupon = autoUseCoupon;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AcceleratorProps#getAutoUseCoupon}
+         * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon of the GA instance.
+         * @return {@code this}
+         */
+        public Builder autoUseCoupon(com.aliyun.ros.cdk.core.IResolvable autoUseCoupon) {
             this.autoUseCoupon = autoUseCoupon;
             return this;
         }
@@ -131,12 +197,12 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AcceleratorProps {
-        private final java.lang.String duration;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String spec;
-        private final java.lang.String acceleratorName;
-        private final java.lang.String autoPay;
-        private final java.lang.String autoUseCoupon;
+        private final java.lang.Object duration;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object spec;
+        private final java.lang.Object acceleratorName;
+        private final java.lang.Object autoPay;
+        private final java.lang.Object autoUseCoupon;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +210,18 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.acceleratorName = software.amazon.jsii.Kernel.get(this, "acceleratorName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.acceleratorName = software.amazon.jsii.Kernel.get(this, "acceleratorName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String duration, final java.lang.String pricingCycle, final java.lang.String spec, final java.lang.String acceleratorName, final java.lang.String autoPay, final java.lang.String autoUseCoupon) {
+        protected Jsii$Proxy(final java.lang.Object duration, final java.lang.Object pricingCycle, final java.lang.Object spec, final java.lang.Object acceleratorName, final java.lang.Object autoPay, final java.lang.Object autoUseCoupon) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.duration = java.util.Objects.requireNonNull(duration, "duration is required");
             this.pricingCycle = java.util.Objects.requireNonNull(pricingCycle, "pricingCycle is required");
@@ -166,32 +232,32 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getSpec() {
+        public final java.lang.Object getSpec() {
             return this.spec;
         }
 
         @Override
-        public final java.lang.String getAcceleratorName() {
+        public final java.lang.Object getAcceleratorName() {
             return this.acceleratorName;
         }
 
         @Override
-        public final java.lang.String getAutoPay() {
+        public final java.lang.Object getAutoPay() {
             return this.autoPay;
         }
 
         @Override
-        public final java.lang.String getAutoUseCoupon() {
+        public final java.lang.Object getAutoUseCoupon() {
             return this.autoUseCoupon;
         }
 

@@ -9,23 +9,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
     public interface IWaitConditionProps
     {
         /// <summary>Property handle: A reference to the wait condition handle used to signal this wait condition.</summary>
-        [JsiiProperty(name: "handle", typeJson: "{\"primitive\":\"string\"}")]
-        string Handle
+        [JsiiProperty(name: "handle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Handle
         {
             get;
         }
 
         /// <summary>Property timeout: The number of seconds to wait for the correct number of signals to arrive.</summary>
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}")]
-        double Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Timeout
         {
             get;
         }
 
         /// <summary>Property count: The number of success signals that must be received before the stack creation process continues.</summary>
-        [JsiiProperty(name: "count", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Count
+        object? Count
         {
             get
             {
@@ -42,25 +42,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
 
             /// <summary>Property handle: A reference to the wait condition handle used to signal this wait condition.</summary>
-            [JsiiProperty(name: "handle", typeJson: "{\"primitive\":\"string\"}")]
-            public string Handle
+            [JsiiProperty(name: "handle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Handle
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property timeout: The number of seconds to wait for the correct number of signals to arrive.</summary>
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}")]
-            public double Timeout
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Timeout
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property count: The number of success signals that must be received before the stack creation process continues.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "count", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Count
+            [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Count
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

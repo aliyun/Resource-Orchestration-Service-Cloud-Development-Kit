@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::CenBandwidthLimit`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.212Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthLimit")
 public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getBandwidthLimit() {
-        return software.amazon.jsii.Kernel.get(this, "bandwidthLimit", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthLimit() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,8 +61,14 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCenId() {
-        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBandwidthLimit(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthLimit", java.util.Objects.requireNonNull(value, "bandwidthLimit is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCenId() {
+        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -72,14 +78,20 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setCenId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cenId", java.util.Objects.requireNonNull(value, "cenId is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -87,8 +99,8 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLocalRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "localRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLocalRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "localRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getOppositeRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLocalRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "localRegionId", java.util.Objects.requireNonNull(value, "localRegionId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getOppositeRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setOppositeRegionId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeRegionId", java.util.Objects.requireNonNull(value, "oppositeRegionId is required"));
+    }
+
+    /**
+     */
+    public void setOppositeRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "oppositeRegionId", java.util.Objects.requireNonNull(value, "oppositeRegionId is required"));
     }
 
@@ -143,12 +167,28 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
             this.props.bandwidthLimit(bandwidthLimit);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param bandwidthLimit This parameter is required.
+         */
+        public Builder bandwidthLimit(final com.aliyun.ros.cdk.core.IResolvable bandwidthLimit) {
+            this.props.bandwidthLimit(bandwidthLimit);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param cenId This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cenId This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.props.cenId(cenId);
             return this;
         }
@@ -161,12 +201,28 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
             this.props.localRegionId(localRegionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param localRegionId This parameter is required.
+         */
+        public Builder localRegionId(final com.aliyun.ros.cdk.core.IResolvable localRegionId) {
+            this.props.localRegionId(localRegionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param oppositeRegionId This parameter is required.
          */
         public Builder oppositeRegionId(final java.lang.String oppositeRegionId) {
+            this.props.oppositeRegionId(oppositeRegionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param oppositeRegionId This parameter is required.
+         */
+        public Builder oppositeRegionId(final com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
             this.props.oppositeRegionId(oppositeRegionId);
             return this;
         }

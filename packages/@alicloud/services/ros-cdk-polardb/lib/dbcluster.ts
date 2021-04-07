@@ -11,7 +11,7 @@ export interface DBClusterProps {
     /**
      * Property dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
      */
-    readonly dbNodeClass: string;
+    readonly dbNodeClass: string | ros.IResolvable;
 
     /**
      * Property dbType: Database type, value:
@@ -19,7 +19,7 @@ export interface DBClusterProps {
      * PostgreSQL
      * Oracle
      */
-    readonly dbType: string;
+    readonly dbType: string | ros.IResolvable;
 
     /**
      * Property dbVersion: The version of the database. Valid values:
@@ -27,19 +27,19 @@ export interface DBClusterProps {
      * PostgreSQL: 11
      * Oracle: 11
      */
-    readonly dbVersion: string;
+    readonly dbVersion: string | ros.IResolvable;
 
     /**
      * Property payType: The billing method of the cluster. Valid values:
      * Postpaid: pay-as-you-go
      * Prepaid: subscription
      */
-    readonly payType: string;
+    readonly payType: string | ros.IResolvable;
 
     /**
      * Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
-    readonly autoRenewPeriod?: number;
+    readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows:
@@ -49,7 +49,7 @@ export interface DBClusterProps {
      * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    readonly backupRetentionPolicyOnClusterDeletion?: string;
+    readonly backupRetentionPolicyOnClusterDeletion?: string | ros.IResolvable;
 
     /**
      * Property cloneDataPoint: The time point of data to be cloned. Valid values:
@@ -62,17 +62,17 @@ export interface DBClusterProps {
      * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
      * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
      */
-    readonly cloneDataPoint?: string;
+    readonly cloneDataPoint?: string | ros.IResolvable;
 
     /**
      * Property clusterNetworkType: The network type of the cluster. Currently, only VPC is supported. Default value: VPC.
      */
-    readonly clusterNetworkType?: string;
+    readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
      * Property creationCategory: Cluster series. The value could be Normal (standard version).
      */
-    readonly creationCategory?: string;
+    readonly creationCategory?: string | ros.IResolvable;
 
     /**
      * Property creationOption: The method for creating an ApsaraDB for POLARDB cluster. Valid values:
@@ -87,7 +87,7 @@ export interface DBClusterProps {
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
      * When DBType is MySQL and DBVersion is 8.0, this parameter can be specified as CreateGdnStandby.
      */
-    readonly creationOption?: string;
+    readonly creationOption?: string | ros.IResolvable;
 
     /**
      * Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
@@ -96,7 +96,12 @@ export interface DBClusterProps {
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    readonly dbClusterDescription?: string;
+    readonly dbClusterDescription?: string | ros.IResolvable;
+
+    /**
+     * Property dbClusterParameters: Modifies the parameters of a the PolarDB cluster.
+     */
+    readonly dbClusterParameters?: RosDBCluster.DBClusterParametersProperty | ros.IResolvable;
 
     /**
      * Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
@@ -104,13 +109,13 @@ export interface DBClusterProps {
      * Other pickable value range is from -12:00 to +13:00, for example, 00:00.
      * Note: This parameter takes effect only when DBType is MySQL.
      */
-    readonly defaultTimeZone?: string;
+    readonly defaultTimeZone?: string | ros.IResolvable;
 
     /**
      * Property gdnId: The ID of the Global Database Network (GDN).
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
-    readonly gdnId?: string;
+    readonly gdnId?: string | ros.IResolvable;
 
     /**
      * Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows:
@@ -118,19 +123,19 @@ export interface DBClusterProps {
      * The default value is 1.
      * Note: This parameter takes effect only when the value of DBType is MySQL.
      */
-    readonly lowerCaseTableNames?: number;
+    readonly lowerCaseTableNames?: number | ros.IResolvable;
 
     /**
      * Property maintainTime: The maintainable time of the cluster:
      * Format: HH: mmZ- HH: mmZ.
      * Example: 16:00Z-17:00Z, which means 0 to 1 (UTC+08:00) for routine maintenance.
      */
-    readonly maintainTime?: string;
+    readonly maintainTime?: string | ros.IResolvable;
 
     /**
      * Property period: The subscription period of the cluster in month. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -142,17 +147,24 @@ export interface DBClusterProps {
      * but only sends an SMS message three days before the cluster expires to remind you
      * that the cluster is not renewed.
      */
-    readonly renewalStatus?: string;
+    readonly renewalStatus?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property securityGroupIds: The ID of the security group. 
+     * You can add up to three security groups to a cluster.
+     *
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
-    readonly securityIpList?: string;
+    readonly securityIpList?: string | ros.IResolvable;
 
     /**
      * Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -160,7 +172,12 @@ export interface DBClusterProps {
      * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
-    readonly sourceResourceId?: string;
+    readonly sourceResourceId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDBCluster.TagsProperty[];
 
     /**
      * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -173,17 +190,17 @@ export interface DBClusterProps {
     /**
      * Property vpcId: The ID of the VPC to connect to.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The ID of the VSwitch to connect to.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property zoneId: The zone ID of the cluster. You can call the DescribeRegions operation to query available zones.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -199,47 +216,47 @@ export class DBCluster extends ros.Resource {
     /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
      */
-    public readonly attrClusterConnectionString: any;
+    public readonly attrClusterConnectionString: ros.IResolvable;
 
     /**
      * Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
      */
-    public readonly attrClusterEndpointId: any;
+    public readonly attrClusterEndpointId: ros.IResolvable;
 
     /**
      * Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
      */
-    public readonly attrCustomConnectionStrings: any;
+    public readonly attrCustomConnectionStrings: ros.IResolvable;
 
     /**
      * Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
      */
-    public readonly attrCustomEndpointIds: any;
+    public readonly attrCustomEndpointIds: ros.IResolvable;
 
     /**
      * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
      */
-    public readonly attrDbClusterId: any;
+    public readonly attrDbClusterId: ros.IResolvable;
 
     /**
      * Attribute DBNodeIds: The ID list of cluster nodes.
      */
-    public readonly attrDbNodeIds: any;
+    public readonly attrDbNodeIds: ros.IResolvable;
 
     /**
      * Attribute OrderId: The Order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Attribute PrimaryConnectionString: The primary connection string of the db cluster.
      */
-    public readonly attrPrimaryConnectionString: any;
+    public readonly attrPrimaryConnectionString: ros.IResolvable;
 
     /**
      * Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
      */
-    public readonly attrPrimaryEndpointId: any;
+    public readonly attrPrimaryEndpointId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBCluster`.
@@ -252,30 +269,33 @@ export class DBCluster extends ros.Resource {
         super(scope, id);
 
         const rosDBCluster = new RosDBCluster(this, id,  {
-            autoRenewPeriod: props.autoRenewPeriod ? props.autoRenewPeriod : 1,
             defaultTimeZone: props.defaultTimeZone,
-            tdeStatus: props.tdeStatus,
             cloneDataPoint: props.cloneDataPoint ? props.cloneDataPoint : 'LATEST',
             gdnId: props.gdnId,
             resourceGroupId: props.resourceGroupId,
+            backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
+            sourceResourceId: props.sourceResourceId,
+            dbType: props.dbType,
+            dbVersion: props.dbVersion,
+            clusterNetworkType: props.clusterNetworkType ? props.clusterNetworkType : 'VPC',
+            securityIpList: props.securityIpList,
+            dbClusterParameters: props.dbClusterParameters,
+            maintainTime: props.maintainTime,
+            tags: props.tags,
+            lowerCaseTableNames: props.lowerCaseTableNames,
+            autoRenewPeriod: props.autoRenewPeriod ? props.autoRenewPeriod : 1,
+            tdeStatus: props.tdeStatus,
             zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
-            backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
             renewalStatus: props.renewalStatus ? props.renewalStatus : 'Normal',
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
-            sourceResourceId: props.sourceResourceId,
-            dbType: props.dbType,
             payType: props.payType,
             creationCategory: props.creationCategory,
+            securityGroupIds: props.securityGroupIds,
             dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption ? props.creationOption : 'Normal',
-            dbVersion: props.dbVersion,
-            clusterNetworkType: props.clusterNetworkType ? props.clusterNetworkType : 'VPC',
             vpcId: props.vpcId,
-            securityIpList: props.securityIpList,
-            maintainTime: props.maintainTime,
-            lowerCaseTableNames: props.lowerCaseTableNames,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;

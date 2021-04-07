@@ -27,17 +27,17 @@ export class AnyCluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CS::AnyCluster`.

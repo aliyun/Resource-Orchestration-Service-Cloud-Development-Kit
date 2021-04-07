@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getImageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSystemDiskCategory();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSystemDiskCategory();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getSystemDiskSize();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSystemDiskSize();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getWorkMode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getWorkMode();
 
     /**
      */
@@ -52,49 +52,49 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -108,23 +108,23 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.String clusterId;
-        private java.lang.String imageId;
-        private java.lang.String instanceType;
-        private java.lang.String systemDiskCategory;
-        private java.lang.Number systemDiskSize;
-        private java.lang.String workMode;
+        private java.lang.Object clusterId;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceType;
+        private java.lang.Object systemDiskCategory;
+        private java.lang.Object systemDiskSize;
+        private java.lang.Object workMode;
         private java.lang.Object allocatePublicAddress;
         private java.lang.Object appList;
         private java.lang.Object autoRenew;
-        private java.lang.String instanceChargeType;
-        private java.lang.String internetChargeType;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.Number internetMaxBandwidthOut;
-        private java.lang.String name;
-        private java.lang.Number period;
-        private java.lang.String periodUnit;
-        private java.lang.String vSwitchId;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object internetMaxBandwidthOut;
+        private java.lang.Object name;
+        private java.lang.Object period;
+        private java.lang.Object periodUnit;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getClusterId}
@@ -132,6 +132,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder clusterId(java.lang.String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getClusterId}
+         * @param clusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
             this.clusterId = clusterId;
             return this;
         }
@@ -147,11 +157,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getImageId}
+         * @param imageId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInstanceType}
          * @param instanceType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceType}
+         * @param instanceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.instanceType = instanceType;
             return this;
         }
@@ -167,6 +197,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSystemDiskCategory}
+         * @param systemDiskCategory the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
+            this.systemDiskCategory = systemDiskCategory;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSystemDiskSize}
          * @param systemDiskSize the value to be set. This parameter is required.
          * @return {@code this}
@@ -177,11 +217,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSystemDiskSize}
+         * @param systemDiskSize the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getWorkMode}
          * @param workMode the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder workMode(java.lang.String workMode) {
+            this.workMode = workMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getWorkMode}
+         * @param workMode the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder workMode(com.aliyun.ros.cdk.core.IResolvable workMode) {
             this.workMode = workMode;
             return this;
         }
@@ -257,11 +317,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInternetChargeType}
          * @param internetChargeType the value to be set.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInternetChargeType}
+         * @param internetChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.internetChargeType = internetChargeType;
             return this;
         }
@@ -277,11 +357,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInternetMaxBandwidthOut}
          * @param internetMaxBandwidthOut the value to be set.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
+            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInternetMaxBandwidthOut}
+         * @param internetMaxBandwidthOut the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
             this.internetMaxBandwidthOut = internetMaxBandwidthOut;
             return this;
         }
@@ -297,11 +397,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -317,11 +437,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -342,23 +482,23 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceProps {
-        private final java.lang.String clusterId;
-        private final java.lang.String imageId;
-        private final java.lang.String instanceType;
-        private final java.lang.String systemDiskCategory;
-        private final java.lang.Number systemDiskSize;
-        private final java.lang.String workMode;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskSize;
+        private final java.lang.Object workMode;
         private final java.lang.Object allocatePublicAddress;
         private final java.lang.Object appList;
         private final java.lang.Object autoRenew;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String internetChargeType;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.Number internetMaxBandwidthOut;
-        private final java.lang.String name;
-        private final java.lang.Number period;
-        private final java.lang.String periodUnit;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object internetMaxBandwidthOut;
+        private final java.lang.Object name;
+        private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -366,29 +506,29 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.workMode = software.amazon.jsii.Kernel.get(this, "workMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workMode = software.amazon.jsii.Kernel.get(this, "workMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicAddress = software.amazon.jsii.Kernel.get(this, "allocatePublicAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.appList = software.amazon.jsii.Kernel.get(this, "appList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterId, final java.lang.String imageId, final java.lang.String instanceType, final java.lang.String systemDiskCategory, final java.lang.Number systemDiskSize, final java.lang.String workMode, final java.lang.Object allocatePublicAddress, final java.lang.Object appList, final java.lang.Object autoRenew, final java.lang.String instanceChargeType, final java.lang.String internetChargeType, final java.lang.Number internetMaxBandwidthIn, final java.lang.Number internetMaxBandwidthOut, final java.lang.String name, final java.lang.Number period, final java.lang.String periodUnit, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object clusterId, final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskSize, final java.lang.Object workMode, final java.lang.Object allocatePublicAddress, final java.lang.Object appList, final java.lang.Object autoRenew, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object name, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
             this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
@@ -410,32 +550,32 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getClusterId() {
+        public final java.lang.Object getClusterId() {
             return this.clusterId;
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.String getSystemDiskCategory() {
+        public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
 
         @Override
-        public final java.lang.Number getSystemDiskSize() {
+        public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
 
         @Override
-        public final java.lang.String getWorkMode() {
+        public final java.lang.Object getWorkMode() {
             return this.workMode;
         }
 
@@ -455,42 +595,42 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthOut() {
+        public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodUnit() {
+        public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

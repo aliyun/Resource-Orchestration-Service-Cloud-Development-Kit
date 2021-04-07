@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute SnatEntryIds: The IDS of the SNAT entry.</summary>
-        [JsiiProperty(name: "attrSnatEntryIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSnatEntryIds
+        [JsiiProperty(name: "attrSnatEntryIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSnatEntryIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,28 +3,40 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.818Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpointAddressProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterEndpointAddressProps.Jsii$Proxy.class)
 public interface DBClusterEndpointAddressProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     * Property dbEndpointId: The ID of the cluster connection point.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbEndpointId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbEndpointId();
 
     /**
+     * Property connectionStringPrefix: The prefix of the connection string.
+     * <p>
+     * The prefix must comply with the following rules:
+     * It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
+     * The length is 6~30 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringPrefix() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringPrefix() {
         return null;
     }
 
     /**
+     * Property netType: The network type of the connection string.
+     * <p>
+     * If set to Public, ROS will create, modify and delete Public address for you.
+     * If set to Private, ROS will only modify Private address for you.
+     * Default to Public.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetType() {
         return null;
     }
 
@@ -38,14 +50,14 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
      * A builder for {@link DBClusterEndpointAddressProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterEndpointAddressProps> {
-        private java.lang.String dbClusterId;
-        private java.lang.String dbEndpointId;
-        private java.lang.String connectionStringPrefix;
-        private java.lang.String netType;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object dbEndpointId;
+        private java.lang.Object connectionStringPrefix;
+        private java.lang.Object netType;
 
         /**
          * Sets the value of {@link DBClusterEndpointAddressProps#getDbClusterId}
-         * @param dbClusterId the value to be set. This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
@@ -54,8 +66,18 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointAddressProps#getDbClusterId}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointAddressProps#getDbEndpointId}
-         * @param dbEndpointId the value to be set. This parameter is required.
+         * @param dbEndpointId Property dbEndpointId: The ID of the cluster connection point. This parameter is required.
          * @return {@code this}
          */
         public Builder dbEndpointId(java.lang.String dbEndpointId) {
@@ -64,8 +86,21 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointAddressProps#getDbEndpointId}
+         * @param dbEndpointId Property dbEndpointId: The ID of the cluster connection point. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbEndpointId(com.aliyun.ros.cdk.core.IResolvable dbEndpointId) {
+            this.dbEndpointId = dbEndpointId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointAddressProps#getConnectionStringPrefix}
-         * @param connectionStringPrefix the value to be set.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the connection string.
+         *                               The prefix must comply with the following rules:
+         *                               It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
+         *                               The length is 6~30 characters.
          * @return {@code this}
          */
         public Builder connectionStringPrefix(java.lang.String connectionStringPrefix) {
@@ -74,11 +109,40 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointAddressProps#getConnectionStringPrefix}
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the connection string.
+         *                               The prefix must comply with the following rules:
+         *                               It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
+         *                               The length is 6~30 characters.
+         * @return {@code this}
+         */
+        public Builder connectionStringPrefix(com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
+            this.connectionStringPrefix = connectionStringPrefix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointAddressProps#getNetType}
-         * @param netType the value to be set.
+         * @param netType Property netType: The network type of the connection string.
+         *                If set to Public, ROS will create, modify and delete Public address for you.
+         *                If set to Private, ROS will only modify Private address for you.
+         *                Default to Public.
          * @return {@code this}
          */
         public Builder netType(java.lang.String netType) {
+            this.netType = netType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterEndpointAddressProps#getNetType}
+         * @param netType Property netType: The network type of the connection string.
+         *                If set to Public, ROS will create, modify and delete Public address for you.
+         *                If set to Private, ROS will only modify Private address for you.
+         *                Default to Public.
+         * @return {@code this}
+         */
+        public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
             this.netType = netType;
             return this;
         }
@@ -99,10 +163,10 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBClusterEndpointAddressProps {
-        private final java.lang.String dbClusterId;
-        private final java.lang.String dbEndpointId;
-        private final java.lang.String connectionStringPrefix;
-        private final java.lang.String netType;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object dbEndpointId;
+        private final java.lang.Object connectionStringPrefix;
+        private final java.lang.Object netType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -110,16 +174,16 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbEndpointId = software.amazon.jsii.Kernel.get(this, "dbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbEndpointId = software.amazon.jsii.Kernel.get(this, "dbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbClusterId, final java.lang.String dbEndpointId, final java.lang.String connectionStringPrefix, final java.lang.String netType) {
+        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object dbEndpointId, final java.lang.Object connectionStringPrefix, final java.lang.Object netType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
             this.dbEndpointId = java.util.Objects.requireNonNull(dbEndpointId, "dbEndpointId is required");
@@ -128,22 +192,22 @@ public interface DBClusterEndpointAddressProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getDbEndpointId() {
+        public final java.lang.Object getDbEndpointId() {
             return this.dbEndpointId;
         }
 
         @Override
-        public final java.lang.String getConnectionStringPrefix() {
+        public final java.lang.Object getConnectionStringPrefix() {
             return this.connectionStringPrefix;
         }
 
         @Override
-        public final java.lang.String getNetType() {
+        public final java.lang.Object getNetType() {
             return this.netType;
         }
 

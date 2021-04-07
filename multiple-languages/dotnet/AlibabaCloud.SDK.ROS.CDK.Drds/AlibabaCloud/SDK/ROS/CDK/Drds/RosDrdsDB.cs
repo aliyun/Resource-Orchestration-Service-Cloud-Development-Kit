@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <remarks>
         /// <strong>Property</strong>: drdsInstanceId: DRDS instance ID
         /// </remarks>
-        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DrdsInstanceId
+        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DrdsInstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -72,10 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AccountName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -95,10 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// RDS or POLARDB
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DbInstType
+        [JsiiProperty(name: "dbInstType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DbInstType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: dbName: Database Name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DbName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -117,10 +117,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: encode: Encoding used by the database
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "encode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Encode
+        [JsiiProperty(name: "encode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Encode
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -139,10 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: password: The logon password of the database instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Password
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -150,10 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// <strong>Property</strong>: rdsInstance: This property is required only for vertical partitioning.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "rdsInstance", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? RdsInstance
+        [JsiiProperty(name: "rdsInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? RdsInstance
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -164,10 +164,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// VERTICAL: indicates VERTICAL partitioning.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Type
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IInstDbNameProperty), fullyQualifiedName: "@alicloud/ros-cdk-drds.RosDrdsDB.InstDbNameProperty")]
@@ -176,8 +176,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// <remarks>
             /// <strong>Property</strong>: dbInstanceId: List of DB instance ID that requires vertical segmentation.This property is only used in vertical subdivision.
             /// </remarks>
-            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            string DbInstanceId
+            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DbInstanceId
             {
                 get;
             }
@@ -185,8 +185,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// <remarks>
             /// <strong>Property</strong>: shardDbName: List of databases that need to be split vertically in the RDS instance.This property is only used in vertical subdivision.
             /// </remarks>
-            [JsiiProperty(name: "shardDbName", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-            string[] ShardDbName
+            [JsiiProperty(name: "shardDbName", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            object ShardDbName
             {
                 get;
             }
@@ -201,19 +201,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
                 /// <remarks>
                 /// <strong>Property</strong>: dbInstanceId: List of DB instance ID that requires vertical segmentation.This property is only used in vertical subdivision.
                 /// </remarks>
-                [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-                public string DbInstanceId
+                [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DbInstanceId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: shardDbName: List of databases that need to be split vertically in the RDS instance.This property is only used in vertical subdivision.
                 /// </remarks>
-                [JsiiProperty(name: "shardDbName", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-                public string[] ShardDbName
+                [JsiiProperty(name: "shardDbName", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+                public object ShardDbName
                 {
-                    get => GetInstanceProperty<string[]>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -225,8 +225,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// <remarks>
             /// <strong>Property</strong>: dbInstanceId: List of DB instance ID that requires vertical segmentation.This property is only used in vertical subdivision.
             /// </remarks>
-            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string DbInstanceId
+            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DbInstanceId
             {
                 get;
                 set;
@@ -235,8 +235,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// <remarks>
             /// <strong>Property</strong>: shardDbName: List of databases that need to be split vertically in the RDS instance.This property is only used in vertical subdivision.
             /// </remarks>
-            [JsiiProperty(name: "shardDbName", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-            public string[] ShardDbName
+            [JsiiProperty(name: "shardDbName", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+            public object ShardDbName
             {
                 get;
                 set;

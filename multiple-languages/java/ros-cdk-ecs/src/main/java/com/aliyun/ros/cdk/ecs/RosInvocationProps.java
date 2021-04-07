@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.657Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCommandId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCommandId();
 
     /**
      */
@@ -18,7 +18,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFrequency() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
         return null;
     }
 
@@ -44,9 +44,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosInvocationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInvocationProps> {
-        private java.lang.String commandId;
+        private java.lang.Object commandId;
         private java.lang.Object instanceIds;
-        private java.lang.String frequency;
+        private java.lang.Object frequency;
         private java.lang.Object parameters;
         private java.lang.Object timed;
 
@@ -56,6 +56,16 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder commandId(java.lang.String commandId) {
+            this.commandId = commandId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getCommandId}
+         * @param commandId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder commandId(com.aliyun.ros.cdk.core.IResolvable commandId) {
             this.commandId = commandId;
             return this;
         }
@@ -86,6 +96,16 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder frequency(java.lang.String frequency) {
+            this.frequency = frequency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getFrequency}
+         * @param frequency the value to be set.
+         * @return {@code this}
+         */
+        public Builder frequency(com.aliyun.ros.cdk.core.IResolvable frequency) {
             this.frequency = frequency;
             return this;
         }
@@ -146,9 +166,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInvocationProps {
-        private final java.lang.String commandId;
+        private final java.lang.Object commandId;
         private final java.lang.Object instanceIds;
-        private final java.lang.String frequency;
+        private final java.lang.Object frequency;
         private final java.lang.Object parameters;
         private final java.lang.Object timed;
 
@@ -158,9 +178,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -168,7 +188,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String commandId, final java.lang.Object instanceIds, final java.lang.String frequency, final java.lang.Object parameters, final java.lang.Object timed) {
+        protected Jsii$Proxy(final java.lang.Object commandId, final java.lang.Object instanceIds, final java.lang.Object frequency, final java.lang.Object parameters, final java.lang.Object timed) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commandId = java.util.Objects.requireNonNull(commandId, "commandId is required");
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
@@ -178,7 +198,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getCommandId() {
+        public final java.lang.Object getCommandId() {
             return this.commandId;
         }
 
@@ -188,7 +208,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getFrequency() {
+        public final java.lang.Object getFrequency() {
             return this.frequency;
         }
 

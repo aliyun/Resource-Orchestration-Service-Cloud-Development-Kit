@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.548Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosCustomDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomDomainProps.Jsii$Proxy.class)
 public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomainName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getApiVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getApiVersion() {
         return null;
     }
 
@@ -44,9 +44,9 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosCustomDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomDomainProps> {
-        private java.lang.String domainName;
-        private java.lang.String protocol;
-        private java.lang.String apiVersion;
+        private java.lang.Object domainName;
+        private java.lang.Object protocol;
+        private java.lang.Object apiVersion;
         private java.lang.Object certConfig;
         private java.lang.Object routeConfig;
 
@@ -56,6 +56,16 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
+            this.domainName = domainName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomDomainProps#getDomainName}
+         * @param domainName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {
             this.domainName = domainName;
             return this;
         }
@@ -71,11 +81,31 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosCustomDomainProps#getProtocol}
+         * @param protocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.protocol = protocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCustomDomainProps#getApiVersion}
          * @param apiVersion the value to be set.
          * @return {@code this}
          */
         public Builder apiVersion(java.lang.String apiVersion) {
+            this.apiVersion = apiVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCustomDomainProps#getApiVersion}
+         * @param apiVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder apiVersion(com.aliyun.ros.cdk.core.IResolvable apiVersion) {
             this.apiVersion = apiVersion;
             return this;
         }
@@ -136,9 +166,9 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCustomDomainProps {
-        private final java.lang.String domainName;
-        private final java.lang.String protocol;
-        private final java.lang.String apiVersion;
+        private final java.lang.Object domainName;
+        private final java.lang.Object protocol;
+        private final java.lang.Object apiVersion;
         private final java.lang.Object certConfig;
         private final java.lang.Object routeConfig;
 
@@ -148,9 +178,9 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.apiVersion = software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.apiVersion = software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certConfig = software.amazon.jsii.Kernel.get(this, "certConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeConfig = software.amazon.jsii.Kernel.get(this, "routeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -158,7 +188,7 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domainName, final java.lang.String protocol, final java.lang.String apiVersion, final java.lang.Object certConfig, final java.lang.Object routeConfig) {
+        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object protocol, final java.lang.Object apiVersion, final java.lang.Object certConfig, final java.lang.Object routeConfig) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
             this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
@@ -168,17 +198,17 @@ public interface RosCustomDomainProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getDomainName() {
+        public final java.lang.Object getDomainName() {
             return this.domainName;
         }
 
         @Override
-        public final java.lang.String getProtocol() {
+        public final java.lang.Object getProtocol() {
             return this.protocol;
         }
 
         @Override
-        public final java.lang.String getApiVersion() {
+        public final java.lang.Object getApiVersion() {
             return this.apiVersion;
         }
 

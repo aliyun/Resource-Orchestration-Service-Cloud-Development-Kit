@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Property destRegion: Region where the synchronization target instance is located.</summary>
-        [JsiiProperty(name: "destRegion", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DestRegion
+        [JsiiProperty(name: "destRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DestRegion
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Property sourceRegion: Region where the synchronization source instance is located.</summary>
-        [JsiiProperty(name: "sourceRegion", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SourceRegion
+        [JsiiProperty(name: "sourceRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SourceRegion
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// The default value is: small
         /// </remarks>
-        [JsiiProperty(name: "synchronizationJobClass", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SynchronizationJobClass
+        [JsiiProperty(name: "synchronizationJobClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SynchronizationJobClass
         {
             get;
             set;
@@ -72,8 +72,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// Value include: Internet, Intranet. The default value is: Internet
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NetworkType
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetworkType
         {
             get;
             set;
@@ -84,8 +84,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// Default is Postpaid
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PayType
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PayType
         {
             get;
             set;
@@ -93,8 +93,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <summary>Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be: Year: Annual, Month: monthly.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -125,8 +125,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <summary>Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "topology", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Topology
+        [JsiiProperty(name: "topology", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Topology
         {
             get;
             set;
@@ -134,8 +134,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <summary>Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "usedTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? UsedTime
+        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UsedTime
         {
             get;
             set;

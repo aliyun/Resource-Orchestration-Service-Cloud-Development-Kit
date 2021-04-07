@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceCloneProps.Jsii$Proxy.class)
 public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceInstanceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBackendServerWeight() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerWeight() {
         return null;
     }
 
@@ -26,7 +26,7 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -38,91 +38,91 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerIdToAttach() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerIdToAttach() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotPriceLimit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -136,26 +136,26 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosInstanceCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceCloneProps> {
-        private java.lang.String sourceInstanceId;
-        private java.lang.Number backendServerWeight;
+        private java.lang.Object sourceInstanceId;
+        private java.lang.Object backendServerWeight;
         private java.lang.Object deletionProtection;
-        private java.lang.String description;
+        private java.lang.Object description;
         private java.lang.Object diskMappings;
-        private java.lang.String imageId;
-        private java.lang.String instanceChargeType;
-        private java.lang.String instanceName;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.String keyPairName;
-        private java.lang.String loadBalancerIdToAttach;
-        private java.lang.String password;
-        private java.lang.Number period;
-        private java.lang.String ramRoleName;
-        private java.lang.String resourceGroupId;
-        private java.lang.String securityGroupId;
-        private java.lang.String spotPriceLimit;
-        private java.lang.String spotStrategy;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String zoneId;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object instanceName;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object keyPairName;
+        private java.lang.Object loadBalancerIdToAttach;
+        private java.lang.Object password;
+        private java.lang.Object period;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object spotPriceLimit;
+        private java.lang.Object spotStrategy;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosInstanceCloneProps#getSourceInstanceId}
@@ -168,11 +168,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getSourceInstanceId}
+         * @param sourceInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceInstanceId(com.aliyun.ros.cdk.core.IResolvable sourceInstanceId) {
+            this.sourceInstanceId = sourceInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getBackendServerWeight}
          * @param backendServerWeight the value to be set.
          * @return {@code this}
          */
         public Builder backendServerWeight(java.lang.Number backendServerWeight) {
+            this.backendServerWeight = backendServerWeight;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getBackendServerWeight}
+         * @param backendServerWeight the value to be set.
+         * @return {@code this}
+         */
+        public Builder backendServerWeight(com.aliyun.ros.cdk.core.IResolvable backendServerWeight) {
             this.backendServerWeight = backendServerWeight;
             return this;
         }
@@ -208,6 +228,16 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getDiskMappings}
          * @param diskMappings the value to be set.
          * @return {@code this}
@@ -238,11 +268,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getImageId}
+         * @param imageId the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getInstanceChargeType}
          * @param instanceChargeType the value to be set.
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.instanceChargeType = instanceChargeType;
             return this;
         }
@@ -258,11 +308,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getInstanceName}
+         * @param instanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn the value to be set.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
             this.internetMaxBandwidthIn = internetMaxBandwidthIn;
             return this;
         }
@@ -278,11 +348,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getKeyPairName}
+         * @param keyPairName the value to be set.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getLoadBalancerIdToAttach}
          * @param loadBalancerIdToAttach the value to be set.
          * @return {@code this}
          */
         public Builder loadBalancerIdToAttach(java.lang.String loadBalancerIdToAttach) {
+            this.loadBalancerIdToAttach = loadBalancerIdToAttach;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getLoadBalancerIdToAttach}
+         * @param loadBalancerIdToAttach the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerIdToAttach(com.aliyun.ros.cdk.core.IResolvable loadBalancerIdToAttach) {
             this.loadBalancerIdToAttach = loadBalancerIdToAttach;
             return this;
         }
@@ -298,11 +388,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -318,11 +428,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getRamRoleName}
+         * @param ramRoleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
             return this;
         }
@@ -338,11 +468,31 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getSpotPriceLimit}
          * @param spotPriceLimit the value to be set.
          * @return {@code this}
          */
         public Builder spotPriceLimit(java.lang.String spotPriceLimit) {
+            this.spotPriceLimit = spotPriceLimit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getSpotPriceLimit}
+         * @param spotPriceLimit the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
             this.spotPriceLimit = spotPriceLimit;
             return this;
         }
@@ -358,13 +508,23 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceCloneProps#getSpotStrategy}
+         * @param spotStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotStrategy(com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
+            this.spotStrategy = spotStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceCloneProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty>)tags;
             return this;
         }
 
@@ -374,6 +534,16 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceCloneProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -394,26 +564,26 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceCloneProps {
-        private final java.lang.String sourceInstanceId;
-        private final java.lang.Number backendServerWeight;
+        private final java.lang.Object sourceInstanceId;
+        private final java.lang.Object backendServerWeight;
         private final java.lang.Object deletionProtection;
-        private final java.lang.String description;
+        private final java.lang.Object description;
         private final java.lang.Object diskMappings;
-        private final java.lang.String imageId;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String instanceName;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.String keyPairName;
-        private final java.lang.String loadBalancerIdToAttach;
-        private final java.lang.String password;
-        private final java.lang.Number period;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String spotPriceLimit;
-        private final java.lang.String spotStrategy;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String zoneId;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object keyPairName;
+        private final java.lang.Object loadBalancerIdToAttach;
+        private final java.lang.Object password;
+        private final java.lang.Object period;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object spotPriceLimit;
+        private final java.lang.Object spotStrategy;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -421,33 +591,33 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sourceInstanceId = software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.backendServerWeight = software.amazon.jsii.Kernel.get(this, "backendServerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.sourceInstanceId = software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backendServerWeight = software.amazon.jsii.Kernel.get(this, "backendServerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loadBalancerIdToAttach = software.amazon.jsii.Kernel.get(this, "loadBalancerIdToAttach", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerIdToAttach = software.amazon.jsii.Kernel.get(this, "loadBalancerIdToAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty.class)));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String sourceInstanceId, final java.lang.Number backendServerWeight, final java.lang.Object deletionProtection, final java.lang.String description, final java.lang.Object diskMappings, final java.lang.String imageId, final java.lang.String instanceChargeType, final java.lang.String instanceName, final java.lang.Number internetMaxBandwidthIn, final java.lang.String keyPairName, final java.lang.String loadBalancerIdToAttach, final java.lang.String password, final java.lang.Number period, final java.lang.String ramRoleName, final java.lang.String resourceGroupId, final java.lang.String securityGroupId, final java.lang.String spotPriceLimit, final java.lang.String spotStrategy, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object sourceInstanceId, final java.lang.Object backendServerWeight, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object imageId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object keyPairName, final java.lang.Object loadBalancerIdToAttach, final java.lang.Object password, final java.lang.Object period, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> tags, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sourceInstanceId = java.util.Objects.requireNonNull(sourceInstanceId, "sourceInstanceId is required");
             this.backendServerWeight = backendServerWeight;
@@ -467,17 +637,17 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
             this.securityGroupId = securityGroupId;
             this.spotPriceLimit = spotPriceLimit;
             this.spotStrategy = spotStrategy;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty>)tags;
             this.zoneId = zoneId;
         }
 
         @Override
-        public final java.lang.String getSourceInstanceId() {
+        public final java.lang.Object getSourceInstanceId() {
             return this.sourceInstanceId;
         }
 
         @Override
-        public final java.lang.Number getBackendServerWeight() {
+        public final java.lang.Object getBackendServerWeight() {
             return this.backendServerWeight;
         }
 
@@ -487,7 +657,7 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -497,77 +667,77 @@ public interface RosInstanceCloneProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerIdToAttach() {
+        public final java.lang.Object getLoadBalancerIdToAttach() {
             return this.loadBalancerIdToAttach;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSpotPriceLimit() {
+        public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
 
         @Override
-        public final java.lang.String getSpotStrategy() {
+        public final java.lang.Object getSpotStrategy() {
             return this.spotStrategy;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceClone.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

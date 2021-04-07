@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * A ROS resource type:  `ALIYUN::DATAHUB::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.046Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DATAHUB::Topic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Topic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.datahub.TopicProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DATAHUB::Topic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Topic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.datahub.TopicProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ProjectName: Project name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TopicName: Topic name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTopicName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTopicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopicName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopicName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.datahub.Topic> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,64 +97,160 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property comment: The comment of topic.
+         * <p>
          * @return {@code this}
-         * @param comment This parameter is required.
+         * @param comment Property comment: The comment of topic. This parameter is required.
          */
         public Builder comment(final java.lang.String comment) {
             this.props.comment(comment);
             return this;
         }
+        /**
+         * Property comment: The comment of topic.
+         * <p>
+         * @return {@code this}
+         * @param comment Property comment: The comment of topic. This parameter is required.
+         */
+        public Builder comment(final com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.props.comment(comment);
+            return this;
+        }
 
         /**
+         * Property projectName: The name of the project.
+         * <p>
+         * Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
+         * <p>
          * @return {@code this}
-         * @param projectName This parameter is required.
+         * @param projectName Property projectName: The name of the project. This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
             this.props.projectName(projectName);
             return this;
         }
+        /**
+         * Property projectName: The name of the project.
+         * <p>
+         * Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
+         * <p>
+         * @return {@code this}
+         * @param projectName Property projectName: The name of the project. This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.props.projectName(projectName);
+            return this;
+        }
 
         /**
+         * Property recordType: Record type.
+         * <p>
+         * TUPLE: structured data, BLOB: unstructured data.
+         * <p>
          * @return {@code this}
-         * @param recordType This parameter is required.
+         * @param recordType Property recordType: Record type. This parameter is required.
          */
         public Builder recordType(final java.lang.String recordType) {
             this.props.recordType(recordType);
             return this;
         }
+        /**
+         * Property recordType: Record type.
+         * <p>
+         * TUPLE: structured data, BLOB: unstructured data.
+         * <p>
+         * @return {@code this}
+         * @param recordType Property recordType: Record type. This parameter is required.
+         */
+        public Builder recordType(final com.aliyun.ros.cdk.core.IResolvable recordType) {
+            this.props.recordType(recordType);
+            return this;
+        }
 
         /**
+         * Property topicName: The name of the topic.
+         * <p>
+         * Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
+         * <p>
          * @return {@code this}
-         * @param topicName This parameter is required.
+         * @param topicName Property topicName: The name of the topic. This parameter is required.
          */
         public Builder topicName(final java.lang.String topicName) {
             this.props.topicName(topicName);
             return this;
         }
+        /**
+         * Property topicName: The name of the topic.
+         * <p>
+         * Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
+         * <p>
+         * @return {@code this}
+         * @param topicName Property topicName: The name of the topic. This parameter is required.
+         */
+        public Builder topicName(final com.aliyun.ros.cdk.core.IResolvable topicName) {
+            this.props.topicName(topicName);
+            return this;
+        }
 
         /**
+         * Property lifecycle: Data storage life cycle.
+         * <p>
          * @return {@code this}
-         * @param lifecycle This parameter is required.
+         * @param lifecycle Property lifecycle: Data storage life cycle. This parameter is required.
          */
         public Builder lifecycle(final java.lang.Number lifecycle) {
             this.props.lifecycle(lifecycle);
             return this;
         }
+        /**
+         * Property lifecycle: Data storage life cycle.
+         * <p>
+         * @return {@code this}
+         * @param lifecycle Property lifecycle: Data storage life cycle. This parameter is required.
+         */
+        public Builder lifecycle(final com.aliyun.ros.cdk.core.IResolvable lifecycle) {
+            this.props.lifecycle(lifecycle);
+            return this;
+        }
 
         /**
+         * Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
+         * <p>
          * @return {@code this}
-         * @param recordSchema This parameter is required.
+         * @param recordSchema Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter. This parameter is required.
          */
         public Builder recordSchema(final java.lang.String recordSchema) {
             this.props.recordSchema(recordSchema);
             return this;
         }
+        /**
+         * Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
+         * <p>
+         * @return {@code this}
+         * @param recordSchema Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter. This parameter is required.
+         */
+        public Builder recordSchema(final com.aliyun.ros.cdk.core.IResolvable recordSchema) {
+            this.props.recordSchema(recordSchema);
+            return this;
+        }
 
         /**
+         * Property shardCount: Initial shard number.
+         * <p>
          * @return {@code this}
-         * @param shardCount This parameter is required.
+         * @param shardCount Property shardCount: Initial shard number. This parameter is required.
          */
         public Builder shardCount(final java.lang.Number shardCount) {
+            this.props.shardCount(shardCount);
+            return this;
+        }
+        /**
+         * Property shardCount: Initial shard number.
+         * <p>
+         * @return {@code this}
+         * @param shardCount Property shardCount: Initial shard number. This parameter is required.
+         */
+        public Builder shardCount(final com.aliyun.ros.cdk.core.IResolvable shardCount) {
             this.props.shardCount(shardCount);
             return this;
         }

@@ -12,7 +12,7 @@ export interface CloudConnectNetworkProps {
      * Property description: The description of the CCN instance.
      * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property isDefault: Whether is created by system
@@ -23,7 +23,12 @@ export interface CloudConnectNetworkProps {
      * Property name: The name of the CCN instance.
      * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCloudConnectNetwork.TagsProperty[];
 }
 
 /**
@@ -39,7 +44,7 @@ export class CloudConnectNetwork extends ros.Resource {
     /**
      * Attribute CcnId: The ID of the CCN instance.
      */
-    public readonly attrCcnId: any;
+    public readonly attrCcnId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::CloudConnectNetwork`.
@@ -54,6 +59,7 @@ export class CloudConnectNetwork extends ros.Resource {
         const rosCloudConnectNetwork = new RosCloudConnectNetwork(this, id,  {
             isDefault: props.isDefault ? props.isDefault : false,
             description: props.description,
+            tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCloudConnectNetwork;

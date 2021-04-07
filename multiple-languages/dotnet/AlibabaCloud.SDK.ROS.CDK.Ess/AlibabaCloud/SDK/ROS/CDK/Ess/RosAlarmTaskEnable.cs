@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: alarmTaskId: The id of alarm task.
         /// </remarks>
-        [JsiiProperty(name: "alarmTaskId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AlarmTaskId
+        [JsiiProperty(name: "alarmTaskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AlarmTaskId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 

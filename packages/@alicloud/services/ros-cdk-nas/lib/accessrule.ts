@@ -11,27 +11,27 @@ export interface AccessRuleProps {
     /**
      * Property accessGroupName: Permission group name
      */
-    readonly accessGroupName: string;
+    readonly accessGroupName: string | ros.IResolvable;
 
     /**
      * Property sourceCidrIp: Address or address segment
      */
-    readonly sourceCidrIp: string;
+    readonly sourceCidrIp: string | ros.IResolvable;
 
     /**
      * Property priority: Priority level. Range: 1-100. Default value: 1
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
-    readonly rwAccessType?: string;
+    readonly rwAccessType?: string | ros.IResolvable;
 
     /**
      * Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
      */
-    readonly userAccessType?: string;
+    readonly userAccessType?: string | ros.IResolvable;
 }
 
 /**
@@ -47,7 +47,7 @@ export class AccessRule extends ros.Resource {
     /**
      * Attribute AccessRuleId: Rule serial number
      */
-    public readonly attrAccessRuleId: any;
+    public readonly attrAccessRuleId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::NAS::AccessRule`.

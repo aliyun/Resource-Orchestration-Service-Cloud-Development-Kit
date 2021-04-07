@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
     public interface ITrailProps
     {
         /// <summary>Property name: The name of the trail to be created, which must be unique for an account.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -19,15 +19,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// <remarks>
         /// Ensure that this is an existing OSS bucket.
         /// </remarks>
-        [JsiiProperty(name: "ossBucketName", typeJson: "{\"primitive\":\"string\"}")]
-        string OssBucketName
+        [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object OssBucketName
         {
             get;
         }
 
         /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
-        [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}")]
-        string RoleName
+        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RoleName
         {
             get;
         }
@@ -36,9 +36,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// <remarks>
         /// Valid values: Read, Write, and All. Default value: Write.
         /// </remarks>
-        [JsiiProperty(name: "eventRw", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "eventRw", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EventRw
+        object? EventRw
         {
             get
             {
@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         /// <remarks>
         /// This parameter can be left empty.
         /// </remarks>
-        [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? OssKeyPrefix
+        object? OssKeyPrefix
         {
             get
             {
@@ -61,9 +61,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <summary>Property slsProjectArn: The unique ARN of the Log Service project.</summary>
-        [JsiiProperty(name: "slsProjectArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "slsProjectArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SlsProjectArn
+        object? SlsProjectArn
         {
             get
             {
@@ -72,9 +72,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <summary>Property slsWriteRoleArn: The unique ARN of the Log Service role.</summary>
-        [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SlsWriteRoleArn
+        object? SlsWriteRoleArn
         {
             get
             {
@@ -91,27 +91,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             }
 
             /// <summary>Property name: The name of the trail to be created, which must be unique for an account.</summary>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property ossBucketName: The OSS bucket to which the trail delivers logs.</summary>
             /// <remarks>
             /// Ensure that this is an existing OSS bucket.
             /// </remarks>
-            [JsiiProperty(name: "ossBucketName", typeJson: "{\"primitive\":\"string\"}")]
-            public string OssBucketName
+            [JsiiProperty(name: "ossBucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object OssBucketName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property roleName: The RAM role in ActionTrail permitted by the user.</summary>
-            [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RoleName
+            [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RoleName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property eventRw: Indicates whether the event is a read or a write event.</summary>
@@ -119,10 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             /// Valid values: Read, Write, and All. Default value: Write.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "eventRw", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EventRw
+            [JsiiProperty(name: "eventRw", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EventRw
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ossKeyPrefix: The prefix of the specified OSS bucket name.</summary>
@@ -130,26 +130,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             /// This parameter can be left empty.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? OssKeyPrefix
+            [JsiiProperty(name: "ossKeyPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OssKeyPrefix
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property slsProjectArn: The unique ARN of the Log Service project.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "slsProjectArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SlsProjectArn
+            [JsiiProperty(name: "slsProjectArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SlsProjectArn
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property slsWriteRoleArn: The unique ARN of the Log Service role.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SlsWriteRoleArn
+            [JsiiProperty(name: "slsWriteRoleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SlsWriteRoleArn
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: ccnId: The ID of the CCN instance to bind.
         /// </remarks>
-        [JsiiProperty(name: "ccnId", typeJson: "{\"primitive\":\"string\"}")]
-        string CcnId
+        [JsiiProperty(name: "ccnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CcnId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: smartAgId: The ID of the Smart Access Gateway instance.
         /// </remarks>
-        [JsiiProperty(name: "smartAgId", typeJson: "{\"primitive\":\"string\"}")]
-        string SmartAgId
+        [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SmartAgId
         {
             get;
         }
@@ -37,19 +37,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             /// <remarks>
             /// <strong>Property</strong>: ccnId: The ID of the CCN instance to bind.
             /// </remarks>
-            [JsiiProperty(name: "ccnId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CcnId
+            [JsiiProperty(name: "ccnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CcnId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: smartAgId: The ID of the Smart Access Gateway instance.
             /// </remarks>
-            [JsiiProperty(name: "smartAgId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SmartAgId
+            [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SmartAgId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

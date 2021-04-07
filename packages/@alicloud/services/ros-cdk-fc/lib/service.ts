@@ -11,7 +11,7 @@ export interface ServiceProps {
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified. Default value is false.
@@ -21,7 +21,7 @@ export interface ServiceProps {
     /**
      * Property description: Service description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property internetAccess: Set it to true to enable Internet access.
@@ -41,12 +41,17 @@ export interface ServiceProps {
     /**
      * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
-    readonly role?: string;
+    readonly role?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to service. Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosService.TagsProperty[];
+
+    /**
+     * Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
 
     /**
      * Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
@@ -65,19 +70,44 @@ export class Service extends ros.Resource {
      */
 
     /**
+     * Attribute InternetAccess: Whether enable Internet access
+     */
+    public readonly attrInternetAccess: ros.IResolvable;
+
+    /**
+     * Attribute LogProject: Log project of service
+     */
+    public readonly attrLogProject: ros.IResolvable;
+
+    /**
+     * Attribute Logstore: Log store of service
+     */
+    public readonly attrLogstore: ros.IResolvable;
+
+    /**
+     * Attribute Role: Role of service
+     */
+    public readonly attrRole: ros.IResolvable;
+
+    /**
      * Attribute ServiceId: The service ID
      */
-    public readonly attrServiceId: any;
+    public readonly attrServiceId: ros.IResolvable;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Attribute Tags: Tags of service
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * Attribute VpcId: VPC ID
+     */
+    public readonly attrVpcId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::Service`.
@@ -94,15 +124,21 @@ export class Service extends ros.Resource {
             internetAccess: props.internetAccess,
             description: props.description,
             deletionForce: props.deletionForce ? props.deletionForce : false,
+            tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             nasConfig: props.nasConfig,
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosService;
+        this.attrInternetAccess = rosService.attrInternetAccess;
+        this.attrLogProject = rosService.attrLogProject;
+        this.attrLogstore = rosService.attrLogstore;
+        this.attrRole = rosService.attrRole;
         this.attrServiceId = rosService.attrServiceId;
         this.attrServiceName = rosService.attrServiceName;
         this.attrTags = rosService.attrTags;
+        this.attrVpcId = rosService.attrVpcId;
     }
 }

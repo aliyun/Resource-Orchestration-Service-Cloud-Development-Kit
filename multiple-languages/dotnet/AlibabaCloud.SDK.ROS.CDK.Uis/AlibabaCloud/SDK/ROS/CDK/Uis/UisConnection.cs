@@ -36,10 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// This ID does not distinguish between protocols.
         /// </remarks>
-        [JsiiProperty(name: "attrUisConnectionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisConnectionId
+        [JsiiProperty(name: "attrUisConnectionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisConnectionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

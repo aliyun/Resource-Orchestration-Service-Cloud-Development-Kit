@@ -11,22 +11,22 @@ export interface SearchIndexProps {
     /**
      * Property fieldSchemas: list of field_schema.
      */
-    readonly fieldSchemas: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly fieldSchemas: Array<RosSearchIndex.FieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property indexName: The index name.
      */
-    readonly indexName: string;
+    readonly indexName: string | ros.IResolvable;
 
     /**
      * Property instanceName: The name of the OTS instance in which table will locate.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * Property tableName: The table name of the OTS instance.
      */
-    readonly tableName: string;
+    readonly tableName: string | ros.IResolvable;
 
     /**
      * Property indexSetting: Index settings
@@ -54,7 +54,7 @@ export class SearchIndex extends ros.Resource {
     /**
      * Attribute IndexName: Index name.
      */
-    public readonly attrIndexName: any;
+    public readonly attrIndexName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OTS::SearchIndex`.

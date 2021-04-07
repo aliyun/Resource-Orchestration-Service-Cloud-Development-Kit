@@ -3,34 +3,40 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::RouteEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.844Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RouteEntryProps.Jsii$Proxy.class)
 public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property cenId: The ID of the CEN instance where the route entry is published.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
 
     /**
+     * Property childInstanceId: The ID of the attached network (VPC or VBR).
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceId();
 
     /**
+     * Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRegionId();
 
     /**
+     * Property childInstanceRouteTableId: The route table of the attached VBR or VPC.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceRouteTableId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRouteTableId();
 
     /**
+     * Property childInstanceType: The type of the network, value: VPC VBR.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceType();
 
     /**
+     * Property destinationCidrBlock: The destination CIDR block of the route entry to publish.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestinationCidrBlock();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock();
 
     /**
      * @return a {@link Builder} of {@link RouteEntryProps}
@@ -42,16 +48,16 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RouteEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteEntryProps> {
-        private java.lang.String cenId;
-        private java.lang.String childInstanceId;
-        private java.lang.String childInstanceRegionId;
-        private java.lang.String childInstanceRouteTableId;
-        private java.lang.String childInstanceType;
-        private java.lang.String destinationCidrBlock;
+        private java.lang.Object cenId;
+        private java.lang.Object childInstanceId;
+        private java.lang.Object childInstanceRegionId;
+        private java.lang.Object childInstanceRouteTableId;
+        private java.lang.Object childInstanceType;
+        private java.lang.Object destinationCidrBlock;
 
         /**
          * Sets the value of {@link RouteEntryProps#getCenId}
-         * @param cenId the value to be set. This parameter is required.
+         * @param cenId Property cenId: The ID of the CEN instance where the route entry is published. This parameter is required.
          * @return {@code this}
          */
         public Builder cenId(java.lang.String cenId) {
@@ -60,8 +66,18 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteEntryProps#getCenId}
+         * @param cenId Property cenId: The ID of the CEN instance where the route entry is published. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.cenId = cenId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteEntryProps#getChildInstanceId}
-         * @param childInstanceId the value to be set. This parameter is required.
+         * @param childInstanceId Property childInstanceId: The ID of the attached network (VPC or VBR). This parameter is required.
          * @return {@code this}
          */
         public Builder childInstanceId(java.lang.String childInstanceId) {
@@ -70,8 +86,18 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteEntryProps#getChildInstanceId}
+         * @param childInstanceId Property childInstanceId: The ID of the attached network (VPC or VBR). This parameter is required.
+         * @return {@code this}
+         */
+        public Builder childInstanceId(com.aliyun.ros.cdk.core.IResolvable childInstanceId) {
+            this.childInstanceId = childInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteEntryProps#getChildInstanceRegionId}
-         * @param childInstanceRegionId the value to be set. This parameter is required.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located. This parameter is required.
          * @return {@code this}
          */
         public Builder childInstanceRegionId(java.lang.String childInstanceRegionId) {
@@ -80,8 +106,18 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteEntryProps#getChildInstanceRegionId}
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder childInstanceRegionId(com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
+            this.childInstanceRegionId = childInstanceRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteEntryProps#getChildInstanceRouteTableId}
-         * @param childInstanceRouteTableId the value to be set. This parameter is required.
+         * @param childInstanceRouteTableId Property childInstanceRouteTableId: The route table of the attached VBR or VPC. This parameter is required.
          * @return {@code this}
          */
         public Builder childInstanceRouteTableId(java.lang.String childInstanceRouteTableId) {
@@ -90,8 +126,18 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteEntryProps#getChildInstanceRouteTableId}
+         * @param childInstanceRouteTableId Property childInstanceRouteTableId: The route table of the attached VBR or VPC. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder childInstanceRouteTableId(com.aliyun.ros.cdk.core.IResolvable childInstanceRouteTableId) {
+            this.childInstanceRouteTableId = childInstanceRouteTableId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteEntryProps#getChildInstanceType}
-         * @param childInstanceType the value to be set. This parameter is required.
+         * @param childInstanceType Property childInstanceType: The type of the network, value: VPC VBR. This parameter is required.
          * @return {@code this}
          */
         public Builder childInstanceType(java.lang.String childInstanceType) {
@@ -100,11 +146,31 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteEntryProps#getChildInstanceType}
+         * @param childInstanceType Property childInstanceType: The type of the network, value: VPC VBR. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder childInstanceType(com.aliyun.ros.cdk.core.IResolvable childInstanceType) {
+            this.childInstanceType = childInstanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteEntryProps#getDestinationCidrBlock}
-         * @param destinationCidrBlock the value to be set. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the route entry to publish. This parameter is required.
          * @return {@code this}
          */
         public Builder destinationCidrBlock(java.lang.String destinationCidrBlock) {
+            this.destinationCidrBlock = destinationCidrBlock;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouteEntryProps#getDestinationCidrBlock}
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the route entry to publish. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationCidrBlock(com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
             this.destinationCidrBlock = destinationCidrBlock;
             return this;
         }
@@ -125,12 +191,12 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouteEntryProps {
-        private final java.lang.String cenId;
-        private final java.lang.String childInstanceId;
-        private final java.lang.String childInstanceRegionId;
-        private final java.lang.String childInstanceRouteTableId;
-        private final java.lang.String childInstanceType;
-        private final java.lang.String destinationCidrBlock;
+        private final java.lang.Object cenId;
+        private final java.lang.Object childInstanceId;
+        private final java.lang.Object childInstanceRegionId;
+        private final java.lang.Object childInstanceRouteTableId;
+        private final java.lang.Object childInstanceType;
+        private final java.lang.Object destinationCidrBlock;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -138,18 +204,18 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.childInstanceId = software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.childInstanceRegionId = software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.childInstanceRouteTableId = software.amazon.jsii.Kernel.get(this, "childInstanceRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.childInstanceType = software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationCidrBlock = software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.childInstanceId = software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.childInstanceRegionId = software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.childInstanceRouteTableId = software.amazon.jsii.Kernel.get(this, "childInstanceRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.childInstanceType = software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationCidrBlock = software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String cenId, final java.lang.String childInstanceId, final java.lang.String childInstanceRegionId, final java.lang.String childInstanceRouteTableId, final java.lang.String childInstanceType, final java.lang.String destinationCidrBlock) {
+        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object childInstanceId, final java.lang.Object childInstanceRegionId, final java.lang.Object childInstanceRouteTableId, final java.lang.Object childInstanceType, final java.lang.Object destinationCidrBlock) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
             this.childInstanceId = java.util.Objects.requireNonNull(childInstanceId, "childInstanceId is required");
@@ -160,32 +226,32 @@ public interface RouteEntryProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getCenId() {
+        public final java.lang.Object getCenId() {
             return this.cenId;
         }
 
         @Override
-        public final java.lang.String getChildInstanceId() {
+        public final java.lang.Object getChildInstanceId() {
             return this.childInstanceId;
         }
 
         @Override
-        public final java.lang.String getChildInstanceRegionId() {
+        public final java.lang.Object getChildInstanceRegionId() {
             return this.childInstanceRegionId;
         }
 
         @Override
-        public final java.lang.String getChildInstanceRouteTableId() {
+        public final java.lang.Object getChildInstanceRouteTableId() {
             return this.childInstanceRouteTableId;
         }
 
         @Override
-        public final java.lang.String getChildInstanceType() {
+        public final java.lang.Object getChildInstanceType() {
             return this.childInstanceType;
         }
 
         @Override
-        public final java.lang.String getDestinationCidrBlock() {
+        public final java.lang.Object getDestinationCidrBlock() {
             return this.destinationCidrBlock;
         }
 

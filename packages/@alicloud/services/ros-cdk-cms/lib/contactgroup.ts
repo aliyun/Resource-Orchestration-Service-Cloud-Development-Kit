@@ -11,17 +11,17 @@ export interface ContactGroupProps {
     /**
      * Property contactGroupName: The name of the alert contact group.
      */
-    readonly contactGroupName: string;
+    readonly contactGroupName: string | ros.IResolvable;
 
     /**
      * Property contactNames: The name of the alert contact.
      */
-    readonly contactNames: string[];
+    readonly contactNames: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property describe: The description of the alert contact group.
      */
-    readonly describe: string;
+    readonly describe: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class ContactGroup extends ros.Resource {
     /**
      * Attribute ContactGroupName: The name of the alert contact group.
      */
-    public readonly attrContactGroupName: any;
+    public readonly attrContactGroupName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::ContactGroup`.

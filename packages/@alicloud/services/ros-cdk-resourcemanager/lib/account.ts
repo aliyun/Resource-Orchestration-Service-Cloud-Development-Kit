@@ -11,17 +11,17 @@ export interface AccountProps {
     /**
      * Property displayName: Member name
      */
-    readonly displayName: string;
+    readonly displayName: string | ros.IResolvable;
 
     /**
      * Property folderId: The ID of the parent folder
      */
-    readonly folderId?: string;
+    readonly folderId?: string | ros.IResolvable;
 
     /**
      * Property payerAccountId:
      */
-    readonly payerAccountId?: string;
+    readonly payerAccountId?: string | ros.IResolvable;
 }
 
 /**
@@ -37,32 +37,32 @@ export class Account extends ros.Resource {
     /**
      * Attribute AccountId: This ID of Resource Manager Account
      */
-    public readonly attrAccountId: any;
+    public readonly attrAccountId: ros.IResolvable;
 
     /**
      * Attribute DisplayName: Member name
      */
-    public readonly attrDisplayName: any;
+    public readonly attrDisplayName: ros.IResolvable;
 
     /**
      * Attribute FolderId: The ID of the parent folder
      */
-    public readonly attrFolderId: any;
+    public readonly attrFolderId: ros.IResolvable;
 
     /**
      * Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
      */
-    public readonly attrJoinMethod: any;
+    public readonly attrJoinMethod: ros.IResolvable;
 
     /**
      * Attribute ResourceDirectoryId: Resource directory ID
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * Attribute Type: Member type. The value of ResourceAccount indicates the resource account
      */
-    public readonly attrType: any;
+    public readonly attrType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Account`.

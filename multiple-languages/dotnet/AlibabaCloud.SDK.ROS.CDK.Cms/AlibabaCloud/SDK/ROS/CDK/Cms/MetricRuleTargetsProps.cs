@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public class MetricRuleTargetsProps : AlibabaCloud.SDK.ROS.CDK.Cms.IMetricRuleTargetsProps
     {
         /// <summary>Property ruleId: The ID of the alert rule.</summary>
-        [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RuleId
+        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RuleId
         {
             get;
             set;

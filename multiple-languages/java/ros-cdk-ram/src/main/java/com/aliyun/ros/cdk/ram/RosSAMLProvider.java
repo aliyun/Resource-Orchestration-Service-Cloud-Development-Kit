@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::SAMLProvider`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSAMLProvider")
 public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
-        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSamlProviderName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSamlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSamlProviderName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSamlProviderName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSamlProviderName() {
-        return software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSamlProviderName() {
+        return software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSamlProviderName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "samlProviderName", java.util.Objects.requireNonNull(value, "samlProviderName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSamlMetadataDocument() {
-        return software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocument() {
+        return software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +117,25 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSamlMetadataDocumentUrl() {
-        return software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSamlMetadataDocument(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "samlMetadataDocument", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocumentUrl() {
+        return software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSamlMetadataDocumentUrl(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "samlMetadataDocumentUrl", value);
+    }
+
+    /**
+     */
+    public void setSamlMetadataDocumentUrl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "samlMetadataDocumentUrl", value);
     }
 
@@ -149,12 +173,28 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
             this.props.samlProviderName(samlProviderName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param samlProviderName This parameter is required.
+         */
+        public Builder samlProviderName(final com.aliyun.ros.cdk.core.IResolvable samlProviderName) {
+            this.props.samlProviderName(samlProviderName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -167,12 +207,28 @@ public class RosSAMLProvider extends com.aliyun.ros.cdk.core.RosResource {
             this.props.samlMetadataDocument(samlMetadataDocument);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param samlMetadataDocument This parameter is required.
+         */
+        public Builder samlMetadataDocument(final com.aliyun.ros.cdk.core.IResolvable samlMetadataDocument) {
+            this.props.samlMetadataDocument(samlMetadataDocument);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param samlMetadataDocumentUrl This parameter is required.
          */
         public Builder samlMetadataDocumentUrl(final java.lang.String samlMetadataDocumentUrl) {
+            this.props.samlMetadataDocumentUrl(samlMetadataDocumentUrl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param samlMetadataDocumentUrl This parameter is required.
+         */
+        public Builder samlMetadataDocumentUrl(final com.aliyun.ros.cdk.core.IResolvable samlMetadataDocumentUrl) {
             this.props.samlMetadataDocumentUrl(samlMetadataDocumentUrl);
             return this;
         }

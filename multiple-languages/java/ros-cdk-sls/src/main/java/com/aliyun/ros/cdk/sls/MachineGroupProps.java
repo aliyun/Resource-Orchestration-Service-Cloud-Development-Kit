@@ -3,44 +3,54 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::MachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.403Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.108Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.MachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MachineGroupProps.Jsii$Proxy.class)
 public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupAttribute: Group attribute, default is null.
+     * <p>
+     * The object value is groupToic and externalName
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupAttribute() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupAttribute() {
         return null;
     }
 
     /**
+     * Property groupName: Display name of the group name, the Project only.
+     * <p>
+     * [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupName() {
         return null;
     }
 
     /**
+     * Property groupType: MachineGroup type, the value is empty or Armory.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupType() {
         return null;
     }
 
     /**
+     * Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMachineIdentifyType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMachineIdentifyType() {
         return null;
     }
 
     /**
+     * Property machineList: The machine tag, the value is ip or userdefined-id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMachineList() {
         return null;
     }
 
     /**
+     * Property projectName: MachineGroup created in project.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProjectName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProjectName() {
         return null;
     }
 
@@ -54,16 +64,17 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link MachineGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MachineGroupProps> {
-        private java.lang.String groupAttribute;
-        private java.lang.String groupName;
-        private java.lang.String groupType;
-        private java.lang.String machineIdentifyType;
+        private java.lang.Object groupAttribute;
+        private java.lang.Object groupName;
+        private java.lang.Object groupType;
+        private java.lang.Object machineIdentifyType;
         private java.lang.Object machineList;
-        private java.lang.String projectName;
+        private java.lang.Object projectName;
 
         /**
          * Sets the value of {@link MachineGroupProps#getGroupAttribute}
-         * @param groupAttribute the value to be set.
+         * @param groupAttribute Property groupAttribute: Group attribute, default is null.
+         *                       The object value is groupToic and externalName
          * @return {@code this}
          */
         public Builder groupAttribute(java.lang.String groupAttribute) {
@@ -72,8 +83,20 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link MachineGroupProps#getGroupAttribute}
+         * @param groupAttribute Property groupAttribute: Group attribute, default is null.
+         *                       The object value is groupToic and externalName
+         * @return {@code this}
+         */
+        public Builder groupAttribute(com.aliyun.ros.cdk.core.IResolvable groupAttribute) {
+            this.groupAttribute = groupAttribute;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MachineGroupProps#getGroupName}
-         * @param groupName the value to be set.
+         * @param groupName Property groupName: Display name of the group name, the Project only.
+         *                  [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -82,8 +105,19 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link MachineGroupProps#getGroupName}
+         * @param groupName Property groupName: Display name of the group name, the Project only.
+         *                  [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MachineGroupProps#getGroupType}
-         * @param groupType the value to be set.
+         * @param groupType Property groupType: MachineGroup type, the value is empty or Armory.
          * @return {@code this}
          */
         public Builder groupType(java.lang.String groupType) {
@@ -92,8 +126,18 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link MachineGroupProps#getGroupType}
+         * @param groupType Property groupType: MachineGroup type, the value is empty or Armory.
+         * @return {@code this}
+         */
+        public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.groupType = groupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MachineGroupProps#getMachineIdentifyType}
-         * @param machineIdentifyType the value to be set.
+         * @param machineIdentifyType Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.
          * @return {@code this}
          */
         public Builder machineIdentifyType(java.lang.String machineIdentifyType) {
@@ -102,8 +146,18 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link MachineGroupProps#getMachineIdentifyType}
+         * @param machineIdentifyType Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.
+         * @return {@code this}
+         */
+        public Builder machineIdentifyType(com.aliyun.ros.cdk.core.IResolvable machineIdentifyType) {
+            this.machineIdentifyType = machineIdentifyType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MachineGroupProps#getMachineList}
-         * @param machineList the value to be set.
+         * @param machineList Property machineList: The machine tag, the value is ip or userdefined-id.
          * @return {@code this}
          */
         public Builder machineList(java.util.List<? extends java.lang.Object> machineList) {
@@ -113,7 +167,7 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link MachineGroupProps#getMachineList}
-         * @param machineList the value to be set.
+         * @param machineList Property machineList: The machine tag, the value is ip or userdefined-id.
          * @return {@code this}
          */
         public Builder machineList(com.aliyun.ros.cdk.core.IResolvable machineList) {
@@ -123,10 +177,20 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link MachineGroupProps#getProjectName}
-         * @param projectName the value to be set.
+         * @param projectName Property projectName: MachineGroup created in project.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MachineGroupProps#getProjectName}
+         * @param projectName Property projectName: MachineGroup created in project.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.projectName = projectName;
             return this;
         }
@@ -147,12 +211,12 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MachineGroupProps {
-        private final java.lang.String groupAttribute;
-        private final java.lang.String groupName;
-        private final java.lang.String groupType;
-        private final java.lang.String machineIdentifyType;
+        private final java.lang.Object groupAttribute;
+        private final java.lang.Object groupName;
+        private final java.lang.Object groupType;
+        private final java.lang.Object machineIdentifyType;
         private final java.lang.Object machineList;
-        private final java.lang.String projectName;
+        private final java.lang.Object projectName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,18 +224,18 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupAttribute = software.amazon.jsii.Kernel.get(this, "groupAttribute", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.machineIdentifyType = software.amazon.jsii.Kernel.get(this, "machineIdentifyType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupAttribute = software.amazon.jsii.Kernel.get(this, "groupAttribute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.machineIdentifyType = software.amazon.jsii.Kernel.get(this, "machineIdentifyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.machineList = software.amazon.jsii.Kernel.get(this, "machineList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupAttribute, final java.lang.String groupName, final java.lang.String groupType, final java.lang.String machineIdentifyType, final java.lang.Object machineList, final java.lang.String projectName) {
+        protected Jsii$Proxy(final java.lang.Object groupAttribute, final java.lang.Object groupName, final java.lang.Object groupType, final java.lang.Object machineIdentifyType, final java.lang.Object machineList, final java.lang.Object projectName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupAttribute = groupAttribute;
             this.groupName = groupName;
@@ -182,22 +246,22 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getGroupAttribute() {
+        public final java.lang.Object getGroupAttribute() {
             return this.groupAttribute;
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getGroupType() {
+        public final java.lang.Object getGroupType() {
             return this.groupType;
         }
 
         @Override
-        public final java.lang.String getMachineIdentifyType() {
+        public final java.lang.Object getMachineIdentifyType() {
             return this.machineIdentifyType;
         }
 
@@ -207,7 +271,7 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

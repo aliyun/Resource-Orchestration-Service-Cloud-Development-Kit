@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerAttachmentProps.Jsii$Proxy.class)
 public interface RosBackendServerAttachmentProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getBackendServerList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerList() {
         return null;
     }
 
@@ -40,8 +40,8 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
      * A builder for {@link RosBackendServerAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBackendServerAttachmentProps> {
-        private java.lang.String loadBalancerId;
-        private java.util.List<java.lang.String> backendServerList;
+        private java.lang.Object loadBalancerId;
+        private java.lang.Object backendServerList;
         private java.lang.Object backendServers;
         private java.lang.Object backendServerWeightList;
 
@@ -56,11 +56,31 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
         }
 
         /**
+         * Sets the value of {@link RosBackendServerAttachmentProps#getLoadBalancerId}
+         * @param loadBalancerId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosBackendServerAttachmentProps#getBackendServerList}
          * @param backendServerList the value to be set.
          * @return {@code this}
          */
-        public Builder backendServerList(java.util.List<java.lang.String> backendServerList) {
+        public Builder backendServerList(com.aliyun.ros.cdk.core.IResolvable backendServerList) {
+            this.backendServerList = backendServerList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBackendServerAttachmentProps#getBackendServerList}
+         * @param backendServerList the value to be set.
+         * @return {@code this}
+         */
+        public Builder backendServerList(java.util.List<? extends java.lang.Object> backendServerList) {
             this.backendServerList = backendServerList;
             return this;
         }
@@ -121,8 +141,8 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosBackendServerAttachmentProps {
-        private final java.lang.String loadBalancerId;
-        private final java.util.List<java.lang.String> backendServerList;
+        private final java.lang.Object loadBalancerId;
+        private final java.lang.Object backendServerList;
         private final java.lang.Object backendServers;
         private final java.lang.Object backendServerWeightList;
 
@@ -132,8 +152,8 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.backendServerList = software.amazon.jsii.Kernel.get(this, "backendServerList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backendServerList = software.amazon.jsii.Kernel.get(this, "backendServerList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServerWeightList = software.amazon.jsii.Kernel.get(this, "backendServerWeightList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -141,7 +161,7 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String loadBalancerId, final java.util.List<java.lang.String> backendServerList, final java.lang.Object backendServers, final java.lang.Object backendServerWeightList) {
+        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object backendServerList, final java.lang.Object backendServers, final java.lang.Object backendServerWeightList) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
             this.backendServerList = backendServerList;
@@ -150,12 +170,12 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getBackendServerList() {
+        public final java.lang.Object getBackendServerList() {
             return this.backendServerList;
         }
 

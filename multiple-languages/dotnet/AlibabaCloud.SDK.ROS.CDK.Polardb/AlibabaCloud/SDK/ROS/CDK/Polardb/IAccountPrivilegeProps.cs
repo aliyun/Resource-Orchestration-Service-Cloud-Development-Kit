@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     public interface IAccountPrivilegeProps
     {
         /// <summary>Property accountName: The name of the database account to be granted access permissions.</summary>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountName
         {
             get;
         }
@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <summary>Property accountPrivilege: The permissions of the database account on the database.</summary>
         /// <remarks>
         /// Valid values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>ReadWrite: has read and write permissions on the database.</description>
         /// <description>ReadOnly: has the read-only permission on the database.</description>
@@ -28,15 +28,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Separate multiple permissions with a comma (,).</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountPrivilege
         {
             get;
         }
 
         /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.</summary>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbClusterId
         {
             get;
         }
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// You can grant access permissions on one or more databases to the database account.
         /// Separate multiple databases with a comma (,).
         /// </remarks>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-        string DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbName
         {
             get;
         }
@@ -61,16 +61,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <summary>Property accountName: The name of the database account to be granted access permissions.</summary>
-            [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountName
+            [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accountPrivilege: The permissions of the database account on the database.</summary>
             /// <remarks>
             /// Valid values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>ReadWrite: has read and write permissions on the database.</description>
             /// <description>ReadOnly: has the read-only permission on the database.</description>
@@ -80,17 +80,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Separate multiple permissions with a comma (,).</description>
             /// </list>
             /// </remarks>
-            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountPrivilege
+            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountPrivilege
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.</summary>
-            [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbClusterId
+            [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property dbName: The name of the database whose access permissions are to be granted to the database account.</summary>
@@ -98,10 +98,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// You can grant access permissions on one or more databases to the database account.
             /// Separate multiple databases with a comma (,).
             /// </remarks>
-            [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbName
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

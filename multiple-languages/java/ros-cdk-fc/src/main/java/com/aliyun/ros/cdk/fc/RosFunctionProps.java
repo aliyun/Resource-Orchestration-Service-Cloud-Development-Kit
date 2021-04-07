@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunctionProps")
 @software.amazon.jsii.Jsii.Proxy(RosFunctionProps.Jsii$Proxy.class)
 public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFunctionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getHandler();
+    @org.jetbrains.annotations.NotNull java.lang.Object getHandler();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRuntime();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRuntime();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
      */
@@ -32,7 +32,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCaPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCaPort() {
         return null;
     }
 
@@ -50,7 +50,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -62,31 +62,37 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInitializationTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitializationTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInitializer() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitializer() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInstanceConcurrency() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConcurrency() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMemorySize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMemorySize() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
@@ -100,21 +106,22 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosFunctionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFunctionProps> {
-        private java.lang.String functionName;
-        private java.lang.String handler;
-        private java.lang.String runtime;
-        private java.lang.String serviceName;
+        private java.lang.Object functionName;
+        private java.lang.Object handler;
+        private java.lang.Object runtime;
+        private java.lang.Object serviceName;
         private java.lang.Object asyncConfiguration;
-        private java.lang.Number caPort;
+        private java.lang.Object caPort;
         private java.lang.Object code;
         private java.lang.Object customContainerConfig;
-        private java.lang.String description;
+        private java.lang.Object description;
         private java.lang.Object environmentVariables;
-        private java.lang.Number initializationTimeout;
-        private java.lang.String initializer;
-        private java.lang.Number instanceConcurrency;
-        private java.lang.Number memorySize;
-        private java.lang.Number timeout;
+        private java.lang.Object initializationTimeout;
+        private java.lang.Object initializer;
+        private java.lang.Object instanceConcurrency;
+        private java.lang.Object instanceType;
+        private java.lang.Object memorySize;
+        private java.lang.Object timeout;
 
         /**
          * Sets the value of {@link RosFunctionProps#getFunctionName}
@@ -122,6 +129,16 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder functionName(java.lang.String functionName) {
+            this.functionName = functionName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getFunctionName}
+         * @param functionName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
             this.functionName = functionName;
             return this;
         }
@@ -137,6 +154,16 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getHandler}
+         * @param handler the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder handler(com.aliyun.ros.cdk.core.IResolvable handler) {
+            this.handler = handler;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getRuntime}
          * @param runtime the value to be set. This parameter is required.
          * @return {@code this}
@@ -147,11 +174,31 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getRuntime}
+         * @param runtime the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder runtime(com.aliyun.ros.cdk.core.IResolvable runtime) {
+            this.runtime = runtime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getServiceName}
          * @param serviceName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.serviceName = serviceName;
             return this;
         }
@@ -182,6 +229,16 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder caPort(java.lang.Number caPort) {
+            this.caPort = caPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCaPort}
+         * @param caPort the value to be set.
+         * @return {@code this}
+         */
+        public Builder caPort(com.aliyun.ros.cdk.core.IResolvable caPort) {
             this.caPort = caPort;
             return this;
         }
@@ -237,6 +294,16 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getEnvironmentVariables}
          * @param environmentVariables the value to be set.
          * @return {@code this}
@@ -267,11 +334,31 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getInitializationTimeout}
+         * @param initializationTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder initializationTimeout(com.aliyun.ros.cdk.core.IResolvable initializationTimeout) {
+            this.initializationTimeout = initializationTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getInitializer}
          * @param initializer the value to be set.
          * @return {@code this}
          */
         public Builder initializer(java.lang.String initializer) {
+            this.initializer = initializer;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInitializer}
+         * @param initializer the value to be set.
+         * @return {@code this}
+         */
+        public Builder initializer(com.aliyun.ros.cdk.core.IResolvable initializer) {
             this.initializer = initializer;
             return this;
         }
@@ -287,11 +374,51 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getInstanceConcurrency}
+         * @param instanceConcurrency the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceConcurrency(com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
+            this.instanceConcurrency = instanceConcurrency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceType}
+         * @param instanceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceType(java.lang.String instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceType}
+         * @param instanceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getMemorySize}
          * @param memorySize the value to be set.
          * @return {@code this}
          */
         public Builder memorySize(java.lang.Number memorySize) {
+            this.memorySize = memorySize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getMemorySize}
+         * @param memorySize the value to be set.
+         * @return {@code this}
+         */
+        public Builder memorySize(com.aliyun.ros.cdk.core.IResolvable memorySize) {
             this.memorySize = memorySize;
             return this;
         }
@@ -307,13 +434,23 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getTimeout}
+         * @param timeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosFunctionProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosFunctionProps build() {
-            return new Jsii$Proxy(functionName, handler, runtime, serviceName, asyncConfiguration, caPort, code, customContainerConfig, description, environmentVariables, initializationTimeout, initializer, instanceConcurrency, memorySize, timeout);
+            return new Jsii$Proxy(functionName, handler, runtime, serviceName, asyncConfiguration, caPort, code, customContainerConfig, description, environmentVariables, initializationTimeout, initializer, instanceConcurrency, instanceType, memorySize, timeout);
         }
     }
 
@@ -322,21 +459,22 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFunctionProps {
-        private final java.lang.String functionName;
-        private final java.lang.String handler;
-        private final java.lang.String runtime;
-        private final java.lang.String serviceName;
+        private final java.lang.Object functionName;
+        private final java.lang.Object handler;
+        private final java.lang.Object runtime;
+        private final java.lang.Object serviceName;
         private final java.lang.Object asyncConfiguration;
-        private final java.lang.Number caPort;
+        private final java.lang.Object caPort;
         private final java.lang.Object code;
         private final java.lang.Object customContainerConfig;
-        private final java.lang.String description;
+        private final java.lang.Object description;
         private final java.lang.Object environmentVariables;
-        private final java.lang.Number initializationTimeout;
-        private final java.lang.String initializer;
-        private final java.lang.Number instanceConcurrency;
-        private final java.lang.Number memorySize;
-        private final java.lang.Number timeout;
+        private final java.lang.Object initializationTimeout;
+        private final java.lang.Object initializer;
+        private final java.lang.Object instanceConcurrency;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object memorySize;
+        private final java.lang.Object timeout;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -344,27 +482,28 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.handler = software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.handler = software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.asyncConfiguration = software.amazon.jsii.Kernel.get(this, "asyncConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.caPort = software.amazon.jsii.Kernel.get(this, "caPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.caPort = software.amazon.jsii.Kernel.get(this, "caPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.code = software.amazon.jsii.Kernel.get(this, "code", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.customContainerConfig = software.amazon.jsii.Kernel.get(this, "customContainerConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentVariables = software.amazon.jsii.Kernel.get(this, "environmentVariables", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.initializationTimeout = software.amazon.jsii.Kernel.get(this, "initializationTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.initializer = software.amazon.jsii.Kernel.get(this, "initializer", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceConcurrency = software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.memorySize = software.amazon.jsii.Kernel.get(this, "memorySize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.initializationTimeout = software.amazon.jsii.Kernel.get(this, "initializationTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.initializer = software.amazon.jsii.Kernel.get(this, "initializer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceConcurrency = software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.memorySize = software.amazon.jsii.Kernel.get(this, "memorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String handler, final java.lang.String runtime, final java.lang.String serviceName, final java.lang.Object asyncConfiguration, final java.lang.Number caPort, final java.lang.Object code, final java.lang.Object customContainerConfig, final java.lang.String description, final java.lang.Object environmentVariables, final java.lang.Number initializationTimeout, final java.lang.String initializer, final java.lang.Number instanceConcurrency, final java.lang.Number memorySize, final java.lang.Number timeout) {
+        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object handler, final java.lang.Object runtime, final java.lang.Object serviceName, final java.lang.Object asyncConfiguration, final java.lang.Object caPort, final java.lang.Object code, final java.lang.Object customContainerConfig, final java.lang.Object description, final java.lang.Object environmentVariables, final java.lang.Object initializationTimeout, final java.lang.Object initializer, final java.lang.Object instanceConcurrency, final java.lang.Object instanceType, final java.lang.Object memorySize, final java.lang.Object timeout) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
             this.handler = java.util.Objects.requireNonNull(handler, "handler is required");
@@ -379,27 +518,28 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             this.initializationTimeout = initializationTimeout;
             this.initializer = initializer;
             this.instanceConcurrency = instanceConcurrency;
+            this.instanceType = instanceType;
             this.memorySize = memorySize;
             this.timeout = timeout;
         }
 
         @Override
-        public final java.lang.String getFunctionName() {
+        public final java.lang.Object getFunctionName() {
             return this.functionName;
         }
 
         @Override
-        public final java.lang.String getHandler() {
+        public final java.lang.Object getHandler() {
             return this.handler;
         }
 
         @Override
-        public final java.lang.String getRuntime() {
+        public final java.lang.Object getRuntime() {
             return this.runtime;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
@@ -409,7 +549,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getCaPort() {
+        public final java.lang.Object getCaPort() {
             return this.caPort;
         }
 
@@ -424,7 +564,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -434,27 +574,32 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getInitializationTimeout() {
+        public final java.lang.Object getInitializationTimeout() {
             return this.initializationTimeout;
         }
 
         @Override
-        public final java.lang.String getInitializer() {
+        public final java.lang.Object getInitializer() {
             return this.initializer;
         }
 
         @Override
-        public final java.lang.Number getInstanceConcurrency() {
+        public final java.lang.Object getInstanceConcurrency() {
             return this.instanceConcurrency;
         }
 
         @Override
-        public final java.lang.Number getMemorySize() {
+        public final java.lang.Object getInstanceType() {
+            return this.instanceType;
+        }
+
+        @Override
+        public final java.lang.Object getMemorySize() {
             return this.memorySize;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
@@ -495,6 +640,9 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getInstanceConcurrency() != null) {
                 data.set("instanceConcurrency", om.valueToTree(this.getInstanceConcurrency()));
             }
+            if (this.getInstanceType() != null) {
+                data.set("instanceType", om.valueToTree(this.getInstanceType()));
+            }
             if (this.getMemorySize() != null) {
                 data.set("memorySize", om.valueToTree(this.getMemorySize()));
             }
@@ -532,6 +680,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.initializationTimeout != null ? !this.initializationTimeout.equals(that.initializationTimeout) : that.initializationTimeout != null) return false;
             if (this.initializer != null ? !this.initializer.equals(that.initializer) : that.initializer != null) return false;
             if (this.instanceConcurrency != null ? !this.instanceConcurrency.equals(that.instanceConcurrency) : that.instanceConcurrency != null) return false;
+            if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
             if (this.memorySize != null ? !this.memorySize.equals(that.memorySize) : that.memorySize != null) return false;
             return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
         }
@@ -551,6 +700,7 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.initializationTimeout != null ? this.initializationTimeout.hashCode() : 0);
             result = 31 * result + (this.initializer != null ? this.initializer.hashCode() : 0);
             result = 31 * result + (this.instanceConcurrency != null ? this.instanceConcurrency.hashCode() : 0);
+            result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
             result = 31 * result + (this.memorySize != null ? this.memorySize.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             return result;

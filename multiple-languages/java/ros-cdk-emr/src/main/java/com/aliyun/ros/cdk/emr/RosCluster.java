@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.776Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,26 +44,26 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHostGroups() {
-        return software.amazon.jsii.Kernel.get(this, "attrHostGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHostGroups() {
+        return software.amazon.jsii.Kernel.get(this, "attrHostGroups", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMasterNodeInnerIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrMasterNodeInnerIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMasterNodeInnerIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrMasterNodeInnerIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMasterNodePubIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrMasterNodePubIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMasterNodePubIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrMasterNodePubIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -73,8 +73,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,8 +85,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getClusterType() {
-        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChargeType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", java.util.Objects.requireNonNull(value, "chargeType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getClusterType() {
+        return software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -97,13 +103,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getEmrVer() {
-        return software.amazon.jsii.Kernel.get(this, "emrVer", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setClusterType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clusterType", java.util.Objects.requireNonNull(value, "clusterType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getEmrVer() {
+        return software.amazon.jsii.Kernel.get(this, "emrVer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setEmrVer(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "emrVer", java.util.Objects.requireNonNull(value, "emrVer is required"));
+    }
+
+    /**
+     */
+    public void setEmrVer(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "emrVer", java.util.Objects.requireNonNull(value, "emrVer is required"));
     }
 
@@ -135,8 +153,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,13 +165,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNetType() {
-        return software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNetType() {
+        return software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNetType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "netType", java.util.Objects.requireNonNull(value, "netType is required"));
+    }
+
+    /**
+     */
+    public void setNetType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "netType", java.util.Objects.requireNonNull(value, "netType is required"));
     }
 
@@ -177,8 +207,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -189,13 +219,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAuthorizeContent() {
-        return software.amazon.jsii.Kernel.get(this, "authorizeContent", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAuthorizeContent() {
+        return software.amazon.jsii.Kernel.get(this, "authorizeContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAuthorizeContent(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "authorizeContent", value);
+    }
+
+    /**
+     */
+    public void setAuthorizeContent(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "authorizeContent", value);
     }
 
@@ -255,8 +297,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getConfigurations() {
-        return software.amazon.jsii.Kernel.get(this, "configurations", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConfigurations() {
+        return software.amazon.jsii.Kernel.get(this, "configurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -267,13 +309,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDepositType() {
-        return software.amazon.jsii.Kernel.get(this, "depositType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setConfigurations(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "configurations", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDepositType() {
+        return software.amazon.jsii.Kernel.get(this, "depositType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDepositType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "depositType", value);
+    }
+
+    /**
+     */
+    public void setDepositType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "depositType", value);
     }
 
@@ -333,13 +387,19 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceGeneration() {
-        return software.amazon.jsii.Kernel.get(this, "instanceGeneration", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceGeneration() {
+        return software.amazon.jsii.Kernel.get(this, "instanceGeneration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setInstanceGeneration(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceGeneration", value);
+    }
+
+    /**
+     */
+    public void setInstanceGeneration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceGeneration", value);
     }
 
@@ -381,8 +441,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
-        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -393,8 +453,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLogPath() {
-        return software.amazon.jsii.Kernel.get(this, "logPath", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLogPath() {
+        return software.amazon.jsii.Kernel.get(this, "logPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -405,8 +471,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMachineType() {
-        return software.amazon.jsii.Kernel.get(this, "machineType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLogPath(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logPath", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMachineType() {
+        return software.amazon.jsii.Kernel.get(this, "machineType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -417,8 +489,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMasterPwd() {
-        return software.amazon.jsii.Kernel.get(this, "masterPwd", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setMachineType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "machineType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterPwd() {
+        return software.amazon.jsii.Kernel.get(this, "masterPwd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -429,8 +507,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMetaStoreConf() {
-        return software.amazon.jsii.Kernel.get(this, "metaStoreConf", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setMasterPwd(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "masterPwd", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMetaStoreConf() {
+        return software.amazon.jsii.Kernel.get(this, "metaStoreConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -441,8 +525,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMetaStoreType() {
-        return software.amazon.jsii.Kernel.get(this, "metaStoreType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setMetaStoreConf(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "metaStoreConf", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMetaStoreType() {
+        return software.amazon.jsii.Kernel.get(this, "metaStoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -453,20 +543,32 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getOptionSoftWareList() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "optionSoftWareList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setMetaStoreType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "metaStoreType", value);
     }
 
     /**
      */
-    public void setOptionSoftWareList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOptionSoftWareList() {
+        return software.amazon.jsii.Kernel.get(this, "optionSoftWareList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOptionSoftWareList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "optionSoftWareList", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setOptionSoftWareList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "optionSoftWareList", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -477,8 +579,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRelatedClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "relatedClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRelatedClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "relatedClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -489,8 +597,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRelatedClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "relatedClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -501,13 +615,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSecurityGroupName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupName", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupName", value);
     }
 
@@ -549,13 +675,19 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getUserDefinedEmrEcsRole() {
-        return software.amazon.jsii.Kernel.get(this, "userDefinedEmrEcsRole", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUserDefinedEmrEcsRole() {
+        return software.amazon.jsii.Kernel.get(this, "userDefinedEmrEcsRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setUserDefinedEmrEcsRole(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "userDefinedEmrEcsRole", value);
+    }
+
+    /**
+     */
+    public void setUserDefinedEmrEcsRole(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "userDefinedEmrEcsRole", value);
     }
 
@@ -579,8 +711,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
-        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -591,8 +723,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -603,13 +741,25 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getWhiteListType() {
-        return software.amazon.jsii.Kernel.get(this, "whiteListType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWhiteListType() {
+        return software.amazon.jsii.Kernel.get(this, "whiteListType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setWhiteListType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "whiteListType", value);
+    }
+
+    /**
+     */
+    public void setWhiteListType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "whiteListType", value);
     }
     /**
@@ -622,21 +772,21 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getArg() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArg() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPath() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPath() {
             return null;
         }
 
@@ -652,9 +802,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BootstrapActionProperty> {
-            private java.lang.String arg;
-            private java.lang.String name;
-            private java.lang.String path;
+            private java.lang.Object arg;
+            private java.lang.Object name;
+            private java.lang.Object path;
 
             /**
              * Sets the value of {@link BootstrapActionProperty#getArg}
@@ -663,6 +813,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder arg(java.lang.String arg) {
+                this.arg = arg;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BootstrapActionProperty#getArg}
+             * @param arg the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arg(com.aliyun.ros.cdk.core.IResolvable arg) {
                 this.arg = arg;
                 return this;
             }
@@ -679,12 +840,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link BootstrapActionProperty#getName}
+             * @param name the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BootstrapActionProperty#getPath}
              * @param path the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder path(java.lang.String path) {
+                this.path = path;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BootstrapActionProperty#getPath}
+             * @param path the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder path(com.aliyun.ros.cdk.core.IResolvable path) {
                 this.path = path;
                 return this;
             }
@@ -707,9 +890,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BootstrapActionProperty {
-            private final java.lang.String arg;
-            private final java.lang.String name;
-            private final java.lang.String path;
+            private final java.lang.Object arg;
+            private final java.lang.Object name;
+            private final java.lang.Object path;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -717,15 +900,15 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.arg = software.amazon.jsii.Kernel.get(this, "arg", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.path = software.amazon.jsii.Kernel.get(this, "path", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.arg = software.amazon.jsii.Kernel.get(this, "arg", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.path = software.amazon.jsii.Kernel.get(this, "path", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String arg, final java.lang.String name, final java.lang.String path) {
+            protected Jsii$Proxy(final java.lang.Object arg, final java.lang.Object name, final java.lang.Object path) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.arg = arg;
                 this.name = name;
@@ -733,17 +916,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getArg() {
+            public final java.lang.Object getArg() {
                 return this.arg;
             }
 
             @Override
-            public final java.lang.String getName() {
+            public final java.lang.Object getName() {
                 return this.name;
             }
 
             @Override
-            public final java.lang.String getPath() {
+            public final java.lang.Object getPath() {
                 return this.path;
             }
 
@@ -804,42 +987,42 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getConfigKey() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigKey() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getConfigValue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConfigValue() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEncrypt() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypt() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getFileName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFileName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getReplace() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReplace() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getServiceName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServiceName() {
             return null;
         }
 
@@ -855,12 +1038,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigProperty> {
-            private java.lang.String configKey;
-            private java.lang.String configValue;
-            private java.lang.String encrypt;
-            private java.lang.String fileName;
-            private java.lang.String replace;
-            private java.lang.String serviceName;
+            private java.lang.Object configKey;
+            private java.lang.Object configValue;
+            private java.lang.Object encrypt;
+            private java.lang.Object fileName;
+            private java.lang.Object replace;
+            private java.lang.Object serviceName;
 
             /**
              * Sets the value of {@link ConfigProperty#getConfigKey}
@@ -869,6 +1052,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder configKey(java.lang.String configKey) {
+                this.configKey = configKey;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigProperty#getConfigKey}
+             * @param configKey the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configKey(com.aliyun.ros.cdk.core.IResolvable configKey) {
                 this.configKey = configKey;
                 return this;
             }
@@ -885,12 +1079,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ConfigProperty#getConfigValue}
+             * @param configValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder configValue(com.aliyun.ros.cdk.core.IResolvable configValue) {
+                this.configValue = configValue;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ConfigProperty#getEncrypt}
              * @param encrypt the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder encrypt(java.lang.String encrypt) {
+                this.encrypt = encrypt;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigProperty#getEncrypt}
+             * @param encrypt the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypt(com.aliyun.ros.cdk.core.IResolvable encrypt) {
                 this.encrypt = encrypt;
                 return this;
             }
@@ -907,6 +1123,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ConfigProperty#getFileName}
+             * @param fileName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fileName(com.aliyun.ros.cdk.core.IResolvable fileName) {
+                this.fileName = fileName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ConfigProperty#getReplace}
              * @param replace the value to be set.
              * @return {@code this}
@@ -918,12 +1145,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ConfigProperty#getReplace}
+             * @param replace the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder replace(com.aliyun.ros.cdk.core.IResolvable replace) {
+                this.replace = replace;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ConfigProperty#getServiceName}
              * @param serviceName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serviceName(java.lang.String serviceName) {
+                this.serviceName = serviceName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConfigProperty#getServiceName}
+             * @param serviceName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
                 this.serviceName = serviceName;
                 return this;
             }
@@ -946,12 +1195,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigProperty {
-            private final java.lang.String configKey;
-            private final java.lang.String configValue;
-            private final java.lang.String encrypt;
-            private final java.lang.String fileName;
-            private final java.lang.String replace;
-            private final java.lang.String serviceName;
+            private final java.lang.Object configKey;
+            private final java.lang.Object configValue;
+            private final java.lang.Object encrypt;
+            private final java.lang.Object fileName;
+            private final java.lang.Object replace;
+            private final java.lang.Object serviceName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -959,18 +1208,18 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.configKey = software.amazon.jsii.Kernel.get(this, "configKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.configValue = software.amazon.jsii.Kernel.get(this, "configValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.encrypt = software.amazon.jsii.Kernel.get(this, "encrypt", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.fileName = software.amazon.jsii.Kernel.get(this, "fileName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.replace = software.amazon.jsii.Kernel.get(this, "replace", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.configKey = software.amazon.jsii.Kernel.get(this, "configKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.configValue = software.amazon.jsii.Kernel.get(this, "configValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.encrypt = software.amazon.jsii.Kernel.get(this, "encrypt", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.fileName = software.amazon.jsii.Kernel.get(this, "fileName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.replace = software.amazon.jsii.Kernel.get(this, "replace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String configKey, final java.lang.String configValue, final java.lang.String encrypt, final java.lang.String fileName, final java.lang.String replace, final java.lang.String serviceName) {
+            protected Jsii$Proxy(final java.lang.Object configKey, final java.lang.Object configValue, final java.lang.Object encrypt, final java.lang.Object fileName, final java.lang.Object replace, final java.lang.Object serviceName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.configKey = configKey;
                 this.configValue = configValue;
@@ -981,32 +1230,32 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getConfigKey() {
+            public final java.lang.Object getConfigKey() {
                 return this.configKey;
             }
 
             @Override
-            public final java.lang.String getConfigValue() {
+            public final java.lang.Object getConfigValue() {
                 return this.configValue;
             }
 
             @Override
-            public final java.lang.String getEncrypt() {
+            public final java.lang.Object getEncrypt() {
                 return this.encrypt;
             }
 
             @Override
-            public final java.lang.String getFileName() {
+            public final java.lang.Object getFileName() {
                 return this.fileName;
             }
 
             @Override
-            public final java.lang.String getReplace() {
+            public final java.lang.Object getReplace() {
                 return this.replace;
             }
 
             @Override
-            public final java.lang.String getServiceName() {
+            public final java.lang.Object getServiceName() {
                 return this.serviceName;
             }
 
@@ -1082,47 +1331,47 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getChargeType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getChargeType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getDiskCapacity();
+        @org.jetbrains.annotations.NotNull java.lang.Object getDiskCapacity();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getDiskCount();
+        @org.jetbrains.annotations.NotNull java.lang.Object getDiskCount();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getDiskType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getDiskType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getHostGroupType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getHostGroupType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getNodeCount();
+        @org.jetbrains.annotations.NotNull java.lang.Object getNodeCount();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getSysDiskCapacity();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSysDiskCapacity();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSysDiskType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSysDiskType();
 
         /**
          */
@@ -1134,70 +1383,70 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getClusterId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getComment() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getComment() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getCreateType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCreateType() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getGpuDriver() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getGpuDriver() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getHostGroupId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostGroupId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getHostGroupName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostGroupName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getHostKeyPairName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostKeyPairName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getHostPassword() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostPassword() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
             return null;
         }
 
@@ -1213,26 +1462,26 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HostGroupProperty> {
-            private java.lang.String chargeType;
-            private java.lang.Number diskCapacity;
-            private java.lang.Number diskCount;
-            private java.lang.String diskType;
-            private java.lang.String hostGroupType;
-            private java.lang.String instanceType;
-            private java.lang.Number nodeCount;
-            private java.lang.Number sysDiskCapacity;
-            private java.lang.String sysDiskType;
+            private java.lang.Object chargeType;
+            private java.lang.Object diskCapacity;
+            private java.lang.Object diskCount;
+            private java.lang.Object diskType;
+            private java.lang.Object hostGroupType;
+            private java.lang.Object instanceType;
+            private java.lang.Object nodeCount;
+            private java.lang.Object sysDiskCapacity;
+            private java.lang.Object sysDiskType;
             private java.lang.Object autoRenew;
-            private java.lang.String clusterId;
-            private java.lang.String comment;
-            private java.lang.String createType;
-            private java.lang.String gpuDriver;
-            private java.lang.String hostGroupId;
-            private java.lang.String hostGroupName;
-            private java.lang.String hostKeyPairName;
-            private java.lang.String hostPassword;
-            private java.lang.Number period;
-            private java.lang.String vSwitchId;
+            private java.lang.Object clusterId;
+            private java.lang.Object comment;
+            private java.lang.Object createType;
+            private java.lang.Object gpuDriver;
+            private java.lang.Object hostGroupId;
+            private java.lang.Object hostGroupName;
+            private java.lang.Object hostKeyPairName;
+            private java.lang.Object hostPassword;
+            private java.lang.Object period;
+            private java.lang.Object vSwitchId;
 
             /**
              * Sets the value of {@link HostGroupProperty#getChargeType}
@@ -1241,6 +1490,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder chargeType(java.lang.String chargeType) {
+                this.chargeType = chargeType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getChargeType}
+             * @param chargeType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
                 this.chargeType = chargeType;
                 return this;
             }
@@ -1257,12 +1517,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getDiskCapacity}
+             * @param diskCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCapacity(com.aliyun.ros.cdk.core.IResolvable diskCapacity) {
+                this.diskCapacity = diskCapacity;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getDiskCount}
              * @param diskCount the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder diskCount(java.lang.Number diskCount) {
+                this.diskCount = diskCount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getDiskCount}
+             * @param diskCount the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCount(com.aliyun.ros.cdk.core.IResolvable diskCount) {
                 this.diskCount = diskCount;
                 return this;
             }
@@ -1279,12 +1561,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getDiskType}
+             * @param diskType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
+                this.diskType = diskType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getHostGroupType}
              * @param hostGroupType the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder hostGroupType(java.lang.String hostGroupType) {
+                this.hostGroupType = hostGroupType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getHostGroupType}
+             * @param hostGroupType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostGroupType(com.aliyun.ros.cdk.core.IResolvable hostGroupType) {
                 this.hostGroupType = hostGroupType;
                 return this;
             }
@@ -1301,12 +1605,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getInstanceType}
+             * @param instanceType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getNodeCount}
              * @param nodeCount the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder nodeCount(java.lang.Number nodeCount) {
+                this.nodeCount = nodeCount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getNodeCount}
+             * @param nodeCount the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nodeCount(com.aliyun.ros.cdk.core.IResolvable nodeCount) {
                 this.nodeCount = nodeCount;
                 return this;
             }
@@ -1323,12 +1649,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getSysDiskCapacity}
+             * @param sysDiskCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sysDiskCapacity(com.aliyun.ros.cdk.core.IResolvable sysDiskCapacity) {
+                this.sysDiskCapacity = sysDiskCapacity;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getSysDiskType}
              * @param sysDiskType the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sysDiskType(java.lang.String sysDiskType) {
+                this.sysDiskType = sysDiskType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getSysDiskType}
+             * @param sysDiskType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sysDiskType(com.aliyun.ros.cdk.core.IResolvable sysDiskType) {
                 this.sysDiskType = sysDiskType;
                 return this;
             }
@@ -1367,12 +1715,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getClusterId}
+             * @param clusterId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+                this.clusterId = clusterId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getComment}
              * @param comment the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder comment(java.lang.String comment) {
+                this.comment = comment;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getComment}
+             * @param comment the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder comment(com.aliyun.ros.cdk.core.IResolvable comment) {
                 this.comment = comment;
                 return this;
             }
@@ -1389,12 +1759,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getCreateType}
+             * @param createType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder createType(com.aliyun.ros.cdk.core.IResolvable createType) {
+                this.createType = createType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getGpuDriver}
              * @param gpuDriver the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder gpuDriver(java.lang.String gpuDriver) {
+                this.gpuDriver = gpuDriver;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getGpuDriver}
+             * @param gpuDriver the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder gpuDriver(com.aliyun.ros.cdk.core.IResolvable gpuDriver) {
                 this.gpuDriver = gpuDriver;
                 return this;
             }
@@ -1411,12 +1803,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getHostGroupId}
+             * @param hostGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostGroupId(com.aliyun.ros.cdk.core.IResolvable hostGroupId) {
+                this.hostGroupId = hostGroupId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getHostGroupName}
              * @param hostGroupName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder hostGroupName(java.lang.String hostGroupName) {
+                this.hostGroupName = hostGroupName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getHostGroupName}
+             * @param hostGroupName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostGroupName(com.aliyun.ros.cdk.core.IResolvable hostGroupName) {
                 this.hostGroupName = hostGroupName;
                 return this;
             }
@@ -1433,12 +1847,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getHostKeyPairName}
+             * @param hostKeyPairName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostKeyPairName(com.aliyun.ros.cdk.core.IResolvable hostKeyPairName) {
+                this.hostKeyPairName = hostKeyPairName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getHostPassword}
              * @param hostPassword the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder hostPassword(java.lang.String hostPassword) {
+                this.hostPassword = hostPassword;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getHostPassword}
+             * @param hostPassword the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostPassword(com.aliyun.ros.cdk.core.IResolvable hostPassword) {
                 this.hostPassword = hostPassword;
                 return this;
             }
@@ -1455,12 +1891,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link HostGroupProperty#getPeriod}
+             * @param period the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+                this.period = period;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link HostGroupProperty#getVSwitchId}
              * @param vSwitchId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vSwitchId(java.lang.String vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HostGroupProperty#getVSwitchId}
+             * @param vSwitchId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
                 this.vSwitchId = vSwitchId;
                 return this;
             }
@@ -1483,26 +1941,26 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HostGroupProperty {
-            private final java.lang.String chargeType;
-            private final java.lang.Number diskCapacity;
-            private final java.lang.Number diskCount;
-            private final java.lang.String diskType;
-            private final java.lang.String hostGroupType;
-            private final java.lang.String instanceType;
-            private final java.lang.Number nodeCount;
-            private final java.lang.Number sysDiskCapacity;
-            private final java.lang.String sysDiskType;
+            private final java.lang.Object chargeType;
+            private final java.lang.Object diskCapacity;
+            private final java.lang.Object diskCount;
+            private final java.lang.Object diskType;
+            private final java.lang.Object hostGroupType;
+            private final java.lang.Object instanceType;
+            private final java.lang.Object nodeCount;
+            private final java.lang.Object sysDiskCapacity;
+            private final java.lang.Object sysDiskType;
             private final java.lang.Object autoRenew;
-            private final java.lang.String clusterId;
-            private final java.lang.String comment;
-            private final java.lang.String createType;
-            private final java.lang.String gpuDriver;
-            private final java.lang.String hostGroupId;
-            private final java.lang.String hostGroupName;
-            private final java.lang.String hostKeyPairName;
-            private final java.lang.String hostPassword;
-            private final java.lang.Number period;
-            private final java.lang.String vSwitchId;
+            private final java.lang.Object clusterId;
+            private final java.lang.Object comment;
+            private final java.lang.Object createType;
+            private final java.lang.Object gpuDriver;
+            private final java.lang.Object hostGroupId;
+            private final java.lang.Object hostGroupName;
+            private final java.lang.Object hostKeyPairName;
+            private final java.lang.Object hostPassword;
+            private final java.lang.Object period;
+            private final java.lang.Object vSwitchId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1510,32 +1968,32 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.diskCapacity = software.amazon.jsii.Kernel.get(this, "diskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.diskCount = software.amazon.jsii.Kernel.get(this, "diskCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.hostGroupType = software.amazon.jsii.Kernel.get(this, "hostGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.nodeCount = software.amazon.jsii.Kernel.get(this, "nodeCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.sysDiskCapacity = software.amazon.jsii.Kernel.get(this, "sysDiskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.sysDiskType = software.amazon.jsii.Kernel.get(this, "sysDiskType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskCapacity = software.amazon.jsii.Kernel.get(this, "diskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskCount = software.amazon.jsii.Kernel.get(this, "diskCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostGroupType = software.amazon.jsii.Kernel.get(this, "hostGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nodeCount = software.amazon.jsii.Kernel.get(this, "nodeCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sysDiskCapacity = software.amazon.jsii.Kernel.get(this, "sysDiskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sysDiskType = software.amazon.jsii.Kernel.get(this, "sysDiskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.createType = software.amazon.jsii.Kernel.get(this, "createType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.gpuDriver = software.amazon.jsii.Kernel.get(this, "gpuDriver", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.hostGroupId = software.amazon.jsii.Kernel.get(this, "hostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.hostGroupName = software.amazon.jsii.Kernel.get(this, "hostGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.hostKeyPairName = software.amazon.jsii.Kernel.get(this, "hostKeyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.hostPassword = software.amazon.jsii.Kernel.get(this, "hostPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.createType = software.amazon.jsii.Kernel.get(this, "createType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.gpuDriver = software.amazon.jsii.Kernel.get(this, "gpuDriver", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostGroupId = software.amazon.jsii.Kernel.get(this, "hostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostGroupName = software.amazon.jsii.Kernel.get(this, "hostGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostKeyPairName = software.amazon.jsii.Kernel.get(this, "hostKeyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostPassword = software.amazon.jsii.Kernel.get(this, "hostPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String chargeType, final java.lang.Number diskCapacity, final java.lang.Number diskCount, final java.lang.String diskType, final java.lang.String hostGroupType, final java.lang.String instanceType, final java.lang.Number nodeCount, final java.lang.Number sysDiskCapacity, final java.lang.String sysDiskType, final java.lang.Object autoRenew, final java.lang.String clusterId, final java.lang.String comment, final java.lang.String createType, final java.lang.String gpuDriver, final java.lang.String hostGroupId, final java.lang.String hostGroupName, final java.lang.String hostKeyPairName, final java.lang.String hostPassword, final java.lang.Number period, final java.lang.String vSwitchId) {
+            protected Jsii$Proxy(final java.lang.Object chargeType, final java.lang.Object diskCapacity, final java.lang.Object diskCount, final java.lang.Object diskType, final java.lang.Object hostGroupType, final java.lang.Object instanceType, final java.lang.Object nodeCount, final java.lang.Object sysDiskCapacity, final java.lang.Object sysDiskType, final java.lang.Object autoRenew, final java.lang.Object clusterId, final java.lang.Object comment, final java.lang.Object createType, final java.lang.Object gpuDriver, final java.lang.Object hostGroupId, final java.lang.Object hostGroupName, final java.lang.Object hostKeyPairName, final java.lang.Object hostPassword, final java.lang.Object period, final java.lang.Object vSwitchId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.chargeType = java.util.Objects.requireNonNull(chargeType, "chargeType is required");
                 this.diskCapacity = java.util.Objects.requireNonNull(diskCapacity, "diskCapacity is required");
@@ -1560,47 +2018,47 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getChargeType() {
+            public final java.lang.Object getChargeType() {
                 return this.chargeType;
             }
 
             @Override
-            public final java.lang.Number getDiskCapacity() {
+            public final java.lang.Object getDiskCapacity() {
                 return this.diskCapacity;
             }
 
             @Override
-            public final java.lang.Number getDiskCount() {
+            public final java.lang.Object getDiskCount() {
                 return this.diskCount;
             }
 
             @Override
-            public final java.lang.String getDiskType() {
+            public final java.lang.Object getDiskType() {
                 return this.diskType;
             }
 
             @Override
-            public final java.lang.String getHostGroupType() {
+            public final java.lang.Object getHostGroupType() {
                 return this.hostGroupType;
             }
 
             @Override
-            public final java.lang.String getInstanceType() {
+            public final java.lang.Object getInstanceType() {
                 return this.instanceType;
             }
 
             @Override
-            public final java.lang.Number getNodeCount() {
+            public final java.lang.Object getNodeCount() {
                 return this.nodeCount;
             }
 
             @Override
-            public final java.lang.Number getSysDiskCapacity() {
+            public final java.lang.Object getSysDiskCapacity() {
                 return this.sysDiskCapacity;
             }
 
             @Override
-            public final java.lang.String getSysDiskType() {
+            public final java.lang.Object getSysDiskType() {
                 return this.sysDiskType;
             }
 
@@ -1610,52 +2068,52 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getClusterId() {
+            public final java.lang.Object getClusterId() {
                 return this.clusterId;
             }
 
             @Override
-            public final java.lang.String getComment() {
+            public final java.lang.Object getComment() {
                 return this.comment;
             }
 
             @Override
-            public final java.lang.String getCreateType() {
+            public final java.lang.Object getCreateType() {
                 return this.createType;
             }
 
             @Override
-            public final java.lang.String getGpuDriver() {
+            public final java.lang.Object getGpuDriver() {
                 return this.gpuDriver;
             }
 
             @Override
-            public final java.lang.String getHostGroupId() {
+            public final java.lang.Object getHostGroupId() {
                 return this.hostGroupId;
             }
 
             @Override
-            public final java.lang.String getHostGroupName() {
+            public final java.lang.Object getHostGroupName() {
                 return this.hostGroupName;
             }
 
             @Override
-            public final java.lang.String getHostKeyPairName() {
+            public final java.lang.Object getHostKeyPairName() {
                 return this.hostKeyPairName;
             }
 
             @Override
-            public final java.lang.String getHostPassword() {
+            public final java.lang.Object getHostPassword() {
                 return this.hostPassword;
             }
 
             @Override
-            public final java.lang.Number getPeriod() {
+            public final java.lang.Object getPeriod() {
                 return this.period;
             }
 
             @Override
-            public final java.lang.String getVSwitchId() {
+            public final java.lang.Object getVSwitchId() {
                 return this.vSwitchId;
             }
 
@@ -1783,21 +2241,21 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getUserId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUserId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getUserName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUserName() {
             return null;
         }
 
@@ -1813,9 +2271,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<UserInfoProperty> {
-            private java.lang.String password;
-            private java.lang.String userId;
-            private java.lang.String userName;
+            private java.lang.Object password;
+            private java.lang.Object userId;
+            private java.lang.Object userName;
 
             /**
              * Sets the value of {@link UserInfoProperty#getPassword}
@@ -1824,6 +2282,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder password(java.lang.String password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserInfoProperty#getPassword}
+             * @param password the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
                 this.password = password;
                 return this;
             }
@@ -1840,12 +2309,34 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link UserInfoProperty#getUserId}
+             * @param userId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userId(com.aliyun.ros.cdk.core.IResolvable userId) {
+                this.userId = userId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link UserInfoProperty#getUserName}
              * @param userName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder userName(java.lang.String userName) {
+                this.userName = userName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserInfoProperty#getUserName}
+             * @param userName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
                 this.userName = userName;
                 return this;
             }
@@ -1868,9 +2359,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UserInfoProperty {
-            private final java.lang.String password;
-            private final java.lang.String userId;
-            private final java.lang.String userName;
+            private final java.lang.Object password;
+            private final java.lang.Object userId;
+            private final java.lang.Object userName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1878,15 +2369,15 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.userId = software.amazon.jsii.Kernel.get(this, "userId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userId = software.amazon.jsii.Kernel.get(this, "userId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String password, final java.lang.String userId, final java.lang.String userName) {
+            protected Jsii$Proxy(final java.lang.Object password, final java.lang.Object userId, final java.lang.Object userName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.password = password;
                 this.userId = userId;
@@ -1894,17 +2385,17 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getPassword() {
+            public final java.lang.Object getPassword() {
                 return this.password;
             }
 
             @Override
-            public final java.lang.String getUserId() {
+            public final java.lang.Object getUserId() {
                 return this.userId;
             }
 
             @Override
-            public final java.lang.String getUserName() {
+            public final java.lang.Object getUserName() {
                 return this.userName;
             }
 
@@ -1990,6 +2481,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.chargeType(chargeType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1999,12 +2498,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.clusterType(clusterType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param clusterType This parameter is required.
+         */
+        public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.props.clusterType(clusterType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param emrVer This parameter is required.
          */
         public Builder emrVer(final java.lang.String emrVer) {
+            this.props.emrVer(emrVer);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param emrVer This parameter is required.
+         */
+        public Builder emrVer(final com.aliyun.ros.cdk.core.IResolvable emrVer) {
             this.props.emrVer(emrVer);
             return this;
         }
@@ -2034,12 +2549,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param netType This parameter is required.
          */
         public Builder netType(final java.lang.String netType) {
+            this.props.netType(netType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param netType This parameter is required.
+         */
+        public Builder netType(final com.aliyun.ros.cdk.core.IResolvable netType) {
             this.props.netType(netType);
             return this;
         }
@@ -2069,12 +2600,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.zoneId(zoneId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param authorizeContent This parameter is required.
          */
         public Builder authorizeContent(final java.lang.String authorizeContent) {
+            this.props.authorizeContent(authorizeContent);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param authorizeContent This parameter is required.
+         */
+        public Builder authorizeContent(final com.aliyun.ros.cdk.core.IResolvable authorizeContent) {
             this.props.authorizeContent(authorizeContent);
             return this;
         }
@@ -2138,12 +2685,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.configurations(configurations);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param configurations This parameter is required.
+         */
+        public Builder configurations(final com.aliyun.ros.cdk.core.IResolvable configurations) {
+            this.props.configurations(configurations);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param depositType This parameter is required.
          */
         public Builder depositType(final java.lang.String depositType) {
+            this.props.depositType(depositType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param depositType This parameter is required.
+         */
+        public Builder depositType(final com.aliyun.ros.cdk.core.IResolvable depositType) {
             this.props.depositType(depositType);
             return this;
         }
@@ -2207,6 +2770,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceGeneration(instanceGeneration);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceGeneration This parameter is required.
+         */
+        public Builder instanceGeneration(final com.aliyun.ros.cdk.core.IResolvable instanceGeneration) {
+            this.props.instanceGeneration(instanceGeneration);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -2250,12 +2821,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.keyPairName(keyPairName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param logPath This parameter is required.
          */
         public Builder logPath(final java.lang.String logPath) {
+            this.props.logPath(logPath);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param logPath This parameter is required.
+         */
+        public Builder logPath(final com.aliyun.ros.cdk.core.IResolvable logPath) {
             this.props.logPath(logPath);
             return this;
         }
@@ -2268,12 +2855,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.machineType(machineType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param machineType This parameter is required.
+         */
+        public Builder machineType(final com.aliyun.ros.cdk.core.IResolvable machineType) {
+            this.props.machineType(machineType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param masterPwd This parameter is required.
          */
         public Builder masterPwd(final java.lang.String masterPwd) {
+            this.props.masterPwd(masterPwd);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterPwd This parameter is required.
+         */
+        public Builder masterPwd(final com.aliyun.ros.cdk.core.IResolvable masterPwd) {
             this.props.masterPwd(masterPwd);
             return this;
         }
@@ -2286,6 +2889,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.metaStoreConf(metaStoreConf);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param metaStoreConf This parameter is required.
+         */
+        public Builder metaStoreConf(final com.aliyun.ros.cdk.core.IResolvable metaStoreConf) {
+            this.props.metaStoreConf(metaStoreConf);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -2295,12 +2906,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.metaStoreType(metaStoreType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param metaStoreType This parameter is required.
+         */
+        public Builder metaStoreType(final com.aliyun.ros.cdk.core.IResolvable metaStoreType) {
+            this.props.metaStoreType(metaStoreType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param optionSoftWareList This parameter is required.
          */
-        public Builder optionSoftWareList(final java.util.List<java.lang.String> optionSoftWareList) {
+        public Builder optionSoftWareList(final com.aliyun.ros.cdk.core.IResolvable optionSoftWareList) {
+            this.props.optionSoftWareList(optionSoftWareList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param optionSoftWareList This parameter is required.
+         */
+        public Builder optionSoftWareList(final java.util.List<? extends java.lang.Object> optionSoftWareList) {
             this.props.optionSoftWareList(optionSoftWareList);
             return this;
         }
@@ -2313,12 +2940,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.period(period);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param relatedClusterId This parameter is required.
          */
         public Builder relatedClusterId(final java.lang.String relatedClusterId) {
+            this.props.relatedClusterId(relatedClusterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param relatedClusterId This parameter is required.
+         */
+        public Builder relatedClusterId(final com.aliyun.ros.cdk.core.IResolvable relatedClusterId) {
             this.props.relatedClusterId(relatedClusterId);
             return this;
         }
@@ -2331,12 +2974,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param securityGroupName This parameter is required.
          */
         public Builder securityGroupName(final java.lang.String securityGroupName) {
+            this.props.securityGroupName(securityGroupName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupName This parameter is required.
+         */
+        public Builder securityGroupName(final com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
             this.props.securityGroupName(securityGroupName);
             return this;
         }
@@ -2383,6 +3042,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.userDefinedEmrEcsRole(userDefinedEmrEcsRole);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param userDefinedEmrEcsRole This parameter is required.
+         */
+        public Builder userDefinedEmrEcsRole(final com.aliyun.ros.cdk.core.IResolvable userDefinedEmrEcsRole) {
+            this.props.userDefinedEmrEcsRole(userDefinedEmrEcsRole);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -2409,6 +3076,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.vpcId(vpcId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -2418,12 +3093,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param whiteListType This parameter is required.
          */
         public Builder whiteListType(final java.lang.String whiteListType) {
+            this.props.whiteListType(whiteListType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param whiteListType This parameter is required.
+         */
+        public Builder whiteListType(final com.aliyun.ros.cdk.core.IResolvable whiteListType) {
             this.props.whiteListType(whiteListType);
             return this;
         }

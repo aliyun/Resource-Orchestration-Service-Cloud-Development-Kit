@@ -11,32 +11,32 @@ export interface RouteEntryProps {
     /**
      * Property cenId: The ID of the CEN instance where the route entry is published.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 
     /**
      * Property childInstanceId: The ID of the attached network (VPC or VBR).
      */
-    readonly childInstanceId: string;
+    readonly childInstanceId: string | ros.IResolvable;
 
     /**
      * Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
      */
-    readonly childInstanceRegionId: string;
+    readonly childInstanceRegionId: string | ros.IResolvable;
 
     /**
      * Property childInstanceRouteTableId: The route table of the attached VBR or VPC.
      */
-    readonly childInstanceRouteTableId: string;
+    readonly childInstanceRouteTableId: string | ros.IResolvable;
 
     /**
      * Property childInstanceType: The type of the network, value: VPC VBR
      */
-    readonly childInstanceType: string;
+    readonly childInstanceType: string | ros.IResolvable;
 
     /**
      * Property destinationCidrBlock: The destination CIDR block of the route entry to publish.
      */
-    readonly destinationCidrBlock: string;
+    readonly destinationCidrBlock: string | ros.IResolvable;
 }
 
 /**

@@ -3,42 +3,61 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.818Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterEndpointProps.Jsii$Proxy.class)
 public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     * Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
+     * <p>
+     * Valid values: Enable, Disable.
+     * Default value: Disable.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoAddNewNodes() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoAddNewNodes() {
         return null;
     }
 
     /**
+     * Property endpointConfig:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointConfig() {
         return null;
     }
 
     /**
+     * Property endpointType: The type of the cluster connection point.
+     * <p>
+     * Set this parameter to Custom.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEndpointType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
         return null;
     }
 
     /**
+     * Property nodes: The nodes to be added to this connection point to process read requests from this connection point.
+     * <p>
+     * Add at least two nodes.
+     * If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNodes() {
         return null;
     }
 
     /**
+     * Property readWriteMode: The read/write mode of the cluster connection point.
+     * <p>
+     * Valid values:
+     * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
+     * ReadOnly: receives and forwards only read requests.
+     * Default value: ReadOnly.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getReadWriteMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReadWriteMode() {
         return null;
     }
 
@@ -52,16 +71,16 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link DBClusterEndpointProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterEndpointProps> {
-        private java.lang.String dbClusterId;
-        private java.lang.String autoAddNewNodes;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object autoAddNewNodes;
         private java.lang.Object endpointConfig;
-        private java.lang.String endpointType;
+        private java.lang.Object endpointType;
         private java.lang.Object nodes;
-        private java.lang.String readWriteMode;
+        private java.lang.Object readWriteMode;
 
         /**
          * Sets the value of {@link DBClusterEndpointProps#getDbClusterId}
-         * @param dbClusterId the value to be set. This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
@@ -70,8 +89,20 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointProps#getDbClusterId}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a custom connection point is to be created. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointProps#getAutoAddNewNodes}
-         * @param autoAddNewNodes the value to be set.
+         * @param autoAddNewNodes Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
+         *                        Valid values: Enable, Disable.
+         *                        Default value: Disable.
          * @return {@code this}
          */
         public Builder autoAddNewNodes(java.lang.String autoAddNewNodes) {
@@ -80,18 +111,20 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
-         * Sets the value of {@link DBClusterEndpointProps#getEndpointConfig}
-         * @param endpointConfig the value to be set.
+         * Sets the value of {@link DBClusterEndpointProps#getAutoAddNewNodes}
+         * @param autoAddNewNodes Property autoAddNewNodes: Specifies whether a newly added node is automatically added to this connection point.
+         *                        Valid values: Enable, Disable.
+         *                        Default value: Disable.
          * @return {@code this}
          */
-        public Builder endpointConfig(com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
-            this.endpointConfig = endpointConfig;
+        public Builder autoAddNewNodes(com.aliyun.ros.cdk.core.IResolvable autoAddNewNodes) {
+            this.autoAddNewNodes = autoAddNewNodes;
             return this;
         }
 
         /**
          * Sets the value of {@link DBClusterEndpointProps#getEndpointConfig}
-         * @param endpointConfig the value to be set.
+         * @param endpointConfig Property endpointConfig:.
          * @return {@code this}
          */
         public Builder endpointConfig(com.aliyun.ros.cdk.core.IResolvable endpointConfig) {
@@ -100,8 +133,19 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointProps#getEndpointConfig}
+         * @param endpointConfig Property endpointConfig:.
+         * @return {@code this}
+         */
+        public Builder endpointConfig(com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
+            this.endpointConfig = endpointConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointProps#getEndpointType}
-         * @param endpointType the value to be set.
+         * @param endpointType Property endpointType: The type of the cluster connection point.
+         *                     Set this parameter to Custom.
          * @return {@code this}
          */
         public Builder endpointType(java.lang.String endpointType) {
@@ -110,8 +154,21 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link DBClusterEndpointProps#getEndpointType}
+         * @param endpointType Property endpointType: The type of the cluster connection point.
+         *                     Set this parameter to Custom.
+         * @return {@code this}
+         */
+        public Builder endpointType(com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.endpointType = endpointType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterEndpointProps#getNodes}
-         * @param nodes the value to be set.
+         * @param nodes Property nodes: The nodes to be added to this connection point to process read requests from this connection point.
+         *              Add at least two nodes.
+         *              If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
          * @return {@code this}
          */
         public Builder nodes(java.util.List<? extends java.lang.Object> nodes) {
@@ -121,7 +178,9 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link DBClusterEndpointProps#getNodes}
-         * @param nodes the value to be set.
+         * @param nodes Property nodes: The nodes to be added to this connection point to process read requests from this connection point.
+         *              Add at least two nodes.
+         *              If you do not specify this parameter, all nodes of the cluster are added to this connection point by default.
          * @return {@code this}
          */
         public Builder nodes(com.aliyun.ros.cdk.core.IResolvable nodes) {
@@ -131,10 +190,28 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link DBClusterEndpointProps#getReadWriteMode}
-         * @param readWriteMode the value to be set.
+         * @param readWriteMode Property readWriteMode: The read/write mode of the cluster connection point.
+         *                      Valid values:
+         *                      ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
+         *                      ReadOnly: receives and forwards only read requests.
+         *                      Default value: ReadOnly.
          * @return {@code this}
          */
         public Builder readWriteMode(java.lang.String readWriteMode) {
+            this.readWriteMode = readWriteMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterEndpointProps#getReadWriteMode}
+         * @param readWriteMode Property readWriteMode: The read/write mode of the cluster connection point.
+         *                      Valid values:
+         *                      ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
+         *                      ReadOnly: receives and forwards only read requests.
+         *                      Default value: ReadOnly.
+         * @return {@code this}
+         */
+        public Builder readWriteMode(com.aliyun.ros.cdk.core.IResolvable readWriteMode) {
             this.readWriteMode = readWriteMode;
             return this;
         }
@@ -155,12 +232,12 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBClusterEndpointProps {
-        private final java.lang.String dbClusterId;
-        private final java.lang.String autoAddNewNodes;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object autoAddNewNodes;
         private final java.lang.Object endpointConfig;
-        private final java.lang.String endpointType;
+        private final java.lang.Object endpointType;
         private final java.lang.Object nodes;
-        private final java.lang.String readWriteMode;
+        private final java.lang.Object readWriteMode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -168,18 +245,18 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoAddNewNodes = software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoAddNewNodes = software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointConfig = software.amazon.jsii.Kernel.get(this, "endpointConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodes = software.amazon.jsii.Kernel.get(this, "nodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.readWriteMode = software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.readWriteMode = software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbClusterId, final java.lang.String autoAddNewNodes, final java.lang.Object endpointConfig, final java.lang.String endpointType, final java.lang.Object nodes, final java.lang.String readWriteMode) {
+        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object autoAddNewNodes, final java.lang.Object endpointConfig, final java.lang.Object endpointType, final java.lang.Object nodes, final java.lang.Object readWriteMode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
             this.autoAddNewNodes = autoAddNewNodes;
@@ -190,12 +267,12 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getAutoAddNewNodes() {
+        public final java.lang.Object getAutoAddNewNodes() {
             return this.autoAddNewNodes;
         }
 
@@ -205,7 +282,7 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getEndpointType() {
+        public final java.lang.Object getEndpointType() {
             return this.endpointType;
         }
 
@@ -215,7 +292,7 @@ public interface DBClusterEndpointProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getReadWriteMode() {
+        public final java.lang.Object getReadWriteMode() {
             return this.readWriteMode;
         }
 

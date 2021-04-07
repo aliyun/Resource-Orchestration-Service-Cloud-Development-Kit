@@ -11,12 +11,12 @@ export interface ScalingGroupProps {
     /**
      * Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    readonly maxSize: number;
+    readonly maxSize: number | ros.IResolvable;
 
     /**
      * Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    readonly minSize: number;
+    readonly minSize: number | ros.IResolvable;
 
     /**
      * Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -27,12 +27,12 @@ export interface ScalingGroupProps {
      * Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
      * The default value is 300s.
      */
-    readonly defaultCooldown?: number;
+    readonly defaultCooldown?: number | ros.IResolvable;
 
     /**
      * Property desiredCapacity: The expected number of ECS instances in a scaling group. The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
      */
-    readonly desiredCapacity?: number;
+    readonly desiredCapacity?: number | ros.IResolvable;
 
     /**
      * Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
@@ -43,17 +43,17 @@ export interface ScalingGroupProps {
     /**
      * Property healthCheckType: The health check type. Allow values is "ECS" and "NONE", default to "ECS".
      */
-    readonly healthCheckType?: string;
+    readonly healthCheckType?: string | ros.IResolvable;
 
     /**
      * Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
      */
-    readonly launchTemplateId?: string;
+    readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
      * Property launchTemplateVersion: The version of the instance launch template. Valid values:
@@ -61,7 +61,7 @@ export interface ScalingGroupProps {
      * Default: The default template version is always used.
      * Latest: The latest template version is always used.
      */
-    readonly launchTemplateVersion?: string;
+    readonly launchTemplateVersion?: string | ros.IResolvable;
 
     /**
      * Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
@@ -73,7 +73,7 @@ export interface ScalingGroupProps {
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
      * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
      */
-    readonly multiAzPolicy?: string;
+    readonly multiAzPolicy?: string | ros.IResolvable;
 
     /**
      * Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
@@ -99,7 +99,7 @@ export interface ScalingGroupProps {
      * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
-    readonly scalingGroupName?: string;
+    readonly scalingGroupName?: string | ros.IResolvable;
 
     /**
      * Property standbyInstances: ECS instances of standby mode in the scaling group.
@@ -107,9 +107,14 @@ export interface ScalingGroupProps {
     readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosScalingGroup.TagsProperty[];
+
+    /**
      * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
@@ -133,7 +138,12 @@ export class ScalingGroup extends ros.Resource {
     /**
      * Attribute ScalingGroupId: Scaling group Id
      */
-    public readonly attrScalingGroupId: any;
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupName: Scaling group name
+     */
+    public readonly attrScalingGroupName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingGroup`.
@@ -164,9 +174,11 @@ export class ScalingGroup extends ros.Resource {
             protectedInstances: props.protectedInstances,
             removalPolicys: props.removalPolicys,
             dbInstanceIds: props.dbInstanceIds,
+            tags: props.tags,
             healthCheckType: props.healthCheckType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroup;
         this.attrScalingGroupId = rosScalingGroup.attrScalingGroupId;
+        this.attrScalingGroupName = rosScalingGroup.attrScalingGroupName;
     }
 }

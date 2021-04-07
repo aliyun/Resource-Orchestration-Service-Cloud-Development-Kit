@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class InvocationProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IInvocationProps
     {
         /// <summary>Property commandId: The id of command.</summary>
-        [JsiiProperty(name: "commandId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CommandId
+        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CommandId
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "frequency", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Frequency
+        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Frequency
         {
             get;
             set;

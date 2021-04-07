@@ -5,7 +5,7 @@ using Amazon.JSII.Runtime.Deputy;
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
     /// <summary>A root construct which represents a single ROS stack.</summary>
-    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Stack), fullyQualifiedName: "@alicloud/ros-cdk-core.Stack", parametersJson: "[{\"docs\":{\"summary\":\"Parent of this stack, usually a Program instance.\"},\"name\":\"scope\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"remarks\":\"If `stackName` is not explicitly\rdefined, this id (and any parent IDs) will be used to determine the\rphysical ID of the stack.\",\"summary\":\"The construct ID of this stack.\"},\"name\":\"id\",\"optional\":true,\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"Stack properties.\"},\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.StackProps\"}}]")]
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Stack), fullyQualifiedName: "@alicloud/ros-cdk-core.Stack", parametersJson: "[{\"docs\":{\"summary\":\"Parent of this stack, usually a Program instance.\"},\"name\":\"scope\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"remarks\":\"If `stackName` is not explicitly\ndefined, this id (and any parent IDs) will be used to determine the\nphysical ID of the stack.\",\"summary\":\"The construct ID of this stack.\"},\"name\":\"id\",\"optional\":true,\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"Stack properties.\"},\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.StackProps\"}}]")]
     public class Stack : AlibabaCloud.SDK.ROS.CDK.Core.Construct, AlibabaCloud.SDK.ROS.CDK.Core.ITaggable
     {
         /// <summary>Creates a new stack.</summary>
@@ -68,24 +68,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// By default, uses
         /// the <c>HashedAddressingScheme</c> but this method can be overridden to customize
         /// this behavior.
-        /// 
+        ///
         /// In order to make sure logical IDs are unique and stable, we hash the resource
         /// construct tree path (i.e. toplevel/secondlevel/.../myresource) and add it as
         /// a suffix to the path components joined without a separator (ROS
         /// IDs only allow alphanumeric characters).
-        /// 
+        ///
         /// The result will be:
-        /// 
+        ///
         /// &lt;path.join('')&gt;&lt;md5(path.join('/')&gt;
         /// "human"      "hash"
-        /// 
+        ///
         /// If the "human" part of the ID exceeds 240 characters, we simply trim it so
         /// the total ID doesn't exceed 255 character limit.
-        /// 
+        ///
         /// We only take 8 characters from the md5 hash (0.000005 chance of collision).
-        /// 
+        ///
         /// Special cases:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>If the path only contains a single component (i.e. it's a top-level
         /// resource), we won't add the hash to it. The hash is not needed for
@@ -110,18 +110,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<string>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosElement)}, new object[]{rosElement})!;
         }
 
-        /// <summary>Allocates a stack-unique logical identity for a&#xD; specific resource.</summary>
-        /// <param name="element">The ROS element for which a logical identity is&#xD;needed.</param>
+        /// <summary>Allocates a stack-unique logical identity for a specific resource.</summary>
+        /// <param name="element">The ROS element for which a logical identity is needed.</param>
         /// <remarks>
         /// This method is called when a <c>RosElement</c> is created and used to render the
         /// initial logical identity of resources. Logical ID renames are applied at
         /// this stage.
-        /// 
+        ///
         /// This method uses the protected method <c>allocateLogicalId</c> to render the
         /// logical ID for an element. To modify the naming scheme, extend the <c>Stack</c>
         /// class and override this method.
         /// </remarks>
-        [JsiiMethod(name: "getLogicalId", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The ROS element for which a logical identity is\rneeded.\"},\"name\":\"element\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosElement\"}}]")]
+        [JsiiMethod(name: "getLogicalId", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", parametersJson: "[{\"docs\":{\"summary\":\"The ROS element for which a logical identity is needed.\"},\"name\":\"element\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosElement\"}}]")]
         public virtual string GetLogicalId(AlibabaCloud.SDK.ROS.CDK.Core.RosElement element)
         {
             return InvokeInstanceMethod<string>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosElement)}, new object[]{element})!;
@@ -139,7 +139,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.Stack), typeof(AlibabaCloud.SDK.ROS.CDK.Core.Reference)}, new object[]{sourceStack, reference})!;
         }
 
-        /// <summary>Rename a generated logical identities&#xD; &#xD; To modify the naming scheme strategy, extend the `Stack` class and&#xD; override the `allocateLogicalId` method.</summary>
+        /// <summary>Rename a generated logical identities.</summary>
+        /// <remarks>
+        /// To modify the naming scheme strategy, extend the <c>Stack</c> class and
+        /// override the <c>allocateLogicalId</c> method.
+        /// </remarks>
         [JsiiMethod(name: "renameLogicalId", parametersJson: "[{\"name\":\"oldId\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"newId\",\"type\":{\"primitive\":\"string\"}}]")]
         public virtual void RenameLogicalId(string oldId, string newId)
         {
@@ -236,7 +240,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
         }
 
-        /// <summary>The name of the ROS template file emitted to the output&#xD; directory during synthesis.</summary>
+        /// <summary>The name of the ROS template file emitted to the output directory during synthesis.</summary>
         /// <example>
         /// <code>// Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
         /// MyStack.Template.Json;</code>
@@ -262,10 +266,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Stack?>();
         }
 
-        /// <summary>(experimental) If this is a nested stack, this represents its `ALIYUN::ROS::Stack`&#xD; resource.</summary>
+        /// <summary>(experimental) If this is a nested stack, this represents its `ALIYUN::ROS::Stack` resource.</summary>
         /// <remarks>
         /// <c>undefined</c> for top-level (non-nested) stacks.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiOptional]

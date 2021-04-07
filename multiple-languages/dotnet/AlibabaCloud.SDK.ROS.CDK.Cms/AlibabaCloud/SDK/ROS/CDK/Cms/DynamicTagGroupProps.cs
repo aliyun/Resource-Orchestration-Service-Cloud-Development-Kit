@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public class DynamicTagGroupProps : AlibabaCloud.SDK.ROS.CDK.Cms.IDynamicTagGroupProps
     {
         /// <summary>Property contactGroupList: Alarm contacts.</summary>
-        [JsiiProperty(name: "contactGroupList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] ContactGroupList
+        [JsiiProperty(name: "contactGroupList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object ContactGroupList
         {
             get;
             set;
         }
 
         /// <summary>Property tagKey: Tag key.</summary>
-        [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TagKey
+        [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TagKey
         {
             get;
             set;
@@ -75,8 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MatchExpressFilterRelation
+        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MatchExpressFilterRelation
         {
             get;
             set;
@@ -87,8 +87,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateIdList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? TemplateIdList
+        [JsiiProperty(name: "templateIdList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? TemplateIdList
         {
             get;
             set;

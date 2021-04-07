@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// - web[sync]:http://abc.com
         /// - web[sync,idempotent]:https://abc.com
         /// </remarks>
-        [JsiiProperty(name: "serviceToken", typeJson: "{\"primitive\":\"string\"}")]
-        string ServiceToken
+        [JsiiProperty(name: "serviceToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServiceToken
         {
             get;
         }
@@ -39,10 +39,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&HTTPS request.
         /// Timeout seconds are always 10 for sync HTTP&HTTPS request.
         /// </remarks>
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}")]
-        double Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Timeout
         {
             get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: httpConfig: Config for HTTP&HTTPS service provider.
+        /// </remarks>
+        [JsiiProperty(name: "httpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HttpConfig
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <remarks>
@@ -86,10 +99,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// - web[sync]:http://abc.com
             /// - web[sync,idempotent]:https://abc.com
             /// </remarks>
-            [JsiiProperty(name: "serviceToken", typeJson: "{\"primitive\":\"string\"}")]
-            public string ServiceToken
+            [JsiiProperty(name: "serviceToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServiceToken
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -97,10 +110,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&HTTPS request.
             /// Timeout seconds are always 10 for sync HTTP&HTTPS request.
             /// </remarks>
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}")]
-            public double Timeout
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Timeout
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: httpConfig: Config for HTTP&HTTPS service provider.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "httpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ros.RosCustomResource.HttpConfigProperty\"}]}}", isOptional: true)]
+            public object? HttpConfig
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

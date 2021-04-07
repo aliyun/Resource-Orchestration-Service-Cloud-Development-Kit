@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS resource type:  `ALIYUN::SAG::SmartAccessGatewayBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.362Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.051Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.SmartAccessGatewayBinding")
 public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public SmartAccessGatewayBinding(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sag.SmartAccessGatewayBindingProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public SmartAccessGatewayBinding(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sag.SmartAccessGatewayBindingProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
     }
 
     /**
+     * Attribute SmartAGId: The ID of the Smart Access Gateway instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSmartAgId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSmartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSmartAgId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSmartAgId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sag.SmartAccessGatewayBinding> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,19 +90,43 @@ public class SmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.Resource 
         }
 
         /**
+         * Property ccnId: The ID of the CCN instance to bind.
+         * <p>
          * @return {@code this}
-         * @param ccnId This parameter is required.
+         * @param ccnId Property ccnId: The ID of the CCN instance to bind. This parameter is required.
          */
         public Builder ccnId(final java.lang.String ccnId) {
             this.props.ccnId(ccnId);
             return this;
         }
+        /**
+         * Property ccnId: The ID of the CCN instance to bind.
+         * <p>
+         * @return {@code this}
+         * @param ccnId Property ccnId: The ID of the CCN instance to bind. This parameter is required.
+         */
+        public Builder ccnId(final com.aliyun.ros.cdk.core.IResolvable ccnId) {
+            this.props.ccnId(ccnId);
+            return this;
+        }
 
         /**
+         * Property smartAgId: The ID of the Smart Access Gateway instance.
+         * <p>
          * @return {@code this}
-         * @param smartAgId This parameter is required.
+         * @param smartAgId Property smartAgId: The ID of the Smart Access Gateway instance. This parameter is required.
          */
         public Builder smartAgId(final java.lang.String smartAgId) {
+            this.props.smartAgId(smartAgId);
+            return this;
+        }
+        /**
+         * Property smartAgId: The ID of the Smart Access Gateway instance.
+         * <p>
+         * @return {@code this}
+         * @param smartAgId Property smartAgId: The ID of the Smart Access Gateway instance. This parameter is required.
+         */
+        public Builder smartAgId(final com.aliyun.ros.cdk.core.IResolvable smartAgId) {
             this.props.smartAgId(smartAgId);
             return this;
         }

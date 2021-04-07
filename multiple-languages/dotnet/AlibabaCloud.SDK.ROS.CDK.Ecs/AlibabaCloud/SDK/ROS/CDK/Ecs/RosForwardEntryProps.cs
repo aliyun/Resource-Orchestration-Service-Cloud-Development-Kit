@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: externalIp: Source IP, must belongs to bandwidth package internet IP
         /// </remarks>
-        [JsiiProperty(name: "externalIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ExternalIp
+        [JsiiProperty(name: "externalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ExternalIp
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any
         /// </remarks>
-        [JsiiProperty(name: "externalPort", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ExternalPort
+        [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ExternalPort
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: forwardTableId: Create forward entry in specified forward table.
         /// </remarks>
-        [JsiiProperty(name: "forwardTableId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ForwardTableId
+        [JsiiProperty(name: "forwardTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ForwardTableId
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: internalIp: Destination IP, must belong to VPC private IP
         /// </remarks>
-        [JsiiProperty(name: "internalIp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InternalIp
+        [JsiiProperty(name: "internalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InternalIp
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any
         /// </remarks>
-        [JsiiProperty(name: "internalPort", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InternalPort
+        [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InternalPort
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
         /// </remarks>
-        [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string IpProtocol
+        [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object IpProtocol
         {
             get;
             set;

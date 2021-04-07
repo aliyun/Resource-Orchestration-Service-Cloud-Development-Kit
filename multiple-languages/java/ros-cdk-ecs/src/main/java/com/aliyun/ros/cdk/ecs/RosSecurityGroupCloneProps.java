@@ -3,54 +3,54 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.697Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.366Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupCloneProps.Jsii$Proxy.class)
 public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceSecurityGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceSecurityGroupId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationRegionId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
@@ -64,14 +64,14 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosSecurityGroupCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecurityGroupCloneProps> {
-        private java.lang.String sourceSecurityGroupId;
-        private java.lang.String description;
-        private java.lang.String destinationRegionId;
-        private java.lang.String networkType;
-        private java.lang.String resourceGroupId;
-        private java.lang.String securityGroupName;
-        private java.lang.String securityGroupType;
-        private java.lang.String vpcId;
+        private java.lang.Object sourceSecurityGroupId;
+        private java.lang.Object description;
+        private java.lang.Object destinationRegionId;
+        private java.lang.Object networkType;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object securityGroupName;
+        private java.lang.Object securityGroupType;
+        private java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getSourceSecurityGroupId}
@@ -79,6 +79,16 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
          * @return {@code this}
          */
         public Builder sourceSecurityGroupId(java.lang.String sourceSecurityGroupId) {
+            this.sourceSecurityGroupId = sourceSecurityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getSourceSecurityGroupId}
+         * @param sourceSecurityGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceSecurityGroupId(com.aliyun.ros.cdk.core.IResolvable sourceSecurityGroupId) {
             this.sourceSecurityGroupId = sourceSecurityGroupId;
             return this;
         }
@@ -94,11 +104,31 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getDestinationRegionId}
          * @param destinationRegionId the value to be set.
          * @return {@code this}
          */
         public Builder destinationRegionId(java.lang.String destinationRegionId) {
+            this.destinationRegionId = destinationRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getDestinationRegionId}
+         * @param destinationRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationRegionId(com.aliyun.ros.cdk.core.IResolvable destinationRegionId) {
             this.destinationRegionId = destinationRegionId;
             return this;
         }
@@ -114,11 +144,31 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getNetworkType}
+         * @param networkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
             return this;
         }
@@ -134,6 +184,16 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getSecurityGroupName}
+         * @param securityGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupName(com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
+            this.securityGroupName = securityGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getSecurityGroupType}
          * @param securityGroupType the value to be set.
          * @return {@code this}
@@ -144,11 +204,31 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getSecurityGroupType}
+         * @param securityGroupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupType(com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.securityGroupType = securityGroupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSecurityGroupCloneProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSecurityGroupCloneProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -169,14 +249,14 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSecurityGroupCloneProps {
-        private final java.lang.String sourceSecurityGroupId;
-        private final java.lang.String description;
-        private final java.lang.String destinationRegionId;
-        private final java.lang.String networkType;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String securityGroupName;
-        private final java.lang.String securityGroupType;
-        private final java.lang.String vpcId;
+        private final java.lang.Object sourceSecurityGroupId;
+        private final java.lang.Object description;
+        private final java.lang.Object destinationRegionId;
+        private final java.lang.Object networkType;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityGroupName;
+        private final java.lang.Object securityGroupType;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -184,20 +264,20 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sourceSecurityGroupId = software.amazon.jsii.Kernel.get(this, "sourceSecurityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationRegionId = software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sourceSecurityGroupId = software.amazon.jsii.Kernel.get(this, "sourceSecurityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationRegionId = software.amazon.jsii.Kernel.get(this, "destinationRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String sourceSecurityGroupId, final java.lang.String description, final java.lang.String destinationRegionId, final java.lang.String networkType, final java.lang.String resourceGroupId, final java.lang.String securityGroupName, final java.lang.String securityGroupType, final java.lang.String vpcId) {
+        protected Jsii$Proxy(final java.lang.Object sourceSecurityGroupId, final java.lang.Object description, final java.lang.Object destinationRegionId, final java.lang.Object networkType, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupName, final java.lang.Object securityGroupType, final java.lang.Object vpcId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sourceSecurityGroupId = java.util.Objects.requireNonNull(sourceSecurityGroupId, "sourceSecurityGroupId is required");
             this.description = description;
@@ -210,42 +290,42 @@ public interface RosSecurityGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getSourceSecurityGroupId() {
+        public final java.lang.Object getSourceSecurityGroupId() {
             return this.sourceSecurityGroupId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getDestinationRegionId() {
+        public final java.lang.Object getDestinationRegionId() {
             return this.destinationRegionId;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupName() {
+        public final java.lang.Object getSecurityGroupName() {
             return this.securityGroupName;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupType() {
+        public final java.lang.Object getSecurityGroupType() {
             return this.securityGroupType;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 

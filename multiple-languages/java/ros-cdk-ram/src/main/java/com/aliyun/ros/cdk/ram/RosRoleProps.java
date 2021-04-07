@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRoleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRoleProps.Jsii$Proxy.class)
 public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,17 +14,17 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRoleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRoleName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaxSessionDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxSessionDuration() {
         return null;
     }
 
@@ -45,9 +45,9 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRoleProps> {
         private java.lang.Object assumeRolePolicyDocument;
-        private java.lang.String roleName;
-        private java.lang.String description;
-        private java.lang.Number maxSessionDuration;
+        private java.lang.Object roleName;
+        private java.lang.Object description;
+        private java.lang.Object maxSessionDuration;
         private java.lang.Object policies;
 
         /**
@@ -55,7 +55,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
          * @param assumeRolePolicyDocument the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.ram.RosRole.AssumeRolePolicyDocumentProperty assumeRolePolicyDocument) {
+        public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.core.IResolvable assumeRolePolicyDocument) {
             this.assumeRolePolicyDocument = assumeRolePolicyDocument;
             return this;
         }
@@ -65,7 +65,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
          * @param assumeRolePolicyDocument the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.core.IResolvable assumeRolePolicyDocument) {
+        public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.ram.RosRole.AssumeRolePolicyDocumentProperty assumeRolePolicyDocument) {
             this.assumeRolePolicyDocument = assumeRolePolicyDocument;
             return this;
         }
@@ -81,6 +81,16 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRoleProps#getRoleName}
+         * @param roleName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRoleProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -91,11 +101,31 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRoleProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRoleProps#getMaxSessionDuration}
          * @param maxSessionDuration the value to be set.
          * @return {@code this}
          */
         public Builder maxSessionDuration(java.lang.Number maxSessionDuration) {
+            this.maxSessionDuration = maxSessionDuration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRoleProps#getMaxSessionDuration}
+         * @param maxSessionDuration the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxSessionDuration(com.aliyun.ros.cdk.core.IResolvable maxSessionDuration) {
             this.maxSessionDuration = maxSessionDuration;
             return this;
         }
@@ -137,9 +167,9 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRoleProps {
         private final java.lang.Object assumeRolePolicyDocument;
-        private final java.lang.String roleName;
-        private final java.lang.String description;
-        private final java.lang.Number maxSessionDuration;
+        private final java.lang.Object roleName;
+        private final java.lang.Object description;
+        private final java.lang.Object maxSessionDuration;
         private final java.lang.Object policies;
 
         /**
@@ -149,16 +179,16 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.assumeRolePolicyDocument = software.amazon.jsii.Kernel.get(this, "assumeRolePolicyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object assumeRolePolicyDocument, final java.lang.String roleName, final java.lang.String description, final java.lang.Number maxSessionDuration, final java.lang.Object policies) {
+        protected Jsii$Proxy(final java.lang.Object assumeRolePolicyDocument, final java.lang.Object roleName, final java.lang.Object description, final java.lang.Object maxSessionDuration, final java.lang.Object policies) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.assumeRolePolicyDocument = java.util.Objects.requireNonNull(assumeRolePolicyDocument, "assumeRolePolicyDocument is required");
             this.roleName = java.util.Objects.requireNonNull(roleName, "roleName is required");
@@ -173,17 +203,17 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getRoleName() {
+        public final java.lang.Object getRoleName() {
             return this.roleName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getMaxSessionDuration() {
+        public final java.lang.Object getMaxSessionDuration() {
             return this.maxSessionDuration;
         }
 

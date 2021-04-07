@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     public class DomainConfigProps : AlibabaCloud.SDK.ROS.CDK.Cdn.IDomainConfigProps
     {
         /// <summary>Property domainNames: Your accelerated domain name, separated by commas in English.</summary>
-        [JsiiProperty(name: "domainNames", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DomainNames
+        [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DomainNames
         {
             get;
             set;
         }
 
         /// <summary>Property functions: function list, please refer to the CDN documentation for details.</summary>
-        [JsiiProperty(name: "functions", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Functions
+        [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Functions
         {
             get;
             set;

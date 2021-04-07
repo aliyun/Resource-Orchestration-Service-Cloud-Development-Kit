@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Value range: [0, 1000].
         /// </remarks>
-        [JsiiProperty(name: "maxSize", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double MaxSize
+        [JsiiProperty(name: "maxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object MaxSize
         {
             get;
             set;
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Value range: [0, 1000].
         /// </remarks>
-        [JsiiProperty(name: "minSize", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double MinSize
+        [JsiiProperty(name: "minSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object MinSize
         {
             get;
             set;
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// The default value is 300s.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultCooldown", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DefaultCooldown
+        [JsiiProperty(name: "defaultCooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DefaultCooldown
         {
             get;
             set;
@@ -62,8 +62,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "desiredCapacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DesiredCapacity
+        [JsiiProperty(name: "desiredCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DesiredCapacity
         {
             get;
             set;
@@ -86,8 +86,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Allow values is "ECS" and "NONE", default to "ECS".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "healthCheckType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? HealthCheckType
+        [JsiiProperty(name: "healthCheckType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HealthCheckType
         {
             get;
             set;
@@ -95,8 +95,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceId
         {
             get;
             set;
@@ -104,8 +104,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "launchTemplateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? LaunchTemplateId
+        [JsiiProperty(name: "launchTemplateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LaunchTemplateId
         {
             get;
             set;
@@ -119,8 +119,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Latest: The latest template version is always used.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? LaunchTemplateVersion
+        [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LaunchTemplateVersion
         {
             get;
             set;
@@ -141,15 +141,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property multiAzPolicy: ECS scaling strategy for multi availability zone.</summary>
         /// <remarks>
         /// Allow value:
-        /// 
+        ///
         /// <list type="number">
         /// <description>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</description>
         /// <description>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "multiAzPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MultiAzPolicy
+        [JsiiProperty(name: "multiAzPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MultiAzPolicy
         {
             get;
             set;
@@ -195,8 +195,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// If this parameter is not specified, the default value is ScalingGroupId.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "scalingGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ScalingGroupName
+        [JsiiProperty(name: "scalingGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ScalingGroupName
         {
             get;
             set;
@@ -216,8 +216,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingGroup.ITagsProperty[]? Tags
         {
             get;
             set;
@@ -225,8 +225,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VSwitchId
         {
             get;
             set;

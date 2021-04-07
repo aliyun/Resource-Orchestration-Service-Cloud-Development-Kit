@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.154Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndexProps")
 @software.amazon.jsii.Jsii.Proxy(RosSearchIndexProps.Jsii$Proxy.class)
 public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,15 +14,15 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getIndexName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIndexName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTableName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTableName();
 
     /**
      */
@@ -47,9 +47,9 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSearchIndexProps> {
         private java.lang.Object fieldSchemas;
-        private java.lang.String indexName;
-        private java.lang.String instanceName;
-        private java.lang.String tableName;
+        private java.lang.Object indexName;
+        private java.lang.Object instanceName;
+        private java.lang.Object tableName;
         private java.lang.Object indexSetting;
         private java.lang.Object indexSort;
 
@@ -58,7 +58,7 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
          * @param fieldSchemas the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder fieldSchemas(java.util.List<? extends java.lang.Object> fieldSchemas) {
+        public Builder fieldSchemas(com.aliyun.ros.cdk.core.IResolvable fieldSchemas) {
             this.fieldSchemas = fieldSchemas;
             return this;
         }
@@ -68,7 +68,7 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
          * @param fieldSchemas the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder fieldSchemas(com.aliyun.ros.cdk.core.IResolvable fieldSchemas) {
+        public Builder fieldSchemas(java.util.List<? extends java.lang.Object> fieldSchemas) {
             this.fieldSchemas = fieldSchemas;
             return this;
         }
@@ -84,6 +84,16 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosSearchIndexProps#getIndexName}
+         * @param indexName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder indexName(com.aliyun.ros.cdk.core.IResolvable indexName) {
+            this.indexName = indexName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSearchIndexProps#getInstanceName}
          * @param instanceName the value to be set. This parameter is required.
          * @return {@code this}
@@ -94,11 +104,31 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosSearchIndexProps#getInstanceName}
+         * @param instanceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSearchIndexProps#getTableName}
          * @param tableName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder tableName(java.lang.String tableName) {
+            this.tableName = tableName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSearchIndexProps#getTableName}
+         * @param tableName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
             this.tableName = tableName;
             return this;
         }
@@ -160,9 +190,9 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSearchIndexProps {
         private final java.lang.Object fieldSchemas;
-        private final java.lang.String indexName;
-        private final java.lang.String instanceName;
-        private final java.lang.String tableName;
+        private final java.lang.Object indexName;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object tableName;
         private final java.lang.Object indexSetting;
         private final java.lang.Object indexSort;
 
@@ -173,9 +203,9 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.fieldSchemas = software.amazon.jsii.Kernel.get(this, "fieldSchemas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.indexName = software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.indexName = software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.indexSetting = software.amazon.jsii.Kernel.get(this, "indexSetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.indexSort = software.amazon.jsii.Kernel.get(this, "indexSort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -183,7 +213,7 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object fieldSchemas, final java.lang.String indexName, final java.lang.String instanceName, final java.lang.String tableName, final java.lang.Object indexSetting, final java.lang.Object indexSort) {
+        protected Jsii$Proxy(final java.lang.Object fieldSchemas, final java.lang.Object indexName, final java.lang.Object instanceName, final java.lang.Object tableName, final java.lang.Object indexSetting, final java.lang.Object indexSort) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.fieldSchemas = java.util.Objects.requireNonNull(fieldSchemas, "fieldSchemas is required");
             this.indexName = java.util.Objects.requireNonNull(indexName, "indexName is required");
@@ -199,17 +229,17 @@ public interface RosSearchIndexProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getIndexName() {
+        public final java.lang.Object getIndexName() {
             return this.indexName;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getTableName() {
+        public final java.lang.Object getTableName() {
             return this.tableName;
         }
 

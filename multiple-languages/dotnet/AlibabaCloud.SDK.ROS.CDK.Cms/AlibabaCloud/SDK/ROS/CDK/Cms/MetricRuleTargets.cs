@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute Arns: The ARN list of targets.</summary>
-        [JsiiProperty(name: "attrArns", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArns
+        [JsiiProperty(name: "attrArns", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArns
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Ids: The ID list of targets.</summary>
-        [JsiiProperty(name: "attrIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIds
+        [JsiiProperty(name: "attrIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

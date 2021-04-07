@@ -13,24 +13,24 @@ export interface SslVpnServerProps {
      * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
      * The network segment cannot conflict with the LocalSubnet address segment.
      */
-    readonly clientIpPool: string;
+    readonly clientIpPool: string | ros.IResolvable;
 
     /**
      * Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
      * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
      */
-    readonly localSubnet: string;
+    readonly localSubnet: string | ros.IResolvable;
 
     /**
      * Property vpnGatewayId: ID of the VPN gateway.
      */
-    readonly vpnGatewayId: string;
+    readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
      * Property cipher: The encryption algorithm used by SSL-VPN. Value:
      * AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none
      */
-    readonly cipher?: string;
+    readonly cipher?: string | ros.IResolvable;
 
     /**
      * Property compress: Whether it is compressed.
@@ -41,18 +41,18 @@ export interface SslVpnServerProps {
      * Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property port: The port used by the SSL-VPN server. The default value is 1194. Cannot use the following ports:
      * 22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500
      */
-    readonly port?: number;
+    readonly port?: number | ros.IResolvable;
 
     /**
      * Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
      */
-    readonly proto?: string;
+    readonly proto?: string | ros.IResolvable;
 }
 
 /**
@@ -68,7 +68,7 @@ export class SslVpnServer extends ros.Resource {
     /**
      * Attribute SslVpnServerId: ID of the SSL-VPN server.
      */
-    public readonly attrSslVpnServerId: any;
+    public readonly attrSslVpnServerId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::SslVpnServer`.

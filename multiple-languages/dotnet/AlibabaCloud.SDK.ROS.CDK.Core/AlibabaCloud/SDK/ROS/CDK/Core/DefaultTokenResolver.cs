@@ -52,8 +52,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{fragments, context})!;
         }
 
-        /// <summary>(experimental) Default Token resolution&#xD; &#xD; Resolve the Token, recurse into whatever it returns,&#xD; then finally post-process it.</summary>
+        /// <summary>(experimental) Default Token resolution.</summary>
         /// <remarks>
+        /// Resolve the Token, recurse into whatever it returns,
+        /// then finally post-process it.
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiMethod(name: "resolveToken", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"t\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}},{\"name\":\"postProcessor\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IPostProcessor\"}}]", isOverride: true)]

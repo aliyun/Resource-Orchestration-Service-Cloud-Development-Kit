@@ -3,32 +3,66 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.528Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.170Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(AutoSnapshotPolicyProps.Jsii$Proxy.class)
 public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property repeatWeekdays: The automatic snapshot repetition dates.
+     * <p>
+     * The unit of measurement is day and the repeating cycle is a week. Value range: [1, 7], which represents days starting from Monday to Sunday, for example 1 indicates Monday. When you want to schedule multiple automatic snapshot tasks for a disk in a week, you can set the RepeatWeekdays to an array.
+     * A maximum of seven time points can be selected.
+     * The format is a list of [1, 2, ..., 7] and the time points are separated by commas (,).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRepeatWeekdays();
 
     /**
+     * Property retentionDays: The snapshot retention time, and the unit of measurement is day.
+     * <p>
+     * Optional values:
+     * -1: The automatic snapshots are retained permanently.
+     * [1, 65536]: The number of days retained.
+     * Default value: -1.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getRetentionDays();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRetentionDays();
 
     /**
+     * Property timePoints: The automatic snapshot creation schedule, and the unit of measurement is hour.
+     * <p>
+     * Value range: [0, 23], which represents from 00:00 to 24:00, for example 1 indicates 01:00. When you want to schedule multiple automatic snapshot tasks for a disk in a day, you can set the TimePoints to an array.
+     * A maximum of 24 time points can be selected.
+     * The format is a list of [0, 1, ..., 23] and the time points are separated by commas (,).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTimePoints();
 
     /**
+     * Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
+     * <p>
+     * It can consist of [2, 128] English or Chinese characters.
+     * Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
+     * Cannot start with http:// or https://.
+     * Default value: null.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoSnapshotPolicyName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyName() {
         return null;
     }
 
     /**
+     * Property diskIds: The disk ID.
+     * <p>
+     * When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getDiskIds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskIds() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> getTags() {
         return null;
     }
 
@@ -43,24 +77,18 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
      */
     public static final class Builder implements software.amazon.jsii.Builder<AutoSnapshotPolicyProps> {
         private java.lang.Object repeatWeekdays;
-        private java.lang.Number retentionDays;
+        private java.lang.Object retentionDays;
         private java.lang.Object timePoints;
-        private java.lang.String autoSnapshotPolicyName;
-        private java.util.List<java.lang.String> diskIds;
+        private java.lang.Object autoSnapshotPolicyName;
+        private java.lang.Object diskIds;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getRepeatWeekdays}
-         * @param repeatWeekdays the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder repeatWeekdays(java.util.List<? extends java.lang.Number> repeatWeekdays) {
-            this.repeatWeekdays = repeatWeekdays;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link AutoSnapshotPolicyProps#getRepeatWeekdays}
-         * @param repeatWeekdays the value to be set. This parameter is required.
+         * @param repeatWeekdays Property repeatWeekdays: The automatic snapshot repetition dates. This parameter is required.
+         *                       The unit of measurement is day and the repeating cycle is a week. Value range: [1, 7], which represents days starting from Monday to Sunday, for example 1 indicates Monday. When you want to schedule multiple automatic snapshot tasks for a disk in a week, you can set the RepeatWeekdays to an array.
+         *                       A maximum of seven time points can be selected.
+         *                       The format is a list of [1, 2, ..., 7] and the time points are separated by commas (,).
          * @return {@code this}
          */
         public Builder repeatWeekdays(com.aliyun.ros.cdk.core.IResolvable repeatWeekdays) {
@@ -69,8 +97,25 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getRepeatWeekdays}
+         * @param repeatWeekdays Property repeatWeekdays: The automatic snapshot repetition dates. This parameter is required.
+         *                       The unit of measurement is day and the repeating cycle is a week. Value range: [1, 7], which represents days starting from Monday to Sunday, for example 1 indicates Monday. When you want to schedule multiple automatic snapshot tasks for a disk in a week, you can set the RepeatWeekdays to an array.
+         *                       A maximum of seven time points can be selected.
+         *                       The format is a list of [1, 2, ..., 7] and the time points are separated by commas (,).
+         * @return {@code this}
+         */
+        public Builder repeatWeekdays(java.util.List<? extends java.lang.Object> repeatWeekdays) {
+            this.repeatWeekdays = repeatWeekdays;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getRetentionDays}
-         * @param retentionDays the value to be set. This parameter is required.
+         * @param retentionDays Property retentionDays: The snapshot retention time, and the unit of measurement is day. This parameter is required.
+         *                      Optional values:
+         *                      -1: The automatic snapshots are retained permanently.
+         *                      [1, 65536]: The number of days retained.
+         *                      Default value: -1.
          * @return {@code this}
          */
         public Builder retentionDays(java.lang.Number retentionDays) {
@@ -79,8 +124,25 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getRetentionDays}
+         * @param retentionDays Property retentionDays: The snapshot retention time, and the unit of measurement is day. This parameter is required.
+         *                      Optional values:
+         *                      -1: The automatic snapshots are retained permanently.
+         *                      [1, 65536]: The number of days retained.
+         *                      Default value: -1.
+         * @return {@code this}
+         */
+        public Builder retentionDays(com.aliyun.ros.cdk.core.IResolvable retentionDays) {
+            this.retentionDays = retentionDays;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getTimePoints}
-         * @param timePoints the value to be set. This parameter is required.
+         * @param timePoints Property timePoints: The automatic snapshot creation schedule, and the unit of measurement is hour. This parameter is required.
+         *                   Value range: [0, 23], which represents from 00:00 to 24:00, for example 1 indicates 01:00. When you want to schedule multiple automatic snapshot tasks for a disk in a day, you can set the TimePoints to an array.
+         *                   A maximum of 24 time points can be selected.
+         *                   The format is a list of [0, 1, ..., 23] and the time points are separated by commas (,).
          * @return {@code this}
          */
         public Builder timePoints(java.util.List<? extends java.lang.Object> timePoints) {
@@ -90,7 +152,10 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getTimePoints}
-         * @param timePoints the value to be set. This parameter is required.
+         * @param timePoints Property timePoints: The automatic snapshot creation schedule, and the unit of measurement is hour. This parameter is required.
+         *                   Value range: [0, 23], which represents from 00:00 to 24:00, for example 1 indicates 01:00. When you want to schedule multiple automatic snapshot tasks for a disk in a day, you can set the TimePoints to an array.
+         *                   A maximum of 24 time points can be selected.
+         *                   The format is a list of [0, 1, ..., 23] and the time points are separated by commas (,).
          * @return {@code this}
          */
         public Builder timePoints(com.aliyun.ros.cdk.core.IResolvable timePoints) {
@@ -100,7 +165,11 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getAutoSnapshotPolicyName}
-         * @param autoSnapshotPolicyName the value to be set.
+         * @param autoSnapshotPolicyName Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
+         *                               It can consist of [2, 128] English or Chinese characters.
+         *                               Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
+         *                               Cannot start with http:// or https://.
+         *                               Default value: null.
          * @return {@code this}
          */
         public Builder autoSnapshotPolicyName(java.lang.String autoSnapshotPolicyName) {
@@ -109,12 +178,50 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
-         * Sets the value of {@link AutoSnapshotPolicyProps#getDiskIds}
-         * @param diskIds the value to be set.
+         * Sets the value of {@link AutoSnapshotPolicyProps#getAutoSnapshotPolicyName}
+         * @param autoSnapshotPolicyName Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
+         *                               It can consist of [2, 128] English or Chinese characters.
+         *                               Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
+         *                               Cannot start with http:// or https://.
+         *                               Default value: null.
          * @return {@code this}
          */
-        public Builder diskIds(java.util.List<java.lang.String> diskIds) {
+        public Builder autoSnapshotPolicyName(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyName) {
+            this.autoSnapshotPolicyName = autoSnapshotPolicyName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getDiskIds}
+         * @param diskIds Property diskIds: The disk ID.
+         *                When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
+         * @return {@code this}
+         */
+        public Builder diskIds(com.aliyun.ros.cdk.core.IResolvable diskIds) {
             this.diskIds = diskIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getDiskIds}
+         * @param diskIds Property diskIds: The disk ID.
+         *                When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
+         * @return {@code this}
+         */
+        public Builder diskIds(java.util.List<? extends java.lang.Object> diskIds) {
+            this.diskIds = diskIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoSnapshotPolicyProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)tags;
             return this;
         }
 
@@ -125,7 +232,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public AutoSnapshotPolicyProps build() {
-            return new Jsii$Proxy(repeatWeekdays, retentionDays, timePoints, autoSnapshotPolicyName, diskIds);
+            return new Jsii$Proxy(repeatWeekdays, retentionDays, timePoints, autoSnapshotPolicyName, diskIds, tags);
         }
     }
 
@@ -135,10 +242,11 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AutoSnapshotPolicyProps {
         private final java.lang.Object repeatWeekdays;
-        private final java.lang.Number retentionDays;
+        private final java.lang.Object retentionDays;
         private final java.lang.Object timePoints;
-        private final java.lang.String autoSnapshotPolicyName;
-        private final java.util.List<java.lang.String> diskIds;
+        private final java.lang.Object autoSnapshotPolicyName;
+        private final java.lang.Object diskIds;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -147,22 +255,25 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.repeatWeekdays = software.amazon.jsii.Kernel.get(this, "repeatWeekdays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.retentionDays = software.amazon.jsii.Kernel.get(this, "retentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.retentionDays = software.amazon.jsii.Kernel.get(this, "retentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timePoints = software.amazon.jsii.Kernel.get(this, "timePoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoSnapshotPolicyName = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.diskIds = software.amazon.jsii.Kernel.get(this, "diskIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
+            this.autoSnapshotPolicyName = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskIds = software.amazon.jsii.Kernel.get(this, "diskIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object repeatWeekdays, final java.lang.Number retentionDays, final java.lang.Object timePoints, final java.lang.String autoSnapshotPolicyName, final java.util.List<java.lang.String> diskIds) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object repeatWeekdays, final java.lang.Object retentionDays, final java.lang.Object timePoints, final java.lang.Object autoSnapshotPolicyName, final java.lang.Object diskIds, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.repeatWeekdays = java.util.Objects.requireNonNull(repeatWeekdays, "repeatWeekdays is required");
             this.retentionDays = java.util.Objects.requireNonNull(retentionDays, "retentionDays is required");
             this.timePoints = java.util.Objects.requireNonNull(timePoints, "timePoints is required");
             this.autoSnapshotPolicyName = autoSnapshotPolicyName;
             this.diskIds = diskIds;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)tags;
         }
 
         @Override
@@ -171,7 +282,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.Number getRetentionDays() {
+        public final java.lang.Object getRetentionDays() {
             return this.retentionDays;
         }
 
@@ -181,13 +292,18 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getAutoSnapshotPolicyName() {
+        public final java.lang.Object getAutoSnapshotPolicyName() {
             return this.autoSnapshotPolicyName;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getDiskIds() {
+        public final java.lang.Object getDiskIds() {
             return this.diskIds;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -204,6 +320,9 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getDiskIds() != null) {
                 data.set("diskIds", om.valueToTree(this.getDiskIds()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -227,7 +346,8 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             if (!retentionDays.equals(that.retentionDays)) return false;
             if (!timePoints.equals(that.timePoints)) return false;
             if (this.autoSnapshotPolicyName != null ? !this.autoSnapshotPolicyName.equals(that.autoSnapshotPolicyName) : that.autoSnapshotPolicyName != null) return false;
-            return this.diskIds != null ? this.diskIds.equals(that.diskIds) : that.diskIds == null;
+            if (this.diskIds != null ? !this.diskIds.equals(that.diskIds) : that.diskIds != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -237,6 +357,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.timePoints.hashCode());
             result = 31 * result + (this.autoSnapshotPolicyName != null ? this.autoSnapshotPolicyName.hashCode() : 0);
             result = 31 * result + (this.diskIds != null ? this.diskIds.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

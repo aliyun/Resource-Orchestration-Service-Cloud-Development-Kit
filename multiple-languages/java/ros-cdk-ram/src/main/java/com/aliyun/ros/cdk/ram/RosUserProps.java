@@ -3,30 +3,30 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.876Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserProps.Jsii$Proxy.class)
 public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUserName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComments() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComments() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDisplayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDisplayName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEmail() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEmail() {
         return null;
     }
 
@@ -44,7 +44,7 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMobilePhone() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMobilePhone() {
         return null;
     }
 
@@ -64,13 +64,13 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosUserProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUserProps> {
-        private java.lang.String userName;
-        private java.lang.String comments;
-        private java.lang.String displayName;
-        private java.lang.String email;
+        private java.lang.Object userName;
+        private java.lang.Object comments;
+        private java.lang.Object displayName;
+        private java.lang.Object email;
         private java.lang.Object groups;
         private java.lang.Object loginProfile;
-        private java.lang.String mobilePhone;
+        private java.lang.Object mobilePhone;
         private java.lang.Object policies;
 
         /**
@@ -79,6 +79,16 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder userName(java.lang.String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserProps#getUserName}
+         * @param userName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
             this.userName = userName;
             return this;
         }
@@ -94,6 +104,16 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getComments}
+         * @param comments the value to be set.
+         * @return {@code this}
+         */
+        public Builder comments(com.aliyun.ros.cdk.core.IResolvable comments) {
+            this.comments = comments;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getDisplayName}
          * @param displayName the value to be set.
          * @return {@code this}
@@ -104,11 +124,31 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getDisplayName}
+         * @param displayName the value to be set.
+         * @return {@code this}
+         */
+        public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getEmail}
          * @param email the value to be set.
          * @return {@code this}
          */
         public Builder email(java.lang.String email) {
+            this.email = email;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserProps#getEmail}
+         * @param email the value to be set.
+         * @return {@code this}
+         */
+        public Builder email(com.aliyun.ros.cdk.core.IResolvable email) {
             this.email = email;
             return this;
         }
@@ -164,6 +204,16 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosUserProps#getMobilePhone}
+         * @param mobilePhone the value to be set.
+         * @return {@code this}
+         */
+        public Builder mobilePhone(com.aliyun.ros.cdk.core.IResolvable mobilePhone) {
+            this.mobilePhone = mobilePhone;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosUserProps#getPolicies}
          * @param policies the value to be set.
          * @return {@code this}
@@ -199,13 +249,13 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosUserProps {
-        private final java.lang.String userName;
-        private final java.lang.String comments;
-        private final java.lang.String displayName;
-        private final java.lang.String email;
+        private final java.lang.Object userName;
+        private final java.lang.Object comments;
+        private final java.lang.Object displayName;
+        private final java.lang.Object email;
         private final java.lang.Object groups;
         private final java.lang.Object loginProfile;
-        private final java.lang.String mobilePhone;
+        private final java.lang.Object mobilePhone;
         private final java.lang.Object policies;
 
         /**
@@ -214,20 +264,20 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groups = software.amazon.jsii.Kernel.get(this, "groups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginProfile = software.amazon.jsii.Kernel.get(this, "loginProfile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.mobilePhone = software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.mobilePhone = software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String userName, final java.lang.String comments, final java.lang.String displayName, final java.lang.String email, final java.lang.Object groups, final java.lang.Object loginProfile, final java.lang.String mobilePhone, final java.lang.Object policies) {
+        protected Jsii$Proxy(final java.lang.Object userName, final java.lang.Object comments, final java.lang.Object displayName, final java.lang.Object email, final java.lang.Object groups, final java.lang.Object loginProfile, final java.lang.Object mobilePhone, final java.lang.Object policies) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
             this.comments = comments;
@@ -240,22 +290,22 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getUserName() {
+        public final java.lang.Object getUserName() {
             return this.userName;
         }
 
         @Override
-        public final java.lang.String getComments() {
+        public final java.lang.Object getComments() {
             return this.comments;
         }
 
         @Override
-        public final java.lang.String getDisplayName() {
+        public final java.lang.Object getDisplayName() {
             return this.displayName;
         }
 
         @Override
-        public final java.lang.String getEmail() {
+        public final java.lang.Object getEmail() {
             return this.email;
         }
 
@@ -270,7 +320,7 @@ public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getMobilePhone() {
+        public final java.lang.Object getMobilePhone() {
             return this.mobilePhone;
         }
 

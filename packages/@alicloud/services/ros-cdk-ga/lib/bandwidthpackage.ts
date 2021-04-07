@@ -11,62 +11,62 @@ export interface BandwidthPackageProps {
     /**
      * Property bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * Property type: The type of the bandwidth plan
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property autoPay: The AutoPay of the bandwidth
      */
-    readonly autoPay?: string;
+    readonly autoPay?: string | ros.IResolvable;
 
     /**
      * Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
-    readonly autoUseCoupon?: string;
+    readonly autoUseCoupon?: string | ros.IResolvable;
 
     /**
      * Property bandwidthType: the bandwidth BandwidthType of the bandwidth
      */
-    readonly bandwidthType?: string;
+    readonly bandwidthType?: string | ros.IResolvable;
 
     /**
      * Property billingType: The BillingType of the bandwidth
      */
-    readonly billingType?: string;
+    readonly billingType?: string | ros.IResolvable;
 
     /**
      * Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
-    readonly cbnGeographicRegionIdA?: string;
+    readonly cbnGeographicRegionIdA?: string | ros.IResolvable;
 
     /**
      * Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
-    readonly cbnGeographicRegionIdB?: string;
+    readonly cbnGeographicRegionIdB?: string | ros.IResolvable;
 
     /**
      * Property chargeType: The ChargeType of the bandwidth
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * Property duration:
      */
-    readonly duration?: string;
+    readonly duration?: string | ros.IResolvable;
 
     /**
      * Property pricingCycle:
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property ratio: The Ratio of the bandwidth
      */
-    readonly ratio?: string;
+    readonly ratio?: string | ros.IResolvable;
 }
 
 /**
@@ -82,67 +82,67 @@ export class BandwidthPackage extends ros.Resource {
     /**
      * Attribute AutoPay: The AutoPay of the bandwidth
      */
-    public readonly attrAutoPay: any;
+    public readonly attrAutoPay: ros.IResolvable;
 
     /**
      * Attribute AutoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
-    public readonly attrAutoUseCoupon: any;
+    public readonly attrAutoUseCoupon: ros.IResolvable;
 
     /**
      * Attribute Bandwidth: The bandwidth provided by the bandwidth plan.
      */
-    public readonly attrBandwidth: any;
+    public readonly attrBandwidth: ros.IResolvable;
 
     /**
      * Attribute BandwidthPackageId: The Resource ID of the bandwidth
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
      * Attribute BandwidthPackageName: The Resource name of the bandwidth
      */
-    public readonly attrBandwidthPackageName: any;
+    public readonly attrBandwidthPackageName: ros.IResolvable;
 
     /**
      * Attribute BandwidthType: the bandwidth BandwidthType of the bandwidth
      */
-    public readonly attrBandwidthType: any;
+    public readonly attrBandwidthType: ros.IResolvable;
 
     /**
      * Attribute BillingType: The BillingType of the bandwidth
      */
-    public readonly attrBillingType: any;
+    public readonly attrBillingType: ros.IResolvable;
 
     /**
      * Attribute CbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
-    public readonly attrCbnGeographicRegionIdA: any;
+    public readonly attrCbnGeographicRegionIdA: ros.IResolvable;
 
     /**
      * Attribute CbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
-    public readonly attrCbnGeographicRegionIdB: any;
+    public readonly attrCbnGeographicRegionIdB: ros.IResolvable;
 
     /**
      * Attribute ChargeType: The ChargeType of the bandwidth
      */
-    public readonly attrChargeType: any;
+    public readonly attrChargeType: ros.IResolvable;
 
     /**
      * Attribute PaymentType: The Payment Type of the bandwidth
      */
-    public readonly attrPaymentType: any;
+    public readonly attrPaymentType: ros.IResolvable;
 
     /**
      * Attribute Ratio: The Ratio of the bandwidth
      */
-    public readonly attrRatio: any;
+    public readonly attrRatio: ros.IResolvable;
 
     /**
      * Attribute Type: The type of the bandwidth plan
      */
-    public readonly attrType: any;
+    public readonly attrType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackage`.

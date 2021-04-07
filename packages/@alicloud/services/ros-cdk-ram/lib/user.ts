@@ -11,22 +11,22 @@ export interface UserProps {
     /**
      * Property userName: Specifies the user name, containing up to 64 characters.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 
     /**
      * Property comments: Comments of ram user.
      */
-    readonly comments?: string;
+    readonly comments?: string | ros.IResolvable;
 
     /**
      * Property displayName: Display name, up to 128 characters or Chinese characters.
      */
-    readonly displayName?: string;
+    readonly displayName?: string | ros.IResolvable;
 
     /**
      * Property email: Email of ram user.
      */
-    readonly email?: string;
+    readonly email?: string | ros.IResolvable;
 
     /**
      * Property groups: A name of a group to which you want to add the user.
@@ -41,7 +41,7 @@ export interface UserProps {
     /**
      * Property mobilePhone: Phone number of ram user.
      */
-    readonly mobilePhone?: string;
+    readonly mobilePhone?: string | ros.IResolvable;
 
     /**
      * Property policies: Describes what actions are allowed on what resources.
@@ -62,22 +62,22 @@ export class User extends ros.Resource {
     /**
      * Attribute CreateDate: Create date of ram user.
      */
-    public readonly attrCreateDate: any;
+    public readonly attrCreateDate: ros.IResolvable;
 
     /**
      * Attribute LastLoginDate: Last login date of ram user.
      */
-    public readonly attrLastLoginDate: any;
+    public readonly attrLastLoginDate: ros.IResolvable;
 
     /**
      * Attribute UserId: Id of ram user.
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     /**
      * Attribute UserName: Name of ram user.
      */
-    public readonly attrUserName: any;
+    public readonly attrUserName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::User`.

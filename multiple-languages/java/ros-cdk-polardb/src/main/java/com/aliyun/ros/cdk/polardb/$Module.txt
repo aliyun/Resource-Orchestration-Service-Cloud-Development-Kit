@@ -19,6 +19,8 @@
 @alicloud/ros-cdk-polardb.RosAccountPrivilegeProps=com.aliyun.ros.cdk.polardb.RosAccountPrivilegeProps
 @alicloud/ros-cdk-polardb.RosAccountProps=com.aliyun.ros.cdk.polardb.RosAccountProps
 @alicloud/ros-cdk-polardb.RosDBCluster=com.aliyun.ros.cdk.polardb.RosDBCluster
+@alicloud/ros-cdk-polardb.RosDBCluster.DBClusterParametersProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$DBClusterParametersProperty
+@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$TagsProperty
 @alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteList=com.aliyun.ros.cdk.polardb.RosDBClusterAccessWhiteList
 @alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteListProps=com.aliyun.ros.cdk.polardb.RosDBClusterAccessWhiteListProps
 @alicloud/ros-cdk-polardb.RosDBClusterEndpoint=com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint

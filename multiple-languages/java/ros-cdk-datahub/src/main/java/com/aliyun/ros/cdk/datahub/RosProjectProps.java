@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * Properties for defining a `ALIYUN::DATAHUB::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.045Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosProjectProps.Jsii$Proxy.class)
 public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getComment();
+    @org.jetbrains.annotations.NotNull java.lang.Object getComment();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
      * @return a {@link Builder} of {@link RosProjectProps}
@@ -26,8 +26,8 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosProjectProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProjectProps> {
-        private java.lang.String comment;
-        private java.lang.String projectName;
+        private java.lang.Object comment;
+        private java.lang.Object projectName;
 
         /**
          * Sets the value of {@link RosProjectProps#getComment}
@@ -40,11 +40,31 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProjectProps#getComment}
+         * @param comment the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder comment(com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.comment = comment;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProjectProps#getProjectName}
          * @param projectName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProjectProps#getProjectName}
+         * @param projectName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.projectName = projectName;
             return this;
         }
@@ -65,8 +85,8 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosProjectProps {
-        private final java.lang.String comment;
-        private final java.lang.String projectName;
+        private final java.lang.Object comment;
+        private final java.lang.Object projectName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +94,26 @@ public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String comment, final java.lang.String projectName) {
+        protected Jsii$Proxy(final java.lang.Object comment, final java.lang.Object projectName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.comment = java.util.Objects.requireNonNull(comment, "comment is required");
             this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
         }
 
         @Override
-        public final java.lang.String getComment() {
+        public final java.lang.Object getComment() {
             return this.comment;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

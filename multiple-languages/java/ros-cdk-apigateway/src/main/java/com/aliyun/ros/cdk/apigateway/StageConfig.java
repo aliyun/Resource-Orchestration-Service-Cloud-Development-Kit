@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::StageConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.StageConfig")
 public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::StageConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public StageConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.StageConfigProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::StageConfig`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public StageConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.StageConfigProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.StageConfig> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,34 +83,62 @@ public class StageConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupId: The id of the Group.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The id of the Group.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property stageName: The name of the Stage.
+         * <p>
          * @return {@code this}
-         * @param stageName This parameter is required.
+         * @param stageName Property stageName: The name of the Stage. This parameter is required.
          */
         public Builder stageName(final java.lang.String stageName) {
             this.props.stageName(stageName);
             return this;
         }
+        /**
+         * Property stageName: The name of the Stage.
+         * <p>
+         * @return {@code this}
+         * @param stageName Property stageName: The name of the Stage. This parameter is required.
+         */
+        public Builder stageName(final com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.props.stageName(stageName);
+            return this;
+        }
 
         /**
+         * Property variables: Variables in the stage, key-value pairs.
+         * <p>
          * @return {@code this}
-         * @param variables This parameter is required.
+         * @param variables Property variables: Variables in the stage, key-value pairs. This parameter is required.
          */
         public Builder variables(final com.aliyun.ros.cdk.core.IResolvable variables) {
             this.props.variables(variables);
             return this;
         }
         /**
+         * Property variables: Variables in the stage, key-value pairs.
+         * <p>
          * @return {@code this}
-         * @param variables This parameter is required.
+         * @param variables Property variables: Variables in the stage, key-value pairs. This parameter is required.
          */
         public Builder variables(final java.util.Map<java.lang.String, ? extends java.lang.Object> variables) {
             this.props.variables(variables);

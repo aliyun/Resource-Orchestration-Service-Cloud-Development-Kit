@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// <strong>Attribute</strong>: SavedsearchName: Savedsearch name.
         /// </remarks>
-        [JsiiProperty(name: "attrSavedsearchName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSavedsearchName
+        [JsiiProperty(name: "attrSavedsearchName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSavedsearchName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// <strong>Property</strong>: project: Project name
         /// </remarks>
-        [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Project
+        [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Project
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IDetailProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosSavedsearch.DetailProperty")]
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logstore: Logstore name.
             /// </remarks>
-            [JsiiProperty(name: "logstore", typeJson: "{\"primitive\":\"string\"}")]
-            string Logstore
+            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Logstore
             {
                 get;
             }
@@ -100,8 +100,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: savedsearchName: Savedsearch name.
             /// </remarks>
-            [JsiiProperty(name: "savedsearchName", typeJson: "{\"primitive\":\"string\"}")]
-            string SavedsearchName
+            [JsiiProperty(name: "savedsearchName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SavedsearchName
             {
                 get;
             }
@@ -109,8 +109,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: searchQuery: Check sentence.
             /// </remarks>
-            [JsiiProperty(name: "searchQuery", typeJson: "{\"primitive\":\"string\"}")]
-            string SearchQuery
+            [JsiiProperty(name: "searchQuery", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SearchQuery
             {
                 get;
             }
@@ -118,8 +118,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: topic: Topic name
             /// </remarks>
-            [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-            string Topic
+            [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Topic
             {
                 get;
             }
@@ -127,9 +127,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: displayName: Display name.
             /// </remarks>
-            [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? DisplayName
+            object? DisplayName
             {
                 get
                 {
@@ -147,47 +147,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: logstore: Logstore name.
                 /// </remarks>
-                [JsiiProperty(name: "logstore", typeJson: "{\"primitive\":\"string\"}")]
-                public string Logstore
+                [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Logstore
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: savedsearchName: Savedsearch name.
                 /// </remarks>
-                [JsiiProperty(name: "savedsearchName", typeJson: "{\"primitive\":\"string\"}")]
-                public string SavedsearchName
+                [JsiiProperty(name: "savedsearchName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SavedsearchName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: searchQuery: Check sentence.
                 /// </remarks>
-                [JsiiProperty(name: "searchQuery", typeJson: "{\"primitive\":\"string\"}")]
-                public string SearchQuery
+                [JsiiProperty(name: "searchQuery", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SearchQuery
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: topic: Topic name
                 /// </remarks>
-                [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}")]
-                public string Topic
+                [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Topic
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: displayName: Display name.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? DisplayName
+                [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DisplayName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -199,8 +199,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logstore: Logstore name.
             /// </remarks>
-            [JsiiProperty(name: "logstore", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Logstore
+            [JsiiProperty(name: "logstore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Logstore
             {
                 get;
                 set;
@@ -209,8 +209,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: savedsearchName: Savedsearch name.
             /// </remarks>
-            [JsiiProperty(name: "savedsearchName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string SavedsearchName
+            [JsiiProperty(name: "savedsearchName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object SavedsearchName
             {
                 get;
                 set;
@@ -219,8 +219,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: searchQuery: Check sentence.
             /// </remarks>
-            [JsiiProperty(name: "searchQuery", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string SearchQuery
+            [JsiiProperty(name: "searchQuery", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object SearchQuery
             {
                 get;
                 set;
@@ -229,8 +229,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: topic: Topic name
             /// </remarks>
-            [JsiiProperty(name: "topic", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Topic
+            [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Topic
             {
                 get;
                 set;
@@ -240,8 +240,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: displayName: Display name.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? DisplayName
+            [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DisplayName
             {
                 get;
                 set;

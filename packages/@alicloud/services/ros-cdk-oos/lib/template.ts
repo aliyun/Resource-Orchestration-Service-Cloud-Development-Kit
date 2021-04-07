@@ -11,17 +11,17 @@ export interface TemplateProps {
     /**
      * Property content: The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB.
      */
-    readonly content: string;
+    readonly content: string | ros.IResolvable;
 
     /**
      * Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
      */
-    readonly templateName: string;
+    readonly templateName: string | ros.IResolvable;
 
     /**
      * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: { [key: string]: (any) };
 }
 
 /**
@@ -37,17 +37,17 @@ export class Template extends ros.Resource {
     /**
      * Attribute ExecutionPolicy: Execution Policy
      */
-    public readonly attrExecutionPolicy: any;
+    public readonly attrExecutionPolicy: ros.IResolvable;
 
     /**
      * Attribute TemplateId: Template ID
      */
-    public readonly attrTemplateId: any;
+    public readonly attrTemplateId: ros.IResolvable;
 
     /**
      * Attribute TemplateName: Template Name
      */
-    public readonly attrTemplateName: any;
+    public readonly attrTemplateName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OOS::Template`.
@@ -62,7 +62,7 @@ export class Template extends ros.Resource {
         const rosTemplate = new RosTemplate(this, id,  {
             content: props.content,
             templateName: props.templateName,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTemplate;
         this.attrExecutionPolicy = rosTemplate.attrExecutionPolicy;

@@ -15,12 +15,12 @@ export interface RosContactProps {
     /**
      * @Property contactName: The name of the alarm contact.
      */
-    readonly contactName: string;
+    readonly contactName: string | ros.IResolvable;
 
     /**
      * @Property describe: The description of the alert contact.
      */
-    readonly describe: string;
+    readonly describe: string | ros.IResolvable;
 }
 
 /**
@@ -79,7 +79,7 @@ export class RosContact extends ros.RosResource {
     /**
      * @Attribute ContactName: The name of the alarm contact.
      */
-    public readonly attrContactName: any;
+    public readonly attrContactName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -92,12 +92,12 @@ export class RosContact extends ros.RosResource {
     /**
      * @Property contactName: The name of the alarm contact.
      */
-    public contactName: string;
+    public contactName: string | ros.IResolvable;
 
     /**
      * @Property describe: The description of the alert contact.
      */
-    public describe: string;
+    public describe: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::Contact`.
@@ -108,7 +108,7 @@ export class RosContact extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosContactProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosContact.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactName = ros.Token.asString(this.getAtt('ContactName'));
+        this.attrContactName = this.getAtt('ContactName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.channels = props.channels;
@@ -137,19 +137,19 @@ export namespace RosContact {
         /**
          * @Property mail: The email address of the contact.
          */
-        readonly mail?: string;
+        readonly mail?: string | ros.IResolvable;
         /**
          * @Property aliIm: The TradeManager ID.
          */
-        readonly aliIm?: string;
+        readonly aliIm?: string | ros.IResolvable;
         /**
          * @Property dingWebHook: The DingTalk Chatbot address.
          */
-        readonly dingWebHook?: string;
+        readonly dingWebHook?: string | ros.IResolvable;
         /**
          * @Property sms: The mobile phone number of the contact.
          */
-        readonly sms?: string;
+        readonly sms?: string | ros.IResolvable;
     }
 }
 /**
@@ -196,17 +196,17 @@ export interface RosContactGroupProps {
     /**
      * @Property contactGroupName: The name of the alert contact group.
      */
-    readonly contactGroupName: string;
+    readonly contactGroupName: string | ros.IResolvable;
 
     /**
      * @Property contactNames: The name of the alert contact.
      */
-    readonly contactNames: string[];
+    readonly contactNames: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property describe: The description of the alert contact group.
      */
-    readonly describe: string;
+    readonly describe: string | ros.IResolvable;
 }
 
 /**
@@ -272,7 +272,7 @@ export class RosContactGroup extends ros.RosResource {
     /**
      * @Attribute ContactGroupName: The name of the alert contact group.
      */
-    public readonly attrContactGroupName: any;
+    public readonly attrContactGroupName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -280,17 +280,17 @@ export class RosContactGroup extends ros.RosResource {
     /**
      * @Property contactGroupName: The name of the alert contact group.
      */
-    public contactGroupName: string;
+    public contactGroupName: string | ros.IResolvable;
 
     /**
      * @Property contactNames: The name of the alert contact.
      */
-    public contactNames: string[];
+    public contactNames: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property describe: The description of the alert contact group.
      */
-    public describe: string;
+    public describe: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::ContactGroup`.
@@ -301,7 +301,7 @@ export class RosContactGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosContactGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosContactGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContactGroupName = ros.Token.asString(this.getAtt('ContactGroupName'));
+        this.attrContactGroupName = this.getAtt('ContactGroupName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.contactGroupName = props.contactGroupName;
@@ -330,12 +330,12 @@ export interface RosDynamicTagGroupProps {
     /**
      * @Property contactGroupList: Alarm contacts.
      */
-    readonly contactGroupList: string[];
+    readonly contactGroupList: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tagKey: Tag key.
      */
-    readonly tagKey: string;
+    readonly tagKey: string | ros.IResolvable;
 
     /**
      * @Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. Values are:
@@ -363,13 +363,13 @@ export interface RosDynamicTagGroupProps {
      * or: the relationship or the
      * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
      */
-    readonly matchExpressFilterRelation?: string;
+    readonly matchExpressFilterRelation?: string | ros.IResolvable;
 
     /**
      * @Property templateIdList: Alarm template ID list.
      * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
      */
-    readonly templateIdList?: string[];
+    readonly templateIdList?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -455,12 +455,12 @@ export class RosDynamicTagGroup extends ros.RosResource {
     /**
      * @Attribute DynamicTagRuleId: Dynamic tag rule ID.
      */
-    public readonly attrDynamicTagRuleId: any;
+    public readonly attrDynamicTagRuleId: ros.IResolvable;
 
     /**
      * @Attribute TagKey: Tag key.
      */
-    public readonly attrTagKey: any;
+    public readonly attrTagKey: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -468,12 +468,12 @@ export class RosDynamicTagGroup extends ros.RosResource {
     /**
      * @Property contactGroupList: Alarm contacts.
      */
-    public contactGroupList: string[];
+    public contactGroupList: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tagKey: Tag key.
      */
-    public tagKey: string;
+    public tagKey: string | ros.IResolvable;
 
     /**
      * @Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. Values are:
@@ -501,13 +501,13 @@ export class RosDynamicTagGroup extends ros.RosResource {
      * or: the relationship or the
      * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
      */
-    public matchExpressFilterRelation: string | undefined;
+    public matchExpressFilterRelation: string | ros.IResolvable | undefined;
 
     /**
      * @Property templateIdList: Alarm template ID list.
      * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
      */
-    public templateIdList: string[] | undefined;
+    public templateIdList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::DynamicTagGroup`.
@@ -518,8 +518,8 @@ export class RosDynamicTagGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDynamicTagGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDynamicTagGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDynamicTagRuleId = ros.Token.asString(this.getAtt('DynamicTagRuleId'));
-        this.attrTagKey = ros.Token.asString(this.getAtt('TagKey'));
+        this.attrDynamicTagRuleId = this.getAtt('DynamicTagRuleId');
+        this.attrTagKey = this.getAtt('TagKey');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.contactGroupList = props.contactGroupList;
@@ -556,7 +556,7 @@ export namespace RosDynamicTagGroup {
         /**
          * @Property tagValue: Tag value, used with TagValueMatchFunction.
          */
-        readonly tagValue: string;
+        readonly tagValue: string | ros.IResolvable;
         /**
          * @Property tagValueMatchFunction: Matching labeled keys. Values are:
      * contains: contains
@@ -566,7 +566,7 @@ export namespace RosDynamicTagGroup {
      * equals: equals
      * all: All
          */
-        readonly tagValueMatchFunction: string;
+        readonly tagValueMatchFunction: string | ros.IResolvable;
     }
 }
 /**
@@ -622,31 +622,31 @@ export interface RosEventRuleProps {
     /**
      * @Property ruleName: The name of the alarm rule.
      */
-    readonly ruleName: string;
+    readonly ruleName: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the alert rule.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property eventType: The type of the event alert. Valid values:
      * SYSTEM
      * CUSTOM
      */
-    readonly eventType?: string;
+    readonly eventType?: string | ros.IResolvable;
 
     /**
      * @Property groupId: The ID of the application group.
      */
-    readonly groupId?: string;
+    readonly groupId?: string | ros.IResolvable;
 
     /**
      * @Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
      */
-    readonly state?: string;
+    readonly state?: string | ros.IResolvable;
 }
 
 /**
@@ -717,7 +717,7 @@ export class RosEventRule extends ros.RosResource {
     /**
      * @Attribute Data: Number of rows affected.
      */
-    public readonly attrData: any;
+    public readonly attrData: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -730,31 +730,31 @@ export class RosEventRule extends ros.RosResource {
     /**
      * @Property ruleName: The name of the alarm rule.
      */
-    public ruleName: string;
+    public ruleName: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the alert rule.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property eventType: The type of the event alert. Valid values:
      * SYSTEM
      * CUSTOM
      */
-    public eventType: string | undefined;
+    public eventType: string | ros.IResolvable | undefined;
 
     /**
      * @Property groupId: The ID of the application group.
      */
-    public groupId: string | undefined;
+    public groupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
      */
-    public state: string | undefined;
+    public state: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::EventRule`.
@@ -765,7 +765,7 @@ export class RosEventRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosEventRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosEventRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrData = ros.Token.asString(this.getAtt('Data'));
+        this.attrData = this.getAtt('Data');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.eventPattern = props.eventPattern;
@@ -817,7 +817,7 @@ export namespace RosEventRule {
         /**
          * @Property product: The name of the service. Please refer to the configuration of CMS.
          */
-        readonly product?: string;
+        readonly product?: string | ros.IResolvable;
     }
 }
 /**
@@ -866,7 +866,7 @@ export interface RosEventRuleTargetsProps {
     /**
      * @Property ruleName: The name of the alert rule.
      */
-    readonly ruleName: string;
+    readonly ruleName: string | ros.IResolvable;
 
     /**
      * @Property contactParameters: CONTACT configuration.A maximum of 5 parameters
@@ -992,7 +992,7 @@ export class RosEventRuleTargets extends ros.RosResource {
     /**
      * @Property ruleName: The name of the alert rule.
      */
-    public ruleName: string;
+    public ruleName: string | ros.IResolvable;
 
     /**
      * @Property contactParameters: CONTACT configuration.A maximum of 5 parameters
@@ -1062,15 +1062,15 @@ export namespace RosEventRuleTargets {
         /**
          * @Property contactGroupName: The name of the alert contact group.
          */
-        readonly contactGroupName?: string;
+        readonly contactGroupName?: string | ros.IResolvable;
         /**
          * @Property level: The method of alert notification. Valid values: 2, 3, and 4.2: DingTalk Chatbot and email.3: DingTalk Chatbot and email.4: DingTalk Chatbot and email.
          */
-        readonly level?: string;
+        readonly level?: string | ros.IResolvable;
         /**
          * @Property id: The unique ID of the alert contact group notification.
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
     }
 }
 /**
@@ -1115,19 +1115,19 @@ export namespace RosEventRuleTargets {
         /**
          * @Property functionName: The name of the function.
          */
-        readonly functionName?: string;
+        readonly functionName?: string | ros.IResolvable;
         /**
          * @Property serviceName: The name of the Function Compute service.
          */
-        readonly serviceName?: string;
+        readonly serviceName?: string | ros.IResolvable;
         /**
          * @Property region: The region where Function Compute is deployed.
          */
-        readonly region?: string;
+        readonly region?: string | ros.IResolvable;
         /**
          * @Property id: The unique ID of the Function Compute notification.
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
     }
 }
 /**
@@ -1174,15 +1174,15 @@ export namespace RosEventRuleTargets {
         /**
          * @Property region: The region where MNS is deployed.
          */
-        readonly region?: string;
+        readonly region?: string | ros.IResolvable;
         /**
          * @Property id: The unique ID of the Message Service (MNS) notification.
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
         /**
          * @Property queue: The name of the MNS queue.
          */
-        readonly queue?: string;
+        readonly queue?: string | ros.IResolvable;
     }
 }
 /**
@@ -1227,19 +1227,19 @@ export namespace RosEventRuleTargets {
         /**
          * @Property project: The project corresponding to Log Service.
          */
-        readonly project?: string;
+        readonly project?: string | ros.IResolvable;
         /**
          * @Property logStore: The logstore corresponding to Log Service.
          */
-        readonly logStore?: string;
+        readonly logStore?: string | ros.IResolvable;
         /**
          * @Property region: The region where Log Service is deployed.
          */
-        readonly region?: string;
+        readonly region?: string | ros.IResolvable;
         /**
          * @Property id: The unique ID of the Log Service notification.
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
     }
 }
 /**
@@ -1286,19 +1286,19 @@ export namespace RosEventRuleTargets {
         /**
          * @Property id: The unique ID of the HTTP callback notification.
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
         /**
          * @Property method: The request method of the HTTP callback. Valid values: GET and POST.
          */
-        readonly method?: string;
+        readonly method?: string | ros.IResolvable;
         /**
          * @Property protocol: The name of the protocol.
          */
-        readonly protocol?: string;
+        readonly protocol?: string | ros.IResolvable;
         /**
          * @Property url: The callback URL.
          */
-        readonly url?: string;
+        readonly url?: string | ros.IResolvable;
     }
 }
 /**
@@ -1380,7 +1380,7 @@ export interface RosGroupMetricRuleProps {
      * SLS (Log Service)
      * VPN (VPN Gateway)
      */
-    readonly category: string;
+    readonly category: string | ros.IResolvable;
 
     /**
      * @Property escalations: undefined
@@ -1390,70 +1390,70 @@ export interface RosGroupMetricRuleProps {
     /**
      * @Property groupId: The ID of application group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property metricName: The name of the metric. For more information, call DescribeMetricMetaList or see Preset metrics reference.
      */
-    readonly metricName: string;
+    readonly metricName: string | ros.IResolvable;
 
     /**
      * @Property namespace: The data namespace of the service. For more information, call DescribeMetricMetaList
      * or see Preset metrics reference.
      */
-    readonly namespace: string;
+    readonly namespace: string | ros.IResolvable;
 
     /**
      * @Property ruleId: The ID of the alert rule. The IDs of alert rules are generated by callers to ensure
      * uniqueness.
      */
-    readonly ruleId: string;
+    readonly ruleId: string | ros.IResolvable;
 
     /**
      * @Property ruleName: The name of the alert rule.
      */
-    readonly ruleName: string;
+    readonly ruleName: string | ros.IResolvable;
 
     /**
      * @Property dimensions: The expended resource dimensions.
      */
-    readonly dimensions?: string;
+    readonly dimensions?: string | ros.IResolvable;
 
     /**
      * @Property effectiveInterval: The period when the alert rule is effective.
      */
-    readonly effectiveInterval?: string;
+    readonly effectiveInterval?: string | ros.IResolvable;
 
     /**
      * @Property emailSubject: The subject of the alert notification email.
      */
-    readonly emailSubject?: string;
+    readonly emailSubject?: string | ros.IResolvable;
 
     /**
      * @Property interval: The detection period of alerts.
      */
-    readonly interval?: number;
+    readonly interval?: number | ros.IResolvable;
 
     /**
      * @Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
-    readonly noEffectiveInterval?: string;
+    readonly noEffectiveInterval?: string | ros.IResolvable;
 
     /**
      * @Property period: The aggregation period. Unite: second.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property silenceTime: The duration of the mute period during which new alerts are not sent even if the trigger
      * conditions are met. Unit: second. Default value: 86400. Minimum value: 60.
      */
-    readonly silenceTime?: number;
+    readonly silenceTime?: number | ros.IResolvable;
 
     /**
      * @Property webhook: The URL of the callback triggered when an alert occurs.
      */
-    readonly webhook?: string;
+    readonly webhook?: string | ros.IResolvable;
 }
 
 /**
@@ -1547,7 +1547,7 @@ export class RosGroupMetricRule extends ros.RosResource {
     /**
      * @Attribute RuleId: Rule ID.
      */
-    public readonly attrRuleId: any;
+    public readonly attrRuleId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1590,7 +1590,7 @@ export class RosGroupMetricRule extends ros.RosResource {
      * SLS (Log Service)
      * VPN (VPN Gateway)
      */
-    public category: string;
+    public category: string | ros.IResolvable;
 
     /**
      * @Property escalations: undefined
@@ -1600,70 +1600,70 @@ export class RosGroupMetricRule extends ros.RosResource {
     /**
      * @Property groupId: The ID of application group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property metricName: The name of the metric. For more information, call DescribeMetricMetaList or see Preset metrics reference.
      */
-    public metricName: string;
+    public metricName: string | ros.IResolvable;
 
     /**
      * @Property namespace: The data namespace of the service. For more information, call DescribeMetricMetaList
      * or see Preset metrics reference.
      */
-    public namespace: string;
+    public namespace: string | ros.IResolvable;
 
     /**
      * @Property ruleId: The ID of the alert rule. The IDs of alert rules are generated by callers to ensure
      * uniqueness.
      */
-    public ruleId: string;
+    public ruleId: string | ros.IResolvable;
 
     /**
      * @Property ruleName: The name of the alert rule.
      */
-    public ruleName: string;
+    public ruleName: string | ros.IResolvable;
 
     /**
      * @Property dimensions: The expended resource dimensions.
      */
-    public dimensions: string | undefined;
+    public dimensions: string | ros.IResolvable | undefined;
 
     /**
      * @Property effectiveInterval: The period when the alert rule is effective.
      */
-    public effectiveInterval: string | undefined;
+    public effectiveInterval: string | ros.IResolvable | undefined;
 
     /**
      * @Property emailSubject: The subject of the alert notification email.
      */
-    public emailSubject: string | undefined;
+    public emailSubject: string | ros.IResolvable | undefined;
 
     /**
      * @Property interval: The detection period of alerts.
      */
-    public interval: number | undefined;
+    public interval: number | ros.IResolvable | undefined;
 
     /**
      * @Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
-    public noEffectiveInterval: string | undefined;
+    public noEffectiveInterval: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The aggregation period. Unite: second.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property silenceTime: The duration of the mute period during which new alerts are not sent even if the trigger
      * conditions are met. Unit: second. Default value: 86400. Minimum value: 60.
      */
-    public silenceTime: number | undefined;
+    public silenceTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property webhook: The URL of the callback triggered when an alert occurs.
      */
-    public webhook: string | undefined;
+    public webhook: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::GroupMetricRule`.
@@ -1674,7 +1674,7 @@ export class RosGroupMetricRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGroupMetricRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGroupMetricRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRuleId = ros.Token.asString(this.getAtt('RuleId'));
+        this.attrRuleId = this.getAtt('RuleId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.category = props.category;
@@ -1738,21 +1738,21 @@ export namespace RosGroupMetricRule {
      * GreaterThanLastPeriod
      * LessThanLastPeriod
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value exceeds the threshold for
      * critical-level alerts before an alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for critical-level alerts. The statistical method varies with
      * metric.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for critical-level alerts.
          */
-        readonly threshold: number;
+        readonly threshold: number | ros.IResolvable;
     }
 }
 /**
@@ -1867,20 +1867,20 @@ export namespace RosGroupMetricRule {
      * GreaterThanLastPeriod
      * LessThanLastPeriod
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value exceeds the threshold for
      * info-level alerts before an alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for info-level alerts.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for info-level alerts.
          */
-        readonly threshold: number;
+        readonly threshold: number | ros.IResolvable;
     }
 }
 /**
@@ -1942,20 +1942,20 @@ export namespace RosGroupMetricRule {
      * GreaterThanLastPeriod
      * LessThanLastPeriod
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value exceeds the threshold for
      * warn-level alerts before an alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for warn-level alerts.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for warn-level alerts.
          */
-        readonly threshold: number;
+        readonly threshold: number | ros.IResolvable;
     }
 }
 /**
@@ -2006,7 +2006,7 @@ export interface RosMetricRuleTargetsProps {
     /**
      * @Property ruleId: The ID of the alert rule.
      */
-    readonly ruleId: string;
+    readonly ruleId: string | ros.IResolvable;
 
     /**
      * @Property targets: undefined
@@ -2074,12 +2074,12 @@ export class RosMetricRuleTargets extends ros.RosResource {
     /**
      * @Attribute Arns: The ARN list of targets
      */
-    public readonly attrArns: any;
+    public readonly attrArns: ros.IResolvable;
 
     /**
      * @Attribute Ids: The ID list of targets
      */
-    public readonly attrIds: any;
+    public readonly attrIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2087,7 +2087,7 @@ export class RosMetricRuleTargets extends ros.RosResource {
     /**
      * @Property ruleId: The ID of the alert rule.
      */
-    public ruleId: string;
+    public ruleId: string | ros.IResolvable;
 
     /**
      * @Property targets: undefined
@@ -2103,8 +2103,8 @@ export class RosMetricRuleTargets extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMetricRuleTargetsProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMetricRuleTargets.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArns = ros.Token.asString(this.getAtt('Arns'));
-        this.attrIds = ros.Token.asString(this.getAtt('Ids'));
+        this.attrArns = this.getAtt('Arns');
+        this.attrIds = this.getAtt('Ids');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ruleId = props.ruleId;
@@ -2134,11 +2134,11 @@ export namespace RosMetricRuleTargets {
      * WARN
      * CRITICAL
          */
-        readonly level?: string;
+        readonly level?: string | ros.IResolvable;
         /**
          * @Property id: The ID of the message resource. The ID must be unique in the alert rule.
          */
-        readonly id: string;
+        readonly id: string | ros.IResolvable;
         /**
          * @Property arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:/{Message resource type}/{Resource
      * name}/message. Example: acs:mns:cn-hangzhou:111:/queues/test/message.
@@ -2151,7 +2151,7 @@ export namespace RosMetricRuleTargets {
      * {Resource name}: the name of a queue if the resource type is queues, or the name of
      * a topic if the type is topics.
          */
-        readonly arn: string;
+        readonly arn: string | ros.IResolvable;
     }
 }
 /**
@@ -2198,7 +2198,7 @@ export interface RosMetricRuleTemplateProps {
     /**
      * @Property name: The name of the alert template.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property alertTemplates: Valid values of N: 0 to 200.
@@ -2208,19 +2208,19 @@ export interface RosMetricRuleTemplateProps {
     /**
      * @Property description: The description of the alert template.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute
      * to obtain information about the alert templates. The combination of version and ID
      * uniquely identifies an alert template.
      */
-    readonly restVersion?: number;
+    readonly restVersion?: number | ros.IResolvable;
 
     /**
      * @Property templateId: The ID of the alert template.
      */
-    readonly templateId?: number;
+    readonly templateId?: number | ros.IResolvable;
 }
 
 /**
@@ -2288,7 +2288,7 @@ export class RosMetricRuleTemplate extends ros.RosResource {
     /**
      * @Attribute Id: Alarm template ID.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2296,7 +2296,7 @@ export class RosMetricRuleTemplate extends ros.RosResource {
     /**
      * @Property name: The name of the alert template.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property alertTemplates: Valid values of N: 0 to 200.
@@ -2306,19 +2306,19 @@ export class RosMetricRuleTemplate extends ros.RosResource {
     /**
      * @Property description: The description of the alert template.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute
      * to obtain information about the alert templates. The combination of version and ID
      * uniquely identifies an alert template.
      */
-    public restVersion: number | undefined;
+    public restVersion: number | ros.IResolvable | undefined;
 
     /**
      * @Property templateId: The ID of the alert template.
      */
-    public templateId: number | undefined;
+    public templateId: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTemplate`.
@@ -2329,7 +2329,7 @@ export class RosMetricRuleTemplate extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMetricRuleTemplateProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMetricRuleTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
+        this.attrId = this.getAtt('Id');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -2363,7 +2363,7 @@ export namespace RosMetricRuleTemplate {
          * @Property metricName: The name of the metric.
      * Note For more information, see DescribeMetricMetaList or Appendix 1: Metrics.
          */
-        readonly metricName: string;
+        readonly metricName: string | ros.IResolvable;
         /**
          * @Property category: The abbreviation of the service name.Value including but not limited to:
      * ecs: Elastic Compute Service (ECS) instances provided by Alibaba Cloud and hosts not
@@ -2403,7 +2403,7 @@ export namespace RosMetricRuleTemplate {
      * sls: Log Service
      * vpn: VPN Gateway
          */
-        readonly category: string;
+        readonly category: string | ros.IResolvable;
         /**
          * @Property escalations: undefined
          */
@@ -2413,25 +2413,25 @@ export namespace RosMetricRuleTemplate {
      * The default value is the lowest frequency at which the metric is polled. Typically,
      * you do not need to specify the aggregation period.
          */
-        readonly period?: number;
+        readonly period?: number | ros.IResolvable;
         /**
          * @Property webhook: The callback URL to which a POST request is sent when an alert is triggered based
      * on the alert rule.
          */
-        readonly webhook?: string;
+        readonly webhook?: string | ros.IResolvable;
         /**
          * @Property namespace: The namespace of the service. 
      * Note For more information, see DescribeMetricMetaList or Appendix 1: Metrics.
          */
-        readonly namespace: string;
+        readonly namespace: string | ros.IResolvable;
         /**
          * @Property ruleName: The name of the alert rule.
          */
-        readonly ruleName: string;
+        readonly ruleName: string | ros.IResolvable;
         /**
          * @Property selector: The dimension of the alert. It is an extended field.
          */
-        readonly selector?: string;
+        readonly selector?: string | ros.IResolvable;
     }
 }
 /**
@@ -2501,19 +2501,19 @@ export namespace RosMetricRuleTemplate {
      * GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
      * LessThanLastPeriod: less than the metric value in the last monitoring cycle
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value is measured before a alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for alerts.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for alerts.
          */
-        readonly threshold: string;
+        readonly threshold: string | ros.IResolvable;
     }
 }
 /**
@@ -2635,19 +2635,19 @@ export namespace RosMetricRuleTemplate {
      * GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
      * LessThanLastPeriod: less than the metric value in the last monitoring cycle
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value is measured before a alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for alerts.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for alerts.
          */
-        readonly threshold: string;
+        readonly threshold: string | ros.IResolvable;
     }
 }
 /**
@@ -2715,19 +2715,19 @@ export namespace RosMetricRuleTemplate {
      * GreaterThanLastPeriod: greater than the metric value in the last monitoring cycle
      * LessThanLastPeriod: less than the metric value in the last monitoring cycle
          */
-        readonly comparisonOperator: string;
+        readonly comparisonOperator: string | ros.IResolvable;
         /**
          * @Property times: The consecutive number of times for which the metric value is measured before a alert is triggered.
          */
-        readonly times: number;
+        readonly times: number | ros.IResolvable;
         /**
          * @Property statistics: The statistical method for alerts.
          */
-        readonly statistics: string;
+        readonly statistics: string | ros.IResolvable;
         /**
          * @Property threshold: The threshold for alerts.
          */
-        readonly threshold: string;
+        readonly threshold: string | ros.IResolvable;
     }
 }
 /**
@@ -2784,13 +2784,13 @@ export interface RosMonitorGroupProps {
     /**
      * @Property groupName: The name of the application group.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property contactGroups: The alert contact group. Alert notifications for the application group are sent to
      * the specified alert contact group.
      */
-    readonly contactGroups?: string;
+    readonly contactGroups?: string | ros.IResolvable;
 }
 
 /**
@@ -2845,7 +2845,7 @@ export class RosMonitorGroup extends ros.RosResource {
     /**
      * @Attribute GroupId: Application group ID generated after the group is created.
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2853,13 +2853,13 @@ export class RosMonitorGroup extends ros.RosResource {
     /**
      * @Property groupName: The name of the application group.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property contactGroups: The alert contact group. Alert notifications for the application group are sent to
      * the specified alert contact group.
      */
-    public contactGroups: string | undefined;
+    public contactGroups: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::MonitorGroup`.
@@ -2870,7 +2870,7 @@ export class RosMonitorGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMonitorGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMonitorGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
+        this.attrGroupId = this.getAtt('GroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
@@ -2897,7 +2897,7 @@ export interface RosMonitorGroupInstancesProps {
     /**
      * @Property groupId: The ID of the application group.
      */
-    readonly groupId: number;
+    readonly groupId: number | ros.IResolvable;
 
     /**
      * @Property instances:
@@ -2965,7 +2965,7 @@ export class RosMonitorGroupInstances extends ros.RosResource {
     /**
      * @Attribute GroupId: The ID of the application group.
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2973,7 +2973,7 @@ export class RosMonitorGroupInstances extends ros.RosResource {
     /**
      * @Property groupId: The ID of the application group.
      */
-    public groupId: number;
+    public groupId: number | ros.IResolvable;
 
     /**
      * @Property instances:
@@ -2989,7 +2989,7 @@ export class RosMonitorGroupInstances extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMonitorGroupInstancesProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMonitorGroupInstances.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
+        this.attrGroupId = this.getAtt('GroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupId = props.groupId;
@@ -3016,7 +3016,7 @@ export namespace RosMonitorGroupInstances {
         /**
          * @Property instanceName: The name of the instance.
          */
-        readonly instanceName: string;
+        readonly instanceName: string | ros.IResolvable;
         /**
          * @Property category: The abbreviation of the service name. Valid values:
      * ECS (including Alibaba Cloud and non-Alibaba Cloud hosts)
@@ -3055,15 +3055,15 @@ export namespace RosMonitorGroupInstances {
      * SLS (Log Service)
      * VPN (VPN Gateway )
          */
-        readonly category: string;
+        readonly category: string | ros.IResolvable;
         /**
          * @Property instanceId: The ID of the resource instance.
          */
-        readonly instanceId: string;
+        readonly instanceId: string | ros.IResolvable;
         /**
          * @Property regionId: The ID of the region where the instance is deployed, such as cn-hangzhou.
          */
-        readonly regionId: string;
+        readonly regionId: string | ros.IResolvable;
     }
 }
 /**
@@ -3114,17 +3114,17 @@ export interface RosMonitoringAgentProcessProps {
     /**
      * @Property instanceId: The ID of the instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property processName: The name of the process.
      */
-    readonly processName?: string;
+    readonly processName?: string | ros.IResolvable;
 
     /**
      * @Property processUser: The user who launched the process.
      */
-    readonly processUser?: string;
+    readonly processUser?: string | ros.IResolvable;
 }
 
 /**
@@ -3181,7 +3181,7 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
     /**
      * @Attribute Id: The process ID.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3189,17 +3189,17 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
     /**
      * @Property instanceId: The ID of the instance.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property processName: The name of the process.
      */
-    public processName: string | undefined;
+    public processName: string | ros.IResolvable | undefined;
 
     /**
      * @Property processUser: The user who launched the process.
      */
-    public processUser: string | undefined;
+    public processUser: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
@@ -3210,7 +3210,7 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMonitoringAgentProcessProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMonitoringAgentProcess.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
+        this.attrId = this.getAtt('Id');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;
@@ -3229,4 +3229,254 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosMonitoringAgentProcessPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CMS::SiteMonitor`
+ */
+export interface RosSiteMonitorProps {
+
+    /**
+     * @Property address: The URL or IP address monitored by the monitoring task.
+     */
+    readonly address: string | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
+     * It can contain letters, digits, and underscores (_).
+     */
+    readonly taskName: string | ros.IResolvable;
+
+    /**
+     * @Property taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
+     * UDP, DNS, SMTP, POP3, and FTP.
+     */
+    readonly taskType: string | ros.IResolvable;
+
+    /**
+     * @Property alertIds:
+     */
+    readonly alertIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
+     * minutes. Default value: 1.
+     */
+    readonly interval?: number | ros.IResolvable;
+
+    /**
+     * @Property ispCities: The information about detection points, which is specified in a JSON array. Example:
+     * [{"city":"546","isp":"465"},{"city":"572","isp":"465"},{"city":"738","isp":"465"}]. The three city codes represent Beijing, Hangzhou, and Qingdao.
+     * Note You can call the DescribeSiteMonitorISPCityList API operation to query the detection
+     * points that can be used to create site monitoring tasks. For more information, see
+     * DescribeSiteMonitorISPCityList . If this parameter is not specified, the system randomly selects three detection
+     * points for site monitoring.
+     */
+    readonly ispCities?: Array<RosSiteMonitor.IspCitiesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property optionsJson: The extended options of the protocol that is used by the site monitoring task. The
+     * options vary based on the protocol.
+     */
+    readonly optionsJson?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSiteMonitorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSiteMonitorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteMonitorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('address', ros.requiredValidator)(properties.address));
+    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
+    errors.collect(ros.propertyValidator('optionsJson', ros.validateString)(properties.optionsJson));
+    errors.collect(ros.propertyValidator('taskName', ros.requiredValidator)(properties.taskName));
+    errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
+    errors.collect(ros.propertyValidator('taskType', ros.requiredValidator)(properties.taskType));
+    errors.collect(ros.propertyValidator('taskType', ros.validateString)(properties.taskType));
+    errors.collect(ros.propertyValidator('ispCities', ros.listValidator(RosSiteMonitor_IspCitiesPropertyValidator))(properties.ispCities));
+    errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
+    errors.collect(ros.propertyValidator('alertIds', ros.listValidator(ros.validateString))(properties.alertIds));
+    return errors.wrap('supplied properties not correct for "RosSiteMonitorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::SiteMonitor` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSiteMonitorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::SiteMonitor` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSiteMonitorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Address: ros.stringToRosTemplate(properties.address),
+      TaskName: ros.stringToRosTemplate(properties.taskName),
+      TaskType: ros.stringToRosTemplate(properties.taskType),
+      AlertIds: ros.listMapper(ros.stringToRosTemplate)(properties.alertIds),
+      Interval: ros.numberToRosTemplate(properties.interval),
+      IspCities: ros.listMapper(rosSiteMonitorIspCitiesPropertyToRosTemplate)(properties.ispCities),
+      OptionsJson: ros.stringToRosTemplate(properties.optionsJson),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CMS::SiteMonitor`
+ */
+export class RosSiteMonitor extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::SiteMonitor";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute TaskId: The ID of the site monitoring task.
+     */
+    public readonly attrTaskId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property address: The URL or IP address monitored by the monitoring task.
+     */
+    public address: string | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
+     * It can contain letters, digits, and underscores (_).
+     */
+    public taskName: string | ros.IResolvable;
+
+    /**
+     * @Property taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
+     * UDP, DNS, SMTP, POP3, and FTP.
+     */
+    public taskType: string | ros.IResolvable;
+
+    /**
+     * @Property alertIds:
+     */
+    public alertIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
+     * minutes. Default value: 1.
+     */
+    public interval: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ispCities: The information about detection points, which is specified in a JSON array. Example:
+     * [{"city":"546","isp":"465"},{"city":"572","isp":"465"},{"city":"738","isp":"465"}]. The three city codes represent Beijing, Hangzhou, and Qingdao.
+     * Note You can call the DescribeSiteMonitorISPCityList API operation to query the detection
+     * points that can be used to create site monitoring tasks. For more information, see
+     * DescribeSiteMonitorISPCityList . If this parameter is not specified, the system randomly selects three detection
+     * points for site monitoring.
+     */
+    public ispCities: Array<RosSiteMonitor.IspCitiesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property optionsJson: The extended options of the protocol that is used by the site monitoring task. The
+     * options vary based on the protocol.
+     */
+    public optionsJson: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CMS::SiteMonitor`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSiteMonitorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSiteMonitor.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTaskId = this.getAtt('TaskId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.address = props.address;
+        this.taskName = props.taskName;
+        this.taskType = props.taskType;
+        this.alertIds = props.alertIds;
+        this.interval = props.interval;
+        this.ispCities = props.ispCities;
+        this.optionsJson = props.optionsJson;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            address: this.address,
+            taskName: this.taskName,
+            taskType: this.taskType,
+            alertIds: this.alertIds,
+            interval: this.interval,
+            ispCities: this.ispCities,
+            optionsJson: this.optionsJson,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSiteMonitorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSiteMonitor {
+    /**
+     * @stability external
+     */
+    export interface IspCitiesProperty {
+        /**
+         * @Property isp:
+         */
+        readonly isp: string | ros.IResolvable;
+        /**
+         * @Property city:
+         */
+        readonly city: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IspCitiesProperty`
+ *
+ * @param properties - the TypeScript properties of a `IspCitiesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSiteMonitor_IspCitiesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isp', ros.requiredValidator)(properties.isp));
+    errors.collect(ros.propertyValidator('isp', ros.validateString)(properties.isp));
+    errors.collect(ros.propertyValidator('city', ros.requiredValidator)(properties.city));
+    errors.collect(ros.propertyValidator('city', ros.validateString)(properties.city));
+    return errors.wrap('supplied properties not correct for "IspCitiesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::SiteMonitor.IspCities` resource
+ *
+ * @param properties - the TypeScript properties of a `IspCitiesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::SiteMonitor.IspCities` resource.
+ */
+// @ts-ignore TS6133
+function rosSiteMonitorIspCitiesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSiteMonitor_IspCitiesPropertyValidator(properties).assertSuccess();
+    return {
+      Isp: ros.stringToRosTemplate(properties.isp),
+      City: ros.stringToRosTemplate(properties.city),
+    };
 }

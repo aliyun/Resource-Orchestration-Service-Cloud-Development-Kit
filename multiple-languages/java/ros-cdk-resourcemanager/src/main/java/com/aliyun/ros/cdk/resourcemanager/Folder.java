@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS resource type:  `ALIYUN::ResourceManager::Folder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.316Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.Folder")
 public class Folder extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ResourceManager::Folder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Folder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.FolderProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ResourceManager::Folder`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Folder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.FolderProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,26 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute FolderId: The ID of the folder.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute FolderName: The name of the folder.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFolderName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFolderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFolderName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFolderName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ParentFolderId: The ID of the parent folder.
+     * <p>
+     * If not set, the system default value will be used
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrParentFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrParentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrParentFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrParentFolderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +77,8 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.resourcemanager.Folder> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +86,8 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,19 +106,47 @@ public class Folder extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property folderName: The name of the folder.
+         * <p>
          * @return {@code this}
-         * @param folderName This parameter is required.
+         * @param folderName Property folderName: The name of the folder. This parameter is required.
          */
         public Builder folderName(final java.lang.String folderName) {
             this.props.folderName(folderName);
             return this;
         }
+        /**
+         * Property folderName: The name of the folder.
+         * <p>
+         * @return {@code this}
+         * @param folderName Property folderName: The name of the folder. This parameter is required.
+         */
+        public Builder folderName(final com.aliyun.ros.cdk.core.IResolvable folderName) {
+            this.props.folderName(folderName);
+            return this;
+        }
 
         /**
+         * Property parentFolderId: The ID of the parent folder.
+         * <p>
+         * If not set, the system default value will be used
+         * <p>
          * @return {@code this}
-         * @param parentFolderId This parameter is required.
+         * @param parentFolderId Property parentFolderId: The ID of the parent folder. This parameter is required.
          */
         public Builder parentFolderId(final java.lang.String parentFolderId) {
+            this.props.parentFolderId(parentFolderId);
+            return this;
+        }
+        /**
+         * Property parentFolderId: The ID of the parent folder.
+         * <p>
+         * If not set, the system default value will be used
+         * <p>
+         * @return {@code this}
+         * @param parentFolderId Property parentFolderId: The ID of the parent folder. This parameter is required.
+         */
+        public Builder parentFolderId(final com.aliyun.ros.cdk.core.IResolvable parentFolderId) {
             this.props.parentFolderId(parentFolderId);
             return this;
         }

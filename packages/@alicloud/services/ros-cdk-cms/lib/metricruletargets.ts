@@ -11,7 +11,7 @@ export interface MetricRuleTargetsProps {
     /**
      * Property ruleId: The ID of the alert rule.
      */
-    readonly ruleId: string;
+    readonly ruleId: string | ros.IResolvable;
 
     /**
      * Property targets: undefined
@@ -32,12 +32,12 @@ export class MetricRuleTargets extends ros.Resource {
     /**
      * Attribute Arns: The ARN list of targets
      */
-    public readonly attrArns: any;
+    public readonly attrArns: ros.IResolvable;
 
     /**
      * Attribute Ids: The ID list of targets
      */
-    public readonly attrIds: any;
+    public readonly attrIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTargets`.

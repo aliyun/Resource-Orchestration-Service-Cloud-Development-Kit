@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  `ALIYUN::EDAS::ClusterMember`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.424Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.ClusterMember")
 public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::ClusterMember`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ClusterMember(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.ClusterMemberProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::EDAS::ClusterMember`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ClusterMember(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.edas.ClusterMemberProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ClusterId: Cluster ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterMemberIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterMemberIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterMemberIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterMemberIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceIds: ECS instance IDs.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.edas.ClusterMember> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,28 +104,64 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property clusterId: Cluster ID to import ECS instance.
+         * <p>
          * @return {@code this}
-         * @param clusterId This parameter is required.
+         * @param clusterId Property clusterId: Cluster ID to import ECS instance. This parameter is required.
          */
         public Builder clusterId(final java.lang.String clusterId) {
             this.props.clusterId(clusterId);
             return this;
         }
+        /**
+         * Property clusterId: Cluster ID to import ECS instance.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: Cluster ID to import ECS instance. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
 
         /**
+         * Property instanceIds: ECS instance ID list to import.
+         * <p>
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param instanceIds Property instanceIds: ECS instance ID list to import. This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<java.lang.String> instanceIds) {
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.props.instanceIds(instanceIds);
+            return this;
+        }
+        /**
+         * Property instanceIds: ECS instance ID list to import.
+         * <p>
+         * @return {@code this}
+         * @param instanceIds Property instanceIds: ECS instance ID list to import. This parameter is required.
+         */
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
 
         /**
+         * Property password: Password ECS hosts need to import (ECS settings can continue to use purchased).
+         * <p>
          * @return {@code this}
-         * @param password This parameter is required.
+         * @param password Property password: Password ECS hosts need to import (ECS settings can continue to use purchased). This parameter is required.
          */
         public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * Property password: Password ECS hosts need to import (ECS settings can continue to use purchased).
+         * <p>
+         * @return {@code this}
+         * @param password Property password: Password ECS hosts need to import (ECS settings can continue to use purchased). This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
             return this;
         }

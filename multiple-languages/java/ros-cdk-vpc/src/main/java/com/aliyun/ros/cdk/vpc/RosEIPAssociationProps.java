@@ -3,28 +3,28 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIPAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPAssociationProps.Jsii$Proxy.class)
 public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAllocationId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAllocationId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
@@ -38,10 +38,10 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosEIPAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEIPAssociationProps> {
-        private java.lang.String allocationId;
-        private java.lang.String instanceId;
-        private java.lang.String mode;
-        private java.lang.String privateIpAddress;
+        private java.lang.Object allocationId;
+        private java.lang.Object instanceId;
+        private java.lang.Object mode;
+        private java.lang.Object privateIpAddress;
 
         /**
          * Sets the value of {@link RosEIPAssociationProps#getAllocationId}
@@ -49,6 +49,16 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
          * @return {@code this}
          */
         public Builder allocationId(java.lang.String allocationId) {
+            this.allocationId = allocationId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPAssociationProps#getAllocationId}
+         * @param allocationId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder allocationId(com.aliyun.ros.cdk.core.IResolvable allocationId) {
             this.allocationId = allocationId;
             return this;
         }
@@ -64,6 +74,16 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosEIPAssociationProps#getInstanceId}
+         * @param instanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPAssociationProps#getMode}
          * @param mode the value to be set.
          * @return {@code this}
@@ -74,11 +94,31 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosEIPAssociationProps#getMode}
+         * @param mode the value to be set.
+         * @return {@code this}
+         */
+        public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPAssociationProps#getPrivateIpAddress}
          * @param privateIpAddress the value to be set.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPAssociationProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             return this;
         }
@@ -99,10 +139,10 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosEIPAssociationProps {
-        private final java.lang.String allocationId;
-        private final java.lang.String instanceId;
-        private final java.lang.String mode;
-        private final java.lang.String privateIpAddress;
+        private final java.lang.Object allocationId;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object mode;
+        private final java.lang.Object privateIpAddress;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -110,16 +150,16 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String allocationId, final java.lang.String instanceId, final java.lang.String mode, final java.lang.String privateIpAddress) {
+        protected Jsii$Proxy(final java.lang.Object allocationId, final java.lang.Object instanceId, final java.lang.Object mode, final java.lang.Object privateIpAddress) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.allocationId = java.util.Objects.requireNonNull(allocationId, "allocationId is required");
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
@@ -128,22 +168,22 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
-        public final java.lang.String getAllocationId() {
+        public final java.lang.Object getAllocationId() {
             return this.allocationId;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getMode() {
+        public final java.lang.Object getMode() {
             return this.mode;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 

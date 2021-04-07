@@ -3,28 +3,41 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.336Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupId: The group ID of the consumption cluster.
+     * <p>
+     * When creating a group ID, pay attention to the following aspects:
+     * A group ID starts with"GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+     * A group ID ranges from 7 to 64 bytes.
+     * Once a group ID is created, it cannot be edited anymore.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property instanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
+     * Property groupType: Group ID specify the creation of applicable agreements.
+     * <p>
+     * Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
+     * tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
+     * http: represents the Group ID was created only for the HTTP protocol messaging.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupType() {
         return null;
     }
 
     /**
+     * Property remark: The remarks on the request.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRemark() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
         return null;
     }
 
@@ -38,14 +51,18 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link GroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
-        private java.lang.String groupId;
-        private java.lang.String instanceId;
-        private java.lang.String groupType;
-        private java.lang.String remark;
+        private java.lang.Object groupId;
+        private java.lang.Object instanceId;
+        private java.lang.Object groupType;
+        private java.lang.Object remark;
 
         /**
          * Sets the value of {@link GroupProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The group ID of the consumption cluster. This parameter is required.
+         *                When creating a group ID, pay attention to the following aspects:
+         *                A group ID starts with"GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+         *                A group ID ranges from 7 to 64 bytes.
+         *                Once a group ID is created, it cannot be edited anymore.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -54,8 +71,22 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getGroupId}
+         * @param groupId Property groupId: The group ID of the consumption cluster. This parameter is required.
+         *                When creating a group ID, pay attention to the following aspects:
+         *                A group ID starts with"GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+         *                A group ID ranges from 7 to 64 bytes.
+         *                Once a group ID is created, it cannot be edited anymore.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getInstanceId}
-         * @param instanceId the value to be set. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -64,8 +95,21 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getGroupType}
-         * @param groupType the value to be set.
+         * @param groupType Property groupType: Group ID specify the creation of applicable agreements.
+         *                  Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
+         *                  tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
+         *                  http: represents the Group ID was created only for the HTTP protocol messaging.
          * @return {@code this}
          */
         public Builder groupType(java.lang.String groupType) {
@@ -74,11 +118,34 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getGroupType}
+         * @param groupType Property groupType: Group ID specify the creation of applicable agreements.
+         *                  Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
+         *                  tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
+         *                  http: represents the Group ID was created only for the HTTP protocol messaging.
+         * @return {@code this}
+         */
+        public Builder groupType(com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.groupType = groupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getRemark}
-         * @param remark the value to be set.
+         * @param remark Property remark: The remarks on the request.
          * @return {@code this}
          */
         public Builder remark(java.lang.String remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getRemark}
+         * @param remark Property remark: The remarks on the request.
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
             this.remark = remark;
             return this;
         }
@@ -99,10 +166,10 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GroupProps {
-        private final java.lang.String groupId;
-        private final java.lang.String instanceId;
-        private final java.lang.String groupType;
-        private final java.lang.String remark;
+        private final java.lang.Object groupId;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object groupType;
+        private final java.lang.Object remark;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -110,16 +177,16 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupId, final java.lang.String instanceId, final java.lang.String groupType, final java.lang.String remark) {
+        protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object instanceId, final java.lang.Object groupType, final java.lang.Object remark) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
@@ -128,22 +195,22 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getGroupType() {
+        public final java.lang.Object getGroupType() {
             return this.groupType;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
         }
 

@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class DiskAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IDiskAttachmentProps
     {
         /// <summary>Property diskId: The disk id to attached.</summary>
-        [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DiskId
+        [JsiiProperty(name: "diskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DiskId
         {
             get;
             set;
         }
 
         /// <summary>Property instanceId: The instanceId to attach the disk.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceId
         {
             get;
             set;
@@ -52,8 +52,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// could be /dev/xvd[b-z]. If not specification, will use default value.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Device
+        [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Device
         {
             get;
             set;

@@ -4,8 +4,11 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>(experimental) A set of constructs to be used as a dependable&#xD; &#xD; This class can be used when a set of constructs which are disjoint in the&#xD; construct tree needs to be combined to be used as a single dependable.</summary>
+    /// <summary>(experimental) A set of constructs to be used as a dependable.</summary>
     /// <remarks>
+    /// This class can be used when a set of constructs which are disjoint in the
+    /// construct tree needs to be combined to be used as a single dependable.
+    ///
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.ConcreteDependable), fullyQualifiedName: "@alicloud/ros-cdk-core.ConcreteDependable")]

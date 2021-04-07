@@ -11,12 +11,12 @@ export interface ManagedPolicyProps {
     /**
      * Property policyName: Specifies the authorization policy name, containing up to 128 characters.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * Property description: Specifies the authorization policy description, containing up to 1024 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property groups: The names of groups to attach to this policy.
@@ -57,7 +57,7 @@ export class ManagedPolicy extends ros.Resource {
     /**
      * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
      */
-    public readonly attrPolicyName: any;
+    public readonly attrPolicyName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::ManagedPolicy`.

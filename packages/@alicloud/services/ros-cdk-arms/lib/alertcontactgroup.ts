@@ -11,22 +11,22 @@ export interface AlertContactGroupProps {
     /**
      * Property contactGroupName: The name of the alert contact group that you want to create.
      */
-    readonly contactGroupName: string;
+    readonly contactGroupName: string | ros.IResolvable;
 
     /**
      * Property contactIds: The list of alert contact ID.
      */
-    readonly contactIds: number[] | ros.IResolvable;
+    readonly contactIds: Array<number | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property proxyUserId: Internal parameters
      */
-    readonly proxyUserId?: string;
+    readonly proxyUserId?: string | ros.IResolvable;
 
     /**
      * Property regionId: Region ID. Default to region of stack.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 }
 
 /**
@@ -42,7 +42,7 @@ export class AlertContactGroup extends ros.Resource {
     /**
      * Attribute ContactGroupId: The ID of the alert contact group that you created.
      */
-    public readonly attrContactGroupId: any;
+    public readonly attrContactGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ARMS::AlertContactGroup`.

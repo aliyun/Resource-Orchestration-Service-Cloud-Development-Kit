@@ -11,17 +11,17 @@ export interface GrantInstanceToCenProps {
     /**
      * Property cenId: The ID of the CEN instance to be authorized.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 
     /**
      * Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
      */
-    readonly cenOwnerId: number;
+    readonly cenOwnerId: number | ros.IResolvable;
 
     /**
      * Property instanceId: The ID of the network instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property instanceType: The type of the network instance. Valid values:
@@ -29,7 +29,7 @@ export interface GrantInstanceToCenProps {
      * VBR: Virtual Border Router (VBR).
      * CCN: Cloud Connect Network (CCN).
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 }
 
 /**
@@ -45,12 +45,12 @@ export class GrantInstanceToCen extends ros.Resource {
     /**
      * Attribute CenId: The ID of the CEN instance to be authorized.
      */
-    public readonly attrCenId: any;
+    public readonly attrCenId: ros.IResolvable;
 
     /**
      * Attribute InstanceId: The ID of the network instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::GrantInstanceToCen`.

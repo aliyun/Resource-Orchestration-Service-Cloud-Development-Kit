@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * Properties for defining a `ALIYUN::DATAHUB::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.393Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.046Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getComment();
+    @org.jetbrains.annotations.NotNull java.lang.Object getComment();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRecordType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRecordType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopicName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopicName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getLifecycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLifecycle() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecordSchema() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecordSchema() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getShardCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
         return null;
     }
 
@@ -52,13 +52,13 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicProps> {
-        private java.lang.String comment;
-        private java.lang.String projectName;
-        private java.lang.String recordType;
-        private java.lang.String topicName;
-        private java.lang.Number lifecycle;
-        private java.lang.String recordSchema;
-        private java.lang.Number shardCount;
+        private java.lang.Object comment;
+        private java.lang.Object projectName;
+        private java.lang.Object recordType;
+        private java.lang.Object topicName;
+        private java.lang.Object lifecycle;
+        private java.lang.Object recordSchema;
+        private java.lang.Object shardCount;
 
         /**
          * Sets the value of {@link RosTopicProps#getComment}
@@ -66,6 +66,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder comment(java.lang.String comment) {
+            this.comment = comment;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getComment}
+         * @param comment the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder comment(com.aliyun.ros.cdk.core.IResolvable comment) {
             this.comment = comment;
             return this;
         }
@@ -81,11 +91,31 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getProjectName}
+         * @param projectName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getRecordType}
          * @param recordType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder recordType(java.lang.String recordType) {
+            this.recordType = recordType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getRecordType}
+         * @param recordType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder recordType(com.aliyun.ros.cdk.core.IResolvable recordType) {
             this.recordType = recordType;
             return this;
         }
@@ -101,11 +131,31 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getTopicName}
+         * @param topicName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder topicName(com.aliyun.ros.cdk.core.IResolvable topicName) {
+            this.topicName = topicName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getLifecycle}
          * @param lifecycle the value to be set.
          * @return {@code this}
          */
         public Builder lifecycle(java.lang.Number lifecycle) {
+            this.lifecycle = lifecycle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getLifecycle}
+         * @param lifecycle the value to be set.
+         * @return {@code this}
+         */
+        public Builder lifecycle(com.aliyun.ros.cdk.core.IResolvable lifecycle) {
             this.lifecycle = lifecycle;
             return this;
         }
@@ -121,11 +171,31 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getRecordSchema}
+         * @param recordSchema the value to be set.
+         * @return {@code this}
+         */
+        public Builder recordSchema(com.aliyun.ros.cdk.core.IResolvable recordSchema) {
+            this.recordSchema = recordSchema;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getShardCount}
          * @param shardCount the value to be set.
          * @return {@code this}
          */
         public Builder shardCount(java.lang.Number shardCount) {
+            this.shardCount = shardCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getShardCount}
+         * @param shardCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder shardCount(com.aliyun.ros.cdk.core.IResolvable shardCount) {
             this.shardCount = shardCount;
             return this;
         }
@@ -146,13 +216,13 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTopicProps {
-        private final java.lang.String comment;
-        private final java.lang.String projectName;
-        private final java.lang.String recordType;
-        private final java.lang.String topicName;
-        private final java.lang.Number lifecycle;
-        private final java.lang.String recordSchema;
-        private final java.lang.Number shardCount;
+        private final java.lang.Object comment;
+        private final java.lang.Object projectName;
+        private final java.lang.Object recordType;
+        private final java.lang.Object topicName;
+        private final java.lang.Object lifecycle;
+        private final java.lang.Object recordSchema;
+        private final java.lang.Object shardCount;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,19 +230,19 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.recordType = software.amazon.jsii.Kernel.get(this, "recordType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.lifecycle = software.amazon.jsii.Kernel.get(this, "lifecycle", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.recordSchema = software.amazon.jsii.Kernel.get(this, "recordSchema", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recordType = software.amazon.jsii.Kernel.get(this, "recordType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.lifecycle = software.amazon.jsii.Kernel.get(this, "lifecycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recordSchema = software.amazon.jsii.Kernel.get(this, "recordSchema", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String comment, final java.lang.String projectName, final java.lang.String recordType, final java.lang.String topicName, final java.lang.Number lifecycle, final java.lang.String recordSchema, final java.lang.Number shardCount) {
+        protected Jsii$Proxy(final java.lang.Object comment, final java.lang.Object projectName, final java.lang.Object recordType, final java.lang.Object topicName, final java.lang.Object lifecycle, final java.lang.Object recordSchema, final java.lang.Object shardCount) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.comment = java.util.Objects.requireNonNull(comment, "comment is required");
             this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
@@ -184,37 +254,37 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getComment() {
+        public final java.lang.Object getComment() {
             return this.comment;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 
         @Override
-        public final java.lang.String getRecordType() {
+        public final java.lang.Object getRecordType() {
             return this.recordType;
         }
 
         @Override
-        public final java.lang.String getTopicName() {
+        public final java.lang.Object getTopicName() {
             return this.topicName;
         }
 
         @Override
-        public final java.lang.Number getLifecycle() {
+        public final java.lang.Object getLifecycle() {
             return this.lifecycle;
         }
 
         @Override
-        public final java.lang.String getRecordSchema() {
+        public final java.lang.Object getRecordSchema() {
             return this.recordSchema;
         }
 
         @Override
-        public final java.lang.Number getShardCount() {
+        public final java.lang.Object getShardCount() {
             return this.shardCount;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.DynamicTagGroup")
 public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::DynamicTagGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DynamicTagGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.DynamicTagGroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::DynamicTagGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DynamicTagGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.DynamicTagGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DynamicTagRuleId: Dynamic tag rule ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDynamicTagRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDynamicTagRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDynamicTagRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDynamicTagRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TagKey: Tag key.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTagKey() {
-        return software.amazon.jsii.Kernel.get(this, "attrTagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTagKey() {
+        return software.amazon.jsii.Kernel.get(this, "attrTagKey", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.DynamicTagGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,34 +97,72 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property contactGroupList: Alarm contacts.
+         * <p>
          * @return {@code this}
-         * @param contactGroupList This parameter is required.
+         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
          */
-        public Builder contactGroupList(final java.util.List<java.lang.String> contactGroupList) {
+        public Builder contactGroupList(final com.aliyun.ros.cdk.core.IResolvable contactGroupList) {
+            this.props.contactGroupList(contactGroupList);
+            return this;
+        }
+        /**
+         * Property contactGroupList: Alarm contacts.
+         * <p>
+         * @return {@code this}
+         * @param contactGroupList Property contactGroupList: Alarm contacts. This parameter is required.
+         */
+        public Builder contactGroupList(final java.util.List<? extends java.lang.Object> contactGroupList) {
             this.props.contactGroupList(contactGroupList);
             return this;
         }
 
         /**
+         * Property tagKey: Tag key.
+         * <p>
          * @return {@code this}
-         * @param tagKey This parameter is required.
+         * @param tagKey Property tagKey: Tag key. This parameter is required.
          */
         public Builder tagKey(final java.lang.String tagKey) {
             this.props.tagKey(tagKey);
             return this;
         }
+        /**
+         * Property tagKey: Tag key.
+         * <p>
+         * @return {@code this}
+         * @param tagKey Property tagKey: Tag key. This parameter is required.
+         */
+        public Builder tagKey(final com.aliyun.ros.cdk.core.IResolvable tagKey) {
+            this.props.tagKey(tagKey);
+            return this;
+        }
 
         /**
+         * Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default.
+         * <p>
+         * Values are:
+         * true: enable installation
+         * Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
+         * false: disable installation
+         * <p>
          * @return {@code this}
-         * @param enableInstallAgent This parameter is required.
+         * @param enableInstallAgent Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. This parameter is required.
          */
         public Builder enableInstallAgent(final java.lang.Boolean enableInstallAgent) {
             this.props.enableInstallAgent(enableInstallAgent);
             return this;
         }
         /**
+         * Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default.
+         * <p>
+         * Values are:
+         * true: enable installation
+         * Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
+         * false: disable installation
+         * <p>
          * @return {@code this}
-         * @param enableInstallAgent This parameter is required.
+         * @param enableInstallAgent Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. This parameter is required.
          */
         public Builder enableInstallAgent(final com.aliyun.ros.cdk.core.IResolvable enableInstallAgent) {
             this.props.enableInstallAgent(enableInstallAgent);
@@ -122,16 +170,28 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property enableSubscribeEvent: Whether the event subscription is enabled.
+         * <p>
+         * Values are
+         * :true: enable event subscription
+         * false: disable event subscription
+         * <p>
          * @return {@code this}
-         * @param enableSubscribeEvent This parameter is required.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled. This parameter is required.
          */
         public Builder enableSubscribeEvent(final java.lang.Boolean enableSubscribeEvent) {
             this.props.enableSubscribeEvent(enableSubscribeEvent);
             return this;
         }
         /**
+         * Property enableSubscribeEvent: Whether the event subscription is enabled.
+         * <p>
+         * Values are
+         * :true: enable event subscription
+         * false: disable event subscription
+         * <p>
          * @return {@code this}
-         * @param enableSubscribeEvent This parameter is required.
+         * @param enableSubscribeEvent Property enableSubscribeEvent: Whether the event subscription is enabled. This parameter is required.
          */
         public Builder enableSubscribeEvent(final com.aliyun.ros.cdk.core.IResolvable enableSubscribeEvent) {
             this.props.enableSubscribeEvent(enableSubscribeEvent);
@@ -139,16 +199,24 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property matchExpress: Matching list.
+         * <p>
+         * Only supports one currently.
+         * <p>
          * @return {@code this}
-         * @param matchExpress This parameter is required.
+         * @param matchExpress Property matchExpress: Matching list. This parameter is required.
          */
         public Builder matchExpress(final com.aliyun.ros.cdk.core.IResolvable matchExpress) {
             this.props.matchExpress(matchExpress);
             return this;
         }
         /**
+         * Property matchExpress: Matching list.
+         * <p>
+         * Only supports one currently.
+         * <p>
          * @return {@code this}
-         * @param matchExpress This parameter is required.
+         * @param matchExpress Property matchExpress: Matching list. This parameter is required.
          */
         public Builder matchExpress(final java.util.List<? extends java.lang.Object> matchExpress) {
             this.props.matchExpress(matchExpress);
@@ -156,19 +224,57 @@ public class DynamicTagGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         * <p>
+         * Values are:
+         * and: the relationship between
+         * or: the relationship or the
+         * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+         * <p>
          * @return {@code this}
-         * @param matchExpressFilterRelation This parameter is required.
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions. This parameter is required.
          */
         public Builder matchExpressFilterRelation(final java.lang.String matchExpressFilterRelation) {
             this.props.matchExpressFilterRelation(matchExpressFilterRelation);
             return this;
         }
+        /**
+         * Property matchExpressFilterRelation: The relationship between the conditional expressions.
+         * <p>
+         * Values are:
+         * and: the relationship between
+         * or: the relationship or the
+         * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+         * <p>
+         * @return {@code this}
+         * @param matchExpressFilterRelation Property matchExpressFilterRelation: The relationship between the conditional expressions. This parameter is required.
+         */
+        public Builder matchExpressFilterRelation(final com.aliyun.ros.cdk.core.IResolvable matchExpressFilterRelation) {
+            this.props.matchExpressFilterRelation(matchExpressFilterRelation);
+            return this;
+        }
 
         /**
+         * Property templateIdList: Alarm template ID list.
+         * <p>
+         * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * <p>
          * @return {@code this}
-         * @param templateIdList This parameter is required.
+         * @param templateIdList Property templateIdList: Alarm template ID list. This parameter is required.
          */
-        public Builder templateIdList(final java.util.List<java.lang.String> templateIdList) {
+        public Builder templateIdList(final com.aliyun.ros.cdk.core.IResolvable templateIdList) {
+            this.props.templateIdList(templateIdList);
+            return this;
+        }
+        /**
+         * Property templateIdList: Alarm template ID list.
+         * <p>
+         * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+         * <p>
+         * @return {@code this}
+         * @param templateIdList Property templateIdList: Alarm template ID list. This parameter is required.
+         */
+        public Builder templateIdList(final java.util.List<? extends java.lang.Object> templateIdList) {
             this.props.templateIdList(templateIdList);
             return this;
         }

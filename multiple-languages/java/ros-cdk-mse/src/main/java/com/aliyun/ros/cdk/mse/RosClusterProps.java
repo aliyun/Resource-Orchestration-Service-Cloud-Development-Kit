@@ -3,64 +3,94 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Properties for defining a `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.732Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterSpecification();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterSpecification();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterVersion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterVersion();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getInstanceCount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceCount();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDiskType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntryList() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateSlbSpecification() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClusterAliasName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPubNetworkFlow() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPubSlbSpecification() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskCapacity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateSlbSpecification() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPubNetworkFlow() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPubSlbSpecification() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRequestPars() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -74,17 +104,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.String clusterSpecification;
-        private java.lang.String clusterType;
-        private java.lang.String clusterVersion;
-        private java.lang.Number instanceCount;
-        private java.lang.String netType;
-        private java.lang.String diskType;
-        private java.lang.String privateSlbSpecification;
-        private java.lang.String pubNetworkFlow;
-        private java.lang.String pubSlbSpecification;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object clusterSpecification;
+        private java.lang.Object clusterType;
+        private java.lang.Object clusterVersion;
+        private java.lang.Object instanceCount;
+        private java.lang.Object netType;
+        private java.lang.Object aclEntryList;
+        private java.lang.Object clusterAliasName;
+        private java.lang.Object connectionType;
+        private java.lang.Object diskCapacity;
+        private java.lang.Object diskType;
+        private java.lang.Object privateSlbSpecification;
+        private java.lang.Object pubNetworkFlow;
+        private java.lang.Object pubSlbSpecification;
+        private java.lang.Object requestPars;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterSpecification}
@@ -92,6 +127,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder clusterSpecification(java.lang.String clusterSpecification) {
+            this.clusterSpecification = clusterSpecification;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterSpecification}
+         * @param clusterSpecification the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterSpecification(com.aliyun.ros.cdk.core.IResolvable clusterSpecification) {
             this.clusterSpecification = clusterSpecification;
             return this;
         }
@@ -107,11 +152,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getClusterType}
+         * @param clusterType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.clusterType = clusterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getClusterVersion}
          * @param clusterVersion the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterVersion(java.lang.String clusterVersion) {
+            this.clusterVersion = clusterVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterVersion}
+         * @param clusterVersion the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterVersion(com.aliyun.ros.cdk.core.IResolvable clusterVersion) {
             this.clusterVersion = clusterVersion;
             return this;
         }
@@ -127,6 +192,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getInstanceCount}
+         * @param instanceCount the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceCount(com.aliyun.ros.cdk.core.IResolvable instanceCount) {
+            this.instanceCount = instanceCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getNetType}
          * @param netType the value to be set. This parameter is required.
          * @return {@code this}
@@ -137,11 +212,111 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getNetType}
+         * @param netType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
+            this.netType = netType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getAclEntryList}
+         * @param aclEntryList the value to be set.
+         * @return {@code this}
+         */
+        public Builder aclEntryList(com.aliyun.ros.cdk.core.IResolvable aclEntryList) {
+            this.aclEntryList = aclEntryList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getAclEntryList}
+         * @param aclEntryList the value to be set.
+         * @return {@code this}
+         */
+        public Builder aclEntryList(java.util.List<? extends java.lang.Object> aclEntryList) {
+            this.aclEntryList = aclEntryList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterAliasName}
+         * @param clusterAliasName the value to be set.
+         * @return {@code this}
+         */
+        public Builder clusterAliasName(java.lang.String clusterAliasName) {
+            this.clusterAliasName = clusterAliasName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterAliasName}
+         * @param clusterAliasName the value to be set.
+         * @return {@code this}
+         */
+        public Builder clusterAliasName(com.aliyun.ros.cdk.core.IResolvable clusterAliasName) {
+            this.clusterAliasName = clusterAliasName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getConnectionType}
+         * @param connectionType the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionType(java.lang.String connectionType) {
+            this.connectionType = connectionType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getConnectionType}
+         * @param connectionType the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionType(com.aliyun.ros.cdk.core.IResolvable connectionType) {
+            this.connectionType = connectionType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getDiskCapacity}
+         * @param diskCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskCapacity(java.lang.String diskCapacity) {
+            this.diskCapacity = diskCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getDiskCapacity}
+         * @param diskCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskCapacity(com.aliyun.ros.cdk.core.IResolvable diskCapacity) {
+            this.diskCapacity = diskCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getDiskType}
          * @param diskType the value to be set.
          * @return {@code this}
          */
         public Builder diskType(java.lang.String diskType) {
+            this.diskType = diskType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getDiskType}
+         * @param diskType the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
             this.diskType = diskType;
             return this;
         }
@@ -157,11 +332,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getPrivateSlbSpecification}
+         * @param privateSlbSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateSlbSpecification(com.aliyun.ros.cdk.core.IResolvable privateSlbSpecification) {
+            this.privateSlbSpecification = privateSlbSpecification;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getPubNetworkFlow}
          * @param pubNetworkFlow the value to be set.
          * @return {@code this}
          */
         public Builder pubNetworkFlow(java.lang.String pubNetworkFlow) {
+            this.pubNetworkFlow = pubNetworkFlow;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getPubNetworkFlow}
+         * @param pubNetworkFlow the value to be set.
+         * @return {@code this}
+         */
+        public Builder pubNetworkFlow(com.aliyun.ros.cdk.core.IResolvable pubNetworkFlow) {
             this.pubNetworkFlow = pubNetworkFlow;
             return this;
         }
@@ -177,11 +372,51 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getPubSlbSpecification}
+         * @param pubSlbSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder pubSlbSpecification(com.aliyun.ros.cdk.core.IResolvable pubSlbSpecification) {
+            this.pubSlbSpecification = pubSlbSpecification;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getRequestPars}
+         * @param requestPars the value to be set.
+         * @return {@code this}
+         */
+        public Builder requestPars(java.lang.String requestPars) {
+            this.requestPars = requestPars;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getRequestPars}
+         * @param requestPars the value to be set.
+         * @return {@code this}
+         */
+        public Builder requestPars(com.aliyun.ros.cdk.core.IResolvable requestPars) {
+            this.requestPars = requestPars;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -197,13 +432,23 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosClusterProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosClusterProps build() {
-            return new Jsii$Proxy(clusterSpecification, clusterType, clusterVersion, instanceCount, netType, diskType, privateSlbSpecification, pubNetworkFlow, pubSlbSpecification, vpcId, vSwitchId);
+            return new Jsii$Proxy(clusterSpecification, clusterType, clusterVersion, instanceCount, netType, aclEntryList, clusterAliasName, connectionType, diskCapacity, diskType, privateSlbSpecification, pubNetworkFlow, pubSlbSpecification, requestPars, vpcId, vSwitchId);
         }
     }
 
@@ -212,17 +457,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterProps {
-        private final java.lang.String clusterSpecification;
-        private final java.lang.String clusterType;
-        private final java.lang.String clusterVersion;
-        private final java.lang.Number instanceCount;
-        private final java.lang.String netType;
-        private final java.lang.String diskType;
-        private final java.lang.String privateSlbSpecification;
-        private final java.lang.String pubNetworkFlow;
-        private final java.lang.String pubSlbSpecification;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object clusterSpecification;
+        private final java.lang.Object clusterType;
+        private final java.lang.Object clusterVersion;
+        private final java.lang.Object instanceCount;
+        private final java.lang.Object netType;
+        private final java.lang.Object aclEntryList;
+        private final java.lang.Object clusterAliasName;
+        private final java.lang.Object connectionType;
+        private final java.lang.Object diskCapacity;
+        private final java.lang.Object diskType;
+        private final java.lang.Object privateSlbSpecification;
+        private final java.lang.Object pubNetworkFlow;
+        private final java.lang.Object pubSlbSpecification;
+        private final java.lang.Object requestPars;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -230,89 +480,124 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterSpecification = software.amazon.jsii.Kernel.get(this, "clusterSpecification", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterVersion = software.amazon.jsii.Kernel.get(this, "clusterVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceCount = software.amazon.jsii.Kernel.get(this, "instanceCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateSlbSpecification = software.amazon.jsii.Kernel.get(this, "privateSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pubNetworkFlow = software.amazon.jsii.Kernel.get(this, "pubNetworkFlow", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pubSlbSpecification = software.amazon.jsii.Kernel.get(this, "pubSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterSpecification = software.amazon.jsii.Kernel.get(this, "clusterSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterVersion = software.amazon.jsii.Kernel.get(this, "clusterVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceCount = software.amazon.jsii.Kernel.get(this, "instanceCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclEntryList = software.amazon.jsii.Kernel.get(this, "aclEntryList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterAliasName = software.amazon.jsii.Kernel.get(this, "clusterAliasName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionType = software.amazon.jsii.Kernel.get(this, "connectionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskCapacity = software.amazon.jsii.Kernel.get(this, "diskCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateSlbSpecification = software.amazon.jsii.Kernel.get(this, "privateSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pubNetworkFlow = software.amazon.jsii.Kernel.get(this, "pubNetworkFlow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pubSlbSpecification = software.amazon.jsii.Kernel.get(this, "pubSlbSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.requestPars = software.amazon.jsii.Kernel.get(this, "requestPars", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterSpecification, final java.lang.String clusterType, final java.lang.String clusterVersion, final java.lang.Number instanceCount, final java.lang.String netType, final java.lang.String diskType, final java.lang.String privateSlbSpecification, final java.lang.String pubNetworkFlow, final java.lang.String pubSlbSpecification, final java.lang.String vpcId, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object clusterSpecification, final java.lang.Object clusterType, final java.lang.Object clusterVersion, final java.lang.Object instanceCount, final java.lang.Object netType, final java.lang.Object aclEntryList, final java.lang.Object clusterAliasName, final java.lang.Object connectionType, final java.lang.Object diskCapacity, final java.lang.Object diskType, final java.lang.Object privateSlbSpecification, final java.lang.Object pubNetworkFlow, final java.lang.Object pubSlbSpecification, final java.lang.Object requestPars, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterSpecification = java.util.Objects.requireNonNull(clusterSpecification, "clusterSpecification is required");
             this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
             this.clusterVersion = java.util.Objects.requireNonNull(clusterVersion, "clusterVersion is required");
             this.instanceCount = java.util.Objects.requireNonNull(instanceCount, "instanceCount is required");
             this.netType = java.util.Objects.requireNonNull(netType, "netType is required");
+            this.aclEntryList = aclEntryList;
+            this.clusterAliasName = clusterAliasName;
+            this.connectionType = connectionType;
+            this.diskCapacity = diskCapacity;
             this.diskType = diskType;
             this.privateSlbSpecification = privateSlbSpecification;
             this.pubNetworkFlow = pubNetworkFlow;
             this.pubSlbSpecification = pubSlbSpecification;
+            this.requestPars = requestPars;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
         }
 
         @Override
-        public final java.lang.String getClusterSpecification() {
+        public final java.lang.Object getClusterSpecification() {
             return this.clusterSpecification;
         }
 
         @Override
-        public final java.lang.String getClusterType() {
+        public final java.lang.Object getClusterType() {
             return this.clusterType;
         }
 
         @Override
-        public final java.lang.String getClusterVersion() {
+        public final java.lang.Object getClusterVersion() {
             return this.clusterVersion;
         }
 
         @Override
-        public final java.lang.Number getInstanceCount() {
+        public final java.lang.Object getInstanceCount() {
             return this.instanceCount;
         }
 
         @Override
-        public final java.lang.String getNetType() {
+        public final java.lang.Object getNetType() {
             return this.netType;
         }
 
         @Override
-        public final java.lang.String getDiskType() {
+        public final java.lang.Object getAclEntryList() {
+            return this.aclEntryList;
+        }
+
+        @Override
+        public final java.lang.Object getClusterAliasName() {
+            return this.clusterAliasName;
+        }
+
+        @Override
+        public final java.lang.Object getConnectionType() {
+            return this.connectionType;
+        }
+
+        @Override
+        public final java.lang.Object getDiskCapacity() {
+            return this.diskCapacity;
+        }
+
+        @Override
+        public final java.lang.Object getDiskType() {
             return this.diskType;
         }
 
         @Override
-        public final java.lang.String getPrivateSlbSpecification() {
+        public final java.lang.Object getPrivateSlbSpecification() {
             return this.privateSlbSpecification;
         }
 
         @Override
-        public final java.lang.String getPubNetworkFlow() {
+        public final java.lang.Object getPubNetworkFlow() {
             return this.pubNetworkFlow;
         }
 
         @Override
-        public final java.lang.String getPubSlbSpecification() {
+        public final java.lang.Object getPubSlbSpecification() {
             return this.pubSlbSpecification;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getRequestPars() {
+            return this.requestPars;
+        }
+
+        @Override
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -327,6 +612,18 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             data.set("clusterVersion", om.valueToTree(this.getClusterVersion()));
             data.set("instanceCount", om.valueToTree(this.getInstanceCount()));
             data.set("netType", om.valueToTree(this.getNetType()));
+            if (this.getAclEntryList() != null) {
+                data.set("aclEntryList", om.valueToTree(this.getAclEntryList()));
+            }
+            if (this.getClusterAliasName() != null) {
+                data.set("clusterAliasName", om.valueToTree(this.getClusterAliasName()));
+            }
+            if (this.getConnectionType() != null) {
+                data.set("connectionType", om.valueToTree(this.getConnectionType()));
+            }
+            if (this.getDiskCapacity() != null) {
+                data.set("diskCapacity", om.valueToTree(this.getDiskCapacity()));
+            }
             if (this.getDiskType() != null) {
                 data.set("diskType", om.valueToTree(this.getDiskType()));
             }
@@ -338,6 +635,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPubSlbSpecification() != null) {
                 data.set("pubSlbSpecification", om.valueToTree(this.getPubSlbSpecification()));
+            }
+            if (this.getRequestPars() != null) {
+                data.set("requestPars", om.valueToTree(this.getRequestPars()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -368,10 +668,15 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (!clusterVersion.equals(that.clusterVersion)) return false;
             if (!instanceCount.equals(that.instanceCount)) return false;
             if (!netType.equals(that.netType)) return false;
+            if (this.aclEntryList != null ? !this.aclEntryList.equals(that.aclEntryList) : that.aclEntryList != null) return false;
+            if (this.clusterAliasName != null ? !this.clusterAliasName.equals(that.clusterAliasName) : that.clusterAliasName != null) return false;
+            if (this.connectionType != null ? !this.connectionType.equals(that.connectionType) : that.connectionType != null) return false;
+            if (this.diskCapacity != null ? !this.diskCapacity.equals(that.diskCapacity) : that.diskCapacity != null) return false;
             if (this.diskType != null ? !this.diskType.equals(that.diskType) : that.diskType != null) return false;
             if (this.privateSlbSpecification != null ? !this.privateSlbSpecification.equals(that.privateSlbSpecification) : that.privateSlbSpecification != null) return false;
             if (this.pubNetworkFlow != null ? !this.pubNetworkFlow.equals(that.pubNetworkFlow) : that.pubNetworkFlow != null) return false;
             if (this.pubSlbSpecification != null ? !this.pubSlbSpecification.equals(that.pubSlbSpecification) : that.pubSlbSpecification != null) return false;
+            if (this.requestPars != null ? !this.requestPars.equals(that.requestPars) : that.requestPars != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
         }
@@ -383,10 +688,15 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.clusterVersion.hashCode());
             result = 31 * result + (this.instanceCount.hashCode());
             result = 31 * result + (this.netType.hashCode());
+            result = 31 * result + (this.aclEntryList != null ? this.aclEntryList.hashCode() : 0);
+            result = 31 * result + (this.clusterAliasName != null ? this.clusterAliasName.hashCode() : 0);
+            result = 31 * result + (this.connectionType != null ? this.connectionType.hashCode() : 0);
+            result = 31 * result + (this.diskCapacity != null ? this.diskCapacity.hashCode() : 0);
             result = 31 * result + (this.diskType != null ? this.diskType.hashCode() : 0);
             result = 31 * result + (this.privateSlbSpecification != null ? this.privateSlbSpecification.hashCode() : 0);
             result = 31 * result + (this.pubNetworkFlow != null ? this.pubNetworkFlow.hashCode() : 0);
             result = 31 * result + (this.pubSlbSpecification != null ? this.pubSlbSpecification.hashCode() : 0);
+            result = 31 * result + (this.requestPars != null ? this.requestPars.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             return result;

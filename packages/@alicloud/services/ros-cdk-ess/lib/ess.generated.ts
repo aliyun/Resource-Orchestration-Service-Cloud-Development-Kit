@@ -10,32 +10,32 @@ export interface RosAlarmTaskProps {
     /**
      * @Property alarmAction: Alarm Actions
      */
-    readonly alarmAction: string[];
+    readonly alarmAction: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property metricName: Metric Name
      */
-    readonly metricName: string;
+    readonly metricName: string | ros.IResolvable;
 
     /**
      * @Property scalingGroupId: The ID of the scaling group.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property threshold: Threshold
      */
-    readonly threshold: number;
+    readonly threshold: number | ros.IResolvable;
 
     /**
      * @Property comparisonOperator: Comparison Operator
      */
-    readonly comparisonOperator?: string;
+    readonly comparisonOperator?: string | ros.IResolvable;
 
     /**
      * @Property description: Description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property dimensions: Dimensions
@@ -45,32 +45,32 @@ export interface RosAlarmTaskProps {
     /**
      * @Property evaluationCount: Evaluation Count
      */
-    readonly evaluationCount?: number;
+    readonly evaluationCount?: number | ros.IResolvable;
 
     /**
      * @Property groupId: Group Id
      */
-    readonly groupId?: number;
+    readonly groupId?: number | ros.IResolvable;
 
     /**
      * @Property metricType: Metric Type
      */
-    readonly metricType?: string;
+    readonly metricType?: string | ros.IResolvable;
 
     /**
      * @Property name: Name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property period: Period
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property statistics: Statistics
      */
-    readonly statistics?: string;
+    readonly statistics?: string | ros.IResolvable;
 }
 
 /**
@@ -195,7 +195,7 @@ export class RosAlarmTask extends ros.RosResource {
     /**
      * @Attribute AlarmTaskId: The alarm task ID
      */
-    public readonly attrAlarmTaskId: any;
+    public readonly attrAlarmTaskId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -203,32 +203,32 @@ export class RosAlarmTask extends ros.RosResource {
     /**
      * @Property alarmAction: Alarm Actions
      */
-    public alarmAction: string[];
+    public alarmAction: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property metricName: Metric Name
      */
-    public metricName: string;
+    public metricName: string | ros.IResolvable;
 
     /**
      * @Property scalingGroupId: The ID of the scaling group.
      */
-    public scalingGroupId: string;
+    public scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property threshold: Threshold
      */
-    public threshold: number;
+    public threshold: number | ros.IResolvable;
 
     /**
      * @Property comparisonOperator: Comparison Operator
      */
-    public comparisonOperator: string | undefined;
+    public comparisonOperator: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property dimensions: Dimensions
@@ -238,32 +238,32 @@ export class RosAlarmTask extends ros.RosResource {
     /**
      * @Property evaluationCount: Evaluation Count
      */
-    public evaluationCount: number | undefined;
+    public evaluationCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property groupId: Group Id
      */
-    public groupId: number | undefined;
+    public groupId: number | ros.IResolvable | undefined;
 
     /**
      * @Property metricType: Metric Type
      */
-    public metricType: string | undefined;
+    public metricType: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: Name
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Period
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property statistics: Statistics
      */
-    public statistics: string | undefined;
+    public statistics: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ESS::AlarmTask`.
@@ -274,7 +274,7 @@ export class RosAlarmTask extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAlarmTaskProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAlarmTask.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAlarmTaskId = ros.Token.asString(this.getAtt('AlarmTaskId'));
+        this.attrAlarmTaskId = this.getAtt('AlarmTaskId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.alarmAction = props.alarmAction;
@@ -323,11 +323,11 @@ export namespace RosAlarmTask {
         /**
          * @Property dimensionValue: DimensionValue
          */
-        readonly dimensionValue: string;
+        readonly dimensionValue: string | ros.IResolvable;
         /**
          * @Property dimensionKey: DimensionKey
          */
-        readonly dimensionKey: string;
+        readonly dimensionKey: string | ros.IResolvable;
     }
 }
 /**
@@ -372,7 +372,7 @@ export interface RosAlarmTaskEnableProps {
     /**
      * @Property alarmTaskId: The id of alarm task.
      */
-    readonly alarmTaskId: string;
+    readonly alarmTaskId: string | ros.IResolvable;
 
     /**
      * @Property enable: Enable alarm task or not
@@ -436,7 +436,7 @@ export class RosAlarmTaskEnable extends ros.RosResource {
     /**
      * @Property alarmTaskId: The id of alarm task.
      */
-    public alarmTaskId: string;
+    public alarmTaskId: string | ros.IResolvable;
 
     /**
      * @Property enable: Enable alarm task or not
@@ -480,12 +480,12 @@ export interface RosLifecycleHookProps {
      *  SCALE_OUT: scale-out event
      *  SCALE_IN: scale-in event
      */
-    readonly lifecycleTransition: string;
+    readonly lifecycleTransition: string | ros.IResolvable;
 
     /**
      * @Property scalingGroupId: The ID of the scaling group.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property defaultResult: The action that the scaling group takes when the lifecycle hook times out. Value range:
@@ -494,19 +494,19 @@ export interface RosLifecycleHookProps {
      * Default value: CONTINUE
      * If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
      */
-    readonly defaultResult?: string;
+    readonly defaultResult?: string | ros.IResolvable;
 
     /**
      * @Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
      * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
      */
-    readonly heartbeatTimeout?: number;
+    readonly heartbeatTimeout?: number | ros.IResolvable;
 
     /**
      * @Property lifecycleHookName: The name of the lifecycle hook. Each name must be unique within a scaling group. The name must be 2 to 64 characters in length and can contain letters, numbers, Chinese characters, and special characters including underscores (_), hyphens (-) and periods (.).
      * Default value: Lifecycle Hook ID
      */
-    readonly lifecycleHookName?: string;
+    readonly lifecycleHookName?: string | ros.IResolvable;
 
     /**
      * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
@@ -517,12 +517,12 @@ export interface RosLifecycleHookProps {
      * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
      * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
      */
-    readonly notificationArn?: string;
+    readonly notificationArn?: string | ros.IResolvable;
 
     /**
      * @Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target. The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
      */
-    readonly notificationMetadata?: string;
+    readonly notificationMetadata?: string | ros.IResolvable;
 }
 
 /**
@@ -633,7 +633,7 @@ export class RosLifecycleHook extends ros.RosResource {
     /**
      * @Attribute LifecycleHookId: The lifecycle hook ID
      */
-    public readonly attrLifecycleHookId: any;
+    public readonly attrLifecycleHookId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -643,12 +643,12 @@ export class RosLifecycleHook extends ros.RosResource {
      *  SCALE_OUT: scale-out event
      *  SCALE_IN: scale-in event
      */
-    public lifecycleTransition: string;
+    public lifecycleTransition: string | ros.IResolvable;
 
     /**
      * @Property scalingGroupId: The ID of the scaling group.
      */
-    public scalingGroupId: string;
+    public scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property defaultResult: The action that the scaling group takes when the lifecycle hook times out. Value range:
@@ -657,19 +657,19 @@ export class RosLifecycleHook extends ros.RosResource {
      * Default value: CONTINUE
      * If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
      */
-    public defaultResult: string | undefined;
+    public defaultResult: string | ros.IResolvable | undefined;
 
     /**
      * @Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 21,600 seconds. The default value is 600 seconds.
      * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
      */
-    public heartbeatTimeout: number | undefined;
+    public heartbeatTimeout: number | ros.IResolvable | undefined;
 
     /**
      * @Property lifecycleHookName: The name of the lifecycle hook. Each name must be unique within a scaling group. The name must be 2 to 64 characters in length and can contain letters, numbers, Chinese characters, and special characters including underscores (_), hyphens (-) and periods (.).
      * Default value: Lifecycle Hook ID
      */
-    public lifecycleHookName: string | undefined;
+    public lifecycleHookName: string | ros.IResolvable | undefined;
 
     /**
      * @Property notificationArn: The Alibaba Cloud Resource Name (ARN) of the notification target that Auto Scaling will use to notify you when an instance is in the transition state for the lifecycle hook. This target can be either an MNS queue or an MNS topic. The format of the parameter value is acs:ess:{region}:{account-id}:{resource-relative-id}.
@@ -680,12 +680,12 @@ export class RosLifecycleHook extends ros.RosResource {
      * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
      * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
      */
-    public notificationArn: string | undefined;
+    public notificationArn: string | ros.IResolvable | undefined;
 
     /**
      * @Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target. The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
      */
-    public notificationMetadata: string | undefined;
+    public notificationMetadata: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ESS::LifecycleHook`.
@@ -696,7 +696,7 @@ export class RosLifecycleHook extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLifecycleHookProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLifecycleHook.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrLifecycleHookId = ros.Token.asString(this.getAtt('LifecycleHookId'));
+        this.attrLifecycleHookId = this.getAtt('LifecycleHookId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.lifecycleTransition = props.lifecycleTransition;
@@ -733,12 +733,12 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property scalingGroupId: Scaling group id to create the scaling configuration.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
      */
-    readonly deploymentSetId?: string;
+    readonly deploymentSetId?: string | ros.IResolvable;
 
     /**
      * @Property diskMappings: Disk mappings to attach to instance.
@@ -748,27 +748,27 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
-    readonly hpcClusterId?: string;
+    readonly hpcClusterId?: string | ros.IResolvable;
 
     /**
      * @Property imageId: Image ID to create ecs instance .
      */
-    readonly imageId?: string;
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * @Property instanceName: The name of the instance launched from the current scaling configuration.
      */
-    readonly instanceName?: string;
+    readonly instanceName?: string | ros.IResolvable;
 
     /**
      * @Property instanceType: ecs supported instance type.
      */
-    readonly instanceType?: string;
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
@@ -778,29 +778,29 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
      */
-    readonly internetMaxBandwidthIn?: number;
+    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
      * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
-    readonly internetMaxBandwidthOut?: number;
+    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
      * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'none'.
      */
-    readonly ioOptimized?: string;
+    readonly ioOptimized?: string | ros.IResolvable;
 
     /**
      * @Property keyPairName: SSH key pair name.
      */
-    readonly keyPairName?: string;
+    readonly keyPairName?: string | ros.IResolvable;
 
     /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -810,27 +810,27 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
-    readonly ramRoleName?: string;
+    readonly ramRoleName?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property scalingConfigurationName: Name of created scaling configuration.
      */
-    readonly scalingConfigurationName?: string;
+    readonly scalingConfigurationName?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Security Group to create ecs instance.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
      */
-    readonly spotPriceLimit?: number;
+    readonly spotPriceLimit?: number | ros.IResolvable;
 
     /**
      * @Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
@@ -851,27 +851,27 @@ export interface RosScalingConfigurationProps {
      * SpotAsPriceGo: System automatic bidding, following the current market actual price
      * Default: NoSpot.
      */
-    readonly spotStrategy?: string;
+    readonly spotStrategy?: string | ros.IResolvable;
 
     /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
-    readonly systemDiskAutoSnapshotPolicyId?: string;
+    readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
      */
-    readonly systemDiskCategory?: string;
+    readonly systemDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
-    readonly systemDiskPerformanceLevel?: string;
+    readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
     /**
      * @Property systemDiskSize: Size of system disk. Unit is GB.
      */
-    readonly systemDiskSize?: number;
+    readonly systemDiskSize?: number | ros.IResolvable;
 
     /**
      * @Property tagList: The tags of an instance in list format.
@@ -894,7 +894,7 @@ export interface RosScalingConfigurationProps {
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    readonly userData?: string;
+    readonly userData?: string | ros.IResolvable;
 }
 
 /**
@@ -966,7 +966,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
-          allowedValues: ["PayByBandwidth","PayByTraffic"],
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
@@ -1060,7 +1060,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Attribute ScalingConfigurationId: The scaling configuration id
      */
-    public readonly attrScalingConfigurationId: any;
+    public readonly attrScalingConfigurationId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1068,12 +1068,12 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property scalingGroupId: Scaling group id to create the scaling configuration.
      */
-    public scalingGroupId: string;
+    public scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
      */
-    public deploymentSetId: string | undefined;
+    public deploymentSetId: string | ros.IResolvable | undefined;
 
     /**
      * @Property diskMappings: Disk mappings to attach to instance.
@@ -1083,27 +1083,27 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
-    public hpcClusterId: string | undefined;
+    public hpcClusterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageId: Image ID to create ecs instance .
      */
-    public imageId: string | undefined;
+    public imageId: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
-    public instanceId: string | undefined;
+    public instanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceName: The name of the instance launched from the current scaling configuration.
      */
-    public instanceName: string | undefined;
+    public instanceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceType: ecs supported instance type.
      */
-    public instanceType: string | undefined;
+    public instanceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
@@ -1113,29 +1113,29 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
      */
-    public internetMaxBandwidthIn: number | undefined;
+    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
      * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
-    public internetMaxBandwidthOut: number | undefined;
+    public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
     /**
      * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'none'.
      */
-    public ioOptimized: string | undefined;
+    public ioOptimized: string | ros.IResolvable | undefined;
 
     /**
      * @Property keyPairName: SSH key pair name.
      */
-    public keyPairName: string | undefined;
+    public keyPairName: string | ros.IResolvable | undefined;
 
     /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -1145,27 +1145,27 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
-    public ramRoleName: string | undefined;
+    public ramRoleName: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property scalingConfigurationName: Name of created scaling configuration.
      */
-    public scalingConfigurationName: string | undefined;
+    public scalingConfigurationName: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: Security Group to create ecs instance.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
      */
-    public spotPriceLimit: number | undefined;
+    public spotPriceLimit: number | ros.IResolvable | undefined;
 
     /**
      * @Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
@@ -1186,27 +1186,27 @@ export class RosScalingConfiguration extends ros.RosResource {
      * SpotAsPriceGo: System automatic bidding, following the current market actual price
      * Default: NoSpot.
      */
-    public spotStrategy: string | undefined;
+    public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
-    public systemDiskAutoSnapshotPolicyId: string | undefined;
+    public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
      */
-    public systemDiskCategory: string | undefined;
+    public systemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
-    public systemDiskPerformanceLevel: string | undefined;
+    public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskSize: Size of system disk. Unit is GB.
      */
-    public systemDiskSize: number | undefined;
+    public systemDiskSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property tagList: The tags of an instance in list format.
@@ -1229,7 +1229,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    public userData: string | undefined;
+    public userData: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingConfiguration`.
@@ -1240,7 +1240,7 @@ export class RosScalingConfiguration extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScalingConfigurationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrScalingConfigurationId = ros.Token.asString(this.getAtt('ScalingConfigurationId'));
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
@@ -1319,46 +1319,46 @@ export namespace RosScalingConfiguration {
         /**
          * @Property snapshotId: ID of the snapshot to create the volume.
          */
-        readonly snapshotId?: string;
+        readonly snapshotId?: string | ros.IResolvable;
         /**
          * @Property category: The volume type to create.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssdDefault is cloud.
          */
-        readonly category?: string;
+        readonly category?: string | ros.IResolvable;
         /**
          * @Property description: Description of the disk, [2, 256] characters. Do not fill or empty, the default is empty.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property kmsKeyId: The KMS key ID for the data disk.
          */
-        readonly kmsKeyId?: string;
+        readonly kmsKeyId?: string | ros.IResolvable;
         /**
          * @Property encrypted: Whether the data disk is encrypted or not. Options:
      * true: Encrypted.
      * false: Not encrypted.
      * Default value: false.
          */
-        readonly encrypted?: string;
+        readonly encrypted?: string | ros.IResolvable;
         /**
          * @Property device: A device name where the volume will be attached in the system at /dev/xvd[id]. Range from '/dev/xvdb' to '/dev/xvdz'.
          */
-        readonly device?: string;
+        readonly device?: string | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of an ESSD.
          */
-        readonly performanceLevel?: string;
+        readonly performanceLevel?: string | ros.IResolvable;
         /**
          * @Property size: The size of the volume, in GB. Must be equal or greater than the size of the snapshot. It is safe to leave this blank and have the Compute service infer the size.
          */
-        readonly size?: string;
+        readonly size?: string | ros.IResolvable;
         /**
          * @Property autoSnapshotPolicyId: Auto snapshot policy ID.
          */
-        readonly autoSnapshotPolicyId?: string;
+        readonly autoSnapshotPolicyId?: string | ros.IResolvable;
         /**
          * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          */
-        readonly diskName?: string;
+        readonly diskName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1429,11 +1429,11 @@ export namespace RosScalingConfiguration {
         /**
          * @Property value: undefined
          */
-        readonly value?: string;
+        readonly value?: string | ros.IResolvable;
         /**
          * @Property key: undefined
          */
-        readonly key: string;
+        readonly key: string | ros.IResolvable;
     }
 }
 /**
@@ -1477,12 +1477,12 @@ export interface RosScalingGroupProps {
     /**
      * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    readonly maxSize: number;
+    readonly maxSize: number | ros.IResolvable;
 
     /**
      * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    readonly minSize: number;
+    readonly minSize: number | ros.IResolvable;
 
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -1493,12 +1493,12 @@ export interface RosScalingGroupProps {
      * @Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
      * The default value is 300s.
      */
-    readonly defaultCooldown?: number;
+    readonly defaultCooldown?: number | ros.IResolvable;
 
     /**
      * @Property desiredCapacity: The expected number of ECS instances in a scaling group. The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
      */
-    readonly desiredCapacity?: number;
+    readonly desiredCapacity?: number | ros.IResolvable;
 
     /**
      * @Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
@@ -1509,17 +1509,17 @@ export interface RosScalingGroupProps {
     /**
      * @Property healthCheckType: The health check type. Allow values is "ECS" and "NONE", default to "ECS".
      */
-    readonly healthCheckType?: string;
+    readonly healthCheckType?: string | ros.IResolvable;
 
     /**
      * @Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * @Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
      */
-    readonly launchTemplateId?: string;
+    readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
      * @Property launchTemplateVersion: The version of the instance launch template. Valid values:
@@ -1527,7 +1527,7 @@ export interface RosScalingGroupProps {
      * Default: The default template version is always used.
      * Latest: The latest template version is always used.
      */
-    readonly launchTemplateVersion?: string;
+    readonly launchTemplateVersion?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
@@ -1539,7 +1539,7 @@ export interface RosScalingGroupProps {
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
      * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
      */
-    readonly multiAzPolicy?: string;
+    readonly multiAzPolicy?: string | ros.IResolvable;
 
     /**
      * @Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
@@ -1565,7 +1565,7 @@ export interface RosScalingGroupProps {
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
-    readonly scalingGroupName?: string;
+    readonly scalingGroupName?: string | ros.IResolvable;
 
     /**
      * @Property standbyInstances: ECS instances of standby mode in the scaling group.
@@ -1573,9 +1573,14 @@ export interface RosScalingGroupProps {
     readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosScalingGroup.TagsProperty[];
+
+    /**
      * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
@@ -1691,6 +1696,14 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbInstanceIds', ros.listValidator(ros.validateAny))(properties.dbInstanceIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosScalingGroup_TagsPropertyValidator))(properties.tags));
     if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
           data: properties.healthCheckType,
@@ -1732,6 +1745,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       RemovalPolicys: ros.listMapper(ros.objectToRosTemplate)(properties.removalPolicys),
       ScalingGroupName: ros.stringToRosTemplate(properties.scalingGroupName),
       StandbyInstances: ros.listMapper(ros.objectToRosTemplate)(properties.standbyInstances),
+      Tags: ros.listMapper(rosScalingGroupTagsPropertyToRosTemplate)(properties.tags),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
     };
@@ -1754,7 +1768,12 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Attribute ScalingGroupId: Scaling group Id
      */
-    public readonly attrScalingGroupId: any;
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupName: Scaling group name
+     */
+    public readonly attrScalingGroupName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1762,12 +1781,12 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    public maxSize: number;
+    public maxSize: number | ros.IResolvable;
 
     /**
      * @Property minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
      */
-    public minSize: number;
+    public minSize: number | ros.IResolvable;
 
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -1778,12 +1797,12 @@ export class RosScalingGroup extends ros.RosResource {
      * @Property defaultCooldown: Default cool-down time (in seconds) of the scaling group. Value range: [0, 86400].
      * The default value is 300s.
      */
-    public defaultCooldown: number | undefined;
+    public defaultCooldown: number | ros.IResolvable | undefined;
 
     /**
      * @Property desiredCapacity: The expected number of ECS instances in a scaling group. The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
      */
-    public desiredCapacity: number | undefined;
+    public desiredCapacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
@@ -1794,17 +1813,17 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property healthCheckType: The health check type. Allow values is "ECS" and "NONE", default to "ECS".
      */
-    public healthCheckType: string | undefined;
+    public healthCheckType: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
-    public instanceId: string | undefined;
+    public instanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
      */
-    public launchTemplateId: string | undefined;
+    public launchTemplateId: string | ros.IResolvable | undefined;
 
     /**
      * @Property launchTemplateVersion: The version of the instance launch template. Valid values:
@@ -1812,7 +1831,7 @@ export class RosScalingGroup extends ros.RosResource {
      * Default: The default template version is always used.
      * Latest: The latest template version is always used.
      */
-    public launchTemplateVersion: string | undefined;
+    public launchTemplateVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
@@ -1824,7 +1843,7 @@ export class RosScalingGroup extends ros.RosResource {
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
      * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
      */
-    public multiAzPolicy: string | undefined;
+    public multiAzPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
@@ -1850,7 +1869,7 @@ export class RosScalingGroup extends ros.RosResource {
      * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
      * If this parameter is not specified, the default value is ScalingGroupId.
      */
-    public scalingGroupName: string | undefined;
+    public scalingGroupName: string | ros.IResolvable | undefined;
 
     /**
      * @Property standbyInstances: ECS instances of standby mode in the scaling group.
@@ -1858,9 +1877,14 @@ export class RosScalingGroup extends ros.RosResource {
     public standbyInstances: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosScalingGroup.TagsProperty[] | undefined;
+
+    /**
      * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
@@ -1879,7 +1903,8 @@ export class RosScalingGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScalingGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrScalingGroupId = ros.Token.asString(this.getAtt('ScalingGroupId'));
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingGroupName = this.getAtt('ScalingGroupName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.maxSize = props.maxSize;
@@ -1899,6 +1924,7 @@ export class RosScalingGroup extends ros.RosResource {
         this.removalPolicys = props.removalPolicys;
         this.scalingGroupName = props.scalingGroupName;
         this.standbyInstances = props.standbyInstances;
+        this.tags = props.tags;
         this.vSwitchId = props.vSwitchId;
         this.vSwitchIds = props.vSwitchIds;
     }
@@ -1923,6 +1949,7 @@ export class RosScalingGroup extends ros.RosResource {
             removalPolicys: this.removalPolicys,
             scalingGroupName: this.scalingGroupName,
             standbyInstances: this.standbyInstances,
+            tags: this.tags,
             vSwitchId: this.vSwitchId,
             vSwitchIds: this.vSwitchIds,
         };
@@ -1946,7 +1973,7 @@ export namespace RosScalingGroup {
      * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
      * Cloud Monitor: acs:ess:{region}:{account-id}:/cloudmonitor
          */
-        readonly notificationArn: string;
+        readonly notificationArn: string | ros.IResolvable;
         /**
          * @Property notificationTypes: Ess events and resource change notification types. Possible values:
      * AUTOSCALING:SCALE_OUT_SUCCESS
@@ -2015,6 +2042,54 @@ function rosScalingGroupNotificationConfigurationsPropertyToRosTemplate(properti
     };
 }
 
+export namespace RosScalingGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`
  */
@@ -2023,7 +2098,7 @@ export interface RosScalingGroupEnableProps {
     /**
      * @Property scalingGroupId: The id of operated scaling group.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
@@ -2038,7 +2113,7 @@ export interface RosScalingGroupEnableProps {
     /**
      * @Property scalingConfigurationId: The id of scaling configuration which will be activate.
      */
-    readonly scalingConfigurationId?: string;
+    readonly scalingConfigurationId?: string | ros.IResolvable;
 
     /**
      * @Property scalingRuleAris: A list of scaling rule aris which will be executed. Max support 10 scaling rule aris.
@@ -2050,7 +2125,7 @@ export interface RosScalingGroupEnableProps {
     /**
      * @Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
      */
-    readonly scalingRuleArisExecuteVersion?: number;
+    readonly scalingRuleArisExecuteVersion?: number | ros.IResolvable;
 }
 
 /**
@@ -2141,42 +2216,42 @@ export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * @Attribute LifecycleState: The scaling group status
      */
-    public readonly attrLifecycleState: any;
+    public readonly attrLifecycleState: ros.IResolvable;
 
     /**
      * @Attribute ScalingGroupId: The scaling group id
      */
-    public readonly attrScalingGroupId: any;
+    public readonly attrScalingGroupId: ros.IResolvable;
 
     /**
      * @Attribute ScalingInstanceDetails: Detail information of auto created scaling instances
      */
-    public readonly attrScalingInstanceDetails: any;
+    public readonly attrScalingInstanceDetails: ros.IResolvable;
 
     /**
      * @Attribute ScalingInstances: The auto created scaling instances
      */
-    public readonly attrScalingInstances: any;
+    public readonly attrScalingInstances: ros.IResolvable;
 
     /**
      * @Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteErrorInfo: any;
+    public readonly attrScalingRuleArisExecuteErrorInfo: ros.IResolvable;
 
     /**
      * @Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesAdded: any;
+    public readonly attrScalingRuleArisExecuteResultInstancesAdded: ros.IResolvable;
 
     /**
      * @Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: any;
+    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: ros.IResolvable;
 
     /**
      * @Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: any;
+    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2184,7 +2259,7 @@ export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * @Property scalingGroupId: The id of operated scaling group.
      */
-    public scalingGroupId: string;
+    public scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
@@ -2199,7 +2274,7 @@ export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * @Property scalingConfigurationId: The id of scaling configuration which will be activate.
      */
-    public scalingConfigurationId: string | undefined;
+    public scalingConfigurationId: string | ros.IResolvable | undefined;
 
     /**
      * @Property scalingRuleAris: A list of scaling rule aris which will be executed. Max support 10 scaling rule aris.
@@ -2211,7 +2286,7 @@ export class RosScalingGroupEnable extends ros.RosResource {
     /**
      * @Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
      */
-    public scalingRuleArisExecuteVersion: number | undefined;
+    public scalingRuleArisExecuteVersion: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingGroupEnable`.
@@ -2222,14 +2297,14 @@ export class RosScalingGroupEnable extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScalingGroupEnableProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingGroupEnable.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrLifecycleState = ros.Token.asString(this.getAtt('LifecycleState'));
-        this.attrScalingGroupId = ros.Token.asString(this.getAtt('ScalingGroupId'));
-        this.attrScalingInstanceDetails = ros.Token.asString(this.getAtt('ScalingInstanceDetails'));
-        this.attrScalingInstances = ros.Token.asString(this.getAtt('ScalingInstances'));
-        this.attrScalingRuleArisExecuteErrorInfo = ros.Token.asString(this.getAtt('ScalingRuleArisExecuteErrorInfo'));
-        this.attrScalingRuleArisExecuteResultInstancesAdded = ros.Token.asString(this.getAtt('ScalingRuleArisExecuteResultInstancesAdded'));
-        this.attrScalingRuleArisExecuteResultInstancesRemoved = ros.Token.asString(this.getAtt('ScalingRuleArisExecuteResultInstancesRemoved'));
-        this.attrScalingRuleArisExecuteResultNumberOfAddedInstances = ros.Token.asString(this.getAtt('ScalingRuleArisExecuteResultNumberOfAddedInstances'));
+        this.attrLifecycleState = this.getAtt('LifecycleState');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingInstanceDetails = this.getAtt('ScalingInstanceDetails');
+        this.attrScalingInstances = this.getAtt('ScalingInstances');
+        this.attrScalingRuleArisExecuteErrorInfo = this.getAtt('ScalingRuleArisExecuteErrorInfo');
+        this.attrScalingRuleArisExecuteResultInstancesAdded = this.getAtt('ScalingRuleArisExecuteResultInstancesAdded');
+        this.attrScalingRuleArisExecuteResultInstancesRemoved = this.getAtt('ScalingRuleArisExecuteResultInstancesRemoved');
+        this.attrScalingRuleArisExecuteResultNumberOfAddedInstances = this.getAtt('ScalingRuleArisExecuteResultNumberOfAddedInstances');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
@@ -2264,7 +2339,7 @@ export interface RosScalingRuleProps {
     /**
      * @Property scalingGroupId: ID of the scaling group of a scaling rule.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property adjustmentType: Adjustment mode of a scaling rule. Optional values:
@@ -2272,7 +2347,7 @@ export interface RosScalingRuleProps {
      * - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
      * - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
      */
-    readonly adjustmentType?: string;
+    readonly adjustmentType?: string | ros.IResolvable;
 
     /**
      * @Property adjustmentValue: Adjusted value of a scaling rule. Value range:
@@ -2280,12 +2355,12 @@ export interface RosScalingRuleProps {
      * - PercentChangeInCapacity: [-100, 10000]
      * - TotalCapacity: [0, 1000]
      */
-    readonly adjustmentValue?: number;
+    readonly adjustmentValue?: number | ros.IResolvable;
 
     /**
      * @Property cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
      */
-    readonly cooldown?: number;
+    readonly cooldown?: number | ros.IResolvable;
 
     /**
      * @Property disableScaleIn: Specifies whether to disable scale-in. This parameter is applicable only to target tracking scaling rules.
@@ -2298,13 +2373,13 @@ export interface RosScalingRuleProps {
      * Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
      * Valid values: 0 to 86400. Unit: seconds. Default value: 300.
      */
-    readonly estimatedInstanceWarmup?: number;
+    readonly estimatedInstanceWarmup?: number | ros.IResolvable;
 
     /**
      * @Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
      *  Default value: the same as the value of MaxSize
      */
-    readonly initialMaxSize?: number;
+    readonly initialMaxSize?: number | ros.IResolvable;
 
     /**
      * @Property metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
@@ -2320,12 +2395,12 @@ export interface RosScalingRuleProps {
      * - IntranetRx: the average internal network inbound traffic
      * - IntranetTx: the average internal network outbound traffic
      */
-    readonly metricName?: string;
+    readonly metricName?: string | ros.IResolvable;
 
     /**
      * @Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule. This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
      */
-    readonly minAdjustmentMagnitude?: number;
+    readonly minAdjustmentMagnitude?: number | ros.IResolvable;
 
     /**
      * @Property predictiveScalingMode: The mode of the predictive scaling rule. Valid values:
@@ -2333,13 +2408,13 @@ export interface RosScalingRuleProps {
      * - PredictOnly: generates forecasts but does not create forecast tasks.
      * Default value: PredictAndScale
      */
-    readonly predictiveScalingMode?: string;
+    readonly predictiveScalingMode?: string | ros.IResolvable;
 
     /**
      * @Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time. By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
      *  Default value: 0
      */
-    readonly predictiveTaskBufferTime?: number;
+    readonly predictiveTaskBufferTime?: number | ros.IResolvable;
 
     /**
      * @Property predictiveValueBehavior: The action taken on the predicted maximum value. Valid values:
@@ -2348,18 +2423,18 @@ export interface RosScalingRuleProps {
      *  - PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
      *  Default value: MaxOverridePredictiveValue
      */
-    readonly predictiveValueBehavior?: string;
+    readonly predictiveValueBehavior?: string | ros.IResolvable;
 
     /**
      * @Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer. When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
      *  Default value: 0
      */
-    readonly predictiveValueBuffer?: number;
+    readonly predictiveValueBuffer?: number | ros.IResolvable;
 
     /**
      * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
-    readonly scalingRuleName?: string;
+    readonly scalingRuleName?: string | ros.IResolvable;
 
     /**
      * @Property scalingRuleType: The type of the scaling rule. Valid values:
@@ -2369,7 +2444,7 @@ export interface RosScalingRuleProps {
      * - PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
      *  If this parameter value is not specified, the default value is SimpleScalingRule.
      */
-    readonly scalingRuleType?: string;
+    readonly scalingRuleType?: string | ros.IResolvable;
 
     /**
      * @Property stepAdjustment:
@@ -2379,7 +2454,7 @@ export interface RosScalingRuleProps {
     /**
      * @Property targetValue: The target value of a metric. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
      */
-    readonly targetValue?: number;
+    readonly targetValue?: number | ros.IResolvable;
 }
 
 /**
@@ -2549,12 +2624,12 @@ export class RosScalingRule extends ros.RosResource {
     /**
      * @Attribute ScalingRuleAri: Unique identifier of a scaling rule.
      */
-    public readonly attrScalingRuleAri: any;
+    public readonly attrScalingRuleAri: ros.IResolvable;
 
     /**
      * @Attribute ScalingRuleId: ID of a scaling rule, generated by the system and globally unique.
      */
-    public readonly attrScalingRuleId: any;
+    public readonly attrScalingRuleId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2562,7 +2637,7 @@ export class RosScalingRule extends ros.RosResource {
     /**
      * @Property scalingGroupId: ID of the scaling group of a scaling rule.
      */
-    public scalingGroupId: string;
+    public scalingGroupId: string | ros.IResolvable;
 
     /**
      * @Property adjustmentType: Adjustment mode of a scaling rule. Optional values:
@@ -2570,7 +2645,7 @@ export class RosScalingRule extends ros.RosResource {
      * - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
      * - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
      */
-    public adjustmentType: string | undefined;
+    public adjustmentType: string | ros.IResolvable | undefined;
 
     /**
      * @Property adjustmentValue: Adjusted value of a scaling rule. Value range:
@@ -2578,12 +2653,12 @@ export class RosScalingRule extends ros.RosResource {
      * - PercentChangeInCapacity: [-100, 10000]
      * - TotalCapacity: [0, 1000]
      */
-    public adjustmentValue: number | undefined;
+    public adjustmentValue: number | ros.IResolvable | undefined;
 
     /**
      * @Property cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
      */
-    public cooldown: number | undefined;
+    public cooldown: number | ros.IResolvable | undefined;
 
     /**
      * @Property disableScaleIn: Specifies whether to disable scale-in. This parameter is applicable only to target tracking scaling rules.
@@ -2596,13 +2671,13 @@ export class RosScalingRule extends ros.RosResource {
      * Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
      * Valid values: 0 to 86400. Unit: seconds. Default value: 300.
      */
-    public estimatedInstanceWarmup: number | undefined;
+    public estimatedInstanceWarmup: number | ros.IResolvable | undefined;
 
     /**
      * @Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
      *  Default value: the same as the value of MaxSize
      */
-    public initialMaxSize: number | undefined;
+    public initialMaxSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
@@ -2618,12 +2693,12 @@ export class RosScalingRule extends ros.RosResource {
      * - IntranetRx: the average internal network inbound traffic
      * - IntranetTx: the average internal network outbound traffic
      */
-    public metricName: string | undefined;
+    public metricName: string | ros.IResolvable | undefined;
 
     /**
      * @Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule. This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
      */
-    public minAdjustmentMagnitude: number | undefined;
+    public minAdjustmentMagnitude: number | ros.IResolvable | undefined;
 
     /**
      * @Property predictiveScalingMode: The mode of the predictive scaling rule. Valid values:
@@ -2631,13 +2706,13 @@ export class RosScalingRule extends ros.RosResource {
      * - PredictOnly: generates forecasts but does not create forecast tasks.
      * Default value: PredictAndScale
      */
-    public predictiveScalingMode: string | undefined;
+    public predictiveScalingMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time. By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
      *  Default value: 0
      */
-    public predictiveTaskBufferTime: number | undefined;
+    public predictiveTaskBufferTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property predictiveValueBehavior: The action taken on the predicted maximum value. Valid values:
@@ -2646,18 +2721,18 @@ export class RosScalingRule extends ros.RosResource {
      *  - PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
      *  Default value: MaxOverridePredictiveValue
      */
-    public predictiveValueBehavior: string | undefined;
+    public predictiveValueBehavior: string | ros.IResolvable | undefined;
 
     /**
      * @Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer. When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
      *  Default value: 0
      */
-    public predictiveValueBuffer: number | undefined;
+    public predictiveValueBuffer: number | ros.IResolvable | undefined;
 
     /**
      * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
-    public scalingRuleName: string | undefined;
+    public scalingRuleName: string | ros.IResolvable | undefined;
 
     /**
      * @Property scalingRuleType: The type of the scaling rule. Valid values:
@@ -2667,7 +2742,7 @@ export class RosScalingRule extends ros.RosResource {
      * - PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
      *  If this parameter value is not specified, the default value is SimpleScalingRule.
      */
-    public scalingRuleType: string | undefined;
+    public scalingRuleType: string | ros.IResolvable | undefined;
 
     /**
      * @Property stepAdjustment:
@@ -2677,7 +2752,7 @@ export class RosScalingRule extends ros.RosResource {
     /**
      * @Property targetValue: The target value of a metric. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
      */
-    public targetValue: number | undefined;
+    public targetValue: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingRule`.
@@ -2688,8 +2763,8 @@ export class RosScalingRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScalingRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrScalingRuleAri = ros.Token.asString(this.getAtt('ScalingRuleAri'));
-        this.attrScalingRuleId = ros.Token.asString(this.getAtt('ScalingRuleId'));
+        this.attrScalingRuleAri = this.getAtt('ScalingRuleAri');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
@@ -2747,16 +2822,16 @@ export namespace RosScalingRule {
          * @Property metricIntervalUpperBound: The upper limit value specified in step adjustment N.
      * Valid values: -9.999999E18 to 9.999999E18.
          */
-        readonly metricIntervalUpperBound?: number;
+        readonly metricIntervalUpperBound?: number | ros.IResolvable;
         /**
          * @Property metricIntervalLowerBound: The lower limit value specified in step adjustment N.
      * Valid values: -9.999999E18 to 9.999999E18.
          */
-        readonly metricIntervalLowerBound?: number;
+        readonly metricIntervalLowerBound?: number | ros.IResolvable;
         /**
          * @Property scalingAdjustment: The specified number of ECS instances to be adjusted in step adjustment.
          */
-        readonly scalingAdjustment?: number;
+        readonly scalingAdjustment?: number | ros.IResolvable;
     }
 }
 /**
@@ -2825,24 +2900,24 @@ export interface RosScheduledTaskProps {
      * If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
      * A time point 90 days after creation or modification cannot be entered.
      */
-    readonly launchTime: string;
+    readonly launchTime: string | ros.IResolvable;
 
     /**
      * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
      */
-    readonly scheduledAction: string;
+    readonly scheduledAction: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property launchExpirationTime: Time period within which the failed scheduled task is retried.
      * The default value is 600s.
      * Value range: [0, 21600]
      */
-    readonly launchExpirationTime?: number;
+    readonly launchExpirationTime?: number | ros.IResolvable;
 
     /**
      * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
@@ -2850,7 +2925,7 @@ export interface RosScheduledTaskProps {
      * A time point 90 days after creation or modification cannot be entered.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    readonly recurrenceEndTime?: string;
+    readonly recurrenceEndTime?: string | ros.IResolvable;
 
     /**
      * @Property recurrenceType: Type of the scheduled task to be repeated. Optional values:
@@ -2859,7 +2934,7 @@ export interface RosScheduledTaskProps {
      * - Monthly: Recurrence interval by month for a scheduled task.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    readonly recurrenceType?: string;
+    readonly recurrenceType?: string | ros.IResolvable;
 
     /**
      * @Property recurrenceValue: Value of the scheduled task to be repeated.
@@ -2868,14 +2943,14 @@ export interface RosScheduledTaskProps {
      * - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    readonly recurrenceValue?: string;
+    readonly recurrenceValue?: string | ros.IResolvable;
 
     /**
      * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
      * The account name is unique in the same region.
      * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
      */
-    readonly scheduledTaskName?: string;
+    readonly scheduledTaskName?: string | ros.IResolvable;
 
     /**
      * @Property taskEnabled: Whether to enable the scheduled task.
@@ -3011,7 +3086,7 @@ export class RosScheduledTask extends ros.RosResource {
     /**
      * @Attribute ScheduledTaskId: ID of the scheduled task, which is generated by the system and globally unique.
      */
-    public readonly attrScheduledTaskId: any;
+    public readonly attrScheduledTaskId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3022,24 +3097,24 @@ export class RosScheduledTask extends ros.RosResource {
      * If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
      * A time point 90 days after creation or modification cannot be entered.
      */
-    public launchTime: string;
+    public launchTime: string | ros.IResolvable;
 
     /**
      * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
      */
-    public scheduledAction: string;
+    public scheduledAction: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property launchExpirationTime: Time period within which the failed scheduled task is retried.
      * The default value is 600s.
      * Value range: [0, 21600]
      */
-    public launchExpirationTime: number | undefined;
+    public launchExpirationTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
@@ -3047,7 +3122,7 @@ export class RosScheduledTask extends ros.RosResource {
      * A time point 90 days after creation or modification cannot be entered.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    public recurrenceEndTime: string | undefined;
+    public recurrenceEndTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property recurrenceType: Type of the scheduled task to be repeated. Optional values:
@@ -3056,7 +3131,7 @@ export class RosScheduledTask extends ros.RosResource {
      * - Monthly: Recurrence interval by month for a scheduled task.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    public recurrenceType: string | undefined;
+    public recurrenceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property recurrenceValue: Value of the scheduled task to be repeated.
@@ -3065,14 +3140,14 @@ export class RosScheduledTask extends ros.RosResource {
      * - Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
      * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    public recurrenceValue: string | undefined;
+    public recurrenceValue: string | ros.IResolvable | undefined;
 
     /**
      * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
      * The account name is unique in the same region.
      * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
      */
-    public scheduledTaskName: string | undefined;
+    public scheduledTaskName: string | ros.IResolvable | undefined;
 
     /**
      * @Property taskEnabled: Whether to enable the scheduled task.
@@ -3091,7 +3166,7 @@ export class RosScheduledTask extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScheduledTaskProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScheduledTask.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrScheduledTaskId = ros.Token.asString(this.getAtt('ScheduledTaskId'));
+        this.attrScheduledTaskId = this.getAtt('ScheduledTaskId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.launchTime = props.launchTime;

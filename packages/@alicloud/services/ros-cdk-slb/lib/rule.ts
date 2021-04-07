@@ -12,12 +12,12 @@ export interface RuleProps {
      * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    readonly listenerPort: number;
+    readonly listenerPort: number | ros.IResolvable;
 
     /**
      * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * Property ruleList: The forwarding rules to add.
@@ -38,7 +38,7 @@ export class Rule extends ros.Resource {
     /**
      * Attribute Rules: A list of forwarding rules. Each element of rules contains "RuleId".
      */
-    public readonly attrRules: any;
+    public readonly attrRules: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::Rule`.

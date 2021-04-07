@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::GrantInstanceToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.GrantInstanceToCen")
 public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public GrantInstanceToCen(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.GrantInstanceToCenProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public GrantInstanceToCen(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.GrantInstanceToCenProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CenId: The ID of the CEN instance to be authorized.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceId: The ID of the network instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.GrantInstanceToCen> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,37 +97,95 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cenId: The ID of the CEN instance to be authorized.
+         * <p>
          * @return {@code this}
-         * @param cenId This parameter is required.
+         * @param cenId Property cenId: The ID of the CEN instance to be authorized. This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
             this.props.cenId(cenId);
             return this;
         }
+        /**
+         * Property cenId: The ID of the CEN instance to be authorized.
+         * <p>
+         * @return {@code this}
+         * @param cenId Property cenId: The ID of the CEN instance to be authorized. This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
 
         /**
+         * Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
+         * <p>
          * @return {@code this}
-         * @param cenOwnerId This parameter is required.
+         * @param cenOwnerId Property cenOwnerId: The UID of the account to which the target CEN instance belongs. This parameter is required.
          */
         public Builder cenOwnerId(final java.lang.Number cenOwnerId) {
             this.props.cenOwnerId(cenOwnerId);
             return this;
         }
+        /**
+         * Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
+         * <p>
+         * @return {@code this}
+         * @param cenOwnerId Property cenOwnerId: The UID of the account to which the target CEN instance belongs. This parameter is required.
+         */
+        public Builder cenOwnerId(final com.aliyun.ros.cdk.core.IResolvable cenOwnerId) {
+            this.props.cenOwnerId(cenOwnerId);
+            return this;
+        }
 
         /**
+         * Property instanceId: The ID of the network instance.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: The ID of the network instance. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: The ID of the network instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the network instance. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property instanceType: The type of the network instance.
+         * <p>
+         * Valid values:
+         * VPC: Virtual Private Cloud (VPC).
+         * VBR: Virtual Border Router (VBR).
+         * CCN: Cloud Connect Network (CCN).
+         * <p>
          * @return {@code this}
-         * @param instanceType This parameter is required.
+         * @param instanceType Property instanceType: The type of the network instance. This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * Property instanceType: The type of the network instance.
+         * <p>
+         * Valid values:
+         * VPC: Virtual Private Cloud (VPC).
+         * VBR: Virtual Border Router (VBR).
+         * CCN: Cloud Connect Network (CCN).
+         * <p>
+         * @return {@code this}
+         * @param instanceType Property instanceType: The type of the network instance. This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props.instanceType(instanceType);
             return this;
         }

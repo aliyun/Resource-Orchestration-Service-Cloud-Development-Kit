@@ -3,30 +3,30 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::SAMLProvider`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSAMLProviderProps")
 @software.amazon.jsii.Jsii.Proxy(RosSAMLProviderProps.Jsii$Proxy.class)
 public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSamlProviderName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSamlProviderName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSamlMetadataDocument() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocument() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSamlMetadataDocumentUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSamlMetadataDocumentUrl() {
         return null;
     }
 
@@ -40,10 +40,10 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosSAMLProviderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSAMLProviderProps> {
-        private java.lang.String samlProviderName;
-        private java.lang.String description;
-        private java.lang.String samlMetadataDocument;
-        private java.lang.String samlMetadataDocumentUrl;
+        private java.lang.Object samlProviderName;
+        private java.lang.Object description;
+        private java.lang.Object samlMetadataDocument;
+        private java.lang.Object samlMetadataDocumentUrl;
 
         /**
          * Sets the value of {@link RosSAMLProviderProps#getSamlProviderName}
@@ -51,6 +51,16 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder samlProviderName(java.lang.String samlProviderName) {
+            this.samlProviderName = samlProviderName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSAMLProviderProps#getSamlProviderName}
+         * @param samlProviderName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder samlProviderName(com.aliyun.ros.cdk.core.IResolvable samlProviderName) {
             this.samlProviderName = samlProviderName;
             return this;
         }
@@ -66,6 +76,16 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSAMLProviderProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSAMLProviderProps#getSamlMetadataDocument}
          * @param samlMetadataDocument the value to be set.
          * @return {@code this}
@@ -76,11 +96,31 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosSAMLProviderProps#getSamlMetadataDocument}
+         * @param samlMetadataDocument the value to be set.
+         * @return {@code this}
+         */
+        public Builder samlMetadataDocument(com.aliyun.ros.cdk.core.IResolvable samlMetadataDocument) {
+            this.samlMetadataDocument = samlMetadataDocument;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSAMLProviderProps#getSamlMetadataDocumentUrl}
          * @param samlMetadataDocumentUrl the value to be set.
          * @return {@code this}
          */
         public Builder samlMetadataDocumentUrl(java.lang.String samlMetadataDocumentUrl) {
+            this.samlMetadataDocumentUrl = samlMetadataDocumentUrl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSAMLProviderProps#getSamlMetadataDocumentUrl}
+         * @param samlMetadataDocumentUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder samlMetadataDocumentUrl(com.aliyun.ros.cdk.core.IResolvable samlMetadataDocumentUrl) {
             this.samlMetadataDocumentUrl = samlMetadataDocumentUrl;
             return this;
         }
@@ -101,10 +141,10 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSAMLProviderProps {
-        private final java.lang.String samlProviderName;
-        private final java.lang.String description;
-        private final java.lang.String samlMetadataDocument;
-        private final java.lang.String samlMetadataDocumentUrl;
+        private final java.lang.Object samlProviderName;
+        private final java.lang.Object description;
+        private final java.lang.Object samlMetadataDocument;
+        private final java.lang.Object samlMetadataDocumentUrl;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -112,16 +152,16 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.samlProviderName = software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.samlMetadataDocument = software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.samlMetadataDocumentUrl = software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.samlProviderName = software.amazon.jsii.Kernel.get(this, "samlProviderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.samlMetadataDocument = software.amazon.jsii.Kernel.get(this, "samlMetadataDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.samlMetadataDocumentUrl = software.amazon.jsii.Kernel.get(this, "samlMetadataDocumentUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String samlProviderName, final java.lang.String description, final java.lang.String samlMetadataDocument, final java.lang.String samlMetadataDocumentUrl) {
+        protected Jsii$Proxy(final java.lang.Object samlProviderName, final java.lang.Object description, final java.lang.Object samlMetadataDocument, final java.lang.Object samlMetadataDocumentUrl) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.samlProviderName = java.util.Objects.requireNonNull(samlProviderName, "samlProviderName is required");
             this.description = description;
@@ -130,22 +170,22 @@ public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getSamlProviderName() {
+        public final java.lang.Object getSamlProviderName() {
             return this.samlProviderName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getSamlMetadataDocument() {
+        public final java.lang.Object getSamlMetadataDocument() {
             return this.samlMetadataDocument;
         }
 
         @Override
-        public final java.lang.String getSamlMetadataDocumentUrl() {
+        public final java.lang.Object getSamlMetadataDocumentUrl() {
             return this.samlMetadataDocumentUrl;
         }
 

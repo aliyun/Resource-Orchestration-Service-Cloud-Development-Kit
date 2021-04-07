@@ -11,7 +11,7 @@ export interface ListenerProps {
     /**
      * Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * Property portRanges:
@@ -23,7 +23,7 @@ export interface ListenerProps {
      * tcp: TCP protocol
      * udp: UDP protocol
      */
-    readonly protocol: string;
+    readonly protocol: string | ros.IResolvable;
 
     /**
      * Property clientAffinity: Specifies whether to enable client affinity for the listener.
@@ -33,19 +33,19 @@ export interface ListenerProps {
      * If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
      * a specific source (client) IP address are always routed to the same endpoint.
      */
-    readonly clientAffinity?: string;
+    readonly clientAffinity?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the listener.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -61,7 +61,7 @@ export class Listener extends ros.Resource {
     /**
      * Attribute ListenerId: The ID of the listener.
      */
-    public readonly attrListenerId: any;
+    public readonly attrListenerId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::Listener`.

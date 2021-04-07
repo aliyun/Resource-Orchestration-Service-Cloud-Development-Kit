@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::AttachPolicyToRole`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.197Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.852Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AttachPolicyToRole")
 public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AttachPolicyToRole(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.AttachPolicyToRoleProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AttachPolicyToRole(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.AttachPolicyToRoleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.AttachPolicyToRole> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,28 +83,68 @@ public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property policyName: Authorization policy name.
+         * <p>
          * @return {@code this}
-         * @param policyName This parameter is required.
+         * @param policyName Property policyName: Authorization policy name. This parameter is required.
          */
         public Builder policyName(final java.lang.String policyName) {
             this.props.policyName(policyName);
             return this;
         }
+        /**
+         * Property policyName: Authorization policy name.
+         * <p>
+         * @return {@code this}
+         * @param policyName Property policyName: Authorization policy name. This parameter is required.
+         */
+        public Builder policyName(final com.aliyun.ros.cdk.core.IResolvable policyName) {
+            this.props.policyName(policyName);
+            return this;
+        }
 
         /**
+         * Property policyType: Authorization policy type.
+         * <p>
+         * Value: "System" or "Custom".
+         * <p>
          * @return {@code this}
-         * @param policyType This parameter is required.
+         * @param policyType Property policyType: Authorization policy type. This parameter is required.
          */
         public Builder policyType(final java.lang.String policyType) {
             this.props.policyType(policyType);
             return this;
         }
+        /**
+         * Property policyType: Authorization policy type.
+         * <p>
+         * Value: "System" or "Custom".
+         * <p>
+         * @return {@code this}
+         * @param policyType Property policyType: Authorization policy type. This parameter is required.
+         */
+        public Builder policyType(final com.aliyun.ros.cdk.core.IResolvable policyType) {
+            this.props.policyType(policyType);
+            return this;
+        }
 
         /**
+         * Property roleName: Role name.Example: dev.
+         * <p>
          * @return {@code this}
-         * @param roleName This parameter is required.
+         * @param roleName Property roleName: Role name.Example: dev. This parameter is required.
          */
         public Builder roleName(final java.lang.String roleName) {
+            this.props.roleName(roleName);
+            return this;
+        }
+        /**
+         * Property roleName: Role name.Example: dev.
+         * <p>
+         * @return {@code this}
+         * @param roleName Property roleName: Role name.Example: dev. This parameter is required.
+         */
+        public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
             this.props.roleName(roleName);
             return this;
         }

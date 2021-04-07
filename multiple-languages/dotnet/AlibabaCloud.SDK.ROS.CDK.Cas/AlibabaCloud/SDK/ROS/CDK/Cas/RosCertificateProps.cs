@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Property</strong>: cert: Specify the content of the certificate. To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "cert", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Cert
+        [JsiiProperty(name: "cert", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Cert
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Property</strong>: key: Specify the certificate private key content. To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Key
+        [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Key
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Property</strong>: name: Custom certificate name. The certificate name under a user cannot be duplicated.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <strong>Property</strong>: lang: Specifies the language type for requesting and receiving messages.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "lang", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Lang
+        [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Lang
         {
             get;
             set;
@@ -55,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <strong>Property</strong>: sourceIp: Specifies the source IP address of the request.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sourceIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SourceIp
+        [JsiiProperty(name: "sourceIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SourceIp
         {
             get;
             set;

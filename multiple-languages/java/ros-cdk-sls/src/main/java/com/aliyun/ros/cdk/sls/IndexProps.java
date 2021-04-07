@@ -3,30 +3,49 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Index`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.400Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.101Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.IndexProps")
 @software.amazon.jsii.Jsii.Proxy(IndexProps.Jsii$Proxy.class)
 public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property fullTextIndex: Full-text indexing configuration.
+     * <p>
+     * Full-text indexing and key indexing must have at least one enabled.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFullTextIndex();
 
     /**
+     * Property logstoreName: Logstore name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName();
 
     /**
+     * Property projectName: Project name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
+     * Property keyIndices: Key index configurations.
+     * <p>
+     * Full-text indexing and key indexing must have at least one enabled.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeyIndices() {
         return null;
     }
 
     /**
+     * Property logReduce: Whether to enable log reduce.
+     * <p>
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLogReduce() {
         return null;
@@ -43,14 +62,15 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<IndexProps> {
         private java.lang.Object fullTextIndex;
-        private java.lang.String logstoreName;
-        private java.lang.String projectName;
+        private java.lang.Object logstoreName;
+        private java.lang.Object projectName;
         private java.lang.Object keyIndices;
         private java.lang.Object logReduce;
 
         /**
          * Sets the value of {@link IndexProps#getFullTextIndex}
-         * @param fullTextIndex the value to be set. This parameter is required.
+         * @param fullTextIndex Property fullTextIndex: Full-text indexing configuration. This parameter is required.
+         *                      Full-text indexing and key indexing must have at least one enabled.
          * @return {@code this}
          */
         public Builder fullTextIndex(com.aliyun.ros.cdk.core.IResolvable fullTextIndex) {
@@ -60,7 +80,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IndexProps#getFullTextIndex}
-         * @param fullTextIndex the value to be set. This parameter is required.
+         * @param fullTextIndex Property fullTextIndex: Full-text indexing configuration. This parameter is required.
+         *                      Full-text indexing and key indexing must have at least one enabled.
          * @return {@code this}
          */
         public Builder fullTextIndex(com.aliyun.ros.cdk.sls.RosIndex.FullTextIndexProperty fullTextIndex) {
@@ -70,7 +91,10 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IndexProps#getLogstoreName}
-         * @param logstoreName the value to be set. This parameter is required.
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder logstoreName(java.lang.String logstoreName) {
@@ -79,8 +103,24 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link IndexProps#getLogstoreName}
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder logstoreName(com.aliyun.ros.cdk.core.IResolvable logstoreName) {
+            this.logstoreName = logstoreName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link IndexProps#getProjectName}
-         * @param projectName the value to be set. This parameter is required.
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
@@ -89,8 +129,22 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link IndexProps#getProjectName}
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link IndexProps#getKeyIndices}
-         * @param keyIndices the value to be set.
+         * @param keyIndices Property keyIndices: Key index configurations.
+         *                   Full-text indexing and key indexing must have at least one enabled.
          * @return {@code this}
          */
         public Builder keyIndices(com.aliyun.ros.cdk.core.IResolvable keyIndices) {
@@ -100,7 +154,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IndexProps#getKeyIndices}
-         * @param keyIndices the value to be set.
+         * @param keyIndices Property keyIndices: Key index configurations.
+         *                   Full-text indexing and key indexing must have at least one enabled.
          * @return {@code this}
          */
         public Builder keyIndices(java.util.List<? extends java.lang.Object> keyIndices) {
@@ -110,7 +165,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IndexProps#getLogReduce}
-         * @param logReduce the value to be set.
+         * @param logReduce Property logReduce: Whether to enable log reduce.
+         *                  Default to false.
          * @return {@code this}
          */
         public Builder logReduce(java.lang.Boolean logReduce) {
@@ -120,7 +176,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link IndexProps#getLogReduce}
-         * @param logReduce the value to be set.
+         * @param logReduce Property logReduce: Whether to enable log reduce.
+         *                  Default to false.
          * @return {@code this}
          */
         public Builder logReduce(com.aliyun.ros.cdk.core.IResolvable logReduce) {
@@ -145,8 +202,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements IndexProps {
         private final java.lang.Object fullTextIndex;
-        private final java.lang.String logstoreName;
-        private final java.lang.String projectName;
+        private final java.lang.Object logstoreName;
+        private final java.lang.Object projectName;
         private final java.lang.Object keyIndices;
         private final java.lang.Object logReduce;
 
@@ -157,8 +214,8 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.fullTextIndex = software.amazon.jsii.Kernel.get(this, "fullTextIndex", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyIndices = software.amazon.jsii.Kernel.get(this, "keyIndices", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logReduce = software.amazon.jsii.Kernel.get(this, "logReduce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -166,7 +223,7 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object fullTextIndex, final java.lang.String logstoreName, final java.lang.String projectName, final java.lang.Object keyIndices, final java.lang.Object logReduce) {
+        protected Jsii$Proxy(final java.lang.Object fullTextIndex, final java.lang.Object logstoreName, final java.lang.Object projectName, final java.lang.Object keyIndices, final java.lang.Object logReduce) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.fullTextIndex = java.util.Objects.requireNonNull(fullTextIndex, "fullTextIndex is required");
             this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
@@ -181,12 +238,12 @@ public interface IndexProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getLogstoreName() {
+        public final java.lang.Object getLogstoreName() {
             return this.logstoreName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

@@ -10,7 +10,7 @@ export interface RosAccessKeyProps {
     /**
      * @Property userName: Specifies the user name, containing up to 64 characters.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 }
 
 /**
@@ -63,17 +63,17 @@ export class RosAccessKey extends ros.RosResource {
     /**
      * @Attribute AccessKeyId: Id of access key.
      */
-    public readonly attrAccessKeyId: any;
+    public readonly attrAccessKeyId: ros.IResolvable;
 
     /**
      * @Attribute AccessKeySecret: Secret of access key.
      */
-    public readonly attrAccessKeySecret: any;
+    public readonly attrAccessKeySecret: ros.IResolvable;
 
     /**
      * @Attribute Status: Status of access key.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -81,7 +81,7 @@ export class RosAccessKey extends ros.RosResource {
     /**
      * @Property userName: Specifies the user name, containing up to 64 characters.
      */
-    public userName: string;
+    public userName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::AccessKey`.
@@ -92,9 +92,9 @@ export class RosAccessKey extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccessKeyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccessKey.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccessKeyId = ros.Token.asString(this.getAtt('AccessKeyId'));
-        this.attrAccessKeySecret = ros.Token.asString(this.getAtt('AccessKeySecret'));
-        this.attrStatus = ros.Token.asString(this.getAtt('Status'));
+        this.attrAccessKeyId = this.getAtt('AccessKeyId');
+        this.attrAccessKeySecret = this.getAtt('AccessKeySecret');
+        this.attrStatus = this.getAtt('Status');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.userName = props.userName;
@@ -119,17 +119,17 @@ export interface RosAttachPolicyToRoleProps {
     /**
      * @Property policyName: Authorization policy name.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * @Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    readonly policyType: string;
+    readonly policyType: string | ros.IResolvable;
 
     /**
      * @Property roleName: Role name.Example: dev.
      */
-    readonly roleName: string;
+    readonly roleName: string | ros.IResolvable;
 }
 
 /**
@@ -197,17 +197,17 @@ export class RosAttachPolicyToRole extends ros.RosResource {
     /**
      * @Property policyName: Authorization policy name.
      */
-    public policyName: string;
+    public policyName: string | ros.IResolvable;
 
     /**
      * @Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    public policyType: string;
+    public policyType: string | ros.IResolvable;
 
     /**
      * @Property roleName: Role name.Example: dev.
      */
-    public roleName: string;
+    public roleName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
@@ -246,17 +246,17 @@ export interface RosAttachPolicyToUserProps {
     /**
      * @Property policyName: Authorization policy name.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * @Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    readonly policyType: string;
+    readonly policyType: string | ros.IResolvable;
 
     /**
      * @Property userName: User name.Example: dev.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 }
 
 /**
@@ -324,17 +324,17 @@ export class RosAttachPolicyToUser extends ros.RosResource {
     /**
      * @Property policyName: Authorization policy name.
      */
-    public policyName: string;
+    public policyName: string | ros.IResolvable;
 
     /**
      * @Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
-    public policyType: string;
+    public policyType: string | ros.IResolvable;
 
     /**
      * @Property userName: User name.Example: dev.
      */
-    public userName: string;
+    public userName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RAM::AttachPolicyToUser`.
@@ -373,12 +373,12 @@ export interface RosGroupProps {
     /**
      * @Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property comments: Remark information, up to 128 characters or Chinese characters.
      */
-    readonly comments?: string;
+    readonly comments?: string | ros.IResolvable;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -447,7 +447,7 @@ export class RosGroup extends ros.RosResource {
     /**
      * @Attribute GroupName: Id of ram group.
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -455,12 +455,12 @@ export class RosGroup extends ros.RosResource {
     /**
      * @Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property comments: Remark information, up to 128 characters or Chinese characters.
      */
-    public comments: string | undefined;
+    public comments: string | ros.IResolvable | undefined;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -476,7 +476,7 @@ export class RosGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupName = ros.Token.asString(this.getAtt('GroupName'));
+        this.attrGroupName = this.getAtt('GroupName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
@@ -505,11 +505,11 @@ export namespace RosGroup {
         /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
          */
-        readonly policyName: string;
+        readonly policyName: string | ros.IResolvable;
         /**
          * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
          */
@@ -567,7 +567,7 @@ export namespace RosGroup {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
@@ -626,7 +626,7 @@ export namespace RosGroup {
         /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
-        readonly effect?: string;
+        readonly effect?: string | ros.IResolvable;
     }
 }
 /**
@@ -673,12 +673,12 @@ export interface RosManagedPolicyProps {
     /**
      * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
      */
-    readonly policyName: string;
+    readonly policyName: string | ros.IResolvable;
 
     /**
      * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property groups: The names of groups to attach to this policy.
@@ -775,7 +775,7 @@ export class RosManagedPolicy extends ros.RosResource {
     /**
      * @Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
      */
-    public readonly attrPolicyName: any;
+    public readonly attrPolicyName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -783,12 +783,12 @@ export class RosManagedPolicy extends ros.RosResource {
     /**
      * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
      */
-    public policyName: string;
+    public policyName: string | ros.IResolvable;
 
     /**
      * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property groups: The names of groups to attach to this policy.
@@ -824,7 +824,7 @@ export class RosManagedPolicy extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosManagedPolicyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrPolicyName = ros.Token.asString(this.getAtt('PolicyName'));
+        this.attrPolicyName = this.getAtt('PolicyName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.policyName = props.policyName;
@@ -861,7 +861,7 @@ export namespace RosManagedPolicy {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
@@ -920,7 +920,7 @@ export namespace RosManagedPolicy {
         /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
-        readonly effect?: string;
+        readonly effect?: string | ros.IResolvable;
     }
 }
 /**
@@ -972,19 +972,19 @@ export interface RosRoleProps {
     /**
      * @Property roleName: Specifies the role name, containing up to 64 characters.
      */
-    readonly roleName: string;
+    readonly roleName: string | ros.IResolvable;
 
     /**
      * @Property description: Remark information, up to 1024 characters or Chinese characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
      */
-    readonly maxSessionDuration?: number;
+    readonly maxSessionDuration?: number | ros.IResolvable;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -1065,17 +1065,17 @@ export class RosRole extends ros.RosResource {
     /**
      * @Attribute Arn: Name of alicloud resource.
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute RoleId: Id of ram role.
      */
-    public readonly attrRoleId: any;
+    public readonly attrRoleId: ros.IResolvable;
 
     /**
      * @Attribute RoleName: Name of ram role.
      */
-    public readonly attrRoleName: any;
+    public readonly attrRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1088,19 +1088,19 @@ export class RosRole extends ros.RosResource {
     /**
      * @Property roleName: Specifies the role name, containing up to 64 characters.
      */
-    public roleName: string;
+    public roleName: string | ros.IResolvable;
 
     /**
      * @Property description: Remark information, up to 1024 characters or Chinese characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
      */
-    public maxSessionDuration: number | undefined;
+    public maxSessionDuration: number | ros.IResolvable | undefined;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -1116,9 +1116,9 @@ export class RosRole extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRoleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRole.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArn = ros.Token.asString(this.getAtt('Arn'));
-        this.attrRoleId = ros.Token.asString(this.getAtt('RoleId'));
-        this.attrRoleName = ros.Token.asString(this.getAtt('RoleName'));
+        this.attrArn = this.getAtt('Arn');
+        this.attrRoleId = this.getAtt('RoleId');
+        this.attrRoleName = this.getAtt('RoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.assumeRolePolicyDocument = props.assumeRolePolicyDocument;
@@ -1151,7 +1151,7 @@ export namespace RosRole {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version: string;
+        readonly version: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
@@ -1361,11 +1361,11 @@ export namespace RosRole {
         /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
          */
-        readonly policyName: string;
+        readonly policyName: string | ros.IResolvable;
         /**
          * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
          */
@@ -1423,7 +1423,7 @@ export namespace RosRole {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
@@ -1535,7 +1535,7 @@ export namespace RosRole {
         /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
-        readonly effect?: string;
+        readonly effect?: string | ros.IResolvable;
     }
 }
 /**
@@ -1582,22 +1582,22 @@ export interface RosSAMLProviderProps {
     /**
      * @Property samlProviderName: IdP Name. The IdP name can contain a maximum of 128 characters and only letters, numbers, and the following special characters are accepted: hyphens (-), periods (.), and underscores (_). It cannot start or end with a special character.
      */
-    readonly samlProviderName: string;
+    readonly samlProviderName: string | ros.IResolvable;
 
     /**
      * @Property description: The description can contain a maximum of 256 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
      */
-    readonly samlMetadataDocument?: string;
+    readonly samlMetadataDocument?: string | ros.IResolvable;
 
     /**
      * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
      */
-    readonly samlMetadataDocumentUrl?: string;
+    readonly samlMetadataDocumentUrl?: string | ros.IResolvable;
 }
 
 /**
@@ -1684,12 +1684,12 @@ export class RosSAMLProvider extends ros.RosResource {
     /**
      * @Attribute Arn: ARN.
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute SAMLProviderName: IdP Name.
      */
-    public readonly attrSamlProviderName: any;
+    public readonly attrSamlProviderName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1697,22 +1697,22 @@ export class RosSAMLProvider extends ros.RosResource {
     /**
      * @Property samlProviderName: IdP Name. The IdP name can contain a maximum of 128 characters and only letters, numbers, and the following special characters are accepted: hyphens (-), periods (.), and underscores (_). It cannot start or end with a special character.
      */
-    public samlProviderName: string;
+    public samlProviderName: string | ros.IResolvable;
 
     /**
      * @Property description: The description can contain a maximum of 256 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property samlMetadataDocument: SAML metadata document. The content must be 1 to 102,400 bytes in length.You must specify one of the SAMLMetadataDocument and SAMLMetadataDocumentURL properties, but you cannot specify both of them.
      */
-    public samlMetadataDocument: string | undefined;
+    public samlMetadataDocument: string | ros.IResolvable | undefined;
 
     /**
      * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
      */
-    public samlMetadataDocumentUrl: string | undefined;
+    public samlMetadataDocumentUrl: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::RAM::SAMLProvider`.
@@ -1723,8 +1723,8 @@ export class RosSAMLProvider extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSAMLProviderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSAMLProvider.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArn = ros.Token.asString(this.getAtt('Arn'));
-        this.attrSamlProviderName = ros.Token.asString(this.getAtt('SAMLProviderName'));
+        this.attrArn = this.getAtt('Arn');
+        this.attrSamlProviderName = this.getAtt('SAMLProviderName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.samlProviderName = props.samlProviderName;
@@ -1755,22 +1755,22 @@ export interface RosUserProps {
     /**
      * @Property userName: Specifies the user name, containing up to 64 characters.
      */
-    readonly userName: string;
+    readonly userName: string | ros.IResolvable;
 
     /**
      * @Property comments: Comments of ram user.
      */
-    readonly comments?: string;
+    readonly comments?: string | ros.IResolvable;
 
     /**
      * @Property displayName: Display name, up to 128 characters or Chinese characters.
      */
-    readonly displayName?: string;
+    readonly displayName?: string | ros.IResolvable;
 
     /**
      * @Property email: Email of ram user.
      */
-    readonly email?: string;
+    readonly email?: string | ros.IResolvable;
 
     /**
      * @Property groups: A name of a group to which you want to add the user.
@@ -1785,7 +1785,7 @@ export interface RosUserProps {
     /**
      * @Property mobilePhone: Phone number of ram user.
      */
-    readonly mobilePhone?: string;
+    readonly mobilePhone?: string | ros.IResolvable;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -1864,22 +1864,22 @@ export class RosUser extends ros.RosResource {
     /**
      * @Attribute CreateDate: Create date of ram user.
      */
-    public readonly attrCreateDate: any;
+    public readonly attrCreateDate: ros.IResolvable;
 
     /**
      * @Attribute LastLoginDate: Last login date of ram user.
      */
-    public readonly attrLastLoginDate: any;
+    public readonly attrLastLoginDate: ros.IResolvable;
 
     /**
      * @Attribute UserId: Id of ram user.
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     /**
      * @Attribute UserName: Name of ram user.
      */
-    public readonly attrUserName: any;
+    public readonly attrUserName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1887,22 +1887,22 @@ export class RosUser extends ros.RosResource {
     /**
      * @Property userName: Specifies the user name, containing up to 64 characters.
      */
-    public userName: string;
+    public userName: string | ros.IResolvable;
 
     /**
      * @Property comments: Comments of ram user.
      */
-    public comments: string | undefined;
+    public comments: string | ros.IResolvable | undefined;
 
     /**
      * @Property displayName: Display name, up to 128 characters or Chinese characters.
      */
-    public displayName: string | undefined;
+    public displayName: string | ros.IResolvable | undefined;
 
     /**
      * @Property email: Email of ram user.
      */
-    public email: string | undefined;
+    public email: string | ros.IResolvable | undefined;
 
     /**
      * @Property groups: A name of a group to which you want to add the user.
@@ -1917,7 +1917,7 @@ export class RosUser extends ros.RosResource {
     /**
      * @Property mobilePhone: Phone number of ram user.
      */
-    public mobilePhone: string | undefined;
+    public mobilePhone: string | ros.IResolvable | undefined;
 
     /**
      * @Property policies: Describes what actions are allowed on what resources.
@@ -1933,10 +1933,10 @@ export class RosUser extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUserProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUser.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCreateDate = ros.Token.asString(this.getAtt('CreateDate'));
-        this.attrLastLoginDate = ros.Token.asString(this.getAtt('LastLoginDate'));
-        this.attrUserId = ros.Token.asString(this.getAtt('UserId'));
-        this.attrUserName = ros.Token.asString(this.getAtt('UserName'));
+        this.attrCreateDate = this.getAtt('CreateDate');
+        this.attrLastLoginDate = this.getAtt('LastLoginDate');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrUserName = this.getAtt('UserName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.userName = props.userName;
@@ -1983,7 +1983,7 @@ export namespace RosUser {
         /**
          * @Property password: The password for the user.
          */
-        readonly password?: string;
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -2035,11 +2035,11 @@ export namespace RosUser {
         /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
          */
-        readonly policyName: string;
+        readonly policyName: string | ros.IResolvable;
         /**
          * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
          */
@@ -2097,7 +2097,7 @@ export namespace RosUser {
         /**
          * @Property version: You can use versions to track changes to a managed policy.
          */
-        readonly version?: string;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property statement: A policy consists of one or more statements.
          */
@@ -2156,7 +2156,7 @@ export namespace RosUser {
         /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
-        readonly effect?: string;
+        readonly effect?: string | ros.IResolvable;
     }
 }
 /**
@@ -2203,7 +2203,7 @@ export interface RosUserToGroupAdditionProps {
     /**
      * @Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property users: list name of a users to which you want to add the group.
@@ -2267,7 +2267,7 @@ export class RosUserToGroupAddition extends ros.RosResource {
     /**
      * @Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property users: list name of a users to which you want to add the group.

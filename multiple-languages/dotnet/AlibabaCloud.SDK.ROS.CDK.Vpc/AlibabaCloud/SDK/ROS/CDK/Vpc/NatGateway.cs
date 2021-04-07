@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute ForwardTableId: The forward table id.</summary>
-        [JsiiProperty(name: "attrForwardTableId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrForwardTableId
+        [JsiiProperty(name: "attrForwardTableId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrForwardTableId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute NatGatewayId: The Id of created NAT gateway.</summary>
-        [JsiiProperty(name: "attrNatGatewayId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNatGatewayId
+        [JsiiProperty(name: "attrNatGatewayId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNatGatewayId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SNatTableId: The SNAT table id.</summary>
-        [JsiiProperty(name: "attrSNatTableId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSNatTableId
+        [JsiiProperty(name: "attrSNatTableId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSNatTableId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

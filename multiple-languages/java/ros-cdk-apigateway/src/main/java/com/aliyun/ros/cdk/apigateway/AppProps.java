@@ -3,24 +3,29 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::App`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.649Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAppName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAppName();
 
     /**
+     * Property description: Description of the App, less than 180 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to app.
+     * <p>
+     * Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> getTags() {
         return null;
     }
 
@@ -34,13 +39,13 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AppProps> {
-        private java.lang.String appName;
-        private java.lang.String description;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object appName;
+        private java.lang.Object description;
+        private java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
 
         /**
          * Sets the value of {@link AppProps#getAppName}
-         * @param appName the value to be set. This parameter is required.
+         * @param appName Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          * @return {@code this}
          */
         public Builder appName(java.lang.String appName) {
@@ -49,8 +54,18 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AppProps#getAppName}
+         * @param appName Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder appName(com.aliyun.ros.cdk.core.IResolvable appName) {
+            this.appName = appName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AppProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the App, less than 180 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -59,13 +74,24 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AppProps#getDescription}
+         * @param description Property description: Description of the App, less than 180 characters.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AppProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to app.
+         *             Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty>)tags;
             return this;
         }
 
@@ -85,9 +111,9 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AppProps {
-        private final java.lang.String appName;
-        private final java.lang.String description;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object appName;
+        private final java.lang.Object description;
+        private final java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -95,34 +121,34 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String appName, final java.lang.String description, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        protected Jsii$Proxy(final java.lang.Object appName, final java.lang.Object description, final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.appName = java.util.Objects.requireNonNull(appName, "appName is required");
             this.description = description;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getAppName() {
+        public final java.lang.Object getAppName() {
             return this.appName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> getTags() {
             return this.tags;
         }
 

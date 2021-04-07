@@ -3,48 +3,64 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.378Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.055Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.CertificateProps")
 @software.amazon.jsii.Jsii.Proxy(CertificateProps.Jsii$Proxy.class)
 public interface CertificateProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property certificate: The content of the certificate public key.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCertificate();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCertificate();
 
     /**
+     * Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAliCloudCertificateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateId() {
         return null;
     }
 
     /**
+     * Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAliCloudCertificateName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliCloudCertificateName() {
         return null;
     }
 
     /**
+     * Property certificateName: The name of the certificate.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCertificateName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateName() {
         return null;
     }
 
     /**
+     * Property certificateType: The type of the certificate.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCertificateType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateType() {
         return null;
     }
 
     /**
+     * Property privateKey: The private key.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateKey() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> getTags() {
         return null;
     }
 
@@ -58,17 +74,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CertificateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CertificateProps> {
-        private java.lang.String certificate;
-        private java.lang.String aliCloudCertificateId;
-        private java.lang.String aliCloudCertificateName;
-        private java.lang.String certificateName;
-        private java.lang.String certificateType;
-        private java.lang.String privateKey;
-        private java.lang.String resourceGroupId;
+        private java.lang.Object certificate;
+        private java.lang.Object aliCloudCertificateId;
+        private java.lang.Object aliCloudCertificateName;
+        private java.lang.Object certificateName;
+        private java.lang.Object certificateType;
+        private java.lang.Object privateKey;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags;
 
         /**
          * Sets the value of {@link CertificateProps#getCertificate}
-         * @param certificate the value to be set. This parameter is required.
+         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
          * @return {@code this}
          */
         public Builder certificate(java.lang.String certificate) {
@@ -77,8 +94,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getCertificate}
+         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder certificate(com.aliyun.ros.cdk.core.IResolvable certificate) {
+            this.certificate = certificate;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getAliCloudCertificateId}
-         * @param aliCloudCertificateId the value to be set.
+         * @param aliCloudCertificateId Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
          * @return {@code this}
          */
         public Builder aliCloudCertificateId(java.lang.String aliCloudCertificateId) {
@@ -87,8 +114,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getAliCloudCertificateId}
+         * @param aliCloudCertificateId Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateId(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateId) {
+            this.aliCloudCertificateId = aliCloudCertificateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getAliCloudCertificateName}
-         * @param aliCloudCertificateName the value to be set.
+         * @param aliCloudCertificateName Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
          * @return {@code this}
          */
         public Builder aliCloudCertificateName(java.lang.String aliCloudCertificateName) {
@@ -97,8 +134,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getAliCloudCertificateName}
+         * @param aliCloudCertificateName Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
+         * @return {@code this}
+         */
+        public Builder aliCloudCertificateName(com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
+            this.aliCloudCertificateName = aliCloudCertificateName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getCertificateName}
-         * @param certificateName the value to be set.
+         * @param certificateName Property certificateName: The name of the certificate.
          * @return {@code this}
          */
         public Builder certificateName(java.lang.String certificateName) {
@@ -107,8 +154,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getCertificateName}
+         * @param certificateName Property certificateName: The name of the certificate.
+         * @return {@code this}
+         */
+        public Builder certificateName(com.aliyun.ros.cdk.core.IResolvable certificateName) {
+            this.certificateName = certificateName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getCertificateType}
-         * @param certificateType the value to be set.
+         * @param certificateType Property certificateType: The type of the certificate.
          * @return {@code this}
          */
         public Builder certificateType(java.lang.String certificateType) {
@@ -117,8 +174,18 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getCertificateType}
+         * @param certificateType Property certificateType: The type of the certificate.
+         * @return {@code this}
+         */
+        public Builder certificateType(com.aliyun.ros.cdk.core.IResolvable certificateType) {
+            this.certificateType = certificateType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getPrivateKey}
-         * @param privateKey the value to be set.
+         * @param privateKey Property privateKey: The private key.
          * @return {@code this}
          */
         public Builder privateKey(java.lang.String privateKey) {
@@ -127,12 +194,44 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CertificateProps#getPrivateKey}
+         * @param privateKey Property privateKey: The private key.
+         * @return {@code this}
+         */
+        public Builder privateKey(com.aliyun.ros.cdk.core.IResolvable privateKey) {
+            this.privateKey = privateKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CertificateProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CertificateProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CertificateProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty>)tags;
             return this;
         }
 
@@ -143,7 +242,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public CertificateProps build() {
-            return new Jsii$Proxy(certificate, aliCloudCertificateId, aliCloudCertificateName, certificateName, certificateType, privateKey, resourceGroupId);
+            return new Jsii$Proxy(certificate, aliCloudCertificateId, aliCloudCertificateName, certificateName, certificateType, privateKey, resourceGroupId, tags);
         }
     }
 
@@ -152,13 +251,14 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertificateProps {
-        private final java.lang.String certificate;
-        private final java.lang.String aliCloudCertificateId;
-        private final java.lang.String aliCloudCertificateName;
-        private final java.lang.String certificateName;
-        private final java.lang.String certificateType;
-        private final java.lang.String privateKey;
-        private final java.lang.String resourceGroupId;
+        private final java.lang.Object certificate;
+        private final java.lang.Object aliCloudCertificateId;
+        private final java.lang.Object aliCloudCertificateName;
+        private final java.lang.Object certificateName;
+        private final java.lang.Object certificateType;
+        private final java.lang.Object privateKey;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -166,19 +266,21 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aliCloudCertificateId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aliCloudCertificateName = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.certificateType = software.amazon.jsii.Kernel.get(this, "certificateType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateKey = software.amazon.jsii.Kernel.get(this, "privateKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliCloudCertificateId = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliCloudCertificateName = software.amazon.jsii.Kernel.get(this, "aliCloudCertificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificateType = software.amazon.jsii.Kernel.get(this, "certificateType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateKey = software.amazon.jsii.Kernel.get(this, "privateKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String certificate, final java.lang.String aliCloudCertificateId, final java.lang.String aliCloudCertificateName, final java.lang.String certificateName, final java.lang.String certificateType, final java.lang.String privateKey, final java.lang.String resourceGroupId) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object certificate, final java.lang.Object aliCloudCertificateId, final java.lang.Object aliCloudCertificateName, final java.lang.Object certificateName, final java.lang.Object certificateType, final java.lang.Object privateKey, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.certificate = java.util.Objects.requireNonNull(certificate, "certificate is required");
             this.aliCloudCertificateId = aliCloudCertificateId;
@@ -187,41 +289,47 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             this.certificateType = certificateType;
             this.privateKey = privateKey;
             this.resourceGroupId = resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getCertificate() {
+        public final java.lang.Object getCertificate() {
             return this.certificate;
         }
 
         @Override
-        public final java.lang.String getAliCloudCertificateId() {
+        public final java.lang.Object getAliCloudCertificateId() {
             return this.aliCloudCertificateId;
         }
 
         @Override
-        public final java.lang.String getAliCloudCertificateName() {
+        public final java.lang.Object getAliCloudCertificateName() {
             return this.aliCloudCertificateName;
         }
 
         @Override
-        public final java.lang.String getCertificateName() {
+        public final java.lang.Object getCertificateName() {
             return this.certificateName;
         }
 
         @Override
-        public final java.lang.String getCertificateType() {
+        public final java.lang.Object getCertificateType() {
             return this.certificateType;
         }
 
         @Override
-        public final java.lang.String getPrivateKey() {
+        public final java.lang.Object getPrivateKey() {
             return this.privateKey;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -249,6 +357,9 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-slb.CertificateProps"));
@@ -273,7 +384,8 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             if (this.certificateName != null ? !this.certificateName.equals(that.certificateName) : that.certificateName != null) return false;
             if (this.certificateType != null ? !this.certificateType.equals(that.certificateType) : that.certificateType != null) return false;
             if (this.privateKey != null ? !this.privateKey.equals(that.privateKey) : that.privateKey != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -285,6 +397,7 @@ public interface CertificateProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.certificateType != null ? this.certificateType.hashCode() : 0);
             result = 31 * result + (this.privateKey != null ? this.privateKey.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

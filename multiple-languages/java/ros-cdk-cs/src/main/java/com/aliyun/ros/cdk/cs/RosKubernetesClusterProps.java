@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.368Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,11 +18,11 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
      */
@@ -46,13 +46,13 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getContainerCidr() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContainerCidr() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCpuPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpuPolicy() {
         return null;
     }
 
@@ -70,19 +70,19 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPair() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPair() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKubernetesVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoginPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
         return null;
     }
 
@@ -94,13 +94,13 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMasterAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterAutoRenewPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMasterCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterCount() {
         return null;
     }
 
@@ -118,61 +118,61 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMasterPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterPeriodUnit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSystemDiskCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMasterSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSystemDiskSize() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNodePortRange() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodePortRange() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getNumOfNodes() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNumOfNodes() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProxyMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyMode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServiceCidr() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceCidr() {
         return null;
     }
 
@@ -190,7 +190,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> getTags() {
         return null;
     }
 
@@ -202,7 +202,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeoutMins() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutMins() {
         return null;
     }
 
@@ -214,7 +214,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getWorkerAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerAutoRenewPeriod() {
         return null;
     }
 
@@ -232,31 +232,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkerInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getWorkerPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkerPeriodUnit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerPeriodUnit() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkerSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getWorkerSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskSize() {
         return null;
     }
 
@@ -272,48 +272,48 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
     public static final class Builder implements software.amazon.jsii.Builder<RosKubernetesClusterProps> {
         private java.lang.Object masterInstanceTypes;
         private java.lang.Object masterVSwitchIds;
-        private java.lang.String name;
-        private java.lang.String vpcId;
+        private java.lang.Object name;
+        private java.lang.Object vpcId;
         private java.lang.Object workerInstanceTypes;
         private java.lang.Object workerVSwitchIds;
         private java.lang.Object addons;
         private java.lang.Object cloudMonitorFlags;
-        private java.lang.String containerCidr;
-        private java.lang.String cpuPolicy;
+        private java.lang.Object containerCidr;
+        private java.lang.Object cpuPolicy;
         private java.lang.Object disableRollback;
         private java.lang.Object endpointPublicAccess;
-        private java.lang.String keyPair;
-        private java.lang.String kubernetesVersion;
-        private java.lang.String loginPassword;
+        private java.lang.Object keyPair;
+        private java.lang.Object kubernetesVersion;
+        private java.lang.Object loginPassword;
         private java.lang.Object masterAutoRenew;
-        private java.lang.Number masterAutoRenewPeriod;
-        private java.lang.Number masterCount;
+        private java.lang.Object masterAutoRenewPeriod;
+        private java.lang.Object masterCount;
         private java.lang.Object masterDataDisk;
         private java.lang.Object masterDataDisks;
-        private java.lang.String masterInstanceChargeType;
-        private java.lang.Number masterPeriod;
-        private java.lang.String masterPeriodUnit;
-        private java.lang.String masterSystemDiskCategory;
-        private java.lang.Number masterSystemDiskSize;
-        private java.lang.String nodePortRange;
-        private java.lang.Number numOfNodes;
-        private java.lang.String proxyMode;
-        private java.lang.String securityGroupId;
-        private java.lang.String serviceCidr;
+        private java.lang.Object masterInstanceChargeType;
+        private java.lang.Object masterPeriod;
+        private java.lang.Object masterPeriodUnit;
+        private java.lang.Object masterSystemDiskCategory;
+        private java.lang.Object masterSystemDiskSize;
+        private java.lang.Object nodePortRange;
+        private java.lang.Object numOfNodes;
+        private java.lang.Object proxyMode;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object serviceCidr;
         private java.lang.Object snatEntry;
         private java.lang.Object sshFlags;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags;
         private java.lang.Object taint;
-        private java.lang.Number timeoutMins;
+        private java.lang.Object timeoutMins;
         private java.lang.Object workerAutoRenew;
-        private java.lang.Number workerAutoRenewPeriod;
+        private java.lang.Object workerAutoRenewPeriod;
         private java.lang.Object workerDataDisk;
         private java.lang.Object workerDataDisks;
-        private java.lang.String workerInstanceChargeType;
-        private java.lang.Number workerPeriod;
-        private java.lang.String workerPeriodUnit;
-        private java.lang.String workerSystemDiskCategory;
-        private java.lang.Number workerSystemDiskSize;
+        private java.lang.Object workerInstanceChargeType;
+        private java.lang.Object workerPeriod;
+        private java.lang.Object workerPeriodUnit;
+        private java.lang.Object workerSystemDiskCategory;
+        private java.lang.Object workerSystemDiskSize;
 
         /**
          * Sets the value of {@link RosKubernetesClusterProps#getMasterInstanceTypes}
@@ -366,6 +366,16 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getVpcId}
          * @param vpcId the value to be set. This parameter is required.
          * @return {@code this}
@@ -376,12 +386,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
-         * Sets the value of {@link RosKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes the value to be set. This parameter is required.
+         * Sets the value of {@link RosKubernetesClusterProps#getVpcId}
+         * @param vpcId the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
             return this;
         }
 
@@ -391,6 +401,16 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
+            this.workerInstanceTypes = workerInstanceTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerInstanceTypes}
+         * @param workerInstanceTypes the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
             this.workerInstanceTypes = workerInstanceTypes;
             return this;
         }
@@ -466,11 +486,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getContainerCidr}
+         * @param containerCidr the value to be set.
+         * @return {@code this}
+         */
+        public Builder containerCidr(com.aliyun.ros.cdk.core.IResolvable containerCidr) {
+            this.containerCidr = containerCidr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getCpuPolicy}
          * @param cpuPolicy the value to be set.
          * @return {@code this}
          */
         public Builder cpuPolicy(java.lang.String cpuPolicy) {
+            this.cpuPolicy = cpuPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getCpuPolicy}
+         * @param cpuPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpuPolicy(com.aliyun.ros.cdk.core.IResolvable cpuPolicy) {
             this.cpuPolicy = cpuPolicy;
             return this;
         }
@@ -526,6 +566,16 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getKeyPair}
+         * @param keyPair the value to be set.
+         * @return {@code this}
+         */
+        public Builder keyPair(com.aliyun.ros.cdk.core.IResolvable keyPair) {
+            this.keyPair = keyPair;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getKubernetesVersion}
          * @param kubernetesVersion the value to be set.
          * @return {@code this}
@@ -536,11 +586,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getKubernetesVersion}
+         * @param kubernetesVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder kubernetesVersion(com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getLoginPassword}
          * @param loginPassword the value to be set.
          * @return {@code this}
          */
         public Builder loginPassword(java.lang.String loginPassword) {
+            this.loginPassword = loginPassword;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getLoginPassword}
+         * @param loginPassword the value to be set.
+         * @return {@code this}
+         */
+        public Builder loginPassword(com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.loginPassword = loginPassword;
             return this;
         }
@@ -576,11 +646,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterAutoRenewPeriod}
+         * @param masterAutoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterAutoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable masterAutoRenewPeriod) {
+            this.masterAutoRenewPeriod = masterAutoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getMasterCount}
          * @param masterCount the value to be set.
          * @return {@code this}
          */
         public Builder masterCount(java.lang.Number masterCount) {
+            this.masterCount = masterCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterCount}
+         * @param masterCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterCount(com.aliyun.ros.cdk.core.IResolvable masterCount) {
             this.masterCount = masterCount;
             return this;
         }
@@ -636,11 +726,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterInstanceChargeType}
+         * @param masterInstanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterInstanceChargeType(com.aliyun.ros.cdk.core.IResolvable masterInstanceChargeType) {
+            this.masterInstanceChargeType = masterInstanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getMasterPeriod}
          * @param masterPeriod the value to be set.
          * @return {@code this}
          */
         public Builder masterPeriod(java.lang.Number masterPeriod) {
+            this.masterPeriod = masterPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterPeriod}
+         * @param masterPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterPeriod(com.aliyun.ros.cdk.core.IResolvable masterPeriod) {
             this.masterPeriod = masterPeriod;
             return this;
         }
@@ -656,11 +766,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterPeriodUnit}
+         * @param masterPeriodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterPeriodUnit(com.aliyun.ros.cdk.core.IResolvable masterPeriodUnit) {
+            this.masterPeriodUnit = masterPeriodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getMasterSystemDiskCategory}
          * @param masterSystemDiskCategory the value to be set.
          * @return {@code this}
          */
         public Builder masterSystemDiskCategory(java.lang.String masterSystemDiskCategory) {
+            this.masterSystemDiskCategory = masterSystemDiskCategory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterSystemDiskCategory}
+         * @param masterSystemDiskCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterSystemDiskCategory(com.aliyun.ros.cdk.core.IResolvable masterSystemDiskCategory) {
             this.masterSystemDiskCategory = masterSystemDiskCategory;
             return this;
         }
@@ -676,11 +806,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getMasterSystemDiskSize}
+         * @param masterSystemDiskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterSystemDiskSize(com.aliyun.ros.cdk.core.IResolvable masterSystemDiskSize) {
+            this.masterSystemDiskSize = masterSystemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getNodePortRange}
          * @param nodePortRange the value to be set.
          * @return {@code this}
          */
         public Builder nodePortRange(java.lang.String nodePortRange) {
+            this.nodePortRange = nodePortRange;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getNodePortRange}
+         * @param nodePortRange the value to be set.
+         * @return {@code this}
+         */
+        public Builder nodePortRange(com.aliyun.ros.cdk.core.IResolvable nodePortRange) {
             this.nodePortRange = nodePortRange;
             return this;
         }
@@ -696,11 +846,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getNumOfNodes}
+         * @param numOfNodes the value to be set.
+         * @return {@code this}
+         */
+        public Builder numOfNodes(com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
+            this.numOfNodes = numOfNodes;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getProxyMode}
          * @param proxyMode the value to be set.
          * @return {@code this}
          */
         public Builder proxyMode(java.lang.String proxyMode) {
+            this.proxyMode = proxyMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getProxyMode}
+         * @param proxyMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyMode(com.aliyun.ros.cdk.core.IResolvable proxyMode) {
             this.proxyMode = proxyMode;
             return this;
         }
@@ -716,11 +886,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getServiceCidr}
          * @param serviceCidr the value to be set.
          * @return {@code this}
          */
         public Builder serviceCidr(java.lang.String serviceCidr) {
+            this.serviceCidr = serviceCidr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getServiceCidr}
+         * @param serviceCidr the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceCidr(com.aliyun.ros.cdk.core.IResolvable serviceCidr) {
             this.serviceCidr = serviceCidr;
             return this;
         }
@@ -771,18 +961,8 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosKubernetesClusterProps#getTaint}
-         * @param taint the value to be set.
-         * @return {@code this}
-         */
-        public Builder taint(java.util.List<? extends java.lang.Object> taint) {
-            this.taint = taint;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty>)tags;
             return this;
         }
 
@@ -797,11 +977,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getTaint}
+         * @param taint the value to be set.
+         * @return {@code this}
+         */
+        public Builder taint(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> taint) {
+            this.taint = taint;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getTimeoutMins}
          * @param timeoutMins the value to be set.
          * @return {@code this}
          */
         public Builder timeoutMins(java.lang.Number timeoutMins) {
+            this.timeoutMins = timeoutMins;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getTimeoutMins}
+         * @param timeoutMins the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeoutMins(com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.timeoutMins = timeoutMins;
             return this;
         }
@@ -832,6 +1032,16 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder workerAutoRenewPeriod(java.lang.Number workerAutoRenewPeriod) {
+            this.workerAutoRenewPeriod = workerAutoRenewPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerAutoRenewPeriod}
+         * @param workerAutoRenewPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerAutoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable workerAutoRenewPeriod) {
             this.workerAutoRenewPeriod = workerAutoRenewPeriod;
             return this;
         }
@@ -887,11 +1097,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerInstanceChargeType}
+         * @param workerInstanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerInstanceChargeType(com.aliyun.ros.cdk.core.IResolvable workerInstanceChargeType) {
+            this.workerInstanceChargeType = workerInstanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getWorkerPeriod}
          * @param workerPeriod the value to be set.
          * @return {@code this}
          */
         public Builder workerPeriod(java.lang.Number workerPeriod) {
+            this.workerPeriod = workerPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerPeriod}
+         * @param workerPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerPeriod(com.aliyun.ros.cdk.core.IResolvable workerPeriod) {
             this.workerPeriod = workerPeriod;
             return this;
         }
@@ -907,6 +1137,16 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerPeriodUnit}
+         * @param workerPeriodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerPeriodUnit(com.aliyun.ros.cdk.core.IResolvable workerPeriodUnit) {
+            this.workerPeriodUnit = workerPeriodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getWorkerSystemDiskCategory}
          * @param workerSystemDiskCategory the value to be set.
          * @return {@code this}
@@ -917,11 +1157,31 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerSystemDiskCategory}
+         * @param workerSystemDiskCategory the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerSystemDiskCategory(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskCategory) {
+            this.workerSystemDiskCategory = workerSystemDiskCategory;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getWorkerSystemDiskSize}
          * @param workerSystemDiskSize the value to be set.
          * @return {@code this}
          */
         public Builder workerSystemDiskSize(java.lang.Number workerSystemDiskSize) {
+            this.workerSystemDiskSize = workerSystemDiskSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getWorkerSystemDiskSize}
+         * @param workerSystemDiskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder workerSystemDiskSize(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
             this.workerSystemDiskSize = workerSystemDiskSize;
             return this;
         }
@@ -944,48 +1204,48 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosKubernetesClusterProps {
         private final java.lang.Object masterInstanceTypes;
         private final java.lang.Object masterVSwitchIds;
-        private final java.lang.String name;
-        private final java.lang.String vpcId;
+        private final java.lang.Object name;
+        private final java.lang.Object vpcId;
         private final java.lang.Object workerInstanceTypes;
         private final java.lang.Object workerVSwitchIds;
         private final java.lang.Object addons;
         private final java.lang.Object cloudMonitorFlags;
-        private final java.lang.String containerCidr;
-        private final java.lang.String cpuPolicy;
+        private final java.lang.Object containerCidr;
+        private final java.lang.Object cpuPolicy;
         private final java.lang.Object disableRollback;
         private final java.lang.Object endpointPublicAccess;
-        private final java.lang.String keyPair;
-        private final java.lang.String kubernetesVersion;
-        private final java.lang.String loginPassword;
+        private final java.lang.Object keyPair;
+        private final java.lang.Object kubernetesVersion;
+        private final java.lang.Object loginPassword;
         private final java.lang.Object masterAutoRenew;
-        private final java.lang.Number masterAutoRenewPeriod;
-        private final java.lang.Number masterCount;
+        private final java.lang.Object masterAutoRenewPeriod;
+        private final java.lang.Object masterCount;
         private final java.lang.Object masterDataDisk;
         private final java.lang.Object masterDataDisks;
-        private final java.lang.String masterInstanceChargeType;
-        private final java.lang.Number masterPeriod;
-        private final java.lang.String masterPeriodUnit;
-        private final java.lang.String masterSystemDiskCategory;
-        private final java.lang.Number masterSystemDiskSize;
-        private final java.lang.String nodePortRange;
-        private final java.lang.Number numOfNodes;
-        private final java.lang.String proxyMode;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String serviceCidr;
+        private final java.lang.Object masterInstanceChargeType;
+        private final java.lang.Object masterPeriod;
+        private final java.lang.Object masterPeriodUnit;
+        private final java.lang.Object masterSystemDiskCategory;
+        private final java.lang.Object masterSystemDiskSize;
+        private final java.lang.Object nodePortRange;
+        private final java.lang.Object numOfNodes;
+        private final java.lang.Object proxyMode;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
         private final java.lang.Object sshFlags;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private final java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object taint;
-        private final java.lang.Number timeoutMins;
+        private final java.lang.Object timeoutMins;
         private final java.lang.Object workerAutoRenew;
-        private final java.lang.Number workerAutoRenewPeriod;
+        private final java.lang.Object workerAutoRenewPeriod;
         private final java.lang.Object workerDataDisk;
         private final java.lang.Object workerDataDisks;
-        private final java.lang.String workerInstanceChargeType;
-        private final java.lang.Number workerPeriod;
-        private final java.lang.String workerPeriodUnit;
-        private final java.lang.String workerSystemDiskCategory;
-        private final java.lang.Number workerSystemDiskSize;
+        private final java.lang.Object workerInstanceChargeType;
+        private final java.lang.Object workerPeriod;
+        private final java.lang.Object workerPeriodUnit;
+        private final java.lang.Object workerSystemDiskCategory;
+        private final java.lang.Object workerSystemDiskSize;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -995,55 +1255,55 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             super(objRef);
             this.masterInstanceTypes = software.amazon.jsii.Kernel.get(this, "masterInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterVSwitchIds = software.amazon.jsii.Kernel.get(this, "masterVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerVSwitchIds = software.amazon.jsii.Kernel.get(this, "workerVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpuPolicy = software.amazon.jsii.Kernel.get(this, "cpuPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterAutoRenew = software.amazon.jsii.Kernel.get(this, "masterAutoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.masterAutoRenewPeriod = software.amazon.jsii.Kernel.get(this, "masterAutoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.masterCount = software.amazon.jsii.Kernel.get(this, "masterCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.masterAutoRenewPeriod = software.amazon.jsii.Kernel.get(this, "masterAutoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterCount = software.amazon.jsii.Kernel.get(this, "masterCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterDataDisk = software.amazon.jsii.Kernel.get(this, "masterDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterDataDisks = software.amazon.jsii.Kernel.get(this, "masterDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.masterInstanceChargeType = software.amazon.jsii.Kernel.get(this, "masterInstanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterPeriod = software.amazon.jsii.Kernel.get(this, "masterPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.masterPeriodUnit = software.amazon.jsii.Kernel.get(this, "masterPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "masterSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterSystemDiskSize = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.masterInstanceChargeType = software.amazon.jsii.Kernel.get(this, "masterInstanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterPeriod = software.amazon.jsii.Kernel.get(this, "masterPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterPeriodUnit = software.amazon.jsii.Kernel.get(this, "masterPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "masterSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterSystemDiskSize = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sshFlags = software.amazon.jsii.Kernel.get(this, "sshFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty.class)));
             this.taint = software.amazon.jsii.Kernel.get(this, "taint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerAutoRenew = software.amazon.jsii.Kernel.get(this, "workerAutoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerAutoRenewPeriod = software.amazon.jsii.Kernel.get(this, "workerAutoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.workerAutoRenewPeriod = software.amazon.jsii.Kernel.get(this, "workerAutoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceChargeType = software.amazon.jsii.Kernel.get(this, "workerInstanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.workerPeriod = software.amazon.jsii.Kernel.get(this, "workerPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.workerPeriodUnit = software.amazon.jsii.Kernel.get(this, "workerPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.workerInstanceChargeType = software.amazon.jsii.Kernel.get(this, "workerInstanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerPeriod = software.amazon.jsii.Kernel.get(this, "workerPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerPeriodUnit = software.amazon.jsii.Kernel.get(this, "workerPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object masterInstanceTypes, final java.lang.Object masterVSwitchIds, final java.lang.String name, final java.lang.String vpcId, final java.lang.Object workerInstanceTypes, final java.lang.Object workerVSwitchIds, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.String containerCidr, final java.lang.String cpuPolicy, final java.lang.Object disableRollback, final java.lang.Object endpointPublicAccess, final java.lang.String keyPair, final java.lang.String kubernetesVersion, final java.lang.String loginPassword, final java.lang.Object masterAutoRenew, final java.lang.Number masterAutoRenewPeriod, final java.lang.Number masterCount, final java.lang.Object masterDataDisk, final java.lang.Object masterDataDisks, final java.lang.String masterInstanceChargeType, final java.lang.Number masterPeriod, final java.lang.String masterPeriodUnit, final java.lang.String masterSystemDiskCategory, final java.lang.Number masterSystemDiskSize, final java.lang.String nodePortRange, final java.lang.Number numOfNodes, final java.lang.String proxyMode, final java.lang.String securityGroupId, final java.lang.String serviceCidr, final java.lang.Object snatEntry, final java.lang.Object sshFlags, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.Object taint, final java.lang.Number timeoutMins, final java.lang.Object workerAutoRenew, final java.lang.Number workerAutoRenewPeriod, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDisks, final java.lang.String workerInstanceChargeType, final java.lang.Number workerPeriod, final java.lang.String workerPeriodUnit, final java.lang.String workerSystemDiskCategory, final java.lang.Number workerSystemDiskSize) {
+        protected Jsii$Proxy(final java.lang.Object masterInstanceTypes, final java.lang.Object masterVSwitchIds, final java.lang.Object name, final java.lang.Object vpcId, final java.lang.Object workerInstanceTypes, final java.lang.Object workerVSwitchIds, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.Object containerCidr, final java.lang.Object cpuPolicy, final java.lang.Object disableRollback, final java.lang.Object endpointPublicAccess, final java.lang.Object keyPair, final java.lang.Object kubernetesVersion, final java.lang.Object loginPassword, final java.lang.Object masterAutoRenew, final java.lang.Object masterAutoRenewPeriod, final java.lang.Object masterCount, final java.lang.Object masterDataDisk, final java.lang.Object masterDataDisks, final java.lang.Object masterInstanceChargeType, final java.lang.Object masterPeriod, final java.lang.Object masterPeriodUnit, final java.lang.Object masterSystemDiskCategory, final java.lang.Object masterSystemDiskSize, final java.lang.Object nodePortRange, final java.lang.Object numOfNodes, final java.lang.Object proxyMode, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.lang.Object snatEntry, final java.lang.Object sshFlags, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags, final java.lang.Object taint, final java.lang.Object timeoutMins, final java.lang.Object workerAutoRenew, final java.lang.Object workerAutoRenewPeriod, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDisks, final java.lang.Object workerInstanceChargeType, final java.lang.Object workerPeriod, final java.lang.Object workerPeriodUnit, final java.lang.Object workerSystemDiskCategory, final java.lang.Object workerSystemDiskSize) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.masterInstanceTypes = java.util.Objects.requireNonNull(masterInstanceTypes, "masterInstanceTypes is required");
             this.masterVSwitchIds = java.util.Objects.requireNonNull(masterVSwitchIds, "masterVSwitchIds is required");
@@ -1077,7 +1337,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.serviceCidr = serviceCidr;
             this.snatEntry = snatEntry;
             this.sshFlags = sshFlags;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty>)tags;
             this.taint = taint;
             this.timeoutMins = timeoutMins;
             this.workerAutoRenew = workerAutoRenew;
@@ -1102,12 +1362,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
@@ -1132,12 +1392,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getContainerCidr() {
+        public final java.lang.Object getContainerCidr() {
             return this.containerCidr;
         }
 
         @Override
-        public final java.lang.String getCpuPolicy() {
+        public final java.lang.Object getCpuPolicy() {
             return this.cpuPolicy;
         }
 
@@ -1152,17 +1412,17 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getKeyPair() {
+        public final java.lang.Object getKeyPair() {
             return this.keyPair;
         }
 
         @Override
-        public final java.lang.String getKubernetesVersion() {
+        public final java.lang.Object getKubernetesVersion() {
             return this.kubernetesVersion;
         }
 
         @Override
-        public final java.lang.String getLoginPassword() {
+        public final java.lang.Object getLoginPassword() {
             return this.loginPassword;
         }
 
@@ -1172,12 +1432,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.Number getMasterAutoRenewPeriod() {
+        public final java.lang.Object getMasterAutoRenewPeriod() {
             return this.masterAutoRenewPeriod;
         }
 
         @Override
-        public final java.lang.Number getMasterCount() {
+        public final java.lang.Object getMasterCount() {
             return this.masterCount;
         }
 
@@ -1192,52 +1452,52 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getMasterInstanceChargeType() {
+        public final java.lang.Object getMasterInstanceChargeType() {
             return this.masterInstanceChargeType;
         }
 
         @Override
-        public final java.lang.Number getMasterPeriod() {
+        public final java.lang.Object getMasterPeriod() {
             return this.masterPeriod;
         }
 
         @Override
-        public final java.lang.String getMasterPeriodUnit() {
+        public final java.lang.Object getMasterPeriodUnit() {
             return this.masterPeriodUnit;
         }
 
         @Override
-        public final java.lang.String getMasterSystemDiskCategory() {
+        public final java.lang.Object getMasterSystemDiskCategory() {
             return this.masterSystemDiskCategory;
         }
 
         @Override
-        public final java.lang.Number getMasterSystemDiskSize() {
+        public final java.lang.Object getMasterSystemDiskSize() {
             return this.masterSystemDiskSize;
         }
 
         @Override
-        public final java.lang.String getNodePortRange() {
+        public final java.lang.Object getNodePortRange() {
             return this.nodePortRange;
         }
 
         @Override
-        public final java.lang.Number getNumOfNodes() {
+        public final java.lang.Object getNumOfNodes() {
             return this.numOfNodes;
         }
 
         @Override
-        public final java.lang.String getProxyMode() {
+        public final java.lang.Object getProxyMode() {
             return this.proxyMode;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getServiceCidr() {
+        public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
 
@@ -1252,7 +1512,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> getTags() {
             return this.tags;
         }
 
@@ -1262,7 +1522,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.Number getTimeoutMins() {
+        public final java.lang.Object getTimeoutMins() {
             return this.timeoutMins;
         }
 
@@ -1272,7 +1532,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.Number getWorkerAutoRenewPeriod() {
+        public final java.lang.Object getWorkerAutoRenewPeriod() {
             return this.workerAutoRenewPeriod;
         }
 
@@ -1287,27 +1547,27 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getWorkerInstanceChargeType() {
+        public final java.lang.Object getWorkerInstanceChargeType() {
             return this.workerInstanceChargeType;
         }
 
         @Override
-        public final java.lang.Number getWorkerPeriod() {
+        public final java.lang.Object getWorkerPeriod() {
             return this.workerPeriod;
         }
 
         @Override
-        public final java.lang.String getWorkerPeriodUnit() {
+        public final java.lang.Object getWorkerPeriodUnit() {
             return this.workerPeriodUnit;
         }
 
         @Override
-        public final java.lang.String getWorkerSystemDiskCategory() {
+        public final java.lang.Object getWorkerSystemDiskCategory() {
             return this.workerSystemDiskCategory;
         }
 
         @Override
-        public final java.lang.Number getWorkerSystemDiskSize() {
+        public final java.lang.Object getWorkerSystemDiskSize() {
             return this.workerSystemDiskSize;
         }
 

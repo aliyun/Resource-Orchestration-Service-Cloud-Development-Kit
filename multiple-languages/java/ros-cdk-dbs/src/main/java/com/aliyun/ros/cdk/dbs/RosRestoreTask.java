@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * A ROS template type:  `ALIYUN::DBS::RestoreTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.400Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RosRestoreTask")
 public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRestoreTaskId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRestoreTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRestoreTaskId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRestoreTaskId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,8 +55,8 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getBackupPlanId() {
-        return software.amazon.jsii.Kernel.get(this, "backupPlanId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getBackupPlanId() {
+        return software.amazon.jsii.Kernel.get(this, "backupPlanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -67,13 +67,25 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestinationEndpointInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBackupPlanId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupPlanId", java.util.Objects.requireNonNull(value, "backupPlanId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestinationEndpointInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDestinationEndpointInstanceType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointInstanceType", java.util.Objects.requireNonNull(value, "destinationEndpointInstanceType is required"));
+    }
+
+    /**
+     */
+    public void setDestinationEndpointInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "destinationEndpointInstanceType", java.util.Objects.requireNonNull(value, "destinationEndpointInstanceType is required"));
     }
 
@@ -87,8 +99,8 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRestoreTaskName() {
-        return software.amazon.jsii.Kernel.get(this, "restoreTaskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRestoreTaskName() {
+        return software.amazon.jsii.Kernel.get(this, "restoreTaskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getBackupGatewayId() {
-        return software.amazon.jsii.Kernel.get(this, "backupGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setRestoreTaskName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restoreTaskName", java.util.Objects.requireNonNull(value, "restoreTaskName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackupGatewayId() {
+        return software.amazon.jsii.Kernel.get(this, "backupGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getBackupSetId() {
-        return software.amazon.jsii.Kernel.get(this, "backupSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBackupGatewayId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupGatewayId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackupSetId() {
+        return software.amazon.jsii.Kernel.get(this, "backupSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +147,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointDatabaseName() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBackupSetId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupSetId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointDatabaseName() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +165,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointDatabaseName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointDatabaseName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +183,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointIp() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointInstanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointIp() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +201,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointOracleSid() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointOracleSid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointOracleSid() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointOracleSid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +219,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointPassword() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointOracleSid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointOracleSid", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointPassword() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +237,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getDestinationEndpointPort() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDestinationEndpointPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointPassword", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointPort() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +255,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointRegion() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointPort", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointRegion() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +273,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointUserName() {
-        return software.amazon.jsii.Kernel.get(this, "destinationEndpointUserName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointRegion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointRegion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointUserName() {
+        return software.amazon.jsii.Kernel.get(this, "destinationEndpointUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,8 +291,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDuplicateConflict() {
-        return software.amazon.jsii.Kernel.get(this, "duplicateConflict", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationEndpointUserName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationEndpointUserName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDuplicateConflict() {
+        return software.amazon.jsii.Kernel.get(this, "duplicateConflict", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -231,8 +309,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRestoreDir() {
-        return software.amazon.jsii.Kernel.get(this, "restoreDir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDuplicateConflict(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "duplicateConflict", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreDir() {
+        return software.amazon.jsii.Kernel.get(this, "restoreDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -243,8 +327,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRestoreHome() {
-        return software.amazon.jsii.Kernel.get(this, "restoreHome", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRestoreDir(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restoreDir", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreHome() {
+        return software.amazon.jsii.Kernel.get(this, "restoreHome", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -255,8 +345,14 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRestoreObjects() {
-        return software.amazon.jsii.Kernel.get(this, "restoreObjects", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRestoreHome(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restoreHome", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreObjects() {
+        return software.amazon.jsii.Kernel.get(this, "restoreObjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -267,13 +363,25 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getRestoreTime() {
-        return software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setRestoreObjects(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restoreObjects", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTime() {
+        return software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRestoreTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "restoreTime", value);
+    }
+
+    /**
+     */
+    public void setRestoreTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "restoreTime", value);
     }
 
@@ -329,12 +437,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.backupPlanId(backupPlanId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param backupPlanId This parameter is required.
+         */
+        public Builder backupPlanId(final com.aliyun.ros.cdk.core.IResolvable backupPlanId) {
+            this.props.backupPlanId(backupPlanId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationEndpointInstanceType This parameter is required.
          */
         public Builder destinationEndpointInstanceType(final java.lang.String destinationEndpointInstanceType) {
+            this.props.destinationEndpointInstanceType(destinationEndpointInstanceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointInstanceType This parameter is required.
+         */
+        public Builder destinationEndpointInstanceType(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointInstanceType) {
             this.props.destinationEndpointInstanceType(destinationEndpointInstanceType);
             return this;
         }
@@ -347,12 +471,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.restoreTaskName(restoreTaskName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param restoreTaskName This parameter is required.
+         */
+        public Builder restoreTaskName(final com.aliyun.ros.cdk.core.IResolvable restoreTaskName) {
+            this.props.restoreTaskName(restoreTaskName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param backupGatewayId This parameter is required.
          */
         public Builder backupGatewayId(final java.lang.Number backupGatewayId) {
+            this.props.backupGatewayId(backupGatewayId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backupGatewayId This parameter is required.
+         */
+        public Builder backupGatewayId(final com.aliyun.ros.cdk.core.IResolvable backupGatewayId) {
             this.props.backupGatewayId(backupGatewayId);
             return this;
         }
@@ -365,12 +505,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.backupSetId(backupSetId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param backupSetId This parameter is required.
+         */
+        public Builder backupSetId(final com.aliyun.ros.cdk.core.IResolvable backupSetId) {
+            this.props.backupSetId(backupSetId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationEndpointDatabaseName This parameter is required.
          */
         public Builder destinationEndpointDatabaseName(final java.lang.String destinationEndpointDatabaseName) {
+            this.props.destinationEndpointDatabaseName(destinationEndpointDatabaseName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointDatabaseName This parameter is required.
+         */
+        public Builder destinationEndpointDatabaseName(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointDatabaseName) {
             this.props.destinationEndpointDatabaseName(destinationEndpointDatabaseName);
             return this;
         }
@@ -383,12 +539,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationEndpointInstanceId(destinationEndpointInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointInstanceId This parameter is required.
+         */
+        public Builder destinationEndpointInstanceId(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointInstanceId) {
+            this.props.destinationEndpointInstanceId(destinationEndpointInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationEndpointIp This parameter is required.
          */
         public Builder destinationEndpointIp(final java.lang.String destinationEndpointIp) {
+            this.props.destinationEndpointIp(destinationEndpointIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointIp This parameter is required.
+         */
+        public Builder destinationEndpointIp(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointIp) {
             this.props.destinationEndpointIp(destinationEndpointIp);
             return this;
         }
@@ -401,12 +573,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationEndpointOracleSid(destinationEndpointOracleSid);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointOracleSid This parameter is required.
+         */
+        public Builder destinationEndpointOracleSid(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointOracleSid) {
+            this.props.destinationEndpointOracleSid(destinationEndpointOracleSid);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationEndpointPassword This parameter is required.
          */
         public Builder destinationEndpointPassword(final java.lang.String destinationEndpointPassword) {
+            this.props.destinationEndpointPassword(destinationEndpointPassword);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointPassword This parameter is required.
+         */
+        public Builder destinationEndpointPassword(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointPassword) {
             this.props.destinationEndpointPassword(destinationEndpointPassword);
             return this;
         }
@@ -419,12 +607,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationEndpointPort(destinationEndpointPort);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointPort This parameter is required.
+         */
+        public Builder destinationEndpointPort(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointPort) {
+            this.props.destinationEndpointPort(destinationEndpointPort);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destinationEndpointRegion This parameter is required.
          */
         public Builder destinationEndpointRegion(final java.lang.String destinationEndpointRegion) {
+            this.props.destinationEndpointRegion(destinationEndpointRegion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointRegion This parameter is required.
+         */
+        public Builder destinationEndpointRegion(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointRegion) {
             this.props.destinationEndpointRegion(destinationEndpointRegion);
             return this;
         }
@@ -437,12 +641,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationEndpointUserName(destinationEndpointUserName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationEndpointUserName This parameter is required.
+         */
+        public Builder destinationEndpointUserName(final com.aliyun.ros.cdk.core.IResolvable destinationEndpointUserName) {
+            this.props.destinationEndpointUserName(destinationEndpointUserName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param duplicateConflict This parameter is required.
          */
         public Builder duplicateConflict(final java.lang.String duplicateConflict) {
+            this.props.duplicateConflict(duplicateConflict);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param duplicateConflict This parameter is required.
+         */
+        public Builder duplicateConflict(final com.aliyun.ros.cdk.core.IResolvable duplicateConflict) {
             this.props.duplicateConflict(duplicateConflict);
             return this;
         }
@@ -455,12 +675,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.restoreDir(restoreDir);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param restoreDir This parameter is required.
+         */
+        public Builder restoreDir(final com.aliyun.ros.cdk.core.IResolvable restoreDir) {
+            this.props.restoreDir(restoreDir);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param restoreHome This parameter is required.
          */
         public Builder restoreHome(final java.lang.String restoreHome) {
+            this.props.restoreHome(restoreHome);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param restoreHome This parameter is required.
+         */
+        public Builder restoreHome(final com.aliyun.ros.cdk.core.IResolvable restoreHome) {
             this.props.restoreHome(restoreHome);
             return this;
         }
@@ -473,12 +709,28 @@ public class RosRestoreTask extends com.aliyun.ros.cdk.core.RosResource {
             this.props.restoreObjects(restoreObjects);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param restoreObjects This parameter is required.
+         */
+        public Builder restoreObjects(final com.aliyun.ros.cdk.core.IResolvable restoreObjects) {
+            this.props.restoreObjects(restoreObjects);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param restoreTime This parameter is required.
          */
         public Builder restoreTime(final java.lang.Number restoreTime) {
+            this.props.restoreTime(restoreTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param restoreTime This parameter is required.
+         */
+        public Builder restoreTime(final com.aliyun.ros.cdk.core.IResolvable restoreTime) {
             this.props.restoreTime(restoreTime);
             return this;
         }

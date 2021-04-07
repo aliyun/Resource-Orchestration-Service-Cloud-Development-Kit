@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SNatEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.692Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSNatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosSNatEntryProps.Jsii$Proxy.class)
 public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSNatIp();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSNatIp();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSNatTableId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSNatTableId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSnatEntryName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSnatEntryName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSourceCidr() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidr() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSourceVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceVSwitchId() {
         return null;
     }
 
@@ -44,11 +44,11 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosSNatEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSNatEntryProps> {
-        private java.lang.String sNatIp;
-        private java.lang.String sNatTableId;
-        private java.lang.String snatEntryName;
-        private java.lang.String sourceCidr;
-        private java.lang.String sourceVSwitchId;
+        private java.lang.Object sNatIp;
+        private java.lang.Object sNatTableId;
+        private java.lang.Object snatEntryName;
+        private java.lang.Object sourceCidr;
+        private java.lang.Object sourceVSwitchId;
 
         /**
          * Sets the value of {@link RosSNatEntryProps#getSNatIp}
@@ -56,6 +56,16 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder sNatIp(java.lang.String sNatIp) {
+            this.sNatIp = sNatIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSNatEntryProps#getSNatIp}
+         * @param sNatIp the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sNatIp(com.aliyun.ros.cdk.core.IResolvable sNatIp) {
             this.sNatIp = sNatIp;
             return this;
         }
@@ -71,11 +81,31 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosSNatEntryProps#getSNatTableId}
+         * @param sNatTableId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sNatTableId(com.aliyun.ros.cdk.core.IResolvable sNatTableId) {
+            this.sNatTableId = sNatTableId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSNatEntryProps#getSnatEntryName}
          * @param snatEntryName the value to be set.
          * @return {@code this}
          */
         public Builder snatEntryName(java.lang.String snatEntryName) {
+            this.snatEntryName = snatEntryName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSNatEntryProps#getSnatEntryName}
+         * @param snatEntryName the value to be set.
+         * @return {@code this}
+         */
+        public Builder snatEntryName(com.aliyun.ros.cdk.core.IResolvable snatEntryName) {
             this.snatEntryName = snatEntryName;
             return this;
         }
@@ -91,11 +121,31 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosSNatEntryProps#getSourceCidr}
+         * @param sourceCidr the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceCidr(com.aliyun.ros.cdk.core.IResolvable sourceCidr) {
+            this.sourceCidr = sourceCidr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSNatEntryProps#getSourceVSwitchId}
          * @param sourceVSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder sourceVSwitchId(java.lang.String sourceVSwitchId) {
+            this.sourceVSwitchId = sourceVSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSNatEntryProps#getSourceVSwitchId}
+         * @param sourceVSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceVSwitchId(com.aliyun.ros.cdk.core.IResolvable sourceVSwitchId) {
             this.sourceVSwitchId = sourceVSwitchId;
             return this;
         }
@@ -116,11 +166,11 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSNatEntryProps {
-        private final java.lang.String sNatIp;
-        private final java.lang.String sNatTableId;
-        private final java.lang.String snatEntryName;
-        private final java.lang.String sourceCidr;
-        private final java.lang.String sourceVSwitchId;
+        private final java.lang.Object sNatIp;
+        private final java.lang.Object sNatTableId;
+        private final java.lang.Object snatEntryName;
+        private final java.lang.Object sourceCidr;
+        private final java.lang.Object sourceVSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,17 +178,17 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sNatIp = software.amazon.jsii.Kernel.get(this, "sNatIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sNatTableId = software.amazon.jsii.Kernel.get(this, "sNatTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.snatEntryName = software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceVSwitchId = software.amazon.jsii.Kernel.get(this, "sourceVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sNatIp = software.amazon.jsii.Kernel.get(this, "sNatIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sNatTableId = software.amazon.jsii.Kernel.get(this, "sNatTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snatEntryName = software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceVSwitchId = software.amazon.jsii.Kernel.get(this, "sourceVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String sNatIp, final java.lang.String sNatTableId, final java.lang.String snatEntryName, final java.lang.String sourceCidr, final java.lang.String sourceVSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object sNatIp, final java.lang.Object sNatTableId, final java.lang.Object snatEntryName, final java.lang.Object sourceCidr, final java.lang.Object sourceVSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sNatIp = java.util.Objects.requireNonNull(sNatIp, "sNatIp is required");
             this.sNatTableId = java.util.Objects.requireNonNull(sNatTableId, "sNatTableId is required");
@@ -148,27 +198,27 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getSNatIp() {
+        public final java.lang.Object getSNatIp() {
             return this.sNatIp;
         }
 
         @Override
-        public final java.lang.String getSNatTableId() {
+        public final java.lang.Object getSNatTableId() {
             return this.sNatTableId;
         }
 
         @Override
-        public final java.lang.String getSnatEntryName() {
+        public final java.lang.Object getSnatEntryName() {
             return this.snatEntryName;
         }
 
         @Override
-        public final java.lang.String getSourceCidr() {
+        public final java.lang.Object getSourceCidr() {
             return this.sourceCidr;
         }
 
         @Override
-        public final java.lang.String getSourceVSwitchId() {
+        public final java.lang.Object getSourceVSwitchId() {
             return this.sourceVSwitchId;
         }
 

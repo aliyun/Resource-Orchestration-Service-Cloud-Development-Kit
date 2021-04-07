@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// English letters, digits, underscores (_), and hyphens (-). Chinese language is also
         /// supported. Each Chinese symbol occupies 2 characters.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Default value: JSON.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dataType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DataType
+        [JsiiProperty(name: "dataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DataType
         {
             get;
             set;
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// the parameter is required for the instances that you have purchased.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IotInstanceId
         {
             get;
             set;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 
         /// <summary>Property productKey: The ProductKey of the product to which the rule applies.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProductKey
+        [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProductKey
         {
             get;
             set;
@@ -71,8 +71,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -93,8 +93,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Each Chinese symbol occupies 1 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ruleDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RuleDesc
+        [JsiiProperty(name: "ruleDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RuleDesc
         {
             get;
             set;
@@ -106,8 +106,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Note Specify the fields that follow the Select keyword for this parameter. For example, if the Select statement is Select a,b,c, specify a,b,c for this parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "select", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Select
+        [JsiiProperty(name: "select", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Select
         {
             get;
             set;
@@ -145,8 +145,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "shortTopic", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ShortTopic
+        [JsiiProperty(name: "shortTopic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ShortTopic
         {
             get;
             set;
@@ -170,8 +170,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "topicType", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? TopicType
+        [JsiiProperty(name: "topicType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TopicType
         {
             get;
             set;
@@ -183,8 +183,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Note Specify the fields that follow theWherekeyword for this parameter. For example, if the Where statement is Where a&gt;10, specify a&gt;10 for this parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "where", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Where
+        [JsiiProperty(name: "where", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Where
         {
             get;
             set;

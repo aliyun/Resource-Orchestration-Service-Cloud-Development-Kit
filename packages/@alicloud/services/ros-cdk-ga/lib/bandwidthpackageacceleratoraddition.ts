@@ -12,12 +12,12 @@ export interface BandwidthPackageAcceleratorAdditionProps {
      * Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
      * plan.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * Property bandwidthPackageId: The ID of the bandwidth package to associate.
      */
-    readonly bandwidthPackageId: string;
+    readonly bandwidthPackageId: string | ros.IResolvable;
 }
 
 /**
@@ -33,12 +33,12 @@ export class BandwidthPackageAcceleratorAddition extends ros.Resource {
     /**
      * Attribute AcceleratorId: The ID of the Global Accelerator instance
      */
-    public readonly attrAcceleratorId: any;
+    public readonly attrAcceleratorId: ros.IResolvable;
 
     /**
      * Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.

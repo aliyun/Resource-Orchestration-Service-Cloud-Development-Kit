@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.041Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosServerlessKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerlessKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosServerlessKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
@@ -26,7 +26,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKubernetesVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesVersion() {
         return null;
     }
 
@@ -44,31 +44,31 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServiceCidr() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceCidr() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -80,7 +80,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -94,19 +94,19 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
      * A builder for {@link RosServerlessKubernetesClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosServerlessKubernetesClusterProps> {
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object addons;
         private java.lang.Object endpointPublicAccess;
-        private java.lang.String kubernetesVersion;
+        private java.lang.Object kubernetesVersion;
         private java.lang.Object natGateway;
         private java.lang.Object privateZone;
-        private java.lang.String securityGroupId;
-        private java.lang.String serviceCidr;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object serviceCidr;
+        private java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
         private java.lang.Object vSwitchIds;
-        private java.lang.String zoneId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosServerlessKubernetesClusterProps#getName}
@@ -114,6 +114,16 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -169,6 +179,16 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getKubernetesVersion}
+         * @param kubernetesVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder kubernetesVersion(com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosServerlessKubernetesClusterProps#getNatGateway}
          * @param natGateway the value to be set.
          * @return {@code this}
@@ -219,6 +239,16 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosServerlessKubernetesClusterProps#getServiceCidr}
          * @param serviceCidr the value to be set.
          * @return {@code this}
@@ -229,13 +259,23 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getServiceCidr}
+         * @param serviceCidr the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceCidr(com.aliyun.ros.cdk.core.IResolvable serviceCidr) {
+            this.serviceCidr = serviceCidr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosServerlessKubernetesClusterProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty>)tags;
             return this;
         }
 
@@ -250,11 +290,31 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosServerlessKubernetesClusterProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -290,6 +350,16 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link RosServerlessKubernetesClusterProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosServerlessKubernetesClusterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -305,19 +375,19 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosServerlessKubernetesClusterProps {
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object addons;
         private final java.lang.Object endpointPublicAccess;
-        private final java.lang.String kubernetesVersion;
+        private final java.lang.Object kubernetesVersion;
         private final java.lang.Object natGateway;
         private final java.lang.Object privateZone;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String serviceCidr;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object serviceCidr;
+        private final java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object vSwitchIds;
-        private final java.lang.String zoneId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -325,26 +395,26 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGateway = software.amazon.jsii.Kernel.get(this, "natGateway", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.Object addons, final java.lang.Object endpointPublicAccess, final java.lang.String kubernetesVersion, final java.lang.Object natGateway, final java.lang.Object privateZone, final java.lang.String securityGroupId, final java.lang.String serviceCidr, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.Object vSwitchIds, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object addons, final java.lang.Object endpointPublicAccess, final java.lang.Object kubernetesVersion, final java.lang.Object natGateway, final java.lang.Object privateZone, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object vSwitchIds, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.addons = addons;
@@ -354,7 +424,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
             this.privateZone = privateZone;
             this.securityGroupId = securityGroupId;
             this.serviceCidr = serviceCidr;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.vSwitchIds = vSwitchIds;
@@ -362,7 +432,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -377,7 +447,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         @Override
-        public final java.lang.String getKubernetesVersion() {
+        public final java.lang.Object getKubernetesVersion() {
             return this.kubernetesVersion;
         }
 
@@ -392,27 +462,27 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getServiceCidr() {
+        public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -422,7 +492,7 @@ public interface RosServerlessKubernetesClusterProps extends software.amazon.jsi
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
