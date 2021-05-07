@@ -4,9 +4,10 @@ import * as path from 'path';
 import * as readlineSync from 'readline-sync';
 import {decipher, cipher} from './util/cipher';
 import {format} from 'util';
-
 const rosClient = require('@alicloud/ros-2019-09-10');
 const os = require('os');
+const http = require('http');
+const https = require('https');
 import {exec as _exec} from 'child_process';
 import Credentials, {Config} from '@alicloud/credentials';
 import {CloudAssembly, DefaultSelection, ExtendedStackSelection, StackCollection} from './api/cloud-assembly';
@@ -35,7 +36,8 @@ const exec = promisify(_exec);
 const requestOptions: { [name: string]: any } = {
     headers: {
         'User-Agent': "ROS-CLI-" + JSON.parse(fs.readFileSync(PACKAGE_JSON).toString())['version'] + "::" + readLanguageInfo()
-    }
+    },
+    timeout: 15000
 };
 
 export interface CdkToolkitProps {
@@ -181,6 +183,11 @@ export class CdkToolkit {
                 securityToken: newSecurityToken
             });
         }
+        let httpModule = client.endpoint.startsWith('https://') ? https : http;
+        client.keepAliveAgent = new httpModule.Agent({
+            keepAlive: true,
+            keepAliveMsecs: 15000
+        });
         return client;
     }
 
