@@ -11,7 +11,6 @@
     <!-- CDK Construct Library dependencies -->
     <PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Core" Version="%cdk-version%" />
 
-
     <!-- jsii Roslyn analyzers (un-comment to obtain compile-time checks for missing required props
     <PackageReference Include="Amazon.Jsii.Analyzers" Version="*" PrivateAssets="all" />
     -->
