@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.080Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.101Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -143,6 +143,24 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAddressIpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "addressIpVersion", value);
+    }
+
+    /**
+     */
+    public void setAddressIpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "addressIpVersion", value);
     }
 
     /**
@@ -655,6 +673,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.slb.RosLoadBalancerProps.Builder();
+        }
+
+        /**
+         * @return {@code this}
+         * @param addressIpVersion This parameter is required.
+         */
+        public Builder addressIpVersion(final java.lang.String addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param addressIpVersion This parameter is required.
+         */
+        public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.props.addressIpVersion(addressIpVersion);
+            return this;
         }
 
         /**

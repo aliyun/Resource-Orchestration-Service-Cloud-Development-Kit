@@ -49,6 +49,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute Isp: The line type.</summary>
+        [JsiiProperty(name: "attrIsp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIsp
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute OrderId: Order ID of prepaid EIP instance.</summary>
         [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId

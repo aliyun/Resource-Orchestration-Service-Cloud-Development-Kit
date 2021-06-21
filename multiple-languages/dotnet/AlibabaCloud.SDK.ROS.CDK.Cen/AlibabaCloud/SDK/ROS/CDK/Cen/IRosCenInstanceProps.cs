@@ -37,6 +37,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: protectionLevel: The level of CIDR block overlapping.
+        /// Set the value to REDUCED. REDUCED indicates that the
+        /// CIDR blocks can overlap with each other but must not be the same.
+        /// </remarks>
+        [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProtectionLevel
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cen.RosCenInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -75,6 +90,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: protectionLevel: The level of CIDR block overlapping.
+            /// Set the value to REDUCED. REDUCED indicates that the
+            /// CIDR blocks can overlap with each other but must not be the same.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProtectionLevel
             {
                 get => GetInstanceProperty<object?>();
             }

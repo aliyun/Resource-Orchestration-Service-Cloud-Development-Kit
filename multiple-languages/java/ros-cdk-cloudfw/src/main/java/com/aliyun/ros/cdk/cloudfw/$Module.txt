@@ -7,3 +7,7 @@
 @alicloud/ros-cdk-cloudfw.RosAddressBookProps=com.aliyun.ros.cdk.cloudfw.RosAddressBookProps
 @alicloud/ros-cdk-cloudfw.RosControlPolicy=com.aliyun.ros.cdk.cloudfw.RosControlPolicy
 @alicloud/ros-cdk-cloudfw.RosControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosControlPolicyProps
+@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.RosVpcFirewallControlPolicy
+@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosVpcFirewallControlPolicyProps
+@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.VpcFirewallControlPolicy
+@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.VpcFirewallControlPolicyProps

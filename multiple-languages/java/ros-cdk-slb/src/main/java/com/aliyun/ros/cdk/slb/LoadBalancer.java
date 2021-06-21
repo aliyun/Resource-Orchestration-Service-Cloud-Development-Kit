@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -206,6 +206,31 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         * <p>
+         * If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * <p>
+         * @return {@code this}
+         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. This parameter is required.
+         */
+        public Builder addressIpVersion(final java.lang.String addressIpVersion) {
+            this.props().addressIpVersion(addressIpVersion);
+            return this;
+        }
+        /**
+         * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         * <p>
+         * If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * <p>
+         * @return {@code this}
+         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. This parameter is required.
+         */
+        public Builder addressIpVersion(final com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.props().addressIpVersion(addressIpVersion);
+            return this;
+        }
+
+        /**
          * Property addressType: Loader balancer address type.
          * <p>
          * Support 'internet' and 'intranet' only, default is 'internet'.
@@ -308,8 +333,8 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * The subscription duration of a Subscription Internet instance.
          * Valid values:
-         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-         * If PricingCycle is year, the value range is 1 to 3.
+         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+         * If PricingCycle is year, the value range is 1 to 5.
          * <p>
          * @return {@code this}
          * @param duration Property duration: Optional. This parameter is required.
@@ -323,8 +348,8 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * The subscription duration of a Subscription Internet instance.
          * Valid values:
-         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-         * If PricingCycle is year, the value range is 1 to 3.
+         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+         * If PricingCycle is year, the value range is 1 to 5.
          * <p>
          * @return {@code this}
          * @param duration Property duration: Optional. This parameter is required.

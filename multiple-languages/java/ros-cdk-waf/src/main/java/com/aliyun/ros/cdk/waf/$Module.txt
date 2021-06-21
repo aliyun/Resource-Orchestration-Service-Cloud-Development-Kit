@@ -6,6 +6,8 @@
 @alicloud/ros-cdk-waf.DomainProps=com.aliyun.ros.cdk.waf.DomainProps
 @alicloud/ros-cdk-waf.Instance=com.aliyun.ros.cdk.waf.Instance
 @alicloud/ros-cdk-waf.InstanceProps=com.aliyun.ros.cdk.waf.InstanceProps
+@alicloud/ros-cdk-waf.LogServiceEnable=com.aliyun.ros.cdk.waf.LogServiceEnable
+@alicloud/ros-cdk-waf.LogServiceEnableProps=com.aliyun.ros.cdk.waf.LogServiceEnableProps
 @alicloud/ros-cdk-waf.RosAclRule=com.aliyun.ros.cdk.waf.RosAclRule
 @alicloud/ros-cdk-waf.RosAclRuleProps=com.aliyun.ros.cdk.waf.RosAclRuleProps
 @alicloud/ros-cdk-waf.RosDomain=com.aliyun.ros.cdk.waf.RosDomain
@@ -15,6 +17,8 @@
 @alicloud/ros-cdk-waf.RosDomainProps=com.aliyun.ros.cdk.waf.RosDomainProps
 @alicloud/ros-cdk-waf.RosInstance=com.aliyun.ros.cdk.waf.RosInstance
 @alicloud/ros-cdk-waf.RosInstanceProps=com.aliyun.ros.cdk.waf.RosInstanceProps
+@alicloud/ros-cdk-waf.RosLogServiceEnable=com.aliyun.ros.cdk.waf.RosLogServiceEnable
+@alicloud/ros-cdk-waf.RosLogServiceEnableProps=com.aliyun.ros.cdk.waf.RosLogServiceEnableProps
 @alicloud/ros-cdk-waf.RosWafSwitch=com.aliyun.ros.cdk.waf.RosWafSwitch
 @alicloud/ros-cdk-waf.RosWafSwitchProps=com.aliyun.ros.cdk.waf.RosWafSwitchProps
 @alicloud/ros-cdk-waf.WafSwitch=com.aliyun.ros.cdk.waf.WafSwitch

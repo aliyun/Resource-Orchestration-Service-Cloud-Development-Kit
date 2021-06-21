@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.685Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ShardingInstanceProps.Jsii$Proxy.class)
 public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -125,6 +125,18 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+     * <p>
+     * Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTdeStatus() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
@@ -173,6 +185,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         private java.lang.Object srcDbInstanceId;
         private java.lang.Object storageEngine;
         private java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
+        private java.lang.Object tdeStatus;
         private java.lang.Object vpcId;
         private java.lang.Object vSwitchId;
         private java.lang.Object zoneId;
@@ -498,6 +511,34 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link ShardingInstanceProps#getTdeStatus}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         *                  Valid values:
+         *                  true: enable TDE
+         *                  false: disable TDE (default)
+         *                  Note: You cannot disable TDE after it is enabled.
+         * @return {@code this}
+         */
+        public Builder tdeStatus(java.lang.Boolean tdeStatus) {
+            this.tdeStatus = tdeStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ShardingInstanceProps#getTdeStatus}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         *                  Valid values:
+         *                  true: enable TDE
+         *                  false: disable TDE (default)
+         *                  Note: You cannot disable TDE after it is enabled.
+         * @return {@code this}
+         */
+        public Builder tdeStatus(com.aliyun.ros.cdk.core.IResolvable tdeStatus) {
+            this.tdeStatus = tdeStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ShardingInstanceProps#getVpcId}
          * @param vpcId Property vpcId: The VPC id to create mongodb instance.
          * @return {@code this}
@@ -566,7 +607,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public ShardingInstanceProps build() {
-            return new Jsii$Proxy(configServer, mongos, replicaSet, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, protocolType, restoreTime, securityIpArray, srcDbInstanceId, storageEngine, tags, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(configServer, mongos, replicaSet, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, protocolType, restoreTime, securityIpArray, srcDbInstanceId, storageEngine, tags, tdeStatus, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -591,6 +632,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object srcDbInstanceId;
         private final java.lang.Object storageEngine;
         private final java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
+        private final java.lang.Object tdeStatus;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
@@ -617,6 +659,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.srcDbInstanceId = software.amazon.jsii.Kernel.get(this, "srcDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty.class)));
+            this.tdeStatus = software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -626,7 +669,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object configServer, final java.lang.Object mongos, final java.lang.Object replicaSet, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object protocolType, final java.lang.Object restoreTime, final java.lang.Object securityIpArray, final java.lang.Object srcDbInstanceId, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final java.lang.Object configServer, final java.lang.Object mongos, final java.lang.Object replicaSet, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object protocolType, final java.lang.Object restoreTime, final java.lang.Object securityIpArray, final java.lang.Object srcDbInstanceId, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags, final java.lang.Object tdeStatus, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.configServer = java.util.Objects.requireNonNull(configServer, "configServer is required");
             this.mongos = java.util.Objects.requireNonNull(mongos, "mongos is required");
@@ -644,6 +687,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.srcDbInstanceId = srcDbInstanceId;
             this.storageEngine = storageEngine;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty>)tags;
+            this.tdeStatus = tdeStatus;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.zoneId = zoneId;
@@ -730,6 +774,11 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getTdeStatus() {
+            return this.tdeStatus;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -792,6 +841,9 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getTdeStatus() != null) {
+                data.set("tdeStatus", om.valueToTree(this.getTdeStatus()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -835,6 +887,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.srcDbInstanceId != null ? !this.srcDbInstanceId.equals(that.srcDbInstanceId) : that.srcDbInstanceId != null) return false;
             if (this.storageEngine != null ? !this.storageEngine.equals(that.storageEngine) : that.storageEngine != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.tdeStatus != null ? !this.tdeStatus.equals(that.tdeStatus) : that.tdeStatus != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -858,6 +911,7 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.srcDbInstanceId != null ? this.srcDbInstanceId.hashCode() : 0);
             result = 31 * result + (this.storageEngine != null ? this.storageEngine.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.tdeStatus != null ? this.tdeStatus.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

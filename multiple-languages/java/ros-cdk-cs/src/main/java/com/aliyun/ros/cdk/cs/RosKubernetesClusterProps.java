@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.697Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -160,6 +160,12 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPodVswitchIds() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProxyMode() {
         return null;
     }
@@ -297,6 +303,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         private java.lang.Object masterSystemDiskSize;
         private java.lang.Object nodePortRange;
         private java.lang.Object numOfNodes;
+        private java.lang.Object podVswitchIds;
         private java.lang.Object proxyMode;
         private java.lang.Object securityGroupId;
         private java.lang.Object serviceCidr;
@@ -856,6 +863,26 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosKubernetesClusterProps#getPodVswitchIds}
+         * @param podVswitchIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder podVswitchIds(com.aliyun.ros.cdk.core.IResolvable podVswitchIds) {
+            this.podVswitchIds = podVswitchIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosKubernetesClusterProps#getPodVswitchIds}
+         * @param podVswitchIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder podVswitchIds(java.util.List<? extends java.lang.Object> podVswitchIds) {
+            this.podVswitchIds = podVswitchIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosKubernetesClusterProps#getProxyMode}
          * @param proxyMode the value to be set.
          * @return {@code this}
@@ -1193,7 +1220,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosKubernetesClusterProps build() {
-            return new Jsii$Proxy(masterInstanceTypes, masterVSwitchIds, name, vpcId, workerInstanceTypes, workerVSwitchIds, addons, cloudMonitorFlags, containerCidr, cpuPolicy, disableRollback, endpointPublicAccess, keyPair, kubernetesVersion, loginPassword, masterAutoRenew, masterAutoRenewPeriod, masterCount, masterDataDisk, masterDataDisks, masterInstanceChargeType, masterPeriod, masterPeriodUnit, masterSystemDiskCategory, masterSystemDiskSize, nodePortRange, numOfNodes, proxyMode, securityGroupId, serviceCidr, snatEntry, sshFlags, tags, taint, timeoutMins, workerAutoRenew, workerAutoRenewPeriod, workerDataDisk, workerDataDisks, workerInstanceChargeType, workerPeriod, workerPeriodUnit, workerSystemDiskCategory, workerSystemDiskSize);
+            return new Jsii$Proxy(masterInstanceTypes, masterVSwitchIds, name, vpcId, workerInstanceTypes, workerVSwitchIds, addons, cloudMonitorFlags, containerCidr, cpuPolicy, disableRollback, endpointPublicAccess, keyPair, kubernetesVersion, loginPassword, masterAutoRenew, masterAutoRenewPeriod, masterCount, masterDataDisk, masterDataDisks, masterInstanceChargeType, masterPeriod, masterPeriodUnit, masterSystemDiskCategory, masterSystemDiskSize, nodePortRange, numOfNodes, podVswitchIds, proxyMode, securityGroupId, serviceCidr, snatEntry, sshFlags, tags, taint, timeoutMins, workerAutoRenew, workerAutoRenewPeriod, workerDataDisk, workerDataDisks, workerInstanceChargeType, workerPeriod, workerPeriodUnit, workerSystemDiskCategory, workerSystemDiskSize);
         }
     }
 
@@ -1229,6 +1256,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object masterSystemDiskSize;
         private final java.lang.Object nodePortRange;
         private final java.lang.Object numOfNodes;
+        private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
@@ -1280,6 +1308,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.masterSystemDiskSize = software.amazon.jsii.Kernel.get(this, "masterSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePortRange = software.amazon.jsii.Kernel.get(this, "nodePortRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1303,7 +1332,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object masterInstanceTypes, final java.lang.Object masterVSwitchIds, final java.lang.Object name, final java.lang.Object vpcId, final java.lang.Object workerInstanceTypes, final java.lang.Object workerVSwitchIds, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.Object containerCidr, final java.lang.Object cpuPolicy, final java.lang.Object disableRollback, final java.lang.Object endpointPublicAccess, final java.lang.Object keyPair, final java.lang.Object kubernetesVersion, final java.lang.Object loginPassword, final java.lang.Object masterAutoRenew, final java.lang.Object masterAutoRenewPeriod, final java.lang.Object masterCount, final java.lang.Object masterDataDisk, final java.lang.Object masterDataDisks, final java.lang.Object masterInstanceChargeType, final java.lang.Object masterPeriod, final java.lang.Object masterPeriodUnit, final java.lang.Object masterSystemDiskCategory, final java.lang.Object masterSystemDiskSize, final java.lang.Object nodePortRange, final java.lang.Object numOfNodes, final java.lang.Object proxyMode, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.lang.Object snatEntry, final java.lang.Object sshFlags, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags, final java.lang.Object taint, final java.lang.Object timeoutMins, final java.lang.Object workerAutoRenew, final java.lang.Object workerAutoRenewPeriod, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDisks, final java.lang.Object workerInstanceChargeType, final java.lang.Object workerPeriod, final java.lang.Object workerPeriodUnit, final java.lang.Object workerSystemDiskCategory, final java.lang.Object workerSystemDiskSize) {
+        protected Jsii$Proxy(final java.lang.Object masterInstanceTypes, final java.lang.Object masterVSwitchIds, final java.lang.Object name, final java.lang.Object vpcId, final java.lang.Object workerInstanceTypes, final java.lang.Object workerVSwitchIds, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.Object containerCidr, final java.lang.Object cpuPolicy, final java.lang.Object disableRollback, final java.lang.Object endpointPublicAccess, final java.lang.Object keyPair, final java.lang.Object kubernetesVersion, final java.lang.Object loginPassword, final java.lang.Object masterAutoRenew, final java.lang.Object masterAutoRenewPeriod, final java.lang.Object masterCount, final java.lang.Object masterDataDisk, final java.lang.Object masterDataDisks, final java.lang.Object masterInstanceChargeType, final java.lang.Object masterPeriod, final java.lang.Object masterPeriodUnit, final java.lang.Object masterSystemDiskCategory, final java.lang.Object masterSystemDiskSize, final java.lang.Object nodePortRange, final java.lang.Object numOfNodes, final java.lang.Object podVswitchIds, final java.lang.Object proxyMode, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.lang.Object snatEntry, final java.lang.Object sshFlags, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosKubernetesCluster.TagsProperty> tags, final java.lang.Object taint, final java.lang.Object timeoutMins, final java.lang.Object workerAutoRenew, final java.lang.Object workerAutoRenewPeriod, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDisks, final java.lang.Object workerInstanceChargeType, final java.lang.Object workerPeriod, final java.lang.Object workerPeriodUnit, final java.lang.Object workerSystemDiskCategory, final java.lang.Object workerSystemDiskSize) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.masterInstanceTypes = java.util.Objects.requireNonNull(masterInstanceTypes, "masterInstanceTypes is required");
             this.masterVSwitchIds = java.util.Objects.requireNonNull(masterVSwitchIds, "masterVSwitchIds is required");
@@ -1332,6 +1361,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             this.masterSystemDiskSize = masterSystemDiskSize;
             this.nodePortRange = nodePortRange;
             this.numOfNodes = numOfNodes;
+            this.podVswitchIds = podVswitchIds;
             this.proxyMode = proxyMode;
             this.securityGroupId = securityGroupId;
             this.serviceCidr = serviceCidr;
@@ -1484,6 +1514,11 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getNumOfNodes() {
             return this.numOfNodes;
+        }
+
+        @Override
+        public final java.lang.Object getPodVswitchIds() {
+            return this.podVswitchIds;
         }
 
         @Override
@@ -1646,6 +1681,9 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.getNumOfNodes() != null) {
                 data.set("numOfNodes", om.valueToTree(this.getNumOfNodes()));
             }
+            if (this.getPodVswitchIds() != null) {
+                data.set("podVswitchIds", om.valueToTree(this.getPodVswitchIds()));
+            }
             if (this.getProxyMode() != null) {
                 data.set("proxyMode", om.valueToTree(this.getProxyMode()));
             }
@@ -1742,6 +1780,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             if (this.masterSystemDiskSize != null ? !this.masterSystemDiskSize.equals(that.masterSystemDiskSize) : that.masterSystemDiskSize != null) return false;
             if (this.nodePortRange != null ? !this.nodePortRange.equals(that.nodePortRange) : that.nodePortRange != null) return false;
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
+            if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
@@ -1790,6 +1829,7 @@ public interface RosKubernetesClusterProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.masterSystemDiskSize != null ? this.masterSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.nodePortRange != null ? this.nodePortRange.hashCode() : 0);
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
+            result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);

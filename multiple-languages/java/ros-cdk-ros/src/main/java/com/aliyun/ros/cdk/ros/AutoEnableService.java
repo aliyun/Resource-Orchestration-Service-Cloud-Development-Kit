@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.019Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -96,11 +96,14 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * CR: Container Registry
          * CS: Container Service
          * DataHub: Data Hub
-         * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         * DataWorks: DataWorks
+         * DCDN: Dynamic Route for CDN
+         * EDAS: Enterprise Distributed Application Service
          * EMAS: Enterprise Mobile Application Studio
          * FC: Function Compute
          * FNF: Serverless Workflow
-         * MaxCompute: MaxComputeNAS: Network Attached Storage
+         * MaxCompute: MaxCompute
+         * NAS: Network Attached Storage
          * MNS: Message Service (MNS)
          * HBR: Hybrid Backup Recovery
          * IMM: Intelligent Media Management
@@ -138,11 +141,14 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * CR: Container Registry
          * CS: Container Service
          * DataHub: Data Hub
-         * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         * DataWorks: DataWorks
+         * DCDN: Dynamic Route for CDN
+         * EDAS: Enterprise Distributed Application Service
          * EMAS: Enterprise Mobile Application Studio
          * FC: Function Compute
          * FNF: Serverless Workflow
-         * MaxCompute: MaxComputeNAS: Network Attached Storage
+         * MaxCompute: MaxCompute
+         * NAS: Network Attached Storage
          * MNS: Message Service (MNS)
          * HBR: Hybrid Backup Recovery
          * IMM: Intelligent Media Management

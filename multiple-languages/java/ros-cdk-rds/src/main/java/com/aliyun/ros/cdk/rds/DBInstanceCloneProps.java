@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceCloneProps.Jsii$Proxy.class)
 public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -119,7 +119,9 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
      * Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorageType() {
         return null;
@@ -710,7 +712,9 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          *                              Valid values:
          *                              local_ssd: specifies to use local SSDs. This is the recommended storage type.
          *                              cloud_ssd: specifies to use standard SSDs.
-         *                              cloud_essd: specifies to use enhanced SSDs.
+         *                              cloud_essd: enhanced SSD of performance level (PL)1.
+         *                              cloud_essd2: enhanced SSD of PL2.
+         *                              cloud_essd3: enhanced SSD of PL3.
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(java.lang.String dbInstanceStorageType) {
@@ -724,7 +728,9 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          *                              Valid values:
          *                              local_ssd: specifies to use local SSDs. This is the recommended storage type.
          *                              cloud_ssd: specifies to use standard SSDs.
-         *                              cloud_essd: specifies to use enhanced SSDs.
+         *                              cloud_essd: enhanced SSD of performance level (PL)1.
+         *                              cloud_essd2: enhanced SSD of PL2.
+         *                              cloud_essd3: enhanced SSD of PL3.
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {

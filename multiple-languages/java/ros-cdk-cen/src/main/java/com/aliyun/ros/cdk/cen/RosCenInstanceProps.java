@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.443Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenInstanceProps.Jsii$Proxy.class)
 public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
         return null;
     }
 
@@ -38,6 +44,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
     public static final class Builder implements software.amazon.jsii.Builder<RosCenInstanceProps> {
         private java.lang.Object description;
         private java.lang.Object name;
+        private java.lang.Object protectionLevel;
         private java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -81,6 +88,26 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCenInstanceProps#getProtectionLevel}
+         * @param protectionLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder protectionLevel(java.lang.String protectionLevel) {
+            this.protectionLevel = protectionLevel;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenInstanceProps#getProtectionLevel}
+         * @param protectionLevel the value to be set.
+         * @return {@code this}
+         */
+        public Builder protectionLevel(com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
+            this.protectionLevel = protectionLevel;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCenInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -98,7 +125,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosCenInstanceProps build() {
-            return new Jsii$Proxy(description, name, tags);
+            return new Jsii$Proxy(description, name, protectionLevel, tags);
         }
     }
 
@@ -109,6 +136,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCenInstanceProps {
         private final java.lang.Object description;
         private final java.lang.Object name;
+        private final java.lang.Object protectionLevel;
         private final java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
@@ -119,6 +147,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             super(objRef);
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protectionLevel = software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty.class)));
         }
 
@@ -126,10 +155,11 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object name, final java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object name, final java.lang.Object protectionLevel, final java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = description;
             this.name = name;
+            this.protectionLevel = protectionLevel;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)tags;
         }
 
@@ -141,6 +171,11 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getProtectionLevel() {
+            return this.protectionLevel;
         }
 
         @Override
@@ -159,6 +194,9 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getProtectionLevel() != null) {
+                data.set("protectionLevel", om.valueToTree(this.getProtectionLevel()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -183,6 +221,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.protectionLevel != null ? !this.protectionLevel.equals(that.protectionLevel) : that.protectionLevel != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -190,6 +229,7 @@ public interface RosCenInstanceProps extends software.amazon.jsii.JsiiSerializab
         public final int hashCode() {
             int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.protectionLevel != null ? this.protectionLevel.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

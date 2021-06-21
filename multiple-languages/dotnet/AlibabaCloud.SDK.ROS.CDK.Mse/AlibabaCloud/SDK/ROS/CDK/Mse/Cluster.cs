@@ -144,13 +144,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute InstanceModels: instance nodes.</summary>
-        [JsiiProperty(name: "attrInstanceModels", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceModels
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
         /// <summary>Attribute InternetAddress: internet address.</summary>
         [JsiiProperty(name: "attrInternetAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetAddress

@@ -174,7 +174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -405,6 +405,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? NumOfNodes
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes,
+        /// you must specify at least one pod vSwitch in the same zone.
+        /// The pod vSwitches cannot be the same as the node vSwitches.
+        /// We recommend that you set the mask length of the CIDR block to a value no
+        /// greater than 19 for the pod vSwitches.
+        /// The pod_vswitch_ids parameter is required when the Terway network
+        /// plug-in is selected for the cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "podVswitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? PodVswitchIds
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);

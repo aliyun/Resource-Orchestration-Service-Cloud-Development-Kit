@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-brainindustrial.PidOrganization=com.aliyun.ros.cdk.brainindustrial.PidOrganization
+@alicloud/ros-cdk-brainindustrial.PidOrganizationProps=com.aliyun.ros.cdk.brainindustrial.PidOrganizationProps
+@alicloud/ros-cdk-brainindustrial.PidProject=com.aliyun.ros.cdk.brainindustrial.PidProject
+@alicloud/ros-cdk-brainindustrial.PidProjectProps=com.aliyun.ros.cdk.brainindustrial.PidProjectProps
+@alicloud/ros-cdk-brainindustrial.RosPidOrganization=com.aliyun.ros.cdk.brainindustrial.RosPidOrganization
+@alicloud/ros-cdk-brainindustrial.RosPidOrganizationProps=com.aliyun.ros.cdk.brainindustrial.RosPidOrganizationProps
+@alicloud/ros-cdk-brainindustrial.RosPidProject=com.aliyun.ros.cdk.brainindustrial.RosPidProject
+@alicloud/ros-cdk-brainindustrial.RosPidProjectProps=com.aliyun.ros.cdk.brainindustrial.RosPidProjectProps

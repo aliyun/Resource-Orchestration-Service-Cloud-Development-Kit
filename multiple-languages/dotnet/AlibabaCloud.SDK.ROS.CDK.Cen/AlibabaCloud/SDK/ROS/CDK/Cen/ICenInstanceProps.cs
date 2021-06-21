@@ -36,6 +36,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
+        /// <summary>Property protectionLevel: The level of CIDR block overlapping.</summary>
+        /// <remarks>
+        /// Set the value to REDUCED. REDUCED indicates that the
+        /// CIDR blocks can overlap with each other but must not be the same.
+        /// </remarks>
+        [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProtectionLevel
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: Tags to attach to instance.</summary>
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -76,6 +91,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property protectionLevel: The level of CIDR block overlapping.</summary>
+            /// <remarks>
+            /// Set the value to REDUCED. REDUCED indicates that the
+            /// CIDR blocks can overlap with each other but must not be the same.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "protectionLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProtectionLevel
             {
                 get => GetInstanceProperty<object?>();
             }

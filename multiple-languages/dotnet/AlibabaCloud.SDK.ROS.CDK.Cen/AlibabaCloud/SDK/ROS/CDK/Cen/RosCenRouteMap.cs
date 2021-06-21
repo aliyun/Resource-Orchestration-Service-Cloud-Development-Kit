@@ -45,253 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Cen.RosCenRouteMap))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AsPathMatchMode: A match statement. It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
-        /// </remarks>
-        [JsiiProperty(name: "attrAsPathMatchMode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAsPathMatchMode
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CenId: The ID of the CEN instance.
-        /// </remarks>
-        [JsiiProperty(name: "attrCenId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CenRegionId: The ID of the region to which the CEN instance belongs.
-        /// </remarks>
-        [JsiiProperty(name: "attrCenRegionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenRegionId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CidrMatchMode: A match statement. It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
-        /// </remarks>
-        [JsiiProperty(name: "attrCidrMatchMode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCidrMatchMode
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CommunityMatchMode: A match statement. It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
-        /// </remarks>
-        [JsiiProperty(name: "attrCommunityMatchMode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCommunityMatchMode
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: CommunityOperateMode: An action statement. It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
-        /// </remarks>
-        [JsiiProperty(name: "attrCommunityOperateMode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCommunityOperateMode
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: Description: The description of the route map.
-        /// </remarks>
-        [JsiiProperty(name: "attrDescription", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDescription
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: DestinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.  VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
-        /// </remarks>
-        [JsiiProperty(name: "attrDestinationChildInstanceTypes", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDestinationChildInstanceTypes
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: DestinationCidrBlocks: A match statement that indicates the prefix list.
-        /// </remarks>
-        [JsiiProperty(name: "attrDestinationCidrBlocks", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDestinationCidrBlocks
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: DestinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
-        /// </remarks>
-        [JsiiProperty(name: "attrDestinationInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDestinationInstanceIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: DestinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition. Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
-        /// </remarks>
-        [JsiiProperty(name: "attrDestinationInstanceIdsReverseMatch", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDestinationInstanceIdsReverseMatch
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: DestinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
-        /// </remarks>
-        [JsiiProperty(name: "attrDestinationRouteTableIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDestinationRouteTableIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: MapResult: The action that is performed to a route if the route meets all the match conditions.  Permit: The route is permitted. Deny: The route is denied.
-        /// </remarks>
-        [JsiiProperty(name: "attrMapResult", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMapResult
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: MatchAsns: A match statement that indicates the As path list.
-        /// </remarks>
-        [JsiiProperty(name: "attrMatchAsns", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMatchAsns
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: MatchCommunitySet: A match statement that indicates the community set.
-        /// </remarks>
-        [JsiiProperty(name: "attrMatchCommunitySet", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMatchCommunitySet
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: NextPriority: The priority of the next route map that is associated with the current route map. Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
-        /// </remarks>
-        [JsiiProperty(name: "attrNextPriority", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNextPriority
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: OperateCommunitySet: An action statement that operates the community attribute.
-        /// </remarks>
-        [JsiiProperty(name: "attrOperateCommunitySet", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOperateCommunitySet
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: Preference: An action statement that modifies the preference of the route.
-        /// </remarks>
-        [JsiiProperty(name: "attrPreference", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPreference
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: PrependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
-        /// </remarks>
-        [JsiiProperty(name: "attrPrependAsPath", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrependAsPath
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: Priority: The priority of the route map.
-        /// </remarks>
-        [JsiiProperty(name: "attrPriority", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPriority
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
         /// <strong>Attribute</strong>: RouteMapId: The ID of the route map.
         /// </remarks>
         [JsiiProperty(name: "attrRouteMapId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouteMapId
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: RouteTypes: A match statement that indicates the list of route types.  System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
-        /// </remarks>
-        [JsiiProperty(name: "attrRouteTypes", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouteTypes
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: SourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.  VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
-        /// </remarks>
-        [JsiiProperty(name: "attrSourceChildInstanceTypes", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceChildInstanceTypes
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: SourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
-        /// </remarks>
-        [JsiiProperty(name: "attrSourceInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceInstanceIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: SourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition. Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
-        /// </remarks>
-        [JsiiProperty(name: "attrSourceInstanceIdsReverseMatch", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceInstanceIdsReverseMatch
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: SourceRegionIds: A match statement that indicates the list of IDs of the source regions.
-        /// </remarks>
-        [JsiiProperty(name: "attrSourceRegionIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceRegionIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: SourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
-        /// </remarks>
-        [JsiiProperty(name: "attrSourceRouteTableIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceRouteTableIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Attribute</strong>: TransmitDirection: The direction in which the route map is applied. Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
-        /// </remarks>
-        [JsiiProperty(name: "attrTransmitDirection", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTransmitDirection
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -303,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cenId: The ID of the CEN instance.
+        /// <strong>Property</strong>: cenId: The ID of the Cloud Enterprise Network (CEN) instance.
         /// </remarks>
         [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object CenId
@@ -313,7 +70,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cenRegionId: The ID of the region to which the CEN instance belongs.
+        /// <strong>Property</strong>: cenRegionId: The region where the CEN instance is deployed. You can call the DescribeRegions operation to query region IDs.
         /// </remarks>
         [JsiiProperty(name: "cenRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object CenRegionId
@@ -330,7 +87,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: mapResult: The action that is performed to a route if the route meets all the match conditions.  Permit: The route is permitted. Deny: The route is denied.
+        /// <strong>Property</strong>: mapResult: The route map behavior after all conditions are matched. Valid values:
+        /// Permit: allows the routes that are matched.
+        /// Deny: rejects the routes that are matched.
         /// </remarks>
         [JsiiProperty(name: "mapResult", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object MapResult
@@ -340,7 +99,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: The priority of the route map.
+        /// <strong>Property</strong>: priority: The priority of the route map. Valid values: 1 to 100 . A lower value indicates a higher priority.
+        /// Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
         /// </remarks>
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Priority
@@ -350,7 +110,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: transmitDirection: The direction in which the route map is applied. Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+        /// <strong>Property</strong>: transmitDirection: The direction in which the route map is applied. Valid values:
+        /// RegionIn: Routes are advertised to CEN gateways.
+        /// For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region.
+        /// RegionOut: Routes are advertised from CEN gateways.
+        /// For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
         /// </remarks>
         [JsiiProperty(name: "transmitDirection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TransmitDirection
@@ -360,7 +124,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: asPathMatchMode: A match statement. It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+        /// <strong>Property</strong>: asPathMatchMode: Match statements are used to match the AS paths. Valid values:
+        /// Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+        /// Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "asPathMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -371,7 +137,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cidrMatchMode: A match statement. It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+        /// <strong>Property</strong>: cidrMatchMode: Match statements are used to match the prefixes. Valid values:
+        /// Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
+        /// For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+        /// Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
+        /// For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cidrMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -382,7 +152,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: communityMatchMode: A match statement. It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+        /// <strong>Property</strong>: communityMatchMode: Match statements are used to match the Communities. Valid values:
+        /// Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful.
+        /// Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "communityMatchMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -393,7 +165,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: communityOperateMode: An action statement. It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+        /// <strong>Property</strong>: communityOperateMode: Action statements are used to operate the Communities. Valid values:
+        /// Additive: adds.
+        /// Replace: replaces.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "communityOperateMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -415,7 +189,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.  VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+        /// <strong>Property</strong>: destinationChildInstanceTypes: Match statements are used to match the destination instance types. Valid values:
+        /// VPC: VPCs.
+        /// VBR: VBRs.
+        /// CCN: CCN instances in mainland China.
+        /// Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationChildInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -426,7 +204,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationCidrBlocks: A match statement that indicates the prefix list.
+        /// <strong>Property</strong>: destinationCidrBlocks: Match statements are used to match the routing prefixes. The CIDR format is used. You can enter at most 32 CIDR blocks.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationCidrBlocks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -437,7 +215,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+        /// <strong>Property</strong>: destinationInstanceIds: Match statements are used to match the destination instance IDs.
+        /// You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs.
+        /// Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationInstanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -448,7 +228,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition. Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+        /// <strong>Property</strong>: destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements. Valid values:
+        /// false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful.
+        /// true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationInstanceIdsReverseMatch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -459,7 +241,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+        /// <strong>Property</strong>: destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables. You can enter at most 32 route table IDs.
+        /// Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "destinationRouteTableIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -470,7 +253,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: matchAsns: A match statement that indicates the As path list.
+        /// <strong>Property</strong>: matchAsns: Match statements are used to match AS paths of the routes. An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised.
+        /// Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "matchAsns", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -481,7 +265,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: matchCommunitySet: A match statement that indicates the community set.
+        /// <strong>Property</strong>: matchCommunitySet: Match statements are used to match the Communities. Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+        /// Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "matchCommunitySet", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -492,7 +277,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: nextPriority: The priority of the next route map that is associated with the current route map. Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+        /// <strong>Property</strong>: nextPriority: The priority of the next associated route map. Valid values: 1 to 100.
+        /// If the priority is not set, no next route map is associated with the current route map.
+        /// If the priority is set to 1, the next route map is associated with the current route map.
+        /// If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map.
+        /// Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "nextPriority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -503,7 +292,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: operateCommunitySet: An action statement that operates the community attribute.
+        /// <strong>Property</strong>: operateCommunitySet: Action statements are used to operate the Communities. Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+        /// Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "operateCommunitySet", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -514,7 +304,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: preference: An action statement that modifies the preference of the route.
+        /// <strong>Property</strong>: preference: Action statements are used to modify route priorities. Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "preference", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -525,7 +315,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+        /// <strong>Property</strong>: prependAsPath: AS paths are attached when regional gateways receive or advertise routes.
+        /// For route maps that are applied in different directions, the requirements for AS paths to be attached are different:
+        /// For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied.
+        /// For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "prependAsPath", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -536,7 +329,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: routeTypes: A match statement that indicates the list of route types.  System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+        /// <strong>Property</strong>: routeTypes: Match statements are used to match the route types. Valid values:
+        /// System: system routes that are generated by the system.
+        /// Custom: custom routes that are created by users.
+        /// BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP.
+        /// You can enter multiple types.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "routeTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -547,7 +344,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.  VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+        /// <strong>Property</strong>: sourceChildInstanceTypes: Match statements are used to match source instance types of the routes. Valid values:
+        /// VPC: VPCs.
+        /// VBR: VBRs.
+        /// CCN: CCN instances in mainland China.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceChildInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -558,7 +358,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+        /// <strong>Property</strong>: sourceInstanceIds: Match statements are used to match source instance IDs of the routes.
+        /// You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceInstanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -569,7 +370,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition. Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+        /// <strong>Property</strong>: sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements. Valid values:
+        /// false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful.
+        /// true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceInstanceIdsReverseMatch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -580,7 +383,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+        /// <strong>Property</strong>: sourceRegionIds: Match statements are used to match source region IDs of the routes. You can enter at most 32 region IDs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceRegionIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -591,7 +394,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+        /// <strong>Property</strong>: sourceRouteTableIds: Match statements are used to match source route table IDs of the routes. You can enter at most 32 route table IDs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sourceRouteTableIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

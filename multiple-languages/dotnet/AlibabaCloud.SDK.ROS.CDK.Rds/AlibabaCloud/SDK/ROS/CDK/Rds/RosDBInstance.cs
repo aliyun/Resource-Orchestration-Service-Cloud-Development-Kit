@@ -375,7 +375,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <strong>Property</strong>: dbInstanceStorageType: The storage type of the instance. Valid values:
         /// local_ssd: specifies to use local SSDs. This is the recommended storage type.
         /// cloud_ssd: specifies to use standard SSDs.
-        /// cloud_essd: specifies to use enhanced SSDs.
+        /// cloud_essd: enhanced SSD of performance level (PL)1.
+        /// cloud_essd2: enhanced SSD of PL2.
+        /// cloud_essd3: enhanced SSD of PL3.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbInstanceStorageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

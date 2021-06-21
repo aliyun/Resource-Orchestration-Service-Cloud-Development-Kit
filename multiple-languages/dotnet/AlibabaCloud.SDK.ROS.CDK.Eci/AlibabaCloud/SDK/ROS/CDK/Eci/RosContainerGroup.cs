@@ -1667,6 +1667,204 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 set;
             }
         }
+        [JsiiInterface(nativeType: typeof(IInitContainerEnvironmentVarProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty")]
+        public interface IInitContainerEnvironmentVarProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: fieldRefFieldPath: A reference to another variable. Currently, only status.podIP is supported.
+            /// </remarks>
+            [JsiiProperty(name: "fieldRefFieldPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? FieldRefFieldPath
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: key: The name of the variable. The name must be [1,128] characters in length and can contain [, 0-9a-zA-Z, ], and underscores (_). It cannot start with a digit.
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Key
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: The value of the variable. The value must be [0,256] characters in length.
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IInitContainerEnvironmentVarProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerEnvironmentVarProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: fieldRefFieldPath: A reference to another variable. Currently, only status.podIP is supported.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "fieldRefFieldPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? FieldRefFieldPath
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: The name of the variable. The name must be [1,128] characters in length and can contain [, 0-9a-zA-Z, ], and underscores (_). It cannot start with a digit.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Key
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: The value of the variable. The value must be [0,256] characters in length.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty")]
+        public class InitContainerEnvironmentVarProperty : AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerEnvironmentVarProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: fieldRefFieldPath: A reference to another variable. Currently, only status.podIP is supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "fieldRefFieldPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? FieldRefFieldPath
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: key: The name of the variable. The name must be [1,128] characters in length and can contain [, 0-9a-zA-Z, ], and underscores (_). It cannot start with a digit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: The value of the variable. The value must be [0,256] characters in length.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Value
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IInitContainerPortProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty")]
+        public interface IInitContainerPortProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port number. Valid values: 1-65535.
+            /// </remarks>
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Port
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: protocol: The protocol that the port uses. Valid values: TCP and UDP
+            /// </remarks>
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Protocol
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IInitContainerPortProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerPortProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: port: The port number. Valid values: 1-65535.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: protocol: The protocol that the port uses. Valid values: TCP and UDP
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Protocol
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty")]
+        public class InitContainerPortProperty : AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerPortProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port number. Valid values: 1-65535.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Port
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: protocol: The protocol that the port uses. Valid values: TCP and UDP
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Protocol
+            {
+                get;
+                set;
+            }
+        }
         [JsiiInterface(nativeType: typeof(IInitContainerProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerProperty")]
         public interface IInitContainerProperty
         {
@@ -1712,7 +1910,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <remarks>
             /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
-            [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? EnvironmentVar
             {
@@ -1777,7 +1975,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <remarks>
             /// <strong>Property</strong>: port: The open ports and protocols. You can set a maximum of 100 ports.
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.PortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? Port
             {
@@ -1790,7 +1988,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <remarks>
             /// <strong>Property</strong>: securityContext: The security context of the container group.
             /// </remarks>
-            [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.SecurityContextProperty\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? SecurityContext
             {
@@ -1803,7 +2001,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <remarks>
             /// <strong>Property</strong>: volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
             /// </remarks>
-            [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.VolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? VolumeMount
             {
@@ -1867,7 +2065,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
                 public object? EnvironmentVar
                 {
                     get => GetInstanceProperty<object?>();
@@ -1917,7 +2115,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 /// <strong>Property</strong>: port: The open ports and protocols. You can set a maximum of 100 ports.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.PortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
                 public object? Port
                 {
                     get => GetInstanceProperty<object?>();
@@ -1927,7 +2125,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 /// <strong>Property</strong>: securityContext: The security context of the container group.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.SecurityContextProperty\"}]}}", isOptional: true)]
+                [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty\"}]}}", isOptional: true)]
                 public object? SecurityContext
                 {
                     get => GetInstanceProperty<object?>();
@@ -1937,7 +2135,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 /// <strong>Property</strong>: volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.VolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
                 public object? VolumeMount
                 {
                     get => GetInstanceProperty<object?>();
@@ -1994,7 +2192,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <strong>Property</strong>: environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "environmentVar", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
             public object? EnvironmentVar
             {
                 get;
@@ -2049,7 +2247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <strong>Property</strong>: port: The open ports and protocols. You can set a maximum of 100 ports.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.PortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
             public object? Port
             {
                 get;
@@ -2060,7 +2258,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <strong>Property</strong>: securityContext: The security context of the container group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.SecurityContextProperty\"}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "securityContext", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty\"}]}}", isOptional: true, isOverride: true)]
             public object? SecurityContext
             {
                 get;
@@ -2071,7 +2269,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <strong>Property</strong>: volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.VolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            [JsiiProperty(name: "volumeMount", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
             public object? VolumeMount
             {
                 get;
@@ -2084,6 +2282,238 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             [JsiiOptional]
             [JsiiProperty(name: "workingDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? WorkingDir
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IInitContainerSecurityContextProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty")]
+        public interface IInitContainerSecurityContextProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: capabilityAdd: undefined
+            /// </remarks>
+            [JsiiProperty(name: "capabilityAdd", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CapabilityAdd
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnlyRootFilesystem: Valid value: True.
+            /// </remarks>
+            [JsiiProperty(name: "readOnlyRootFilesystem", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ReadOnlyRootFilesystem
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: runAsUser: Valid value: 1337.
+            /// </remarks>
+            [JsiiProperty(name: "runAsUser", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RunAsUser
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IInitContainerSecurityContextProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerSecurityContextProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: capabilityAdd: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "capabilityAdd", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? CapabilityAdd
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: readOnlyRootFilesystem: Valid value: True.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "readOnlyRootFilesystem", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ReadOnlyRootFilesystem
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: runAsUser: Valid value: 1337.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "runAsUser", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RunAsUser
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty")]
+        public class InitContainerSecurityContextProperty : AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerSecurityContextProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: capabilityAdd: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "capabilityAdd", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+            public object? CapabilityAdd
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnlyRootFilesystem: Valid value: True.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "readOnlyRootFilesystem", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ReadOnlyRootFilesystem
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: runAsUser: Valid value: 1337.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "runAsUser", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RunAsUser
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IInitContainerVolumeMountProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty")]
+        public interface IInitContainerVolumeMountProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+            /// </remarks>
+            [JsiiProperty(name: "mountPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MountPath
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
+            /// </remarks>
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Name
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnly: Default value: False.
+            /// </remarks>
+            [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ReadOnly
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IInitContainerVolumeMountProperty), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerVolumeMountProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "mountPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MountPath
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Name
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: readOnly: Default value: False.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ReadOnly
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty")]
+        public class InitContainerVolumeMountProperty : AlibabaCloud.SDK.ROS.CDK.Eci.RosContainerGroup.IInitContainerVolumeMountProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "mountPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? MountPath
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Name
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnly: Default value: False.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ReadOnly
             {
                 get;
                 set;

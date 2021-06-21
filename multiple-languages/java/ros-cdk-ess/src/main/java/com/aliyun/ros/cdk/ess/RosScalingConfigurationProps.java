@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingConfigurationProps.Jsii$Proxy.class)
 public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,6 +11,12 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCreditSpecification() {
+        return null;
+    }
 
     /**
      */
@@ -27,6 +33,12 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageFamily() {
         return null;
     }
 
@@ -86,7 +98,19 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerWeight() {
         return null;
     }
 
@@ -185,9 +209,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingConfigurationProps> {
         private java.lang.Object scalingGroupId;
+        private java.lang.Object creditSpecification;
         private java.lang.Object deploymentSetId;
         private java.lang.Object diskMappings;
         private java.lang.Object hpcClusterId;
+        private java.lang.Object imageFamily;
         private java.lang.Object imageId;
         private java.lang.Object instanceId;
         private java.lang.Object instanceName;
@@ -197,7 +223,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         private java.lang.Object internetMaxBandwidthIn;
         private java.lang.Object internetMaxBandwidthOut;
         private java.lang.Object ioOptimized;
+        private java.lang.Object ipv6AddressCount;
         private java.lang.Object keyPairName;
+        private java.lang.Object loadBalancerWeight;
         private java.lang.Object passwordInherit;
         private java.lang.Object ramRoleName;
         private java.lang.Object resourceGroupId;
@@ -230,6 +258,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getCreditSpecification}
+         * @param creditSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder creditSpecification(java.lang.String creditSpecification) {
+            this.creditSpecification = creditSpecification;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getCreditSpecification}
+         * @param creditSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder creditSpecification(com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
+            this.creditSpecification = creditSpecification;
             return this;
         }
 
@@ -290,6 +338,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         public Builder hpcClusterId(com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.hpcClusterId = hpcClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getImageFamily}
+         * @param imageFamily the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageFamily(java.lang.String imageFamily) {
+            this.imageFamily = imageFamily;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getImageFamily}
+         * @param imageFamily the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageFamily(com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.imageFamily = imageFamily;
             return this;
         }
 
@@ -474,6 +542,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosScalingConfigurationProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingConfigurationProps#getKeyPairName}
          * @param keyPairName the value to be set.
          * @return {@code this}
@@ -490,6 +578,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getLoadBalancerWeight}
+         * @param loadBalancerWeight the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerWeight(java.lang.Number loadBalancerWeight) {
+            this.loadBalancerWeight = loadBalancerWeight;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getLoadBalancerWeight}
+         * @param loadBalancerWeight the value to be set.
+         * @return {@code this}
+         */
+        public Builder loadBalancerWeight(com.aliyun.ros.cdk.core.IResolvable loadBalancerWeight) {
+            this.loadBalancerWeight = loadBalancerWeight;
             return this;
         }
 
@@ -780,7 +888,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         @Override
         public RosScalingConfigurationProps build() {
-            return new Jsii$Proxy(scalingGroupId, deploymentSetId, diskMappings, hpcClusterId, imageId, instanceId, instanceName, instanceType, instanceTypes, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, keyPairName, passwordInherit, ramRoleName, resourceGroupId, scalingConfigurationName, securityGroupId, spotPriceLimit, spotPriceLimitForInstanceType, spotStrategy, systemDiskAutoSnapshotPolicyId, systemDiskCategory, systemDiskPerformanceLevel, systemDiskSize, tagList, userData);
+            return new Jsii$Proxy(scalingGroupId, creditSpecification, deploymentSetId, diskMappings, hpcClusterId, imageFamily, imageId, instanceId, instanceName, instanceType, instanceTypes, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, ipv6AddressCount, keyPairName, loadBalancerWeight, passwordInherit, ramRoleName, resourceGroupId, scalingConfigurationName, securityGroupId, spotPriceLimit, spotPriceLimitForInstanceType, spotStrategy, systemDiskAutoSnapshotPolicyId, systemDiskCategory, systemDiskPerformanceLevel, systemDiskSize, tagList, userData);
         }
     }
 
@@ -790,9 +898,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScalingConfigurationProps {
         private final java.lang.Object scalingGroupId;
+        private final java.lang.Object creditSpecification;
         private final java.lang.Object deploymentSetId;
         private final java.lang.Object diskMappings;
         private final java.lang.Object hpcClusterId;
+        private final java.lang.Object imageFamily;
         private final java.lang.Object imageId;
         private final java.lang.Object instanceId;
         private final java.lang.Object instanceName;
@@ -802,7 +912,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object internetMaxBandwidthIn;
         private final java.lang.Object internetMaxBandwidthOut;
         private final java.lang.Object ioOptimized;
+        private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object keyPairName;
+        private final java.lang.Object loadBalancerWeight;
         private final java.lang.Object passwordInherit;
         private final java.lang.Object ramRoleName;
         private final java.lang.Object resourceGroupId;
@@ -825,9 +937,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -837,7 +951,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerWeight = software.amazon.jsii.Kernel.get(this, "loadBalancerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -857,12 +973,14 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object deploymentSetId, final java.lang.Object diskMappings, final java.lang.Object hpcClusterId, final java.lang.Object imageId, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object instanceTypes, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object passwordInherit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object scalingConfigurationName, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotPriceLimitForInstanceType, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.lang.Object tagList, final java.lang.Object userData) {
+        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object creditSpecification, final java.lang.Object deploymentSetId, final java.lang.Object diskMappings, final java.lang.Object hpcClusterId, final java.lang.Object imageFamily, final java.lang.Object imageId, final java.lang.Object instanceId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object instanceTypes, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object ipv6AddressCount, final java.lang.Object keyPairName, final java.lang.Object loadBalancerWeight, final java.lang.Object passwordInherit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object scalingConfigurationName, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotPriceLimitForInstanceType, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.lang.Object tagList, final java.lang.Object userData) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
+            this.creditSpecification = creditSpecification;
             this.deploymentSetId = deploymentSetId;
             this.diskMappings = diskMappings;
             this.hpcClusterId = hpcClusterId;
+            this.imageFamily = imageFamily;
             this.imageId = imageId;
             this.instanceId = instanceId;
             this.instanceName = instanceName;
@@ -872,7 +990,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.internetMaxBandwidthIn = internetMaxBandwidthIn;
             this.internetMaxBandwidthOut = internetMaxBandwidthOut;
             this.ioOptimized = ioOptimized;
+            this.ipv6AddressCount = ipv6AddressCount;
             this.keyPairName = keyPairName;
+            this.loadBalancerWeight = loadBalancerWeight;
             this.passwordInherit = passwordInherit;
             this.ramRoleName = ramRoleName;
             this.resourceGroupId = resourceGroupId;
@@ -895,6 +1015,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.lang.Object getCreditSpecification() {
+            return this.creditSpecification;
+        }
+
+        @Override
         public final java.lang.Object getDeploymentSetId() {
             return this.deploymentSetId;
         }
@@ -907,6 +1032,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         @Override
         public final java.lang.Object getHpcClusterId() {
             return this.hpcClusterId;
+        }
+
+        @Override
+        public final java.lang.Object getImageFamily() {
+            return this.imageFamily;
         }
 
         @Override
@@ -955,8 +1085,18 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.lang.Object getIpv6AddressCount() {
+            return this.ipv6AddressCount;
+        }
+
+        @Override
         public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
+        }
+
+        @Override
+        public final java.lang.Object getLoadBalancerWeight() {
+            return this.loadBalancerWeight;
         }
 
         @Override
@@ -1036,6 +1176,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("scalingGroupId", om.valueToTree(this.getScalingGroupId()));
+            if (this.getCreditSpecification() != null) {
+                data.set("creditSpecification", om.valueToTree(this.getCreditSpecification()));
+            }
             if (this.getDeploymentSetId() != null) {
                 data.set("deploymentSetId", om.valueToTree(this.getDeploymentSetId()));
             }
@@ -1044,6 +1187,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             }
             if (this.getHpcClusterId() != null) {
                 data.set("hpcClusterId", om.valueToTree(this.getHpcClusterId()));
+            }
+            if (this.getImageFamily() != null) {
+                data.set("imageFamily", om.valueToTree(this.getImageFamily()));
             }
             if (this.getImageId() != null) {
                 data.set("imageId", om.valueToTree(this.getImageId()));
@@ -1072,8 +1218,14 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             if (this.getIoOptimized() != null) {
                 data.set("ioOptimized", om.valueToTree(this.getIoOptimized()));
             }
+            if (this.getIpv6AddressCount() != null) {
+                data.set("ipv6AddressCount", om.valueToTree(this.getIpv6AddressCount()));
+            }
             if (this.getKeyPairName() != null) {
                 data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+            }
+            if (this.getLoadBalancerWeight() != null) {
+                data.set("loadBalancerWeight", om.valueToTree(this.getLoadBalancerWeight()));
             }
             if (this.getPasswordInherit() != null) {
                 data.set("passwordInherit", om.valueToTree(this.getPasswordInherit()));
@@ -1136,9 +1288,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             RosScalingConfigurationProps.Jsii$Proxy that = (RosScalingConfigurationProps.Jsii$Proxy) o;
 
             if (!scalingGroupId.equals(that.scalingGroupId)) return false;
+            if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
             if (this.hpcClusterId != null ? !this.hpcClusterId.equals(that.hpcClusterId) : that.hpcClusterId != null) return false;
+            if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
@@ -1148,7 +1302,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             if (this.internetMaxBandwidthIn != null ? !this.internetMaxBandwidthIn.equals(that.internetMaxBandwidthIn) : that.internetMaxBandwidthIn != null) return false;
             if (this.internetMaxBandwidthOut != null ? !this.internetMaxBandwidthOut.equals(that.internetMaxBandwidthOut) : that.internetMaxBandwidthOut != null) return false;
             if (this.ioOptimized != null ? !this.ioOptimized.equals(that.ioOptimized) : that.ioOptimized != null) return false;
+            if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
+            if (this.loadBalancerWeight != null ? !this.loadBalancerWeight.equals(that.loadBalancerWeight) : that.loadBalancerWeight != null) return false;
             if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -1168,9 +1324,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         @Override
         public final int hashCode() {
             int result = this.scalingGroupId.hashCode();
+            result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
             result = 31 * result + (this.hpcClusterId != null ? this.hpcClusterId.hashCode() : 0);
+            result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
@@ -1180,7 +1338,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             result = 31 * result + (this.internetMaxBandwidthIn != null ? this.internetMaxBandwidthIn.hashCode() : 0);
             result = 31 * result + (this.internetMaxBandwidthOut != null ? this.internetMaxBandwidthOut.hashCode() : 0);
             result = 31 * result + (this.ioOptimized != null ? this.ioOptimized.hashCode() : 0);
+            result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
+            result = 31 * result + (this.loadBalancerWeight != null ? this.loadBalancerWeight.hashCode() : 0);
             result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

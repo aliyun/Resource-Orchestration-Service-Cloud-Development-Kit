@@ -18,6 +18,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             set;
         }
 
+        /// <summary>Property creditSpecification: The performance mode of the burstable instance.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Standard: the standard mode.
+        /// Unlimited: the unlimited mode.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "creditSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CreditSpecification
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property deploymentSetId: Deployment set ID.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "deploymentSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
@@ -40,6 +54,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         [JsiiOptional]
         [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? HpcClusterId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property imageFamily: The name of the image family.</summary>
+        /// <remarks>
+        /// You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imageFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ImageFamily
         {
             get;
             set;
@@ -139,10 +165,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             set;
         }
 
+        /// <summary>Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Ipv6AddressCount
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property keyPairName: SSH key pair name.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? KeyPairName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property loadBalancerWeight: The weight of the ECS instance as a backend server.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 100.
+        /// Default value: 50.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "loadBalancerWeight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LoadBalancerWeight
         {
             get;
             set;

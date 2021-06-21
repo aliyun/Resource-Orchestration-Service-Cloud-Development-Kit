@@ -1,0 +1,7 @@
+@alicloud/ros-cdk-maxcompute.RosTable=com.aliyun.ros.cdk.maxcompute.RosTable
+@alicloud/ros-cdk-maxcompute.RosTable.ColumnsProperty=com.aliyun.ros.cdk.maxcompute.RosTable$ColumnsProperty
+@alicloud/ros-cdk-maxcompute.RosTable.PartitionsProperty=com.aliyun.ros.cdk.maxcompute.RosTable$PartitionsProperty
+@alicloud/ros-cdk-maxcompute.RosTable.SchemaProperty=com.aliyun.ros.cdk.maxcompute.RosTable$SchemaProperty
+@alicloud/ros-cdk-maxcompute.RosTableProps=com.aliyun.ros.cdk.maxcompute.RosTableProps
+@alicloud/ros-cdk-maxcompute.Table=com.aliyun.ros.cdk.maxcompute.Table
+@alicloud/ros-cdk-maxcompute.TableProps=com.aliyun.ros.cdk.maxcompute.TableProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.976Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.648Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.KubernetesCluster")
 public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -302,7 +302,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property containerCidr: The container network segment cannot conflict with the VPC network segment.
          * <p>
-         * When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+         * When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
          * <p>
          * @return {@code this}
          * @param containerCidr Property containerCidr: The container network segment cannot conflict with the VPC network segment. This parameter is required.
@@ -314,7 +314,7 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property containerCidr: The container network segment cannot conflict with the VPC network segment.
          * <p>
-         * When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+         * When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
          * <p>
          * @return {@code this}
          * @param containerCidr Property containerCidr: The container network segment cannot conflict with the VPC network segment. This parameter is required.
@@ -793,6 +793,43 @@ public class KubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.props.numOfNodes(numOfNodes);
+            return this;
+        }
+
+        /**
+         * Property podVswitchIds: The list of pod vSwitches.
+         * <p>
+         * For each vSwitch that is allocated to nodes,
+         * you must specify at least one pod vSwitch in the same zone.
+         * The pod vSwitches cannot be the same as the node vSwitches.
+         * We recommend that you set the mask length of the CIDR block to a value no
+         * greater than 19 for the pod vSwitches.
+         * The pod_vswitch_ids parameter is required when the Terway network
+         * plug-in is selected for the cluster.
+         * <p>
+         * @return {@code this}
+         * @param podVswitchIds Property podVswitchIds: The list of pod vSwitches. This parameter is required.
+         */
+        public Builder podVswitchIds(final com.aliyun.ros.cdk.core.IResolvable podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
+            return this;
+        }
+        /**
+         * Property podVswitchIds: The list of pod vSwitches.
+         * <p>
+         * For each vSwitch that is allocated to nodes,
+         * you must specify at least one pod vSwitch in the same zone.
+         * The pod vSwitches cannot be the same as the node vSwitches.
+         * We recommend that you set the mask length of the CIDR block to a value no
+         * greater than 19 for the pod vSwitches.
+         * The pod_vswitch_ids parameter is required when the Terway network
+         * plug-in is selected for the cluster.
+         * <p>
+         * @return {@code this}
+         * @param podVswitchIds Property podVswitchIds: The list of pod vSwitches. This parameter is required.
+         */
+        public Builder podVswitchIds(final java.util.List<? extends java.lang.Object> podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
             return this;
         }
 

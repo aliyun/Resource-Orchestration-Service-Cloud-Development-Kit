@@ -192,6 +192,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EncryptionProviderKey
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: endpointPublicAccess: Whether to enable the public network API Server:
         /// true: which means that the public network API Server is open.
         /// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -244,6 +255,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? NumOfNodes
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes,
+        /// you must specify at least one pod vSwitch in the same zone.
+        /// The pod vSwitches cannot be the same as the node vSwitches.
+        /// We recommend that you set the mask length of the CIDR block to a value no
+        /// greater than 19 for the pod vSwitches.
+        /// The pod_vswitch_ids parameter is required when the Terway network
+        /// plug-in is selected for the cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "podVswitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? PodVswitchIds
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -477,6 +505,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: disabled: Specifies whether to disable default installation.
+            /// </remarks>
+            [JsiiProperty(name: "disabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Disabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
             /// </remarks>
             [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -516,6 +557,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: disabled: Specifies whether to disable default installation.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "disabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Disabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
                 /// </remarks>
                 [JsiiOptional]
@@ -547,6 +598,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? Config
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: disabled: Specifies whether to disable default installation.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "disabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Disabled
             {
                 get;
                 set;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS resource type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.687Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -158,13 +158,6 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
         return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
-    }
-
-    /**
-     * Attribute InstanceModels: instance nodes.
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceModels() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceModels", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.023Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.705Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -237,6 +237,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionProviderKey() {
+        return software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncryptionProviderKey(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionProviderKey", value);
+    }
+
+    /**
+     */
+    public void setEncryptionProviderKey(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionProviderKey", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
         return software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -323,6 +341,24 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setNumOfNodes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "numOfNodes", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPodVswitchIds() {
+        return software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPodVswitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "podVswitchIds", value);
+    }
+
+    /**
+     */
+    public void setPodVswitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "podVswitchIds", value);
     }
 
     /**
@@ -628,6 +664,13 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDisabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
             return null;
         }
@@ -646,6 +689,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         public static final class Builder implements software.amazon.jsii.Builder<AddonsProperty> {
             private java.lang.Object name;
             private java.lang.Object config;
+            private java.lang.Object disabled;
             private java.lang.Object version;
 
             /**
@@ -693,6 +737,28 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link AddonsProperty#getDisabled}
+             * @param disabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder disabled(java.lang.Boolean disabled) {
+                this.disabled = disabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AddonsProperty#getDisabled}
+             * @param disabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder disabled(com.aliyun.ros.cdk.core.IResolvable disabled) {
+                this.disabled = disabled;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link AddonsProperty#getVersion}
              * @param version the value to be set.
              * @return {@code this}
@@ -722,7 +788,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AddonsProperty build() {
-                return new Jsii$Proxy(name, config, version);
+                return new Jsii$Proxy(name, config, disabled, version);
             }
         }
 
@@ -734,6 +800,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AddonsProperty {
             private final java.lang.Object name;
             private final java.lang.Object config;
+            private final java.lang.Object disabled;
             private final java.lang.Object version;
 
             /**
@@ -744,16 +811,18 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 super(objRef);
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.disabled = software.amazon.jsii.Kernel.get(this, "disabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.version = software.amazon.jsii.Kernel.get(this, "version", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object config, final java.lang.Object version) {
+            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object config, final java.lang.Object disabled, final java.lang.Object version) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(name, "name is required");
                 this.config = config;
+                this.disabled = disabled;
                 this.version = version;
             }
 
@@ -765,6 +834,11 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             @Override
             public final java.lang.Object getConfig() {
                 return this.config;
+            }
+
+            @Override
+            public final java.lang.Object getDisabled() {
+                return this.disabled;
             }
 
             @Override
@@ -781,6 +855,9 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
                 data.set("name", om.valueToTree(this.getName()));
                 if (this.getConfig() != null) {
                     data.set("config", om.valueToTree(this.getConfig()));
+                }
+                if (this.getDisabled() != null) {
+                    data.set("disabled", om.valueToTree(this.getDisabled()));
                 }
                 if (this.getVersion() != null) {
                     data.set("version", om.valueToTree(this.getVersion()));
@@ -805,6 +882,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
                 if (!name.equals(that.name)) return false;
                 if (this.config != null ? !this.config.equals(that.config) : that.config != null) return false;
+                if (this.disabled != null ? !this.disabled.equals(that.disabled) : that.disabled != null) return false;
                 return this.version != null ? this.version.equals(that.version) : that.version == null;
             }
 
@@ -812,6 +890,7 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
             public final int hashCode() {
                 int result = this.name.hashCode();
                 result = 31 * result + (this.config != null ? this.config.hashCode() : 0);
+                result = 31 * result + (this.disabled != null ? this.disabled.hashCode() : 0);
                 result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
                 return result;
             }
@@ -1331,6 +1410,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param encryptionProviderKey This parameter is required.
+         */
+        public Builder encryptionProviderKey(final java.lang.String encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptionProviderKey This parameter is required.
+         */
+        public Builder encryptionProviderKey(final com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param endpointPublicAccess This parameter is required.
          */
         public Builder endpointPublicAccess(final java.lang.Boolean endpointPublicAccess) {
@@ -1411,6 +1507,23 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.props.numOfNodes(numOfNodes);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param podVswitchIds This parameter is required.
+         */
+        public Builder podVswitchIds(final com.aliyun.ros.cdk.core.IResolvable podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param podVswitchIds This parameter is required.
+         */
+        public Builder podVswitchIds(final java.util.List<? extends java.lang.Object> podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
             return this;
         }
 

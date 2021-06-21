@@ -184,6 +184,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+        /// true: enable TDE
+        /// false: disable TDE (default)
+        /// Note: You cannot disable TDE after it is enabled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tdeStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TdeStatus
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: vpcId: The VPC id to create mongodb instance.
         /// </remarks>
         [JsiiOptional]

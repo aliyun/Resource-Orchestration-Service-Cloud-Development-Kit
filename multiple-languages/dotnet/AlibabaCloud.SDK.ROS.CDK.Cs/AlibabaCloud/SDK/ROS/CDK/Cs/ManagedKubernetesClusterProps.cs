@@ -110,6 +110,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).</summary>
+        /// <remarks>
+        /// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptionProviderKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EncryptionProviderKey
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.</summary>
         /// <remarks>
         /// false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -163,6 +175,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? NumOfNodes
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property podVswitchIds: The list of pod vSwitches.</summary>
+        /// <remarks>
+        /// For each vSwitch that is allocated to nodes,
+        /// you must specify at least one pod vSwitch in the same zone.
+        /// The pod vSwitches cannot be the same as the node vSwitches.
+        /// We recommend that you set the mask length of the CIDR block to a value no
+        /// greater than 19 for the pod vSwitches.
+        /// The pod_vswitch_ids parameter is required when the Terway network
+        /// plug-in is selected for the cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "podVswitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? PodVswitchIds
         {
             get;
             set;

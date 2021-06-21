@@ -20,6 +20,8 @@
 @alicloud/ros-cdk-vpc.EIPSegment=com.aliyun.ros.cdk.vpc.EIPSegment
 @alicloud/ros-cdk-vpc.EIPSegmentProps=com.aliyun.ros.cdk.vpc.EIPSegmentProps
 @alicloud/ros-cdk-vpc.Eip=com.aliyun.ros.cdk.vpc.Eip
+@alicloud/ros-cdk-vpc.FlowLog=com.aliyun.ros.cdk.vpc.FlowLog
+@alicloud/ros-cdk-vpc.FlowLogProps=com.aliyun.ros.cdk.vpc.FlowLogProps
 @alicloud/ros-cdk-vpc.GrantInstanceToCen=com.aliyun.ros.cdk.vpc.GrantInstanceToCen
 @alicloud/ros-cdk-vpc.GrantInstanceToCenProps=com.aliyun.ros.cdk.vpc.GrantInstanceToCenProps
 @alicloud/ros-cdk-vpc.IpsecServer=com.aliyun.ros.cdk.vpc.IpsecServer
@@ -63,6 +65,8 @@
 @alicloud/ros-cdk-vpc.RosEIPProps=com.aliyun.ros.cdk.vpc.RosEIPProps
 @alicloud/ros-cdk-vpc.RosEIPSegment=com.aliyun.ros.cdk.vpc.RosEIPSegment
 @alicloud/ros-cdk-vpc.RosEIPSegmentProps=com.aliyun.ros.cdk.vpc.RosEIPSegmentProps
+@alicloud/ros-cdk-vpc.RosFlowLog=com.aliyun.ros.cdk.vpc.RosFlowLog
+@alicloud/ros-cdk-vpc.RosFlowLogProps=com.aliyun.ros.cdk.vpc.RosFlowLogProps
 @alicloud/ros-cdk-vpc.RosGrantInstanceToCen=com.aliyun.ros.cdk.vpc.RosGrantInstanceToCen
 @alicloud/ros-cdk-vpc.RosGrantInstanceToCenProps=com.aliyun.ros.cdk.vpc.RosGrantInstanceToCenProps
 @alicloud/ros-cdk-vpc.RosIpsecServer=com.aliyun.ros.cdk.vpc.RosIpsecServer
@@ -112,6 +116,10 @@
 @alicloud/ros-cdk-vpc.RosVpnGateway=com.aliyun.ros.cdk.vpc.RosVpnGateway
 @alicloud/ros-cdk-vpc.RosVpnGateway.TagsProperty=com.aliyun.ros.cdk.vpc.RosVpnGateway$TagsProperty
 @alicloud/ros-cdk-vpc.RosVpnGatewayProps=com.aliyun.ros.cdk.vpc.RosVpnGatewayProps
+@alicloud/ros-cdk-vpc.RosVpnPbrRouteEntry=com.aliyun.ros.cdk.vpc.RosVpnPbrRouteEntry
+@alicloud/ros-cdk-vpc.RosVpnPbrRouteEntryProps=com.aliyun.ros.cdk.vpc.RosVpnPbrRouteEntryProps
+@alicloud/ros-cdk-vpc.RosVpnRouteEntry=com.aliyun.ros.cdk.vpc.RosVpnRouteEntry
+@alicloud/ros-cdk-vpc.RosVpnRouteEntryProps=com.aliyun.ros.cdk.vpc.RosVpnRouteEntryProps
 @alicloud/ros-cdk-vpc.RouteTable=com.aliyun.ros.cdk.vpc.RouteTable
 @alicloud/ros-cdk-vpc.RouteTableAssociation=com.aliyun.ros.cdk.vpc.RouteTableAssociation
 @alicloud/ros-cdk-vpc.RouteTableAssociationProps=com.aliyun.ros.cdk.vpc.RouteTableAssociationProps
@@ -130,3 +138,7 @@
 @alicloud/ros-cdk-vpc.VpnConnectionProps=com.aliyun.ros.cdk.vpc.VpnConnectionProps
 @alicloud/ros-cdk-vpc.VpnGateway=com.aliyun.ros.cdk.vpc.VpnGateway
 @alicloud/ros-cdk-vpc.VpnGatewayProps=com.aliyun.ros.cdk.vpc.VpnGatewayProps
+@alicloud/ros-cdk-vpc.VpnPbrRouteEntry=com.aliyun.ros.cdk.vpc.VpnPbrRouteEntry
+@alicloud/ros-cdk-vpc.VpnPbrRouteEntryProps=com.aliyun.ros.cdk.vpc.VpnPbrRouteEntryProps
+@alicloud/ros-cdk-vpc.VpnRouteEntry=com.aliyun.ros.cdk.vpc.VpnRouteEntry
+@alicloud/ros-cdk-vpc.VpnRouteEntryProps=com.aliyun.ros.cdk.vpc.VpnRouteEntryProps

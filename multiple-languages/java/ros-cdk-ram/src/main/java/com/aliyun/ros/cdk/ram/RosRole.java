@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.870Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole")
 public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1696,6 +1696,264 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty")
+    @software.amazon.jsii.Jsii.Proxy(PolicyDocumentStatementProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PolicyDocumentStatementProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAction() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCondition() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEffect() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PolicyDocumentStatementProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PolicyDocumentStatementProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PolicyDocumentStatementProperty> {
+            private java.lang.Object action;
+            private java.lang.Object condition;
+            private java.lang.Object effect;
+            private java.lang.Object resource;
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getAction}
+             * @param action the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder action(java.util.List<? extends java.lang.Object> action) {
+                this.action = action;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getAction}
+             * @param action the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder action(com.aliyun.ros.cdk.core.IResolvable action) {
+                this.action = action;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(com.aliyun.ros.cdk.core.IResolvable condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getCondition}
+             * @param condition the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder condition(java.util.Map<java.lang.String, ? extends java.lang.Object> condition) {
+                this.condition = condition;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(java.lang.String effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getEffect}
+             * @param effect the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder effect(com.aliyun.ros.cdk.core.IResolvable effect) {
+                this.effect = effect;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getResource}
+             * @param resource the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resource(java.util.List<? extends java.lang.Object> resource) {
+                this.resource = resource;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PolicyDocumentStatementProperty#getResource}
+             * @param resource the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resource(com.aliyun.ros.cdk.core.IResolvable resource) {
+                this.resource = resource;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PolicyDocumentStatementProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PolicyDocumentStatementProperty build() {
+                return new Jsii$Proxy(action, condition, effect, resource);
+            }
+        }
+
+        /**
+         * An implementation for {@link PolicyDocumentStatementProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PolicyDocumentStatementProperty {
+            private final java.lang.Object action;
+            private final java.lang.Object condition;
+            private final java.lang.Object effect;
+            private final java.lang.Object resource;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.action = action;
+                this.condition = condition;
+                this.effect = effect;
+                this.resource = resource;
+            }
+
+            @Override
+            public final java.lang.Object getAction() {
+                return this.action;
+            }
+
+            @Override
+            public final java.lang.Object getCondition() {
+                return this.condition;
+            }
+
+            @Override
+            public final java.lang.Object getEffect() {
+                return this.effect;
+            }
+
+            @Override
+            public final java.lang.Object getResource() {
+                return this.resource;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAction() != null) {
+                    data.set("action", om.valueToTree(this.getAction()));
+                }
+                if (this.getCondition() != null) {
+                    data.set("condition", om.valueToTree(this.getCondition()));
+                }
+                if (this.getEffect() != null) {
+                    data.set("effect", om.valueToTree(this.getEffect()));
+                }
+                if (this.getResource() != null) {
+                    data.set("resource", om.valueToTree(this.getResource()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ram.RosRole.PolicyDocumentStatementProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PolicyDocumentStatementProperty.Jsii$Proxy that = (PolicyDocumentStatementProperty.Jsii$Proxy) o;
+
+                if (this.action != null ? !this.action.equals(that.action) : that.action != null) return false;
+                if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
+                if (this.effect != null ? !this.effect.equals(that.effect) : that.effect != null) return false;
+                return this.resource != null ? this.resource.equals(that.resource) : that.resource == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.action != null ? this.action.hashCode() : 0;
+                result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
+                result = 31 * result + (this.effect != null ? this.effect.hashCode() : 0);
+                result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole.PrincipalProperty")
     @software.amazon.jsii.Jsii.Proxy(PrincipalProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1940,7 +2198,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPrincipal() {
             return null;
         }
 
@@ -1959,7 +2217,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             private java.lang.Object action;
             private java.lang.Object condition;
             private java.lang.Object effect;
-            private java.lang.Object resource;
+            private java.lang.Object principal;
 
             /**
              * Sets the value of {@link StatementProperty#getAction}
@@ -1967,7 +2225,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder action(java.util.List<? extends java.lang.Object> action) {
+            public Builder action(java.lang.String action) {
                 this.action = action;
                 return this;
             }
@@ -2000,7 +2258,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder condition(java.util.Map<java.lang.String, ? extends java.lang.Object> condition) {
+            public Builder condition(com.aliyun.ros.cdk.ram.RosRole.ConditionProperty condition) {
                 this.condition = condition;
                 return this;
             }
@@ -2028,24 +2286,24 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link StatementProperty#getResource}
-             * @param resource the value to be set.
+             * Sets the value of {@link StatementProperty#getPrincipal}
+             * @param principal the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder resource(java.util.List<? extends java.lang.Object> resource) {
-                this.resource = resource;
+            public Builder principal(com.aliyun.ros.cdk.core.IResolvable principal) {
+                this.principal = principal;
                 return this;
             }
 
             /**
-             * Sets the value of {@link StatementProperty#getResource}
-             * @param resource the value to be set.
+             * Sets the value of {@link StatementProperty#getPrincipal}
+             * @param principal the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder resource(com.aliyun.ros.cdk.core.IResolvable resource) {
-                this.resource = resource;
+            public Builder principal(com.aliyun.ros.cdk.ram.RosRole.PrincipalProperty principal) {
+                this.principal = principal;
                 return this;
             }
 
@@ -2057,7 +2315,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public StatementProperty build() {
-                return new Jsii$Proxy(action, condition, effect, resource);
+                return new Jsii$Proxy(action, condition, effect, principal);
             }
         }
 
@@ -2070,7 +2328,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object action;
             private final java.lang.Object condition;
             private final java.lang.Object effect;
-            private final java.lang.Object resource;
+            private final java.lang.Object principal;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -2081,18 +2339,18 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 this.action = software.amazon.jsii.Kernel.get(this, "action", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.effect = software.amazon.jsii.Kernel.get(this, "effect", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.principal = software.amazon.jsii.Kernel.get(this, "principal", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object resource) {
+            protected Jsii$Proxy(final java.lang.Object action, final java.lang.Object condition, final java.lang.Object effect, final java.lang.Object principal) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.action = action;
                 this.condition = condition;
                 this.effect = effect;
-                this.resource = resource;
+                this.principal = principal;
             }
 
             @Override
@@ -2111,8 +2369,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getResource() {
-                return this.resource;
+            public final java.lang.Object getPrincipal() {
+                return this.principal;
             }
 
             @Override
@@ -2130,8 +2388,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getEffect() != null) {
                     data.set("effect", om.valueToTree(this.getEffect()));
                 }
-                if (this.getResource() != null) {
-                    data.set("resource", om.valueToTree(this.getResource()));
+                if (this.getPrincipal() != null) {
+                    data.set("principal", om.valueToTree(this.getPrincipal()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -2154,7 +2412,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.action != null ? !this.action.equals(that.action) : that.action != null) return false;
                 if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
                 if (this.effect != null ? !this.effect.equals(that.effect) : that.effect != null) return false;
-                return this.resource != null ? this.resource.equals(that.resource) : that.resource == null;
+                return this.principal != null ? this.principal.equals(that.principal) : that.principal == null;
             }
 
             @Override
@@ -2162,7 +2420,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.action != null ? this.action.hashCode() : 0;
                 result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
                 result = 31 * result + (this.effect != null ? this.effect.hashCode() : 0);
-                result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
+                result = 31 * result + (this.principal != null ? this.principal.hashCode() : 0);
                 return result;
             }
         }

@@ -1,0 +1,14 @@
+@alicloud/ros-cdk-config.CompliancePack=com.aliyun.ros.cdk.config.CompliancePack
+@alicloud/ros-cdk-config.CompliancePackProps=com.aliyun.ros.cdk.config.CompliancePackProps
+@alicloud/ros-cdk-config.DeliveryChannel=com.aliyun.ros.cdk.config.DeliveryChannel
+@alicloud/ros-cdk-config.DeliveryChannelProps=com.aliyun.ros.cdk.config.DeliveryChannelProps
+@alicloud/ros-cdk-config.RosCompliancePack=com.aliyun.ros.cdk.config.RosCompliancePack
+@alicloud/ros-cdk-config.RosCompliancePack.ConfigRuleParametersProperty=com.aliyun.ros.cdk.config.RosCompliancePack$ConfigRuleParametersProperty
+@alicloud/ros-cdk-config.RosCompliancePack.ConfigRulesProperty=com.aliyun.ros.cdk.config.RosCompliancePack$ConfigRulesProperty
+@alicloud/ros-cdk-config.RosCompliancePackProps=com.aliyun.ros.cdk.config.RosCompliancePackProps
+@alicloud/ros-cdk-config.RosDeliveryChannel=com.aliyun.ros.cdk.config.RosDeliveryChannel
+@alicloud/ros-cdk-config.RosDeliveryChannelProps=com.aliyun.ros.cdk.config.RosDeliveryChannelProps
+@alicloud/ros-cdk-config.RosRule=com.aliyun.ros.cdk.config.RosRule
+@alicloud/ros-cdk-config.RosRuleProps=com.aliyun.ros.cdk.config.RosRuleProps
+@alicloud/ros-cdk-config.Rule=com.aliyun.ros.cdk.config.Rule
+@alicloud/ros-cdk-config.RuleProps=com.aliyun.ros.cdk.config.RuleProps

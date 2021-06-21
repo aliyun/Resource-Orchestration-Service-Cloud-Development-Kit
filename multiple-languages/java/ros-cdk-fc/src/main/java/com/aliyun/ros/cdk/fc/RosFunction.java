@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.552Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.476Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -401,6 +401,13 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStatefulInvocation() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link AsyncConfigurationProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -415,6 +422,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             private java.lang.Object destination;
             private java.lang.Object maxAsyncEventAgeInSeconds;
             private java.lang.Object maxAsyncRetryAttempts;
+            private java.lang.Object statefulInvocation;
 
             /**
              * Sets the value of {@link AsyncConfigurationProperty#getDestination}
@@ -483,6 +491,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AsyncConfigurationProperty#getStatefulInvocation}
+             * @param statefulInvocation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statefulInvocation(java.lang.Boolean statefulInvocation) {
+                this.statefulInvocation = statefulInvocation;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AsyncConfigurationProperty#getStatefulInvocation}
+             * @param statefulInvocation the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder statefulInvocation(com.aliyun.ros.cdk.core.IResolvable statefulInvocation) {
+                this.statefulInvocation = statefulInvocation;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link AsyncConfigurationProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -490,7 +520,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AsyncConfigurationProperty build() {
-                return new Jsii$Proxy(destination, maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts);
+                return new Jsii$Proxy(destination, maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, statefulInvocation);
             }
         }
 
@@ -503,6 +533,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object destination;
             private final java.lang.Object maxAsyncEventAgeInSeconds;
             private final java.lang.Object maxAsyncRetryAttempts;
+            private final java.lang.Object statefulInvocation;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -513,16 +544,18 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.destination = software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.maxAsyncEventAgeInSeconds = software.amazon.jsii.Kernel.get(this, "maxAsyncEventAgeInSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.maxAsyncRetryAttempts = software.amazon.jsii.Kernel.get(this, "maxAsyncRetryAttempts", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.statefulInvocation = software.amazon.jsii.Kernel.get(this, "statefulInvocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object destination, final java.lang.Object maxAsyncEventAgeInSeconds, final java.lang.Object maxAsyncRetryAttempts) {
+            protected Jsii$Proxy(final java.lang.Object destination, final java.lang.Object maxAsyncEventAgeInSeconds, final java.lang.Object maxAsyncRetryAttempts, final java.lang.Object statefulInvocation) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.destination = destination;
                 this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
                 this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
+                this.statefulInvocation = statefulInvocation;
             }
 
             @Override
@@ -541,6 +574,11 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getStatefulInvocation() {
+                return this.statefulInvocation;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -554,6 +592,9 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getMaxAsyncRetryAttempts() != null) {
                     data.set("maxAsyncRetryAttempts", om.valueToTree(this.getMaxAsyncRetryAttempts()));
+                }
+                if (this.getStatefulInvocation() != null) {
+                    data.set("statefulInvocation", om.valueToTree(this.getStatefulInvocation()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -575,7 +616,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.destination != null ? !this.destination.equals(that.destination) : that.destination != null) return false;
                 if (this.maxAsyncEventAgeInSeconds != null ? !this.maxAsyncEventAgeInSeconds.equals(that.maxAsyncEventAgeInSeconds) : that.maxAsyncEventAgeInSeconds != null) return false;
-                return this.maxAsyncRetryAttempts != null ? this.maxAsyncRetryAttempts.equals(that.maxAsyncRetryAttempts) : that.maxAsyncRetryAttempts == null;
+                if (this.maxAsyncRetryAttempts != null ? !this.maxAsyncRetryAttempts.equals(that.maxAsyncRetryAttempts) : that.maxAsyncRetryAttempts != null) return false;
+                return this.statefulInvocation != null ? this.statefulInvocation.equals(that.statefulInvocation) : that.statefulInvocation == null;
             }
 
             @Override
@@ -583,6 +625,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.destination != null ? this.destination.hashCode() : 0;
                 result = 31 * result + (this.maxAsyncEventAgeInSeconds != null ? this.maxAsyncEventAgeInSeconds.hashCode() : 0);
                 result = 31 * result + (this.maxAsyncRetryAttempts != null ? this.maxAsyncRetryAttempts.hashCode() : 0);
+                result = 31 * result + (this.statefulInvocation != null ? this.statefulInvocation.hashCode() : 0);
                 return result;
             }
         }

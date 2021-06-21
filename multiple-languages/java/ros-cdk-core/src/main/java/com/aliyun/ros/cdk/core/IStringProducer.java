@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for lazy string producers.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.310Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:41.978Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IStringProducer")
 @software.amazon.jsii.Jsii.Proxy(IStringProducer.Jsii$Proxy.class)
 public interface IStringProducer extends software.amazon.jsii.JsiiSerializable {

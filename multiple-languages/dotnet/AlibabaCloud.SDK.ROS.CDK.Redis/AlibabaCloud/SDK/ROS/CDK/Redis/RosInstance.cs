@@ -45,10 +45,73 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ArchitectureType: The architecture.
+        /// </remarks>
+        [JsiiProperty(name: "attrArchitectureType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArchitectureType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
+        /// </remarks>
+        [JsiiProperty(name: "attrBandwidth", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidth
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Capacity: The storage capacity of the instance. Unit: MB.
+        /// </remarks>
+        [JsiiProperty(name: "attrCapacity", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCapacity
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ChargeType: The billing method of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrChargeType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChargeType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: ConnectionDomain: Connection domain of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrConnectionDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionDomain
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Connections: The maximum number of connections supported by the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrConnections", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnections
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: EngineVersion: The engine version of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrEngineVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEngineVersion
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
+        /// </remarks>
+        [JsiiProperty(name: "attrHasRenewChangeOrder", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHasRenewChangeOrder
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
@@ -81,6 +144,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: InstanceType: The engine type of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: NetworkType: The network type.
+        /// </remarks>
+        [JsiiProperty(name: "attrNetworkType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetworkType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: NodeType: The type of node.
+        /// </remarks>
+        [JsiiProperty(name: "attrNodeType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNodeType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: OrderId: Order Id of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -90,10 +180,73 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: PackageType: The plan type.
+        /// </remarks>
+        [JsiiProperty(name: "attrPackageType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPackageType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: Port: Port of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPort
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: PrivateIp: The internal IP address of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrivateIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateIp
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: QPS: The queries per second (QPS) supported by the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrQps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQps
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ResourceGroupId: The ID of the resource group to which the instance belongs.
+        /// </remarks>
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceGroupId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VpcId: The ID of the VPC.
+        /// </remarks>
+        [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VSwitchId: The ID of the vSwitch.
+        /// </remarks>
+        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ZoneId: The ID of the zone.
+        /// </remarks>
+        [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

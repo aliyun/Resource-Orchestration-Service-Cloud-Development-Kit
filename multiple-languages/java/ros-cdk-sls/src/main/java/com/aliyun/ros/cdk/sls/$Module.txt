@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-sls.AlertProps=com.aliyun.ros.cdk.sls.AlertProps
 @alicloud/ros-cdk-sls.ApplyConfigToMachineGroup=com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroup
 @alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps=com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroupProps
+@alicloud/ros-cdk-sls.Audit=com.aliyun.ros.cdk.sls.Audit
+@alicloud/ros-cdk-sls.AuditProps=com.aliyun.ros.cdk.sls.AuditProps
 @alicloud/ros-cdk-sls.Index=com.aliyun.ros.cdk.sls.Index
 @alicloud/ros-cdk-sls.IndexProps=com.aliyun.ros.cdk.sls.IndexProps
 @alicloud/ros-cdk-sls.Logstore=com.aliyun.ros.cdk.sls.Logstore
@@ -21,6 +23,9 @@
 @alicloud/ros-cdk-sls.RosAlertProps=com.aliyun.ros.cdk.sls.RosAlertProps
 @alicloud/ros-cdk-sls.RosApplyConfigToMachineGroup=com.aliyun.ros.cdk.sls.RosApplyConfigToMachineGroup
 @alicloud/ros-cdk-sls.RosApplyConfigToMachineGroupProps=com.aliyun.ros.cdk.sls.RosApplyConfigToMachineGroupProps
+@alicloud/ros-cdk-sls.RosAudit=com.aliyun.ros.cdk.sls.RosAudit
+@alicloud/ros-cdk-sls.RosAudit.VariableMapProperty=com.aliyun.ros.cdk.sls.RosAudit$VariableMapProperty
+@alicloud/ros-cdk-sls.RosAuditProps=com.aliyun.ros.cdk.sls.RosAuditProps
 @alicloud/ros-cdk-sls.RosIndex=com.aliyun.ros.cdk.sls.RosIndex
 @alicloud/ros-cdk-sls.RosIndex.FullTextIndexProperty=com.aliyun.ros.cdk.sls.RosIndex$FullTextIndexProperty
 @alicloud/ros-cdk-sls.RosIndex.JsonKeyIndicesProperty=com.aliyun.ros.cdk.sls.RosIndex$JsonKeyIndicesProperty

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.007Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.675Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -329,6 +329,31 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final java.lang.String encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+        /**
+         * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
+         * <p>
+         * This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+         * <p>
+         * @return {@code this}
+         * @param encryptionProviderKey Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This parameter is required.
+         */
+        public Builder encryptionProviderKey(final com.aliyun.ros.cdk.core.IResolvable encryptionProviderKey) {
+            this.props.encryptionProviderKey(encryptionProviderKey);
+            return this;
+        }
+
+        /**
          * Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
          * <p>
          * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -448,6 +473,43 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.props.numOfNodes(numOfNodes);
+            return this;
+        }
+
+        /**
+         * Property podVswitchIds: The list of pod vSwitches.
+         * <p>
+         * For each vSwitch that is allocated to nodes,
+         * you must specify at least one pod vSwitch in the same zone.
+         * The pod vSwitches cannot be the same as the node vSwitches.
+         * We recommend that you set the mask length of the CIDR block to a value no
+         * greater than 19 for the pod vSwitches.
+         * The pod_vswitch_ids parameter is required when the Terway network
+         * plug-in is selected for the cluster.
+         * <p>
+         * @return {@code this}
+         * @param podVswitchIds Property podVswitchIds: The list of pod vSwitches. This parameter is required.
+         */
+        public Builder podVswitchIds(final com.aliyun.ros.cdk.core.IResolvable podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
+            return this;
+        }
+        /**
+         * Property podVswitchIds: The list of pod vSwitches.
+         * <p>
+         * For each vSwitch that is allocated to nodes,
+         * you must specify at least one pod vSwitch in the same zone.
+         * The pod vSwitches cannot be the same as the node vSwitches.
+         * We recommend that you set the mask length of the CIDR block to a value no
+         * greater than 19 for the pod vSwitches.
+         * The pod_vswitch_ids parameter is required when the Terway network
+         * plug-in is selected for the cluster.
+         * <p>
+         * @return {@code this}
+         * @param podVswitchIds Property podVswitchIds: The list of pod vSwitches. This parameter is required.
+         */
+        public Builder podVswitchIds(final java.util.List<? extends java.lang.Object> podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
             return this;
         }
 

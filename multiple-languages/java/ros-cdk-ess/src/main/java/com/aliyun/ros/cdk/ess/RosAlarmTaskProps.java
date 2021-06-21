@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::AlarmTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.482Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlarmTaskProps.Jsii$Proxy.class)
 public interface RosAlarmTaskProps extends software.amazon.jsii.JsiiSerializable {

@@ -10,7 +10,11 @@
 @alicloud/ros-cdk-eci.RosContainerGroup.EnvironmentVarProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$EnvironmentVarProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.HostAliaseProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$HostAliaseProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.ImageRegistryCredentialProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$ImageRegistryCredentialProperty
+@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$InitContainerEnvironmentVarProperty
+@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$InitContainerPortProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.InitContainerProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$InitContainerProperty
+@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$InitContainerSecurityContextProperty
+@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$InitContainerVolumeMountProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.LivenessProbeProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$LivenessProbeProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.OptionProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$OptionProperty
 @alicloud/ros-cdk-eci.RosContainerGroup.PortProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$PortProperty

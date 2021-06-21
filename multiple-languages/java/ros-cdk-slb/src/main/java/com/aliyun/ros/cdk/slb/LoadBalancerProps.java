@@ -3,10 +3,19 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+     * <p>
+     * If 'ipv6' is selected, please note that the zone and the specification are supported.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
+        return null;
+    }
 
     /**
      * Property addressType: Loader balancer address type.
@@ -48,8 +57,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * <p>
      * The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-     * If PricingCycle is year, the value range is 1 to 3.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+     * If PricingCycle is year, the value range is 1 to 5.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
@@ -175,6 +184,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link LoadBalancerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerProps> {
+        private java.lang.Object addressIpVersion;
         private java.lang.Object addressType;
         private java.lang.Object autoPay;
         private java.lang.Object bandwidth;
@@ -193,6 +203,28 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags;
         private java.lang.Object vpcId;
         private java.lang.Object vSwitchId;
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
+         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         *                         If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * @return {@code this}
+         */
+        public Builder addressIpVersion(java.lang.String addressIpVersion) {
+            this.addressIpVersion = addressIpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
+         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+         *                         If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * @return {@code this}
+         */
+        public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.addressIpVersion = addressIpVersion;
+            return this;
+        }
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressType}
@@ -287,8 +319,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          * @param duration Property duration: Optional.
          *                 The subscription duration of a Subscription Internet instance.
          *                 Valid values:
-         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-         *                 If PricingCycle is year, the value range is 1 to 3.
+         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+         *                 If PricingCycle is year, the value range is 1 to 5.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
@@ -301,8 +333,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          * @param duration Property duration: Optional.
          *                 The subscription duration of a Subscription Internet instance.
          *                 Valid values:
-         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-         *                 If PricingCycle is year, the value range is 1 to 3.
+         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+         *                 If PricingCycle is year, the value range is 1 to 5.
          * @return {@code this}
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
@@ -589,7 +621,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public LoadBalancerProps build() {
-            return new Jsii$Proxy(addressType, autoPay, bandwidth, deletionProtection, duration, internetChargeType, loadBalancerName, loadBalancerSpec, masterZoneId, modificationProtectionReason, modificationProtectionStatus, payType, pricingCycle, resourceGroupId, slaveZoneId, tags, vpcId, vSwitchId);
+            return new Jsii$Proxy(addressIpVersion, addressType, autoPay, bandwidth, deletionProtection, duration, internetChargeType, loadBalancerName, loadBalancerSpec, masterZoneId, modificationProtectionReason, modificationProtectionStatus, payType, pricingCycle, resourceGroupId, slaveZoneId, tags, vpcId, vSwitchId);
         }
     }
 
@@ -598,6 +630,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerProps {
+        private final java.lang.Object addressIpVersion;
         private final java.lang.Object addressType;
         private final java.lang.Object autoPay;
         private final java.lang.Object bandwidth;
@@ -623,6 +656,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -647,8 +681,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object addressType, final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object duration, final java.lang.Object internetChargeType, final java.lang.Object loadBalancerName, final java.lang.Object loadBalancerSpec, final java.lang.Object masterZoneId, final java.lang.Object modificationProtectionReason, final java.lang.Object modificationProtectionStatus, final java.lang.Object payType, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.lang.Object slaveZoneId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object addressIpVersion, final java.lang.Object addressType, final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object duration, final java.lang.Object internetChargeType, final java.lang.Object loadBalancerName, final java.lang.Object loadBalancerSpec, final java.lang.Object masterZoneId, final java.lang.Object modificationProtectionReason, final java.lang.Object modificationProtectionStatus, final java.lang.Object payType, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.lang.Object slaveZoneId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.addressIpVersion = addressIpVersion;
             this.addressType = addressType;
             this.autoPay = autoPay;
             this.bandwidth = bandwidth;
@@ -667,6 +702,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
+        }
+
+        @Override
+        public final java.lang.Object getAddressIpVersion() {
+            return this.addressIpVersion;
         }
 
         @Override
@@ -765,6 +805,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getAddressIpVersion() != null) {
+                data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
+            }
             if (this.getAddressType() != null) {
                 data.set("addressType", om.valueToTree(this.getAddressType()));
             }
@@ -837,6 +880,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
             LoadBalancerProps.Jsii$Proxy that = (LoadBalancerProps.Jsii$Proxy) o;
 
+            if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.addressType != null ? !this.addressType.equals(that.addressType) : that.addressType != null) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
@@ -859,7 +903,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         @Override
         public final int hashCode() {
-            int result = this.addressType != null ? this.addressType.hashCode() : 0;
+            int result = this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0;
+            result = 31 * result + (this.addressType != null ? this.addressType.hashCode() : 0);
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);

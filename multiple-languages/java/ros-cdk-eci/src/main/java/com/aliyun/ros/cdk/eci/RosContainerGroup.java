@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS template type:  `ALIYUN::ECI::ContainerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.138Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.868Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup")
 public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -2638,6 +2638,393 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty")
+    @software.amazon.jsii.Jsii.Proxy(InitContainerEnvironmentVarProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InitContainerEnvironmentVarProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFieldRefFieldPath() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKey() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InitContainerEnvironmentVarProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InitContainerEnvironmentVarProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InitContainerEnvironmentVarProperty> {
+            private java.lang.Object fieldRefFieldPath;
+            private java.lang.Object key;
+            private java.lang.Object value;
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getFieldRefFieldPath}
+             * @param fieldRefFieldPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldRefFieldPath(java.lang.String fieldRefFieldPath) {
+                this.fieldRefFieldPath = fieldRefFieldPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getFieldRefFieldPath}
+             * @param fieldRefFieldPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fieldRefFieldPath(com.aliyun.ros.cdk.core.IResolvable fieldRefFieldPath) {
+                this.fieldRefFieldPath = fieldRefFieldPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerEnvironmentVarProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InitContainerEnvironmentVarProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InitContainerEnvironmentVarProperty build() {
+                return new Jsii$Proxy(fieldRefFieldPath, key, value);
+            }
+        }
+
+        /**
+         * An implementation for {@link InitContainerEnvironmentVarProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InitContainerEnvironmentVarProperty {
+            private final java.lang.Object fieldRefFieldPath;
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.fieldRefFieldPath = software.amazon.jsii.Kernel.get(this, "fieldRefFieldPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object fieldRefFieldPath, final java.lang.Object key, final java.lang.Object value) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.fieldRefFieldPath = fieldRefFieldPath;
+                this.key = key;
+                this.value = value;
+            }
+
+            @Override
+            public final java.lang.Object getFieldRefFieldPath() {
+                return this.fieldRefFieldPath;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getFieldRefFieldPath() != null) {
+                    data.set("fieldRefFieldPath", om.valueToTree(this.getFieldRefFieldPath()));
+                }
+                if (this.getKey() != null) {
+                    data.set("key", om.valueToTree(this.getKey()));
+                }
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerEnvironmentVarProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InitContainerEnvironmentVarProperty.Jsii$Proxy that = (InitContainerEnvironmentVarProperty.Jsii$Proxy) o;
+
+                if (this.fieldRefFieldPath != null ? !this.fieldRefFieldPath.equals(that.fieldRefFieldPath) : that.fieldRefFieldPath != null) return false;
+                if (this.key != null ? !this.key.equals(that.key) : that.key != null) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.fieldRefFieldPath != null ? this.fieldRefFieldPath.hashCode() : 0;
+                result = 31 * result + (this.key != null ? this.key.hashCode() : 0);
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty")
+    @software.amazon.jsii.Jsii.Proxy(InitContainerPortProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InitContainerPortProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProtocol() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InitContainerPortProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InitContainerPortProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InitContainerPortProperty> {
+            private java.lang.Object port;
+            private java.lang.Object protocol;
+
+            /**
+             * Sets the value of {@link InitContainerPortProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(java.lang.Number port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerPortProperty#getPort}
+             * @param port the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerPortProperty#getProtocol}
+             * @param protocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder protocol(java.lang.String protocol) {
+                this.protocol = protocol;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerPortProperty#getProtocol}
+             * @param protocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
+                this.protocol = protocol;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InitContainerPortProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InitContainerPortProperty build() {
+                return new Jsii$Proxy(port, protocol);
+            }
+        }
+
+        /**
+         * An implementation for {@link InitContainerPortProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InitContainerPortProperty {
+            private final java.lang.Object port;
+            private final java.lang.Object protocol;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object protocol) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.port = port;
+                this.protocol = protocol;
+            }
+
+            @Override
+            public final java.lang.Object getPort() {
+                return this.port;
+            }
+
+            @Override
+            public final java.lang.Object getProtocol() {
+                return this.protocol;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getPort() != null) {
+                    data.set("port", om.valueToTree(this.getPort()));
+                }
+                if (this.getProtocol() != null) {
+                    data.set("protocol", om.valueToTree(this.getProtocol()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerPortProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InitContainerPortProperty.Jsii$Proxy that = (InitContainerPortProperty.Jsii$Proxy) o;
+
+                if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
+                return this.protocol != null ? this.protocol.equals(that.protocol) : that.protocol == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.port != null ? this.port.hashCode() : 0;
+                result = 31 * result + (this.protocol != null ? this.protocol.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerProperty")
     @software.amazon.jsii.Jsii.Proxy(InitContainerProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2967,7 +3354,7 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder securityContext(com.aliyun.ros.cdk.eci.RosContainerGroup.SecurityContextProperty securityContext) {
+            public Builder securityContext(com.aliyun.ros.cdk.eci.RosContainerGroup.InitContainerSecurityContextProperty securityContext) {
                 this.securityContext = securityContext;
                 return this;
             }
@@ -3234,6 +3621,436 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.securityContext != null ? this.securityContext.hashCode() : 0);
                 result = 31 * result + (this.volumeMount != null ? this.volumeMount.hashCode() : 0);
                 result = 31 * result + (this.workingDir != null ? this.workingDir.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty")
+    @software.amazon.jsii.Jsii.Proxy(InitContainerSecurityContextProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InitContainerSecurityContextProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCapabilityAdd() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReadOnlyRootFilesystem() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRunAsUser() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InitContainerSecurityContextProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InitContainerSecurityContextProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InitContainerSecurityContextProperty> {
+            private java.lang.Object capabilityAdd;
+            private java.lang.Object readOnlyRootFilesystem;
+            private java.lang.Object runAsUser;
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getCapabilityAdd}
+             * @param capabilityAdd the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder capabilityAdd(com.aliyun.ros.cdk.core.IResolvable capabilityAdd) {
+                this.capabilityAdd = capabilityAdd;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getCapabilityAdd}
+             * @param capabilityAdd the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder capabilityAdd(java.util.List<? extends java.lang.Object> capabilityAdd) {
+                this.capabilityAdd = capabilityAdd;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getReadOnlyRootFilesystem}
+             * @param readOnlyRootFilesystem the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnlyRootFilesystem(java.lang.Boolean readOnlyRootFilesystem) {
+                this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getReadOnlyRootFilesystem}
+             * @param readOnlyRootFilesystem the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnlyRootFilesystem(com.aliyun.ros.cdk.core.IResolvable readOnlyRootFilesystem) {
+                this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getRunAsUser}
+             * @param runAsUser the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runAsUser(java.lang.Number runAsUser) {
+                this.runAsUser = runAsUser;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerSecurityContextProperty#getRunAsUser}
+             * @param runAsUser the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder runAsUser(com.aliyun.ros.cdk.core.IResolvable runAsUser) {
+                this.runAsUser = runAsUser;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InitContainerSecurityContextProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InitContainerSecurityContextProperty build() {
+                return new Jsii$Proxy(capabilityAdd, readOnlyRootFilesystem, runAsUser);
+            }
+        }
+
+        /**
+         * An implementation for {@link InitContainerSecurityContextProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InitContainerSecurityContextProperty {
+            private final java.lang.Object capabilityAdd;
+            private final java.lang.Object readOnlyRootFilesystem;
+            private final java.lang.Object runAsUser;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.capabilityAdd = software.amazon.jsii.Kernel.get(this, "capabilityAdd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.readOnlyRootFilesystem = software.amazon.jsii.Kernel.get(this, "readOnlyRootFilesystem", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.runAsUser = software.amazon.jsii.Kernel.get(this, "runAsUser", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object capabilityAdd, final java.lang.Object readOnlyRootFilesystem, final java.lang.Object runAsUser) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.capabilityAdd = capabilityAdd;
+                this.readOnlyRootFilesystem = readOnlyRootFilesystem;
+                this.runAsUser = runAsUser;
+            }
+
+            @Override
+            public final java.lang.Object getCapabilityAdd() {
+                return this.capabilityAdd;
+            }
+
+            @Override
+            public final java.lang.Object getReadOnlyRootFilesystem() {
+                return this.readOnlyRootFilesystem;
+            }
+
+            @Override
+            public final java.lang.Object getRunAsUser() {
+                return this.runAsUser;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCapabilityAdd() != null) {
+                    data.set("capabilityAdd", om.valueToTree(this.getCapabilityAdd()));
+                }
+                if (this.getReadOnlyRootFilesystem() != null) {
+                    data.set("readOnlyRootFilesystem", om.valueToTree(this.getReadOnlyRootFilesystem()));
+                }
+                if (this.getRunAsUser() != null) {
+                    data.set("runAsUser", om.valueToTree(this.getRunAsUser()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerSecurityContextProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InitContainerSecurityContextProperty.Jsii$Proxy that = (InitContainerSecurityContextProperty.Jsii$Proxy) o;
+
+                if (this.capabilityAdd != null ? !this.capabilityAdd.equals(that.capabilityAdd) : that.capabilityAdd != null) return false;
+                if (this.readOnlyRootFilesystem != null ? !this.readOnlyRootFilesystem.equals(that.readOnlyRootFilesystem) : that.readOnlyRootFilesystem != null) return false;
+                return this.runAsUser != null ? this.runAsUser.equals(that.runAsUser) : that.runAsUser == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.capabilityAdd != null ? this.capabilityAdd.hashCode() : 0;
+                result = 31 * result + (this.readOnlyRootFilesystem != null ? this.readOnlyRootFilesystem.hashCode() : 0);
+                result = 31 * result + (this.runAsUser != null ? this.runAsUser.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty")
+    @software.amazon.jsii.Jsii.Proxy(InitContainerVolumeMountProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InitContainerVolumeMountProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMountPath() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReadOnly() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InitContainerVolumeMountProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InitContainerVolumeMountProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InitContainerVolumeMountProperty> {
+            private java.lang.Object mountPath;
+            private java.lang.Object name;
+            private java.lang.Object readOnly;
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getMountPath}
+             * @param mountPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPath(java.lang.String mountPath) {
+                this.mountPath = mountPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getMountPath}
+             * @param mountPath the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPath(com.aliyun.ros.cdk.core.IResolvable mountPath) {
+                this.mountPath = mountPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getName}
+             * @param name the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.Number name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getName}
+             * @param name the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getReadOnly}
+             * @param readOnly the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnly(java.lang.Boolean readOnly) {
+                this.readOnly = readOnly;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InitContainerVolumeMountProperty#getReadOnly}
+             * @param readOnly the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnly(com.aliyun.ros.cdk.core.IResolvable readOnly) {
+                this.readOnly = readOnly;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InitContainerVolumeMountProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InitContainerVolumeMountProperty build() {
+                return new Jsii$Proxy(mountPath, name, readOnly);
+            }
+        }
+
+        /**
+         * An implementation for {@link InitContainerVolumeMountProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InitContainerVolumeMountProperty {
+            private final java.lang.Object mountPath;
+            private final java.lang.Object name;
+            private final java.lang.Object readOnly;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.mountPath = software.amazon.jsii.Kernel.get(this, "mountPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.readOnly = software.amazon.jsii.Kernel.get(this, "readOnly", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object mountPath, final java.lang.Object name, final java.lang.Object readOnly) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.mountPath = mountPath;
+                this.name = name;
+                this.readOnly = readOnly;
+            }
+
+            @Override
+            public final java.lang.Object getMountPath() {
+                return this.mountPath;
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getReadOnly() {
+                return this.readOnly;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getMountPath() != null) {
+                    data.set("mountPath", om.valueToTree(this.getMountPath()));
+                }
+                if (this.getName() != null) {
+                    data.set("name", om.valueToTree(this.getName()));
+                }
+                if (this.getReadOnly() != null) {
+                    data.set("readOnly", om.valueToTree(this.getReadOnly()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-eci.RosContainerGroup.InitContainerVolumeMountProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InitContainerVolumeMountProperty.Jsii$Proxy that = (InitContainerVolumeMountProperty.Jsii$Proxy) o;
+
+                if (this.mountPath != null ? !this.mountPath.equals(that.mountPath) : that.mountPath != null) return false;
+                if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+                return this.readOnly != null ? this.readOnly.equals(that.readOnly) : that.readOnly == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.mountPath != null ? this.mountPath.hashCode() : 0;
+                result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+                result = 31 * result + (this.readOnly != null ? this.readOnly.hashCode() : 0);
                 return result;
             }
         }

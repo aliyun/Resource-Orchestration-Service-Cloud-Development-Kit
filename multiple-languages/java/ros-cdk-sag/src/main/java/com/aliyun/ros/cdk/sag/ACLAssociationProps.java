@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ACLAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(ACLAssociationProps.Jsii$Proxy.class)
 public interface ACLAssociationProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.723Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.675Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstance")
 public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -353,6 +353,24 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTdeStatus() {
+        return software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTdeStatus(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "tdeStatus", value);
+    }
+
+    /**
+     */
+    public void setTdeStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tdeStatus", value);
     }
 
     /**
@@ -1317,6 +1335,23 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tdeStatus This parameter is required.
+         */
+        public Builder tdeStatus(final java.lang.Boolean tdeStatus) {
+            this.props.tdeStatus(tdeStatus);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tdeStatus This parameter is required.
+         */
+        public Builder tdeStatus(final com.aliyun.ros.cdk.core.IResolvable tdeStatus) {
+            this.props.tdeStatus(tdeStatus);
             return this;
         }
 

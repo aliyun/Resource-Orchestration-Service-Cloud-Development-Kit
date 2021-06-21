@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.795Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.411Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstance")
 public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -150,6 +150,33 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props().name(name);
+            return this;
+        }
+
+        /**
+         * Property protectionLevel: The level of CIDR block overlapping.
+         * <p>
+         * Set the value to REDUCED. REDUCED indicates that the
+         * CIDR blocks can overlap with each other but must not be the same.
+         * <p>
+         * @return {@code this}
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping. This parameter is required.
+         */
+        public Builder protectionLevel(final java.lang.String protectionLevel) {
+            this.props().protectionLevel(protectionLevel);
+            return this;
+        }
+        /**
+         * Property protectionLevel: The level of CIDR block overlapping.
+         * <p>
+         * Set the value to REDUCED. REDUCED indicates that the
+         * CIDR blocks can overlap with each other but must not be the same.
+         * <p>
+         * @return {@code this}
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping. This parameter is required.
+         */
+        public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
+            this.props().protectionLevel(protectionLevel);
             return this;
         }
 

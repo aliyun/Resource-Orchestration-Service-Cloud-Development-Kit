@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ServerlessInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.681Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ServerlessInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ServerlessInstanceProps.Jsii$Proxy.class)
 public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -106,6 +106,18 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+     * <p>
+     * Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTdeStatus() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
@@ -151,6 +163,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         private java.lang.Object securityIpArray;
         private java.lang.Object storageEngine;
         private java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags;
+        private java.lang.Object tdeStatus;
         private java.lang.Object vpcId;
         private java.lang.Object vSwitchId;
         private java.lang.Object zoneId;
@@ -414,6 +427,34 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ServerlessInstanceProps#getTdeStatus}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         *                  Valid values:
+         *                  true: enable TDE
+         *                  false: disable TDE (default)
+         *                  Note: You cannot disable TDE after it is enabled.
+         * @return {@code this}
+         */
+        public Builder tdeStatus(java.lang.Boolean tdeStatus) {
+            this.tdeStatus = tdeStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerlessInstanceProps#getTdeStatus}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         *                  Valid values:
+         *                  true: enable TDE
+         *                  false: disable TDE (default)
+         *                  Note: You cannot disable TDE after it is enabled.
+         * @return {@code this}
+         */
+        public Builder tdeStatus(com.aliyun.ros.cdk.core.IResolvable tdeStatus) {
+            this.tdeStatus = tdeStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessInstanceProps#getVpcId}
          * @param vpcId Property vpcId: The VPC id to create mongodb instance.
          * @return {@code this}
@@ -482,7 +523,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public ServerlessInstanceProps build() {
-            return new Jsii$Proxy(dbInstanceStorage, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, periodPriceType, resourceGroupId, securityIpArray, storageEngine, tags, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(dbInstanceStorage, accountPassword, autoRenew, chargeType, dbInstanceDescription, engineVersion, networkType, period, periodPriceType, resourceGroupId, securityIpArray, storageEngine, tags, tdeStatus, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -504,6 +545,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object securityIpArray;
         private final java.lang.Object storageEngine;
         private final java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags;
+        private final java.lang.Object tdeStatus;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
@@ -527,6 +569,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty.class)));
+            this.tdeStatus = software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -536,7 +579,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dbInstanceStorage, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object periodPriceType, final java.lang.Object resourceGroupId, final java.lang.Object securityIpArray, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final java.lang.Object dbInstanceStorage, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object chargeType, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object periodPriceType, final java.lang.Object resourceGroupId, final java.lang.Object securityIpArray, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty> tags, final java.lang.Object tdeStatus, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
             this.accountPassword = accountPassword;
@@ -551,6 +594,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             this.securityIpArray = securityIpArray;
             this.storageEngine = storageEngine;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosServerlessInstance.TagsProperty>)tags;
+            this.tdeStatus = tdeStatus;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.zoneId = zoneId;
@@ -622,6 +666,11 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getTdeStatus() {
+            return this.tdeStatus;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -679,6 +728,9 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getTdeStatus() != null) {
+                data.set("tdeStatus", om.valueToTree(this.getTdeStatus()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -719,6 +771,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.securityIpArray != null ? !this.securityIpArray.equals(that.securityIpArray) : that.securityIpArray != null) return false;
             if (this.storageEngine != null ? !this.storageEngine.equals(that.storageEngine) : that.storageEngine != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.tdeStatus != null ? !this.tdeStatus.equals(that.tdeStatus) : that.tdeStatus != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -739,6 +792,7 @@ public interface ServerlessInstanceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.securityIpArray != null ? this.securityIpArray.hashCode() : 0);
             result = 31 * result + (this.storageEngine != null ? this.storageEngine.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.tdeStatus != null ? this.tdeStatus.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

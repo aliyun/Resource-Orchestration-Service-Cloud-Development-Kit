@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.154Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPProps")
 @software.amazon.jsii.Jsii.Proxy(EIPProps.Jsii$Proxy.class)
 public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -63,9 +63,11 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property isp: ISP tag for finance cloud region.
+     * Property isp: The line type.
      * <p>
-     * only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+     * You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
         return null;
@@ -282,8 +284,10 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getIsp}
-         * @param isp Property isp: ISP tag for finance cloud region.
-         *            only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+         * @param isp Property isp: The line type.
+         *            You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+         *            BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+         *            BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
          * @return {@code this}
          */
         public Builder isp(java.lang.String isp) {
@@ -293,8 +297,10 @@ public interface EIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EIPProps#getIsp}
-         * @param isp Property isp: ISP tag for finance cloud region.
-         *            only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+         * @param isp Property isp: The line type.
+         *            You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+         *            BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+         *            BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
          * @return {@code this}
          */
         public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {

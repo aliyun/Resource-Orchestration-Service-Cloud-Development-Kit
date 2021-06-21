@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for apps.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:41.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {

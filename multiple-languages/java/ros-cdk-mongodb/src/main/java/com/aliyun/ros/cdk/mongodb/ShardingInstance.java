@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS resource type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.727Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.683Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -444,6 +444,37 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         * <p>
+         * Valid values:
+         * true: enable TDE
+         * false: disable TDE (default)
+         * Note: You cannot disable TDE after it is enabled.
+         * <p>
+         * @return {@code this}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). This parameter is required.
+         */
+        public Builder tdeStatus(final java.lang.Boolean tdeStatus) {
+            this.props.tdeStatus(tdeStatus);
+            return this;
+        }
+        /**
+         * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).
+         * <p>
+         * Valid values:
+         * true: enable TDE
+         * false: disable TDE (default)
+         * Note: You cannot disable TDE after it is enabled.
+         * <p>
+         * @return {@code this}
+         * @param tdeStatus Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). This parameter is required.
+         */
+        public Builder tdeStatus(final com.aliyun.ros.cdk.core.IResolvable tdeStatus) {
+            this.props.tdeStatus(tdeStatus);
             return this;
         }
 

@@ -80,6 +80,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: ServiceId: The ID of endpoint service that is associated with the endpoint.
+        /// </remarks>
+        [JsiiProperty(name: "attrServiceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ServiceName: The name of endpoint service that is associated with the endpoint.
+        /// </remarks>
+        [JsiiProperty(name: "attrServiceName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: VpcId: The vpc ID of endpoint.
+        /// </remarks>
+        [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {

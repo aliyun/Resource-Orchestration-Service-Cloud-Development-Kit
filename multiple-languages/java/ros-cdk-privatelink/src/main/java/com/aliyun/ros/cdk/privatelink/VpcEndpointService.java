@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.845Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.800Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointService")
 public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -61,6 +61,27 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
     public VpcEndpointService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
+    }
+
+    /**
+     * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMaxBandwidth() {
+        return software.amazon.jsii.Kernel.get(this, "attrMaxBandwidth", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMinBandwidth() {
+        return software.amazon.jsii.Kernel.get(this, "attrMinBandwidth", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ServiceDescription: The description of the endpoint service.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceDescription() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

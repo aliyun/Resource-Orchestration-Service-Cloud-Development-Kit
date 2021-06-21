@@ -14,6 +14,10 @@
 @alicloud/ros-cdk-apigateway.InstanceProps=com.aliyun.ros.cdk.apigateway.InstanceProps
 @alicloud/ros-cdk-apigateway.LogConfig=com.aliyun.ros.cdk.apigateway.LogConfig
 @alicloud/ros-cdk-apigateway.LogConfigProps=com.aliyun.ros.cdk.apigateway.LogConfigProps
+@alicloud/ros-cdk-apigateway.Plugin=com.aliyun.ros.cdk.apigateway.Plugin
+@alicloud/ros-cdk-apigateway.PluginAttachment=com.aliyun.ros.cdk.apigateway.PluginAttachment
+@alicloud/ros-cdk-apigateway.PluginAttachmentProps=com.aliyun.ros.cdk.apigateway.PluginAttachmentProps
+@alicloud/ros-cdk-apigateway.PluginProps=com.aliyun.ros.cdk.apigateway.PluginProps
 @alicloud/ros-cdk-apigateway.RosApi=com.aliyun.ros.cdk.apigateway.RosApi
 @alicloud/ros-cdk-apigateway.RosApi.ConstParametersProperty=com.aliyun.ros.cdk.apigateway.RosApi$ConstParametersProperty
 @alicloud/ros-cdk-apigateway.RosApi.ErrorCodeSamplesProperty=com.aliyun.ros.cdk.apigateway.RosApi$ErrorCodeSamplesProperty
@@ -45,6 +49,10 @@
 @alicloud/ros-cdk-apigateway.RosInstanceProps=com.aliyun.ros.cdk.apigateway.RosInstanceProps
 @alicloud/ros-cdk-apigateway.RosLogConfig=com.aliyun.ros.cdk.apigateway.RosLogConfig
 @alicloud/ros-cdk-apigateway.RosLogConfigProps=com.aliyun.ros.cdk.apigateway.RosLogConfigProps
+@alicloud/ros-cdk-apigateway.RosPlugin=com.aliyun.ros.cdk.apigateway.RosPlugin
+@alicloud/ros-cdk-apigateway.RosPluginAttachment=com.aliyun.ros.cdk.apigateway.RosPluginAttachment
+@alicloud/ros-cdk-apigateway.RosPluginAttachmentProps=com.aliyun.ros.cdk.apigateway.RosPluginAttachmentProps
+@alicloud/ros-cdk-apigateway.RosPluginProps=com.aliyun.ros.cdk.apigateway.RosPluginProps
 @alicloud/ros-cdk-apigateway.RosSignature=com.aliyun.ros.cdk.apigateway.RosSignature
 @alicloud/ros-cdk-apigateway.RosSignatureBinding=com.aliyun.ros.cdk.apigateway.RosSignatureBinding
 @alicloud/ros-cdk-apigateway.RosSignatureBindingProps=com.aliyun.ros.cdk.apigateway.RosSignatureBindingProps

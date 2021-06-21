@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfiguration")
 public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
 
@@ -111,6 +111,35 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property creditSpecification: The performance mode of the burstable instance.
+         * <p>
+         * Valid values:
+         * Standard: the standard mode.
+         * Unlimited: the unlimited mode.
+         * <p>
+         * @return {@code this}
+         * @param creditSpecification Property creditSpecification: The performance mode of the burstable instance. This parameter is required.
+         */
+        public Builder creditSpecification(final java.lang.String creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+        /**
+         * Property creditSpecification: The performance mode of the burstable instance.
+         * <p>
+         * Valid values:
+         * Standard: the standard mode.
+         * Unlimited: the unlimited mode.
+         * <p>
+         * @return {@code this}
+         * @param creditSpecification Property creditSpecification: The performance mode of the burstable instance. This parameter is required.
+         */
+        public Builder creditSpecification(final com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+
+        /**
          * Property deploymentSetId: Deployment set ID.
          * <p>
          * @return {@code this}
@@ -170,6 +199,31 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
+
+        /**
+         * Property imageFamily: The name of the image family.
+         * <p>
+         * You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
+         */
+        public Builder imageFamily(final java.lang.String imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+        /**
+         * Property imageFamily: The name of the image family.
+         * <p>
+         * You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family. This parameter is required.
+         */
+        public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.props.imageFamily(imageFamily);
             return this;
         }
 
@@ -381,6 +435,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI). This parameter is required.
+         */
+        public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+        /**
+         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI). This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+
+        /**
          * Property keyPairName: SSH key pair name.
          * <p>
          * @return {@code this}
@@ -398,6 +473,33 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * Property loadBalancerWeight: The weight of the ECS instance as a backend server.
+         * <p>
+         * Valid values: 1 to 100.
+         * Default value: 50.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerWeight Property loadBalancerWeight: The weight of the ECS instance as a backend server. This parameter is required.
+         */
+        public Builder loadBalancerWeight(final java.lang.Number loadBalancerWeight) {
+            this.props.loadBalancerWeight(loadBalancerWeight);
+            return this;
+        }
+        /**
+         * Property loadBalancerWeight: The weight of the ECS instance as a backend server.
+         * <p>
+         * Valid values: 1 to 100.
+         * Default value: 50.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerWeight Property loadBalancerWeight: The weight of the ECS instance as a backend server. This parameter is required.
+         */
+        public Builder loadBalancerWeight(final com.aliyun.ros.cdk.core.IResolvable loadBalancerWeight) {
+            this.props.loadBalancerWeight(loadBalancerWeight);
             return this;
         }
 

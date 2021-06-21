@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::KubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.013Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosKubernetesCluster")
 public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -557,6 +557,24 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNumOfNodes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "numOfNodes", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPodVswitchIds() {
+        return software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPodVswitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "podVswitchIds", value);
+    }
+
+    /**
+     */
+    public void setPodVswitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "podVswitchIds", value);
     }
 
     /**
@@ -2048,6 +2066,23 @@ public class RosKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
             this.props.numOfNodes(numOfNodes);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param podVswitchIds This parameter is required.
+         */
+        public Builder podVswitchIds(final com.aliyun.ros.cdk.core.IResolvable podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param podVswitchIds This parameter is required.
+         */
+        public Builder podVswitchIds(final java.util.List<? extends java.lang.Object> podVswitchIds) {
+            this.props.podVswitchIds(podVswitchIds);
             return this;
         }
 

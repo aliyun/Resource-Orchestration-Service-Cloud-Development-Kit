@@ -3,71 +3,92 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenRouteMap`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.433Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteMapProps")
 @software.amazon.jsii.Jsii.Proxy(CenRouteMapProps.Jsii$Proxy.class)
 public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property cenId: The ID of the CEN instance.
+     * Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
 
     /**
-     * Property cenRegionId: The ID of the region to which the CEN instance belongs.
+     * Property cenRegionId: The region where the CEN instance is deployed.
+     * <p>
+     * You can call the DescribeRegions operation to query region IDs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCenRegionId();
 
     /**
-     * Property mapResult: The action that is performed to a route if the route meets all the match conditions.
+     * Property mapResult: The route map behavior after all conditions are matched.
      * <p>
-     * Permit: The route is permitted. Deny: The route is denied.
+     * Valid values:
+     * Permit: allows the routes that are matched.
+     * Deny: rejects the routes that are matched.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMapResult();
 
     /**
      * Property priority: The priority of the route map.
+     * <p>
+     * Valid values: 1 to 100 . A lower value indicates a higher priority.
+     * Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPriority();
 
     /**
      * Property transmitDirection: The direction in which the route map is applied.
      * <p>
-     * Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+     * Valid values:
+     * RegionIn: Routes are advertised to CEN gateways.
+     * For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region.
+     * RegionOut: Routes are advertised from CEN gateways.
+     * For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTransmitDirection();
 
     /**
-     * Property asPathMatchMode: A match statement.
+     * Property asPathMatchMode: Match statements are used to match the AS paths.
      * <p>
-     * It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+     * Valid values:
+     * Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+     * Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAsPathMatchMode() {
         return null;
     }
 
     /**
-     * Property cidrMatchMode: A match statement.
+     * Property cidrMatchMode: Match statements are used to match the prefixes.
      * <p>
-     * It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+     * Valid values:
+     * Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
+     * For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+     * Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
+     * For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCidrMatchMode() {
         return null;
     }
 
     /**
-     * Property communityMatchMode: A match statement.
+     * Property communityMatchMode: Match statements are used to match the Communities.
      * <p>
-     * It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+     * Valid values:
+     * Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful.
+     * Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCommunityMatchMode() {
         return null;
     }
 
     /**
-     * Property communityOperateMode: An action statement.
+     * Property communityOperateMode: Action statements are used to operate the Communities.
      * <p>
-     * It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+     * Valid values:
+     * Additive: adds.
+     * Replace: replaces.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCommunityOperateMode() {
         return null;
@@ -81,135 +102,179 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.
+     * Property destinationChildInstanceTypes: Match statements are used to match the destination instance types.
      * <p>
-     * VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+     * Valid values:
+     * VPC: VPCs.
+     * VBR: VBRs.
+     * CCN: CCN instances in mainland China.
+     * Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationChildInstanceTypes() {
         return null;
     }
 
     /**
-     * Property destinationCidrBlocks: A match statement that indicates the prefix list.
+     * Property destinationCidrBlocks: Match statements are used to match the routing prefixes.
+     * <p>
+     * The CIDR format is used. You can enter at most 32 CIDR blocks.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationCidrBlocks() {
         return null;
     }
 
     /**
-     * Property destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.
+     * Property destinationInstanceIds: Match statements are used to match the destination instance IDs.
      * <p>
-     * This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+     * You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs.
+     * Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationInstanceIds() {
         return null;
     }
 
     /**
-     * Property destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition.
+     * Property destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements.
      * <p>
-     * Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+     * Valid values:
+     * false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful.
+     * true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationInstanceIdsReverseMatch() {
         return null;
     }
 
     /**
-     * Property destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.
+     * Property destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables.
      * <p>
-     * This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+     * You can enter at most 32 route table IDs.
+     * Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationRouteTableIds() {
         return null;
     }
 
     /**
-     * Property matchAsns: A match statement that indicates the As path list.
+     * Property matchAsns: Match statements are used to match AS paths of the routes.
+     * <p>
+     * An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised.
+     * Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMatchAsns() {
         return null;
     }
 
     /**
-     * Property matchCommunitySet: A match statement that indicates the community set.
+     * Property matchCommunitySet: Match statements are used to match the Communities.
+     * <p>
+     * Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+     * Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMatchCommunitySet() {
         return null;
     }
 
     /**
-     * Property nextPriority: The priority of the next route map that is associated with the current route map.
+     * Property nextPriority: The priority of the next associated route map.
      * <p>
-     * Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+     * Valid values: 1 to 100.
+     * If the priority is not set, no next route map is associated with the current route map.
+     * If the priority is set to 1, the next route map is associated with the current route map.
+     * If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map.
+     * Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNextPriority() {
         return null;
     }
 
     /**
-     * Property operateCommunitySet: An action statement that operates the community attribute.
+     * Property operateCommunitySet: Action statements are used to operate the Communities.
+     * <p>
+     * Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+     * Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOperateCommunitySet() {
         return null;
     }
 
     /**
-     * Property preference: An action statement that modifies the preference of the route.
+     * Property preference: Action statements are used to modify route priorities.
+     * <p>
+     * Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPreference() {
         return null;
     }
 
     /**
-     * Property prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+     * Property prependAsPath: AS paths are attached when regional gateways receive or advertise routes.
+     * <p>
+     * For route maps that are applied in different directions, the requirements for AS paths to be attached are different:
+     * For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied.
+     * For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrependAsPath() {
         return null;
     }
 
     /**
-     * Property routeTypes: A match statement that indicates the list of route types.
+     * Property routeTypes: Match statements are used to match the route types.
      * <p>
-     * System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+     * Valid values:
+     * System: system routes that are generated by the system.
+     * Custom: custom routes that are created by users.
+     * BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP.
+     * You can enter multiple types.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTypes() {
         return null;
     }
 
     /**
-     * Property sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.
+     * Property sourceChildInstanceTypes: Match statements are used to match source instance types of the routes.
      * <p>
-     * VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+     * Valid values:
+     * VPC: VPCs.
+     * VBR: VBRs.
+     * CCN: CCN instances in mainland China.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceChildInstanceTypes() {
         return null;
     }
 
     /**
-     * Property sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+     * Property sourceInstanceIds: Match statements are used to match source instance IDs of the routes.
+     * <p>
+     * You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceInstanceIds() {
         return null;
     }
 
     /**
-     * Property sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition.
+     * Property sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements.
      * <p>
-     * Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+     * Valid values:
+     * false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful.
+     * true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceInstanceIdsReverseMatch() {
         return null;
     }
 
     /**
-     * Property sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+     * Property sourceRegionIds: Match statements are used to match source region IDs of the routes.
+     * <p>
+     * You can enter at most 32 region IDs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceRegionIds() {
         return null;
     }
 
     /**
-     * Property sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+     * Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes.
+     * <p>
+     * You can enter at most 32 route table IDs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceRouteTableIds() {
         return null;
@@ -255,7 +320,7 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCenId}
-         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
+         * @param cenId Property cenId: The ID of the Cloud Enterprise Network (CEN) instance. This parameter is required.
          * @return {@code this}
          */
         public Builder cenId(java.lang.String cenId) {
@@ -265,7 +330,7 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCenId}
-         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
+         * @param cenId Property cenId: The ID of the Cloud Enterprise Network (CEN) instance. This parameter is required.
          * @return {@code this}
          */
         public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
@@ -275,7 +340,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCenRegionId}
-         * @param cenRegionId Property cenRegionId: The ID of the region to which the CEN instance belongs. This parameter is required.
+         * @param cenRegionId Property cenRegionId: The region where the CEN instance is deployed. This parameter is required.
+         *                    You can call the DescribeRegions operation to query region IDs.
          * @return {@code this}
          */
         public Builder cenRegionId(java.lang.String cenRegionId) {
@@ -285,7 +351,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCenRegionId}
-         * @param cenRegionId Property cenRegionId: The ID of the region to which the CEN instance belongs. This parameter is required.
+         * @param cenRegionId Property cenRegionId: The region where the CEN instance is deployed. This parameter is required.
+         *                    You can call the DescribeRegions operation to query region IDs.
          * @return {@code this}
          */
         public Builder cenRegionId(com.aliyun.ros.cdk.core.IResolvable cenRegionId) {
@@ -295,8 +362,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMapResult}
-         * @param mapResult Property mapResult: The action that is performed to a route if the route meets all the match conditions. This parameter is required.
-         *                  Permit: The route is permitted. Deny: The route is denied.
+         * @param mapResult Property mapResult: The route map behavior after all conditions are matched. This parameter is required.
+         *                  Valid values:
+         *                  Permit: allows the routes that are matched.
+         *                  Deny: rejects the routes that are matched.
          * @return {@code this}
          */
         public Builder mapResult(java.lang.String mapResult) {
@@ -306,8 +375,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMapResult}
-         * @param mapResult Property mapResult: The action that is performed to a route if the route meets all the match conditions. This parameter is required.
-         *                  Permit: The route is permitted. Deny: The route is denied.
+         * @param mapResult Property mapResult: The route map behavior after all conditions are matched. This parameter is required.
+         *                  Valid values:
+         *                  Permit: allows the routes that are matched.
+         *                  Deny: rejects the routes that are matched.
          * @return {@code this}
          */
         public Builder mapResult(com.aliyun.ros.cdk.core.IResolvable mapResult) {
@@ -318,6 +389,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link CenRouteMapProps#getPriority}
          * @param priority Property priority: The priority of the route map. This parameter is required.
+         *                 Valid values: 1 to 100 . A lower value indicates a higher priority.
+         *                 Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -328,6 +401,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link CenRouteMapProps#getPriority}
          * @param priority Property priority: The priority of the route map. This parameter is required.
+         *                 Valid values: 1 to 100 . A lower value indicates a higher priority.
+         *                 Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
@@ -338,7 +413,11 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link CenRouteMapProps#getTransmitDirection}
          * @param transmitDirection Property transmitDirection: The direction in which the route map is applied. This parameter is required.
-         *                          Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+         *                          Valid values:
+         *                          RegionIn: Routes are advertised to CEN gateways.
+         *                          For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region.
+         *                          RegionOut: Routes are advertised from CEN gateways.
+         *                          For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
          * @return {@code this}
          */
         public Builder transmitDirection(java.lang.String transmitDirection) {
@@ -349,7 +428,11 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link CenRouteMapProps#getTransmitDirection}
          * @param transmitDirection Property transmitDirection: The direction in which the route map is applied. This parameter is required.
-         *                          Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+         *                          Valid values:
+         *                          RegionIn: Routes are advertised to CEN gateways.
+         *                          For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region.
+         *                          RegionOut: Routes are advertised from CEN gateways.
+         *                          For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
          * @return {@code this}
          */
         public Builder transmitDirection(com.aliyun.ros.cdk.core.IResolvable transmitDirection) {
@@ -359,8 +442,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getAsPathMatchMode}
-         * @param asPathMatchMode Property asPathMatchMode: A match statement.
-         *                        It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+         * @param asPathMatchMode Property asPathMatchMode: Match statements are used to match the AS paths.
+         *                        Valid values:
+         *                        Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+         *                        Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
          * @return {@code this}
          */
         public Builder asPathMatchMode(java.lang.String asPathMatchMode) {
@@ -370,8 +455,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getAsPathMatchMode}
-         * @param asPathMatchMode Property asPathMatchMode: A match statement.
-         *                        It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+         * @param asPathMatchMode Property asPathMatchMode: Match statements are used to match the AS paths.
+         *                        Valid values:
+         *                        Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+         *                        Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
          * @return {@code this}
          */
         public Builder asPathMatchMode(com.aliyun.ros.cdk.core.IResolvable asPathMatchMode) {
@@ -381,8 +468,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCidrMatchMode}
-         * @param cidrMatchMode Property cidrMatchMode: A match statement.
-         *                      It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+         * @param cidrMatchMode Property cidrMatchMode: Match statements are used to match the prefixes.
+         *                      Valid values:
+         *                      Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
+         *                      For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+         *                      Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
+         *                      For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
          * @return {@code this}
          */
         public Builder cidrMatchMode(java.lang.String cidrMatchMode) {
@@ -392,8 +483,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCidrMatchMode}
-         * @param cidrMatchMode Property cidrMatchMode: A match statement.
-         *                      It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+         * @param cidrMatchMode Property cidrMatchMode: Match statements are used to match the prefixes.
+         *                      Valid values:
+         *                      Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful.
+         *                      For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route.
+         *                      Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful.
+         *                      For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
          * @return {@code this}
          */
         public Builder cidrMatchMode(com.aliyun.ros.cdk.core.IResolvable cidrMatchMode) {
@@ -403,8 +498,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCommunityMatchMode}
-         * @param communityMatchMode Property communityMatchMode: A match statement.
-         *                           It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+         * @param communityMatchMode Property communityMatchMode: Match statements are used to match the Communities.
+         *                           Valid values:
+         *                           Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful.
+         *                           Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
          * @return {@code this}
          */
         public Builder communityMatchMode(java.lang.String communityMatchMode) {
@@ -414,8 +511,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCommunityMatchMode}
-         * @param communityMatchMode Property communityMatchMode: A match statement.
-         *                           It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+         * @param communityMatchMode Property communityMatchMode: Match statements are used to match the Communities.
+         *                           Valid values:
+         *                           Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful.
+         *                           Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
          * @return {@code this}
          */
         public Builder communityMatchMode(com.aliyun.ros.cdk.core.IResolvable communityMatchMode) {
@@ -425,8 +524,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCommunityOperateMode}
-         * @param communityOperateMode Property communityOperateMode: An action statement.
-         *                             It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+         * @param communityOperateMode Property communityOperateMode: Action statements are used to operate the Communities.
+         *                             Valid values:
+         *                             Additive: adds.
+         *                             Replace: replaces.
          * @return {@code this}
          */
         public Builder communityOperateMode(java.lang.String communityOperateMode) {
@@ -436,8 +537,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getCommunityOperateMode}
-         * @param communityOperateMode Property communityOperateMode: An action statement.
-         *                             It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+         * @param communityOperateMode Property communityOperateMode: Action statements are used to operate the Communities.
+         *                             Valid values:
+         *                             Additive: adds.
+         *                             Replace: replaces.
          * @return {@code this}
          */
         public Builder communityOperateMode(com.aliyun.ros.cdk.core.IResolvable communityOperateMode) {
@@ -467,8 +570,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationChildInstanceTypes}
-         * @param destinationChildInstanceTypes Property destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.
-         *                                      VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+         * @param destinationChildInstanceTypes Property destinationChildInstanceTypes: Match statements are used to match the destination instance types.
+         *                                      Valid values:
+         *                                      VPC: VPCs.
+         *                                      VBR: VBRs.
+         *                                      CCN: CCN instances in mainland China.
+         *                                      Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
          * @return {@code this}
          */
         public Builder destinationChildInstanceTypes(com.aliyun.ros.cdk.core.IResolvable destinationChildInstanceTypes) {
@@ -478,8 +585,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationChildInstanceTypes}
-         * @param destinationChildInstanceTypes Property destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.
-         *                                      VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+         * @param destinationChildInstanceTypes Property destinationChildInstanceTypes: Match statements are used to match the destination instance types.
+         *                                      Valid values:
+         *                                      VPC: VPCs.
+         *                                      VBR: VBRs.
+         *                                      CCN: CCN instances in mainland China.
+         *                                      Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
          * @return {@code this}
          */
         public Builder destinationChildInstanceTypes(java.util.List<? extends java.lang.Object> destinationChildInstanceTypes) {
@@ -489,7 +600,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationCidrBlocks}
-         * @param destinationCidrBlocks Property destinationCidrBlocks: A match statement that indicates the prefix list.
+         * @param destinationCidrBlocks Property destinationCidrBlocks: Match statements are used to match the routing prefixes.
+         *                              The CIDR format is used. You can enter at most 32 CIDR blocks.
          * @return {@code this}
          */
         public Builder destinationCidrBlocks(com.aliyun.ros.cdk.core.IResolvable destinationCidrBlocks) {
@@ -499,7 +611,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationCidrBlocks}
-         * @param destinationCidrBlocks Property destinationCidrBlocks: A match statement that indicates the prefix list.
+         * @param destinationCidrBlocks Property destinationCidrBlocks: Match statements are used to match the routing prefixes.
+         *                              The CIDR format is used. You can enter at most 32 CIDR blocks.
          * @return {@code this}
          */
         public Builder destinationCidrBlocks(java.util.List<? extends java.lang.Object> destinationCidrBlocks) {
@@ -509,8 +622,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationInstanceIds}
-         * @param destinationInstanceIds Property destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.
-         *                               This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+         * @param destinationInstanceIds Property destinationInstanceIds: Match statements are used to match the destination instance IDs.
+         *                               You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs.
+         *                               Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
          * @return {@code this}
          */
         public Builder destinationInstanceIds(com.aliyun.ros.cdk.core.IResolvable destinationInstanceIds) {
@@ -520,8 +634,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationInstanceIds}
-         * @param destinationInstanceIds Property destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.
-         *                               This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+         * @param destinationInstanceIds Property destinationInstanceIds: Match statements are used to match the destination instance IDs.
+         *                               You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs.
+         *                               Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
          * @return {@code this}
          */
         public Builder destinationInstanceIds(java.util.List<? extends java.lang.Object> destinationInstanceIds) {
@@ -531,8 +646,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationInstanceIdsReverseMatch}
-         * @param destinationInstanceIdsReverseMatch Property destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition.
-         *                                           Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+         * @param destinationInstanceIdsReverseMatch Property destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements.
+         *                                           Valid values:
+         *                                           false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful.
+         *                                           true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
          * @return {@code this}
          */
         public Builder destinationInstanceIdsReverseMatch(java.lang.Boolean destinationInstanceIdsReverseMatch) {
@@ -542,8 +659,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationInstanceIdsReverseMatch}
-         * @param destinationInstanceIdsReverseMatch Property destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition.
-         *                                           Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+         * @param destinationInstanceIdsReverseMatch Property destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements.
+         *                                           Valid values:
+         *                                           false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful.
+         *                                           true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
          * @return {@code this}
          */
         public Builder destinationInstanceIdsReverseMatch(com.aliyun.ros.cdk.core.IResolvable destinationInstanceIdsReverseMatch) {
@@ -553,8 +672,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationRouteTableIds}
-         * @param destinationRouteTableIds Property destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.
-         *                                 This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+         * @param destinationRouteTableIds Property destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables.
+         *                                 You can enter at most 32 route table IDs.
+         *                                 Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
          * @return {@code this}
          */
         public Builder destinationRouteTableIds(com.aliyun.ros.cdk.core.IResolvable destinationRouteTableIds) {
@@ -564,8 +684,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getDestinationRouteTableIds}
-         * @param destinationRouteTableIds Property destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.
-         *                                 This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+         * @param destinationRouteTableIds Property destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables.
+         *                                 You can enter at most 32 route table IDs.
+         *                                 Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
          * @return {@code this}
          */
         public Builder destinationRouteTableIds(java.util.List<? extends java.lang.Object> destinationRouteTableIds) {
@@ -575,7 +696,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMatchAsns}
-         * @param matchAsns Property matchAsns: A match statement that indicates the As path list.
+         * @param matchAsns Property matchAsns: Match statements are used to match AS paths of the routes.
+         *                  An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised.
+         *                  Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
          * @return {@code this}
          */
         public Builder matchAsns(com.aliyun.ros.cdk.core.IResolvable matchAsns) {
@@ -585,7 +708,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMatchAsns}
-         * @param matchAsns Property matchAsns: A match statement that indicates the As path list.
+         * @param matchAsns Property matchAsns: Match statements are used to match AS paths of the routes.
+         *                  An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised.
+         *                  Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
          * @return {@code this}
          */
         public Builder matchAsns(java.util.List<? extends java.lang.Object> matchAsns) {
@@ -595,7 +720,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMatchCommunitySet}
-         * @param matchCommunitySet Property matchCommunitySet: A match statement that indicates the community set.
+         * @param matchCommunitySet Property matchCommunitySet: Match statements are used to match the Communities.
+         *                          Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+         *                          Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
          * @return {@code this}
          */
         public Builder matchCommunitySet(com.aliyun.ros.cdk.core.IResolvable matchCommunitySet) {
@@ -605,7 +732,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getMatchCommunitySet}
-         * @param matchCommunitySet Property matchCommunitySet: A match statement that indicates the community set.
+         * @param matchCommunitySet Property matchCommunitySet: Match statements are used to match the Communities.
+         *                          Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+         *                          Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
          * @return {@code this}
          */
         public Builder matchCommunitySet(java.util.List<? extends java.lang.Object> matchCommunitySet) {
@@ -615,8 +744,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getNextPriority}
-         * @param nextPriority Property nextPriority: The priority of the next route map that is associated with the current route map.
-         *                     Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+         * @param nextPriority Property nextPriority: The priority of the next associated route map.
+         *                     Valid values: 1 to 100.
+         *                     If the priority is not set, no next route map is associated with the current route map.
+         *                     If the priority is set to 1, the next route map is associated with the current route map.
+         *                     If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map.
+         *                     Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
          * @return {@code this}
          */
         public Builder nextPriority(java.lang.Number nextPriority) {
@@ -626,8 +759,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getNextPriority}
-         * @param nextPriority Property nextPriority: The priority of the next route map that is associated with the current route map.
-         *                     Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+         * @param nextPriority Property nextPriority: The priority of the next associated route map.
+         *                     Valid values: 1 to 100.
+         *                     If the priority is not set, no next route map is associated with the current route map.
+         *                     If the priority is set to 1, the next route map is associated with the current route map.
+         *                     If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map.
+         *                     Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
          * @return {@code this}
          */
         public Builder nextPriority(com.aliyun.ros.cdk.core.IResolvable nextPriority) {
@@ -637,7 +774,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getOperateCommunitySet}
-         * @param operateCommunitySet Property operateCommunitySet: An action statement that operates the community attribute.
+         * @param operateCommunitySet Property operateCommunitySet: Action statements are used to operate the Communities.
+         *                            Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+         *                            Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
          * @return {@code this}
          */
         public Builder operateCommunitySet(com.aliyun.ros.cdk.core.IResolvable operateCommunitySet) {
@@ -647,7 +786,9 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getOperateCommunitySet}
-         * @param operateCommunitySet Property operateCommunitySet: An action statement that operates the community attribute.
+         * @param operateCommunitySet Property operateCommunitySet: Action statements are used to operate the Communities.
+         *                            Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported.
+         *                            Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
          * @return {@code this}
          */
         public Builder operateCommunitySet(java.util.List<? extends java.lang.Object> operateCommunitySet) {
@@ -657,7 +798,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getPreference}
-         * @param preference Property preference: An action statement that modifies the preference of the route.
+         * @param preference Property preference: Action statements are used to modify route priorities.
+         *                   Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
          * @return {@code this}
          */
         public Builder preference(java.lang.Number preference) {
@@ -667,7 +809,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getPreference}
-         * @param preference Property preference: An action statement that modifies the preference of the route.
+         * @param preference Property preference: Action statements are used to modify route priorities.
+         *                   Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
          * @return {@code this}
          */
         public Builder preference(com.aliyun.ros.cdk.core.IResolvable preference) {
@@ -677,7 +820,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getPrependAsPath}
-         * @param prependAsPath Property prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+         * @param prependAsPath Property prependAsPath: AS paths are attached when regional gateways receive or advertise routes.
+         *                      For route maps that are applied in different directions, the requirements for AS paths to be attached are different:
+         *                      For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied.
+         *                      For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
          * @return {@code this}
          */
         public Builder prependAsPath(com.aliyun.ros.cdk.core.IResolvable prependAsPath) {
@@ -687,7 +833,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getPrependAsPath}
-         * @param prependAsPath Property prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+         * @param prependAsPath Property prependAsPath: AS paths are attached when regional gateways receive or advertise routes.
+         *                      For route maps that are applied in different directions, the requirements for AS paths to be attached are different:
+         *                      For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied.
+         *                      For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
          * @return {@code this}
          */
         public Builder prependAsPath(java.util.List<? extends java.lang.Object> prependAsPath) {
@@ -697,8 +846,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getRouteTypes}
-         * @param routeTypes Property routeTypes: A match statement that indicates the list of route types.
-         *                   System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+         * @param routeTypes Property routeTypes: Match statements are used to match the route types.
+         *                   Valid values:
+         *                   System: system routes that are generated by the system.
+         *                   Custom: custom routes that are created by users.
+         *                   BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP.
+         *                   You can enter multiple types.
          * @return {@code this}
          */
         public Builder routeTypes(com.aliyun.ros.cdk.core.IResolvable routeTypes) {
@@ -708,8 +861,12 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getRouteTypes}
-         * @param routeTypes Property routeTypes: A match statement that indicates the list of route types.
-         *                   System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+         * @param routeTypes Property routeTypes: Match statements are used to match the route types.
+         *                   Valid values:
+         *                   System: system routes that are generated by the system.
+         *                   Custom: custom routes that are created by users.
+         *                   BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP.
+         *                   You can enter multiple types.
          * @return {@code this}
          */
         public Builder routeTypes(java.util.List<? extends java.lang.Object> routeTypes) {
@@ -719,8 +876,11 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceChildInstanceTypes}
-         * @param sourceChildInstanceTypes Property sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.
-         *                                 VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+         * @param sourceChildInstanceTypes Property sourceChildInstanceTypes: Match statements are used to match source instance types of the routes.
+         *                                 Valid values:
+         *                                 VPC: VPCs.
+         *                                 VBR: VBRs.
+         *                                 CCN: CCN instances in mainland China.
          * @return {@code this}
          */
         public Builder sourceChildInstanceTypes(com.aliyun.ros.cdk.core.IResolvable sourceChildInstanceTypes) {
@@ -730,8 +890,11 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceChildInstanceTypes}
-         * @param sourceChildInstanceTypes Property sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.
-         *                                 VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+         * @param sourceChildInstanceTypes Property sourceChildInstanceTypes: Match statements are used to match source instance types of the routes.
+         *                                 Valid values:
+         *                                 VPC: VPCs.
+         *                                 VBR: VBRs.
+         *                                 CCN: CCN instances in mainland China.
          * @return {@code this}
          */
         public Builder sourceChildInstanceTypes(java.util.List<? extends java.lang.Object> sourceChildInstanceTypes) {
@@ -741,7 +904,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceInstanceIds}
-         * @param sourceInstanceIds Property sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+         * @param sourceInstanceIds Property sourceInstanceIds: Match statements are used to match source instance IDs of the routes.
+         *                          You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
          * @return {@code this}
          */
         public Builder sourceInstanceIds(com.aliyun.ros.cdk.core.IResolvable sourceInstanceIds) {
@@ -751,7 +915,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceInstanceIds}
-         * @param sourceInstanceIds Property sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+         * @param sourceInstanceIds Property sourceInstanceIds: Match statements are used to match source instance IDs of the routes.
+         *                          You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
          * @return {@code this}
          */
         public Builder sourceInstanceIds(java.util.List<? extends java.lang.Object> sourceInstanceIds) {
@@ -761,8 +926,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceInstanceIdsReverseMatch}
-         * @param sourceInstanceIdsReverseMatch Property sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition.
-         *                                      Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+         * @param sourceInstanceIdsReverseMatch Property sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements.
+         *                                      Valid values:
+         *                                      false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful.
+         *                                      true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
          * @return {@code this}
          */
         public Builder sourceInstanceIdsReverseMatch(java.lang.Boolean sourceInstanceIdsReverseMatch) {
@@ -772,8 +939,10 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceInstanceIdsReverseMatch}
-         * @param sourceInstanceIdsReverseMatch Property sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition.
-         *                                      Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+         * @param sourceInstanceIdsReverseMatch Property sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements.
+         *                                      Valid values:
+         *                                      false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful.
+         *                                      true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
          * @return {@code this}
          */
         public Builder sourceInstanceIdsReverseMatch(com.aliyun.ros.cdk.core.IResolvable sourceInstanceIdsReverseMatch) {
@@ -783,7 +952,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceRegionIds}
-         * @param sourceRegionIds Property sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+         * @param sourceRegionIds Property sourceRegionIds: Match statements are used to match source region IDs of the routes.
+         *                        You can enter at most 32 region IDs.
          * @return {@code this}
          */
         public Builder sourceRegionIds(com.aliyun.ros.cdk.core.IResolvable sourceRegionIds) {
@@ -793,7 +963,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceRegionIds}
-         * @param sourceRegionIds Property sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+         * @param sourceRegionIds Property sourceRegionIds: Match statements are used to match source region IDs of the routes.
+         *                        You can enter at most 32 region IDs.
          * @return {@code this}
          */
         public Builder sourceRegionIds(java.util.List<? extends java.lang.Object> sourceRegionIds) {
@@ -803,7 +974,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceRouteTableIds}
-         * @param sourceRouteTableIds Property sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+         * @param sourceRouteTableIds Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes.
+         *                            You can enter at most 32 route table IDs.
          * @return {@code this}
          */
         public Builder sourceRouteTableIds(com.aliyun.ros.cdk.core.IResolvable sourceRouteTableIds) {
@@ -813,7 +985,8 @@ public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenRouteMapProps#getSourceRouteTableIds}
-         * @param sourceRouteTableIds Property sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+         * @param sourceRouteTableIds Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes.
+         *                            You can enter at most 32 route table IDs.
          * @return {@code this}
          */
         public Builder sourceRouteTableIds(java.util.List<? extends java.lang.Object> sourceRouteTableIds) {

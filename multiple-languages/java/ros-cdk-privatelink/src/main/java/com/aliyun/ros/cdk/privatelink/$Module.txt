@@ -3,8 +3,12 @@
 @alicloud/ros-cdk-privatelink.RosVpcEndpointProps=com.aliyun.ros.cdk.privatelink.RosVpcEndpointProps
 @alicloud/ros-cdk-privatelink.RosVpcEndpointService=com.aliyun.ros.cdk.privatelink.RosVpcEndpointService
 @alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty=com.aliyun.ros.cdk.privatelink.RosVpcEndpointService$ResourceProperty
+@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachment=com.aliyun.ros.cdk.privatelink.RosVpcEndpointServiceAttachment
+@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceAttachmentProps=com.aliyun.ros.cdk.privatelink.RosVpcEndpointServiceAttachmentProps
 @alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps=com.aliyun.ros.cdk.privatelink.RosVpcEndpointServiceProps
 @alicloud/ros-cdk-privatelink.VpcEndpoint=com.aliyun.ros.cdk.privatelink.VpcEndpoint
 @alicloud/ros-cdk-privatelink.VpcEndpointProps=com.aliyun.ros.cdk.privatelink.VpcEndpointProps
 @alicloud/ros-cdk-privatelink.VpcEndpointService=com.aliyun.ros.cdk.privatelink.VpcEndpointService
+@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment=com.aliyun.ros.cdk.privatelink.VpcEndpointServiceAttachment
+@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachmentProps=com.aliyun.ros.cdk.privatelink.VpcEndpointServiceAttachmentProps
 @alicloud/ros-cdk-privatelink.VpcEndpointServiceProps=com.aliyun.ros.cdk.privatelink.VpcEndpointServiceProps

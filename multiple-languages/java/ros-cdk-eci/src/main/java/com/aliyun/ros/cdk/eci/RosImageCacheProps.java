@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosImageCacheProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageCacheProps.Jsii$Proxy.class)
 public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializable {

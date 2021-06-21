@@ -270,6 +270,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
+        /// <summary>Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).</summary>
+        /// <remarks>
+        /// Valid values:
+        /// true: enable TDE
+        /// false: disable TDE (default)
+        /// Note: You cannot disable TDE after it is enabled.
+        /// </remarks>
+        [JsiiProperty(name: "tdeStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TdeStatus
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vpcId: The VPC id to create mongodb instance.</summary>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -533,6 +550,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             public AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE).</summary>
+            /// <remarks>
+            /// Valid values:
+            /// true: enable TDE
+            /// false: disable TDE (default)
+            /// Note: You cannot disable TDE after it is enabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tdeStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TdeStatus
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcId: The VPC id to create mongodb instance.</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.442Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstance")
 public class RosCenInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -95,6 +95,24 @@ public class RosCenInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
+        return software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProtectionLevel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "protectionLevel", value);
+    }
+
+    /**
+     */
+    public void setProtectionLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "protectionLevel", value);
     }
 
     /**
@@ -334,6 +352,23 @@ public class RosCenInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param protectionLevel This parameter is required.
+         */
+        public Builder protectionLevel(final java.lang.String protectionLevel) {
+            this.props.protectionLevel(protectionLevel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param protectionLevel This parameter is required.
+         */
+        public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
+            this.props.protectionLevel(protectionLevel);
             return this;
         }
 

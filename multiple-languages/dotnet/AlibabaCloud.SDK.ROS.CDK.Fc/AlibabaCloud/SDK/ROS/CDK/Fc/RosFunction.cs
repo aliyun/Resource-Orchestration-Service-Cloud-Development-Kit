@@ -315,6 +315,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: statefulInvocation: Whether enable stateful invocation
+            /// </remarks>
+            [JsiiProperty(name: "statefulInvocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? StatefulInvocation
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IAsyncConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosFunction.AsyncConfigurationProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.IAsyncConfigurationProperty
             {
@@ -351,6 +364,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: statefulInvocation: Whether enable stateful invocation
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "statefulInvocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StatefulInvocation
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosFunction.AsyncConfigurationProperty")]
@@ -384,6 +407,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             [JsiiOptional]
             [JsiiProperty(name: "maxAsyncRetryAttempts", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? MaxAsyncRetryAttempts
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: statefulInvocation: Whether enable stateful invocation
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "statefulInvocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? StatefulInvocation
             {
                 get;
                 set;

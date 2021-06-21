@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * A ROS resource type:  `ALIYUN::ACTIONTRAIL::TrailLogging`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.267Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
 public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
 

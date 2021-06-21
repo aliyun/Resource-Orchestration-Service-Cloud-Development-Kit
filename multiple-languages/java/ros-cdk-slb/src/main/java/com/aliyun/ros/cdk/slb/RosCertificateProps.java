@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.077Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificateProps")
 @software.amazon.jsii.Jsii.Proxy(RosCertificateProps.Jsii$Proxy.class)
 public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializable {

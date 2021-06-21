@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-clickhouse.DBCluster=com.aliyun.ros.cdk.clickhouse.DBCluster
+@alicloud/ros-cdk-clickhouse.DBClusterProps=com.aliyun.ros.cdk.clickhouse.DBClusterProps
+@alicloud/ros-cdk-clickhouse.RosDBCluster=com.aliyun.ros.cdk.clickhouse.RosDBCluster
+@alicloud/ros-cdk-clickhouse.RosDBClusterProps=com.aliyun.ros.cdk.clickhouse.RosDBClusterProps

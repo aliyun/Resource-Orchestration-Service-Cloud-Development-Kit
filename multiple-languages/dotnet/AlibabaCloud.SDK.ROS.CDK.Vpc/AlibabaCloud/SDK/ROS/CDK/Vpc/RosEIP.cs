@@ -63,6 +63,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Isp: The line type.
+        /// </remarks>
+        [JsiiProperty(name: "attrIsp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIsp
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: OrderId: Order ID of prepaid EIP instance.
         /// </remarks>
         [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -152,7 +161,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+        /// <strong>Property</strong>: isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+        /// BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+        /// BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

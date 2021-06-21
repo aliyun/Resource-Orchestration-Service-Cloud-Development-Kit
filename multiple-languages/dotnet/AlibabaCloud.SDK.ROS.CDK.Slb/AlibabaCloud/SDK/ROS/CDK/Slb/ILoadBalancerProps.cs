@@ -8,6 +8,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     [JsiiInterface(nativeType: typeof(ILoadBalancerProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.LoadBalancerProps")]
     public interface ILoadBalancerProps
     {
+        /// <summary>Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.</summary>
+        /// <remarks>
+        /// If 'ipv6' is selected, please note that the zone and the specification are supported.
+        /// </remarks>
+        [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AddressIpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property addressType: Loader balancer address type.</summary>
         /// <remarks>
         /// Support 'internet' and 'intranet' only, default is 'internet'.
@@ -66,8 +80,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// The subscription duration of a Subscription Internet instance.
         /// Valid values:
-        /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-        /// If PricingCycle is year, the value range is 1 to 3.
+        /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+        /// If PricingCycle is year, the value range is 1 to 5.
         /// </remarks>
         [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -257,6 +271,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             {
             }
 
+            /// <summary>Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.</summary>
+            /// <remarks>
+            /// If 'ipv6' is selected, please note that the zone and the specification are supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AddressIpVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property addressType: Loader balancer address type.</summary>
             /// <remarks>
             /// Support 'internet' and 'intranet' only, default is 'internet'.
@@ -303,8 +328,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// The subscription duration of a Subscription Internet instance.
             /// Valid values:
-            /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-            /// If PricingCycle is year, the value range is 1 to 3.
+            /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+            /// If PricingCycle is year, the value range is 1 to 5.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

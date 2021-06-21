@@ -32,6 +32,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         {
         }
 
+        /// <summary>Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.</summary>
+        [JsiiProperty(name: "attrMaxBandwidth", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMaxBandwidth
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.</summary>
+        [JsiiProperty(name: "attrMinBandwidth", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMinBandwidth
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute ServiceDescription: The description of the endpoint service.</summary>
+        [JsiiProperty(name: "attrServiceDescription", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceDescription
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute ServiceDomain: The domain name of the endpoint service.</summary>
         [JsiiProperty(name: "attrServiceDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceDomain

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.909Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -760,7 +760,9 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * local_ssd: specifies to use local SSDs. This is the recommended storage type.
          * cloud_ssd: specifies to use standard SSDs.
-         * cloud_essd: specifies to use enhanced SSDs.
+         * cloud_essd: enhanced SSD of performance level (PL)1.
+         * cloud_essd2: enhanced SSD of PL2.
+         * cloud_essd3: enhanced SSD of PL3.
          * <p>
          * @return {@code this}
          * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.
@@ -775,7 +777,9 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * local_ssd: specifies to use local SSDs. This is the recommended storage type.
          * cloud_ssd: specifies to use standard SSDs.
-         * cloud_essd: specifies to use enhanced SSDs.
+         * cloud_essd: enhanced SSD of performance level (PL)1.
+         * cloud_essd2: enhanced SSD of PL2.
+         * cloud_essd3: enhanced SSD of PL3.
          * <p>
          * @return {@code this}
          * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.483Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.395Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -81,6 +81,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCreditSpecification() {
+        return software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCreditSpecification(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "creditSpecification", value);
+    }
+
+    /**
+     */
+    public void setCreditSpecification(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "creditSpecification", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
         return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -131,6 +149,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setHpcClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "hpcClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageFamily() {
+        return software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageFamily(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageFamily", value);
+    }
+
+    /**
+     */
+    public void setImageFamily(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageFamily", value);
     }
 
     /**
@@ -297,6 +333,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -311,6 +365,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerWeight() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLoadBalancerWeight(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerWeight", value);
+    }
+
+    /**
+     */
+    public void setLoadBalancerWeight(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerWeight", value);
     }
 
     /**
@@ -1294,6 +1366,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
         /**
          * @return {@code this}
+         * @param creditSpecification This parameter is required.
+         */
+        public Builder creditSpecification(final java.lang.String creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param creditSpecification This parameter is required.
+         */
+        public Builder creditSpecification(final com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deploymentSetId This parameter is required.
          */
         public Builder deploymentSetId(final java.lang.String deploymentSetId) {
@@ -1340,6 +1429,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imageFamily This parameter is required.
+         */
+        public Builder imageFamily(final java.lang.String imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageFamily This parameter is required.
+         */
+        public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.props.imageFamily(imageFamily);
             return this;
         }
 
@@ -1498,6 +1604,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
         /**
          * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param keyPairName This parameter is required.
          */
         public Builder keyPairName(final java.lang.String keyPairName) {
@@ -1510,6 +1633,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param loadBalancerWeight This parameter is required.
+         */
+        public Builder loadBalancerWeight(final java.lang.Number loadBalancerWeight) {
+            this.props.loadBalancerWeight(loadBalancerWeight);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancerWeight This parameter is required.
+         */
+        public Builder loadBalancerWeight(final com.aliyun.ros.cdk.core.IResolvable loadBalancerWeight) {
+            this.props.loadBalancerWeight(loadBalancerWeight);
             return this;
         }
 
