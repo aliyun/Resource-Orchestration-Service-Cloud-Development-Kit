@@ -57,7 +57,7 @@ export class CloudConnectNetwork extends ros.Resource {
         super(scope, id);
 
         const rosCloudConnectNetwork = new RosCloudConnectNetwork(this, id,  {
-            isDefault: props.isDefault ? props.isDefault : false,
+            isDefault: props.isDefault === undefined || props.isDefault === null ? false : props.isDefault,
             description: props.description,
             tags: props.tags,
             name: props.name,

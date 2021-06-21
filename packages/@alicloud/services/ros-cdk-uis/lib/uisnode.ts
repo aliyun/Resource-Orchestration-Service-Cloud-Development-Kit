@@ -78,8 +78,8 @@ export class UisNode extends ros.Resource {
         const rosUisNode = new RosUisNode(this, id,  {
             description: props.description,
             uisId: props.uisId,
-            ipAddrsNum: props.ipAddrsNum ? props.ipAddrsNum : 2,
-            uisNodeBandwidth: props.uisNodeBandwidth ? props.uisNodeBandwidth : 20,
+            ipAddrsNum: props.ipAddrsNum === undefined || props.ipAddrsNum === null ? 2 : props.ipAddrsNum,
+            uisNodeBandwidth: props.uisNodeBandwidth === undefined || props.uisNodeBandwidth === null ? 20 : props.uisNodeBandwidth,
             uisNodeAreaId: props.uisNodeAreaId,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

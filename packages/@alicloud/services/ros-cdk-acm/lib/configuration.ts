@@ -88,9 +88,9 @@ export class Configuration extends ros.Resource {
         super(scope, id);
 
         const rosConfiguration = new RosConfiguration(this, id,  {
-            group: props.group ? props.group : 'DEFAULT_GROUP',
+            group: props.group === undefined || props.group === null ? 'DEFAULT_GROUP' : props.group,
             desc: props.desc,
-            type: props.type ? props.type : 'text',
+            type: props.type === undefined || props.type === null ? 'text' : props.type,
             dataId: props.dataId,
             content: props.content,
             namespaceId: props.namespaceId,

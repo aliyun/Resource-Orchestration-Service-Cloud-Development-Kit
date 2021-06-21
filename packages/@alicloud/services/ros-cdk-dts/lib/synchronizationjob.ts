@@ -109,15 +109,15 @@ export class SynchronizationJob extends ros.Resource {
         const rosSynchronizationJob = new RosSynchronizationJob(this, id,  {
             synchronizationObjects: props.synchronizationObjects,
             period: props.period,
-            payType: props.payType ? props.payType : 'Postpaid',
+            payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             topology: props.topology,
             sourceRegion: props.sourceRegion,
-            dataInitialization: props.dataInitialization ? props.dataInitialization : true,
+            dataInitialization: props.dataInitialization === undefined || props.dataInitialization === null ? true : props.dataInitialization,
             destinationEndpoint: props.destinationEndpoint,
             networkType: props.networkType,
             sourceEndpoint: props.sourceEndpoint,
             usedTime: props.usedTime,
-            structureInitialization: props.structureInitialization ? props.structureInitialization : true,
+            structureInitialization: props.structureInitialization === undefined || props.structureInitialization === null ? true : props.structureInitialization,
             synchronizationJobClass: props.synchronizationJobClass,
             destRegion: props.destRegion,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

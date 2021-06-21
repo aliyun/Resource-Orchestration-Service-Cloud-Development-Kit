@@ -19,11 +19,14 @@ export interface RosAutoEnableServiceProps {
      * CR: Container Registry
      * CS: Container Service
      * DataHub: Data Hub
-     * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+     * DataWorks: DataWorks
+     * DCDN: Dynamic Route for CDN
+     * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
      * FNF: Serverless Workflow
-     * MaxCompute: MaxComputeNAS: Network Attached Storage
+     * MaxCompute: MaxCompute
+     * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
@@ -58,7 +61,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","CS","CR","DataHub","SLS","CMS","RocketMQ","HBR","ApiGateway","NLP","NAS","OSS","MNS","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","AHAS","BrainIndustrial","OTS","PrivateLink"],
+          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","OSS","MNS","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","AHAS","BrainIndustrial","OTS","PrivateLink"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -112,11 +115,14 @@ export class RosAutoEnableService extends ros.RosResource {
      * CR: Container Registry
      * CS: Container Service
      * DataHub: Data Hub
-     * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+     * DataWorks: DataWorks
+     * DCDN: Dynamic Route for CDN
+     * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
      * FNF: Serverless Workflow
-     * MaxCompute: MaxComputeNAS: Network Attached Storage
+     * MaxCompute: MaxCompute
+     * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management

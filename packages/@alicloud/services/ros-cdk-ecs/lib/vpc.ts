@@ -89,7 +89,7 @@ export class Vpc extends ros.Resource {
             vpcName: props.vpcName,
             ipv6CidrBlock: props.ipv6CidrBlock,
             tags: props.tags,
-            enableIpv6: props.enableIpv6 ? props.enableIpv6 : false,
+            enableIpv6: props.enableIpv6 === undefined || props.enableIpv6 === null ? false : props.enableIpv6,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVPC;
         this.attrRouteTableId = rosVPC.attrRouteTableId;

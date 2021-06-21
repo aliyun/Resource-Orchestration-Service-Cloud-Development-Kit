@@ -960,6 +960,122 @@ function rosManagedPolicyStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `ALIYUN::RAM::RamAccountAlias`
+ */
+export interface RosRamAccountAliasProps {
+
+    /**
+     * @Property accountAlias: The alias of the Alibaba Cloud account.
+     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
+     * digits, and hyphens (-).
+     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     */
+    readonly accountAlias: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRamAccountAliasProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRamAccountAliasProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRamAccountAliasPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountAlias', ros.requiredValidator)(properties.accountAlias));
+    if(properties.accountAlias && (typeof properties.accountAlias) !== 'object') {
+        errors.collect(ros.propertyValidator('accountAlias', ros.validateAllowedPattern)({
+          data: properties.accountAlias,
+          reg: /^(?!-)([a-z0-9]+|-(?!-))+(?<!-)$/
+        }));
+    }
+    if(properties.accountAlias && (Array.isArray(properties.accountAlias) || (typeof properties.accountAlias) === 'string')) {
+        errors.collect(ros.propertyValidator('accountAlias', ros.validateLength)({
+            data: properties.accountAlias.length,
+            min: 3,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('accountAlias', ros.validateString)(properties.accountAlias));
+    return errors.wrap('supplied properties not correct for "RosRamAccountAliasProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::RamAccountAlias` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRamAccountAliasProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::RamAccountAlias` resource.
+ */
+// @ts-ignore TS6133
+function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRamAccountAliasPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccountAlias: ros.stringToRosTemplate(properties.accountAlias),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::RAM::RamAccountAlias`
+ */
+export class RosRamAccountAlias extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::RamAccountAlias";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AccountAlias: The alias of the Alibaba Cloud account.
+     */
+    public readonly attrAccountAlias: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountAlias: The alias of the Alibaba Cloud account.
+     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
+     * digits, and hyphens (-).
+     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     */
+    public accountAlias: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::RAM::RamAccountAlias`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRamAccountAliasProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRamAccountAlias.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountAlias = this.getAtt('AccountAlias');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountAlias = props.accountAlias;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountAlias: this.accountAlias,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRamAccountAliasPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::RAM::Role`
  */
 export interface RosRoleProps {
@@ -1427,7 +1543,7 @@ export namespace RosRole {
         /**
          * @Property statement: A policy consists of one or more statements.
          */
-        readonly statement?: Array<RosRole.StatementProperty | ros.IResolvable> | ros.IResolvable;
+        readonly statement?: Array<RosRole.PolicyDocumentStatementProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -1441,7 +1557,7 @@ function RosRole_PolicyDocumentPropertyValidator(properties: any): ros.Validatio
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
-    errors.collect(ros.propertyValidator('statement', ros.listValidator(RosRole_StatementPropertyValidator))(properties.statement));
+    errors.collect(ros.propertyValidator('statement', ros.listValidator(RosRole_PolicyDocumentStatementPropertyValidator))(properties.statement));
     return errors.wrap('supplied properties not correct for "PolicyDocumentProperty"');
 }
 
@@ -1458,7 +1574,66 @@ function rosRolePolicyDocumentPropertyToRosTemplate(properties: any): any {
     RosRole_PolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
       Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosRoleStatementPropertyToRosTemplate)(properties.statement),
+      Statement: ros.listMapper(rosRolePolicyDocumentStatementPropertyToRosTemplate)(properties.statement),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface PolicyDocumentStatementProperty {
+        /**
+         * @Property condition: What conditions should be satisfied.
+         */
+        readonly condition?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property action: What actions you will allow.
+         */
+        readonly action?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property resource: Which resources you allow the action on.
+         */
+        readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property effect: What the effect will be when the user requests access-either allow or deny.
+         */
+        readonly effect?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PolicyDocumentStatementProperty`
+ *
+ * @param properties - the TypeScript properties of a `PolicyDocumentStatementProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_PolicyDocumentStatementPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
+    errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
+    errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
+    return errors.wrap('supplied properties not correct for "PolicyDocumentStatementProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.PolicyDocumentStatement` resource
+ *
+ * @param properties - the TypeScript properties of a `PolicyDocumentStatementProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.PolicyDocumentStatement` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePolicyDocumentStatementPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_PolicyDocumentStatementPropertyValidator(properties).assertSuccess();
+    return {
+      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
+      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
+      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      Effect: ros.stringToRosTemplate(properties.effect),
     };
 }
 
@@ -1521,21 +1696,21 @@ export namespace RosRole {
      */
     export interface StatementProperty {
         /**
-         * @Property condition: What conditions should be satisfied.
+         * @Property condition: undefined
          */
-        readonly condition?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        readonly condition?: RosRole.ConditionProperty | ros.IResolvable;
         /**
-         * @Property action: What actions you will allow.
+         * @Property action: What action you will allow.
          */
-        readonly action?: Array<any | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property resource: Which resources you allow the action on.
-         */
-        readonly resource?: Array<any | ros.IResolvable> | ros.IResolvable;
+        readonly action?: string | ros.IResolvable;
         /**
          * @Property effect: What the effect will be when the user requests access-either allow or deny.
          */
         readonly effect?: string | ros.IResolvable;
+        /**
+         * @Property principal: undefined
+         */
+        readonly principal?: RosRole.PrincipalProperty | ros.IResolvable;
     }
 }
 /**
@@ -1548,10 +1723,10 @@ export namespace RosRole {
 function RosRole_StatementPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('condition', ros.hashValidator(ros.validateAny))(properties.condition));
-    errors.collect(ros.propertyValidator('action', ros.listValidator(ros.validateAny))(properties.action));
-    errors.collect(ros.propertyValidator('resource', ros.listValidator(ros.validateAny))(properties.resource));
+    errors.collect(ros.propertyValidator('condition', RosRole_ConditionPropertyValidator)(properties.condition));
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
     errors.collect(ros.propertyValidator('effect', ros.validateString)(properties.effect));
+    errors.collect(ros.propertyValidator('principal', RosRole_PrincipalPropertyValidator)(properties.principal));
     return errors.wrap('supplied properties not correct for "StatementProperty"');
 }
 
@@ -1567,10 +1742,10 @@ function rosRoleStatementPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_StatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
-      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
-      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      Condition: rosRoleConditionPropertyToRosTemplate(properties.condition),
+      Action: ros.stringToRosTemplate(properties.action),
       Effect: ros.stringToRosTemplate(properties.effect),
+      Principal: rosRolePrincipalPropertyToRosTemplate(properties.principal),
     };
 }
 
@@ -1744,6 +1919,272 @@ export class RosSAMLProvider extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSAMLProviderPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::RAM::SecurityPreference`
+ */
+export interface RosSecurityPreferenceProps {
+
+    /**
+     * @Property allowUserToChangePassword: Specifies whether RAM users can change their passwords. Valid values:
+     * true: RAM users can change their passwords. This is the default value.
+     * false: RAM users cannot change their passwords.
+     */
+    readonly allowUserToChangePassword?: boolean | ros.IResolvable;
+
+    /**
+     * @Property allowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs. Valid values:
+     * true: RAM users can manage their AccessKey pairs.
+     * false: RAM users cannot manage their AccessKey pairs. This is the default value.
+     */
+    readonly allowUserToManageAccessKeys?: boolean | ros.IResolvable;
+
+    /**
+     * @Property allowUserToManageMfaDevices: Specifies whether RAM users can manage their MFA devices. Valid values:
+     * true: RAM users can manage their MFA devices. This is the default value.
+     * false: RAM users cannot manage their MFA devices.
+     */
+    readonly allowUserToManageMfaDevices?: boolean | ros.IResolvable;
+
+    /**
+     * @Property allowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys. Valid values:
+     * true: RAM users can manage their public keys.
+     * false: RAM users cannot manage their public keys. This is the default value.
+     * Note This parameter is valid only for the Japan site.
+     */
+    readonly allowUserToManagePublicKeys?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableSaveMfaTicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes
+     * during logon. The security codes are valid for 7 days. Valid values:
+     * true: RAM users can save MFA security codes during logon.
+     * false: RAM users cannot save MFA security codes during logon. This is the default
+     * value.
+     */
+    readonly enableSaveMfaTicket?: boolean | ros.IResolvable;
+
+    /**
+     * @Property loginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is
+     * allowed. This parameter applies to password-based logon and single sign-on (SSO).
+     * However, this parameter does not apply to API calls that are authenticated based on
+     * AccessKey pairs.
+     * If a subnet mask is specified, RAM users can log on to the console only by using the
+     * IP addresses in the subnet.
+     * If you do not specify a subnet mask, RAM users can log on to the console by using
+     * all IP addresses.
+     * If you want to specify multiple subnet masks, separate the subnet masks with semicolons
+     * (;). Example: 192.168.0.0/16;10.0.0.0/8.
+     * A maximum of 25 subnet masks can be set. The total length of the subnet masks can
+     * be 1 to 512 characters.
+     */
+    readonly loginNetworkMasks?: string | ros.IResolvable;
+
+    /**
+     * @Property loginSessionDuration: The validity period of the logon session of the RAM user.
+     * Valid values: 6 to 24. Default value: 6. Unit: hours.
+     */
+    readonly loginSessionDuration?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityPreferenceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityPreferenceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityPreferencePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loginSessionDuration', ros.validateNumber)(properties.loginSessionDuration));
+    errors.collect(ros.propertyValidator('allowUserToManageMfaDevices', ros.validateBoolean)(properties.allowUserToManageMfaDevices));
+    errors.collect(ros.propertyValidator('allowUserToManagePublicKeys', ros.validateBoolean)(properties.allowUserToManagePublicKeys));
+    errors.collect(ros.propertyValidator('loginNetworkMasks', ros.validateString)(properties.loginNetworkMasks));
+    errors.collect(ros.propertyValidator('allowUserToChangePassword', ros.validateBoolean)(properties.allowUserToChangePassword));
+    errors.collect(ros.propertyValidator('allowUserToManageAccessKeys', ros.validateBoolean)(properties.allowUserToManageAccessKeys));
+    errors.collect(ros.propertyValidator('enableSaveMfaTicket', ros.validateBoolean)(properties.enableSaveMfaTicket));
+    return errors.wrap('supplied properties not correct for "RosSecurityPreferenceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::SecurityPreference` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityPreferenceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::SecurityPreference` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityPreferencePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityPreferencePropsValidator(properties).assertSuccess();
+    }
+    return {
+      AllowUserToChangePassword: ros.booleanToRosTemplate(properties.allowUserToChangePassword),
+      AllowUserToManageAccessKeys: ros.booleanToRosTemplate(properties.allowUserToManageAccessKeys),
+      AllowUserToManageMFADevices: ros.booleanToRosTemplate(properties.allowUserToManageMfaDevices),
+      AllowUserToManagePublicKeys: ros.booleanToRosTemplate(properties.allowUserToManagePublicKeys),
+      EnableSaveMFATicket: ros.booleanToRosTemplate(properties.enableSaveMfaTicket),
+      LoginNetworkMasks: ros.stringToRosTemplate(properties.loginNetworkMasks),
+      LoginSessionDuration: ros.numberToRosTemplate(properties.loginSessionDuration),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::RAM::SecurityPreference`
+ */
+export class RosSecurityPreference extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::SecurityPreference";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
+     */
+    public readonly attrAllowUserToChangePassword: ros.IResolvable;
+
+    /**
+     * @Attribute AllowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.
+     */
+    public readonly attrAllowUserToManageAccessKeys: ros.IResolvable;
+
+    /**
+     * @Attribute AllowUserToManageMFADevices: Specifies whether RAM users can manage their MFA devices.
+     */
+    public readonly attrAllowUserToManageMfaDevices: ros.IResolvable;
+
+    /**
+     * @Attribute AllowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.
+     */
+    public readonly attrAllowUserToManagePublicKeys: ros.IResolvable;
+
+    /**
+     * @Attribute EnableSaveMFATicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.
+     */
+    public readonly attrEnableSaveMfaTicket: ros.IResolvable;
+
+    /**
+     * @Attribute LoginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.
+     */
+    public readonly attrLoginNetworkMasks: ros.IResolvable;
+
+    /**
+     * @Attribute LoginSessionDuration: The validity period of the logon session of the RAM user.
+     */
+    public readonly attrLoginSessionDuration: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property allowUserToChangePassword: Specifies whether RAM users can change their passwords. Valid values:
+     * true: RAM users can change their passwords. This is the default value.
+     * false: RAM users cannot change their passwords.
+     */
+    public allowUserToChangePassword: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property allowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs. Valid values:
+     * true: RAM users can manage their AccessKey pairs.
+     * false: RAM users cannot manage their AccessKey pairs. This is the default value.
+     */
+    public allowUserToManageAccessKeys: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property allowUserToManageMfaDevices: Specifies whether RAM users can manage their MFA devices. Valid values:
+     * true: RAM users can manage their MFA devices. This is the default value.
+     * false: RAM users cannot manage their MFA devices.
+     */
+    public allowUserToManageMfaDevices: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property allowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys. Valid values:
+     * true: RAM users can manage their public keys.
+     * false: RAM users cannot manage their public keys. This is the default value.
+     * Note This parameter is valid only for the Japan site.
+     */
+    public allowUserToManagePublicKeys: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableSaveMfaTicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes
+     * during logon. The security codes are valid for 7 days. Valid values:
+     * true: RAM users can save MFA security codes during logon.
+     * false: RAM users cannot save MFA security codes during logon. This is the default
+     * value.
+     */
+    public enableSaveMfaTicket: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property loginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is
+     * allowed. This parameter applies to password-based logon and single sign-on (SSO).
+     * However, this parameter does not apply to API calls that are authenticated based on
+     * AccessKey pairs.
+     * If a subnet mask is specified, RAM users can log on to the console only by using the
+     * IP addresses in the subnet.
+     * If you do not specify a subnet mask, RAM users can log on to the console by using
+     * all IP addresses.
+     * If you want to specify multiple subnet masks, separate the subnet masks with semicolons
+     * (;). Example: 192.168.0.0/16;10.0.0.0/8.
+     * A maximum of 25 subnet masks can be set. The total length of the subnet masks can
+     * be 1 to 512 characters.
+     */
+    public loginNetworkMasks: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loginSessionDuration: The validity period of the logon session of the RAM user.
+     * Valid values: 6 to 24. Default value: 6. Unit: hours.
+     */
+    public loginSessionDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::RAM::SecurityPreference`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityPreferenceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityPreference.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAllowUserToChangePassword = this.getAtt('AllowUserToChangePassword');
+        this.attrAllowUserToManageAccessKeys = this.getAtt('AllowUserToManageAccessKeys');
+        this.attrAllowUserToManageMfaDevices = this.getAtt('AllowUserToManageMFADevices');
+        this.attrAllowUserToManagePublicKeys = this.getAtt('AllowUserToManagePublicKeys');
+        this.attrEnableSaveMfaTicket = this.getAtt('EnableSaveMFATicket');
+        this.attrLoginNetworkMasks = this.getAtt('LoginNetworkMasks');
+        this.attrLoginSessionDuration = this.getAtt('LoginSessionDuration');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.allowUserToChangePassword = props.allowUserToChangePassword;
+        this.allowUserToManageAccessKeys = props.allowUserToManageAccessKeys;
+        this.allowUserToManageMfaDevices = props.allowUserToManageMfaDevices;
+        this.allowUserToManagePublicKeys = props.allowUserToManagePublicKeys;
+        this.enableSaveMfaTicket = props.enableSaveMfaTicket;
+        this.loginNetworkMasks = props.loginNetworkMasks;
+        this.loginSessionDuration = props.loginSessionDuration;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            allowUserToChangePassword: this.allowUserToChangePassword,
+            allowUserToManageAccessKeys: this.allowUserToManageAccessKeys,
+            allowUserToManageMfaDevices: this.allowUserToManageMfaDevices,
+            allowUserToManagePublicKeys: this.allowUserToManagePublicKeys,
+            enableSaveMfaTicket: this.enableSaveMfaTicket,
+            loginNetworkMasks: this.loginNetworkMasks,
+            loginSessionDuration: this.loginSessionDuration,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityPreferencePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

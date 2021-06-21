@@ -82,7 +82,9 @@ export interface DBInstanceCloneProps {
      * Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -311,7 +313,7 @@ export class DBInstanceClone extends ros.Resource {
         super(scope, id);
 
         const rosDBInstanceClone = new RosDBInstanceClone(this, id,  {
-            periodType: props.periodType ? props.periodType : 'Month',
+            periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
             category: props.category,
             privateIpAddress: props.privateIpAddress,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
@@ -337,20 +339,20 @@ export class DBInstanceClone extends ros.Resource {
             preferredBackupTime: props.preferredBackupTime,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
-            period: props.period ? props.period : 1,
-            payType: props.payType ? props.payType : 'Postpaid',
+            period: props.period === undefined || props.period === null ? 1 : props.period,
+            payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceStorageType: props.dbInstanceStorageType,
-            connectionStringType: props.connectionStringType ? props.connectionStringType : 'Inner',
+            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             restoreTable: props.restoreTable,
             masterUserPassword: props.masterUserPassword,
-            masterUserType: props.masterUserType ? props.masterUserType : 'Normal',
+            masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             vpcId: props.vpcId,
-            sslSetting: props.sslSetting ? props.sslSetting : 'Disabled',
+            sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,
             masterUsername: props.masterUsername,
             sqlCollectorStatus: props.sqlCollectorStatus,
-            backupRetentionPeriod: props.backupRetentionPeriod ? props.backupRetentionPeriod : 7,
+            backupRetentionPeriod: props.backupRetentionPeriod === undefined || props.backupRetentionPeriod === null ? 7 : props.backupRetentionPeriod,
             tableMeta: props.tableMeta,
-            timeoutInMinutes: props.timeoutInMinutes ? props.timeoutInMinutes : 120,
+            timeoutInMinutes: props.timeoutInMinutes === undefined || props.timeoutInMinutes === null ? 120 : props.timeoutInMinutes,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstanceClone;
         this.attrDbInstanceId = rosDBInstanceClone.attrDbInstanceId;

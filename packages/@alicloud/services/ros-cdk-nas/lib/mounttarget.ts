@@ -69,7 +69,7 @@ export class MountTarget extends ros.Resource {
             vpcId: props.vpcId,
             networkType: props.networkType,
             vSwitchId: props.vSwitchId,
-            accessGroupName: props.accessGroupName ? props.accessGroupName : 'DEFAULT_VPC_GROUP_NAME',
+            accessGroupName: props.accessGroupName === undefined || props.accessGroupName === null ? 'DEFAULT_VPC_GROUP_NAME' : props.accessGroupName,
             fileSystemId: props.fileSystemId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMountTarget;

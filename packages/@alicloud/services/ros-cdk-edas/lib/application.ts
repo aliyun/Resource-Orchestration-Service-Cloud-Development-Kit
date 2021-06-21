@@ -96,7 +96,7 @@ export class Application extends ros.Resource {
             ecuInfo: props.ecuInfo,
             healthCheckUrl: props.healthCheckUrl,
             clusterId: props.clusterId,
-            packageType: props.packageType ? props.packageType : 'war',
+            packageType: props.packageType === undefined || props.packageType === null ? 'war' : props.packageType,
             buildPackId: props.buildPackId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplication;

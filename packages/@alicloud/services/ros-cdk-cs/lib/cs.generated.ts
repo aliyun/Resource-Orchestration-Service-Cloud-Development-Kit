@@ -164,7 +164,7 @@ export interface RosKubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -285,6 +285,17 @@ export interface RosKubernetesClusterProps {
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    readonly podVswitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -469,6 +480,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
+    errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
     errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
@@ -499,7 +511,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateString)(properties.masterInstanceChargeType));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
@@ -507,6 +518,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
+    errors.collect(ros.propertyValidator('cpuPolicy', ros.validateString)(properties.cpuPolicy));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('masterInstanceTypes', ros.requiredValidator)(properties.masterInstanceTypes));
     if(properties.masterInstanceTypes && (Array.isArray(properties.masterInstanceTypes) || (typeof properties.masterInstanceTypes) === 'string')) {
@@ -608,6 +620,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       MasterSystemDiskSize: ros.numberToRosTemplate(properties.masterSystemDiskSize),
       NodePortRange: ros.stringToRosTemplate(properties.nodePortRange),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
@@ -708,7 +721,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     public cloudMonitorFlags: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
 
@@ -829,6 +842,17 @@ export class RosKubernetesCluster extends ros.RosResource {
      * Default to 3.
      */
     public numOfNodes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    public podVswitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -985,6 +1009,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.masterSystemDiskSize = props.masterSystemDiskSize;
         this.nodePortRange = props.nodePortRange;
         this.numOfNodes = props.numOfNodes;
+        this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
@@ -1034,6 +1059,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             masterSystemDiskSize: this.masterSystemDiskSize,
             nodePortRange: this.nodePortRange,
             numOfNodes: this.numOfNodes,
+            podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
@@ -1954,6 +1980,11 @@ export interface RosManagedKubernetesClusterProps {
     readonly disableRollback?: boolean | ros.IResolvable;
 
     /**
+     * @Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+     */
+    readonly encryptionProviderKey?: string | ros.IResolvable;
+
+    /**
      * @Property endpointPublicAccess: Whether to enable the public network API Server:
      * true: which means that the public network API Server is open.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -1980,6 +2011,17 @@ export interface RosManagedKubernetesClusterProps {
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    readonly podVswitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -2129,10 +2171,11 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
+    errors.collect(ros.propertyValidator('podVswitchIds', ros.listValidator(ros.validateString))(properties.podVswitchIds));
     errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.requiredValidator)(properties.workerInstanceTypes));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
@@ -2145,7 +2188,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
@@ -2153,6 +2195,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -2177,6 +2220,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
+    errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
     if(properties.workerAutoRenewPeriod && (typeof properties.workerAutoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('workerAutoRenewPeriod', ros.validateAllowedValues)({
           data: properties.workerAutoRenewPeriod,
@@ -2211,11 +2255,13 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
+      EncryptionProviderKey: ros.stringToRosTemplate(properties.encryptionProviderKey),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
       KeyPair: ros.stringToRosTemplate(properties.keyPair),
       KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
       LoginPassword: ros.stringToRosTemplate(properties.loginPassword),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      PodVswitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
@@ -2325,6 +2371,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public disableRollback: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+     */
+    public encryptionProviderKey: string | ros.IResolvable | undefined;
+
+    /**
      * @Property endpointPublicAccess: Whether to enable the public network API Server:
      * true: which means that the public network API Server is open.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -2351,6 +2402,17 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * Default to 3.
      */
     public numOfNodes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    public podVswitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -2482,11 +2544,13 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
         this.disableRollback = props.disableRollback;
+        this.encryptionProviderKey = props.encryptionProviderKey;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.keyPair = props.keyPair;
         this.kubernetesVersion = props.kubernetesVersion;
         this.loginPassword = props.loginPassword;
         this.numOfNodes = props.numOfNodes;
+        this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
@@ -2517,11 +2581,13 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
             disableRollback: this.disableRollback,
+            encryptionProviderKey: this.encryptionProviderKey,
             endpointPublicAccess: this.endpointPublicAccess,
             keyPair: this.keyPair,
             kubernetesVersion: this.kubernetesVersion,
             loginPassword: this.loginPassword,
             numOfNodes: this.numOfNodes,
+            podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
@@ -2559,6 +2625,10 @@ export namespace RosManagedKubernetesCluster {
          */
         readonly config?: string | ros.IResolvable;
         /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+        /**
          * @Property name: Addon plugin name
          */
         readonly name: string | ros.IResolvable;
@@ -2576,6 +2646,7 @@ function RosManagedKubernetesCluster_AddonsPropertyValidator(properties: any): r
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "AddonsProperty"');
@@ -2595,6 +2666,7 @@ function rosManagedKubernetesClusterAddonsPropertyToRosTemplate(properties: any)
     return {
       Version: ros.stringToRosTemplate(properties.version),
       Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }

@@ -131,7 +131,7 @@ export class HiTSDBInstance extends ros.Resource {
             vSwitchId: props.vSwitchId,
             instanceClass: props.instanceClass,
             duration: props.duration,
-            payType: props.payType ? props.payType : 'POSTPAY',
+            payType: props.payType === undefined || props.payType === null ? 'POSTPAY' : props.payType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHiTSDBInstance;
         this.attrConnectionString = rosHiTSDBInstance.attrConnectionString;

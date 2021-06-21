@@ -1067,3 +1067,206 @@ function rosClusterUserInfoPropertyToRosTemplate(properties: any): any {
       Password: ros.stringToRosTemplate(properties.password),
     };
 }
+
+/**
+ * Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`
+ */
+export interface RosClusterServiceConfigsProps {
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceConfigs: Server configs
+     */
+    readonly serviceConfigs: Array<RosClusterServiceConfigs.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterServiceConfigsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterServiceConfigsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterServiceConfigsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('serviceConfigs', ros.requiredValidator)(properties.serviceConfigs));
+    errors.collect(ros.propertyValidator('serviceConfigs', ros.listValidator(RosClusterServiceConfigs_ServiceConfigsPropertyValidator))(properties.serviceConfigs));
+    return errors.wrap('supplied properties not correct for "RosClusterServiceConfigsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::ClusterServiceConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterServiceConfigsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::ClusterServiceConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterServiceConfigsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterServiceConfigsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      ServiceConfigs: ros.listMapper(rosClusterServiceConfigsServiceConfigsPropertyToRosTemplate)(properties.serviceConfigs),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EMR::ClusterServiceConfigs`
+ */
+export class RosClusterServiceConfigs extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::ClusterServiceConfigs";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterId: The ID of the cluster.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceConfigs: Server configs
+     */
+    public serviceConfigs: Array<RosClusterServiceConfigs.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::EMR::ClusterServiceConfigs`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterServiceConfigsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterServiceConfigs.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.serviceConfigs = props.serviceConfigs;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            serviceConfigs: this.serviceConfigs,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterServiceConfigsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosClusterServiceConfigs {
+    /**
+     * @stability external
+     */
+    export interface ServiceConfigsProperty {
+        /**
+         * @Property comment: The comment for the configuration change.
+         */
+        readonly comment?: string | ros.IResolvable;
+        /**
+         * @Property gatewayClusterIdList:
+         */
+        readonly gatewayClusterIdList?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property serviceName: The name of the service.
+         */
+        readonly serviceName: string | ros.IResolvable;
+        /**
+         * @Property customConfigParams: The modification of custom configuration parameters.
+         */
+        readonly customConfigParams?: string | ros.IResolvable;
+        /**
+         * @Property refreshHostConfig: Specifies whether to configure the job immediately after the modification.
+         */
+        readonly refreshHostConfig?: boolean | ros.IResolvable;
+        /**
+         * @Property hostInstanceId: The instance ID of the host. This is typically the ID of an ECS instance.
+         */
+        readonly hostInstanceId?: string | ros.IResolvable;
+        /**
+         * @Property configType: The type of the configuration parameters.
+         */
+        readonly configType?: string | ros.IResolvable;
+        /**
+         * @Property configParams: The specific change of the configuration. It is a JSON string.
+         */
+        readonly configParams: string | ros.IResolvable;
+        /**
+         * @Property groupId: The ID of the host group.
+         */
+        readonly groupId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServiceConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServiceConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterServiceConfigs_ServiceConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
+    errors.collect(ros.propertyValidator('gatewayClusterIdList', ros.listValidator(ros.validateString))(properties.gatewayClusterIdList));
+    errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
+    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('customConfigParams', ros.validateString)(properties.customConfigParams));
+    errors.collect(ros.propertyValidator('refreshHostConfig', ros.validateBoolean)(properties.refreshHostConfig));
+    errors.collect(ros.propertyValidator('hostInstanceId', ros.validateString)(properties.hostInstanceId));
+    errors.collect(ros.propertyValidator('configType', ros.validateString)(properties.configType));
+    errors.collect(ros.propertyValidator('configParams', ros.requiredValidator)(properties.configParams));
+    errors.collect(ros.propertyValidator('configParams', ros.validateString)(properties.configParams));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
+    return errors.wrap('supplied properties not correct for "ServiceConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::ClusterServiceConfigs.ServiceConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `ServiceConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::ClusterServiceConfigs.ServiceConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterServiceConfigsServiceConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterServiceConfigs_ServiceConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      Comment: ros.stringToRosTemplate(properties.comment),
+      GatewayClusterIdList: ros.listMapper(ros.stringToRosTemplate)(properties.gatewayClusterIdList),
+      ServiceName: ros.stringToRosTemplate(properties.serviceName),
+      CustomConfigParams: ros.stringToRosTemplate(properties.customConfigParams),
+      RefreshHostConfig: ros.booleanToRosTemplate(properties.refreshHostConfig),
+      HostInstanceId: ros.stringToRosTemplate(properties.hostInstanceId),
+      ConfigType: ros.stringToRosTemplate(properties.configType),
+      ConfigParams: ros.stringToRosTemplate(properties.configParams),
+      GroupId: ros.stringToRosTemplate(properties.groupId),
+    };
+}

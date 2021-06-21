@@ -79,9 +79,9 @@ export class BandwidthPackage extends ros.Resource {
             ipCount: props.ipCount,
             description: props.description,
             zoneId: props.zoneId,
-            bandwidth: props.bandwidth ? props.bandwidth : 5,
+            bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 5 : props.bandwidth,
             natGatewayId: props.natGatewayId,
-            internetChargeType: props.internetChargeType ? props.internetChargeType : 'PayByTraffic',
+            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBandwidthPackage;
         this.attrBandwidthPackageId = rosBandwidthPackage.attrBandwidthPackageId;

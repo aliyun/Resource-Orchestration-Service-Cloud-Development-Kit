@@ -72,7 +72,7 @@ export class Trail extends ros.Resource {
         const rosTrail = new RosTrail(this, id,  {
             slsProjectArn: props.slsProjectArn,
             roleName: props.roleName,
-            eventRw: props.eventRw ? props.eventRw : 'Write',
+            eventRw: props.eventRw === undefined || props.eventRw === null ? 'Write' : props.eventRw,
             ossKeyPrefix: props.ossKeyPrefix,
             ossBucketName: props.ossBucketName,
             slsWriteRoleArn: props.slsWriteRoleArn,

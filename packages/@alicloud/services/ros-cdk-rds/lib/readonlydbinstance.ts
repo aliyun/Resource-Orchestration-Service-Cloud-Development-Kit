@@ -145,7 +145,7 @@ export class ReadOnlyDBInstance extends ros.Resource {
             vpcId: props.vpcId,
             dbInstanceClass: props.dbInstanceClass,
             vSwitchId: props.vSwitchId,
-            payType: props.payType ? props.payType : 'Postpaid',
+            payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceStorageType: props.dbInstanceStorageType,
             dbInstanceId: props.dbInstanceId,
             dbInstanceStorage: props.dbInstanceStorage,

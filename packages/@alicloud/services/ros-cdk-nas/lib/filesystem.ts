@@ -121,7 +121,7 @@ export class FileSystem extends ros.Resource {
             vSwitchId: props.vSwitchId,
             duration: props.duration,
             snapshotId: props.snapshotId,
-            deletionForce: props.deletionForce ? props.deletionForce : false,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             encryptType: props.encryptType,
             vpcId: props.vpcId,
             capacity: props.capacity,

@@ -81,7 +81,7 @@ export class SecurityGroupClone extends ros.Resource {
             vpcId: props.vpcId,
             securityGroupName: props.securityGroupName,
             resourceGroupId: props.resourceGroupId,
-            destinationRegionId: props.destinationRegionId ? props.destinationRegionId : 'CURRENT',
+            destinationRegionId: props.destinationRegionId === undefined || props.destinationRegionId === null ? 'CURRENT' : props.destinationRegionId,
             networkType: props.networkType,
             securityGroupType: props.securityGroupType,
             sourceSecurityGroupId: props.sourceSecurityGroupId,

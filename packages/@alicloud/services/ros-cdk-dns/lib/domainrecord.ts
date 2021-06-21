@@ -76,7 +76,7 @@ export class DomainRecord extends ros.Resource {
             domainName: props.domainName,
             priority: props.priority,
             value: props.value,
-            ttl: props.ttl ? props.ttl : 600,
+            ttl: props.ttl === undefined || props.ttl === null ? 600 : props.ttl,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomainRecord;
         this.attrRecordId = rosDomainRecord.attrRecordId;

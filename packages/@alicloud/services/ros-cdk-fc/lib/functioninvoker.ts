@@ -93,7 +93,7 @@ Failure: Sync invoke fails.
             executeVersion: props.executeVersion,
             serviceRegionId: props.serviceRegionId,
             serviceName: props.serviceName,
-            async: props.async ? props.async : false,
+            async: props.async === undefined || props.async === null ? false : props.async,
             event: props.event,
             qualifier: props.qualifier,
             checkError: props.checkError,

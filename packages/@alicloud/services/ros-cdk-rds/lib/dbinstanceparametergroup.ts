@@ -47,7 +47,7 @@ export class DBInstanceParameterGroup extends ros.Resource {
         const rosDBInstanceParameterGroup = new RosDBInstanceParameterGroup(this, id,  {
             parameters: props.parameters,
             dbInstanceId: props.dbInstanceId,
-            forcerestart: props.forcerestart ? props.forcerestart : 'false',
+            forcerestart: props.forcerestart === undefined || props.forcerestart === null ? 'false' : props.forcerestart,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstanceParameterGroup;
     }

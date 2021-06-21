@@ -73,7 +73,7 @@ export class DiskAttachment extends ros.Resource {
             instanceId: props.instanceId,
             device: props.device,
             deleteWithInstance: props.deleteWithInstance,
-            deleteAutoSnapshot: props.deleteAutoSnapshot ? props.deleteAutoSnapshot : true,
+            deleteAutoSnapshot: props.deleteAutoSnapshot === undefined || props.deleteAutoSnapshot === null ? true : props.deleteAutoSnapshot,
             diskId: props.diskId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDiskAttachment;

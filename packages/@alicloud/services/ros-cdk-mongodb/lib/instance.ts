@@ -121,6 +121,14 @@ export interface InstanceProps {
     readonly tags?: RosInstance.TagsProperty[];
 
     /**
+     * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+
+    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -194,25 +202,26 @@ export class Instance extends ros.Resource {
             autoRenew: props.autoRenew,
             securityIpArray: props.securityIpArray,
             backupId: props.backupId,
-            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
+            storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
             restoreTime: props.restoreTime,
             networkType: props.networkType,
             dbInstanceStorage: props.dbInstanceStorage,
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
             couponNo: props.couponNo,
-            engineVersion: props.engineVersion ? props.engineVersion : '3.4',
+            tdeStatus: props.tdeStatus,
+            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
             readonlyReplicas: props.readonlyReplicas,
             replicationFactor: props.replicationFactor,
             zoneId: props.zoneId,
             dbInstanceClass: props.dbInstanceClass,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
-            period: props.period ? props.period : 1,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             vpcPasswordFree: props.vpcPasswordFree,
             accountPassword: props.accountPassword,
             vpcId: props.vpcId,
-            chargeType: props.chargeType ? props.chargeType : 'PostPaid',
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             databaseNames: props.databaseNames,
             srcDbInstanceId: props.srcDbInstanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

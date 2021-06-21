@@ -143,7 +143,7 @@ export class ControlPolicy extends ros.Resource {
             source: props.source,
             destPortType: props.destPortType,
             proto: props.proto,
-            regionId: props.regionId ? props.regionId : 'cn-hangzhou',
+            regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
             newOrder: props.newOrder,
             destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

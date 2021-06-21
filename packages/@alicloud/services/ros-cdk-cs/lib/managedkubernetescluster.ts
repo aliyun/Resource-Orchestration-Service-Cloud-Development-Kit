@@ -66,6 +66,11 @@ export interface ManagedKubernetesClusterProps {
     readonly disableRollback?: boolean | ros.IResolvable;
 
     /**
+     * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
+     */
+    readonly encryptionProviderKey?: string | ros.IResolvable;
+
+    /**
      * Property endpointPublicAccess: Whether to enable the public network API Server:
      * true: which means that the public network API Server is open.
      * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default to false.
@@ -92,6 +97,17 @@ export interface ManagedKubernetesClusterProps {
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    readonly podVswitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -237,36 +253,38 @@ export class ManagedKubernetesCluster extends ros.Resource {
         super(scope, id);
 
         const rosManagedKubernetesCluster = new RosManagedKubernetesCluster(this, id,  {
-            endpointPublicAccess: props.endpointPublicAccess ? props.endpointPublicAccess : false,
-            workerPeriod: props.workerPeriod ? props.workerPeriod : 1,
-            workerPeriodUnit: props.workerPeriodUnit ? props.workerPeriodUnit : 'Month',
+            endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
+            workerPeriod: props.workerPeriod === undefined || props.workerPeriod === null ? 1 : props.workerPeriod,
+            workerPeriodUnit: props.workerPeriodUnit === undefined || props.workerPeriodUnit === null ? 'Month' : props.workerPeriodUnit,
             addons: props.addons,
-            workerSystemDiskCategory: props.workerSystemDiskCategory ? props.workerSystemDiskCategory : 'cloud_efficiency',
-            workerSystemDiskSize: props.workerSystemDiskSize ? props.workerSystemDiskSize : 120,
+            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             name: props.name,
             taint: props.taint,
-            cloudMonitorFlags: props.cloudMonitorFlags ? props.cloudMonitorFlags : false,
-            serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
-            workerAutoRenew: props.workerAutoRenew ? props.workerAutoRenew : true,
-            proxyMode: props.proxyMode ? props.proxyMode : 'iptables',
+            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
+            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
+            podVswitchIds: props.podVswitchIds,
+            workerAutoRenew: props.workerAutoRenew === undefined || props.workerAutoRenew === null ? true : props.workerAutoRenew,
+            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
+            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
-            disableRollback: props.disableRollback ? props.disableRollback : true,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             kubernetesVersion: props.kubernetesVersion,
-            containerCidr: props.containerCidr ? props.containerCidr : '172.16.0.0/16',
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             keyPair: props.keyPair,
-            workerInstanceChargeType: props.workerInstanceChargeType ? props.workerInstanceChargeType : 'PostPaid',
             vSwitchIds: props.vSwitchIds,
             workerDataDisks: props.workerDataDisks,
             securityGroupId: props.securityGroupId,
-            timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             clusterSpec: props.clusterSpec,
-            workerDataDisk: props.workerDataDisk ? props.workerDataDisk : false,
+            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
             vpcId: props.vpcId,
-            numOfNodes: props.numOfNodes ? props.numOfNodes : 3,
-            workerAutoRenewPeriod: props.workerAutoRenewPeriod ? props.workerAutoRenewPeriod : 1,
-            snatEntry: props.snatEntry ? props.snatEntry : true,
+            numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
+            encryptionProviderKey: props.encryptionProviderKey,
+            workerAutoRenewPeriod: props.workerAutoRenewPeriod === undefined || props.workerAutoRenewPeriod === null ? 1 : props.workerAutoRenewPeriod,
+            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrClusterId = rosManagedKubernetesCluster.attrClusterId;

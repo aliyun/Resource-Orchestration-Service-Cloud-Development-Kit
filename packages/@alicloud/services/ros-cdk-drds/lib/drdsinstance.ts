@@ -130,7 +130,7 @@ export class DrdsInstance extends ros.Resource {
             payType: props.payType,
             vswitchId: props.vswitchId,
             type: props.type,
-            mySqlVersion: props.mySqlVersion ? props.mySqlVersion : '5',
+            mySqlVersion: props.mySqlVersion === undefined || props.mySqlVersion === null ? '5' : props.mySqlVersion,
             vpcId: props.vpcId,
             isAutoRenew: props.isAutoRenew,
             tags: props.tags,

@@ -86,13 +86,13 @@ export class Queue extends ros.Resource {
         super(scope, id);
 
         const rosQueue = new RosQueue(this, id,  {
-            delaySeconds: props.delaySeconds ? props.delaySeconds : 0,
-            pollingWaitSeconds: props.pollingWaitSeconds ? props.pollingWaitSeconds : 0,
-            messageRetentionPeriod: props.messageRetentionPeriod ? props.messageRetentionPeriod : 345600,
-            maximumMessageSize: props.maximumMessageSize ? props.maximumMessageSize : 65536,
-            visibilityTimeout: props.visibilityTimeout ? props.visibilityTimeout : 30,
+            delaySeconds: props.delaySeconds === undefined || props.delaySeconds === null ? 0 : props.delaySeconds,
+            pollingWaitSeconds: props.pollingWaitSeconds === undefined || props.pollingWaitSeconds === null ? 0 : props.pollingWaitSeconds,
+            messageRetentionPeriod: props.messageRetentionPeriod === undefined || props.messageRetentionPeriod === null ? 345600 : props.messageRetentionPeriod,
+            maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
+            visibilityTimeout: props.visibilityTimeout === undefined || props.visibilityTimeout === null ? 30 : props.visibilityTimeout,
             queueName: props.queueName,
-            loggingEnabled: props.loggingEnabled ? props.loggingEnabled : false,
+            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosQueue;
         this.attrArnWithSlash = rosQueue.attrArnWithSlash;

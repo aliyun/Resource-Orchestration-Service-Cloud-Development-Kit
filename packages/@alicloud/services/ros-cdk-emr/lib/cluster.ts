@@ -278,7 +278,7 @@ export class Cluster extends ros.Resource {
             userDefinedEmrEcsRole: props.userDefinedEmrEcsRole,
             useLocalMetaDb: props.useLocalMetaDb,
             keyPairName: props.keyPairName,
-            ioOptimized: props.ioOptimized ? props.ioOptimized : true,
+            ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? true : props.ioOptimized,
             zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,

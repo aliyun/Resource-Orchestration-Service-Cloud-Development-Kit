@@ -81,10 +81,10 @@ export class DBClusterEndpoint extends ros.Resource {
         super(scope, id);
 
         const rosDBClusterEndpoint = new RosDBClusterEndpoint(this, id,  {
-            autoAddNewNodes: props.autoAddNewNodes ? props.autoAddNewNodes : 'Disable',
+            autoAddNewNodes: props.autoAddNewNodes === undefined || props.autoAddNewNodes === null ? 'Disable' : props.autoAddNewNodes,
             dbClusterId: props.dbClusterId,
-            endpointType: props.endpointType ? props.endpointType : 'Custom',
-            readWriteMode: props.readWriteMode ? props.readWriteMode : 'ReadOnly',
+            endpointType: props.endpointType === undefined || props.endpointType === null ? 'Custom' : props.endpointType,
+            readWriteMode: props.readWriteMode === undefined || props.readWriteMode === null ? 'ReadOnly' : props.readWriteMode,
             endpointConfig: props.endpointConfig,
             nodes: props.nodes,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -40,7 +40,9 @@ export interface EIPProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+     * Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
      */
     readonly isp?: string | ros.IResolvable;
 
@@ -97,6 +99,11 @@ export class Eip extends ros.Resource {
     public readonly attrEipAddress: ros.IResolvable;
 
     /**
+     * Attribute Isp: The line type.
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
      * Attribute OrderId: Order ID of prepaid EIP instance.
      */
     public readonly attrOrderId: ros.IResolvable;
@@ -114,21 +121,22 @@ export class Eip extends ros.Resource {
         const rosEIP = new RosEIP(this, id,  {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
-            instanceChargeType: props.instanceChargeType ? props.instanceChargeType : 'Postpaid',
-            pricingCycle: props.pricingCycle ? props.pricingCycle : 'Month',
+            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'Postpaid' : props.instanceChargeType,
+            pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
             isp: props.isp,
-            period: props.period ? props.period : 1,
-            deletionProtection: props.deletionProtection ? props.deletionProtection : false,
-            autoPay: props.autoPay ? props.autoPay : false,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
+            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             name: props.name,
-            internetChargeType: props.internetChargeType ? props.internetChargeType : 'PayByBandwidth',
+            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByBandwidth' : props.internetChargeType,
             netmode: props.netmode,
-            bandwidth: props.bandwidth ? props.bandwidth : 5,
+            bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 5 : props.bandwidth,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIP;
         this.attrAllocationId = rosEIP.attrAllocationId;
         this.attrEipAddress = rosEIP.attrEipAddress;
+        this.attrIsp = rosEIP.attrIsp;
         this.attrOrderId = rosEIP.attrOrderId;
     }
 }

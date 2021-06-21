@@ -79,11 +79,11 @@ export class LoadBalancerClone extends ros.Resource {
             loadBalancerName: props.loadBalancerName,
             sourceLoadBalancerId: props.sourceLoadBalancerId,
             resourceGroupId: props.resourceGroupId,
-            tagsPolicy: props.tagsPolicy ? props.tagsPolicy : 'empty',
+            tagsPolicy: props.tagsPolicy === undefined || props.tagsPolicy === null ? 'empty' : props.tagsPolicy,
             vSwitchId: props.vSwitchId,
             backendServers: props.backendServers,
             tags: props.tags,
-            backendServersPolicy: props.backendServersPolicy ? props.backendServersPolicy : 'clone',
+            backendServersPolicy: props.backendServersPolicy === undefined || props.backendServersPolicy === null ? 'clone' : props.backendServersPolicy,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancerClone;
         this.attrLoadBalancerId = rosLoadBalancerClone.attrLoadBalancerId;

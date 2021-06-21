@@ -74,6 +74,14 @@ export interface ServerlessInstanceProps {
     readonly tags?: RosServerlessInstance.TagsProperty[];
 
     /**
+     * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+
+    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -130,17 +138,18 @@ export class ServerlessInstance extends ros.Resource {
         super(scope, id);
 
         const rosServerlessInstance = new RosServerlessInstance(this, id,  {
-            engineVersion: props.engineVersion ? props.engineVersion : '4.2',
+            tdeStatus: props.tdeStatus,
+            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '4.2' : props.engineVersion,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
             autoRenew: props.autoRenew,
-            period: props.period ? props.period : 1,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             securityIpArray: props.securityIpArray,
-            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
+            storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
             accountPassword: props.accountPassword,
             vpcId: props.vpcId,
-            chargeType: props.chargeType ? props.chargeType : 'PostPaid',
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             networkType: props.networkType,
             dbInstanceStorage: props.dbInstanceStorage,
             periodPriceType: props.periodPriceType,

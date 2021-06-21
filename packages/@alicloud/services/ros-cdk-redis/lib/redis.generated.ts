@@ -408,9 +408,44 @@ export class RosInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute ArchitectureType: The architecture.
+     */
+    public readonly attrArchitectureType: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Capacity: The storage capacity of the instance. Unit: MB.
+     */
+    public readonly attrCapacity: ros.IResolvable;
+
+    /**
+     * @Attribute ChargeType: The billing method of the instance.
+     */
+    public readonly attrChargeType: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
+
+    /**
+     * @Attribute Connections: The maximum number of connections supported by the instance.
+     */
+    public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute EngineVersion: The engine version of the instance.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * @Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
+     */
+    public readonly attrHasRenewChangeOrder: ros.IResolvable;
 
     /**
      * @Attribute InstanceClass: Redis instance type.
@@ -428,14 +463,64 @@ export class RosInstance extends ros.RosResource {
     public readonly attrInstanceName: ros.IResolvable;
 
     /**
+     * @Attribute InstanceType: The engine type of the instance.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkType: The network type.
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute NodeType: The type of node.
+     */
+    public readonly attrNodeType: ros.IResolvable;
+
+    /**
      * @Attribute OrderId: Order Id of created instance.
      */
     public readonly attrOrderId: ros.IResolvable;
 
     /**
+     * @Attribute PackageType: The plan type.
+     */
+    public readonly attrPackageType: ros.IResolvable;
+
+    /**
      * @Attribute Port: Port of created instance.
      */
     public readonly attrPort: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateIp: The internal IP address of the instance.
+     */
+    public readonly attrPrivateIp: ros.IResolvable;
+
+    /**
+     * @Attribute QPS: The queries per second (QPS) supported by the instance.
+     */
+    public readonly attrQps: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the vSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The ID of the zone.
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -534,12 +619,29 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArchitectureType = this.getAtt('ArchitectureType');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrCapacity = this.getAtt('Capacity');
+        this.attrChargeType = this.getAtt('ChargeType');
         this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrConnections = this.getAtt('Connections');
+        this.attrEngineVersion = this.getAtt('EngineVersion');
+        this.attrHasRenewChangeOrder = this.getAtt('HasRenewChangeOrder');
         this.attrInstanceClass = this.getAtt('InstanceClass');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrNodeType = this.getAtt('NodeType');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrPackageType = this.getAtt('PackageType');
         this.attrPort = this.getAtt('Port');
+        this.attrPrivateIp = this.getAtt('PrivateIp');
+        this.attrQps = this.getAtt('QPS');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPolicy = props.backupPolicy;
@@ -1046,9 +1148,44 @@ export class RosPrepayInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute ArchitectureType: The architecture.
+     */
+    public readonly attrArchitectureType: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Capacity: The storage capacity of the instance. Unit: MB.
+     */
+    public readonly attrCapacity: ros.IResolvable;
+
+    /**
+     * @Attribute ChargeType: The billing method of the instance.
+     */
+    public readonly attrChargeType: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
+
+    /**
+     * @Attribute Connections: The maximum number of connections supported by the instance.
+     */
+    public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute EngineVersion: The engine version of the instance.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * @Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
+     */
+    public readonly attrHasRenewChangeOrder: ros.IResolvable;
 
     /**
      * @Attribute InstanceClass: Redis instance type.
@@ -1066,14 +1203,64 @@ export class RosPrepayInstance extends ros.RosResource {
     public readonly attrInstanceName: ros.IResolvable;
 
     /**
+     * @Attribute InstanceType: The engine type of the instance.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkType: The network type.
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute NodeType: The type of node.
+     */
+    public readonly attrNodeType: ros.IResolvable;
+
+    /**
      * @Attribute OrderId: Order Id of created instance.
      */
     public readonly attrOrderId: ros.IResolvable;
 
     /**
+     * @Attribute PackageType: The plan type.
+     */
+    public readonly attrPackageType: ros.IResolvable;
+
+    /**
      * @Attribute Port: Port of created instance.
      */
     public readonly attrPort: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateIp: The internal IP address of the instance.
+     */
+    public readonly attrPrivateIp: ros.IResolvable;
+
+    /**
+     * @Attribute QPS: The queries per second (QPS) supported by the instance.
+     */
+    public readonly attrQps: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the vSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The ID of the zone.
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1177,12 +1364,29 @@ export class RosPrepayInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPrepayInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPrepayInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArchitectureType = this.getAtt('ArchitectureType');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrCapacity = this.getAtt('Capacity');
+        this.attrChargeType = this.getAtt('ChargeType');
         this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrConnections = this.getAtt('Connections');
+        this.attrEngineVersion = this.getAtt('EngineVersion');
+        this.attrHasRenewChangeOrder = this.getAtt('HasRenewChangeOrder');
         this.attrInstanceClass = this.getAtt('InstanceClass');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrNodeType = this.getAtt('NodeType');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrPackageType = this.getAtt('PackageType');
         this.attrPort = this.getAtt('Port');
+        this.attrPrivateIp = this.getAtt('PrivateIp');
+        this.attrQps = this.getAtt('QPS');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPolicy = props.backupPolicy;

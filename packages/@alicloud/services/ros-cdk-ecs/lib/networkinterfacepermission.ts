@@ -51,7 +51,7 @@ export class NetworkInterfacePermission extends ros.Resource {
 
         const rosNetworkInterfacePermission = new RosNetworkInterfacePermission(this, id,  {
             accountId: props.accountId,
-            permission: props.permission ? props.permission : 'InstanceAttach',
+            permission: props.permission === undefined || props.permission === null ? 'InstanceAttach' : props.permission,
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterfacePermission;

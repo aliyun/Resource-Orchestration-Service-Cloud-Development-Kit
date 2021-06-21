@@ -68,7 +68,7 @@ export class DBClusterEndpointAddress extends ros.Resource {
             dbEndpointId: props.dbEndpointId,
             dbClusterId: props.dbClusterId,
             connectionStringPrefix: props.connectionStringPrefix,
-            netType: props.netType ? props.netType : 'Public',
+            netType: props.netType === undefined || props.netType === null ? 'Public' : props.netType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBClusterEndpointAddress;
         this.attrAddress = rosDBClusterEndpointAddress.attrAddress;

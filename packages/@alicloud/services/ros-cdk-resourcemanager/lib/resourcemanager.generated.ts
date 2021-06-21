@@ -158,6 +158,325 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ResourceManager::ControlPolicy`
+ */
+export interface RosControlPolicyProps {
+
+    /**
+     * @Property controlPolicyName: PolicyName
+     */
+    readonly controlPolicyName: string | ros.IResolvable;
+
+    /**
+     * @Property effectScope: EffectScope
+     */
+    readonly effectScope: string | ros.IResolvable;
+
+    /**
+     * @Property policyDocument: PolicyDocument
+     */
+    readonly policyDocument: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosControlPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosControlPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('policyDocument', ros.requiredValidator)(properties.policyDocument));
+    errors.collect(ros.propertyValidator('policyDocument', ros.validateString)(properties.policyDocument));
+    errors.collect(ros.propertyValidator('controlPolicyName', ros.requiredValidator)(properties.controlPolicyName));
+    errors.collect(ros.propertyValidator('controlPolicyName', ros.validateString)(properties.controlPolicyName));
+    errors.collect(ros.propertyValidator('effectScope', ros.requiredValidator)(properties.effectScope));
+    errors.collect(ros.propertyValidator('effectScope', ros.validateString)(properties.effectScope));
+    return errors.wrap('supplied properties not correct for "RosControlPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ControlPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosControlPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ControlPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosControlPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ControlPolicyName: ros.stringToRosTemplate(properties.controlPolicyName),
+      EffectScope: ros.stringToRosTemplate(properties.effectScope),
+      PolicyDocument: ros.stringToRosTemplate(properties.policyDocument),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ResourceManager::ControlPolicy`
+ */
+export class RosControlPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ControlPolicy";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AttachmentCount: AttachmentCount
+     */
+    public readonly attrAttachmentCount: ros.IResolvable;
+
+    /**
+     * @Attribute ControlPolicyName: PolicyName
+     */
+    public readonly attrControlPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Description
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EffectScope: EffectScope
+     */
+    public readonly attrEffectScope: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyDocument: PolicyDocument
+     */
+    public readonly attrPolicyDocument: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyId: PolicyId
+     */
+    public readonly attrPolicyId: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyType: PolicyType
+     */
+    public readonly attrPolicyType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property controlPolicyName: PolicyName
+     */
+    public controlPolicyName: string | ros.IResolvable;
+
+    /**
+     * @Property effectScope: EffectScope
+     */
+    public effectScope: string | ros.IResolvable;
+
+    /**
+     * @Property policyDocument: PolicyDocument
+     */
+    public policyDocument: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ResourceManager::ControlPolicy`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosControlPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosControlPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAttachmentCount = this.getAtt('AttachmentCount');
+        this.attrControlPolicyName = this.getAtt('ControlPolicyName');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEffectScope = this.getAtt('EffectScope');
+        this.attrPolicyDocument = this.getAtt('PolicyDocument');
+        this.attrPolicyId = this.getAtt('PolicyId');
+        this.attrPolicyType = this.getAtt('PolicyType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.controlPolicyName = props.controlPolicyName;
+        this.effectScope = props.effectScope;
+        this.policyDocument = props.policyDocument;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            controlPolicyName: this.controlPolicyName,
+            effectScope: this.effectScope,
+            policyDocument: this.policyDocument,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ */
+export interface RosControlPolicyAttachmentProps {
+
+    /**
+     * @Property policyId: PolicyId
+     */
+    readonly policyId: string | ros.IResolvable;
+
+    /**
+     * @Property targetId: TargetId
+     */
+    readonly targetId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosControlPolicyAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosControlPolicyAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosControlPolicyAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetId', ros.requiredValidator)(properties.targetId));
+    errors.collect(ros.propertyValidator('targetId', ros.validateString)(properties.targetId));
+    errors.collect(ros.propertyValidator('policyId', ros.requiredValidator)(properties.policyId));
+    errors.collect(ros.propertyValidator('policyId', ros.validateString)(properties.policyId));
+    return errors.wrap('supplied properties not correct for "RosControlPolicyAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ControlPolicyAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosControlPolicyAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ControlPolicyAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosControlPolicyAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosControlPolicyAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PolicyId: ros.stringToRosTemplate(properties.policyId),
+      TargetId: ros.stringToRosTemplate(properties.targetId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ResourceManager::ControlPolicyAttachment`
+ */
+export class RosControlPolicyAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ControlPolicyAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AttachDate: AttachDate
+     */
+    public readonly attrAttachDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Description
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyId: PolicyId
+     */
+    public readonly attrPolicyId: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyName: PolicyName
+     */
+    public readonly attrPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyType: PolicyType
+     */
+    public readonly attrPolicyType: ros.IResolvable;
+
+    /**
+     * @Attribute TargetId: TargetId
+     */
+    public readonly attrTargetId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property policyId: PolicyId
+     */
+    public policyId: string | ros.IResolvable;
+
+    /**
+     * @Property targetId: TargetId
+     */
+    public targetId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::ResourceManager::ControlPolicyAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosControlPolicyAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosControlPolicyAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAttachDate = this.getAtt('AttachDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrPolicyId = this.getAtt('PolicyId');
+        this.attrPolicyName = this.getAtt('PolicyName');
+        this.attrPolicyType = this.getAtt('PolicyType');
+        this.attrTargetId = this.getAtt('TargetId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.policyId = props.policyId;
+        this.targetId = props.targetId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            policyId: this.policyId,
+            targetId: this.targetId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosControlPolicyAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ResourceManager::Folder`
  */
 export interface RosFolderProps {
@@ -443,6 +762,199 @@ export class RosHandshake extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ResourceManager::PolicyAttachment`
+ */
+export interface RosPolicyAttachmentProps {
+
+    /**
+     * @Property policyName: The name of the policy
+     */
+    readonly policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the policy
+     */
+    readonly policyType: string | ros.IResolvable;
+
+    /**
+     * @Property principalName: The name of the object to which you want to attach the policy
+     */
+    readonly principalName: string | ros.IResolvable;
+
+    /**
+     * @Property principalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
+     */
+    readonly principalType: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
+     */
+    readonly resourceGroupId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPolicyAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicyAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policyType', ros.requiredValidator)(properties.policyType));
+    errors.collect(ros.propertyValidator('policyType', ros.validateString)(properties.policyType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.requiredValidator)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    errors.collect(ros.propertyValidator('principalName', ros.requiredValidator)(properties.principalName));
+    errors.collect(ros.propertyValidator('principalName', ros.validateString)(properties.principalName));
+    errors.collect(ros.propertyValidator('principalType', ros.requiredValidator)(properties.principalType));
+    errors.collect(ros.propertyValidator('principalType', ros.validateString)(properties.principalType));
+    return errors.wrap('supplied properties not correct for "RosPolicyAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::PolicyAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::PolicyAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPolicyAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PolicyName: ros.stringToRosTemplate(properties.policyName),
+      PolicyType: ros.stringToRosTemplate(properties.policyType),
+      PrincipalName: ros.stringToRosTemplate(properties.principalName),
+      PrincipalType: ros.stringToRosTemplate(properties.principalType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ResourceManager::PolicyAttachment`
+ */
+export class RosPolicyAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::PolicyAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AttachDate: Authorization time
+     */
+    public readonly attrAttachDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Policy description
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyName: The name of the policy
+     */
+    public readonly attrPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyType: The type of the policy
+     */
+    public readonly attrPolicyType: ros.IResolvable;
+
+    /**
+     * @Attribute PrincipalName: The name of the object to which you want to attach the policy
+     */
+    public readonly attrPrincipalName: ros.IResolvable;
+
+    /**
+     * @Attribute PrincipalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
+     */
+    public readonly attrPrincipalType: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property policyName: The name of the policy
+     */
+    public policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the policy
+     */
+    public policyType: string | ros.IResolvable;
+
+    /**
+     * @Property principalName: The name of the object to which you want to attach the policy
+     */
+    public principalName: string | ros.IResolvable;
+
+    /**
+     * @Property principalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
+     */
+    public principalType: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::ResourceManager::PolicyAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPolicyAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPolicyAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAttachDate = this.getAtt('AttachDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrPolicyName = this.getAtt('PolicyName');
+        this.attrPolicyType = this.getAtt('PolicyType');
+        this.attrPrincipalName = this.getAtt('PrincipalName');
+        this.attrPrincipalType = this.getAtt('PrincipalType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.policyName = props.policyName;
+        this.policyType = props.policyType;
+        this.principalName = props.principalName;
+        this.principalType = props.principalType;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            policyName: this.policyName,
+            policyType: this.policyType,
+            principalName: this.principalName,
+            principalType: this.principalType,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPolicyAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ResourceManager::ResourceDirectory`
  */
 export interface RosResourceDirectoryProps {
@@ -676,4 +1188,210 @@ export class RosResourceGroup extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosResourceGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ResourceManager::ResourceShare`
+ */
+export interface RosResourceShareProps {
+
+    /**
+     * @Property resourceShareName: The name of the resource share.
+     * The name must be 1 to 50 characters in length.
+     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    readonly resourceShareName: string | ros.IResolvable;
+
+    /**
+     * @Property resources:
+     */
+    readonly resources?: Array<RosResourceShare.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property targets: The shared target.
+     * A shared target shares the resources of resource owners. You can share your resources
+     * only with the member accounts in your resource directory. A shared target is indicated
+     * by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
+     */
+    readonly targets?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceShareProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceShareProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceSharePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceShareName', ros.requiredValidator)(properties.resourceShareName));
+    if(properties.resourceShareName && (typeof properties.resourceShareName) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceShareName', ros.validateAllowedPattern)({
+          data: properties.resourceShareName,
+          reg: /[-a-zA-Z0-9_\.]{1,50}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceShareName', ros.validateString)(properties.resourceShareName));
+    if(properties.targets && (Array.isArray(properties.targets) || (typeof properties.targets) === 'string')) {
+        errors.collect(ros.propertyValidator('targets', ros.validateLength)({
+            data: properties.targets.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targets', ros.listValidator(ros.validateString))(properties.targets));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosResourceShare_ResourcesPropertyValidator))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosResourceShareProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShare` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceShareProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShare` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceSharePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ResourceShareName: ros.stringToRosTemplate(properties.resourceShareName),
+      Resources: ros.listMapper(rosResourceShareResourcesPropertyToRosTemplate)(properties.resources),
+      Targets: ros.listMapper(ros.stringToRosTemplate)(properties.targets),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ResourceManager::ResourceShare`
+ */
+export class RosResourceShare extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceShare";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ResourceShareId: The ID of the resource share.
+     */
+    public readonly attrResourceShareId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property resourceShareName: The name of the resource share.
+     * The name must be 1 to 50 characters in length.
+     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    public resourceShareName: string | ros.IResolvable;
+
+    /**
+     * @Property resources:
+     */
+    public resources: Array<RosResourceShare.ResourcesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property targets: The shared target.
+     * A shared target shares the resources of resource owners. You can share your resources
+     * only with the member accounts in your resource directory. A shared target is indicated
+     * by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
+     */
+    public targets: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ResourceManager::ResourceShare`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceShareProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceShare.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceShareId = this.getAtt('ResourceShareId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.resourceShareName = props.resourceShareName;
+        this.resources = props.resources;
+        this.targets = props.targets;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            resourceShareName: this.resourceShareName,
+            resources: this.resources,
+            targets: this.targets,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceSharePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosResourceShare {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property resourceId: The ID of the shared resource.
+         */
+        readonly resourceId: string | ros.IResolvable;
+        /**
+         * @Property resourceType: The type of the shared resource.
+     * Set the value to VSwitch.
+     * Only the vSwitches in virtual private clouds (VPCs) can be shared.
+         */
+        readonly resourceType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceShare_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShare.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShare.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceShareResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceShare_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+    };
 }

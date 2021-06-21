@@ -9,6 +9,11 @@ export { RosLoadBalancer as LoadBalancerProperty };
 export interface LoadBalancerProps {
 
     /**
+     * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     */
+    readonly addressIpVersion?: string | ros.IResolvable;
+
+    /**
      * Property addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
      */
     readonly addressType?: string | ros.IResolvable;
@@ -32,8 +37,8 @@ export interface LoadBalancerProps {
     /**
      * Property duration: Optional. The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-     * If PricingCycle is year, the value range is 1 to 3.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+     * If PricingCycle is year, the value range is 1 to 5.
      */
     readonly duration?: number | ros.IResolvable;
 
@@ -206,20 +211,21 @@ export class LoadBalancer extends ros.Resource {
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
             resourceGroupId: props.resourceGroupId,
             pricingCycle: props.pricingCycle,
+            addressIpVersion: props.addressIpVersion,
             vSwitchId: props.vSwitchId,
             duration: props.duration,
-            deletionProtection: props.deletionProtection ? props.deletionProtection : false,
-            autoPay: props.autoPay ? props.autoPay : false,
+            deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             payType: props.payType,
             slaveZoneId: props.slaveZoneId,
             modificationProtectionStatus: props.modificationProtectionStatus,
-            internetChargeType: props.internetChargeType ? props.internetChargeType : 'paybytraffic',
+            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'paybytraffic' : props.internetChargeType,
             loadBalancerSpec: props.loadBalancerSpec,
             loadBalancerName: props.loadBalancerName,
             vpcId: props.vpcId,
-            bandwidth: props.bandwidth ? props.bandwidth : 1,
+            bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 1 : props.bandwidth,
             modificationProtectionReason: props.modificationProtectionReason,
-            addressType: props.addressType ? props.addressType : 'internet',
+            addressType: props.addressType === undefined || props.addressType === null ? 'internet' : props.addressType,
             tags: props.tags,
             masterZoneId: props.masterZoneId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

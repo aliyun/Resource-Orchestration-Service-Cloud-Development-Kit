@@ -107,7 +107,7 @@ export class Bucket extends ros.Resource {
         const rosBucket = new RosBucket(this, id,  {
             policy: props.policy,
             corsConfiguration: props.corsConfiguration,
-            deletionForce: props.deletionForce ? props.deletionForce : false,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             bucketName: props.bucketName,
             storageClass: props.storageClass,
             loggingConfiguration: props.loggingConfiguration,
@@ -115,7 +115,7 @@ export class Bucket extends ros.Resource {
             refererConfiguration: props.refererConfiguration,
             lifecycleConfiguration: props.lifecycleConfiguration,
             serverSideEncryptionConfiguration: props.serverSideEncryptionConfiguration,
-            accessControl: props.accessControl ? props.accessControl : 'private',
+            accessControl: props.accessControl === undefined || props.accessControl === null ? 'private' : props.accessControl,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBucket;

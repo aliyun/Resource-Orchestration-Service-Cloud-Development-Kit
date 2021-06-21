@@ -21,6 +21,13 @@ export interface CenInstanceProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * Property protectionLevel: The level of CIDR block overlapping. 
+     * Set the value to REDUCED. REDUCED indicates that the 
+     * CIDR blocks can overlap with each other but must not be the same.
+     */
+    readonly protectionLevel?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosCenInstance.TagsProperty[];
@@ -52,6 +59,7 @@ export class CenInstance extends ros.Resource {
         super(scope, id);
 
         const rosCenInstance = new RosCenInstance(this, id,  {
+            protectionLevel: props.protectionLevel,
             description: props.description,
             tags: props.tags,
             name: props.name,

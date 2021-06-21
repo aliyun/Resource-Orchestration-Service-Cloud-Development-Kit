@@ -89,7 +89,7 @@ export class SecurityGroupEgress extends ros.Resource {
             policy: props.policy,
             portRange: props.portRange,
             description: props.description,
-            priority: props.priority ? props.priority : 1,
+            priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             securityGroupId: props.securityGroupId,
             destGroupOwnerId: props.destGroupOwnerId,
             ipProtocol: props.ipProtocol,

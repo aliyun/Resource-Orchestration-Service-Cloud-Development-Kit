@@ -82,10 +82,10 @@ export class Table extends ros.Resource {
         const rosTable = new RosTable(this, id,  {
             instanceName: props.instanceName,
             tableName: props.tableName,
-            timeToLive: props.timeToLive ? props.timeToLive : -1,
-            maxVersions: props.maxVersions ? props.maxVersions : 1,
+            timeToLive: props.timeToLive === undefined || props.timeToLive === null ? -1 : props.timeToLive,
+            maxVersions: props.maxVersions === undefined || props.maxVersions === null ? 1 : props.maxVersions,
             secondaryIndices: props.secondaryIndices,
-            deviationCellVersionInSec: props.deviationCellVersionInSec ? props.deviationCellVersionInSec : 86400,
+            deviationCellVersionInSec: props.deviationCellVersionInSec === undefined || props.deviationCellVersionInSec === null ? 86400 : props.deviationCellVersionInSec,
             primaryKey: props.primaryKey,
             columns: props.columns,
             reservedThroughput: props.reservedThroughput,

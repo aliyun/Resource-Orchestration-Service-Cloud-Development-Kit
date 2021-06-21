@@ -1115,11 +1115,11 @@ export namespace RosContainerGroup {
         /**
          * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
          */
-        readonly port?: Array<RosContainerGroup.PortProperty | ros.IResolvable> | ros.IResolvable;
+        readonly port?: Array<RosContainerGroup.InitContainerPortProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property securityContext: The security context of the container group.
          */
-        readonly securityContext?: RosContainerGroup.SecurityContextProperty | ros.IResolvable;
+        readonly securityContext?: RosContainerGroup.InitContainerSecurityContextProperty | ros.IResolvable;
         /**
          * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
          */
@@ -1127,7 +1127,7 @@ export namespace RosContainerGroup {
         /**
          * @Property volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
          */
-        readonly volumeMount?: Array<RosContainerGroup.VolumeMountProperty | ros.IResolvable> | ros.IResolvable;
+        readonly volumeMount?: Array<RosContainerGroup.InitContainerVolumeMountProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property image: The container image.
          */
@@ -1135,7 +1135,7 @@ export namespace RosContainerGroup {
         /**
          * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
          */
-        readonly environmentVar?: Array<RosContainerGroup.EnvironmentVarProperty | ros.IResolvable> | ros.IResolvable;
+        readonly environmentVar?: Array<RosContainerGroup.InitContainerEnvironmentVarProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property name: The name of the container.
          */
@@ -1178,8 +1178,8 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
             max: 100,
           }));
     }
-    errors.collect(ros.propertyValidator('port', ros.listValidator(RosContainerGroup_PortPropertyValidator))(properties.port));
-    errors.collect(ros.propertyValidator('securityContext', RosContainerGroup_SecurityContextPropertyValidator)(properties.securityContext));
+    errors.collect(ros.propertyValidator('port', ros.listValidator(RosContainerGroup_InitContainerPortPropertyValidator))(properties.port));
+    errors.collect(ros.propertyValidator('securityContext', RosContainerGroup_InitContainerSecurityContextPropertyValidator)(properties.securityContext));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     if(properties.volumeMount && (Array.isArray(properties.volumeMount) || (typeof properties.volumeMount) === 'string')) {
         errors.collect(ros.propertyValidator('volumeMount', ros.validateLength)({
@@ -1188,7 +1188,7 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
             max: 16,
           }));
     }
-    errors.collect(ros.propertyValidator('volumeMount', ros.listValidator(RosContainerGroup_VolumeMountPropertyValidator))(properties.volumeMount));
+    errors.collect(ros.propertyValidator('volumeMount', ros.listValidator(RosContainerGroup_InitContainerVolumeMountPropertyValidator))(properties.volumeMount));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     if(properties.environmentVar && (Array.isArray(properties.environmentVar) || (typeof properties.environmentVar) === 'string')) {
         errors.collect(ros.propertyValidator('environmentVar', ros.validateLength)({
@@ -1197,7 +1197,7 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
             max: 100,
           }));
     }
-    errors.collect(ros.propertyValidator('environmentVar', ros.listValidator(RosContainerGroup_EnvironmentVarPropertyValidator))(properties.environmentVar));
+    errors.collect(ros.propertyValidator('environmentVar', ros.listValidator(RosContainerGroup_InitContainerEnvironmentVarPropertyValidator))(properties.environmentVar));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "InitContainerProperty"');
 }
@@ -1219,13 +1219,264 @@ function rosContainerGroupInitContainerPropertyToRosTemplate(properties: any): a
       Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
       Memory: ros.numberToRosTemplate(properties.memory),
       Arg: ros.listMapper(ros.stringToRosTemplate)(properties.arg),
-      Port: ros.listMapper(rosContainerGroupPortPropertyToRosTemplate)(properties.port),
-      SecurityContext: rosContainerGroupSecurityContextPropertyToRosTemplate(properties.securityContext),
+      Port: ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
+      SecurityContext: rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties.securityContext),
       Cpu: ros.numberToRosTemplate(properties.cpu),
-      VolumeMount: ros.listMapper(rosContainerGroupVolumeMountPropertyToRosTemplate)(properties.volumeMount),
+      VolumeMount: ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
       Image: ros.stringToRosTemplate(properties.image),
-      EnvironmentVar: ros.listMapper(rosContainerGroupEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
+      EnvironmentVar: ros.listMapper(rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
       Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosContainerGroup {
+    /**
+     * @stability external
+     */
+    export interface InitContainerEnvironmentVarProperty {
+        /**
+         * @Property value: The value of the variable. The value must be [0,256] characters in length.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The name of the variable. The name must be [1,128] characters in length and can contain [, 0-9a-zA-Z, ], and underscores (_). It cannot start with a digit.
+         */
+        readonly key?: string | ros.IResolvable;
+        /**
+         * @Property fieldRefFieldPath: A reference to another variable. Currently, only status.podIP is supported.
+         */
+        readonly fieldRefFieldPath?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerEnvironmentVarProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerEnvironmentVarProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosContainerGroup_InitContainerEnvironmentVarPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.value && (Array.isArray(properties.value) || (typeof properties.value) === 'string')) {
+        errors.collect(ros.propertyValidator('value', ros.validateLength)({
+            data: properties.value.length,
+            min: 0,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.key && (Array.isArray(properties.key) || (typeof properties.key) === 'string')) {
+        errors.collect(ros.propertyValidator('key', ros.validateLength)({
+            data: properties.key.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    if(properties.fieldRefFieldPath && (typeof properties.fieldRefFieldPath) !== 'object') {
+        errors.collect(ros.propertyValidator('fieldRefFieldPath', ros.validateAllowedValues)({
+          data: properties.fieldRefFieldPath,
+          allowedValues: ["status.podIP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fieldRefFieldPath', ros.validateString)(properties.fieldRefFieldPath));
+    return errors.wrap('supplied properties not correct for "InitContainerEnvironmentVarProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerEnvironmentVar` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerEnvironmentVarProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerEnvironmentVar` resource.
+ */
+// @ts-ignore TS6133
+function rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosContainerGroup_InitContainerEnvironmentVarPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+      FieldRefFieldPath: ros.stringToRosTemplate(properties.fieldRefFieldPath),
+    };
+}
+
+export namespace RosContainerGroup {
+    /**
+     * @stability external
+     */
+    export interface InitContainerPortProperty {
+        /**
+         * @Property port: The port number. Valid values: 1-65535.
+         */
+        readonly port?: number | ros.IResolvable;
+        /**
+         * @Property protocol: The protocol that the port uses. Valid values: TCP and UDP
+         */
+        readonly protocol?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerPortProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerPortProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosContainerGroup_InitContainerPortPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["TCP","UDP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    return errors.wrap('supplied properties not correct for "InitContainerPortProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerPort` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerPortProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerPort` resource.
+ */
+// @ts-ignore TS6133
+function rosContainerGroupInitContainerPortPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosContainerGroup_InitContainerPortPropertyValidator(properties).assertSuccess();
+    return {
+      Port: ros.numberToRosTemplate(properties.port),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+    };
+}
+
+export namespace RosContainerGroup {
+    /**
+     * @stability external
+     */
+    export interface InitContainerSecurityContextProperty {
+        /**
+         * @Property runAsUser: Valid value: 1337.
+         */
+        readonly runAsUser?: number | ros.IResolvable;
+        /**
+         * @Property readOnlyRootFilesystem: Valid value: True.
+         */
+        readonly readOnlyRootFilesystem?: boolean | ros.IResolvable;
+        /**
+         * @Property capabilityAdd: undefined
+         */
+        readonly capabilityAdd?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerSecurityContextProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerSecurityContextProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosContainerGroup_InitContainerSecurityContextPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.runAsUser && (typeof properties.runAsUser) !== 'object') {
+        errors.collect(ros.propertyValidator('runAsUser', ros.validateAllowedValues)({
+          data: properties.runAsUser,
+          allowedValues: [1337],
+        }));
+    }
+    errors.collect(ros.propertyValidator('runAsUser', ros.validateNumber)(properties.runAsUser));
+    if(properties.readOnlyRootFilesystem && (typeof properties.readOnlyRootFilesystem) !== 'object') {
+        errors.collect(ros.propertyValidator('readOnlyRootFilesystem', ros.validateAllowedValues)({
+          data: properties.readOnlyRootFilesystem,
+          allowedValues: [true],
+        }));
+    }
+    errors.collect(ros.propertyValidator('readOnlyRootFilesystem', ros.validateBoolean)(properties.readOnlyRootFilesystem));
+    errors.collect(ros.propertyValidator('capabilityAdd', ros.listValidator(ros.validateString))(properties.capabilityAdd));
+    return errors.wrap('supplied properties not correct for "InitContainerSecurityContextProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerSecurityContext` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerSecurityContextProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerSecurityContext` resource.
+ */
+// @ts-ignore TS6133
+function rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosContainerGroup_InitContainerSecurityContextPropertyValidator(properties).assertSuccess();
+    return {
+      RunAsUser: ros.numberToRosTemplate(properties.runAsUser),
+      ReadOnlyRootFilesystem: ros.booleanToRosTemplate(properties.readOnlyRootFilesystem),
+      CapabilityAdd: ros.listMapper(ros.stringToRosTemplate)(properties.capabilityAdd),
+    };
+}
+
+export namespace RosContainerGroup {
+    /**
+     * @stability external
+     */
+    export interface InitContainerVolumeMountProperty {
+        /**
+         * @Property readOnly: Default value: False.
+         */
+        readonly readOnly?: boolean | ros.IResolvable;
+        /**
+         * @Property mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
+         */
+        readonly mountPath?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
+         */
+        readonly name?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InitContainerVolumeMountProperty`
+ *
+ * @param properties - the TypeScript properties of a `InitContainerVolumeMountProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosContainerGroup_InitContainerVolumeMountPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
+    errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('name', ros.validateNumber)(properties.name));
+    return errors.wrap('supplied properties not correct for "InitContainerVolumeMountProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerVolumeMount` resource
+ *
+ * @param properties - the TypeScript properties of a `InitContainerVolumeMountProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.InitContainerVolumeMount` resource.
+ */
+// @ts-ignore TS6133
+function rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosContainerGroup_InitContainerVolumeMountPropertyValidator(properties).assertSuccess();
+    return {
+      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
+      MountPath: ros.stringToRosTemplate(properties.mountPath),
+      Name: ros.numberToRosTemplate(properties.name),
     };
 }
 
@@ -1259,21 +1510,21 @@ export namespace RosContainerGroup {
          */
         readonly execCommand?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
+         */
+        readonly httpGetPath?: string | ros.IResolvable;
+        /**
          * @Property httpGetPort: The port to which the system sends an HTTP GET request to perform the check.
          */
         readonly httpGetPort?: number | ros.IResolvable;
-        /**
-         * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
-         */
-        readonly tcpSocketPort?: number | ros.IResolvable;
         /**
          * @Property httpGetScheme: The protocol that is used to connect the host. Valid values: HTTP and HTTPS.
          */
         readonly httpGetScheme?: string | ros.IResolvable;
         /**
-         * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
+         * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
          */
-        readonly httpGetPath?: string | ros.IResolvable;
+        readonly tcpSocketPort?: number | ros.IResolvable;
     }
 }
 /**
@@ -1306,8 +1557,8 @@ function RosContainerGroup_LivenessProbePropertyValidator(properties: any): ros.
     errors.collect(ros.propertyValidator('failureThreshold', ros.validateNumber)(properties.failureThreshold));
     errors.collect(ros.propertyValidator('successThreshold', ros.validateNumber)(properties.successThreshold));
     errors.collect(ros.propertyValidator('execCommand', ros.listValidator(ros.validateString))(properties.execCommand));
+    errors.collect(ros.propertyValidator('httpGetPath', ros.validateString)(properties.httpGetPath));
     errors.collect(ros.propertyValidator('httpGetPort', ros.validateNumber)(properties.httpGetPort));
-    errors.collect(ros.propertyValidator('tcpSocketPort', ros.validateNumber)(properties.tcpSocketPort));
     if(properties.httpGetScheme && (typeof properties.httpGetScheme) !== 'object') {
         errors.collect(ros.propertyValidator('httpGetScheme', ros.validateAllowedValues)({
           data: properties.httpGetScheme,
@@ -1315,7 +1566,7 @@ function RosContainerGroup_LivenessProbePropertyValidator(properties: any): ros.
         }));
     }
     errors.collect(ros.propertyValidator('httpGetScheme', ros.validateString)(properties.httpGetScheme));
-    errors.collect(ros.propertyValidator('httpGetPath', ros.validateString)(properties.httpGetPath));
+    errors.collect(ros.propertyValidator('tcpSocketPort', ros.validateNumber)(properties.tcpSocketPort));
     return errors.wrap('supplied properties not correct for "LivenessProbeProperty"');
 }
 
@@ -1337,10 +1588,10 @@ function rosContainerGroupLivenessProbePropertyToRosTemplate(properties: any): a
       FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
       SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
       ExecCommand: ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
-      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
-      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
-      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
       HttpGetPath: ros.stringToRosTemplate(properties.httpGetPath),
+      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
+      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
+      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
     };
 }
 
@@ -1481,21 +1732,21 @@ export namespace RosContainerGroup {
          */
         readonly execCommand?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
+         */
+        readonly httpGetPath?: string | ros.IResolvable;
+        /**
          * @Property httpGetPort: The port to which the system sends an HTTP GET request to perform the check.
          */
         readonly httpGetPort?: number | ros.IResolvable;
-        /**
-         * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
-         */
-        readonly tcpSocketPort?: number | ros.IResolvable;
         /**
          * @Property httpGetScheme: The protocol that is used to connect the host. Valid values: HTTP and HTTPS.
          */
         readonly httpGetScheme?: string | ros.IResolvable;
         /**
-         * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
+         * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
          */
-        readonly httpGetPath?: string | ros.IResolvable;
+        readonly tcpSocketPort?: number | ros.IResolvable;
     }
 }
 /**
@@ -1528,8 +1779,8 @@ function RosContainerGroup_ReadinessProbePropertyValidator(properties: any): ros
     errors.collect(ros.propertyValidator('failureThreshold', ros.validateNumber)(properties.failureThreshold));
     errors.collect(ros.propertyValidator('successThreshold', ros.validateNumber)(properties.successThreshold));
     errors.collect(ros.propertyValidator('execCommand', ros.listValidator(ros.validateString))(properties.execCommand));
+    errors.collect(ros.propertyValidator('httpGetPath', ros.validateString)(properties.httpGetPath));
     errors.collect(ros.propertyValidator('httpGetPort', ros.validateNumber)(properties.httpGetPort));
-    errors.collect(ros.propertyValidator('tcpSocketPort', ros.validateNumber)(properties.tcpSocketPort));
     if(properties.httpGetScheme && (typeof properties.httpGetScheme) !== 'object') {
         errors.collect(ros.propertyValidator('httpGetScheme', ros.validateAllowedValues)({
           data: properties.httpGetScheme,
@@ -1537,7 +1788,7 @@ function RosContainerGroup_ReadinessProbePropertyValidator(properties: any): ros
         }));
     }
     errors.collect(ros.propertyValidator('httpGetScheme', ros.validateString)(properties.httpGetScheme));
-    errors.collect(ros.propertyValidator('httpGetPath', ros.validateString)(properties.httpGetPath));
+    errors.collect(ros.propertyValidator('tcpSocketPort', ros.validateNumber)(properties.tcpSocketPort));
     return errors.wrap('supplied properties not correct for "ReadinessProbeProperty"');
 }
 
@@ -1559,10 +1810,10 @@ function rosContainerGroupReadinessProbePropertyToRosTemplate(properties: any): 
       FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
       SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
       ExecCommand: ros.listMapper(ros.stringToRosTemplate)(properties.execCommand),
-      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
-      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
-      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
       HttpGetPath: ros.stringToRosTemplate(properties.httpGetPath),
+      HttpGetPort: ros.numberToRosTemplate(properties.httpGetPort),
+      HttpGetScheme: ros.stringToRosTemplate(properties.httpGetScheme),
+      TcpSocketPort: ros.numberToRosTemplate(properties.tcpSocketPort),
     };
 }
 
@@ -1740,25 +1991,25 @@ export namespace RosContainerGroup {
          */
         readonly name: string | ros.IResolvable;
         /**
-         * @Property nfsVolumeServer: The IP address of the NFS server.
-         */
-        readonly nfsVolumeServer?: string | ros.IResolvable;
-        /**
-         * @Property nfsVolumeReadOnly: Default value: False.
-         */
-        readonly nfsVolumeReadOnly?: boolean | ros.IResolvable;
-        /**
          * @Property configFileVolumeConfigFileToPath: The path to the configuration file.
          */
         readonly configFileVolumeConfigFileToPath?: Array<RosContainerGroup.ConfigFileVolumeConfigFileToPathProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property emptyDirVolumeMedium: The storage medium for EmptyDirVolume. By default, the file system on the node is used. Default value: not specified. Valid value: Memory. If this parameter is set to Memory, the EmptyDirVolume volume is stored in memory.
+         */
+        readonly emptyDirVolumeMedium?: string | ros.IResolvable;
         /**
          * @Property nfsVolumePath: The path to the NFS volume.
          */
         readonly nfsVolumePath?: string | ros.IResolvable;
         /**
-         * @Property emptyDirVolumeMedium: The storage medium for EmptyDirVolume. By default, the file system on the node is used. Default value: not specified. Valid value: Memory. If this parameter is set to Memory, the EmptyDirVolume volume is stored in memory.
+         * @Property nfsVolumeReadOnly: Default value: False.
          */
-        readonly emptyDirVolumeMedium?: string | ros.IResolvable;
+        readonly nfsVolumeReadOnly?: boolean | ros.IResolvable;
+        /**
+         * @Property nfsVolumeServer: The IP address of the NFS server.
+         */
+        readonly nfsVolumeServer?: string | ros.IResolvable;
     }
 }
 /**
@@ -1781,10 +2032,7 @@ function RosContainerGroup_VolumePropertyValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('nfsVolumeServer', ros.validateString)(properties.nfsVolumeServer));
-    errors.collect(ros.propertyValidator('nfsVolumeReadOnly', ros.validateBoolean)(properties.nfsVolumeReadOnly));
     errors.collect(ros.propertyValidator('configFileVolumeConfigFileToPath', ros.listValidator(RosContainerGroup_ConfigFileVolumeConfigFileToPathPropertyValidator))(properties.configFileVolumeConfigFileToPath));
-    errors.collect(ros.propertyValidator('nfsVolumePath', ros.validateString)(properties.nfsVolumePath));
     if(properties.emptyDirVolumeMedium && (typeof properties.emptyDirVolumeMedium) !== 'object') {
         errors.collect(ros.propertyValidator('emptyDirVolumeMedium', ros.validateAllowedValues)({
           data: properties.emptyDirVolumeMedium,
@@ -1792,6 +2040,9 @@ function RosContainerGroup_VolumePropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('emptyDirVolumeMedium', ros.validateString)(properties.emptyDirVolumeMedium));
+    errors.collect(ros.propertyValidator('nfsVolumePath', ros.validateString)(properties.nfsVolumePath));
+    errors.collect(ros.propertyValidator('nfsVolumeReadOnly', ros.validateBoolean)(properties.nfsVolumeReadOnly));
+    errors.collect(ros.propertyValidator('nfsVolumeServer', ros.validateString)(properties.nfsVolumeServer));
     return errors.wrap('supplied properties not correct for "VolumeProperty"');
 }
 
@@ -1809,11 +2060,11 @@ function rosContainerGroupVolumePropertyToRosTemplate(properties: any): any {
     return {
       Type: ros.stringToRosTemplate(properties.type),
       Name: ros.stringToRosTemplate(properties.name),
-      NFSVolumeServer: ros.stringToRosTemplate(properties.nfsVolumeServer),
-      NFSVolumeReadOnly: ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
       ConfigFileVolumeConfigFileToPath: ros.listMapper(rosContainerGroupConfigFileVolumeConfigFileToPathPropertyToRosTemplate)(properties.configFileVolumeConfigFileToPath),
-      NFSVolumePath: ros.stringToRosTemplate(properties.nfsVolumePath),
       EmptyDirVolumeMedium: ros.stringToRosTemplate(properties.emptyDirVolumeMedium),
+      NFSVolumePath: ros.stringToRosTemplate(properties.nfsVolumePath),
+      NFSVolumeReadOnly: ros.booleanToRosTemplate(properties.nfsVolumeReadOnly),
+      NFSVolumeServer: ros.stringToRosTemplate(properties.nfsVolumeServer),
     };
 }
 

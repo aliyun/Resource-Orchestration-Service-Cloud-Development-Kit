@@ -71,7 +71,7 @@ export class DBInstance extends ros.Resource {
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             characterSetName: props.characterSetName,
-            accountPrivilege: props.accountPrivilege ? props.accountPrivilege : 'ReadWrite',
+            accountPrivilege: props.accountPrivilege === undefined || props.accountPrivilege === null ? 'ReadWrite' : props.accountPrivilege,
             dbDescription: props.dbDescription,
             dbClusterId: props.dbClusterId,
             dbName: props.dbName,

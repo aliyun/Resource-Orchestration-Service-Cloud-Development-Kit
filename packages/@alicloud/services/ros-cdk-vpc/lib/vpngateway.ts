@@ -126,16 +126,16 @@ export class VpnGateway extends ros.Resource {
         super(scope, id);
 
         const rosVpnGateway = new RosVpnGateway(this, id,  {
-            enableIpsec: props.enableIpsec ? props.enableIpsec : true,
-            enableSsl: props.enableSsl ? props.enableSsl : false,
+            enableIpsec: props.enableIpsec === undefined || props.enableIpsec === null ? true : props.enableIpsec,
+            enableSsl: props.enableSsl === undefined || props.enableSsl === null ? false : props.enableSsl,
             sslConnections: props.sslConnections,
             description: props.description,
             vpcId: props.vpcId,
-            instanceChargeType: props.instanceChargeType ? props.instanceChargeType : 'PREPAY',
+            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PREPAY' : props.instanceChargeType,
             bandwidth: props.bandwidth,
             vSwitchId: props.vSwitchId,
             period: props.period,
-            autoPay: props.autoPay ? props.autoPay : false,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
             tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

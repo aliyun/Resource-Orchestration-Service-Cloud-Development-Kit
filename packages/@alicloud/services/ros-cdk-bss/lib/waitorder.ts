@@ -46,9 +46,9 @@ export class WaitOrder extends ros.Resource {
         super(scope, id);
 
         const rosWaitOrder = new RosWaitOrder(this, id,  {
-            cancelOnDelete: props.cancelOnDelete ? props.cancelOnDelete : true,
+            cancelOnDelete: props.cancelOnDelete === undefined || props.cancelOnDelete === null ? true : props.cancelOnDelete,
             orderIds: props.orderIds,
-            waitForOrderProduced: props.waitForOrderProduced ? props.waitForOrderProduced : false,
+            waitForOrderProduced: props.waitForOrderProduced === undefined || props.waitForOrderProduced === null ? false : props.waitForOrderProduced,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosWaitOrder;
     }

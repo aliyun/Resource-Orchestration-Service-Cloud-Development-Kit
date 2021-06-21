@@ -76,7 +76,7 @@ export class CustomResource extends ros.Resource {
         const rosCustomResource = new RosCustomResource(this, id,  {
             serviceToken: props.serviceToken,
             parameters: props.parameters,
-            timeout: props.timeout ? props.timeout : 60,
+            timeout: props.timeout === undefined || props.timeout === null ? 60 : props.timeout,
             httpConfig: props.httpConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomResource;

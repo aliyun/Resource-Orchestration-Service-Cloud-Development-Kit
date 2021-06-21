@@ -720,7 +720,7 @@ function RosBucket_ServerSideEncryptionConfigurationPropertyValidator(properties
     if(properties.sseAlgorithm && (typeof properties.sseAlgorithm) !== 'object') {
         errors.collect(ros.propertyValidator('sseAlgorithm', ros.validateAllowedValues)({
           data: properties.sseAlgorithm,
-          allowedValues: ["KMS","AES256"],
+          allowedValues: ["KMS","AES256","SM4"],
         }));
     }
     errors.collect(ros.propertyValidator('sseAlgorithm', ros.validateString)(properties.sseAlgorithm));

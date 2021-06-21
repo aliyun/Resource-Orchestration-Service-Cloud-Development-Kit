@@ -125,22 +125,22 @@ export class DedicatedHost extends ros.Resource {
         super(scope, id);
 
         const rosDedicatedHost = new RosDedicatedHost(this, id,  {
-            autoRenewPeriod: props.autoRenewPeriod ? props.autoRenewPeriod : 1,
+            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             description: props.description,
             networkAttributesSlbUdpTimeout: props.networkAttributesSlbUdpTimeout,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
             networkAttributesUdpTimeout: props.networkAttributesUdpTimeout,
-            autoRenew: props.autoRenew ? props.autoRenew : 'False',
+            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             autoPlacement: props.autoPlacement,
-            quantity: props.quantity ? props.quantity : 1,
-            period: props.period ? props.period : 1,
+            quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             dedicatedHostType: props.dedicatedHostType,
             dedicatedHostName: props.dedicatedHostName,
-            chargeType: props.chargeType ? props.chargeType : 'PostPaid',
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             actionOnMaintenance: props.actionOnMaintenance,
             tags: props.tags,
-            periodUnit: props.periodUnit ? props.periodUnit : 'Month',
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             autoReleaseTime: props.autoReleaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDedicatedHost;

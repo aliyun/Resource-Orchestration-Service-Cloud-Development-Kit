@@ -148,7 +148,9 @@ export interface DBInstanceProps {
      * Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -454,7 +456,7 @@ export class DBInstance extends ros.Resource {
         super(scope, id);
 
         const rosDBInstance = new RosDBInstance(this, id,  {
-            periodType: props.periodType ? props.periodType : 'Month',
+            periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
             resourceGroupId: props.resourceGroupId,
             archiveBackupRetentionPeriod: props.archiveBackupRetentionPeriod,
             dbTimeZone: props.dbTimeZone,
@@ -464,7 +466,7 @@ export class DBInstance extends ros.Resource {
             dbInstanceStorage: props.dbInstanceStorage,
             dbMappings: props.dbMappings,
             connectionStringPrefix: props.connectionStringPrefix,
-            multiAz: props.multiAz ? props.multiAz : false,
+            multiAz: props.multiAz === undefined || props.multiAz === null ? false : props.multiAz,
             engine: props.engine,
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
@@ -474,21 +476,21 @@ export class DBInstance extends ros.Resource {
             archiveBackupKeepPolicy: props.archiveBackupKeepPolicy,
             vSwitchId: props.vSwitchId,
             backupPolicyMode: props.backupPolicyMode,
-            period: props.period ? props.period : 1,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             localLogRetentionHours: props.localLogRetentionHours,
-            payType: props.payType ? props.payType : 'Postpaid',
+            payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             highSpaceUsageProtection: props.highSpaceUsageProtection,
             roleArn: props.roleArn,
             masterUserPassword: props.masterUserPassword,
             vpcId: props.vpcId,
-            sslSetting: props.sslSetting ? props.sslSetting : 'Disabled',
+            sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,
             masterUsername: props.masterUsername,
             connectionMode: props.connectionMode,
             localLogRetentionSpace: props.localLogRetentionSpace,
             category: props.category,
             privateIpAddress: props.privateIpAddress,
             targetDedicatedHostIdForSlave: props.targetDedicatedHostIdForSlave,
-            dbInstanceNetType: props.dbInstanceNetType ? props.dbInstanceNetType : 'Intranet',
+            dbInstanceNetType: props.dbInstanceNetType === undefined || props.dbInstanceNetType === null ? 'Intranet' : props.dbInstanceNetType,
             releasedKeepPolicy: props.releasedKeepPolicy,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
             autoRenew: props.autoRenew,
@@ -508,12 +510,12 @@ export class DBInstance extends ros.Resource {
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
-            connectionStringType: props.connectionStringType ? props.connectionStringType : 'Inner',
+            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             logBackupFrequency: props.logBackupFrequency,
-            masterUserType: props.masterUserType ? props.masterUserType : 'Normal',
+            masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             enableBackupLog: props.enableBackupLog,
             sqlCollectorStatus: props.sqlCollectorStatus,
-            backupRetentionPeriod: props.backupRetentionPeriod ? props.backupRetentionPeriod : 7,
+            backupRetentionPeriod: props.backupRetentionPeriod === undefined || props.backupRetentionPeriod === null ? 7 : props.backupRetentionPeriod,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;
         this.attrDbInstanceId = rosDBInstance.attrDbInstanceId;

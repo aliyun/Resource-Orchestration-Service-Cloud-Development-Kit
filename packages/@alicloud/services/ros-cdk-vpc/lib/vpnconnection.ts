@@ -96,7 +96,7 @@ export class VpnConnection extends ros.Resource {
 
         const rosVpnConnection = new RosVpnConnection(this, id,  {
             localSubnet: props.localSubnet,
-            effectImmediately: props.effectImmediately ? props.effectImmediately : false,
+            effectImmediately: props.effectImmediately === undefined || props.effectImmediately === null ? false : props.effectImmediately,
             remoteSubnet: props.remoteSubnet,
             customerGatewayId: props.customerGatewayId,
             vpnGatewayId: props.vpnGatewayId,

@@ -58,7 +58,7 @@ export class Zone extends ros.Resource {
 
         const rosZone = new RosZone(this, id,  {
             zoneName: props.zoneName,
-            proxyPattern: props.proxyPattern ? props.proxyPattern : 'ZONE',
+            proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;

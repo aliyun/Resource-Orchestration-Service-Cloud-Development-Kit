@@ -92,7 +92,7 @@ export class ACLRule extends ros.Resource {
             destCidr: props.destCidr,
             sourcePortRange: props.sourcePortRange,
             sourceCidr: props.sourceCidr,
-            priority: props.priority ? props.priority : 1,
+            priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             aclId: props.aclId,
             ipProtocol: props.ipProtocol,
             destPortRange: props.destPortRange,

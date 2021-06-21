@@ -81,10 +81,10 @@ export class Key extends ros.Resource {
             description: props.description,
             rotationInterval: props.rotationInterval,
             enableAutomaticRotation: props.enableAutomaticRotation,
-            pendingWindowInDays: props.pendingWindowInDays ? props.pendingWindowInDays : 30,
+            pendingWindowInDays: props.pendingWindowInDays === undefined || props.pendingWindowInDays === null ? 30 : props.pendingWindowInDays,
             keySpec: props.keySpec,
-            enable: props.enable ? props.enable : true,
-            keyUsage: props.keyUsage ? props.keyUsage : 'ENCRYPT/DECRYPT',
+            enable: props.enable === undefined || props.enable === null ? true : props.enable,
+            keyUsage: props.keyUsage === undefined || props.keyUsage === null ? 'ENCRYPT/DECRYPT' : props.keyUsage,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKey;
         this.attrKeyId = rosKey.attrKeyId;

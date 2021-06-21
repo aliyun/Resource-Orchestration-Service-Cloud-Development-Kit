@@ -110,9 +110,44 @@ export class PrepayInstance extends ros.Resource {
      */
 
     /**
+     * Attribute ArchitectureType: The architecture.
+     */
+    public readonly attrArchitectureType: ros.IResolvable;
+
+    /**
+     * Attribute Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * Attribute Capacity: The storage capacity of the instance. Unit: MB.
+     */
+    public readonly attrCapacity: ros.IResolvable;
+
+    /**
+     * Attribute ChargeType: The billing method of the instance.
+     */
+    public readonly attrChargeType: ros.IResolvable;
+
+    /**
      * Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
+
+    /**
+     * Attribute Connections: The maximum number of connections supported by the instance.
+     */
+    public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * Attribute EngineVersion: The engine version of the instance.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
+     */
+    public readonly attrHasRenewChangeOrder: ros.IResolvable;
 
     /**
      * Attribute InstanceClass: Redis instance type.
@@ -130,14 +165,64 @@ export class PrepayInstance extends ros.Resource {
     public readonly attrInstanceName: ros.IResolvable;
 
     /**
+     * Attribute InstanceType: The engine type of the instance.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * Attribute NetworkType: The network type.
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * Attribute NodeType: The type of node.
+     */
+    public readonly attrNodeType: ros.IResolvable;
+
+    /**
      * Attribute OrderId: Order Id of created instance.
      */
     public readonly attrOrderId: ros.IResolvable;
 
     /**
+     * Attribute PackageType: The plan type.
+     */
+    public readonly attrPackageType: ros.IResolvable;
+
+    /**
      * Attribute Port: Port of created instance.
      */
     public readonly attrPort: ros.IResolvable;
+
+    /**
+     * Attribute PrivateIp: The internal IP address of the instance.
+     */
+    public readonly attrPrivateIp: ros.IResolvable;
+
+    /**
+     * Attribute QPS: The queries per second (QPS) supported by the instance.
+     */
+    public readonly attrQps: ros.IResolvable;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * Attribute VpcId: The ID of the VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * Attribute ZoneId: The ID of the zone.
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::REDIS::PrepayInstance`.
@@ -156,7 +241,7 @@ export class PrepayInstance extends ros.Resource {
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             instanceMaintainTime: props.instanceMaintainTime,
-            period: props.period ? props.period : 1,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
             instanceConnection: props.instanceConnection,
@@ -169,11 +254,28 @@ export class PrepayInstance extends ros.Resource {
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPrepayInstance;
+        this.attrArchitectureType = rosPrepayInstance.attrArchitectureType;
+        this.attrBandwidth = rosPrepayInstance.attrBandwidth;
+        this.attrCapacity = rosPrepayInstance.attrCapacity;
+        this.attrChargeType = rosPrepayInstance.attrChargeType;
         this.attrConnectionDomain = rosPrepayInstance.attrConnectionDomain;
+        this.attrConnections = rosPrepayInstance.attrConnections;
+        this.attrEngineVersion = rosPrepayInstance.attrEngineVersion;
+        this.attrHasRenewChangeOrder = rosPrepayInstance.attrHasRenewChangeOrder;
         this.attrInstanceClass = rosPrepayInstance.attrInstanceClass;
         this.attrInstanceId = rosPrepayInstance.attrInstanceId;
         this.attrInstanceName = rosPrepayInstance.attrInstanceName;
+        this.attrInstanceType = rosPrepayInstance.attrInstanceType;
+        this.attrNetworkType = rosPrepayInstance.attrNetworkType;
+        this.attrNodeType = rosPrepayInstance.attrNodeType;
         this.attrOrderId = rosPrepayInstance.attrOrderId;
+        this.attrPackageType = rosPrepayInstance.attrPackageType;
         this.attrPort = rosPrepayInstance.attrPort;
+        this.attrPrivateIp = rosPrepayInstance.attrPrivateIp;
+        this.attrQps = rosPrepayInstance.attrQps;
+        this.attrResourceGroupId = rosPrepayInstance.attrResourceGroupId;
+        this.attrVSwitchId = rosPrepayInstance.attrVSwitchId;
+        this.attrVpcId = rosPrepayInstance.attrVpcId;
+        this.attrZoneId = rosPrepayInstance.attrZoneId;
     }
 }

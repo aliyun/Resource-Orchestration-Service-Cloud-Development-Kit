@@ -62,8 +62,8 @@ export class Topic extends ros.Resource {
         super(scope, id);
 
         const rosTopic = new RosTopic(this, id,  {
-            maximumMessageSize: props.maximumMessageSize ? props.maximumMessageSize : 65536,
-            loggingEnabled: props.loggingEnabled ? props.loggingEnabled : false,
+            maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
+            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;

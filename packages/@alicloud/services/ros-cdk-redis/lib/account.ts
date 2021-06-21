@@ -89,7 +89,7 @@ export class Account extends ros.Resource {
             accountDescription: props.accountDescription,
             instanceId: props.instanceId,
             accountPrivilege: props.accountPrivilege,
-            accountType: props.accountType ? props.accountType : 'Normal',
+            accountType: props.accountType === undefined || props.accountType === null ? 'Normal' : props.accountType,
             accountName: props.accountName,
             accountPassword: props.accountPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

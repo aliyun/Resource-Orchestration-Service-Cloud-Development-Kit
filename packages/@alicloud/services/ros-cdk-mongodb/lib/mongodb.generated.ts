@@ -120,6 +120,14 @@ export interface RosInstanceProps {
     readonly tags?: RosInstance.TagsProperty[];
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -184,6 +192,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
+    errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     if(properties.readonlyReplicas && (typeof properties.readonlyReplicas) !== 'object') {
         errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateAllowedValues)({
@@ -262,6 +271,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -424,6 +434,14 @@ export class RosInstance extends ros.RosResource {
     public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    public tdeStatus: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -483,6 +501,7 @@ export class RosInstance extends ros.RosResource {
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
         this.tags = props.tags;
+        this.tdeStatus = props.tdeStatus;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -514,6 +533,7 @@ export class RosInstance extends ros.RosResource {
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
             tags: this.tags,
+            tdeStatus: this.tdeStatus,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -644,6 +664,14 @@ export interface RosServerlessInstanceProps {
     readonly tags?: RosServerlessInstance.TagsProperty[];
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -669,6 +697,7 @@ export interface RosServerlessInstanceProps {
 function RosServerlessInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
@@ -753,6 +782,7 @@ function rosServerlessInstancePropsToRosTemplate(properties: any, enableResource
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
       Tags: ros.listMapper(rosServerlessInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -862,6 +892,14 @@ export class RosServerlessInstance extends ros.RosResource {
     public tags: RosServerlessInstance.TagsProperty[] | undefined;
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    public tdeStatus: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -904,6 +942,7 @@ export class RosServerlessInstance extends ros.RosResource {
         this.securityIpArray = props.securityIpArray;
         this.storageEngine = props.storageEngine;
         this.tags = props.tags;
+        this.tdeStatus = props.tdeStatus;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -925,6 +964,7 @@ export class RosServerlessInstance extends ros.RosResource {
             securityIpArray: this.securityIpArray,
             storageEngine: this.storageEngine,
             tags: this.tags,
+            tdeStatus: this.tdeStatus,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
@@ -1069,6 +1109,14 @@ export interface RosShardingInstanceProps {
     readonly tags?: RosShardingInstance.TagsProperty[];
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -1094,6 +1142,7 @@ export interface RosShardingInstanceProps {
 function RosShardingInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
@@ -1207,6 +1256,7 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
       Tags: ros.listMapper(rosShardingInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -1326,6 +1376,14 @@ export class RosShardingInstance extends ros.RosResource {
     public tags: RosShardingInstance.TagsProperty[] | undefined;
 
     /**
+     * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    public tdeStatus: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -1370,6 +1428,7 @@ export class RosShardingInstance extends ros.RosResource {
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
         this.tags = props.tags;
+        this.tdeStatus = props.tdeStatus;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -1394,6 +1453,7 @@ export class RosShardingInstance extends ros.RosResource {
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
             tags: this.tags,
+            tdeStatus: this.tdeStatus,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,

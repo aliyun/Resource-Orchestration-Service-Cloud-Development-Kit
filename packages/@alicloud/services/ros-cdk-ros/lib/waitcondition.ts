@@ -61,7 +61,7 @@ export class WaitCondition extends ros.Resource {
 
         const rosWaitCondition = new RosWaitCondition(this, id,  {
             timeout: props.timeout,
-            count: props.count ? props.count : 1,
+            count: props.count === undefined || props.count === null ? 1 : props.count,
             handle: props.handle,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosWaitCondition;

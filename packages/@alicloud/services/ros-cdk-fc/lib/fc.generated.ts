@@ -898,6 +898,10 @@ export namespace RosFunction {
          */
         readonly maxAsyncEventAgeInSeconds?: number | ros.IResolvable;
         /**
+         * @Property statefulInvocation: Whether enable stateful invocation
+         */
+        readonly statefulInvocation?: boolean | ros.IResolvable;
+        /**
          * @Property maxAsyncRetryAttempts: Configure the number of retries
          */
         readonly maxAsyncRetryAttempts?: number | ros.IResolvable;
@@ -922,6 +926,7 @@ function RosFunction_AsyncConfigurationPropertyValidator(properties: any): ros.V
           }));
     }
     errors.collect(ros.propertyValidator('maxAsyncEventAgeInSeconds', ros.validateNumber)(properties.maxAsyncEventAgeInSeconds));
+    errors.collect(ros.propertyValidator('statefulInvocation', ros.validateBoolean)(properties.statefulInvocation));
     if(properties.maxAsyncRetryAttempts && (typeof properties.maxAsyncRetryAttempts) !== 'object') {
         errors.collect(ros.propertyValidator('maxAsyncRetryAttempts', ros.validateRange)({
             data: properties.maxAsyncRetryAttempts,
@@ -947,6 +952,7 @@ function rosFunctionAsyncConfigurationPropertyToRosTemplate(properties: any): an
     return {
       Destination: rosFunctionDestinationPropertyToRosTemplate(properties.destination),
       MaxAsyncEventAgeInSeconds: ros.numberToRosTemplate(properties.maxAsyncEventAgeInSeconds),
+      StatefulInvocation: ros.booleanToRosTemplate(properties.statefulInvocation),
       MaxAsyncRetryAttempts: ros.numberToRosTemplate(properties.maxAsyncRetryAttempts),
     };
 }

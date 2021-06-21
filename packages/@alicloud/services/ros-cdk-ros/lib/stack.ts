@@ -71,7 +71,7 @@ export class Stack extends ros.Resource {
             templateUrl: props.templateUrl,
             parameters: props.parameters,
             resourceGroupId: props.resourceGroupId,
-            timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             templateVersion: props.templateVersion,
             templateBody: props.templateBody,
             templateId: props.templateId,

@@ -154,6 +154,21 @@ export class RosVpcEndpoint extends ros.RosResource {
      */
     public readonly attrEndpointName: ros.IResolvable;
 
+    /**
+     * @Attribute ServiceId: The ID of endpoint service that is associated with the endpoint.
+     */
+    public readonly attrServiceId: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceName: The name of endpoint service that is associated with the endpoint.
+     */
+    public readonly attrServiceName: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The vpc ID of endpoint.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -208,6 +223,9 @@ export class RosVpcEndpoint extends ros.RosResource {
         this.attrEndpointDomain = this.getAtt('EndpointDomain');
         this.attrEndpointId = this.getAtt('EndpointId');
         this.attrEndpointName = this.getAtt('EndpointName');
+        this.attrServiceId = this.getAtt('ServiceId');
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.securityGroupId = props.securityGroupId;
@@ -401,6 +419,21 @@ export class RosVpcEndpointService extends ros.RosResource {
      */
 
     /**
+     * @Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
+     */
+    public readonly attrMaxBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
+     */
+    public readonly attrMinBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceDescription: The description of the endpoint service.
+     */
+    public readonly attrServiceDescription: ros.IResolvable;
+
+    /**
      * @Attribute ServiceDomain: The domain name of the endpoint service.
      */
     public readonly attrServiceDomain: ros.IResolvable;
@@ -454,6 +487,9 @@ export class RosVpcEndpointService extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpcEndpointServiceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpcEndpointService.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrMaxBandwidth = this.getAtt('MaxBandwidth');
+        this.attrMinBandwidth = this.getAtt('MinBandwidth');
+        this.attrServiceDescription = this.getAtt('ServiceDescription');
         this.attrServiceDomain = this.getAtt('ServiceDomain');
         this.attrServiceId = this.getAtt('ServiceId');
         this.attrServiceName = this.getAtt('ServiceName');
@@ -537,4 +573,143 @@ function rosVpcEndpointServiceResourcePropertyToRosTemplate(properties: any): an
       ResourceId: ros.stringToRosTemplate(properties.resourceId),
       ResourceType: ros.stringToRosTemplate(properties.resourceType),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ */
+export interface RosVpcEndpointServiceAttachmentProps {
+
+    /**
+     * @Property resourceId: The resource id.
+     */
+    readonly resourceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    readonly resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property serviceId: The endpoint service that is associated with the endpoint.
+     */
+    readonly serviceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcEndpointServiceAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcEndpointServiceAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcEndpointServiceAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
+    errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));
+    return errors.wrap('supplied properties not correct for "RosVpcEndpointServiceAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpointServiceAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcEndpointServiceAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpointServiceAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcEndpointServiceAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      ServiceId: ros.stringToRosTemplate(properties.serviceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`
+ */
+export class RosVpcEndpointServiceAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PrivateLink::VpcEndpointServiceAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ResourceId: The resource id.
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: The resource type.
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceId: The endpoint service that is associated with the endpoint.
+     */
+    public readonly attrServiceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property resourceId: The resource id.
+     */
+    public resourceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    public resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property serviceId: The endpoint service that is associated with the endpoint.
+     */
+    public serviceId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcEndpointServiceAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcEndpointServiceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrServiceId = this.getAtt('ServiceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.resourceId = props.resourceId;
+        this.resourceType = props.resourceType;
+        this.serviceId = props.serviceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            resourceId: this.resourceId,
+            resourceType: this.resourceType,
+            serviceId: this.serviceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcEndpointServiceAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

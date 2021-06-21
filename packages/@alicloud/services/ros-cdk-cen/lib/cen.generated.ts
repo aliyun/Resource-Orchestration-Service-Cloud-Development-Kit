@@ -557,6 +557,13 @@ export interface RosCenInstanceProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property protectionLevel: The level of CIDR block overlapping. 
+     * Set the value to REDUCED. REDUCED indicates that the 
+     * CIDR blocks can overlap with each other but must not be the same.
+     */
+    readonly protectionLevel?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosCenInstance.TagsProperty[];
@@ -572,6 +579,7 @@ export interface RosCenInstanceProps {
 function RosCenInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('protectionLevel', ros.validateString)(properties.protectionLevel));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -601,6 +609,7 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
     return {
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
+      ProtectionLevel: ros.stringToRosTemplate(properties.protectionLevel),
       Tags: ros.listMapper(rosCenInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -640,6 +649,13 @@ export class RosCenInstance extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property protectionLevel: The level of CIDR block overlapping. 
+     * Set the value to REDUCED. REDUCED indicates that the 
+     * CIDR blocks can overlap with each other but must not be the same.
+     */
+    public protectionLevel: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosCenInstance.TagsProperty[] | undefined;
@@ -658,6 +674,7 @@ export class RosCenInstance extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
         this.name = props.name;
+        this.protectionLevel = props.protectionLevel;
         this.tags = props.tags;
     }
 
@@ -666,6 +683,7 @@ export class RosCenInstance extends ros.RosResource {
         return {
             description: this.description,
             name: this.name,
+            protectionLevel: this.protectionLevel,
             tags: this.tags,
         };
     }
@@ -884,47 +902,64 @@ export class RosCenInstanceAttachment extends ros.RosResource {
 export interface RosCenRouteMapProps {
 
     /**
-     * @Property cenId: The ID of the CEN instance.
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     readonly cenId: string | ros.IResolvable;
 
     /**
-     * @Property cenRegionId: The ID of the region to which the CEN instance belongs.
+     * @Property cenRegionId: The region where the CEN instance is deployed. You can call the DescribeRegions operation to query region IDs.
      */
     readonly cenRegionId: string | ros.IResolvable;
 
     /**
-     * @Property mapResult: The action that is performed to a route if the route meets all the match conditions.  Permit: The route is permitted. Deny: The route is denied.
+     * @Property mapResult: The route map behavior after all conditions are matched. Valid values: 
+     *  Permit: allows the routes that are matched. 
+     *  Deny: rejects the routes that are matched.
      */
     readonly mapResult: string | ros.IResolvable;
 
     /**
-     * @Property priority: The priority of the route map.
+     * @Property priority: The priority of the route map. Valid values: 1 to 100 . A lower value indicates a higher priority. 
+     *  Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
      */
     readonly priority: number | ros.IResolvable;
 
     /**
-     * @Property transmitDirection: The direction in which the route map is applied. Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+     * @Property transmitDirection: The direction in which the route map is applied. Valid values: 
+     *  RegionIn: Routes are advertised to CEN gateways. 
+     *  For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region. 
+     *  RegionOut: Routes are advertised from CEN gateways. 
+     *  For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
      */
     readonly transmitDirection: string | ros.IResolvable;
 
     /**
-     * @Property asPathMatchMode: A match statement. It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+     * @Property asPathMatchMode: Match statements are used to match the AS paths. Valid values:
+     *  Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+     *  Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
      */
     readonly asPathMatchMode?: string | ros.IResolvable;
 
     /**
-     * @Property cidrMatchMode: A match statement. It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+     * @Property cidrMatchMode: Match statements are used to match the prefixes. Valid values: 
+     *  Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful. 
+     *  For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route. 
+     *  Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful. 
+     *  For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
      */
     readonly cidrMatchMode?: string | ros.IResolvable;
 
     /**
-     * @Property communityMatchMode: A match statement. It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+     * @Property communityMatchMode: Match statements are used to match the Communities. Valid values: 
+     *  Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful. 
+     *  Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
      */
     readonly communityMatchMode?: string | ros.IResolvable;
 
     /**
-     * @Property communityOperateMode: An action statement. It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+     * @Property communityOperateMode: Action statements are used to operate the Communities. Valid values: 
+     *  Additive: adds. 
+     *  Replace: replaces.
      */
     readonly communityOperateMode?: string | ros.IResolvable;
 
@@ -934,87 +969,116 @@ export interface RosCenRouteMapProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.  VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+     * @Property destinationChildInstanceTypes: Match statements are used to match the destination instance types. Valid values: 
+     *  VPC: VPCs. 
+     *  VBR: VBRs. 
+     *  CCN: CCN instances in mainland China. 
+     *  Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     readonly destinationChildInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property destinationCidrBlocks: A match statement that indicates the prefix list.
+     * @Property destinationCidrBlocks: Match statements are used to match the routing prefixes. The CIDR format is used. You can enter at most 32 CIDR blocks.
      */
     readonly destinationCidrBlocks?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+     * @Property destinationInstanceIds: Match statements are used to match the destination instance IDs. 
+     *  You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs. 
+     *  Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     readonly destinationInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition. Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+     * @Property destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements. Valid values: 
+     *  false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful. 
+     *  true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
      */
     readonly destinationInstanceIdsReverseMatch?: boolean | ros.IResolvable;
 
     /**
-     * @Property destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+     * @Property destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables. You can enter at most 32 route table IDs. 
+     *  Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
      */
     readonly destinationRouteTableIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property matchAsns: A match statement that indicates the As path list.
+     * @Property matchAsns: Match statements are used to match AS paths of the routes. An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised. 
+     *  Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
      */
     readonly matchAsns?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property matchCommunitySet: A match statement that indicates the community set.
+     * @Property matchCommunitySet: Match statements are used to match the Communities. Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported. 
+     *  Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     readonly matchCommunitySet?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property nextPriority: The priority of the next route map that is associated with the current route map. Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+     * @Property nextPriority: The priority of the next associated route map. Valid values: 1 to 100. 
+     *  If the priority is not set, no next route map is associated with the current route map. 
+     *  If the priority is set to 1, the next route map is associated with the current route map. 
+     *  If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map. 
+     *  Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
      */
     readonly nextPriority?: number | ros.IResolvable;
 
     /**
-     * @Property operateCommunitySet: An action statement that operates the community attribute.
+     * @Property operateCommunitySet: Action statements are used to operate the Communities. Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported. 
+     *  Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     readonly operateCommunitySet?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property preference: An action statement that modifies the preference of the route.
+     * @Property preference: Action statements are used to modify route priorities. Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
      */
     readonly preference?: number | ros.IResolvable;
 
     /**
-     * @Property prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+     * @Property prependAsPath: AS paths are attached when regional gateways receive or advertise routes. 
+     *  For route maps that are applied in different directions, the requirements for AS paths to be attached are different: 
+     *  For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied. 
+     *  For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
      */
     readonly prependAsPath?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property routeTypes: A match statement that indicates the list of route types.  System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+     * @Property routeTypes: Match statements are used to match the route types. Valid values: 
+     *  System: system routes that are generated by the system. 
+     *  Custom: custom routes that are created by users. 
+     *  BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP. 
+     *  You can enter multiple types.
      */
     readonly routeTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.  VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+     * @Property sourceChildInstanceTypes: Match statements are used to match source instance types of the routes. Valid values: 
+     *  VPC: VPCs. 
+     *  VBR: VBRs. 
+     *  CCN: CCN instances in mainland China.
      */
     readonly sourceChildInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+     * @Property sourceInstanceIds: Match statements are used to match source instance IDs of the routes. 
+     *  You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
      */
     readonly sourceInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition. Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+     * @Property sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements. Valid values: 
+     *  false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful. 
+     *  true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
      */
     readonly sourceInstanceIdsReverseMatch?: boolean | ros.IResolvable;
 
     /**
-     * @Property sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+     * @Property sourceRegionIds: Match statements are used to match source region IDs of the routes. You can enter at most 32 region IDs.
      */
     readonly sourceRegionIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+     * @Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes. You can enter at most 32 route table IDs.
      */
     readonly sourceRouteTableIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -1123,190 +1187,72 @@ export class RosCenRouteMap extends ros.RosResource {
      */
 
     /**
-     * @Attribute AsPathMatchMode: A match statement. It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
-     */
-    public readonly attrAsPathMatchMode: ros.IResolvable;
-
-    /**
-     * @Attribute CenId: The ID of the CEN instance.
-     */
-    public readonly attrCenId: ros.IResolvable;
-
-    /**
-     * @Attribute CenRegionId: The ID of the region to which the CEN instance belongs.
-     */
-    public readonly attrCenRegionId: ros.IResolvable;
-
-    /**
-     * @Attribute CidrMatchMode: A match statement. It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
-     */
-    public readonly attrCidrMatchMode: ros.IResolvable;
-
-    /**
-     * @Attribute CommunityMatchMode: A match statement. It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
-     */
-    public readonly attrCommunityMatchMode: ros.IResolvable;
-
-    /**
-     * @Attribute CommunityOperateMode: An action statement. It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
-     */
-    public readonly attrCommunityOperateMode: ros.IResolvable;
-
-    /**
-     * @Attribute Description: The description of the route map.
-     */
-    public readonly attrDescription: ros.IResolvable;
-
-    /**
-     * @Attribute DestinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.  VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
-     */
-    public readonly attrDestinationChildInstanceTypes: ros.IResolvable;
-
-    /**
-     * @Attribute DestinationCidrBlocks: A match statement that indicates the prefix list.
-     */
-    public readonly attrDestinationCidrBlocks: ros.IResolvable;
-
-    /**
-     * @Attribute DestinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
-     */
-    public readonly attrDestinationInstanceIds: ros.IResolvable;
-
-    /**
-     * @Attribute DestinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition. Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
-     */
-    public readonly attrDestinationInstanceIdsReverseMatch: ros.IResolvable;
-
-    /**
-     * @Attribute DestinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
-     */
-    public readonly attrDestinationRouteTableIds: ros.IResolvable;
-
-    /**
-     * @Attribute MapResult: The action that is performed to a route if the route meets all the match conditions.  Permit: The route is permitted. Deny: The route is denied.
-     */
-    public readonly attrMapResult: ros.IResolvable;
-
-    /**
-     * @Attribute MatchAsns: A match statement that indicates the As path list.
-     */
-    public readonly attrMatchAsns: ros.IResolvable;
-
-    /**
-     * @Attribute MatchCommunitySet: A match statement that indicates the community set.
-     */
-    public readonly attrMatchCommunitySet: ros.IResolvable;
-
-    /**
-     * @Attribute NextPriority: The priority of the next route map that is associated with the current route map. Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
-     */
-    public readonly attrNextPriority: ros.IResolvable;
-
-    /**
-     * @Attribute OperateCommunitySet: An action statement that operates the community attribute.
-     */
-    public readonly attrOperateCommunitySet: ros.IResolvable;
-
-    /**
-     * @Attribute Preference: An action statement that modifies the preference of the route.
-     */
-    public readonly attrPreference: ros.IResolvable;
-
-    /**
-     * @Attribute PrependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
-     */
-    public readonly attrPrependAsPath: ros.IResolvable;
-
-    /**
-     * @Attribute Priority: The priority of the route map.
-     */
-    public readonly attrPriority: ros.IResolvable;
-
-    /**
      * @Attribute RouteMapId: The ID of the route map.
      */
     public readonly attrRouteMapId: ros.IResolvable;
-
-    /**
-     * @Attribute RouteTypes: A match statement that indicates the list of route types.  System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
-     */
-    public readonly attrRouteTypes: ros.IResolvable;
-
-    /**
-     * @Attribute SourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.  VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
-     */
-    public readonly attrSourceChildInstanceTypes: ros.IResolvable;
-
-    /**
-     * @Attribute SourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
-     */
-    public readonly attrSourceInstanceIds: ros.IResolvable;
-
-    /**
-     * @Attribute SourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition. Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
-     */
-    public readonly attrSourceInstanceIdsReverseMatch: ros.IResolvable;
-
-    /**
-     * @Attribute SourceRegionIds: A match statement that indicates the list of IDs of the source regions.
-     */
-    public readonly attrSourceRegionIds: ros.IResolvable;
-
-    /**
-     * @Attribute SourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
-     */
-    public readonly attrSourceRouteTableIds: ros.IResolvable;
-
-    /**
-     * @Attribute TransmitDirection: The direction in which the route map is applied. Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
-     */
-    public readonly attrTransmitDirection: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property cenId: The ID of the CEN instance.
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     public cenId: string | ros.IResolvable;
 
     /**
-     * @Property cenRegionId: The ID of the region to which the CEN instance belongs.
+     * @Property cenRegionId: The region where the CEN instance is deployed. You can call the DescribeRegions operation to query region IDs.
      */
     public cenRegionId: string | ros.IResolvable;
 
     /**
-     * @Property mapResult: The action that is performed to a route if the route meets all the match conditions.  Permit: The route is permitted. Deny: The route is denied.
+     * @Property mapResult: The route map behavior after all conditions are matched. Valid values: 
+     *  Permit: allows the routes that are matched. 
+     *  Deny: rejects the routes that are matched.
      */
     public mapResult: string | ros.IResolvable;
 
     /**
-     * @Property priority: The priority of the route map.
+     * @Property priority: The priority of the route map. Valid values: 1 to 100 . A lower value indicates a higher priority. 
+     *  Note In the same region, for route maps that are applied in the same direction, the priority is unique. When a route map is implemented, the system matches conditions with a route map whose priority number is the smallest. Therefore, make sure that you set priorities for route maps to meet your requirements.
      */
     public priority: number | ros.IResolvable;
 
     /**
-     * @Property transmitDirection: The direction in which the route map is applied. Valid values:  RegionIn: The direction in which routes are imported to the regional gateway of the CEN.  For example, routes are imported to the regional gateway from an instance in the current region or another region.  RegionOut: The direction in which routes are exported from the regional gateway of the CEN.  For example, routes are exported from the regional gateway of the current region to an instance in the same region, or to the regional gateway in another region.
+     * @Property transmitDirection: The direction in which the route map is applied. Valid values: 
+     *  RegionIn: Routes are advertised to CEN gateways. 
+     *  For example, routes are advertised from network instances deployed in the current region or other regions to the gateways deployed in the current region. 
+     *  RegionOut: Routes are advertised from CEN gateways. 
+     *  For example, routes are advertised from gateways deployed in the current region to network instances or gateways deployed in other regions.
      */
     public transmitDirection: string | ros.IResolvable;
 
     /**
-     * @Property asPathMatchMode: A match statement. It indicates the mode in which the as-path attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the AS path in the route overlaps the AS path in the match condition. Complete: Exact match. A route matches the condition only when the AS path of the route is the same as the AS path in the match condition.
+     * @Property asPathMatchMode: Match statements are used to match the AS paths. Valid values:
+     *  Include: uses fuzzy match. If the AS path in the condition overlaps with the AS path in the route, the match is successful.
+     *  Complete: uses exact match. Only when the AS path in the condition is the same as the AS path in the route, the match is successful.
      */
     public asPathMatchMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cidrMatchMode: A match statement. It indicates the mode in which the prefix attribute is matched. Valid values:  Include: Fuzzy match. If the prefix of a route is contained in the prefix in the match condition, the route matches the condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Fuzzy Match, the route with the prefix of 1.1.1.0/24 matches the condition.  Complete: Exact match. A route matches the condition only when the prefix of the route is the same as the prefix in the match condition.  For example, if the prefix in the match condition is set to 1.1.0.0/16 and the match method is set to Exact Match, only the route with the prefix of 1.1.1.0/16 matches the condition.
+     * @Property cidrMatchMode: Match statements are used to match the prefixes. Valid values: 
+     *  Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful. 
+     *  For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route. 
+     *  Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful. 
+     *  For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
      */
     public cidrMatchMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property communityMatchMode: A match statement. It indicates the mode in which the community attribute is matched. Valid values:  Include: Fuzzy match. A route matches the condition if the community of the route overlaps the community in the match condition. Complete: Exact match. A route matches the condition only when the community of the route is the same as the community in the match condition.
+     * @Property communityMatchMode: Match statements are used to match the Communities. Valid values: 
+     *  Include: uses fuzzy match. If the Community in the condition overlaps with the Community of the route, the match is successful. 
+     *  Complete: uses exact match. Only when the Community in the condition is the same as the Community of the route, the match is successful.
      */
     public communityMatchMode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property communityOperateMode: An action statement. It indicates the mode in which the community attribute is operated. Valid values:  Additive: Sets a value for the community attribute. Replace: Replaces the value of the community attribute.
+     * @Property communityOperateMode: Action statements are used to operate the Communities. Valid values: 
+     *  Additive: adds. 
+     *  Replace: replaces.
      */
     public communityOperateMode: string | ros.IResolvable | undefined;
 
@@ -1316,87 +1262,116 @@ export class RosCenRouteMap extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property destinationChildInstanceTypes: A match statement that indicates the list of IDs of the destination instances.  VPC: VPC VBR: VBR CCN: Mainland China CCN This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belong to the same region.
+     * @Property destinationChildInstanceTypes: Match statements are used to match the destination instance types. Valid values: 
+     *  VPC: VPCs. 
+     *  VBR: VBRs. 
+     *  CCN: CCN instances in mainland China. 
+     *  Note The destination instance types are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     public destinationChildInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property destinationCidrBlocks: A match statement that indicates the prefix list.
+     * @Property destinationCidrBlocks: Match statements are used to match the routing prefixes. The CIDR format is used. You can enter at most 32 CIDR blocks.
      */
     public destinationCidrBlocks: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property destinationInstanceIds: A match statement that indicates the list of IDs of the destination instances.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination instance and the route map belongs to the same region.
+     * @Property destinationInstanceIds: Match statements are used to match the destination instance IDs. 
+     *  You can enter instance IDs of the following types: VPC, VBR, CCN in mainland China, and SAG. You can enter at most 32 instance IDs. 
+     *  Note The destination instance IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to instances in the current region.
      */
     public destinationInstanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property destinationInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the DestinationInstanceIds match condition. Valid values:  false (default): If the ID of a route's destination instance is included in DestinationInstanceIds, the route is permitted. true: If the ID of a route's destination instance is not included in DestinationInstanceIds, the route is permitted.
+     * @Property destinationInstanceIdsReverseMatch: The IDs of destination instances to be advertised do not support match statements. Valid values: 
+     *  false(default value): If the ID of the destination instance to be advertised is in the DestinationInstanceIds field, the match is successful. 
+     *  true: If the ID of the destination instance to be advertised is not in the DestinationInstanceIds filed, the match is successful.
      */
     public destinationInstanceIdsReverseMatch: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property destinationRouteTableIds: A match statement that indicates the list of IDs of the destination route tables.  This parameter is valid only when the TransmitDirection parameter is set to RegionOut, and the destination route table and the route map belongs to the same region.
+     * @Property destinationRouteTableIds: Match statements are used to match the IDs of the destination route tables. You can enter at most 32 route table IDs. 
+     *  Note The destination route table IDs are valid only when the route map is applied to scenarios where routes are advertised from gateways in the current region to route tables in the current region.
      */
     public destinationRouteTableIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property matchAsns: A match statement that indicates the As path list.
+     * @Property matchAsns: Match statements are used to match AS paths of the routes. An AS path is a mandatory attribute, which describes the AS number through which a BGP route passes when the BGP route is advertised. 
+     *  Only the AS-SEQUENCE parameter is supported. The AS-SET, AS-CONFED-SEQUENCE, and AS-CONFED-SET parameters are not supported. Specifically, only the AS number list is supported. Sets and sub-lists are not supported.
      */
     public matchAsns: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property matchCommunitySet: A match statement that indicates the community set.
+     * @Property matchCommunitySet: Match statements are used to match the Communities. Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported. 
+     *  Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     public matchCommunitySet: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property nextPriority: The priority of the next route map that is associated with the current route map. Value range: 1 to 100.  If this parameter is not set, the current route map is not associated with any route map that is ordered next to the current route map. If this parameter is set to 1, the current route map is associated with the next route map. If this parameter is set to a value other than 1, the priority of the associated route map must be lower than the priority of the current route map, that is, the value of NextPriority must be greater than the value set for Priority. Only when MapResult is set to Permit, the routes which match all the matching conditions will be evaluated by the associated route map that is configured with a specific preference value.
+     * @Property nextPriority: The priority of the next associated route map. Valid values: 1 to 100. 
+     *  If the priority is not set, no next route map is associated with the current route map. 
+     *  If the priority is set to 1, the next route map is associated with the current route map. 
+     *  If the priority is set and the value is not 1, the priority of the associated route map must be higher than that of the current route map. 
+     *  Only when the MapResult parameter is set to Permit, the matched routes continue to match the next associated route maps.
      */
     public nextPriority: number | ros.IResolvable | undefined;
 
     /**
-     * @Property operateCommunitySet: An action statement that operates the community attribute.
+     * @Property operateCommunitySet: Action statements are used to operate the Communities. Valid values: Enter each Community in the format of nn:nn. Valid values of nn: 1 to 65535. You can enter at most 32 Communities. Each Community must comply with RFC 1997. RFC 8092 is not supported. 
+     *  Note If the configurations of the Communities are incorrect, routes may not be advertised to the on-premises data center.
      */
     public operateCommunitySet: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property preference: An action statement that modifies the preference of the route.
+     * @Property preference: Action statements are used to modify route priorities. Valid values: 1 to 100. Default value: 50. A smaller number indicates a higher priority.
      */
     public preference: number | ros.IResolvable | undefined;
 
     /**
-     * @Property prependAsPath: Indicates AS Path prepending when a regional gateway receives or publishes a route.
+     * @Property prependAsPath: AS paths are attached when regional gateways receive or advertise routes. 
+     *  For route maps that are applied in different directions, the requirements for AS paths to be attached are different: 
+     *  For the inbound direction: You must specify the list of source instance IDs and the source region in the condition to be matched. The source region must be the same as the region where the route map is applied. 
+     *  For the outbound direction: You must specify the list of destination instance IDs in the condition to be matched.
      */
     public prependAsPath: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property routeTypes: A match statement that indicates the list of route types.  System: System routes generated by the system. Custom: Custom routes added by users. BGP: Routes advertised to BGP.
+     * @Property routeTypes: Match statements are used to match the route types. Valid values: 
+     *  System: system routes that are generated by the system. 
+     *  Custom: custom routes that are created by users. 
+     *  BGP: Border Gateway Protocol (BGP) routes that are advertised to BGP. 
+     *  You can enter multiple types.
      */
     public routeTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceChildInstanceTypes: A match statement that indicates the list of IDs of the source instances.  VPC: Virtual Private Cloud (VPC) VBR: Virtual Border Router (VBR) CCN: Mainland China Cloud Connect Network (CCN)
+     * @Property sourceChildInstanceTypes: Match statements are used to match source instance types of the routes. Valid values: 
+     *  VPC: VPCs. 
+     *  VBR: VBRs. 
+     *  CCN: CCN instances in mainland China.
      */
     public sourceChildInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceInstanceIds: A match statement that indicates the list of IDs of the source instances.
+     * @Property sourceInstanceIds: Match statements are used to match source instance IDs of the routes. 
+     *  You can enter instance IDs of the following types: virtual private cloud (VPC), virtual border router (VBR), Cloud Connect Network (CCN) in mainland China, Smart Access Gateway (SAG). You can enter at most 32 instance IDs.
      */
     public sourceInstanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceInstanceIdsReverseMatch: Indicates whether to enable the reverse match method of the SourceInstanceIds match condition. Valid values:  false (default): If the ID of a route's source instance is included in SourceInstanceIds, the route is permitted. true: If the ID of a route's source instance is not included in SourceInstanceIds, the route is permitted.
+     * @Property sourceInstanceIdsReverseMatch: The IDs of source instances to be advertised do not support match statements. Valid values: 
+     *  false (default value): If the source instance ID is in the SourceInstanceIds field, the match is successful. 
+     *  true: If the source instance ID is not in the SourceInstanceIds field, the match is successful.
      */
     public sourceInstanceIdsReverseMatch: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceRegionIds: A match statement that indicates the list of IDs of the source regions.
+     * @Property sourceRegionIds: Match statements are used to match source region IDs of the routes. You can enter at most 32 region IDs.
      */
     public sourceRegionIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceRouteTableIds: A match statement that indicates the list of IDs of the source route tables.
+     * @Property sourceRouteTableIds: Match statements are used to match source route table IDs of the routes. You can enter at most 32 route table IDs.
      */
     public sourceRouteTableIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1409,34 +1384,7 @@ export class RosCenRouteMap extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCenRouteMapProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCenRouteMap.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAsPathMatchMode = this.getAtt('AsPathMatchMode');
-        this.attrCenId = this.getAtt('CenId');
-        this.attrCenRegionId = this.getAtt('CenRegionId');
-        this.attrCidrMatchMode = this.getAtt('CidrMatchMode');
-        this.attrCommunityMatchMode = this.getAtt('CommunityMatchMode');
-        this.attrCommunityOperateMode = this.getAtt('CommunityOperateMode');
-        this.attrDescription = this.getAtt('Description');
-        this.attrDestinationChildInstanceTypes = this.getAtt('DestinationChildInstanceTypes');
-        this.attrDestinationCidrBlocks = this.getAtt('DestinationCidrBlocks');
-        this.attrDestinationInstanceIds = this.getAtt('DestinationInstanceIds');
-        this.attrDestinationInstanceIdsReverseMatch = this.getAtt('DestinationInstanceIdsReverseMatch');
-        this.attrDestinationRouteTableIds = this.getAtt('DestinationRouteTableIds');
-        this.attrMapResult = this.getAtt('MapResult');
-        this.attrMatchAsns = this.getAtt('MatchAsns');
-        this.attrMatchCommunitySet = this.getAtt('MatchCommunitySet');
-        this.attrNextPriority = this.getAtt('NextPriority');
-        this.attrOperateCommunitySet = this.getAtt('OperateCommunitySet');
-        this.attrPreference = this.getAtt('Preference');
-        this.attrPrependAsPath = this.getAtt('PrependAsPath');
-        this.attrPriority = this.getAtt('Priority');
         this.attrRouteMapId = this.getAtt('RouteMapId');
-        this.attrRouteTypes = this.getAtt('RouteTypes');
-        this.attrSourceChildInstanceTypes = this.getAtt('SourceChildInstanceTypes');
-        this.attrSourceInstanceIds = this.getAtt('SourceInstanceIds');
-        this.attrSourceInstanceIdsReverseMatch = this.getAtt('SourceInstanceIdsReverseMatch');
-        this.attrSourceRegionIds = this.getAtt('SourceRegionIds');
-        this.attrSourceRouteTableIds = this.getAtt('SourceRouteTableIds');
-        this.attrTransmitDirection = this.getAtt('TransmitDirection');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cenId = props.cenId;
@@ -1915,4 +1863,1747 @@ export class RosRouteEntry extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRouteEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouter`
+ */
+export interface RosTransitRouterProps {
+
+    /**
+     * @Property cenId: CenId
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterDescription: TransitRouterDescription
+     */
+    readonly transitRouterDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterName: TransitRouterName
+     */
+    readonly transitRouterName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('transitRouterDescription', ros.validateString)(properties.transitRouterDescription));
+    errors.collect(ros.propertyValidator('transitRouterName', ros.validateString)(properties.transitRouterName));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouter` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      TransitRouterDescription: ros.stringToRosTemplate(properties.transitRouterDescription),
+      TransitRouterName: ros.stringToRosTemplate(properties.transitRouterName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouter`
+ */
+export class RosTransitRouter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouter";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AliUid: AliUid
+     */
+    public readonly attrAliUid: ros.IResolvable;
+
+    /**
+     * @Attribute CenId: CenId
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterDescription: TransitRouterDescription
+     */
+    public readonly attrTransitRouterDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: TransitRouterId
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterName: TransitRouterName
+     */
+    public readonly attrTransitRouterName: ros.IResolvable;
+
+    /**
+     * @Attribute Type: Type
+     */
+    public readonly attrType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: CenId
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterDescription: TransitRouterDescription
+     */
+    public transitRouterDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterName: TransitRouterName
+     */
+    public transitRouterName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouter`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAliUid = this.getAtt('AliUid');
+        this.attrCenId = this.getAtt('CenId');
+        this.attrTransitRouterDescription = this.getAtt('TransitRouterDescription');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+        this.attrTransitRouterName = this.getAtt('TransitRouterName');
+        this.attrType = this.getAtt('Type');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.transitRouterDescription = props.transitRouterDescription;
+        this.transitRouterName = props.transitRouterName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            transitRouterDescription: this.transitRouterDescription,
+            transitRouterName: this.transitRouterName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterPeerAttachment`
+ */
+export interface RosTransitRouterPeerAttachmentProps {
+
+    /**
+     * @Property peerTransitRouterId: PeerTransitRouterId
+     */
+    readonly peerTransitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: Bandwidth
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property cenBandwidthPackageId: BandwidthPackageId
+     */
+    readonly cenBandwidthPackageId?: string | ros.IResolvable;
+
+    /**
+     * @Property cenId: CenId
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property peerTransitRouterRegionId: PeerTransitRouterRegionId
+     */
+    readonly peerTransitRouterRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly transitRouterAttachmentName?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterPeerAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterPeerAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('peerTransitRouterId', ros.requiredValidator)(properties.peerTransitRouterId));
+    errors.collect(ros.propertyValidator('peerTransitRouterId', ros.validateString)(properties.peerTransitRouterId));
+    errors.collect(ros.propertyValidator('cenBandwidthPackageId', ros.validateString)(properties.cenBandwidthPackageId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('peerTransitRouterRegionId', ros.validateString)(properties.peerTransitRouterRegionId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterPeerAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterPeerAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterPeerAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterPeerAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterPeerAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PeerTransitRouterId: ros.stringToRosTemplate(properties.peerTransitRouterId),
+      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      CenBandwidthPackageId: ros.stringToRosTemplate(properties.cenBandwidthPackageId),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      PeerTransitRouterRegionId: ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
+      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
+      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterPeerAttachment`
+ */
+export class RosTransitRouterPeerAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterPeerAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    public readonly attrAutoPublishRouteEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: Bandwidth
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute CenBandwidthPackageId: BandwidthPackageId
+     */
+    public readonly attrCenBandwidthPackageId: ros.IResolvable;
+
+    /**
+     * @Attribute CenId: CenId
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute ClientToken: ClientToken
+     */
+    public readonly attrClientToken: ros.IResolvable;
+
+    /**
+     * @Attribute GeographicSpanId: GeographicSpanId
+     */
+    public readonly attrGeographicSpanId: ros.IResolvable;
+
+    /**
+     * @Attribute PeerTransitRouterId: PeerTransitRouterId
+     */
+    public readonly attrPeerTransitRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
+     */
+    public readonly attrPeerTransitRouterOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
+     */
+    public readonly attrPeerTransitRouterRegionId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: ResourceType
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: TransitRouterId
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property peerTransitRouterId: PeerTransitRouterId
+     */
+    public peerTransitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property bandwidth: Bandwidth
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenBandwidthPackageId: BandwidthPackageId
+     */
+    public cenBandwidthPackageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: CenId
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property peerTransitRouterRegionId: PeerTransitRouterRegionId
+     */
+    public peerTransitRouterRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public transitRouterAttachmentName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterPeerAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterPeerAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterPeerAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoPublishRouteEnabled = this.getAtt('AutoPublishRouteEnabled');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrCenBandwidthPackageId = this.getAtt('CenBandwidthPackageId');
+        this.attrCenId = this.getAtt('CenId');
+        this.attrClientToken = this.getAtt('ClientToken');
+        this.attrGeographicSpanId = this.getAtt('GeographicSpanId');
+        this.attrPeerTransitRouterId = this.getAtt('PeerTransitRouterId');
+        this.attrPeerTransitRouterOwnerId = this.getAtt('PeerTransitRouterOwnerId');
+        this.attrPeerTransitRouterRegionId = this.getAtt('PeerTransitRouterRegionId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTransitRouterAttachmentDescription = this.getAtt('TransitRouterAttachmentDescription');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterAttachmentName = this.getAtt('TransitRouterAttachmentName');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.peerTransitRouterId = props.peerTransitRouterId;
+        this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
+        this.bandwidth = props.bandwidth;
+        this.cenBandwidthPackageId = props.cenBandwidthPackageId;
+        this.cenId = props.cenId;
+        this.peerTransitRouterRegionId = props.peerTransitRouterRegionId;
+        this.resourceType = props.resourceType;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
+        this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
+        this.transitRouterAttachmentName = props.transitRouterAttachmentName;
+        this.transitRouterId = props.transitRouterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            peerTransitRouterId: this.peerTransitRouterId,
+            autoPublishRouteEnabled: this.autoPublishRouteEnabled,
+            bandwidth: this.bandwidth,
+            cenBandwidthPackageId: this.cenBandwidthPackageId,
+            cenId: this.cenId,
+            peerTransitRouterRegionId: this.peerTransitRouterRegionId,
+            resourceType: this.resourceType,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
+            transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
+            transitRouterAttachmentName: this.transitRouterAttachmentName,
+            transitRouterId: this.transitRouterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterPeerAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterRouteEntry`
+ */
+export interface RosTransitRouterRouteEntryProps {
+
+    /**
+     * @Property transitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
+     */
+    readonly transitRouterRouteEntryDestinationCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
+     */
+    readonly transitRouterRouteEntryNextHopType: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    readonly transitRouterRouteTableId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
+     */
+    readonly transitRouterRouteEntryDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryName: TransitRouterRouteEntryName
+     */
+    readonly transitRouterRouteEntryName?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
+     */
+    readonly transitRouterRouteEntryNextHopId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterRouteEntryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteEntryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterRouteEntryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.requiredValidator)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryDestinationCidrBlock', ros.requiredValidator)(properties.transitRouterRouteEntryDestinationCidrBlock));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryDestinationCidrBlock', ros.validateString)(properties.transitRouterRouteEntryDestinationCidrBlock));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryNextHopId', ros.validateString)(properties.transitRouterRouteEntryNextHopId));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryDescription', ros.validateString)(properties.transitRouterRouteEntryDescription));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryNextHopType', ros.requiredValidator)(properties.transitRouterRouteEntryNextHopType));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryNextHopType', ros.validateString)(properties.transitRouterRouteEntryNextHopType));
+    errors.collect(ros.propertyValidator('transitRouterRouteEntryName', ros.validateString)(properties.transitRouterRouteEntryName));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterRouteEntryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteEntry` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteEntryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteEntry` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterRouteEntryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      TransitRouterRouteEntryDestinationCidrBlock: ros.stringToRosTemplate(properties.transitRouterRouteEntryDestinationCidrBlock),
+      TransitRouterRouteEntryNextHopType: ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopType),
+      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+      TransitRouterRouteEntryDescription: ros.stringToRosTemplate(properties.transitRouterRouteEntryDescription),
+      TransitRouterRouteEntryName: ros.stringToRosTemplate(properties.transitRouterRouteEntryName),
+      TransitRouterRouteEntryNextHopId: ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteEntry`
+ */
+export class RosTransitRouterRouteEntry extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteEntry";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute TransitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
+     */
+    public readonly attrTransitRouterRouteEntryDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
+     */
+    public readonly attrTransitRouterRouteEntryDestinationCidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryId: The first ID of the resource
+     */
+    public readonly attrTransitRouterRouteEntryId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryName: TransitRouterRouteEntryName
+     */
+    public readonly attrTransitRouterRouteEntryName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
+     */
+    public readonly attrTransitRouterRouteEntryNextHopId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
+     */
+    public readonly attrTransitRouterRouteEntryNextHopType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteEntryType: TransitRouterRouteEntryType
+     */
+    public readonly attrTransitRouterRouteEntryType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
+     */
+    public transitRouterRouteEntryDestinationCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
+     */
+    public transitRouterRouteEntryNextHopType: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public transitRouterRouteTableId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
+     */
+    public transitRouterRouteEntryDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterRouteEntryName: TransitRouterRouteEntryName
+     */
+    public transitRouterRouteEntryName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
+     */
+    public transitRouterRouteEntryNextHopId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterRouteEntry`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterRouteEntryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterRouteEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTransitRouterRouteEntryDescription = this.getAtt('TransitRouterRouteEntryDescription');
+        this.attrTransitRouterRouteEntryDestinationCidrBlock = this.getAtt('TransitRouterRouteEntryDestinationCidrBlock');
+        this.attrTransitRouterRouteEntryId = this.getAtt('TransitRouterRouteEntryId');
+        this.attrTransitRouterRouteEntryName = this.getAtt('TransitRouterRouteEntryName');
+        this.attrTransitRouterRouteEntryNextHopId = this.getAtt('TransitRouterRouteEntryNextHopId');
+        this.attrTransitRouterRouteEntryNextHopType = this.getAtt('TransitRouterRouteEntryNextHopType');
+        this.attrTransitRouterRouteEntryType = this.getAtt('TransitRouterRouteEntryType');
+        this.attrTransitRouterRouteTableId = this.getAtt('TransitRouterRouteTableId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterRouteEntryDestinationCidrBlock = props.transitRouterRouteEntryDestinationCidrBlock;
+        this.transitRouterRouteEntryNextHopType = props.transitRouterRouteEntryNextHopType;
+        this.transitRouterRouteTableId = props.transitRouterRouteTableId;
+        this.transitRouterRouteEntryDescription = props.transitRouterRouteEntryDescription;
+        this.transitRouterRouteEntryName = props.transitRouterRouteEntryName;
+        this.transitRouterRouteEntryNextHopId = props.transitRouterRouteEntryNextHopId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterRouteEntryDestinationCidrBlock: this.transitRouterRouteEntryDestinationCidrBlock,
+            transitRouterRouteEntryNextHopType: this.transitRouterRouteEntryNextHopType,
+            transitRouterRouteTableId: this.transitRouterRouteTableId,
+            transitRouterRouteEntryDescription: this.transitRouterRouteEntryDescription,
+            transitRouterRouteEntryName: this.transitRouterRouteEntryName,
+            transitRouterRouteEntryNextHopId: this.transitRouterRouteEntryNextHopId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterRouteEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTable`
+ */
+export interface RosTransitRouterRouteTableProps {
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    readonly transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableDescription: TransitRouterRouteTableDescription
+     */
+    readonly transitRouterRouteTableDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableName: TransitRouterRouteTableName
+     */
+    readonly transitRouterRouteTableName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterRouteTableProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTableProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterRouteTablePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterRouteTableDescription', ros.validateString)(properties.transitRouterRouteTableDescription));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableName', ros.validateString)(properties.transitRouterRouteTableName));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.requiredValidator)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterRouteTableProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTable` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTableProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTable` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterRouteTablePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterRouteTablePropsValidator(properties).assertSuccess();
+    }
+    return {
+      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      TransitRouterRouteTableDescription: ros.stringToRosTemplate(properties.transitRouterRouteTableDescription),
+      TransitRouterRouteTableName: ros.stringToRosTemplate(properties.transitRouterRouteTableName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTable`
+ */
+export class RosTransitRouterRouteTable extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTable";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClientToken: ClientToken
+     */
+    public readonly attrClientToken: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: TransitRouterId
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableDescription: TransitRouterRouteTableDescription
+     */
+    public readonly attrTransitRouterRouteTableDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableName: TransitRouterRouteTableName
+     */
+    public readonly attrTransitRouterRouteTableName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableType: TransitRouterRouteTableType
+     */
+    public readonly attrTransitRouterRouteTableType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    public transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableDescription: TransitRouterRouteTableDescription
+     */
+    public transitRouterRouteTableDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterRouteTableName: TransitRouterRouteTableName
+     */
+    public transitRouterRouteTableName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterRouteTable`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterRouteTableProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterRouteTable.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClientToken = this.getAtt('ClientToken');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+        this.attrTransitRouterRouteTableDescription = this.getAtt('TransitRouterRouteTableDescription');
+        this.attrTransitRouterRouteTableId = this.getAtt('TransitRouterRouteTableId');
+        this.attrTransitRouterRouteTableName = this.getAtt('TransitRouterRouteTableName');
+        this.attrTransitRouterRouteTableType = this.getAtt('TransitRouterRouteTableType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterId = props.transitRouterId;
+        this.transitRouterRouteTableDescription = props.transitRouterRouteTableDescription;
+        this.transitRouterRouteTableName = props.transitRouterRouteTableName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterId: this.transitRouterId,
+            transitRouterRouteTableDescription: this.transitRouterRouteTableDescription,
+            transitRouterRouteTableName: this.transitRouterRouteTableName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterRouteTablePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTableAssociation`
+ */
+export interface RosTransitRouterRouteTableAssociationProps {
+
+    /**
+     * @Property transitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    readonly transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    readonly transitRouterRouteTableId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterRouteTableAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTableAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterRouteTableAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.requiredValidator)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterRouteTableAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTableAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTableAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTableAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterRouteTableAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterRouteTableAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTableAssociation`
+ */
+export class RosTransitRouterRouteTableAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTableAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ResourceId: ResourceId
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: ResourceType
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public transitRouterRouteTableId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterRouteTableAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterRouteTableAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterRouteTableId = this.getAtt('TransitRouterRouteTableId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterRouteTableId = props.transitRouterRouteTableId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterRouteTableId: this.transitRouterRouteTableId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterRouteTableAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ */
+export interface RosTransitRouterRouteTablePropagationProps {
+
+    /**
+     * @Property transitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    readonly transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    readonly transitRouterRouteTableId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterRouteTablePropagationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTablePropagationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterRouteTablePropagationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.requiredValidator)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterRouteTablePropagationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTablePropagation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterRouteTablePropagationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterRouteTablePropagation` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterRouteTablePropagationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterRouteTablePropagationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterRouteTablePropagation`
+ */
+export class RosTransitRouterRouteTablePropagation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterRouteTablePropagation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ResourceId: ResourceId
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: ResourceType
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    public transitRouterRouteTableId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterRouteTablePropagationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterRouteTablePropagation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterRouteTableId = this.getAtt('TransitRouterRouteTableId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterRouteTableId = props.transitRouterRouteTableId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterRouteTableId: this.transitRouterRouteTableId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterRouteTablePropagationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterVbrAttachment`
+ */
+export interface RosTransitRouterVbrAttachmentProps {
+
+    /**
+     * @Property vbrId: VbrId
+     */
+    readonly vbrId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cenId: CenId
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly transitRouterAttachmentName?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+
+    /**
+     * @Property vbrOwnerId: VbrOwnerId
+     */
+    readonly vbrOwnerId?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterVbrAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVbrAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterVbrAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
+    errors.collect(ros.propertyValidator('vbrOwnerId', ros.validateNumber)(properties.vbrOwnerId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('vbrId', ros.requiredValidator)(properties.vbrId));
+    errors.collect(ros.propertyValidator('vbrId', ros.validateString)(properties.vbrId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterVbrAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVbrAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVbrAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVbrAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterVbrAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VbrId: ros.stringToRosTemplate(properties.vbrId),
+      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
+      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
+      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      VbrOwnerId: ros.numberToRosTemplate(properties.vbrOwnerId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterVbrAttachment`
+ */
+export class RosTransitRouterVbrAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVbrAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    public readonly attrAutoPublishRouteEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute CenId: CenId
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute ClientToken: ClientToken
+     */
+    public readonly attrClientToken: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: ResourceType
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: TransitRouterId
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute VbrId: VbrId
+     */
+    public readonly attrVbrId: ros.IResolvable;
+
+    /**
+     * @Attribute VbrOwnerId: VbrOwnerId
+     */
+    public readonly attrVbrOwnerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vbrId: VbrId
+     */
+    public vbrId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: CenId
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public transitRouterAttachmentName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vbrOwnerId: VbrOwnerId
+     */
+    public vbrOwnerId: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterVbrAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterVbrAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterVbrAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoPublishRouteEnabled = this.getAtt('AutoPublishRouteEnabled');
+        this.attrCenId = this.getAtt('CenId');
+        this.attrClientToken = this.getAtt('ClientToken');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTransitRouterAttachmentDescription = this.getAtt('TransitRouterAttachmentDescription');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterAttachmentName = this.getAtt('TransitRouterAttachmentName');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+        this.attrVbrId = this.getAtt('VbrId');
+        this.attrVbrOwnerId = this.getAtt('VbrOwnerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vbrId = props.vbrId;
+        this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
+        this.cenId = props.cenId;
+        this.resourceType = props.resourceType;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
+        this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
+        this.transitRouterAttachmentName = props.transitRouterAttachmentName;
+        this.transitRouterId = props.transitRouterId;
+        this.vbrOwnerId = props.vbrOwnerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vbrId: this.vbrId,
+            autoPublishRouteEnabled: this.autoPublishRouteEnabled,
+            cenId: this.cenId,
+            resourceType: this.resourceType,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
+            transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
+            transitRouterAttachmentName: this.transitRouterAttachmentName,
+            transitRouterId: this.transitRouterId,
+            vbrOwnerId: this.vbrOwnerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterVbrAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterVpcAttachment`
+ */
+export interface RosTransitRouterVpcAttachmentProps {
+
+    /**
+     * @Property vpcId: VpcId
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneMappings: ZoneMappingss
+     */
+    readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoCreateVpcRoute:
+     */
+    readonly autoCreateVpcRoute?: string | ros.IResolvable;
+
+    /**
+     * @Property cenId: CenId
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property chargeType:
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly transitRouterAttachmentName?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcOwnerId: VpcOwnerId
+     */
+    readonly vpcOwnerId?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterVpcAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVpcAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('autoCreateVpcRoute', ros.validateString)(properties.autoCreateVpcRoute));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
+    if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
+            data: properties.zoneMappings.length,
+            min: undefined,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator))(properties.zoneMappings));
+    errors.collect(ros.propertyValidator('vpcOwnerId', ros.validateNumber)(properties.vpcOwnerId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterVpcAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpcAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVpcAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpcAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterVpcAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      ZoneMappings: ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
+      AutoCreateVpcRoute: ros.stringToRosTemplate(properties.autoCreateVpcRoute),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
+      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
+      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      VpcOwnerId: ros.numberToRosTemplate(properties.vpcOwnerId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterVpcAttachment`
+ */
+export class RosTransitRouterVpcAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVpcAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CenId: CenId
+     */
+    public readonly attrCenId: ros.IResolvable;
+
+    /**
+     * @Attribute ClientToken: ClientToken
+     */
+    public readonly attrClientToken: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: ResourceType
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: TransitRouterId
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: VpcId
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcOwnerId: VpcOwnerId
+     */
+    public readonly attrVpcOwnerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: VpcId
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneMappings: ZoneMappingss
+     */
+    public zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoCreateVpcRoute:
+     */
+    public autoCreateVpcRoute: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: CenId
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType:
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: ResourceType
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled:
+     */
+    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled:
+     */
+    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    public transitRouterAttachmentName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: TransitRouterId
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcOwnerId: VpcOwnerId
+     */
+    public vpcOwnerId: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterVpcAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterVpcAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterVpcAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCenId = this.getAtt('CenId');
+        this.attrClientToken = this.getAtt('ClientToken');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTransitRouterAttachmentDescription = this.getAtt('TransitRouterAttachmentDescription');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterAttachmentName = this.getAtt('TransitRouterAttachmentName');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcOwnerId = this.getAtt('VpcOwnerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+        this.zoneMappings = props.zoneMappings;
+        this.autoCreateVpcRoute = props.autoCreateVpcRoute;
+        this.cenId = props.cenId;
+        this.chargeType = props.chargeType;
+        this.resourceType = props.resourceType;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
+        this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
+        this.transitRouterAttachmentName = props.transitRouterAttachmentName;
+        this.transitRouterId = props.transitRouterId;
+        this.vpcOwnerId = props.vpcOwnerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+            zoneMappings: this.zoneMappings,
+            autoCreateVpcRoute: this.autoCreateVpcRoute,
+            cenId: this.cenId,
+            chargeType: this.chargeType,
+            resourceType: this.resourceType,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
+            transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
+            transitRouterAttachmentName: this.transitRouterAttachmentName,
+            transitRouterId: this.transitRouterId,
+            vpcOwnerId: this.vpcOwnerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterVpcAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTransitRouterVpcAttachment {
+    /**
+     * @stability external
+     */
+    export interface ZoneMappingsProperty {
+        /**
+         * @Property zoneId: ZoneId
+         */
+        readonly zoneId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: VSwitchId
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ZoneMappingsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ZoneMappingsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "ZoneMappingsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpcAttachment.ZoneMappings` resource
+ *
+ * @param properties - the TypeScript properties of a `ZoneMappingsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpcAttachment.ZoneMappings` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator(properties).assertSuccess();
+    return {
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+    };
 }

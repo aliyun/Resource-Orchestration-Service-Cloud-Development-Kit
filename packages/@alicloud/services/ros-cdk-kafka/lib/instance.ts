@@ -125,7 +125,7 @@ export class Instance extends ros.Resource {
             ioMaxSpec: props.ioMaxSpec,
             diskSize: props.diskSize,
             topicQuota: props.topicQuota,
-            payType: props.payType ? props.payType : 'Hour',
+            payType: props.payType === undefined || props.payType === null ? 'Hour' : props.payType,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

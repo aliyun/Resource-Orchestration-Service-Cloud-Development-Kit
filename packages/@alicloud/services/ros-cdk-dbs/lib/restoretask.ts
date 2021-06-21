@@ -154,7 +154,7 @@ export class RestoreTask extends ros.Resource {
         super(scope, id);
 
         const rosRestoreTask = new RosRestoreTask(this, id,  {
-            startTask: props.startTask ? props.startTask : true,
+            startTask: props.startTask === undefined || props.startTask === null ? true : props.startTask,
             restoreDir: props.restoreDir,
             duplicateConflict: props.duplicateConflict,
             restoreHome: props.restoreHome,

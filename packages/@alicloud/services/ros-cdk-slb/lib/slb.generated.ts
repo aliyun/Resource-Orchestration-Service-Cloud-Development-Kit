@@ -1976,6 +1976,11 @@ function rosListenerPortRangePropertyToRosTemplate(properties: any): any {
 export interface RosLoadBalancerProps {
 
     /**
+     * @Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     */
+    readonly addressIpVersion?: string | ros.IResolvable;
+
+    /**
      * @Property addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
      */
     readonly addressType?: string | ros.IResolvable;
@@ -1999,8 +2004,8 @@ export interface RosLoadBalancerProps {
     /**
      * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-     * If PricingCycle is year, the value range is 1 to 3.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+     * If PricingCycle is year, the value range is 1 to 5.
      */
     readonly duration?: number | ros.IResolvable;
 
@@ -2089,15 +2094,22 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
         errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
           data: properties.pricingCycle,
-          allowedValues: ["month","year"],
+          allowedValues: ["month","year","Month","Year"],
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
+          data: properties.addressIpVersion,
+          allowedValues: ["ipv4","ipv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
         }));
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
@@ -2170,6 +2182,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
         RosLoadBalancerPropsValidator(properties).assertSuccess();
     }
     return {
+      AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
       AddressType: ros.stringToRosTemplate(properties.addressType),
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
@@ -2284,6 +2297,11 @@ export class RosLoadBalancer extends ros.RosResource {
 
 
     /**
+     * @Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     */
+    public addressIpVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
      */
     public addressType: string | ros.IResolvable | undefined;
@@ -2307,8 +2325,8 @@ export class RosLoadBalancer extends ros.RosResource {
     /**
      * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
-     * If PricingCycle is year, the value range is 1 to 3.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
+     * If PricingCycle is year, the value range is 1 to 5.
      */
     public duration: number | ros.IResolvable | undefined;
 
@@ -2408,6 +2426,7 @@ export class RosLoadBalancer extends ros.RosResource {
         this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.addressIpVersion = props.addressIpVersion;
         this.addressType = props.addressType;
         this.autoPay = props.autoPay;
         this.bandwidth = props.bandwidth;
@@ -2431,6 +2450,7 @@ export class RosLoadBalancer extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            addressIpVersion: this.addressIpVersion,
             addressType: this.addressType,
             autoPay: this.autoPay,
             bandwidth: this.bandwidth,

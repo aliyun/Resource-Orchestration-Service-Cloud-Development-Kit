@@ -95,14 +95,14 @@ export class Logstore extends ros.Resource {
 
         const rosLogstore = new RosLogstore(this, id,  {
             logstoreName: props.logstoreName,
-            preserveStorage: props.preserveStorage ? props.preserveStorage : false,
+            preserveStorage: props.preserveStorage === undefined || props.preserveStorage === null ? false : props.preserveStorage,
             projectName: props.projectName,
-            appendMeta: props.appendMeta ? props.appendMeta : false,
+            appendMeta: props.appendMeta === undefined || props.appendMeta === null ? false : props.appendMeta,
             maxSplitShard: props.maxSplitShard,
-            autoSplit: props.autoSplit ? props.autoSplit : false,
-            enableTracking: props.enableTracking ? props.enableTracking : false,
-            ttl: props.ttl ? props.ttl : 30,
-            shardCount: props.shardCount ? props.shardCount : 2,
+            autoSplit: props.autoSplit === undefined || props.autoSplit === null ? false : props.autoSplit,
+            enableTracking: props.enableTracking === undefined || props.enableTracking === null ? false : props.enableTracking,
+            ttl: props.ttl === undefined || props.ttl === null ? 30 : props.ttl,
+            shardCount: props.shardCount === undefined || props.shardCount === null ? 2 : props.shardCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLogstore;
         this.attrLogstoreName = rosLogstore.attrLogstoreName;

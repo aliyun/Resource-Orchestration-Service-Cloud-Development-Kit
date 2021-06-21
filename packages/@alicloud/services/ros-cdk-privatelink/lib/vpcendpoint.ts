@@ -78,6 +78,21 @@ export class VpcEndpoint extends ros.Resource {
     public readonly attrEndpointName: ros.IResolvable;
 
     /**
+     * Attribute ServiceId: The ID of endpoint service that is associated with the endpoint.
+     */
+    public readonly attrServiceId: ros.IResolvable;
+
+    /**
+     * Attribute ServiceName: The name of endpoint service that is associated with the endpoint.
+     */
+    public readonly attrServiceName: ros.IResolvable;
+
+    /**
+     * Attribute VpcId: The vpc ID of endpoint.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
      *
      * Param scope - scope in which this resource is defined
@@ -101,5 +116,8 @@ export class VpcEndpoint extends ros.Resource {
         this.attrEndpointDomain = rosVpcEndpoint.attrEndpointDomain;
         this.attrEndpointId = rosVpcEndpoint.attrEndpointId;
         this.attrEndpointName = rosVpcEndpoint.attrEndpointName;
+        this.attrServiceId = rosVpcEndpoint.attrServiceId;
+        this.attrServiceName = rosVpcEndpoint.attrServiceName;
+        this.attrVpcId = rosVpcEndpoint.attrVpcId;
     }
 }

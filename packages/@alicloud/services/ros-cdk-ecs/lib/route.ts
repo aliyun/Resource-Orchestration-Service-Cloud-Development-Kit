@@ -60,7 +60,7 @@ export class Route extends ros.Resource {
         super(scope, id);
 
         const rosRoute = new RosRoute(this, id,  {
-            nextHopType: props.nextHopType ? props.nextHopType : 'Instance',
+            nextHopType: props.nextHopType === undefined || props.nextHopType === null ? 'Instance' : props.nextHopType,
             routeTableId: props.routeTableId,
             nextHopId: props.nextHopId,
             nextHopList: props.nextHopList,

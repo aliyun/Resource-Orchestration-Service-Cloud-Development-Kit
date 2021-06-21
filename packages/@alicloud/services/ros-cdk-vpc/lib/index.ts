@@ -9,6 +9,7 @@ export * from './customergateway';
 export * from './eip';
 export * from './eipassociation';
 export * from './eipsegment';
+export * from './flowlog';
 export * from './grantinstancetocen';
 export * from './ipsecserver';
 export * from './ipv6gateway';
@@ -27,6 +28,8 @@ export * from './sslvpnserver';
 export * from './virtualborderrouter';
 export * from './vpnconnection';
 export * from './vpngateway';
+export * from './vpnpbrrouteentry';
+export * from './vpnrouteentry';
 
 // ALIYUN::VPC Resources:
 export * from './vpc.generated';

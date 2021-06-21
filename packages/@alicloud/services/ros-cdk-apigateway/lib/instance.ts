@@ -116,7 +116,7 @@ export class Instance extends ros.Resource {
             httpsPolicy: props.httpsPolicy,
             zoneId: props.zoneId,
             pricingCycle: props.pricingCycle,
-            chargeType: props.chargeType ? props.chargeType : 'PostPaid',
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             duration: props.duration,
             autoPay: props.autoPay,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

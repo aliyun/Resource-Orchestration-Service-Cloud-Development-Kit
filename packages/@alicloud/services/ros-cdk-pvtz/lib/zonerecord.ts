@@ -80,13 +80,13 @@ export class ZoneRecord extends ros.Resource {
         super(scope, id);
 
         const rosZoneRecord = new RosZoneRecord(this, id,  {
-            status: props.status ? props.status : 'ENABLE',
+            status: props.status === undefined || props.status === null ? 'ENABLE' : props.status,
             rr: props.rr,
             type: props.type,
             zoneId: props.zoneId,
-            priority: props.priority ? props.priority : 10,
+            priority: props.priority === undefined || props.priority === null ? 10 : props.priority,
             value: props.value,
-            ttl: props.ttl ? props.ttl : 60,
+            ttl: props.ttl === undefined || props.ttl === null ? 60 : props.ttl,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneRecord;
         this.attrRecord = rosZoneRecord.attrRecord;

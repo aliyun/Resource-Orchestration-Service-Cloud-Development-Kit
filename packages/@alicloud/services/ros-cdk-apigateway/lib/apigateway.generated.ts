@@ -2828,6 +2828,316 @@ export class RosLogConfig extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ApiGateway::Plugin`
+ */
+export interface RosPluginProps {
+
+    /**
+     * @Property pluginData: The definition statement of the plug-in. Plug-in definition statements in the JSON and YAML formats are supported.
+     */
+    readonly pluginData: string | ros.IResolvable;
+
+    /**
+     * @Property pluginName: The name of the plug-in that you want to create. It can contain uppercase English letters, lowercase English letters, Chinese characters, numbers, and underscores (). It must be 4 to 50 characters in length and cannot start with an underscore ().
+     */
+    readonly pluginName: string | ros.IResolvable;
+
+    /**
+     * @Property pluginType: The type of the plug-in. Valid values: ipControl: indicates IP address-based access control. trafficControl: indicates throttling. backendSignature: indicates backend signature. jwtAuth: indicates JWT (OpenId Connect). cors: indicates cross-origin resource access (CORS). caching: indicates caching.
+     */
+    readonly pluginType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the plug-in, which cannot exceed 200 characters.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPluginProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPluginProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPluginPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('pluginName', ros.requiredValidator)(properties.pluginName));
+    errors.collect(ros.propertyValidator('pluginName', ros.validateString)(properties.pluginName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('pluginData', ros.requiredValidator)(properties.pluginData));
+    errors.collect(ros.propertyValidator('pluginData', ros.validateString)(properties.pluginData));
+    errors.collect(ros.propertyValidator('pluginType', ros.requiredValidator)(properties.pluginType));
+    errors.collect(ros.propertyValidator('pluginType', ros.validateString)(properties.pluginType));
+    return errors.wrap('supplied properties not correct for "RosPluginProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Plugin` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPluginProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Plugin` resource.
+ */
+// @ts-ignore TS6133
+function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPluginPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PluginData: ros.stringToRosTemplate(properties.pluginData),
+      PluginName: ros.stringToRosTemplate(properties.pluginName),
+      PluginType: ros.stringToRosTemplate(properties.pluginType),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ApiGateway::Plugin`
+ */
+export class RosPlugin extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Plugin";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Description: The description of the plug-in, which cannot exceed 200 characters.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute PluginData: The definition statement of the plug-in. Plug-in definition statements in the JSON and YAML formats are supported.
+     */
+    public readonly attrPluginData: ros.IResolvable;
+
+    /**
+     * @Attribute PluginId: The generated plugin ID.
+     */
+    public readonly attrPluginId: ros.IResolvable;
+
+    /**
+     * @Attribute PluginName: The name of the plug-in that you want to create. It can contain uppercase English letters, lowercase English letters, Chinese characters, numbers, and underscores (). It must be 4 to 50 characters in length and cannot start with an underscore ().
+     */
+    public readonly attrPluginName: ros.IResolvable;
+
+    /**
+     * @Attribute PluginType: The type of the plug-in. Valid values: ipControl: indicates IP address-based access control. trafficControl: indicates throttling. backendSignature: indicates backend signature. jwtAuth: indicates JWT (OpenId Connect). cors: indicates cross-origin resource access (CORS). caching: indicates caching.
+     */
+    public readonly attrPluginType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property pluginData: The definition statement of the plug-in. Plug-in definition statements in the JSON and YAML formats are supported.
+     */
+    public pluginData: string | ros.IResolvable;
+
+    /**
+     * @Property pluginName: The name of the plug-in that you want to create. It can contain uppercase English letters, lowercase English letters, Chinese characters, numbers, and underscores (). It must be 4 to 50 characters in length and cannot start with an underscore ().
+     */
+    public pluginName: string | ros.IResolvable;
+
+    /**
+     * @Property pluginType: The type of the plug-in. Valid values: ipControl: indicates IP address-based access control. trafficControl: indicates throttling. backendSignature: indicates backend signature. jwtAuth: indicates JWT (OpenId Connect). cors: indicates cross-origin resource access (CORS). caching: indicates caching.
+     */
+    public pluginType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the plug-in, which cannot exceed 200 characters.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ApiGateway::Plugin`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPluginProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPlugin.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrPluginData = this.getAtt('PluginData');
+        this.attrPluginId = this.getAtt('PluginId');
+        this.attrPluginName = this.getAtt('PluginName');
+        this.attrPluginType = this.getAtt('PluginType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.pluginData = props.pluginData;
+        this.pluginName = props.pluginName;
+        this.pluginType = props.pluginType;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            pluginData: this.pluginData,
+            pluginName: this.pluginName,
+            pluginType: this.pluginType,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPluginPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`
+ */
+export interface RosPluginAttachmentProps {
+
+    /**
+     * @Property apiId: The ID of the API to which you want to bind the plug-in.
+     */
+    readonly apiId: string | ros.IResolvable;
+
+    /**
+     * @Property pluginId: The ID of the plugin that you want to bind.
+     */
+    readonly pluginId: string | ros.IResolvable;
+
+    /**
+     * @Property stageName: The name of the runtime environment. Valid values: 
+     * RELEASE: indicates the release environment.
+     * PRE: indicates the pre-release environment.
+     * TEST: indicates the test environment.
+     */
+    readonly stageName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPluginAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPluginAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPluginAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('stageName', ros.requiredValidator)(properties.stageName));
+    if(properties.stageName && (typeof properties.stageName) !== 'object') {
+        errors.collect(ros.propertyValidator('stageName', ros.validateAllowedValues)({
+          data: properties.stageName,
+          allowedValues: ["RELEASE","PRE","TEST"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stageName', ros.validateString)(properties.stageName));
+    errors.collect(ros.propertyValidator('pluginId', ros.requiredValidator)(properties.pluginId));
+    errors.collect(ros.propertyValidator('pluginId', ros.validateString)(properties.pluginId));
+    errors.collect(ros.propertyValidator('apiId', ros.requiredValidator)(properties.apiId));
+    errors.collect(ros.propertyValidator('apiId', ros.validateString)(properties.apiId));
+    return errors.wrap('supplied properties not correct for "RosPluginAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::PluginAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPluginAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::PluginAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPluginAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ApiId: ros.stringToRosTemplate(properties.apiId),
+      PluginId: ros.stringToRosTemplate(properties.pluginId),
+      StageName: ros.stringToRosTemplate(properties.stageName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ApiGateway::PluginAttachment`
+ */
+export class RosPluginAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::PluginAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ApiId: The api id.
+     */
+    public readonly attrApiId: ros.IResolvable;
+
+    /**
+     * @Attribute PluginId: The plugin id.
+     */
+    public readonly attrPluginId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property apiId: The ID of the API to which you want to bind the plug-in.
+     */
+    public apiId: string | ros.IResolvable;
+
+    /**
+     * @Property pluginId: The ID of the plugin that you want to bind.
+     */
+    public pluginId: string | ros.IResolvable;
+
+    /**
+     * @Property stageName: The name of the runtime environment. Valid values: 
+     * RELEASE: indicates the release environment.
+     * PRE: indicates the pre-release environment.
+     * TEST: indicates the test environment.
+     */
+    public stageName: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::ApiGateway::PluginAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPluginAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPluginAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiId = this.getAtt('ApiId');
+        this.attrPluginId = this.getAtt('PluginId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.apiId = props.apiId;
+        this.pluginId = props.pluginId;
+        this.stageName = props.stageName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            apiId: this.apiId,
+            pluginId: this.pluginId,
+            stageName: this.stageName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPluginAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ApiGateway::Signature`
  */
 export interface RosSignatureProps {

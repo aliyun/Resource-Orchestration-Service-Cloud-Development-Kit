@@ -736,6 +736,13 @@ export interface RosScalingConfigurationProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * Standard: the standard mode.
+     * Unlimited: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * @Property deploymentSetId: Deployment set ID.
      */
     readonly deploymentSetId?: string | ros.IResolvable;
@@ -749,6 +756,11 @@ export interface RosScalingConfigurationProps {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
 
     /**
      * @Property imageId: Image ID to create ecs instance .
@@ -798,9 +810,20 @@ export interface RosScalingConfigurationProps {
     readonly ioOptimized?: string | ros.IResolvable;
 
     /**
+     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
+
+    /**
      * @Property keyPairName: SSH key pair name.
      */
     readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerWeight: The weight of the ECS instance as a backend server. Valid values: 1 to 100.
+     * Default value: 50.
+     */
+    readonly loadBalancerWeight?: number | ros.IResolvable;
 
     /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -908,8 +931,8 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
-    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
             data: properties.systemDiskSize,
@@ -923,6 +946,14 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('spotPriceLimitForInstanceType', ros.hashValidator(ros.validateAny))(properties.spotPriceLimitForInstanceType));
+    if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
+            data: properties.ipv6AddressCount,
+            min: 0,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
     if(properties.tagList && (Array.isArray(properties.tagList) || (typeof properties.tagList) === 'string')) {
@@ -951,6 +982,14 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
     errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    if(properties.loadBalancerWeight && (typeof properties.loadBalancerWeight) !== 'object') {
+        errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateRange)({
+            data: properties.loadBalancerWeight,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateNumber)(properties.loadBalancerWeight));
     if(properties.ioOptimized && (typeof properties.ioOptimized) !== 'object') {
         errors.collect(ros.propertyValidator('ioOptimized', ros.validateAllowedValues)({
           data: properties.ioOptimized,
@@ -963,13 +1002,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -977,6 +1010,13 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
@@ -995,6 +1035,13 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
+    if(properties.creditSpecification && (typeof properties.creditSpecification) !== 'object') {
+        errors.collect(ros.propertyValidator('creditSpecification', ros.validateAllowedValues)({
+          data: properties.creditSpecification,
+          allowedValues: ["Standard","Unlimited"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('creditSpecification', ros.validateString)(properties.creditSpecification));
     return errors.wrap('supplied properties not correct for "RosScalingConfigurationProps"');
 }
 
@@ -1013,9 +1060,11 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
     }
     return {
       ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
       DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       DiskMappings: ros.listMapper(rosScalingConfigurationDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
       HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
+      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
       ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
@@ -1025,7 +1074,9 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
       InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      LoadBalancerWeight: ros.numberToRosTemplate(properties.loadBalancerWeight),
       PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -1071,6 +1122,13 @@ export class RosScalingConfiguration extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * Standard: the standard mode.
+     * Unlimited: the unlimited mode.
+     */
+    public creditSpecification: string | ros.IResolvable | undefined;
+
+    /**
      * @Property deploymentSetId: Deployment set ID.
      */
     public deploymentSetId: string | ros.IResolvable | undefined;
@@ -1084,6 +1142,11 @@ export class RosScalingConfiguration extends ros.RosResource {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     public hpcClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+     */
+    public imageFamily: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageId: Image ID to create ecs instance .
@@ -1133,9 +1196,20 @@ export class RosScalingConfiguration extends ros.RosResource {
     public ioOptimized: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
+     */
+    public ipv6AddressCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property keyPairName: SSH key pair name.
      */
     public keyPairName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancerWeight: The weight of the ECS instance as a backend server. Valid values: 1 to 100.
+     * Default value: 50.
+     */
+    public loadBalancerWeight: number | ros.IResolvable | undefined;
 
     /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -1244,9 +1318,11 @@ export class RosScalingConfiguration extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
+        this.creditSpecification = props.creditSpecification;
         this.deploymentSetId = props.deploymentSetId;
         this.diskMappings = props.diskMappings;
         this.hpcClusterId = props.hpcClusterId;
+        this.imageFamily = props.imageFamily;
         this.imageId = props.imageId;
         this.instanceId = props.instanceId;
         this.instanceName = props.instanceName;
@@ -1256,7 +1332,9 @@ export class RosScalingConfiguration extends ros.RosResource {
         this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
         this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
         this.ioOptimized = props.ioOptimized;
+        this.ipv6AddressCount = props.ipv6AddressCount;
         this.keyPairName = props.keyPairName;
+        this.loadBalancerWeight = props.loadBalancerWeight;
         this.passwordInherit = props.passwordInherit;
         this.ramRoleName = props.ramRoleName;
         this.resourceGroupId = props.resourceGroupId;
@@ -1277,9 +1355,11 @@ export class RosScalingConfiguration extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             scalingGroupId: this.scalingGroupId,
+            creditSpecification: this.creditSpecification,
             deploymentSetId: this.deploymentSetId,
             diskMappings: this.diskMappings,
             hpcClusterId: this.hpcClusterId,
+            imageFamily: this.imageFamily,
             imageId: this.imageId,
             instanceId: this.instanceId,
             instanceName: this.instanceName,
@@ -1289,7 +1369,9 @@ export class RosScalingConfiguration extends ros.RosResource {
             internetMaxBandwidthIn: this.internetMaxBandwidthIn,
             internetMaxBandwidthOut: this.internetMaxBandwidthOut,
             ioOptimized: this.ioOptimized,
+            ipv6AddressCount: this.ipv6AddressCount,
             keyPairName: this.keyPairName,
+            loadBalancerWeight: this.loadBalancerWeight,
             passwordInherit: this.passwordInherit,
             ramRoleName: this.ramRoleName,
             resourceGroupId: this.resourceGroupId,

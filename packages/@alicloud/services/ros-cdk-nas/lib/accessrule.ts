@@ -60,11 +60,11 @@ export class AccessRule extends ros.Resource {
         super(scope, id);
 
         const rosAccessRule = new RosAccessRule(this, id,  {
-            userAccessType: props.userAccessType ? props.userAccessType : 'no_squash',
-            priority: props.priority ? props.priority : 1,
+            userAccessType: props.userAccessType === undefined || props.userAccessType === null ? 'no_squash' : props.userAccessType,
+            priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             accessGroupName: props.accessGroupName,
             sourceCidrIp: props.sourceCidrIp,
-            rwAccessType: props.rwAccessType ? props.rwAccessType : 'RDWR',
+            rwAccessType: props.rwAccessType === undefined || props.rwAccessType === null ? 'RDWR' : props.rwAccessType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessRule;
         this.attrAccessRuleId = rosAccessRule.attrAccessRuleId;

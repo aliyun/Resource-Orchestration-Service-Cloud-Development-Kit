@@ -67,7 +67,7 @@ export class Index extends ros.Resource {
             projectName: props.projectName,
             keyIndices: props.keyIndices,
             fullTextIndex: props.fullTextIndex,
-            logReduce: props.logReduce ? props.logReduce : false,
+            logReduce: props.logReduce === undefined || props.logReduce === null ? false : props.logReduce,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIndex;
     }

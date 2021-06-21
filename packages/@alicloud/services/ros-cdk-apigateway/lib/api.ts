@@ -156,7 +156,7 @@ export class Api extends ros.Resource {
             disableInternet: props.disableInternet,
             apiName: props.apiName,
             forceNonceCheck: props.forceNonceCheck,
-            resultType: props.resultType ? props.resultType : 'JSON',
+            resultType: props.resultType === undefined || props.resultType === null ? 'JSON' : props.resultType,
             failResultSample: props.failResultSample,
             errorCodeSamples: props.errorCodeSamples,
             serviceParametersMap: props.serviceParametersMap,

@@ -56,7 +56,7 @@ export interface KubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
-     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -177,6 +177,17 @@ export interface KubernetesClusterProps {
      * Default to 3.
      */
     readonly numOfNodes?: number | ros.IResolvable;
+
+    /**
+     * Property podVswitchIds: The list of pod vSwitches. For each vSwitch that is allocated to nodes, 
+     *  you must specify at least one pod vSwitch in the same zone. 
+     *  The pod vSwitches cannot be the same as the node vSwitches. 
+     *  We recommend that you set the mask length of the CIDR block to a value no 
+     * greater than 19 for the pod vSwitches.
+     * The pod_vswitch_ids parameter is required when the Terway network 
+     * plug-in is selected for the cluster.
+     */
+    readonly podVswitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
@@ -329,50 +340,51 @@ export class KubernetesCluster extends ros.Resource {
         super(scope, id);
 
         const rosKubernetesCluster = new RosKubernetesCluster(this, id,  {
-            endpointPublicAccess: props.endpointPublicAccess ? props.endpointPublicAccess : false,
-            workerPeriod: props.workerPeriod ? props.workerPeriod : 1,
-            workerPeriodUnit: props.workerPeriodUnit ? props.workerPeriodUnit : 'Month',
-            masterSystemDiskCategory: props.masterSystemDiskCategory ? props.masterSystemDiskCategory : 'cloud_ssd',
+            endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
+            workerPeriod: props.workerPeriod === undefined || props.workerPeriod === null ? 1 : props.workerPeriod,
+            workerPeriodUnit: props.workerPeriodUnit === undefined || props.workerPeriodUnit === null ? 'Month' : props.workerPeriodUnit,
+            masterSystemDiskCategory: props.masterSystemDiskCategory === undefined || props.masterSystemDiskCategory === null ? 'cloud_ssd' : props.masterSystemDiskCategory,
             addons: props.addons,
-            masterSystemDiskSize: props.masterSystemDiskSize ? props.masterSystemDiskSize : 120,
-            workerSystemDiskCategory: props.workerSystemDiskCategory ? props.workerSystemDiskCategory : 'cloud_efficiency',
-            nodePortRange: props.nodePortRange ? props.nodePortRange : '30000-65535',
-            masterCount: props.masterCount ? props.masterCount : 3,
-            workerSystemDiskSize: props.workerSystemDiskSize ? props.workerSystemDiskSize : 120,
+            masterSystemDiskSize: props.masterSystemDiskSize === undefined || props.masterSystemDiskSize === null ? 120 : props.masterSystemDiskSize,
+            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
+            nodePortRange: props.nodePortRange === undefined || props.nodePortRange === null ? '30000-65535' : props.nodePortRange,
+            masterCount: props.masterCount === undefined || props.masterCount === null ? 3 : props.masterCount,
+            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             sshFlags: props.sshFlags,
             masterVSwitchIds: props.masterVSwitchIds,
             name: props.name,
             taint: props.taint,
             masterDataDisks: props.masterDataDisks,
-            cloudMonitorFlags: props.cloudMonitorFlags ? props.cloudMonitorFlags : false,
-            serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
-            workerAutoRenew: props.workerAutoRenew ? props.workerAutoRenew : true,
-            proxyMode: props.proxyMode ? props.proxyMode : 'iptables',
+            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
+            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
+            podVswitchIds: props.podVswitchIds,
+            workerAutoRenew: props.workerAutoRenew === undefined || props.workerAutoRenew === null ? true : props.workerAutoRenew,
+            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             tags: props.tags,
-            disableRollback: props.disableRollback ? props.disableRollback : true,
+            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
-            masterPeriod: props.masterPeriod ? props.masterPeriod : 1,
+            masterPeriod: props.masterPeriod === undefined || props.masterPeriod === null ? 1 : props.masterPeriod,
             kubernetesVersion: props.kubernetesVersion,
-            masterInstanceChargeType: props.masterInstanceChargeType ? props.masterInstanceChargeType : 'PostPaid',
-            containerCidr: props.containerCidr ? props.containerCidr : '172.16.0.0/16',
+            masterInstanceChargeType: props.masterInstanceChargeType === undefined || props.masterInstanceChargeType === null ? 'PostPaid' : props.masterInstanceChargeType,
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             cpuPolicy: props.cpuPolicy,
-            workerInstanceChargeType: props.workerInstanceChargeType ? props.workerInstanceChargeType : 'PostPaid',
             keyPair: props.keyPair,
             masterInstanceTypes: props.masterInstanceTypes,
             workerDataDisks: props.workerDataDisks,
             securityGroupId: props.securityGroupId,
-            timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
-            masterPeriodUnit: props.masterPeriodUnit ? props.masterPeriodUnit : 'Month',
-            masterAutoRenewPeriod: props.masterAutoRenewPeriod ? props.masterAutoRenewPeriod : 1,
-            workerDataDisk: props.workerDataDisk ? props.workerDataDisk : false,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            masterPeriodUnit: props.masterPeriodUnit === undefined || props.masterPeriodUnit === null ? 'Month' : props.masterPeriodUnit,
+            masterAutoRenewPeriod: props.masterAutoRenewPeriod === undefined || props.masterAutoRenewPeriod === null ? 1 : props.masterAutoRenewPeriod,
+            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
             vpcId: props.vpcId,
-            numOfNodes: props.numOfNodes ? props.numOfNodes : 3,
-            masterAutoRenew: props.masterAutoRenew ? props.masterAutoRenew : true,
-            workerAutoRenewPeriod: props.workerAutoRenewPeriod ? props.workerAutoRenewPeriod : 1,
+            numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
+            masterAutoRenew: props.masterAutoRenew === undefined || props.masterAutoRenew === null ? true : props.masterAutoRenew,
+            workerAutoRenewPeriod: props.workerAutoRenewPeriod === undefined || props.workerAutoRenewPeriod === null ? 1 : props.workerAutoRenewPeriod,
             workerVSwitchIds: props.workerVSwitchIds,
-            snatEntry: props.snatEntry ? props.snatEntry : true,
-            masterDataDisk: props.masterDataDisk ? props.masterDataDisk : false,
+            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            masterDataDisk: props.masterDataDisk === undefined || props.masterDataDisk === null ? false : props.masterDataDisk,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKubernetesCluster;
         this.attrClusterId = rosKubernetesCluster.attrClusterId;

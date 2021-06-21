@@ -96,7 +96,7 @@ export class SecurityGroupIngress extends ros.Resource {
             portRange: props.portRange,
             description: props.description,
             sourcePortRange: props.sourcePortRange,
-            priority: props.priority ? props.priority : 1,
+            priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
             securityGroupId: props.securityGroupId,
             sourceCidrIp: props.sourceCidrIp,
             sourceGroupOwnerId: props.sourceGroupOwnerId,

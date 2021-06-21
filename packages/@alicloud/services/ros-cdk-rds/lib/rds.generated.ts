@@ -644,7 +644,9 @@ export interface RosDBInstanceProps {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -1401,7 +1403,9 @@ export class RosDBInstance extends ros.RosResource {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
@@ -1941,7 +1945,9 @@ export interface RosDBInstanceCloneProps {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -2440,7 +2446,9 @@ export class RosDBInstanceClone extends ros.RosResource {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
@@ -3541,7 +3549,9 @@ export interface RosPrepayDBInstanceProps {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
@@ -4324,7 +4334,9 @@ export class RosPrepayDBInstance extends ros.RosResource {
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * local_ssd: specifies to use local SSDs. This is the recommended storage type.
      * cloud_ssd: specifies to use standard SSDs.
-     * cloud_essd: specifies to use enhanced SSDs.
+     * cloud_essd: enhanced SSD of performance level (PL)1.
+     * cloud_essd2: enhanced SSD of PL2.
+     * cloud_essd3: enhanced SSD of PL3.
      */
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 

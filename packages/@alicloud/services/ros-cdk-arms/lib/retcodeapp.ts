@@ -57,7 +57,7 @@ export class RetcodeApp extends ros.Resource {
         const rosRetcodeApp = new RosRetcodeApp(this, id,  {
             retcodeAppType: props.retcodeAppType,
             retcodeAppName: props.retcodeAppName,
-            regionId: props.regionId ? props.regionId : 'cn-hangzhou',
+            regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRetcodeApp;
         this.attrAppId = rosRetcodeApp.attrAppId;

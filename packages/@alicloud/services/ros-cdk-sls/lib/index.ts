@@ -1,5 +1,6 @@
 export * from './alert';
 export * from './applyconfigtomachinegroup';
+export * from './audit';
 export * from './index-resource';
 export * from './logstore';
 export * from './logtailconfig';

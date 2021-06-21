@@ -81,7 +81,7 @@ export class Snapshot extends ros.Resource {
         const rosSnapshot = new RosSnapshot(this, id,  {
             instantAccess: props.instantAccess,
             description: props.description,
-            timeout: props.timeout ? props.timeout : 200,
+            timeout: props.timeout === undefined || props.timeout === null ? 200 : props.timeout,
             snapshotName: props.snapshotName,
             instantAccessRetentionDays: props.instantAccessRetentionDays,
             tags: props.tags,

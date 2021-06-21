@@ -80,7 +80,7 @@ export class Certificate extends ros.Resource {
         super(scope, id);
 
         const rosCertificate = new RosCertificate(this, id,  {
-            certificateType: props.certificateType ? props.certificateType : 'Server',
+            certificateType: props.certificateType === undefined || props.certificateType === null ? 'Server' : props.certificateType,
             aliCloudCertificateName: props.aliCloudCertificateName,
             privateKey: props.privateKey,
             resourceGroupId: props.resourceGroupId,

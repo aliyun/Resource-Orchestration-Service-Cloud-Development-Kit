@@ -101,8 +101,8 @@ export class Secret extends ros.Resource {
             secretData: props.secretData,
             versionStages: props.versionStages,
             encryptionKeyId: props.encryptionKeyId,
-            recoveryWindowInDays: props.recoveryWindowInDays ? props.recoveryWindowInDays : 30,
-            forceDeleteWithoutRecovery: props.forceDeleteWithoutRecovery ? props.forceDeleteWithoutRecovery : false,
+            recoveryWindowInDays: props.recoveryWindowInDays === undefined || props.recoveryWindowInDays === null ? 30 : props.recoveryWindowInDays,
+            forceDeleteWithoutRecovery: props.forceDeleteWithoutRecovery === undefined || props.forceDeleteWithoutRecovery === null ? false : props.forceDeleteWithoutRecovery,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSecret;
         this.attrArn = rosSecret.attrArn;

@@ -50,8 +50,8 @@ export class Namespace extends ros.Resource {
         super(scope, id);
 
         const rosNamespace = new RosNamespace(this, id,  {
-            autoCreate: props.autoCreate ? props.autoCreate : true,
-            defaultVisibility: props.defaultVisibility ? props.defaultVisibility : 'PRIVATE',
+            autoCreate: props.autoCreate === undefined || props.autoCreate === null ? true : props.autoCreate,
+            defaultVisibility: props.defaultVisibility === undefined || props.defaultVisibility === null ? 'PRIVATE' : props.defaultVisibility,
             namespace: props.namespace,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNamespace;

@@ -123,7 +123,7 @@ export class Service extends ros.Resource {
             role: props.role,
             internetAccess: props.internetAccess,
             description: props.description,
-            deletionForce: props.deletionForce ? props.deletionForce : false,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,

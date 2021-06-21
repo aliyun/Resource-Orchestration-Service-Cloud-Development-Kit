@@ -81,13 +81,13 @@ export class SslVpnServer extends ros.Resource {
         super(scope, id);
 
         const rosSslVpnServer = new RosSslVpnServer(this, id,  {
-            compress: props.compress ? props.compress : false,
+            compress: props.compress === undefined || props.compress === null ? false : props.compress,
             localSubnet: props.localSubnet,
             clientIpPool: props.clientIpPool,
-            proto: props.proto ? props.proto : 'UDP',
+            proto: props.proto === undefined || props.proto === null ? 'UDP' : props.proto,
             vpnGatewayId: props.vpnGatewayId,
-            port: props.port ? props.port : 1194,
-            cipher: props.cipher ? props.cipher : 'AES-128-CBC',
+            port: props.port === undefined || props.port === null ? 1194 : props.port,
+            cipher: props.cipher === undefined || props.cipher === null ? 'AES-128-CBC' : props.cipher,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSslVpnServer;

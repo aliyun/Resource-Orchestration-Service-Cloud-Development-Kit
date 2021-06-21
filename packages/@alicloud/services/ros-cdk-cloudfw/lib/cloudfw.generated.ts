@@ -715,3 +715,445 @@ export class RosControlPolicy extends ros.RosResource {
         return rosControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`
+ */
+export interface RosVpcFirewallControlPolicyProps {
+
+    /**
+     * @Property aclAction: The action that Cloud Firewall performs on the traffic. Valid values:
+     * accept: allows the traffic.
+     * drop: denies the traffic.
+     * log: monitors the traffic.
+     */
+    readonly aclAction: string | ros.IResolvable;
+
+    /**
+     * @Property applicationName: The application type that the access control policy supports.
+     * Valid values: 
+     * ANY (indicates that all application types are supported) 
+     * FTP 
+     * HTTP 
+     * HTTPS 
+     * MySQL 
+     * SMTP 
+     * SMTPS 
+     * RDP 
+     * VNC 
+     * SSH 
+     * Redis 
+     * MQTT 
+     * MongoDB 
+     * Memcache 
+     * SSL
+     */
+    readonly applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the access control policy.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property destination: The destination address in the access control policy.
+     * Set this parameter in the following way:
+     * If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
+     * Example: 10.2.3.0/24.
+     * If the DestinationType parameter is set to group, set the value to the name of an address book.
+     * Example: db_group.
+     * If the DestinationType parameter is set to domain, set the value to a domain name.
+     * Example: *.aliyuncs.com.
+     */
+    readonly destination: string | ros.IResolvable;
+
+    /**
+     * @Property destinationType: The type of the destination address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     * domain: domain name
+     */
+    readonly destinationType: string | ros.IResolvable;
+
+    /**
+     * @Property newOrder: The priority of the access control policy.
+     * The priority value starts from 1. A smaller priority value indicates a higher priority.
+     * Note The value of -1 indicates the lowest priority.
+     */
+    readonly newOrder: string | ros.IResolvable;
+
+    /**
+     * @Property proto: The type of the security protocol in the access control policy.
+     */
+    readonly proto: string | ros.IResolvable;
+
+    /**
+     * @Property source: The source address in the access control policy.
+     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+     * If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
+     */
+    readonly source: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The type of the source address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     */
+    readonly sourceType: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallId: The ID of the policy group to which you want to add the access control policy.
+     * If the VPC firewall is used to protect CEN, set the value to the ID of the CEN instance
+     * that the VPC firewall protects. Example: cen-ervw5jbw1234*****.
+     * If the VPC firewall is used to protect Express Connect, set the value to the ID of
+     * the VPC firewall instance. Example: vfw-a42bbb748c91234*****.
+     * Note You can call the DescribeVpcFirewallAclGroupList operation to query the ID of the policy group.
+     */
+    readonly vpcFirewallId: string | ros.IResolvable;
+
+    /**
+     * @Property destPort: The destination port in the access control policy.
+     * Note This parameter must be specified if the DestPortType parameter is set to port.
+     */
+    readonly destPort?: string | ros.IResolvable;
+
+    /**
+     * @Property destPortGroup: The address book of destination ports in the access control policy.
+     * Note This parameter must be specified if the DestPortType parameter is set to group.
+     */
+    readonly destPortGroup?: string | ros.IResolvable;
+
+    /**
+     * @Property destPortType: The type of the destination port in the access control policy. Valid values:
+     * port: port
+     * group: address book
+     */
+    readonly destPortType?: string | ros.IResolvable;
+
+    /**
+     * @Property lang: The natural language of the request and response. Valid values:
+     * zh: Chinese
+     * en: English
+     */
+    readonly lang?: string | ros.IResolvable;
+
+    /**
+     * @Property regionId: Region ID. Default to cn-hangzhou.
+     */
+    readonly regionId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcFirewallControlPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallControlPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
+    errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
+    errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
+    if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
+        errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
+          data: properties.applicationName,
+          allowedValues: ["ANY","FTP","HTTP","HTTPS","MySQL","SMTP","SMTPS","RDP","VNC","SSH","Redis","MQTT","MongoDB","Memcache","SSL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
+    if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
+          data: properties.sourceType,
+          allowedValues: ["group","net"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('destPort', ros.validateString)(properties.destPort));
+    errors.collect(ros.propertyValidator('aclAction', ros.requiredValidator)(properties.aclAction));
+    if(properties.aclAction && (typeof properties.aclAction) !== 'object') {
+        errors.collect(ros.propertyValidator('aclAction', ros.validateAllowedValues)({
+          data: properties.aclAction,
+          allowedValues: ["accept","drop","log"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('aclAction', ros.validateString)(properties.aclAction));
+    if(properties.lang && (typeof properties.lang) !== 'object') {
+        errors.collect(ros.propertyValidator('lang', ros.validateAllowedValues)({
+          data: properties.lang,
+          allowedValues: ["en","zh"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
+    errors.collect(ros.propertyValidator('destinationType', ros.requiredValidator)(properties.destinationType));
+    if(properties.destinationType && (typeof properties.destinationType) !== 'object') {
+        errors.collect(ros.propertyValidator('destinationType', ros.validateAllowedValues)({
+          data: properties.destinationType,
+          allowedValues: ["domain","group","net"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destinationType', ros.validateString)(properties.destinationType));
+    errors.collect(ros.propertyValidator('vpcFirewallId', ros.requiredValidator)(properties.vpcFirewallId));
+    errors.collect(ros.propertyValidator('vpcFirewallId', ros.validateString)(properties.vpcFirewallId));
+    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    if(properties.destPortType && (typeof properties.destPortType) !== 'object') {
+        errors.collect(ros.propertyValidator('destPortType', ros.validateAllowedValues)({
+          data: properties.destPortType,
+          allowedValues: ["group","port"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destPortType', ros.validateString)(properties.destPortType));
+    errors.collect(ros.propertyValidator('proto', ros.requiredValidator)(properties.proto));
+    if(properties.proto && (typeof properties.proto) !== 'object') {
+        errors.collect(ros.propertyValidator('proto', ros.validateAllowedValues)({
+          data: properties.proto,
+          allowedValues: ["ANY","TCP","UDP","ICMP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
+    if(properties.regionId && (typeof properties.regionId) !== 'object') {
+        errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
+          data: properties.regionId,
+          allowedValues: ["cn-hangzhou","ap-southeast-1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
+    errors.collect(ros.propertyValidator('newOrder', ros.validateString)(properties.newOrder));
+    errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
+    return errors.wrap('supplied properties not correct for "RosVpcFirewallControlPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallControlPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallControlPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallControlPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcFirewallControlPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AclAction: ros.stringToRosTemplate(properties.aclAction),
+      ApplicationName: ros.stringToRosTemplate(properties.applicationName),
+      Description: ros.stringToRosTemplate(properties.description),
+      Destination: ros.stringToRosTemplate(properties.destination),
+      DestinationType: ros.stringToRosTemplate(properties.destinationType),
+      NewOrder: ros.stringToRosTemplate(properties.newOrder),
+      Proto: ros.stringToRosTemplate(properties.proto),
+      Source: ros.stringToRosTemplate(properties.source),
+      SourceType: ros.stringToRosTemplate(properties.sourceType),
+      VpcFirewallId: ros.stringToRosTemplate(properties.vpcFirewallId),
+      DestPort: ros.stringToRosTemplate(properties.destPort),
+      DestPortGroup: ros.stringToRosTemplate(properties.destPortGroup),
+      DestPortType: ros.stringToRosTemplate(properties.destPortType),
+      Lang: ros.stringToRosTemplate(properties.lang),
+      RegionId: ros.stringToRosTemplate(properties.regionId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`
+ */
+export class RosVpcFirewallControlPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::VpcFirewallControlPolicy";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AclUuid: The unique ID of the access control policy.
+     */
+    public readonly attrAclUuid: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aclAction: The action that Cloud Firewall performs on the traffic. Valid values:
+     * accept: allows the traffic.
+     * drop: denies the traffic.
+     * log: monitors the traffic.
+     */
+    public aclAction: string | ros.IResolvable;
+
+    /**
+     * @Property applicationName: The application type that the access control policy supports.
+     * Valid values: 
+     * ANY (indicates that all application types are supported) 
+     * FTP 
+     * HTTP 
+     * HTTPS 
+     * MySQL 
+     * SMTP 
+     * SMTPS 
+     * RDP 
+     * VNC 
+     * SSH 
+     * Redis 
+     * MQTT 
+     * MongoDB 
+     * Memcache 
+     * SSL
+     */
+    public applicationName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the access control policy.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property destination: The destination address in the access control policy.
+     * Set this parameter in the following way:
+     * If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
+     * Example: 10.2.3.0/24.
+     * If the DestinationType parameter is set to group, set the value to the name of an address book.
+     * Example: db_group.
+     * If the DestinationType parameter is set to domain, set the value to a domain name.
+     * Example: *.aliyuncs.com.
+     */
+    public destination: string | ros.IResolvable;
+
+    /**
+     * @Property destinationType: The type of the destination address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     * domain: domain name
+     */
+    public destinationType: string | ros.IResolvable;
+
+    /**
+     * @Property newOrder: The priority of the access control policy.
+     * The priority value starts from 1. A smaller priority value indicates a higher priority.
+     * Note The value of -1 indicates the lowest priority.
+     */
+    public newOrder: string | ros.IResolvable;
+
+    /**
+     * @Property proto: The type of the security protocol in the access control policy.
+     */
+    public proto: string | ros.IResolvable;
+
+    /**
+     * @Property source: The source address in the access control policy.
+     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+     * If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
+     */
+    public source: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: The type of the source address in the access control policy. Valid values:
+     * net: CIDR block
+     * group: address book
+     */
+    public sourceType: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallId: The ID of the policy group to which you want to add the access control policy.
+     * If the VPC firewall is used to protect CEN, set the value to the ID of the CEN instance
+     * that the VPC firewall protects. Example: cen-ervw5jbw1234*****.
+     * If the VPC firewall is used to protect Express Connect, set the value to the ID of
+     * the VPC firewall instance. Example: vfw-a42bbb748c91234*****.
+     * Note You can call the DescribeVpcFirewallAclGroupList operation to query the ID of the policy group.
+     */
+    public vpcFirewallId: string | ros.IResolvable;
+
+    /**
+     * @Property destPort: The destination port in the access control policy.
+     * Note This parameter must be specified if the DestPortType parameter is set to port.
+     */
+    public destPort: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPortGroup: The address book of destination ports in the access control policy.
+     * Note This parameter must be specified if the DestPortType parameter is set to group.
+     */
+    public destPortGroup: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property destPortType: The type of the destination port in the access control policy. Valid values:
+     * port: port
+     * group: address book
+     */
+    public destPortType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property lang: The natural language of the request and response. Valid values:
+     * zh: Chinese
+     * en: English
+     */
+    public lang: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property regionId: Region ID. Default to cn-hangzhou.
+     */
+    public regionId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcFirewallControlPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcFirewallControlPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAclUuid = this.getAtt('AclUuid');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aclAction = props.aclAction;
+        this.applicationName = props.applicationName;
+        this.description = props.description;
+        this.destination = props.destination;
+        this.destinationType = props.destinationType;
+        this.newOrder = props.newOrder;
+        this.proto = props.proto;
+        this.source = props.source;
+        this.sourceType = props.sourceType;
+        this.vpcFirewallId = props.vpcFirewallId;
+        this.destPort = props.destPort;
+        this.destPortGroup = props.destPortGroup;
+        this.destPortType = props.destPortType;
+        this.lang = props.lang;
+        this.regionId = props.regionId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aclAction: this.aclAction,
+            applicationName: this.applicationName,
+            description: this.description,
+            destination: this.destination,
+            destinationType: this.destinationType,
+            newOrder: this.newOrder,
+            proto: this.proto,
+            source: this.source,
+            sourceType: this.sourceType,
+            vpcFirewallId: this.vpcFirewallId,
+            destPort: this.destPort,
+            destPortGroup: this.destPortGroup,
+            destPortType: this.destPortType,
+            lang: this.lang,
+            regionId: this.regionId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcFirewallControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

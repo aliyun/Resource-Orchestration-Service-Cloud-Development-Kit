@@ -162,7 +162,7 @@ export class ScalingGroup extends ros.Resource {
             vSwitchId: props.vSwitchId,
             loadBalancerIds: props.loadBalancerIds,
             desiredCapacity: props.desiredCapacity,
-            groupDeletionProtection: props.groupDeletionProtection ? props.groupDeletionProtection : false,
+            groupDeletionProtection: props.groupDeletionProtection === undefined || props.groupDeletionProtection === null ? false : props.groupDeletionProtection,
             launchTemplateId: props.launchTemplateId,
             maxSize: props.maxSize,
             scalingGroupName: props.scalingGroupName,

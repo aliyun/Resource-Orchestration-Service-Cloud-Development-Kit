@@ -90,8 +90,8 @@ export class AddressBook extends ros.Resource {
             tagRelation: props.tagRelation,
             groupType: props.groupType,
             tagList: props.tagList,
-            regionId: props.regionId ? props.regionId : 'cn-hangzhou',
-            autoAddTagEcs: props.autoAddTagEcs ? props.autoAddTagEcs : false,
+            regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
+            autoAddTagEcs: props.autoAddTagEcs === undefined || props.autoAddTagEcs === null ? false : props.autoAddTagEcs,
             addressList: props.addressList,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAddressBook;

@@ -77,8 +77,8 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
             description: props.description,
-            network: props.network ? props.network : 'NORMAL',
-            clusterType: props.clusterType ? props.clusterType : 'SSD',
+            network: props.network === undefined || props.network === null ? 'NORMAL' : props.network,
+            clusterType: props.clusterType === undefined || props.clusterType === null ? 'SSD' : props.clusterType,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

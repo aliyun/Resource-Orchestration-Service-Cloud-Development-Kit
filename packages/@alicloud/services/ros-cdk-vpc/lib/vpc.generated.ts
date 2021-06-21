@@ -1463,7 +1463,9 @@ export interface RosEIPProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+     * @Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
      */
     readonly isp?: string | ros.IResolvable;
 
@@ -1611,6 +1613,11 @@ export class RosEIP extends ros.RosResource {
     public readonly attrEipAddress: ros.IResolvable;
 
     /**
+     * @Attribute Isp: The line type.
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
      * @Attribute OrderId: Order ID of prepaid EIP instance.
      */
     public readonly attrOrderId: ros.IResolvable;
@@ -1650,7 +1657,9 @@ export class RosEIP extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
+     * @Property isp: The line type. You can set this parameter only when you create a pay-as-you-go EIP. Valid values:
+     * BGP: BGP (Multi-ISP) lines. Up to 89 high-quality BGP lines are available worldwide. Direct connections with multiple Internet Service Providers (ISPs), including Telecom, Unicom, Mobile, Railcom, Netcom, CERNET, China Broadcast Network, Dr. Peng, and Founder, can be established in all regions in mainland China.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. BGP (Multi-ISP) Pro lines optimize data transmission to China and improve connection quality for international services. Compared with traditional BGP (Multi-ISP) lines, BGP (Multi-ISP) Pro lines can be used to establish direct connections without using international ISP services. Therefore, BGP (Multi-ISP) Pro lines reduce network latency.
      */
     public isp: string | ros.IResolvable | undefined;
 
@@ -1696,6 +1705,7 @@ export class RosEIP extends ros.RosResource {
         super(scope, id, { type: RosEIP.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAllocationId = this.getAtt('AllocationId');
         this.attrEipAddress = this.getAtt('EipAddress');
+        this.attrIsp = this.getAtt('Isp');
         this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -2153,6 +2163,233 @@ export class RosEIPSegment extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosEIPSegmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::FlowLog`
+ */
+export interface RosFlowLogProps {
+
+    /**
+     * @Property logStoreName: The log store name.
+     */
+    readonly logStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The project name.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceId: The resource id.
+     */
+    readonly resourceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    readonly resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property trafficType: The traffic type.
+     */
+    readonly trafficType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The Description of flow log.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property flowLogName: The flow log name.
+     */
+    readonly flowLogName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFlowLogProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFlowLogProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFlowLogPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('flowLogName', ros.validateString)(properties.flowLogName));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('logStoreName', ros.requiredValidator)(properties.logStoreName));
+    errors.collect(ros.propertyValidator('logStoreName', ros.validateString)(properties.logStoreName));
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('trafficType', ros.requiredValidator)(properties.trafficType));
+    errors.collect(ros.propertyValidator('trafficType', ros.validateString)(properties.trafficType));
+    return errors.wrap('supplied properties not correct for "RosFlowLogProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::FlowLog` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFlowLogProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::FlowLog` resource.
+ */
+// @ts-ignore TS6133
+function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFlowLogPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LogStoreName: ros.stringToRosTemplate(properties.logStoreName),
+      ProjectName: ros.stringToRosTemplate(properties.projectName),
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      TrafficType: ros.stringToRosTemplate(properties.trafficType),
+      Description: ros.stringToRosTemplate(properties.description),
+      FlowLogName: ros.stringToRosTemplate(properties.flowLogName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::FlowLog`
+ */
+export class RosFlowLog extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::FlowLog";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Description: The Description of flow log.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogId: The flow log ID.
+     */
+    public readonly attrFlowLogId: ros.IResolvable;
+
+    /**
+     * @Attribute FlowLogName: The flow log name.
+     */
+    public readonly attrFlowLogName: ros.IResolvable;
+
+    /**
+     * @Attribute LogStoreName: The log store name.
+     */
+    public readonly attrLogStoreName: ros.IResolvable;
+
+    /**
+     * @Attribute ProjectName: The project name.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceId: The resource id.
+     */
+    public readonly attrResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceType: The resource type.
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficType: The traffic type.
+     */
+    public readonly attrTrafficType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property logStoreName: The log store name.
+     */
+    public logStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The project name.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceId: The resource id.
+     */
+    public resourceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    public resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property trafficType: The traffic type.
+     */
+    public trafficType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The Description of flow log.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property flowLogName: The flow log name.
+     */
+    public flowLogName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::FlowLog`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFlowLogProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFlowLog.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrFlowLogId = this.getAtt('FlowLogId');
+        this.attrFlowLogName = this.getAtt('FlowLogName');
+        this.attrLogStoreName = this.getAtt('LogStoreName');
+        this.attrProjectName = this.getAtt('ProjectName');
+        this.attrResourceId = this.getAtt('ResourceId');
+        this.attrResourceType = this.getAtt('ResourceType');
+        this.attrTrafficType = this.getAtt('TrafficType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.logStoreName = props.logStoreName;
+        this.projectName = props.projectName;
+        this.resourceId = props.resourceId;
+        this.resourceType = props.resourceType;
+        this.trafficType = props.trafficType;
+        this.description = props.description;
+        this.flowLogName = props.flowLogName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            logStoreName: this.logStoreName,
+            projectName: this.projectName,
+            resourceId: this.resourceId,
+            resourceType: this.resourceType,
+            trafficType: this.trafficType,
+            description: this.description,
+            flowLogName: this.flowLogName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFlowLogPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -6733,4 +6970,427 @@ function rosVpnGatewayTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::VpnPbrRouteEntry`
+ */
+export interface RosVpnPbrRouteEntryProps {
+
+    /**
+     * @Property nextHop: The next hop of the destination route entry.
+     */
+    readonly nextHop: string | ros.IResolvable;
+
+    /**
+     * @Property publishVpc: Indicates whether to publish the destination route to the VPC. Valid values:
+     * true: Publish the destination route to the VPC.
+     * false: Do not publish the destination route to the VPC.
+     */
+    readonly publishVpc: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeDest: The destination CIDR block of the destination route.
+     */
+    readonly routeDest: string | ros.IResolvable;
+
+    /**
+     * @Property routeSource: The source CIDR block of the policy-based route.
+     */
+    readonly routeSource: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: The ID of the VPN Gateway.
+     */
+    readonly vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     */
+    readonly weight: number | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VPN destination route.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property overlayMode: The overlay mode.
+     */
+    readonly overlayMode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpnPbrRouteEntryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpnPbrRouteEntryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnPbrRouteEntryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('routeDest', ros.requiredValidator)(properties.routeDest));
+    errors.collect(ros.propertyValidator('routeDest', ros.validateString)(properties.routeDest));
+    errors.collect(ros.propertyValidator('overlayMode', ros.validateString)(properties.overlayMode));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('nextHop', ros.requiredValidator)(properties.nextHop));
+    errors.collect(ros.propertyValidator('nextHop', ros.validateString)(properties.nextHop));
+    errors.collect(ros.propertyValidator('routeSource', ros.requiredValidator)(properties.routeSource));
+    errors.collect(ros.propertyValidator('routeSource', ros.validateString)(properties.routeSource));
+    errors.collect(ros.propertyValidator('publishVpc', ros.requiredValidator)(properties.publishVpc));
+    errors.collect(ros.propertyValidator('publishVpc', ros.validateBoolean)(properties.publishVpc));
+    errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "RosVpnPbrRouteEntryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnPbrRouteEntry` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpnPbrRouteEntryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnPbrRouteEntry` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnPbrRouteEntryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpnPbrRouteEntryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NextHop: ros.stringToRosTemplate(properties.nextHop),
+      PublishVpc: ros.booleanToRosTemplate(properties.publishVpc),
+      RouteDest: ros.stringToRosTemplate(properties.routeDest),
+      RouteSource: ros.stringToRosTemplate(properties.routeSource),
+      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
+      Weight: ros.numberToRosTemplate(properties.weight),
+      Description: ros.stringToRosTemplate(properties.description),
+      OverlayMode: ros.stringToRosTemplate(properties.overlayMode),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::VpnPbrRouteEntry`
+ */
+export class RosVpnPbrRouteEntry extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnPbrRouteEntry";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NextHop: The next hop of the destination route entry.
+     */
+    public readonly attrNextHop: ros.IResolvable;
+
+    /**
+     * @Attribute RouteDest: The destination CIDR block of the destination route.
+     */
+    public readonly attrRouteDest: ros.IResolvable;
+
+    /**
+     * @Attribute RouteSource: The destination CIDR block of the policy-based route.
+     */
+    public readonly attrRouteSource: ros.IResolvable;
+
+    /**
+     * @Attribute VpnGatewayId: The ID of the VPN Gateway.
+     */
+    public readonly attrVpnGatewayId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property nextHop: The next hop of the destination route entry.
+     */
+    public nextHop: string | ros.IResolvable;
+
+    /**
+     * @Property publishVpc: Indicates whether to publish the destination route to the VPC. Valid values:
+     * true: Publish the destination route to the VPC.
+     * false: Do not publish the destination route to the VPC.
+     */
+    public publishVpc: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeDest: The destination CIDR block of the destination route.
+     */
+    public routeDest: string | ros.IResolvable;
+
+    /**
+     * @Property routeSource: The source CIDR block of the policy-based route.
+     */
+    public routeSource: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: The ID of the VPN Gateway.
+     */
+    public vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     */
+    public weight: number | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VPN destination route.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property overlayMode: The overlay mode.
+     */
+    public overlayMode: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::VpnPbrRouteEntry`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpnPbrRouteEntryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpnPbrRouteEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNextHop = this.getAtt('NextHop');
+        this.attrRouteDest = this.getAtt('RouteDest');
+        this.attrRouteSource = this.getAtt('RouteSource');
+        this.attrVpnGatewayId = this.getAtt('VpnGatewayId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.nextHop = props.nextHop;
+        this.publishVpc = props.publishVpc;
+        this.routeDest = props.routeDest;
+        this.routeSource = props.routeSource;
+        this.vpnGatewayId = props.vpnGatewayId;
+        this.weight = props.weight;
+        this.description = props.description;
+        this.overlayMode = props.overlayMode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            nextHop: this.nextHop,
+            publishVpc: this.publishVpc,
+            routeDest: this.routeDest,
+            routeSource: this.routeSource,
+            vpnGatewayId: this.vpnGatewayId,
+            weight: this.weight,
+            description: this.description,
+            overlayMode: this.overlayMode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpnPbrRouteEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::VpnRouteEntry`
+ */
+export interface RosVpnRouteEntryProps {
+
+    /**
+     * @Property nextHop: The next hop of the destination route entry.
+     */
+    readonly nextHop: string | ros.IResolvable;
+
+    /**
+     * @Property publishVpc: Indicates whether to publish the destination route to the VPC. Valid values:
+     * true: Publish the destination route to the VPC.
+     * false: Do not publish the destination route to the VPC.
+     */
+    readonly publishVpc: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeDest: The destination CIDR block of the destination route.
+     */
+    readonly routeDest: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: The ID of the VPN Gateway.
+     */
+    readonly vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     */
+    readonly weight: number | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VPN destination route.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property overlayMode: The overlay mode.
+     */
+    readonly overlayMode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpnRouteEntryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpnRouteEntryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnRouteEntryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('routeDest', ros.requiredValidator)(properties.routeDest));
+    errors.collect(ros.propertyValidator('routeDest', ros.validateString)(properties.routeDest));
+    errors.collect(ros.propertyValidator('overlayMode', ros.validateString)(properties.overlayMode));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('nextHop', ros.requiredValidator)(properties.nextHop));
+    errors.collect(ros.propertyValidator('nextHop', ros.validateString)(properties.nextHop));
+    errors.collect(ros.propertyValidator('publishVpc', ros.requiredValidator)(properties.publishVpc));
+    errors.collect(ros.propertyValidator('publishVpc', ros.validateBoolean)(properties.publishVpc));
+    errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "RosVpnRouteEntryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnRouteEntry` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpnRouteEntryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnRouteEntry` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnRouteEntryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpnRouteEntryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NextHop: ros.stringToRosTemplate(properties.nextHop),
+      PublishVpc: ros.booleanToRosTemplate(properties.publishVpc),
+      RouteDest: ros.stringToRosTemplate(properties.routeDest),
+      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
+      Weight: ros.numberToRosTemplate(properties.weight),
+      Description: ros.stringToRosTemplate(properties.description),
+      OverlayMode: ros.stringToRosTemplate(properties.overlayMode),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::VpnRouteEntry`
+ */
+export class RosVpnRouteEntry extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnRouteEntry";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NextHop: The next hop of the destination route entry.
+     */
+    public readonly attrNextHop: ros.IResolvable;
+
+    /**
+     * @Attribute RouteDest: The destination CIDR block of the destination route.
+     */
+    public readonly attrRouteDest: ros.IResolvable;
+
+    /**
+     * @Attribute VpnGatewayId: The ID of the VPN Gateway.
+     */
+    public readonly attrVpnGatewayId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property nextHop: The next hop of the destination route entry.
+     */
+    public nextHop: string | ros.IResolvable;
+
+    /**
+     * @Property publishVpc: Indicates whether to publish the destination route to the VPC. Valid values:
+     * true: Publish the destination route to the VPC.
+     * false: Do not publish the destination route to the VPC.
+     */
+    public publishVpc: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeDest: The destination CIDR block of the destination route.
+     */
+    public routeDest: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: The ID of the VPN Gateway.
+     */
+    public vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property weight: The weight of the destination route. Valid values: 0|100.
+     */
+    public weight: number | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VPN destination route.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property overlayMode: The overlay mode.
+     */
+    public overlayMode: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::VpnRouteEntry`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpnRouteEntryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpnRouteEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNextHop = this.getAtt('NextHop');
+        this.attrRouteDest = this.getAtt('RouteDest');
+        this.attrVpnGatewayId = this.getAtt('VpnGatewayId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.nextHop = props.nextHop;
+        this.publishVpc = props.publishVpc;
+        this.routeDest = props.routeDest;
+        this.vpnGatewayId = props.vpnGatewayId;
+        this.weight = props.weight;
+        this.description = props.description;
+        this.overlayMode = props.overlayMode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            nextHop: this.nextHop,
+            publishVpc: this.publishVpc,
+            routeDest: this.routeDest,
+            vpnGatewayId: this.vpnGatewayId,
+            weight: this.weight,
+            description: this.description,
+            overlayMode: this.overlayMode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpnRouteEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

@@ -78,9 +78,9 @@ export class Topic extends ros.Resource {
             comment: props.comment,
             recordType: props.recordType,
             projectName: props.projectName,
-            lifecycle: props.lifecycle ? props.lifecycle : 3,
+            lifecycle: props.lifecycle === undefined || props.lifecycle === null ? 3 : props.lifecycle,
             recordSchema: props.recordSchema,
-            shardCount: props.shardCount ? props.shardCount : 1,
+            shardCount: props.shardCount === undefined || props.shardCount === null ? 1 : props.shardCount,
             topicName: props.topicName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;

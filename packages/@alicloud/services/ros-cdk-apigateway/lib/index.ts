@@ -6,6 +6,8 @@ export * from './deployment';
 export * from './group';
 export * from './instance';
 export * from './logconfig';
+export * from './plugin';
+export * from './pluginattachment';
 export * from './signature';
 export * from './signaturebinding';
 export * from './stageconfig';

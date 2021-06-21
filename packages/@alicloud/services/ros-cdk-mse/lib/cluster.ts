@@ -180,11 +180,6 @@ export class Cluster extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Attribute InstanceModels: instance nodes
-     */
-    public readonly attrInstanceModels: ros.IResolvable;
-
-    /**
      * Attribute InternetAddress: internet address
      */
     public readonly attrInternetAddress: ros.IResolvable;
@@ -289,7 +284,6 @@ export class Cluster extends ros.Resource {
         this.attrHealthStatus = rosCluster.attrHealthStatus;
         this.attrInstanceCount = rosCluster.attrInstanceCount;
         this.attrInstanceId = rosCluster.attrInstanceId;
-        this.attrInstanceModels = rosCluster.attrInstanceModels;
         this.attrInternetAddress = rosCluster.attrInternetAddress;
         this.attrInternetDomain = rosCluster.attrInternetDomain;
         this.attrInternetPort = rosCluster.attrInternetPort;

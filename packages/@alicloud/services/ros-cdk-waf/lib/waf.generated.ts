@@ -1245,6 +1245,127 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::WAF::LogServiceEnable`
+ */
+export interface RosLogServiceEnableProps {
+
+    /**
+     * @Property domain: The domain name that is added to WAF.
+     */
+    readonly domain: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the WAF instance.
+     * You can call the DescribeInstanceInfo operation to query the ID of the WAF instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLogServiceEnableProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLogServiceEnableProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLogServiceEnablePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RosLogServiceEnableProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::WAF::LogServiceEnable` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLogServiceEnableProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::WAF::LogServiceEnable` resource.
+ */
+// @ts-ignore TS6133
+function rosLogServiceEnablePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLogServiceEnablePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Domain: ros.stringToRosTemplate(properties.domain),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::WAF::LogServiceEnable`
+ */
+export class RosLogServiceEnable extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::LogServiceEnable";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Domain: The domain name that is added to WAF.
+     */
+    public readonly attrDomain: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the WAF instance.
+You can call the DescribeInstanceInfo operation to query the ID of the WAF instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property domain: The domain name that is added to WAF.
+     */
+    public domain: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the WAF instance.
+     * You can call the DescribeInstanceInfo operation to query the ID of the WAF instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::WAF::LogServiceEnable`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLogServiceEnableProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLogServiceEnable.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDomain = this.getAtt('Domain');
+        this.attrInstanceId = this.getAtt('InstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.domain = props.domain;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            domain: this.domain,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLogServiceEnablePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::WAF::WafSwitch`
  */
 export interface RosWafSwitchProps {

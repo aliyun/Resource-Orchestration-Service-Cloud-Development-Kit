@@ -84,8 +84,8 @@ export class Subscription extends ros.Resource {
 
         const rosSubscription = new RosSubscription(this, id,  {
             endpoint: props.endpoint,
-            notifyStrategy: props.notifyStrategy ? props.notifyStrategy : 'BACKOFF_RETRY',
-            notifyContentFormat: props.notifyContentFormat ? props.notifyContentFormat : 'XML',
+            notifyStrategy: props.notifyStrategy === undefined || props.notifyStrategy === null ? 'BACKOFF_RETRY' : props.notifyStrategy,
+            notifyContentFormat: props.notifyContentFormat === undefined || props.notifyContentFormat === null ? 'XML' : props.notifyContentFormat,
             filterTag: props.filterTag,
             subscriptionName: props.subscriptionName,
             topicName: props.topicName,

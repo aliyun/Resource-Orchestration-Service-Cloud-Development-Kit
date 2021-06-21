@@ -644,6 +644,421 @@ export class RosApplyConfigToMachineGroup extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::SLS::Audit`
+ */
+export interface RosAuditProps {
+
+    /**
+     * @Property displayName: Name of SLS log audit.
+     */
+    readonly displayName: string | ros.IResolvable;
+
+    /**
+     * @Property variableMap: Log audit detailed configuration.
+     */
+    readonly variableMap: RosAudit.VariableMapProperty | ros.IResolvable;
+
+    /**
+     * @Property multiAccount: Multi-account configuration, please fill in multiple aliuid.
+     */
+    readonly multiAccount?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAuditProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAuditProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAuditPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('variableMap', ros.requiredValidator)(properties.variableMap));
+    errors.collect(ros.propertyValidator('variableMap', RosAudit_VariableMapPropertyValidator)(properties.variableMap));
+    errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
+    if(properties.displayName && (Array.isArray(properties.displayName) || (typeof properties.displayName) === 'string')) {
+        errors.collect(ros.propertyValidator('displayName', ros.validateLength)({
+            data: properties.displayName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    if(properties.multiAccount && (Array.isArray(properties.multiAccount) || (typeof properties.multiAccount) === 'string')) {
+        errors.collect(ros.propertyValidator('multiAccount', ros.validateLength)({
+            data: properties.multiAccount.length,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('multiAccount', ros.listValidator(ros.validateString))(properties.multiAccount));
+    return errors.wrap('supplied properties not correct for "RosAuditProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Audit` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAuditProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Audit` resource.
+ */
+// @ts-ignore TS6133
+function rosAuditPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAuditPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DisplayName: ros.stringToRosTemplate(properties.displayName),
+      VariableMap: rosAuditVariableMapPropertyToRosTemplate(properties.variableMap),
+      MultiAccount: ros.listMapper(ros.stringToRosTemplate)(properties.multiAccount),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::SLS::Audit`
+ */
+export class RosAudit extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::Audit";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DisplayName: Name of SLS log audit.
+     */
+    public readonly attrDisplayName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property displayName: Name of SLS log audit.
+     */
+    public displayName: string | ros.IResolvable;
+
+    /**
+     * @Property variableMap: Log audit detailed configuration.
+     */
+    public variableMap: RosAudit.VariableMapProperty | ros.IResolvable;
+
+    /**
+     * @Property multiAccount: Multi-account configuration, please fill in multiple aliuid.
+     */
+    public multiAccount: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::SLS::Audit`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAuditProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAudit.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDisplayName = this.getAtt('DisplayName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.displayName = props.displayName;
+        this.variableMap = props.variableMap;
+        this.multiAccount = props.multiAccount;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            displayName: this.displayName,
+            variableMap: this.variableMap,
+            multiAccount: this.multiAccount,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAuditPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAudit {
+    /**
+     * @stability external
+     */
+    export interface VariableMapProperty {
+        /**
+         * @Property apigatewayTtl: API Gateway ttl. Default 180.
+         */
+        readonly apigatewayTtl?: number | ros.IResolvable;
+        /**
+         * @Property sasCrackEnabled: Cloud Security Center Brute Force Log Switch. Default false.
+         */
+        readonly sasCrackEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property cpsEnabled: Mobile push log switch. Default true.
+         */
+        readonly cpsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property apigatewayEnabled: API Gateway Log Switch. Default true.
+         */
+        readonly apigatewayEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property wafEnabled: Waf log switch. Default true.
+         */
+        readonly wafEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ossSyncTtl: OSS synchronization to central TTL. Default 180.
+         */
+        readonly ossSyncTtl?: number | ros.IResolvable;
+        /**
+         * @Property sasTtl: Cloud Security Center centralized ttl. Default 180.
+         */
+        readonly sasTtl?: number | ros.IResolvable;
+        /**
+         * @Property actiontrailTtl: Actiontril action log TTL.
+         */
+        readonly actiontrailTtl?: number | ros.IResolvable;
+        /**
+         * @Property ossAccessEnabled: Access log switch of OSS. Default true.
+         */
+        readonly ossAccessEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ossSyncEnabled: OSS synchronization to central configuration switch. Default true.
+         */
+        readonly ossSyncEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSnapshotAccountEnabled: Cloud Security Center account snapshot switch. Default false.
+         */
+        readonly sasSnapshotAccountEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property slbSyncEnabled: Slb sync to center switch. Default true.
+         */
+        readonly slbSyncEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property slbAccessTtl: Slb centralized ttl. Default 180.
+         */
+        readonly slbAccessTtl?: number | ros.IResolvable;
+        /**
+         * @Property bastionEnabled: Fortress machine operation log switch.Default true.
+         */
+        readonly bastionEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property rdsEnabled: RDS audit log switch. Default true.
+         */
+        readonly rdsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSessionEnabled: Cloud security center network session log switch.Default false.
+         */
+        readonly sasSessionEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasLocalDnsEnabled: Cloud security center local DNS log switch. Default false.
+         */
+        readonly sasLocalDnsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property ossAccessTtl: ccess log TTL of OSS. Default 180.
+         */
+        readonly ossAccessTtl?: number | ros.IResolvable;
+        /**
+         * @Property sasHttpEnabled: Cloud Security Center WEB access log switch. Default false.
+         */
+        readonly sasHttpEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property bastionTtl: Fort machine centralized ttl. Default 180.
+         */
+        readonly bastionTtl?: number | ros.IResolvable;
+        /**
+         * @Property ossMeteringEnabled: OSS metering log switch.Default true.
+         */
+        readonly ossMeteringEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasProcessEnabled: Cloud Security Center process startup log switch. Default false.
+         */
+        readonly sasProcessEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property nasEnabled: Nas log switch. Default true.
+         */
+        readonly nasEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasDnsEnabled: Cloud Security Center DNS resolution log switch. Default false.
+         */
+        readonly sasDnsEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSnapshotPortEnabled: Cloud Security Center Port Snapshot Switch. Default false.
+         */
+        readonly sasSnapshotPortEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSecurityAlertEnabled: Cloud Security Center Security Alarm Log Switch .Default false.
+         */
+        readonly sasSecurityAlertEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property slbAccessEnabled: Slb log switch. Default true.
+         */
+        readonly slbAccessEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property nasTtl: Nas centralized ttl. Default 180.
+         */
+        readonly nasTtl?: number | ros.IResolvable;
+        /**
+         * @Property sasNetworkEnabled: Cloud security center network connection log switch. Default false.
+         */
+        readonly sasNetworkEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasLoginEnabled: Cloud security center login flow log switch. Default false.
+         */
+        readonly sasLoginEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property wafTtl: Waf centralized ttl. Default true.
+         */
+        readonly wafTtl?: number | ros.IResolvable;
+        /**
+         * @Property ossMeteringTtl: OSS measurement log TTL. Default 180.
+         */
+        readonly ossMeteringTtl?: number | ros.IResolvable;
+        /**
+         * @Property sasSnapshotProcessEnabled: Cloud Security Center process snapshot switch. Default false.
+         */
+        readonly sasSnapshotProcessEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSecurityHcEnabled: Cloud Security Center Baseline Log Switch. Default false.
+         */
+        readonly sasSecurityHcEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property rdsTtl: Dds log centralization ttl. Default 180.
+         */
+        readonly rdsTtl?: number | ros.IResolvable;
+        /**
+         * @Property cpsTtl: Mobile push ttl. Default 180.
+         */
+        readonly cpsTtl?: number | ros.IResolvable;
+        /**
+         * @Property slbSyncTtl: Slb sync to center switch. Default 180.
+         */
+        readonly slbSyncTtl?: number | ros.IResolvable;
+        /**
+         * @Property cloudfirewallTtl: Cloud firewall switch.Default true.
+         */
+        readonly cloudfirewallTtl?: number | ros.IResolvable;
+        /**
+         * @Property actiontrailEnabled: Notification type. Support Email, SMS, DingTalk. Default true.
+         */
+        readonly actiontrailEnabled?: boolean | ros.IResolvable;
+        /**
+         * @Property sasSecurityVulEnabled: Cloud Security Center Vulnerability Log Switch.Default false.
+         */
+        readonly sasSecurityVulEnabled?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VariableMapProperty`
+ *
+ * @param properties - the TypeScript properties of a `VariableMapProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAudit_VariableMapPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('apigatewayTtl', ros.validateNumber)(properties.apigatewayTtl));
+    errors.collect(ros.propertyValidator('sasCrackEnabled', ros.validateBoolean)(properties.sasCrackEnabled));
+    errors.collect(ros.propertyValidator('cpsEnabled', ros.validateBoolean)(properties.cpsEnabled));
+    errors.collect(ros.propertyValidator('apigatewayEnabled', ros.validateBoolean)(properties.apigatewayEnabled));
+    errors.collect(ros.propertyValidator('wafEnabled', ros.validateBoolean)(properties.wafEnabled));
+    errors.collect(ros.propertyValidator('ossSyncTtl', ros.validateNumber)(properties.ossSyncTtl));
+    errors.collect(ros.propertyValidator('sasTtl', ros.validateNumber)(properties.sasTtl));
+    errors.collect(ros.propertyValidator('actiontrailTtl', ros.validateNumber)(properties.actiontrailTtl));
+    errors.collect(ros.propertyValidator('ossAccessEnabled', ros.validateBoolean)(properties.ossAccessEnabled));
+    errors.collect(ros.propertyValidator('ossSyncEnabled', ros.validateBoolean)(properties.ossSyncEnabled));
+    errors.collect(ros.propertyValidator('sasSnapshotAccountEnabled', ros.validateBoolean)(properties.sasSnapshotAccountEnabled));
+    errors.collect(ros.propertyValidator('slbSyncEnabled', ros.validateBoolean)(properties.slbSyncEnabled));
+    errors.collect(ros.propertyValidator('slbAccessTtl', ros.validateNumber)(properties.slbAccessTtl));
+    errors.collect(ros.propertyValidator('bastionEnabled', ros.validateBoolean)(properties.bastionEnabled));
+    errors.collect(ros.propertyValidator('rdsEnabled', ros.validateBoolean)(properties.rdsEnabled));
+    errors.collect(ros.propertyValidator('sasSessionEnabled', ros.validateBoolean)(properties.sasSessionEnabled));
+    errors.collect(ros.propertyValidator('sasLocalDnsEnabled', ros.validateBoolean)(properties.sasLocalDnsEnabled));
+    errors.collect(ros.propertyValidator('ossAccessTtl', ros.validateNumber)(properties.ossAccessTtl));
+    errors.collect(ros.propertyValidator('sasHttpEnabled', ros.validateBoolean)(properties.sasHttpEnabled));
+    errors.collect(ros.propertyValidator('bastionTtl', ros.validateNumber)(properties.bastionTtl));
+    errors.collect(ros.propertyValidator('ossMeteringEnabled', ros.validateBoolean)(properties.ossMeteringEnabled));
+    errors.collect(ros.propertyValidator('sasProcessEnabled', ros.validateBoolean)(properties.sasProcessEnabled));
+    errors.collect(ros.propertyValidator('nasEnabled', ros.validateBoolean)(properties.nasEnabled));
+    errors.collect(ros.propertyValidator('sasDnsEnabled', ros.validateBoolean)(properties.sasDnsEnabled));
+    errors.collect(ros.propertyValidator('sasSnapshotPortEnabled', ros.validateBoolean)(properties.sasSnapshotPortEnabled));
+    errors.collect(ros.propertyValidator('sasSecurityAlertEnabled', ros.validateBoolean)(properties.sasSecurityAlertEnabled));
+    errors.collect(ros.propertyValidator('slbAccessEnabled', ros.validateBoolean)(properties.slbAccessEnabled));
+    errors.collect(ros.propertyValidator('nasTtl', ros.validateNumber)(properties.nasTtl));
+    errors.collect(ros.propertyValidator('sasNetworkEnabled', ros.validateBoolean)(properties.sasNetworkEnabled));
+    errors.collect(ros.propertyValidator('sasLoginEnabled', ros.validateBoolean)(properties.sasLoginEnabled));
+    errors.collect(ros.propertyValidator('wafTtl', ros.validateNumber)(properties.wafTtl));
+    errors.collect(ros.propertyValidator('ossMeteringTtl', ros.validateNumber)(properties.ossMeteringTtl));
+    errors.collect(ros.propertyValidator('sasSnapshotProcessEnabled', ros.validateBoolean)(properties.sasSnapshotProcessEnabled));
+    errors.collect(ros.propertyValidator('sasSecurityHcEnabled', ros.validateBoolean)(properties.sasSecurityHcEnabled));
+    errors.collect(ros.propertyValidator('rdsTtl', ros.validateNumber)(properties.rdsTtl));
+    errors.collect(ros.propertyValidator('cpsTtl', ros.validateNumber)(properties.cpsTtl));
+    errors.collect(ros.propertyValidator('slbSyncTtl', ros.validateNumber)(properties.slbSyncTtl));
+    errors.collect(ros.propertyValidator('cloudfirewallTtl', ros.validateNumber)(properties.cloudfirewallTtl));
+    errors.collect(ros.propertyValidator('actiontrailEnabled', ros.validateBoolean)(properties.actiontrailEnabled));
+    errors.collect(ros.propertyValidator('sasSecurityVulEnabled', ros.validateBoolean)(properties.sasSecurityVulEnabled));
+    return errors.wrap('supplied properties not correct for "VariableMapProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::Audit.VariableMap` resource
+ *
+ * @param properties - the TypeScript properties of a `VariableMapProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::Audit.VariableMap` resource.
+ */
+// @ts-ignore TS6133
+function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAudit_VariableMapPropertyValidator(properties).assertSuccess();
+    return {
+      ApigatewayTtl: ros.numberToRosTemplate(properties.apigatewayTtl),
+      SasCrackEnabled: ros.booleanToRosTemplate(properties.sasCrackEnabled),
+      CpsEnabled: ros.booleanToRosTemplate(properties.cpsEnabled),
+      ApigatewayEnabled: ros.booleanToRosTemplate(properties.apigatewayEnabled),
+      WafEnabled: ros.booleanToRosTemplate(properties.wafEnabled),
+      OssSyncTtl: ros.numberToRosTemplate(properties.ossSyncTtl),
+      SasTtl: ros.numberToRosTemplate(properties.sasTtl),
+      ActiontrailTtl: ros.numberToRosTemplate(properties.actiontrailTtl),
+      OssAccessEnabled: ros.booleanToRosTemplate(properties.ossAccessEnabled),
+      OssSyncEnabled: ros.booleanToRosTemplate(properties.ossSyncEnabled),
+      SasSnapshotAccountEnabled: ros.booleanToRosTemplate(properties.sasSnapshotAccountEnabled),
+      SlbSyncEnabled: ros.booleanToRosTemplate(properties.slbSyncEnabled),
+      SlbAccessTtl: ros.numberToRosTemplate(properties.slbAccessTtl),
+      BastionEnabled: ros.booleanToRosTemplate(properties.bastionEnabled),
+      RdsEnabled: ros.booleanToRosTemplate(properties.rdsEnabled),
+      SasSessionEnabled: ros.booleanToRosTemplate(properties.sasSessionEnabled),
+      SasLocalDnsEnabled: ros.booleanToRosTemplate(properties.sasLocalDnsEnabled),
+      OssAccessTtl: ros.numberToRosTemplate(properties.ossAccessTtl),
+      SasHttpEnabled: ros.booleanToRosTemplate(properties.sasHttpEnabled),
+      BastionTtl: ros.numberToRosTemplate(properties.bastionTtl),
+      OssMeteringEnabled: ros.booleanToRosTemplate(properties.ossMeteringEnabled),
+      SasProcessEnabled: ros.booleanToRosTemplate(properties.sasProcessEnabled),
+      NasEnabled: ros.booleanToRosTemplate(properties.nasEnabled),
+      SasDnsEnabled: ros.booleanToRosTemplate(properties.sasDnsEnabled),
+      SasSnapshotPortEnabled: ros.booleanToRosTemplate(properties.sasSnapshotPortEnabled),
+      SasSecurityAlertEnabled: ros.booleanToRosTemplate(properties.sasSecurityAlertEnabled),
+      SlbAccessEnabled: ros.booleanToRosTemplate(properties.slbAccessEnabled),
+      NasTtl: ros.numberToRosTemplate(properties.nasTtl),
+      SasNetworkEnabled: ros.booleanToRosTemplate(properties.sasNetworkEnabled),
+      SasLoginEnabled: ros.booleanToRosTemplate(properties.sasLoginEnabled),
+      WafTtl: ros.numberToRosTemplate(properties.wafTtl),
+      OssMeteringTtl: ros.numberToRosTemplate(properties.ossMeteringTtl),
+      SasSnapshotProcessEnabled: ros.booleanToRosTemplate(properties.sasSnapshotProcessEnabled),
+      SasSecurityHcEnabled: ros.booleanToRosTemplate(properties.sasSecurityHcEnabled),
+      RdsTtl: ros.numberToRosTemplate(properties.rdsTtl),
+      CpsTtl: ros.numberToRosTemplate(properties.cpsTtl),
+      SlbSyncTtl: ros.numberToRosTemplate(properties.slbSyncTtl),
+      CloudfirewallTtl: ros.numberToRosTemplate(properties.cloudfirewallTtl),
+      ActiontrailEnabled: ros.booleanToRosTemplate(properties.actiontrailEnabled),
+      SasSecurityVulEnabled: ros.booleanToRosTemplate(properties.sasSecurityVulEnabled),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::SLS::Index`
  */
 export interface RosIndexProps {

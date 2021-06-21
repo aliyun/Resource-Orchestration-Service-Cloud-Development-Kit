@@ -76,7 +76,7 @@ export class AnycastEIP extends ros.Resource {
 
         const rosAnycastEIP = new RosAnycastEIP(this, id,  {
             description: props.description,
-            serviceLocation: props.serviceLocation ? props.serviceLocation : 'international',
+            serviceLocation: props.serviceLocation === undefined || props.serviceLocation === null ? 'international' : props.serviceLocation,
             instanceChargeType: props.instanceChargeType,
             internetChargeType: props.internetChargeType,
             name: props.name,

@@ -85,7 +85,7 @@ export class DrdsDB extends ros.Resource {
 
         const rosDrdsDB = new RosDrdsDB(this, id,  {
             dbInstType: props.dbInstType,
-            type: props.type ? props.type : 'HORIZONTAL',
+            type: props.type === undefined || props.type === null ? 'HORIZONTAL' : props.type,
             drdsInstanceId: props.drdsInstanceId,
             rdsInstance: props.rdsInstance,
             dbInstanceIsCreating: props.dbInstanceIsCreating,

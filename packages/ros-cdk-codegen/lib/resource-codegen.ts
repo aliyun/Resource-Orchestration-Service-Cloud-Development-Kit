@@ -248,11 +248,10 @@ export default class ResourceCodeGenerator {
           } else {
             let codeDefault: string = '';
             if (typeof prop.Default === 'number' || typeof prop.Default === 'boolean') {
-              codeDefault = ` ? props.${propCodeName} : ${prop.Default}`;
+              codeDefault = ` === undefined || props.${propCodeName} === null ? ${prop.Default} : props.${propCodeName}`;
             } else if (typeof prop.Default === 'string') {
-              codeDefault = ` ? props.${propCodeName} : '${prop.Default}'`;
+              codeDefault = ` === undefined || props.${propCodeName} === null ? '${prop.Default}' : props.${propCodeName}`;
             }
-
             this.code.line(`${propCodeName}: props.${propCodeName}${codeDefault},`);
           }
         }

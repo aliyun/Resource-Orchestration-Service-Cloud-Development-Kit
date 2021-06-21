@@ -47,6 +47,21 @@ export class VpcEndpointService extends ros.Resource {
      */
 
     /**
+     * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
+     */
+    public readonly attrMaxBandwidth: ros.IResolvable;
+
+    /**
+     * Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
+     */
+    public readonly attrMinBandwidth: ros.IResolvable;
+
+    /**
+     * Attribute ServiceDescription: The description of the endpoint service.
+     */
+    public readonly attrServiceDescription: ros.IResolvable;
+
+    /**
      * Attribute ServiceDomain: The domain name of the endpoint service.
      */
     public readonly attrServiceDomain: ros.IResolvable;
@@ -79,6 +94,9 @@ export class VpcEndpointService extends ros.Resource {
             autoAcceptEnabled: props.autoAcceptEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpointService;
+        this.attrMaxBandwidth = rosVpcEndpointService.attrMaxBandwidth;
+        this.attrMinBandwidth = rosVpcEndpointService.attrMinBandwidth;
+        this.attrServiceDescription = rosVpcEndpointService.attrServiceDescription;
         this.attrServiceDomain = rosVpcEndpointService.attrServiceDomain;
         this.attrServiceId = rosVpcEndpointService.attrServiceId;
         this.attrServiceName = rosVpcEndpointService.attrServiceName;

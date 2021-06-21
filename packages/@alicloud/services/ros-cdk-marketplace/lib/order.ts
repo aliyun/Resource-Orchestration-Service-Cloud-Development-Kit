@@ -74,8 +74,8 @@ export class Order extends ros.Resource {
             preference: props.preference,
             skuCode: props.skuCode,
             pricingCycle: props.pricingCycle,
-            chargeType: props.chargeType ? props.chargeType : 'Prepaid',
-            quantity: props.quantity ? props.quantity : 1,
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'Prepaid' : props.chargeType,
+            quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
             duration: props.duration,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosOrder;

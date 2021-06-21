@@ -76,8 +76,8 @@ export class WaitConditionHandle extends ros.Resource {
         super(scope, id);
 
         const rosWaitConditionHandle = new RosWaitConditionHandle(this, id,  {
-            mode: props.mode ? props.mode : 'Full',
-            count: props.count ? props.count : -1,
+            mode: props.mode === undefined || props.mode === null ? 'Full' : props.mode,
+            count: props.count === undefined || props.count === null ? -1 : props.count,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosWaitConditionHandle;
         this.attrCurlCli = rosWaitConditionHandle.attrCurlCli;

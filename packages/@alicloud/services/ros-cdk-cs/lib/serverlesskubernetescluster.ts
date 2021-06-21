@@ -121,10 +121,10 @@ export class ServerlessKubernetesCluster extends ros.Resource {
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             addons: props.addons,
-            natGateway: props.natGateway ? props.natGateway : false,
+            natGateway: props.natGateway === undefined || props.natGateway === null ? false : props.natGateway,
             name: props.name,
             vpcId: props.vpcId,
-            serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
+            serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             tags: props.tags,
             privateZone: props.privateZone,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

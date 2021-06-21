@@ -135,14 +135,14 @@ export class Function extends ros.Resource {
         super(scope, id);
 
         const rosFunction = new RosFunction(this, id,  {
-            memorySize: props.memorySize ? props.memorySize : 128,
+            memorySize: props.memorySize === undefined || props.memorySize === null ? 128 : props.memorySize,
             description: props.description,
-            timeout: props.timeout ? props.timeout : 3,
+            timeout: props.timeout === undefined || props.timeout === null ? 3 : props.timeout,
             handler: props.handler,
             customContainerConfig: props.customContainerConfig,
             code: props.code,
             asyncConfiguration: props.asyncConfiguration,
-            caPort: props.caPort ? props.caPort : 9000,
+            caPort: props.caPort === undefined || props.caPort === null ? 9000 : props.caPort,
             functionName: props.functionName,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,

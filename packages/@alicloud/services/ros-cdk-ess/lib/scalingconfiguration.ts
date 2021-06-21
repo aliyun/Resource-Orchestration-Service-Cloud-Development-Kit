@@ -14,6 +14,13 @@ export interface ScalingConfigurationProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
+     * Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * Standard: the standard mode.
+     * Unlimited: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * Property deploymentSetId: Deployment set ID.
      */
     readonly deploymentSetId?: string | ros.IResolvable;
@@ -27,6 +34,11 @@ export interface ScalingConfigurationProps {
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * Property imageFamily: The name of the image family. You can configure this parameter to obtain the latest available custom images within the specified image family. The images are used to create ECS instances. If you have set the ImageId parameter, you cannot set the ImageFamily parameter.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
 
     /**
      * Property imageId: Image ID to create ecs instance .
@@ -76,9 +88,20 @@ export interface ScalingConfigurationProps {
     readonly ioOptimized?: string | ros.IResolvable;
 
     /**
+     * Property ipv6AddressCount: The number of randomly generated IPv6 addresses to be assigned to the elastic network interface (ENI).
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
+
+    /**
      * Property keyPairName: SSH key pair name.
      */
     readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * Property loadBalancerWeight: The weight of the ECS instance as a backend server. Valid values: 1 to 100.
+     * Default value: 50.
+     */
+    readonly loadBalancerWeight?: number | ros.IResolvable;
 
     /**
      * Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -202,14 +225,15 @@ export class ScalingConfiguration extends ros.Resource {
 
         const rosScalingConfiguration = new RosScalingConfiguration(this, id,  {
             scalingConfigurationName: props.scalingConfigurationName,
-            diskMappings: props.diskMappings,
             resourceGroupId: props.resourceGroupId,
+            diskMappings: props.diskMappings,
             systemDiskSize: props.systemDiskSize,
             userData: props.userData,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
             ramRoleName: props.ramRoleName,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             spotPriceLimitForInstanceType: props.spotPriceLimitForInstanceType,
+            ipv6AddressCount: props.ipv6AddressCount,
             imageId: props.imageId,
             spotPriceLimit: props.spotPriceLimit,
             tagList: props.tagList,
@@ -218,17 +242,20 @@ export class ScalingConfiguration extends ros.Resource {
             spotStrategy: props.spotStrategy,
             passwordInherit: props.passwordInherit,
             keyPairName: props.keyPairName,
+            loadBalancerWeight: props.loadBalancerWeight,
             ioOptimized: props.ioOptimized,
             instanceId: props.instanceId,
             hpcClusterId: props.hpcClusterId,
             scalingGroupId: props.scalingGroupId,
             securityGroupId: props.securityGroupId,
-            internetChargeType: props.internetChargeType,
+            imageFamily: props.imageFamily,
             systemDiskCategory: props.systemDiskCategory,
+            internetChargeType: props.internetChargeType,
             instanceName: props.instanceName,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
             internetMaxBandwidthIn: props.internetMaxBandwidthIn,
+            creditSpecification: props.creditSpecification,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingConfiguration;
         this.attrScalingConfigurationId = rosScalingConfiguration.attrScalingConfigurationId;

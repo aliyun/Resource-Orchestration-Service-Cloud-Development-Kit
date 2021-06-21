@@ -74,8 +74,8 @@ export class InstanceEndpointAclPolicy extends ros.Resource {
             comment: props.comment,
             entry: props.entry,
             instanceId: props.instanceId,
-            moduleName: props.moduleName ? props.moduleName : 'Registry',
-            endpointType: props.endpointType ? props.endpointType : 'internet',
+            moduleName: props.moduleName === undefined || props.moduleName === null ? 'Registry' : props.moduleName,
+            endpointType: props.endpointType === undefined || props.endpointType === null ? 'internet' : props.endpointType,
             regionId: props.regionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceEndpointAclPolicy;

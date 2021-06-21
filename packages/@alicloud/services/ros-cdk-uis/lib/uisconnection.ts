@@ -68,7 +68,7 @@ export class UisConnection extends ros.Resource {
             sslConfig: props.sslConfig,
             description: props.description,
             greConfig: props.greConfig,
-            uisProtocol: props.uisProtocol ? props.uisProtocol : 'SSLVPN',
+            uisProtocol: props.uisProtocol === undefined || props.uisProtocol === null ? 'SSLVPN' : props.uisProtocol,
             uisNodeId: props.uisNodeId,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
