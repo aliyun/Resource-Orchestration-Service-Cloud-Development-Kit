@@ -553,11 +553,11 @@ export class CdkToolkit {
             });
     }
 
-    public async outputs(options: OutPutsOptions) {
+    public async output(options: OutPutOptions) {
         await this.syncStackInfo();
         let stacks = await this.selectStacksForDestroy([]);
         if (!options.stackName) {
-            error('If want to get resource stack outputs, stack name must be Specified!')
+            error('If want to get resource stack output, stack name must be Specified!')
             exit()
         }
         if (!stacks.stackIds.includes(options.stackName[0])) {
@@ -573,7 +573,7 @@ export class CdkToolkit {
                 RegionId: region
             }, requestOptions)
             .then((res: any) => {
-                success(`\n ✅ The Stack %s \n Outputs is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Outputs, null, "\t")));
+                success(`\n ✅ The Stack %s \n Output is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Outputs, null, "\t")));
             }, (ex: any) => {
                 if (ex.code == 'StackNotFound') {
                     warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
@@ -889,7 +889,7 @@ export interface EventOptions {
     pageSize: string;
 }
 
-export interface OutPutsOptions {
+export interface OutPutOptions {
     stackName: string;
 }
 
