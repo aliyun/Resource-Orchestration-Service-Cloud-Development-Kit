@@ -56,7 +56,7 @@ export declare class CdkToolkit {
     deploy(options: DeployOptions): Promise<void>;
     diff(options: DiffOptions): Promise<void>;
     event(options: EventOptions): Promise<void>;
-    outputs(options: OutPutsOptions): Promise<void>;
+    output(options: OutPutOptions): Promise<void>;
     resource(options: ResourceOptions): Promise<void>;
     listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
@@ -103,7 +103,7 @@ export interface EventOptions {
     pageNumber: string;
     pageSize: string;
 }
-export interface OutPutsOptions {
+export interface OutPutOptions {
     stackName: string;
 }
 export interface ResourceOptions {
