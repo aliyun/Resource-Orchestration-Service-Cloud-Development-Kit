@@ -41,6 +41,7 @@ export declare class CdkToolkit {
     constructor(props: CdkToolkitProps);
     getRosClient(): Promise<any>;
     config(global: boolean): Promise<void>;
+    configSet(options: ConfigSetOptions): Promise<void>;
     loadCliConfig(options: LoadConfigOptions): Promise<void>;
     list(selectors: string[]): Promise<void>;
     /**
@@ -58,6 +59,7 @@ export declare class CdkToolkit {
     event(options: EventOptions): Promise<void>;
     output(options: OutPutOptions): Promise<void>;
     resource(options: ResourceOptions): Promise<void>;
+    private getStackByName;
     listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
     private syncStackInfo;
@@ -114,6 +116,18 @@ export interface ListStackOptions {
     pageNumber: string;
     pageSize: string;
     all: string;
+}
+export interface ConfigSetOptions {
+    global: string;
+    endpoint: string;
+    region: string;
+    mode: string;
+    ak: string;
+    sk: string;
+    sts: string;
+    ramRoleArn: string;
+    roleSessionName: string;
+    ramRoleName: string;
 }
 export interface LoadConfigOptions {
     global?: string;
