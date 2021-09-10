@@ -12,10 +12,15 @@ import { Configuration } from '../lib/settings';
 import * as version from '../lib/version';
 
 async function parseCommandLineArguments() {
-    const initTemplateLanuages = await availableInitLanguages;
+    const initTemplateLanguages = await availableInitLanguages;
     return yargs
         .env('CDK')
-        .usage('Usage: ros-cdk COMMAND')
+        .usage('Usage: ros-cdk -a [cdk-app] COMMAND')
+        .option('app', {
+            type: 'string',
+            desc: 'REQUIRED: command-line for executing your app or a cloud assembly directory (e.g. "npx ts-node bin/test.ts")',
+            requiresArg: true
+        })
         .option('json', {
             type: 'boolean',
             alias: 'j',
@@ -39,7 +44,7 @@ async function parseCommandLineArguments() {
                         type: 'string',
                         alias: 'l',
                         desc: 'The language to be used for the new project (default can be configured in ~/.cdk.json)',
-                        choices: initTemplateLanuages,
+                        choices: initTemplateLanguages,
                     })
                     .option('list', { type: 'boolean', desc: 'List the available templates' })
                     .option('generate-only', {
@@ -152,7 +157,7 @@ async function parseCommandLineArguments() {
             yargs.option('global', {
                 type: 'boolean',
                 alias: 'g',
-                desc: 'Whether the config should be stroed in global env',
+                desc: 'Whether the config should be stored in global env',
                 default: false,
             })
                 .option('file-path', {
@@ -165,9 +170,65 @@ async function parseCommandLineArguments() {
             yargs.option('global', {
                 type: 'boolean',
                 alias: 'g',
-                desc: 'Whether the config should be stroed in global env',
+                desc: 'Whether the config should be stored in global env',
                 default: false,
             }),
+        )
+        .command('config-set', 'Set your alicloud account configuration non interactive mode.', (yargs) =>
+            yargs.option('global', {
+                type: 'boolean',
+                alias: 'g',
+                desc: 'Whether the config should be stored in global env',
+                default: false,
+            })
+                .option('endpoint', {
+                    type: 'string',
+                    alias: 'e',
+                    desc: 'Specify the service address that initiated the request',
+                    default: 'https://ros.aliyuncs.com',
+                })
+                .option('region', {
+                    type: 'string',
+                    alias: 'r',
+                    desc: 'Specify region information for managing resources',
+                    default: 'cn-hangzhou',
+                })
+                .option('mode', {
+                    type: 'string',
+                    alias: 'm',
+                    demand: true,
+                    desc: 'use `--mode {AK|StsToken|RamRoleArn|EcsRamRole}` to assign authenticate mode',
+                })
+                .option('access-key-id', {
+                    type: 'string',
+                    alias: 'ak',
+                    desc: 'use `--access-key-id AccessKeyId` to assign AccessKeyId, required in AK/StsToken/RamRoleArn mode',
+                })
+                .option('access-key-secret', {
+                    type: 'string',
+                    alias: 'sk',
+                    desc: 'use `--access-key-secret AccessKeySecret` to assign AccessKeySecret, required in AK/StsToken/RamRoleArn mode',
+                })
+                .option('sts-token', {
+                    type: 'string',
+                    alias: 'sts',
+                    desc: 'use `--sts-token StsToken` to assign StsToken, required in StsToken mode',
+                })
+                .option('ram-role-arn', {
+                    type: 'string',
+                    alias: 'arn',
+                    desc: 'use `--ram-role-arn RamRoleArn` to assign RamRoleArn(eg: acs:ram::******:role/******), required in RamRoleArn mode',
+                })
+                .option('role-session-name', {
+                    type: 'string',
+                    alias: 's',
+                    desc: 'use `--role-session-name RoleSessionName` to assign RoleSessionName, required in RamRoleArn mode',
+                })
+                .option('ram-role-name', {
+                    type: 'string',
+                    alias: 'role',
+                    desc: 'use `--ram-role-name RamRoleName` to assign RamRoleName, required in EcsRamRole mode',
+                })
         )
         .version(version.DISPLAY_VERSION)
         .demandCommand(1, '') // just print help
@@ -232,6 +293,22 @@ async function initCommandLine() {
             case 'config':
                 // wait user for ros input
                 await cli.config(args.global);
+                return;
+
+            case 'config-set':
+                // wait user for ros input
+                await cli.configSet({
+                    global: args.global,
+                    endpoint: args.endpoint,
+                    region: args.region,
+                    mode: args.mode,
+                    ak: args['access-key-id'],
+                    sk: args['access-key-secret'],
+                    sts: args['sts-token'],
+                    ramRoleArn: args['ram-role-arn'],
+                    roleSessionName: args['role-session-name'],
+                    ramRoleName: args['ram-role-name']
+                });
                 return;
 
             case 'diff':
