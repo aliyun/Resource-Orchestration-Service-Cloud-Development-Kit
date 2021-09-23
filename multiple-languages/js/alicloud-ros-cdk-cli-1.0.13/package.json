@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-cli",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "ROS CDK Toolkit",
   "scripts": {
     "build": "tsc",
@@ -42,7 +42,7 @@
     "@alicloud/ros-cdk-assembly-schema": "^1.0.0",
     "@alicloud/ros-cdk-cxapi": "^1.0.0",
     "@alicloud/ros-cdk-template-diff": "^1.0.0",
-    "@types/uuid": "^8.3.1",
+    "generate-safe-id": "^1.0.3",
     "child_process": "^1.0.2",
     "colors": "^1.4.0",
     "fs-extra": "^9.0.1",

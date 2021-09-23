@@ -18,7 +18,7 @@ import {exit} from 'process';
 import {printStackDiff} from './diff';
 import {deserializeStructure} from './serialize';
 import {promisify} from 'util';
-import {v4 as uuidv4} from 'uuid';
+const generateSafeId = require('generate-safe-id');
 
 const CONFIG_NAME = 'account.config.json';
 const LOCAL_PATH = './';
@@ -484,7 +484,7 @@ export class CdkToolkit {
         region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
         let templateBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
-        let ClientToken = uuidv4();
+        let ClientToken = generateSafeId();
         let content: { [name: string]: any } = {
             StackName: stackName.toString(),
             RegionId: region,
