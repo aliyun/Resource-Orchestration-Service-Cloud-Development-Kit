@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Fragments of a concatenated string containing stringified Tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.226Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.557Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TokenizedStringFragments")
 public class TokenizedStringFragments extends software.amazon.jsii.JsiiObject {
 

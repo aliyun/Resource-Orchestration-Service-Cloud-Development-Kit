@@ -27,6 +27,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             set;
         }
 
+        [JsiiOptional]
+        [JsiiProperty(name: "metadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        public System.Collections.Generic.IDictionary<string, object>? Metadata
+        {
+            get;
+            set;
+        }
+
         /// <summary>Name to deploy the stack with.</summary>
         /// <remarks>
         /// <strong>Default</strong>: - Derived from construct path.
