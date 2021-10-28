@@ -75,6 +75,8 @@ export declare class CdkToolkit {
     private validateStacks;
     private assembly;
     private getCliConfig;
+    private syncDeployStack;
+    private syncUpdateStack;
 }
 export interface DiffOptions {
     stackNames: string[];
@@ -94,6 +96,7 @@ export interface DeployOptions {
         [name: string]: string | undefined;
     };
     timeout: string;
+    sync: boolean;
 }
 export interface DestroyOptions {
     stackNames: string[];

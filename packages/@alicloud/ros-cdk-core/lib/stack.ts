@@ -43,6 +43,8 @@ export interface StackProps {
    */
   readonly synthesizer?: IStackSynthesizer;
 
+  readonly metadata?: {[key: string]: any};
+
   readonly enableResourcePropertyConstraint?: boolean;
 }
 
@@ -177,6 +179,10 @@ export class Stack extends Construct implements ITaggable {
         );
       }
       this.templateOptions.description = props.description;
+    }
+
+    if (props.metadata == undefined) {
+      this.templateOptions.metadata = {'ALIYUN::ROS::Interface':{'TemplateTags':["Create by ROS CDK"]}};
     }
 
     this._stackName =
@@ -597,8 +603,9 @@ function mergeSection(section: string, val1: any, val2: any): any {
     case "Parameters":
     case "Outputs":
     case "Mappings":
-    case "Metadata":
       return mergeObjectsWithoutDuplicates(section, val1, val2);
+    case "Metadata":
+      return mergeMetadataObjectsWithoutDuplicates(val1, val2);
     default:
       throw new Error(
         `CDK doesn't know how to merge two instances of the ROS template section '${section}' - ` +
@@ -607,16 +614,55 @@ function mergeSection(section: string, val1: any, val2: any): any {
   }
 }
 
+function mergeMetadataObjectsWithoutDuplicates(
+    dest: any,
+    src: any
+): any {
+  if (typeof dest !== "object" && typeof src !== "object") {
+    throw new Error(`Expecting Metadata Value to be an object`);
+  }
+  if (src.hasOwnProperty('ALIYUN::ROS::Interface')) {
+    if (typeof src["ALIYUN::ROS::Interface"] == "object") {
+      if (src["ALIYUN::ROS::Interface"].hasOwnProperty('TemplateTags')) {
+        if (src["ALIYUN::ROS::Interface"] ["TemplateTags"] instanceof Array) {
+          src["ALIYUN::ROS::Interface"] ["TemplateTags"].push("Create by ROS CDK")
+          dest["ALIYUN::ROS::Interface"] = src["ALIYUN::ROS::Interface"]
+        }
+        else {
+          throw new Error(`Expecting Metadata ALIYUN::ROS::Interface TemplateTags Value to be an Array`);
+        }
+      }
+      else {
+        dest["ALIYUN::ROS::Interface"] = src["ALIYUN::ROS::Interface"]
+        dest["ALIYUN::ROS::Interface"].TemplateTags = ["Create by ROS CDK"]
+      }
+    }
+    else {
+      throw new Error(`Expecting Metadata ALIYUN::ROS::Interface Value to be an object`);
+    }
+  }
+  else {
+    dest["ALIYUN::ROS::Interface"] = { TemplateTags : ["Create by ROS CDK"]}
+  }
+  for (const id of Object.keys(src)) {
+    if (id !== 'ALIYUN::ROS::Interface') {
+      dest[id] = src[id];
+    }
+  }
+
+  return dest;
+}
+
 function mergeObjectsWithoutDuplicates(
   section: string,
   dest: any,
   src: any
 ): any {
   if (typeof dest !== "object") {
-    throw new Error(`Expecting ${JSON.stringify(dest)} to be an object`);
+    throw new Error(`Expecting '${JSON.stringify(dest)}' to be an object`);
   }
   if (typeof src !== "object") {
-    throw new Error(`Expecting ${JSON.stringify(src)} to be an object`);
+    throw new Error(`Expecting '${JSON.stringify(src)}' to be an object`);
   }
 
   // add all entities from source section to destination section
