@@ -1,6 +1,6 @@
 {
-  "name": "@alicloud/ros-cdk-core",
-  "version": "1.0.2",
+  "name": "@alicloud/ros-cdk-cxapi",
+  "version": "1.0.3",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -10,28 +10,32 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "com.aliyun.ros.cdk.core",
+        "package": "com.aliyun.ros.cdk.cxapi",
         "maven": {
           "groupId": "com.aliyun",
-          "artifactId": "ros-cdk-core"
+          "artifactId": "ros-cdk-cxapi"
         }
       },
       "python": {
-        "module": "ros_cdk_core",
-        "distName": "ros-cdk-core",
+        "module": "ros_cdk_cxapi",
+        "distName": "ros-cdk-cxapi",
         "classifiers": [
           "Programming Language :: Python :: 3"
         ]
       },
       "dotnet": {
-        "namespace": "AlibabaCloud.SDK.ROS.CDK.Core",
-        "packageId": "AlibabaCloud.SDK.ROS.CDK.Core"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Cxapi",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Cxapi"
       }
     }
   },
   "directories": {
     "lib": "lib"
   },
+  "keywords": [
+    "ros",
+    "cdk"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -46,22 +50,18 @@
     "pack": "npm pack"
   },
   "devDependencies": {
-    "@types/fs-extra": "^9.0.1",
     "@types/node": "^14.10.1",
+    "@types/semver": "^7.3.1",
     "prettier": "^2.1.1"
   },
-  "dependencies": {
-    "@alicloud/ros-cdk-assembly-schema": "^1.0.2",
-    "@alicloud/ros-cdk-cxapi": "^1.0.2",
-    "constructs": "^3.0.4",
-    "fs-extra": "^9.0.1"
-  },
   "bundledDependencies": [
-    "fs-extra"
+    "semver"
   ],
+  "dependencies": {
+    "@alicloud/ros-cdk-assembly-schema": "^1.0.3",
+    "semver": "^7.2.2"
+  },
   "peerDependencies": {
-    "@alicloud/ros-cdk-assembly-schema": "^1.0.2",
-    "@alicloud/ros-cdk-cxapi": "^1.0.2",
-    "constructs": "^3.0.4"
+    "@alicloud/ros-cdk-assembly-schema": "^1.0.3"
   }
 }

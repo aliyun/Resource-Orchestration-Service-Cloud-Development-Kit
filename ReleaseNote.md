@@ -1,6 +1,16 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
 
+## [ros-cdk-cli 1.0.14] (2021-10-27)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk deploy --sync params  support synchronous create or update stack.
+-  Fix npm run build error bug. ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/15))
+-  Fix ros-cdk deploy failed exit code 0 bug. ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/17))
+-  ros-cdk initialize template addition ros cdk tag.
+
+
 ## [ros-cdk-cli 1.0.13] (2021-09-23)
 
 

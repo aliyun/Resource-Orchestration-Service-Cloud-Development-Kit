@@ -1,6 +1,6 @@
 {
-  "name": "@alicloud/ros-cdk-template-diff",
-  "version": "1.0.2",
+  "name": "@alicloud/ros-cdk-spec",
+  "version": "1.0.3",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
@@ -10,11 +10,8 @@
     "lib": "lib"
   },
   "files": [
-    "lib/**/*"
-  ],
-  "keywords": [
-    "ros",
-    "cdk"
+    "lib/**/*",
+    "spec/"
   ],
   "publishConfig": {
     "access": "public"
@@ -24,22 +21,10 @@
     "url": "https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git"
   },
   "scripts": {
-    "format": "prettier --write \"lib/**/*.{js,ts}\"",
     "build": "tsc",
-    "jsii": "jsii",
     "pack": "npm pack"
   },
   "devDependencies": {
-    "@types/string-width": "^4.0.1",
-    "@types/table": "^4.0.7",
-    "prettier": "^2.1.1"
-  },
-  "dependencies": {
-    "@alicloud/ros-cdk-spec": "^1.0.2",
-    "colors": "^1.4.0",
-    "diff": "^4.0.2",
-    "fast-deep-equal": "^3.1.3",
-    "string-width": "^4.2.0",
-    "table": "^5.4.6"
+    "@types/node": "^14.10.3"
   }
 }

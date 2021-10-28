@@ -12,7 +12,7 @@ import { Configuration } from '../lib/settings';
 import * as version from '../lib/version';
 
 async function parseCommandLineArguments() {
-  const initTemplateLanuages = await availableInitLanguages;
+  const initTemplateLanguages = await availableInitLanguages;
   return yargs
     .env('CDK')
     .usage('Usage: ros-cdk -a [cdk-app] COMMAND')
@@ -44,7 +44,7 @@ async function parseCommandLineArguments() {
             type: 'string',
             alias: 'l',
             desc: 'The language to be used for the new project (default can be configured in ~/.cdk.json)',
-            choices: initTemplateLanuages,
+            choices: initTemplateLanguages,
           })
           .option('list', { type: 'boolean', desc: 'List the available templates' })
           .option('generate-only', {
@@ -86,7 +86,8 @@ async function parseCommandLineArguments() {
           alias: 'e',
           desc: "Only deploy requested stacks, don't include dependencies",
         })
-        .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 }),
+        .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 })
+          .option('sync', { type: 'boolean', desc: 'sync deploy stack', default: false }),
     )
     .command(
       'diff [STACKS..]',
@@ -331,6 +332,7 @@ async function initCommandLine() {
           parameters: parameterMap,
           exclusively: args.exclusively,
           timeout: args.timeoutMinutes,
+          sync: args.sync
         });
         return;
 

@@ -263,6 +263,10 @@ copy_js() {
       rm -f $f
     done
 
+    for f in $(find packages -name "package-lock.json" | grep -v dist); do
+      rm -f $f
+    done
+
     lerna clean
     lerna run pack
 
@@ -314,4 +318,3 @@ case "$ACTION" in
         usage
     ;;
 esac
-

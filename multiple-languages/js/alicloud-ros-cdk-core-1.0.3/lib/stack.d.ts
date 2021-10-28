@@ -27,6 +27,9 @@ export interface StackProps {
      * @default - `DefaultStackSynthesizer`
      */
     readonly synthesizer?: IStackSynthesizer;
+    readonly metadata?: {
+        [key: string]: any;
+    };
     readonly enableResourcePropertyConstraint?: boolean;
 }
 /**

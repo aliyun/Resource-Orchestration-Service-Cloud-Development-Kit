@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-codegen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "files": [
     "lib/**/*",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@alicloud/ros-2019-09-10": "^1.0.0",
-    "@alicloud/ros-cdk-spec": "^1.0.2",
+    "@alicloud/ros-cdk-spec": "^1.0.3",
     "codemaker": "^1.7.0",
     "fs-extra": "^9.0.1",
     "readline-sync": "^1.4.10",
