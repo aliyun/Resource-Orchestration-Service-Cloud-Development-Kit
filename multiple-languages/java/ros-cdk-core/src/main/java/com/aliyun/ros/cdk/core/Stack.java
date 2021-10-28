@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:41.991Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -399,6 +399,15 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
          */
         public Builder enableResourcePropertyConstraint(final java.lang.Boolean enableResourcePropertyConstraint) {
             this.props().enableResourcePropertyConstraint(enableResourcePropertyConstraint);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param metadata This parameter is required.
+         */
+        public Builder metadata(final java.util.Map<java.lang.String, ? extends java.lang.Object> metadata) {
+            this.props().metadata(metadata);
             return this;
         }
 

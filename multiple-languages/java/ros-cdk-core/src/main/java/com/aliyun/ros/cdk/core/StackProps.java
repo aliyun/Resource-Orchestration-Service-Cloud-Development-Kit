@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.220Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.550Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StackProps")
 @software.amazon.jsii.Jsii.Proxy(StackProps.Jsii$Proxy.class)
 public interface StackProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,10 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getEnableResourcePropertyConstraint() {
+        return null;
+    }
+
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getMetadata() {
         return null;
     }
 
@@ -61,6 +65,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<StackProps> {
         private java.lang.String description;
         private java.lang.Boolean enableResourcePropertyConstraint;
+        private java.util.Map<java.lang.String, java.lang.Object> metadata;
         private java.lang.String stackName;
         private com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer;
         private java.util.Map<java.lang.String, java.lang.String> tags;
@@ -83,6 +88,17 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder enableResourcePropertyConstraint(java.lang.Boolean enableResourcePropertyConstraint) {
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link StackProps#getMetadata}
+         * @param metadata the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder metadata(java.util.Map<java.lang.String, ? extends java.lang.Object> metadata) {
+            this.metadata = (java.util.Map<java.lang.String, java.lang.Object>)metadata;
             return this;
         }
 
@@ -133,7 +149,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public StackProps build() {
-            return new Jsii$Proxy(description, enableResourcePropertyConstraint, stackName, synthesizer, tags, version);
+            return new Jsii$Proxy(description, enableResourcePropertyConstraint, metadata, stackName, synthesizer, tags, version);
         }
     }
 
@@ -144,6 +160,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StackProps {
         private final java.lang.String description;
         private final java.lang.Boolean enableResourcePropertyConstraint;
+        private final java.util.Map<java.lang.String, java.lang.Object> metadata;
         private final java.lang.String stackName;
         private final com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer;
         private final java.util.Map<java.lang.String, java.lang.String> tags;
@@ -157,6 +174,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.enableResourcePropertyConstraint = software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+            this.metadata = software.amazon.jsii.Kernel.get(this, "metadata", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.stackName = software.amazon.jsii.Kernel.get(this, "stackName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.synthesizer = software.amazon.jsii.Kernel.get(this, "synthesizer", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IStackSynthesizer.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
@@ -166,10 +184,12 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.Boolean enableResourcePropertyConstraint, final java.lang.String stackName, final com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer, final java.util.Map<java.lang.String, java.lang.String> tags, final java.lang.String version) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.String description, final java.lang.Boolean enableResourcePropertyConstraint, final java.util.Map<java.lang.String, ? extends java.lang.Object> metadata, final java.lang.String stackName, final com.aliyun.ros.cdk.core.IStackSynthesizer synthesizer, final java.util.Map<java.lang.String, java.lang.String> tags, final java.lang.String version) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = description;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+            this.metadata = (java.util.Map<java.lang.String, java.lang.Object>)metadata;
             this.stackName = stackName;
             this.synthesizer = synthesizer;
             this.tags = tags;
@@ -184,6 +204,11 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Boolean getEnableResourcePropertyConstraint() {
             return this.enableResourcePropertyConstraint;
+        }
+
+        @Override
+        public final java.util.Map<java.lang.String, java.lang.Object> getMetadata() {
+            return this.metadata;
         }
 
         @Override
@@ -218,6 +243,9 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getEnableResourcePropertyConstraint() != null) {
                 data.set("enableResourcePropertyConstraint", om.valueToTree(this.getEnableResourcePropertyConstraint()));
             }
+            if (this.getMetadata() != null) {
+                data.set("metadata", om.valueToTree(this.getMetadata()));
+            }
             if (this.getStackName() != null) {
                 data.set("stackName", om.valueToTree(this.getStackName()));
             }
@@ -250,6 +278,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableResourcePropertyConstraint != null ? !this.enableResourcePropertyConstraint.equals(that.enableResourcePropertyConstraint) : that.enableResourcePropertyConstraint != null) return false;
+            if (this.metadata != null ? !this.metadata.equals(that.metadata) : that.metadata != null) return false;
             if (this.stackName != null ? !this.stackName.equals(that.stackName) : that.stackName != null) return false;
             if (this.synthesizer != null ? !this.synthesizer.equals(that.synthesizer) : that.synthesizer != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -260,6 +289,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.description != null ? this.description.hashCode() : 0;
             result = 31 * result + (this.enableResourcePropertyConstraint != null ? this.enableResourcePropertyConstraint.hashCode() : 0);
+            result = 31 * result + (this.metadata != null ? this.metadata.hashCode() : 0);
             result = 31 * result + (this.stackName != null ? this.stackName.hashCode() : 0);
             result = 31 * result + (this.synthesizer != null ? this.synthesizer.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

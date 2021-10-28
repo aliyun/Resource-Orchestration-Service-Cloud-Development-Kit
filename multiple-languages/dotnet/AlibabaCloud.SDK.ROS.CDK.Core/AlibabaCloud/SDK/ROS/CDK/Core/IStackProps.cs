@@ -31,6 +31,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        [JsiiProperty(name: "metadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        System.Collections.Generic.IDictionary<string, object>? Metadata
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Name to deploy the stack with.</summary>
         /// <remarks>
         /// <strong>Default</strong>: - Derived from construct path.
@@ -106,6 +116,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             public bool? EnableResourcePropertyConstraint
             {
                 get => GetInstanceProperty<bool?>();
+            }
+
+            [JsiiOptional]
+            [JsiiProperty(name: "metadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, object>? Metadata
+            {
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
             }
 
             /// <summary>Name to deploy the stack with.</summary>

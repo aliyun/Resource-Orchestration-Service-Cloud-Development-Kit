@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Tokens are special objects that participate in synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:41.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.142Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IResolvable")
 @software.amazon.jsii.Jsii.Proxy(IResolvable.Jsii$Proxy.class)
 public interface IResolvable extends software.amazon.jsii.JsiiSerializable {
