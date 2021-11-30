@@ -17,18 +17,18 @@ import { Stack } from "../stack";
  * copy/pasting), and jsii will choke on this type.
  */
 export function addStackArtifactToAssembly(
-  session: ISynthesisSession,
-  stack: Stack,
-  stackProps: Partial<cxschema.AliyunRosStackProperties>,
-  additionalStackDependencies: string[]
+    session: ISynthesisSession,
+    stack: Stack,
+    stackProps: Partial<cxschema.AliyunRosStackProperties>,
+    additionalStackDependencies: string[]
 ) {
   // nested stack tags are applied at the ALIYUN::ROS::Stack resource
   // level and are not needed in the cloud assembly.
   // TODO: move these to the cloud assembly artifact properties instead of metadata
   if (stack.tags.hasTags()) {
     stack.node.addMetadata(
-      cxschema.ArtifactMetadataEntryType.STACK_TAGS,
-      stack.tags.renderTags()
+        cxschema.ArtifactMetadataEntryType.STACK_TAGS,
+        stack.tags.renderTags()
     );
   }
 
@@ -46,10 +46,11 @@ export function addStackArtifactToAssembly(
   // name and artifact ID are the same, the cloud assembly manifest will not
   // change.
   const stackNameProperty =
-    stack.stackName === stack.artifactId ? {} : { stackName: stack.stackName };
+      stack.stackName === stack.artifactId ? {} : { stackName: stack.stackName };
 
   const properties: cxschema.AliyunRosStackProperties = {
     templateFile: stack.templateFile,
+    tags: nonEmptyDict(stack.tags.tagValues()),
     ...stackProps,
     ...stackNameProperty,
   };
@@ -83,7 +84,7 @@ function collectStackMetadata(stack: Stack) {
     if (node.node.metadata.length > 0) {
       // Make the path absolute
       output[ConstructNode.PATH_SEP + node.node.path] = node.node.metadata.map(
-        (md) => stack.resolve(md) as cxschema.MetadataEntry
+          (md) => stack.resolve(md) as cxschema.MetadataEntry
       );
     }
 
@@ -114,4 +115,8 @@ export function assertBound<A>(x: A | undefined): asserts x is NonNullable<A> {
   if (x === null && x === undefined) {
     throw new Error("You must call bindStack() first");
   }
+}
+
+function nonEmptyDict<A>(xs: Record<string, A>) {
+  return Object.keys(xs).length > 0 ? xs : undefined;
 }

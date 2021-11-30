@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.673Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -86,7 +86,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
      * For example,
      * <p>
      * <blockquote><pre>
-     * // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+     * // Example automatically generated. See https://github.com/aws/jsii/issues/826
      * addOverride("Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes", List.of("myattribute"));
      * addOverride("Properties.GlobalSecondaryIndexes.1.ProjectionType", "INCLUDE");
      * </pre></blockquote>

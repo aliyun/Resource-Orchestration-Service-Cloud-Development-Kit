@@ -242,7 +242,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
         /// <summary>The name of the ROS template file emitted to the output directory during synthesis.</summary>
         /// <example>
-        /// <code>// Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+        /// <code>// Example automatically generated. See https://github.com/aws/jsii/issues/826
         /// MyStack.Template.Json;</code>
         /// </example>
         [JsiiProperty(name: "templateFile", typeJson: "{\"primitive\":\"string\"}")]

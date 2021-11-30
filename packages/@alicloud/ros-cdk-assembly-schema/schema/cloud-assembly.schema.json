@@ -159,6 +159,13 @@
                 "stackName": {
                     "description": "The name to use for the ROS stack. (Default - name derived from artifact ID)",
                     "type": "string"
+                },
+                "tags": {
+                    "description": "Values for ROS stack tags that should be passed when the stack is deployed. (Default - No tags)",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             },
             "required": [

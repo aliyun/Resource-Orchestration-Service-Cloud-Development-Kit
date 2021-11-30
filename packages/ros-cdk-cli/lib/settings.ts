@@ -41,8 +41,8 @@ export class Configuration {
 
   constructor(commandLineArguments?: Arguments) {
     this.commandLineArguments = commandLineArguments
-      ? Settings.fromCommandLineArguments(commandLineArguments)
-      : new Settings();
+        ? Settings.fromCommandLineArguments(commandLineArguments)
+        : new Settings();
     this.commandLineContext = this.commandLineArguments.subSettings([CONTEXT_KEY]).makeReadOnly();
   }
 
@@ -69,17 +69,17 @@ export class Configuration {
     this._projectContext = await loadAndLog(PROJECT_CONTEXT);
 
     this.context = new Context(
-      this.commandLineContext,
-      this.projectConfig.subSettings([CONTEXT_KEY]).makeReadOnly(),
-      this.projectContext,
+        this.commandLineContext,
+        this.projectConfig.subSettings([CONTEXT_KEY]).makeReadOnly(),
+        this.projectContext,
     );
 
     // Build settings from what's left
     this.settings = this.defaultConfig
-      .merge(userConfig)
-      .merge(this.projectConfig)
-      .merge(this.commandLineArguments)
-      .makeReadOnly();
+        .merge(userConfig)
+        .merge(this.projectConfig)
+        .merge(this.commandLineArguments)
+        .makeReadOnly();
 
     debug('merged settings:', this.settings.all);
 
@@ -189,7 +189,7 @@ export class Settings {
    */
   public static fromCommandLineArguments(argv: Arguments): Settings {
     const context = this.parseStringContextListToObject(argv);
-    const tags = this.parseStringTagsListToObject(argv);
+    const tags = this.parseStringTagsListToObject(expectStringList(argv.tags));
 
     return new Settings({
       app: argv.app,
@@ -230,7 +230,7 @@ export class Settings {
         debug('CLI argument context: %s=%s', parts[0], parts[1]);
         if (parts[0].match(/^aliyun:.+/)) {
           throw new Error(
-            `User-provided context cannot use keys prefixed with 'aliyun:', but ${parts[0]} was provided.`,
+              `User-provided context cannot use keys prefixed with 'aliyun:', but ${parts[0]} was provided.`,
           );
         }
         context[parts[0]] = parts[1];
@@ -241,10 +241,15 @@ export class Settings {
     return context;
   }
 
-  private static parseStringTagsListToObject(argv: Arguments): Tag[] {
+  private static parseStringTagsListToObject(argTags: string[] | undefined): Tag[] | undefined {
+    if (argTags === undefined) { return undefined; }
+    if (argTags.length === 0) { return undefined; }
+    const nonEmptyTags = argTags.filter(t => t !== '');
+    if (nonEmptyTags.length === 0) { return []; }
+
     const tags: Tag[] = [];
 
-    for (const assignment of (argv as any).tags || []) {
+    for (const assignment of nonEmptyTags) {
       const parts = assignment.split('=', 2);
       if (parts.length === 2) {
         debug('CLI argument tags: %s=%s', parts[0], parts[1]);
@@ -256,8 +261,9 @@ export class Settings {
         warning('Tags argument is not an assignment (key=value): %s', assignment);
       }
     }
-    return tags;
+    return tags.length > 0 ? tags : undefined;
   }
+
 
   constructor(private settings: SettingsMap = {}, public readonly readOnly = false) {}
 
@@ -357,4 +363,17 @@ function stripTransientValues(obj: { [key: string]: any }) {
  */
 function isTransientValue(value: any) {
   return typeof value === 'object' && value !== null && (value as any)[TRANSIENT_CONTEXT_KEY];
+}
+
+
+function expectStringList(x: unknown): string[] | undefined {
+  if (x === undefined) { return undefined; }
+  if (!Array.isArray(x)) {
+    throw new Error(`Expected array, got '${x}'`);
+  }
+  const nonStrings = x.filter(e => typeof e !== 'string');
+  if (nonStrings.length > 0) {
+    throw new Error(`Expected list of strings, found ${nonStrings}`);
+  }
+  return x;
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.674Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -302,9 +302,10 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * <p>
      * Example:
      * <p>
-     * <blockquote><pre>{@code
-     * // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
-     * MyStack.template.getJson();}</pre></blockquote>
+     * <blockquote><pre>
+     * // Example automatically generated. See https://github.com/aws/jsii/issues/826
+     * MyStack.template.getJson();
+     * </pre></blockquote>
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getTemplateFile() {
         return software.amazon.jsii.Kernel.get(this, "templateFile", software.amazon.jsii.NativeType.forClass(java.lang.String.class));

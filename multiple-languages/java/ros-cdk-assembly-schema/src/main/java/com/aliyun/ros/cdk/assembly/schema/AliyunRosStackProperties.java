@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for ROS stacks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.089Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties")
 @software.amazon.jsii.Jsii.Proxy(AliyunRosStackProperties.Jsii$Proxy.class)
 public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,15 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
     }
 
     /**
+     * Values for ROS stack tags that should be passed when the stack is deployed.
+     * <p>
+     * Default: - No tags
+     */
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.String> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link AliyunRosStackProperties}
      */
     static Builder builder() {
@@ -44,6 +53,7 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
         private java.lang.String templateFile;
         private java.util.Map<java.lang.String, java.lang.String> parameters;
         private java.lang.String stackName;
+        private java.util.Map<java.lang.String, java.lang.String> tags;
 
         /**
          * Sets the value of {@link AliyunRosStackProperties#getTemplateFile}
@@ -76,13 +86,23 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link AliyunRosStackProperties#getTags}
+         * @param tags Values for ROS stack tags that should be passed when the stack is deployed.
+         * @return {@code this}
+         */
+        public Builder tags(java.util.Map<java.lang.String, java.lang.String> tags) {
+            this.tags = tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link AliyunRosStackProperties}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public AliyunRosStackProperties build() {
-            return new Jsii$Proxy(templateFile, parameters, stackName);
+            return new Jsii$Proxy(templateFile, parameters, stackName, tags);
         }
     }
 
@@ -94,6 +114,7 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
         private final java.lang.String templateFile;
         private final java.util.Map<java.lang.String, java.lang.String> parameters;
         private final java.lang.String stackName;
+        private final java.util.Map<java.lang.String, java.lang.String> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,16 +125,18 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
             this.templateFile = software.amazon.jsii.Kernel.get(this, "templateFile", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
             this.stackName = software.amazon.jsii.Kernel.get(this, "stackName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String templateFile, final java.util.Map<java.lang.String, java.lang.String> parameters, final java.lang.String stackName) {
+        protected Jsii$Proxy(final java.lang.String templateFile, final java.util.Map<java.lang.String, java.lang.String> parameters, final java.lang.String stackName, final java.util.Map<java.lang.String, java.lang.String> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.templateFile = java.util.Objects.requireNonNull(templateFile, "templateFile is required");
             this.parameters = parameters;
             this.stackName = stackName;
+            this.tags = tags;
         }
 
         @Override
@@ -132,6 +155,11 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.util.Map<java.lang.String, java.lang.String> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -143,6 +171,9 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
             }
             if (this.getStackName() != null) {
                 data.set("stackName", om.valueToTree(this.getStackName()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -164,7 +195,8 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
 
             if (!templateFile.equals(that.templateFile)) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
-            return this.stackName != null ? this.stackName.equals(that.stackName) : that.stackName == null;
+            if (this.stackName != null ? !this.stackName.equals(that.stackName) : that.stackName != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -172,6 +204,7 @@ public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSeria
             int result = this.templateFile.hashCode();
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.stackName != null ? this.stackName.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

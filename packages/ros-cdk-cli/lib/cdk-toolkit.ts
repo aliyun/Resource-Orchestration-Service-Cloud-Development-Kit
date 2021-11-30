@@ -2,8 +2,10 @@ import * as colors from 'colors/safe';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as readlineSync from 'readline-sync';
+import * as util from 'util';
 import {decipher, cipher} from './util/cipher';
 import {format} from 'util';
+import { RewritableBlock } from './util/display';
 const rosClient = require('@alicloud/ros-2019-09-10');
 const os = require('os');
 const http = require('http');
@@ -18,6 +20,7 @@ import {exit} from 'process';
 import {printStackDiff} from './diff';
 import {deserializeStructure} from './serialize';
 import {promisify} from 'util';
+
 const generateSafeId = require('generate-safe-id');
 
 const CONFIG_NAME = 'account.config.json';
@@ -44,6 +47,14 @@ const requestOptions: { [name: string]: any } = {
 const sleep = function (ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+
+const stream = process.stdout;
+
+
+let withDefaultPrinterObj: any;
+
+
 
 export interface CdkToolkitProps {
     /**
@@ -110,7 +121,7 @@ export class CdkToolkit {
 
     public async getRosClient() {
         let modeType = await CdkToolkit.getJson(CONFIG_NAME, 'type', true)
-        let endpoint = await CdkToolkit.getJson(CONFIG_NAME, 'endpoint',true)
+        let endpoint = await CdkToolkit.getJson(CONFIG_NAME, 'endpoint', true)
         let configInfo: any;
         let client;
         switch (modeType) {
@@ -150,11 +161,11 @@ export class CdkToolkit {
         let newAccessKeySecret: string;
         let newSecurityToken: string;
         // @ts-ignore
-        newAccessKeyId = newAccessKeyId ? newAccessKeyId: process.env.ACCESS_KEY_ID
+        newAccessKeyId = newAccessKeyId ? newAccessKeyId : process.env.ACCESS_KEY_ID
         // @ts-ignore
-        newAccessKeySecret = newAccessKeySecret ? newAccessKeySecret: process.env.ACCESS_KEY_SECRET
+        newAccessKeySecret = newAccessKeySecret ? newAccessKeySecret : process.env.ACCESS_KEY_SECRET
         // @ts-ignore
-        newSecurityToken = newSecurityToken ? newSecurityToken: process.env.SECURITY_TOKEN
+        newSecurityToken = newSecurityToken ? newSecurityToken : process.env.SECURITY_TOKEN
         if (configInfo) {
             try {
                 const cred = new Credentials(configInfo);
@@ -172,15 +183,13 @@ export class CdkToolkit {
         if (!newAccessKeyId || !newAccessKeySecret) {
             error("Please use 'ros-cdk config (-g)' or set environment to set your account configuration firstly!");
             exit(1);
-        }
-        else if (!newSecurityToken) {
+        } else if (!newSecurityToken) {
             client = new rosClient({
                 endpoint: endpoint,
                 accessKeyId: newAccessKeyId,
                 accessKeySecret: newAccessKeySecret
             });
-        }
-        else {
+        } else {
             client = new rosClient({
                 endpoint: endpoint,
                 accessKeyId: newAccessKeyId,
@@ -283,25 +292,23 @@ export class CdkToolkit {
         let ak = options.ak ? options.ak : '';
         let sk = options.sk ? options.sk : '';
         let stsToken = options.sts ? options.sts : '';
-        let ramRoleArn = options.ramRoleArn? options.ramRoleArn : '';
-        let roleSessionName = options.roleSessionName? options.roleSessionName : '';
-        let ramRoleName = options.ramRoleName? options.ramRoleName : '';
-        if (modeType === 'AK'){
+        let ramRoleArn = options.ramRoleArn ? options.ramRoleArn : '';
+        let roleSessionName = options.roleSessionName ? options.roleSessionName : '';
+        let ramRoleName = options.ramRoleName ? options.ramRoleName : '';
+        if (modeType === 'AK') {
             configInfo = {
                 type: 'access_key',
                 accessKeyId: await cipher(ak),
                 accessKeySecret: await cipher(sk)
             };
-        }
-        else if (modeType === 'StsToken') {
+        } else if (modeType === 'StsToken') {
             configInfo = {
                 type: 'sts',
                 accessKeyId: await cipher(ak),
                 accessKeySecret: await cipher(sk),
                 securityToken: await cipher(stsToken)
             };
-        }
-        else if (modeType === 'RamRoleArn') {
+        } else if (modeType === 'RamRoleArn') {
             configInfo = {
                 type: 'ram_role_arn',
                 accessKeyId: await cipher(ak),
@@ -309,14 +316,12 @@ export class CdkToolkit {
                 roleArn: ramRoleArn,
                 roleSessionName: roleSessionName
             };
-        }
-        else if (modeType === 'EcsRamRole') {
+        } else if (modeType === 'EcsRamRole') {
             configInfo = {
                 type: 'ecs_ram_role',
                 roleName: ramRoleName
             };
-        }
-        else {
+        } else {
             error(
                 'WANRNING: If want to deploy or delete stack, a authenticate mode must be in (AK|StsToken|RamRoleArn|EcsRamRole)',
             );
@@ -495,6 +500,16 @@ export class CdkToolkit {
         };
         let sync = options.sync
 
+        if (stacks.stackArtifacts[0].tags) {
+            let count: number = 1;
+            let paras = stacks.stackArtifacts[0].tags;
+            for (let key in paras) {
+                content['Tags.' + count.toString() + '.Key'] = key;
+                content['Tags.' + count.toString() + '.Value'] = paras[key];
+                count++;
+            }
+        }
+
         if (options.parameters) {
             let count: number = 1;
             let paras = options.parameters;
@@ -593,8 +608,7 @@ export class CdkToolkit {
                                 exit(1)
                             }
                         }
-                    }
-                    else {
+                    } else {
                         error('fail to update stack, because stack status is %s', stackStatus)
                         exit(1)
                     }
@@ -605,6 +619,7 @@ export class CdkToolkit {
                     if (sync) {
                         print('%s: deploying...', colors.bold(stackName));
                         await this.syncDeployStack(client, content, requestOptions)
+
                     }
                     const createResult = await client.createStack(content, requestOptions)
                     await this.updateStackInfo(stackName, createResult.StackId);
@@ -740,8 +755,8 @@ export class CdkToolkit {
     public async diff(options: DiffOptions) {
         let stacks = await this.selectStacksForDestroy(options.stackNames);
         const client = await this.getRosClient();
-        let regionInLocal = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        regionInLocal = regionInLocal ? regionInLocal: process.env.REGION_ID;
+        let regionInLocal = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        regionInLocal = regionInLocal ? regionInLocal : process.env.REGION_ID;
         const stream = options.stream || process.stderr;
         const contextLines = options.contextLines || 3;
         for (let stack of stacks.stackArtifacts) {
@@ -782,8 +797,8 @@ export class CdkToolkit {
         if (options.logicalResourceId) {
             LogicalResourceIds.push(options.logicalResourceId)
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         client
             .listStackEvents({
                 StackId: (await this.findStackInfo(options.stackName[0])).stackId,
@@ -816,8 +831,8 @@ export class CdkToolkit {
             exit(1)
         }
         const client = await this.getRosClient();
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         client
             .getStack({
                 StackId: (await this.findStackInfo(options.stackName[0])).stackId,
@@ -845,8 +860,8 @@ export class CdkToolkit {
                 stackNames.push(stack.id);
             }
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
         for (let stackName of stackNames) {
             client
@@ -867,22 +882,49 @@ export class CdkToolkit {
         }
     }
 
-    private async getStackByName(stackName: string){
+    public async generateStackInfo() {
+        let filePath = path.join(LOCAL_PATH + STACK_INFO);
+        let stacks = await this.selectStacksForList([]);
+        let stackNames: string[] = [];
+        let StackInfos: { [key: string]: any } = {};
+        stackNames = stacks.stackIds
+        for (let stackName of stackNames) {
+            const stackInfo = await this.getStackByName(stackName)
+            if (stackInfo !== null) {
+                StackInfos[stackName] = {
+                    status: DEPLOY_STACK,
+                    stackId: stackInfo.StackId
+                }
+            } else {
+                StackInfos[stackName] = {
+                    status: INIT_STACK,
+                    stackId: null
+                };
+            }
+        }
+        fs.writeFileSync(filePath, JSON.stringify(StackInfos, null, '\t'));
+        success(
+            `\n ✅ The generate stack info has completed!`,
+        );
+        exit(0)
+    }
+
+
+    private async getStackByName(stackName: string) {
         const client = await this.getRosClient();
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         let params = {
             RegionId: region,
-            PageSize:  10,
-            PageNumber:  1,
+            PageSize: 10,
+            PageNumber: 1,
             StackName: [stackName]
         };
         try {
             const result = await client.listStacks(params, requestOptions)
             if (result.Stacks[0]) {
                 return result.Stacks[0]
-            }
-            else{
+            } else {
                 return null
             }
         } catch {
@@ -896,8 +938,8 @@ export class CdkToolkit {
         const client = await this.getRosClient();
         let stacks = await this.selectStacksForList([]);
         let params: any = {};
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         params = {
             RegionId: region,
             PageSize: options.pageSize ? Number(options.pageSize) : 10,
@@ -942,8 +984,8 @@ export class CdkToolkit {
                 }
             }
         }
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
-        region = region ? region: process.env.REGION_ID;
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
+        region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
         for (let stackName of stackNames) {
             client
@@ -1131,9 +1173,13 @@ export class CdkToolkit {
         }
     }
 
-    private async syncDeployStack(client: any, content: any, requestOptions: any){
+    private async syncDeployStack(client: any, content: any, requestOptions: any) {
         try {
             const createResult = await client.createStack(content, requestOptions)
+            const block = new RewritableBlock(stream);
+            withDefaultPrinterObj = setInterval(async function() {
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+            }, 3000);
             while (true) {
                 let params = {
                     RegionId: content['RegionId'],
@@ -1145,7 +1191,9 @@ export class CdkToolkit {
                 const stackName = getStackResult.StackName
                 const regComplete = RegExp(/COMPLETE/)
                 const regFailed = RegExp(/FAILED/)
-                if (regComplete.exec(status) || regFailed.exec(status)){
+                if (regComplete.exec(status) || regFailed.exec(status)) {
+                    clearInterval(withDefaultPrinterObj);
+                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
                     success(
                         `\n ✅ The deployment(sync deploy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
                         colors.blue(status),
@@ -1153,44 +1201,75 @@ export class CdkToolkit {
                         colors.blue(getStackResult.StackId)
                     );
                     await this.updateStackInfo(stackName, createResult.StackId);
-                    exit(0)
                     break
                 }
-                else {
-                    await sleep(5000);
-                }
             }
-        }
-        catch (e) {
+            exit(0)
+        } catch (e) {
             error('fail to sync create stack: %s %s', e.code, e.message)
+            clearInterval(withDefaultPrinterObj);
             exit(1)
         }
     }
 
-    private async syncUpdateStack(client: any, content: any, requestOptions: any){
+    private static async getResources(client: any, content: any, requestOptions: any, stackId: any) {
+        try {
+            const listStackResourcesResult = await client.listStackResources({
+                StackId: stackId,
+                RegionId: content['RegionId'],
+            }, requestOptions)
+            return listStackResourcesResult.Resources
+        } catch (e) {
+            error('fail to get new stack resource: %s %s', e.code, e.message)
+            throw e;
+        }
+    }
+
+    private static async withDefaultPrinter(client: any, content: any, requestOptions: any, stackId: any, block: any) {
+        const lines = new Array<string>();
+        const resources = await CdkToolkit.getResources(client, content, requestOptions, stackId)
+        for (let resource of resources) {
+            lines.push(util.format(colors.blue('|%s | %s | %s | %s | %s') + '\n',
+                padLeft(12, resource.CreateTime),
+                padRight(20, resource.Status),
+                padRight(23, resource.ResourceType),
+                shorten(40, resource.PhysicalResourceId),
+                resource.LogicalResourceId));
+        }
+        block.displayLines(lines)
+    }
+
+
+    private async syncUpdateStack(client: any, content: any, requestOptions: any) {
         try {
             let params = {
                 RegionId: content['RegionId'],
                 StackId: content['StackId']
             };
             const getOriginalStackResult = await client.getStack(params, requestOptions)
-            const originalUpdateTime = getOriginalStackResult.UpdateTime? getOriginalStackResult.UpdateTime : ""
+            const originalUpdateTime = getOriginalStackResult.UpdateTime ? getOriginalStackResult.UpdateTime : ""
             const createResult = await client.updateStack(content, requestOptions)
             // Wait for the stack state to change after updating it
             await sleep(5000);
+            const block = new RewritableBlock(stream);
+            withDefaultPrinterObj = setInterval(async function() {
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+            }, 3000);
             while (true) {
                 const getNewStackResult = await client.getStack(params, requestOptions)
                 const status = getNewStackResult.Status
                 const statusReason = getNewStackResult.StatusReason
                 const stackName = getNewStackResult.StackName
-                const newUpdateTime = getNewStackResult.UpdateTime? getNewStackResult.UpdateTime : ""
+                const newUpdateTime = getNewStackResult.UpdateTime ? getNewStackResult.UpdateTime : ""
                 if (newUpdateTime == originalUpdateTime) {
                     // stack update in progress or update did not begin
                     continue
                 }
                 const regComplete = RegExp(/COMPLETE/)
                 const regFailed = RegExp(/FAILED/)
-                if (regComplete.exec(status) || regFailed.exec(status)){
+                if (regComplete.exec(status) || regFailed.exec(status)) {
+                    clearInterval(withDefaultPrinterObj);
+                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
                     success(
                         `\n ✅ The deployment(sync update stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
                         colors.blue(status),
@@ -1200,14 +1279,13 @@ export class CdkToolkit {
                     await this.updateStackInfo(stackName, createResult.StackId);
                     exit(0)
                     break
-                }
-                else {
+                } else {
                     await sleep(5000);
                 }
             }
-        }
-        catch (e) {
+        } catch (e) {
             error('fail to sync update stack: %s %s', e.code, e.message)
+            clearInterval(withDefaultPrinterObj);
             exit(1)
         }
     }
@@ -1261,7 +1339,7 @@ export interface ListStackOptions {
     all: string;
 }
 
-export interface ConfigSetOptions{
+export interface ConfigSetOptions {
     global: string;
     endpoint: string;
     region: string;
@@ -1279,13 +1357,13 @@ export interface LoadConfigOptions {
     loadFilePath: string;
 }
 
+
 export interface Tag {
     readonly Key: string;
     readonly Value: string;
 }
 
-
-export function writeAndUpdateLanguageInfo(language: string){
+export function writeAndUpdateLanguageInfo(language: string) {
     let filePath = path.join(LOCAL_PATH + PROJECT_CONFIG);
     let fileContent: any;
     if (fs.existsSync(filePath)) {
@@ -1296,13 +1374,26 @@ export function writeAndUpdateLanguageInfo(language: string){
     }
 }
 
-export function readLanguageInfo(){
+export function readLanguageInfo() {
     let filePath = path.join(LOCAL_PATH + PROJECT_CONFIG);
     if (fs.existsSync(filePath)) {
         let fileContent = fs.readFileSync(filePath).toString();
         return JSON.parse(fileContent)['languageInfo'].toString();
-    }
-    else{
+    } else {
         return ''
     }
+}
+
+export function padLeft(n: number, x: string): string {
+    return ' '.repeat(Math.max(0, n - x.length)) + x;
+}
+
+export function padRight(n: number, x: string): string {
+    return x + ' '.repeat(Math.max(0, n - x.length));
+}
+
+export function shorten(maxWidth: number, p: string) {
+    if (p.length <= maxWidth) { return p; }
+    const half = Math.floor((maxWidth - 3) / 2);
+    return p.substr(0, half) + '...' + p.substr(p.length - half);
 }

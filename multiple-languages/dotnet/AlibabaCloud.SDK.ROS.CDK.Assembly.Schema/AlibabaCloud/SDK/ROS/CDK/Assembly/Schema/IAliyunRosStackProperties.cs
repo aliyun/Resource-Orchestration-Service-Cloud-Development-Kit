@@ -43,6 +43,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             }
         }
 
+        /// <summary>Values for ROS stack tags that should be passed when the stack is deployed.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - No tags
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        System.Collections.Generic.IDictionary<string, string>? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Artifact properties for ROS stacks.</summary>
         [JsiiTypeProxy(nativeType: typeof(IAliyunRosStackProperties), fullyQualifiedName: "@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IAliyunRosStackProperties
@@ -78,6 +92,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             public string? StackName
             {
                 get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>Values for ROS stack tags that should be passed when the stack is deployed.</summary>
+            /// <remarks>
+            /// <strong>Default</strong>: - No tags
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, string>? Tags
+            {
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, string>?>();
             }
         }
     }
