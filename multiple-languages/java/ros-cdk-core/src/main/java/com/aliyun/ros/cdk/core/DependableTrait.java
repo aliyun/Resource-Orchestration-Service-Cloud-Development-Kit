@@ -11,14 +11,15 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Example:
  * <p>
- * <blockquote><pre>{@code
- * // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+ * <blockquote><pre>
+ * // Example automatically generated. See https://github.com/aws/jsii/issues/826
  * // Usage
  * Object roots = DependableTrait.get(construct).getDependencyRoots();
  * // Definition
- * DependableTrait.implement(construct, Map.of(get dependencyRoots() { return []; }));}</pre></blockquote>
+ * DependableTrait.implement(construct, Map.of(get dependencyRoots() { return []; }));
+ * </pre></blockquote>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.648Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DependableTrait")
 public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {

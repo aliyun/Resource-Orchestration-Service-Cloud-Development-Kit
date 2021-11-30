@@ -15,6 +15,13 @@ export interface AliyunRosStackProperties {
   readonly parameters?: { [id: string]: string };
 
   /**
+   * Values for ROS stack tags that should be passed when the stack is deployed.
+   *
+   * @default - No tags
+   */
+  readonly tags?: { [id: string]: string };
+
+  /**
    * The name to use for the ROS stack.
    * @default - name derived from artifact ID
    */
@@ -52,6 +59,6 @@ export interface NestedCloudAssemblyProperties {
  * Properties for manifest artifacts
  */
 export type ArtifactProperties =
-  | AliyunRosStackProperties
-  | TreeArtifactProperties
-  | NestedCloudAssemblyProperties;
+    | AliyunRosStackProperties
+    | TreeArtifactProperties
+    | NestedCloudAssemblyProperties;

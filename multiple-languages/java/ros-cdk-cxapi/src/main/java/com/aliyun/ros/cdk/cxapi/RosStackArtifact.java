@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.cxapi;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.624Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.RosStackArtifact")
 public class RosStackArtifact extends com.aliyun.ros.cdk.cxapi.CloudArtifact {
 
@@ -58,6 +58,10 @@ public class RosStackArtifact extends com.aliyun.ros.cdk.cxapi.CloudArtifact {
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getStackName() {
         return software.amazon.jsii.Kernel.get(this, "stackName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTags() {
+        return software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**

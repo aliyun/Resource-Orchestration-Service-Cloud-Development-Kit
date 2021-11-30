@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * TagManager facilitates a common implementation of tagging for Constructs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.112Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManager")
 public class TagManager extends software.amazon.jsii.JsiiObject {
 
@@ -129,6 +129,13 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
      */
     public void setTag(final @org.jetbrains.annotations.NotNull java.lang.String key, final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.call(this, "setTag", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(key, "key is required"), java.util.Objects.requireNonNull(value, "value is required") });
+    }
+
+    /**
+     * Render the tags in a readable format.
+     */
+    public @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.String> tagValues() {
+        return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.call(this, "tagValues", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
     }
 
     /**

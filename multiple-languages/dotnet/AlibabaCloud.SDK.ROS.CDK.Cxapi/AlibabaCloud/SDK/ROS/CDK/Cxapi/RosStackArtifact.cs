@@ -69,6 +69,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
             get => GetInstanceProperty<string>()!;
         }
 
+        [JsiiProperty(name: "tags", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object Tags
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>The ROS template for this stack.</summary>
         [JsiiProperty(name: "template", typeJson: "{\"primitive\":\"any\"}")]
         public virtual object Template

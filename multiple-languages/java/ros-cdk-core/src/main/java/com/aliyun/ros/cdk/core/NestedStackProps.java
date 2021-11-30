@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.40.0 (build 9713b9d)", date = "2021-10-28T10:23:59.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.664Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.NestedStackProps")
 @software.amazon.jsii.Jsii.Proxy(NestedStackProps.Jsii$Proxy.class)
 public interface NestedStackProps extends software.amazon.jsii.JsiiSerializable {

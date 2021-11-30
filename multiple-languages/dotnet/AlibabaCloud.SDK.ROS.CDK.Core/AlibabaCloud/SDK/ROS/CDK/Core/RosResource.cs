@@ -91,7 +91,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// For example,
         ///
         /// <code><![CDATA[
-        /// // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+        /// // Example automatically generated. See https://github.com/aws/jsii/issues/826
         /// AddOverride("Properties.GlobalSecondaryIndexes.0.Projection.NonKeyAttributes", new [] { "myattribute" });
         /// AddOverride("Properties.GlobalSecondaryIndexes.1.ProjectionType", "INCLUDE");
         /// ]]></code>

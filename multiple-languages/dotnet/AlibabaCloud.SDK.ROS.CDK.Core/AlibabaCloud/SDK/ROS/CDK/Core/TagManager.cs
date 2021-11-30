@@ -74,6 +74,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string), typeof(string), typeof(double), typeof(bool)}, new object?[]{key, @value, priority, applyToLaunchedInstances});
         }
 
+        /// <summary>Render the tags in a readable format.</summary>
+        [JsiiMethod(name: "tagValues", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}}")]
+        public virtual System.Collections.Generic.IDictionary<string, string> TagValues()
+        {
+            return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, string>>(new System.Type[]{}, new object[]{})!;
+        }
+
         /// <summary>The property name for tag values.</summary>
         /// <remarks>
         /// Normally this is <c>tags</c> but some resources choose a different name. Cognito

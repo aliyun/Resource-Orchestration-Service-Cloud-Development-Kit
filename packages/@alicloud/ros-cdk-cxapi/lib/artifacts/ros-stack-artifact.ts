@@ -38,20 +38,22 @@ export class RosStackArtifact extends CloudArtifact {
    */
   public readonly name: string;
 
+  public readonly tags: any;
+
   private _template: any | undefined;
 
   constructor(
-    assembly: CloudAssembly,
-    artifactId: string,
-    artifact: cxschema.ArtifactManifest
+      assembly: CloudAssembly,
+      artifactId: string,
+      artifact: cxschema.ArtifactManifest
   ) {
     super(assembly, artifactId, artifact);
 
     const properties = (this.manifest.properties ||
-      {}) as cxschema.AliyunRosStackProperties;
+        {}) as cxschema.AliyunRosStackProperties;
     if (!properties.templateFile) {
       throw new Error(
-        'Invalid ROS stack artifact. Missing "templateFile" property in cloud assembly manifest'
+          'Invalid ROS stack artifact. Missing "templateFile" property in cloud assembly manifest'
       );
     }
 
@@ -59,11 +61,12 @@ export class RosStackArtifact extends CloudArtifact {
     this.parameters = properties.parameters || {};
     this.stackName = properties.stackName || artifactId;
     this.displayName =
-      this.stackName === artifactId
-        ? this.stackName
-        : `${artifactId} (${this.stackName})`;
+        this.stackName === artifactId
+            ? this.stackName
+            : `${artifactId} (${this.stackName})`;
     this.name = this.stackName; // backwards compat
     this.originalName = this.stackName;
+    this.tags = properties.tags ?? this.tagsFromMetadata();
   }
 
   /**
@@ -72,12 +75,22 @@ export class RosStackArtifact extends CloudArtifact {
   public get template(): any {
     if (this._template === undefined) {
       this._template = JSON.parse(
-        fs.readFileSync(
-          path.join(this.assembly.directory, this.templateFile),
-          "utf-8"
-        )
+          fs.readFileSync(
+              path.join(this.assembly.directory, this.templateFile),
+              "utf-8"
+          )
       );
     }
     return this._template;
+  }
+
+  private tagsFromMetadata() {
+    const ret: Record<string, string> = {};
+    for (const metadataEntry of this.findMetadataByType(cxschema.ArtifactMetadataEntryType.STACK_TAGS)) {
+      for (const tag of (metadataEntry.data ?? []) as cxschema.StackTagsMetadataEntry) {
+        ret[tag.key] = tag.value;
+      }
+    }
+    return ret;
   }
 }

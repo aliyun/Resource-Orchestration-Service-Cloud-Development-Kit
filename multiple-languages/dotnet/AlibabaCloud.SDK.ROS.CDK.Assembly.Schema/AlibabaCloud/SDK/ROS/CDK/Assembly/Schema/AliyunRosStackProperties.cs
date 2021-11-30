@@ -41,5 +41,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             get;
             set;
         }
+
+        /// <summary>Values for ROS stack tags that should be passed when the stack is deployed.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - No tags
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        public System.Collections.Generic.IDictionary<string, string>? Tags
+        {
+            get;
+            set;
+        }
     }
 }
