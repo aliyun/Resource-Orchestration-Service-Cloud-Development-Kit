@@ -5,7 +5,8 @@ import * as readlineSync from 'readline-sync';
 import * as util from 'util';
 import {decipher, cipher} from './util/cipher';
 import {format} from 'util';
-import { RewritableBlock } from './util/display';
+import {RewritableBlock} from './util/display';
+
 const rosClient = require('@alicloud/ros-2019-09-10');
 const os = require('os');
 const http = require('http');
@@ -34,6 +35,7 @@ const SYNTH_STACK = 'synth';
 const DEPLOY_STACK = 'deploy';
 const DESTROY_STACK = 'destroy';
 const PACKAGE_JSON = __dirname + '/../package.json';
+const OUTPUTS_JSON = 'stack.outputs.json';
 
 const exec = promisify(_exec);
 
@@ -53,7 +55,6 @@ const stream = process.stdout;
 
 
 let withDefaultPrinterObj: any;
-
 
 
 export interface CdkToolkitProps {
@@ -499,6 +500,7 @@ export class CdkToolkit {
             ClientToken: ClientToken
         };
         let sync = options.sync
+        let outputs = options.outputsFile
 
         if (stacks.stackArtifacts[0].tags) {
             let count: number = 1;
@@ -536,7 +538,7 @@ export class CdkToolkit {
                         try {
                             if (sync) {
                                 print('%s: deploying...', colors.bold(stackName));
-                                await this.syncUpdateStack(client, content, requestOptions)
+                                await this.syncUpdateStack(client, content, requestOptions, outputs)
                             }
                             const updateResult = await client.updateStack(content, requestOptions)
                             await this.updateStackInfo(stackName, updateResult.StackId);
@@ -558,7 +560,7 @@ export class CdkToolkit {
                                     try {
                                         if (sync) {
                                             print('%s: deploying...', colors.bold(stackName));
-                                            await this.syncUpdateStack(client, content, requestOptions)
+                                            await this.syncUpdateStack(client, content, requestOptions, outputs)
                                         }
                                         const updateResult = await client.updateStack(content, requestOptions)
                                         await this.updateStackInfo(stackName, updateResult.StackId);
@@ -618,7 +620,7 @@ export class CdkToolkit {
                 try {
                     if (sync) {
                         print('%s: deploying...', colors.bold(stackName));
-                        await this.syncDeployStack(client, content, requestOptions)
+                        await this.syncDeployStack(client, content, requestOptions, outputs)
 
                     }
                     const createResult = await client.createStack(content, requestOptions)
@@ -637,7 +639,7 @@ export class CdkToolkit {
                             try {
                                 if (sync) {
                                     print('%s: deploying...', colors.bold(stackName));
-                                    await this.syncDeployStack(client, content, requestOptions)
+                                    await this.syncDeployStack(client, content, requestOptions, outputs)
                                 }
                                 const createResult = await client.createStack(content, requestOptions)
                                 await this.updateStackInfo(stackName, createResult.StackId);
@@ -689,7 +691,7 @@ export class CdkToolkit {
                 try {
                     if (sync) {
                         print('%s: deploying...', colors.bold(stackName));
-                        await this.syncDeployStack(client, content, requestOptions)
+                        await this.syncDeployStack(client, content, requestOptions, outputs)
                     }
                     const createResult = await client.createStack(content, requestOptions)
                     await this.updateStackInfo(stackName, createResult.StackId);
@@ -707,7 +709,7 @@ export class CdkToolkit {
                             try {
                                 if (sync) {
                                     print('%s: deploying...', colors.bold(stackName));
-                                    await this.syncDeployStack(client, content, requestOptions)
+                                    await this.syncDeployStack(client, content, requestOptions, outputs)
                                 }
                                 const createResult = await client.createStack(content, requestOptions)
                                 await this.updateStackInfo(stackName, createResult.StackId);
@@ -964,6 +966,7 @@ export class CdkToolkit {
         await this.syncStackInfo();
         let stacks = await this.selectStacksForDestroy(options.stackNames);
         let stackNames: string[] = [];
+        let sync = options.sync
         for (let stack of stacks.stackArtifacts) {
             if ((await this.findStackInfo(stack.id)).stackId) {
                 stackNames.push(stack.id);
@@ -988,11 +991,15 @@ export class CdkToolkit {
         region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
         for (let stackName of stackNames) {
-            client
-                .deleteStack({
-                    StackId: (await this.findStackInfo(stackName)).stackId,
-                    RegionId: region,
-                }, requestOptions)
+            let content: { [name: string]: any } = {
+                StackId: (await this.findStackInfo(stackName)).stackId,
+                RegionId: region,
+            };
+            if (sync) {
+                print('%s: destroying...', colors.bold(stackName));
+                await this.syncDestroyStack(client, content, requestOptions)
+            }
+            client.deleteStack(content, requestOptions)
                 .then((res: any) => {
                     this.updateStackInfo(stackName, DESTROY_STACK);
                     success(`\n ✅ Deleted\nRequestedId: %s`, colors.blue(res.RequestId));
@@ -1173,12 +1180,13 @@ export class CdkToolkit {
         }
     }
 
-    private async syncDeployStack(client: any, content: any, requestOptions: any) {
+    private async syncDeployStack(client: any, content: any, requestOptions: any, outputsFile: boolean) {
         try {
+            const stackOutputs: { [key: string]: any } = {};
             const createResult = await client.createStack(content, requestOptions)
             const block = new RewritableBlock(stream);
-            withDefaultPrinterObj = setInterval(async function() {
-                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+            withDefaultPrinterObj = setInterval(async function () {
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
             }, 3000);
             while (true) {
                 let params = {
@@ -1189,11 +1197,25 @@ export class CdkToolkit {
                 const status = getStackResult.Status
                 const statusReason = getStackResult.StatusReason
                 const stackName = getStackResult.StackName
+                const outputs = getStackResult.Outputs
                 const regComplete = RegExp(/COMPLETE/)
                 const regFailed = RegExp(/FAILED/)
                 if (regComplete.exec(status) || regFailed.exec(status)) {
                     clearInterval(withDefaultPrinterObj);
-                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'deploy')
+                    if (outputs !== undefined) {
+                        print('\nOutputs:');
+                        stackOutputs[stackName] = outputs;
+                        for (const output of outputs) {
+                            const value = output['OutputValue'];
+                            const key = output['OutputKey'];
+                            const description = output['Description'];
+                            print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
+                        }
+                        if (outputsFile) {
+                            fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
+                        }
+                    }
                     success(
                         `\n ✅ The deployment(sync deploy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
                         colors.blue(status),
@@ -1201,6 +1223,7 @@ export class CdkToolkit {
                         colors.blue(getStackResult.StackId)
                     );
                     await this.updateStackInfo(stackName, createResult.StackId);
+
                     break
                 }
             }
@@ -1225,41 +1248,55 @@ export class CdkToolkit {
         }
     }
 
-    private static async withDefaultPrinter(client: any, content: any, requestOptions: any, stackId: any, block: any) {
+    private static async withDefaultPrinter(client: any, content: any, requestOptions: any, stackId: any, block: any, action: string) {
         const lines = new Array<string>();
         const resources = await CdkToolkit.getResources(client, content, requestOptions, stackId)
-        for (let resource of resources) {
-            lines.push(util.format(colors.blue('|%s | %s | %s | %s | %s') + '\n',
-                padLeft(12, resource.CreateTime),
-                padRight(20, resource.Status),
-                padRight(23, resource.ResourceType),
-                shorten(40, resource.PhysicalResourceId),
-                resource.LogicalResourceId));
+        if (action !== 'destroy') {
+            for (let resource of resources) {
+                lines.push(util.format(colors.blue('|%s |%s | %s | %s | %s | %s') + '\n',
+                    padRight(23, resource.StackName),
+                    padLeft(12, resource.CreateTime),
+                    padRight(20, resource.Status),
+                    padRight(23, resource.ResourceType),
+                    shorten(40, resource.PhysicalResourceId),
+                    resource.LogicalResourceId));
+            }
+        } else {
+            for (let resource of resources) {
+                lines.push(util.format(colors.blue('|%s | %s | %s | %s | %s') + '\n',
+                    padRight(23, resource.StackName),
+                    padRight(20, resource.Status),
+                    padRight(23, resource.ResourceType),
+                    shorten(40, resource.PhysicalResourceId),
+                    resource.LogicalResourceId));
+            }
         }
         block.displayLines(lines)
     }
 
 
-    private async syncUpdateStack(client: any, content: any, requestOptions: any) {
+    private async syncUpdateStack(client: any, content: any, requestOptions: any, outputsFile: boolean) {
         try {
             let params = {
                 RegionId: content['RegionId'],
                 StackId: content['StackId']
             };
+            const stackOutputs: { [key: string]: any } = {};
             const getOriginalStackResult = await client.getStack(params, requestOptions)
             const originalUpdateTime = getOriginalStackResult.UpdateTime ? getOriginalStackResult.UpdateTime : ""
             const createResult = await client.updateStack(content, requestOptions)
             // Wait for the stack state to change after updating it
             await sleep(5000);
             const block = new RewritableBlock(stream);
-            withDefaultPrinterObj = setInterval(async function() {
-                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+            withDefaultPrinterObj = setInterval(async function () {
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'update')
             }, 3000);
             while (true) {
                 const getNewStackResult = await client.getStack(params, requestOptions)
                 const status = getNewStackResult.Status
                 const statusReason = getNewStackResult.StatusReason
                 const stackName = getNewStackResult.StackName
+                const outputs = getNewStackResult.Outputs
                 const newUpdateTime = getNewStackResult.UpdateTime ? getNewStackResult.UpdateTime : ""
                 if (newUpdateTime == originalUpdateTime) {
                     // stack update in progress or update did not begin
@@ -1269,7 +1306,21 @@ export class CdkToolkit {
                 const regFailed = RegExp(/FAILED/)
                 if (regComplete.exec(status) || regFailed.exec(status)) {
                     clearInterval(withDefaultPrinterObj);
-                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block)
+                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, createResult.StackId, block, 'update')
+                    if (outputs !== undefined) {
+                        print('\nOutputs:');
+                        stackOutputs[stackName] = outputs;
+                        for (const output of outputs) {
+                            const value = output['OutputValue'];
+                            const key = output['OutputKey'];
+                            const description = output['Description'];
+                            print('\n Key: %s  Value: %s Description: %s', colors.cyan(key), colors.cyan(value), colors.cyan(description));
+                        }
+                        if (outputsFile) {
+                            fs.writeFileSync(path.join(LOCAL_PATH + OUTPUTS_JSON), JSON.stringify(stackOutputs, null, '\t'));
+                        }
+                    }
+
                     success(
                         `\n ✅ The deployment(sync update stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
                         colors.blue(status),
@@ -1285,6 +1336,45 @@ export class CdkToolkit {
             }
         } catch (e) {
             error('fail to sync update stack: %s %s', e.code, e.message)
+            clearInterval(withDefaultPrinterObj);
+            exit(1)
+        }
+    }
+
+    private async syncDestroyStack(client: any, content: any, requestOptions: any) {
+        try {
+            await client.deleteStack(content, requestOptions)
+            const block = new RewritableBlock(stream);
+            withDefaultPrinterObj = setInterval(async function () {
+                await CdkToolkit.withDefaultPrinter(client, content, requestOptions, content['StackId'], block, 'destroy')
+            }, 3000);
+            while (true) {
+                let params = {
+                    RegionId: content['RegionId'],
+                    StackId: content['StackId']
+                };
+                const getStackResult = await client.getStack(params, requestOptions)
+                const status = getStackResult.Status
+                const statusReason = getStackResult.StatusReason
+                const stackName = getStackResult.StackName
+                const regComplete = RegExp(/COMPLETE/)
+                const regFailed = RegExp(/FAILED/)
+                if (regComplete.exec(status) || regFailed.exec(status)) {
+                    clearInterval(withDefaultPrinterObj);
+                    await CdkToolkit.withDefaultPrinter(client, content, requestOptions, content['StackId'], block, 'destroy')
+                    success(
+                        `\n ✅ The task(sync destroy stack) has finished!\nstatus: %s\nStatusReason: %s\nStackId: %s`,
+                        colors.blue(status),
+                        colors.blue(statusReason),
+                        colors.blue(getStackResult.StackId)
+                    );
+                    await this.updateStackInfo(stackName, DESTROY_STACK);
+                    break
+                }
+            }
+            exit(0)
+        } catch (e) {
+            error('fail to sync destroy stack: %s %s', e.code, e.message)
             clearInterval(withDefaultPrinterObj);
             exit(1)
         }
@@ -1310,11 +1400,13 @@ export interface DeployOptions {
     parameters?: { [name: string]: string | undefined };
     timeout: string;
     sync: boolean;
+    outputsFile: boolean;
 }
 
 export interface DestroyOptions {
     stackNames: string[];
     quiet?: boolean;
+    sync: boolean;
 }
 
 export interface EventOptions {
@@ -1393,7 +1485,9 @@ export function padRight(n: number, x: string): string {
 }
 
 export function shorten(maxWidth: number, p: string) {
-    if (p.length <= maxWidth) { return p; }
+    if (p.length <= maxWidth) {
+        return p;
+    }
     const half = Math.floor((maxWidth - 3) / 2);
     return p.substr(0, half) + '...' + p.substr(p.length - half);
 }

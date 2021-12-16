@@ -87,7 +87,8 @@ async function parseCommandLineArguments() {
           desc: "Only deploy requested stacks, don't include dependencies",
         })
         .option('timeoutMinutes', { type: 'number', alias: 't', desc: 'The timeout minutes', default: 20 })
-          .option('sync', { type: 'boolean', desc: 'sync deploy stack', default: false }),
+          .option('sync', { type: 'boolean', desc: 'sync deploy stack', default: false })
+          .option('outputs-file', { type: 'boolean', desc: 'Stack outputs will be written as JSON', default: false }),
     )
     .command(
       'diff [STACKS..]',
@@ -113,7 +114,8 @@ async function parseCommandLineArguments() {
               alias: 'q',
               desc: 'destroy without confirm',
               default: false
-            }),
+            })
+          .option('sync', { type: 'boolean', desc: 'sync destroy stack', default: false }),
     )
     .command('event [STACK..]', 'Get resource events within the resource STACK', (yargs) =>
       yargs
@@ -336,7 +338,8 @@ async function initCommandLine() {
           parameters: parameterMap,
           exclusively: args.exclusively,
           timeout: args.timeoutMinutes,
-          sync: args.sync
+          sync: args.sync,
+          outputsFile: args['outputs-file'],
         });
         return;
 
@@ -344,6 +347,7 @@ async function initCommandLine() {
         await cli.destroy({
           stackNames: args.STACKS,
           quiet: args.quiet,
+          sync: args.sync
         });
         return;
 
@@ -428,4 +432,3 @@ initCommandLine()
     }
     process.exitCode = 1;
   });
-
