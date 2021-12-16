@@ -1,5 +1,12 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.16] (2021-12-16)
+
+### Features
+
+-  ros-cdk-cli adding ros-cdk destroy --sync to support synchronous destroy stack.
+-  ros-cdk-cli adding ros-cdk deploy --outputs-file write output information to stack.outputs.json file.
+
 
 ## [ros-cdk-cli 1.0.15] (2021-11-26)
 

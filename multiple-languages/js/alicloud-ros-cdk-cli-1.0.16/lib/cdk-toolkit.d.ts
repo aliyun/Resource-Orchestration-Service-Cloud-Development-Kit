@@ -80,6 +80,7 @@ export declare class CdkToolkit {
     private static getResources;
     private static withDefaultPrinter;
     private syncUpdateStack;
+    private syncDestroyStack;
 }
 export interface DiffOptions {
     stackNames: string[];
@@ -100,10 +101,12 @@ export interface DeployOptions {
     };
     timeout: string;
     sync: boolean;
+    outputsFile: boolean;
 }
 export interface DestroyOptions {
     stackNames: string[];
     quiet?: boolean;
+    sync: boolean;
 }
 export interface EventOptions {
     stackName: string[];
