@@ -81,8 +81,8 @@ export class Group extends ros.Resource {
         super(scope, id);
 
         const rosGroup = new RosGroup(this, id,  {
-            groupName: props.groupName,
             internetEnable: props.internetEnable,
+            groupName: props.groupName,
             description: props.description,
             instanceId: props.instanceId,
             vpcIntranetEnable: props.vpcIntranetEnable,

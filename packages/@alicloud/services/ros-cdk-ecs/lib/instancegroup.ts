@@ -239,7 +239,12 @@ export interface InstanceGroupProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -257,6 +262,11 @@ export interface InstanceGroupProps {
      * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    readonly systemDiskProvisionedIops?: number | ros.IResolvable;
 
     /**
      * Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
@@ -302,19 +312,29 @@ export class InstanceGroup extends ros.Resource {
      */
 
     /**
-     * Attribute HostNames: Host names of created instance.
+     * Attribute HostNames: Host names of created instances.
      */
     public readonly attrHostNames: ros.IResolvable;
 
     /**
-     * Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
+     * Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
      */
     public readonly attrInnerIps: ros.IResolvable;
 
     /**
-     * Attribute InstanceIds: The instance id list of created ecs instance
+     * Attribute InstanceIds: The instance id list of created ecs instances
      */
     public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6AddressIds: ros.IResolvable;
+
+    /**
+     * Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6Addresses: ros.IResolvable;
 
     /**
      * Attribute OrderId: The order id list of created instance.
@@ -322,17 +342,17 @@ export class InstanceGroup extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
+     * Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
      */
     public readonly attrPrivateIps: ros.IResolvable;
 
     /**
-     * Attribute PublicIps: Public IP address list of created ecs instance.
+     * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * Attribute ZoneIds: Zone id of created instance.
+     * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
 
@@ -351,6 +371,7 @@ export class InstanceGroup extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             systemDiskDescription: props.systemDiskDescription,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
+            systemDiskProvisionedIops: props.systemDiskProvisionedIops,
             ramRoleName: props.ramRoleName,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             imageId: props.imageId,
@@ -381,7 +402,7 @@ export class InstanceGroup extends ros.Resource {
             ipv6Addresses: props.ipv6Addresses,
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
-            networkType: props.networkType === undefined || props.networkType === null ? 'classic' : props.networkType,
+            networkType: props.networkType,
             ipv6AddressCount: props.ipv6AddressCount,
             spotPriceLimit: props.spotPriceLimit,
             instanceType: props.instanceType,
@@ -397,12 +418,15 @@ export class InstanceGroup extends ros.Resource {
             securityGroupId: props.securityGroupId,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             eniMappings: props.eniMappings,
+            systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
             internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;
         this.attrHostNames = rosInstanceGroup.attrHostNames;
         this.attrInnerIps = rosInstanceGroup.attrInnerIps;
         this.attrInstanceIds = rosInstanceGroup.attrInstanceIds;
+        this.attrIpv6AddressIds = rosInstanceGroup.attrIpv6AddressIds;
+        this.attrIpv6Addresses = rosInstanceGroup.attrIpv6Addresses;
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;

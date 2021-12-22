@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.077Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -283,9 +283,55 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * <p>
+         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props().autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * <p>
+         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props().autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props().autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props().autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
          * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
          * <p>
-         * Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+         * Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
          * <p>
          * @return {@code this}
          * @param bandwidth Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). This parameter is required.
@@ -297,7 +343,7 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
          * <p>
-         * Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+         * Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
          * <p>
          * @return {@code this}
          * @param bandwidth Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). This parameter is required.

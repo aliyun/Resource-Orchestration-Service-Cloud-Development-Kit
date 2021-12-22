@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to endpoint service context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.464Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.EndpointServiceAvailabilityZonesContextQuery")
 @software.amazon.jsii.Jsii.Proxy(EndpointServiceAvailabilityZonesContextQuery.Jsii$Proxy.class)
 public interface EndpointServiceAvailabilityZonesContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -33,9 +33,9 @@ public interface EndpointServiceAvailabilityZonesContextQuery extends software.a
      * A builder for {@link EndpointServiceAvailabilityZonesContextQuery}
      */
     public static final class Builder implements software.amazon.jsii.Builder<EndpointServiceAvailabilityZonesContextQuery> {
-        private java.lang.String account;
-        private java.lang.String region;
-        private java.lang.String serviceName;
+        java.lang.String account;
+        java.lang.String region;
+        java.lang.String serviceName;
 
         /**
          * Sets the value of {@link EndpointServiceAvailabilityZonesContextQuery#getAccount}
@@ -74,7 +74,7 @@ public interface EndpointServiceAvailabilityZonesContextQuery extends software.a
          */
         @Override
         public EndpointServiceAvailabilityZonesContextQuery build() {
-            return new Jsii$Proxy(account, region, serviceName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,11 +101,11 @@ public interface EndpointServiceAvailabilityZonesContextQuery extends software.a
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String account, final java.lang.String region, final java.lang.String serviceName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.account = java.util.Objects.requireNonNull(account, "account is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
+            this.account = java.util.Objects.requireNonNull(builder.account, "account is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
         }
 
         @Override

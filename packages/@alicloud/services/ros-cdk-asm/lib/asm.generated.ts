@@ -116,8 +116,8 @@ export interface RosServiceMeshProps {
 function RosServiceMeshPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('enableAudit', ros.validateBoolean)(properties.enableAudit));
     errors.collect(ros.propertyValidator('opa', RosServiceMesh_OPAPropertyValidator)(properties.opa));
+    errors.collect(ros.propertyValidator('enableAudit', ros.validateBoolean)(properties.enableAudit));
     errors.collect(ros.propertyValidator('istioVersion', ros.validateString)(properties.istioVersion));
     errors.collect(ros.propertyValidator('apiServerPublicEip', ros.validateBoolean)(properties.apiServerPublicEip));
     errors.collect(ros.propertyValidator('localityLoadBalancing', ros.validateBoolean)(properties.localityLoadBalancing));

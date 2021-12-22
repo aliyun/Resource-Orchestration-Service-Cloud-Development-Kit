@@ -931,8 +931,8 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
             data: properties.systemDiskSize,
@@ -1003,13 +1003,6 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -1017,6 +1010,13 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
+          data: properties.systemDiskCategory,
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
@@ -1666,8 +1666,8 @@ export interface RosScalingGroupProps {
 
     /**
      * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
-     * The valid range of N is [1, 5], and you can specify at most 5 VSwitches in a VPC.
-     * The priority of VSwitches descends from 1 to 5, and 1 indicates the highest priority.
+     * The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC.
+     * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
      * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
     readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -1687,7 +1687,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
             data: properties.vSwitchIds.length,
             min: 0,
-            max: 5,
+            max: 8,
           }));
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
@@ -1970,8 +1970,8 @@ export class RosScalingGroup extends ros.RosResource {
 
     /**
      * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
-     * The valid range of N is [1, 5], and you can specify at most 5 VSwitches in a VPC.
-     * The priority of VSwitches descends from 1 to 5, and 1 indicates the highest priority.
+     * The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC.
+     * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
      * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
     public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;

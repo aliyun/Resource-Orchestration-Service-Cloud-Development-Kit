@@ -8,8 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     /// This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
     ///
     /// <code><![CDATA[
-    /// // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
-    /// using Alicloud.Ros.Cdk.Cdn;
+    /// // Example automatically generated from non-compiling source. May contain errors.
+    /// import * as CDN from '@alicloud/ros-cdk-cdn';
     /// ]]></code>
     /// </remarks>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

@@ -87,9 +87,9 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
     errors.collect(ros.propertyValidator('pushDomain', ros.requiredValidator)(properties.pushDomain));
     errors.collect(ros.propertyValidator('pushDomain', ros.validateString)(properties.pushDomain));
-    errors.collect(ros.propertyValidator('lazyPull', ros.validateBoolean)(properties.lazyPull));
     errors.collect(ros.propertyValidator('outProtocol', ros.requiredValidator)(properties.outProtocol));
     errors.collect(ros.propertyValidator('outProtocol', ros.validateString)(properties.outProtocol));
+    errors.collect(ros.propertyValidator('lazyPull', ros.validateBoolean)(properties.lazyPull));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosGroupProps"');

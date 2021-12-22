@@ -22,6 +22,11 @@ export interface WaitConditionProps {
      * Property count: The number of success signals that must be received before the stack creation process continues.
      */
     readonly count?: number | ros.IResolvable;
+
+    /**
+     * Property showProgressEvent: Whether to generate progress changed event. Default to Disabled.
+     */
+    readonly showProgressEvent?: string | ros.IResolvable;
 }
 
 /**
@@ -60,6 +65,7 @@ export class WaitCondition extends ros.Resource {
         super(scope, id);
 
         const rosWaitCondition = new RosWaitCondition(this, id,  {
+            showProgressEvent: props.showProgressEvent,
             timeout: props.timeout,
             count: props.count === undefined || props.count === null ? 1 : props.count,
             handle: props.handle,

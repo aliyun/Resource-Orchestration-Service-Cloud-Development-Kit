@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -316,9 +316,9 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LogConfigProperty> {
-            private java.lang.Object enableRequestMetrics;
-            private java.lang.Object logstore;
-            private java.lang.Object project;
+            java.lang.Object enableRequestMetrics;
+            java.lang.Object logstore;
+            java.lang.Object project;
 
             /**
              * Sets the value of {@link LogConfigProperty#getEnableRequestMetrics}
@@ -394,7 +394,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LogConfigProperty build() {
-                return new Jsii$Proxy(enableRequestMetrics, logstore, project);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -422,11 +422,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object enableRequestMetrics, final java.lang.Object logstore, final java.lang.Object project) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.enableRequestMetrics = enableRequestMetrics;
-                this.logstore = logstore;
-                this.project = project;
+                this.enableRequestMetrics = builder.enableRequestMetrics;
+                this.logstore = builder.logstore;
+                this.project = builder.project;
             }
 
             @Override
@@ -520,8 +520,8 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MountPointsProperty> {
-            private java.lang.Object mountDir;
-            private java.lang.Object serverAddr;
+            java.lang.Object mountDir;
+            java.lang.Object serverAddr;
 
             /**
              * Sets the value of {@link MountPointsProperty#getMountDir}
@@ -575,7 +575,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MountPointsProperty build() {
-                return new Jsii$Proxy(mountDir, serverAddr);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -601,10 +601,10 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mountDir, final java.lang.Object serverAddr) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mountDir = java.util.Objects.requireNonNull(mountDir, "mountDir is required");
-                this.serverAddr = java.util.Objects.requireNonNull(serverAddr, "serverAddr is required");
+                this.mountDir = java.util.Objects.requireNonNull(builder.mountDir, "mountDir is required");
+                this.serverAddr = java.util.Objects.requireNonNull(builder.serverAddr, "serverAddr is required");
             }
 
             @Override
@@ -689,9 +689,9 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NasConfigProperty> {
-            private java.lang.Object groupId;
-            private java.lang.Object mountPoints;
-            private java.lang.Object userId;
+            java.lang.Object groupId;
+            java.lang.Object mountPoints;
+            java.lang.Object userId;
 
             /**
              * Sets the value of {@link NasConfigProperty#getGroupId}
@@ -767,7 +767,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NasConfigProperty build() {
-                return new Jsii$Proxy(groupId, mountPoints, userId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -795,11 +795,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object mountPoints, final java.lang.Object userId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
-                this.mountPoints = java.util.Objects.requireNonNull(mountPoints, "mountPoints is required");
-                this.userId = java.util.Objects.requireNonNull(userId, "userId is required");
+                this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
+                this.mountPoints = java.util.Objects.requireNonNull(builder.mountPoints, "mountPoints is required");
+                this.userId = java.util.Objects.requireNonNull(builder.userId, "userId is required");
             }
 
             @Override
@@ -889,8 +889,8 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -944,7 +944,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -970,10 +970,10 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1059,8 +1059,8 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TracingConfigProperty> {
-            private java.lang.Object params;
-            private java.lang.Object type;
+            java.lang.Object params;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link TracingConfigProperty#getParams}
@@ -1114,7 +1114,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TracingConfigProperty build() {
-                return new Jsii$Proxy(params, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1140,10 +1140,10 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object params, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.params = params;
-                this.type = type;
+                this.params = builder.params;
+                this.type = builder.type;
             }
 
             @Override
@@ -1232,9 +1232,9 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcConfigProperty> {
-            private java.lang.Object securityGroupId;
-            private java.lang.Object vpcId;
-            private java.lang.Object vSwitchIds;
+            java.lang.Object securityGroupId;
+            java.lang.Object vpcId;
+            java.lang.Object vSwitchIds;
 
             /**
              * Sets the value of {@link VpcConfigProperty#getSecurityGroupId}
@@ -1310,7 +1310,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public VpcConfigProperty build() {
-                return new Jsii$Proxy(securityGroupId, vpcId, vSwitchIds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1338,11 +1338,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object securityGroupId, final java.lang.Object vpcId, final java.lang.Object vSwitchIds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-                this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-                this.vSwitchIds = java.util.Objects.requireNonNull(vSwitchIds, "vSwitchIds is required");
+                this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+                this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+                this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
             }
 
             @Override

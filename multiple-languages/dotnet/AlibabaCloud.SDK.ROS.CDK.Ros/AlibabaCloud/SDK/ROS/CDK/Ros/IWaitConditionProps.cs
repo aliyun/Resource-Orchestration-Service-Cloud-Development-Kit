@@ -33,6 +33,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
+        /// <summary>Property showProgressEvent: Whether to generate progress changed event.</summary>
+        /// <remarks>
+        /// Default to Disabled.
+        /// </remarks>
+        [JsiiProperty(name: "showProgressEvent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ShowProgressEvent
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::ROS::WaitCondition`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IWaitConditionProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.WaitConditionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IWaitConditionProps
@@ -59,6 +73,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             [JsiiOptional]
             [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Count
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property showProgressEvent: Whether to generate progress changed event.</summary>
+            /// <remarks>
+            /// Default to Disabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "showProgressEvent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShowProgressEvent
             {
                 get => GetInstanceProperty<object?>();
             }

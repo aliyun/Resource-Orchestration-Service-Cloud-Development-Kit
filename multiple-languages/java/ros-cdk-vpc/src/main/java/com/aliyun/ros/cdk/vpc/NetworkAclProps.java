@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NetworkAcl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NetworkAclProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkAclProps.Jsii$Proxy.class)
 public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,11 +58,11 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NetworkAclProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NetworkAclProps> {
-        private java.lang.Object vpcId;
-        private java.lang.Object description;
-        private java.lang.Object egressAclEntries;
-        private java.lang.Object ingressAclEntries;
-        private java.lang.Object networkAclName;
+        java.lang.Object vpcId;
+        java.lang.Object description;
+        java.lang.Object egressAclEntries;
+        java.lang.Object ingressAclEntries;
+        java.lang.Object networkAclName;
 
         /**
          * Sets the value of {@link NetworkAclProps#getVpcId}
@@ -181,7 +181,7 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public NetworkAclProps build() {
-            return new Jsii$Proxy(vpcId, description, egressAclEntries, ingressAclEntries, networkAclName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -212,13 +212,13 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object description, final java.lang.Object egressAclEntries, final java.lang.Object ingressAclEntries, final java.lang.Object networkAclName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.description = description;
-            this.egressAclEntries = egressAclEntries;
-            this.ingressAclEntries = ingressAclEntries;
-            this.networkAclName = networkAclName;
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.description = builder.description;
+            this.egressAclEntries = builder.egressAclEntries;
+            this.ingressAclEntries = builder.ingressAclEntries;
+            this.networkAclName = builder.networkAclName;
         }
 
         @Override

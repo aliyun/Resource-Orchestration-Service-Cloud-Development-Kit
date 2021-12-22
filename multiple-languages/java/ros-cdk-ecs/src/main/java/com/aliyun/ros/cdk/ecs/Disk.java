@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.946Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.538Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource {
 
@@ -139,6 +139,27 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property burstingEnabled: Whether enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param burstingEnabled Property burstingEnabled: Whether enable bursting. This parameter is required.
+         */
+        public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+        /**
+         * Property burstingEnabled: Whether enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param burstingEnabled Property burstingEnabled: Whether enable bursting. This parameter is required.
+         */
+        public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+
+        /**
          * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.
          * <p>
          * Default to false.
@@ -189,20 +210,20 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region. This parameter is required.
+         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region. This parameter is required.
          */
         public Builder diskCategory(final java.lang.String diskCategory) {
             this.props.diskCategory(diskCategory);
             return this;
         }
         /**
-         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+         * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region. This parameter is required.
+         * @param diskCategory Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region. This parameter is required.
          */
         public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
             this.props.diskCategory(diskCategory);
@@ -290,6 +311,27 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder performanceLevel(final com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
             this.props.performanceLevel(performanceLevel);
+            return this;
+        }
+
+        /**
+         * Property provisionedIops: Provisioning IOPS.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: Provisioning IOPS. This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * Property provisionedIops: Provisioning IOPS.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: Provisioning IOPS. This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
             return this;
         }
 

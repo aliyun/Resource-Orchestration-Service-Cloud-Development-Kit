@@ -45,6 +45,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosNetworkInterfaceAttachment))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: InstanceId: ID of ECS instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: NetworkInterfaceId: ID of your Network Interface.
         /// </remarks>
         [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

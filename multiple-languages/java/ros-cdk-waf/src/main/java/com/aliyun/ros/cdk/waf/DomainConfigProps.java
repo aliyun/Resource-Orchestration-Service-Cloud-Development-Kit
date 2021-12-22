@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.DomainConfigProps")
 @software.amazon.jsii.Jsii.Proxy(DomainConfigProps.Jsii$Proxy.class)
 public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -117,18 +117,18 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link DomainConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainConfigProps> {
-        private java.lang.Object domain;
-        private java.lang.Object instanceId;
-        private java.lang.Object isAccessProduct;
-        private java.lang.Object protocols;
-        private java.lang.Object httpPort;
-        private java.lang.Object httpsPort;
-        private java.lang.Object httpsRedirect;
-        private java.lang.Object httpToUserIp;
-        private java.lang.Object loadBalancing;
-        private java.lang.Object region;
-        private java.lang.Object rsType;
-        private java.lang.Object sourceIps;
+        java.lang.Object domain;
+        java.lang.Object instanceId;
+        java.lang.Object isAccessProduct;
+        java.lang.Object protocols;
+        java.lang.Object httpPort;
+        java.lang.Object httpsPort;
+        java.lang.Object httpsRedirect;
+        java.lang.Object httpToUserIp;
+        java.lang.Object loadBalancing;
+        java.lang.Object region;
+        java.lang.Object rsType;
+        java.lang.Object sourceIps;
 
         /**
          * Sets the value of {@link DomainConfigProps#getDomain}
@@ -405,7 +405,7 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public DomainConfigProps build() {
-            return new Jsii$Proxy(domain, instanceId, isAccessProduct, protocols, httpPort, httpsPort, httpsRedirect, httpToUserIp, loadBalancing, region, rsType, sourceIps);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -450,20 +450,20 @@ public interface DomainConfigProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object instanceId, final java.lang.Object isAccessProduct, final java.lang.Object protocols, final java.lang.Object httpPort, final java.lang.Object httpsPort, final java.lang.Object httpsRedirect, final java.lang.Object httpToUserIp, final java.lang.Object loadBalancing, final java.lang.Object region, final java.lang.Object rsType, final java.lang.Object sourceIps) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.isAccessProduct = java.util.Objects.requireNonNull(isAccessProduct, "isAccessProduct is required");
-            this.protocols = java.util.Objects.requireNonNull(protocols, "protocols is required");
-            this.httpPort = httpPort;
-            this.httpsPort = httpsPort;
-            this.httpsRedirect = httpsRedirect;
-            this.httpToUserIp = httpToUserIp;
-            this.loadBalancing = loadBalancing;
-            this.region = region;
-            this.rsType = rsType;
-            this.sourceIps = sourceIps;
+            this.domain = java.util.Objects.requireNonNull(builder.domain, "domain is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.isAccessProduct = java.util.Objects.requireNonNull(builder.isAccessProduct, "isAccessProduct is required");
+            this.protocols = java.util.Objects.requireNonNull(builder.protocols, "protocols is required");
+            this.httpPort = builder.httpPort;
+            this.httpsPort = builder.httpsPort;
+            this.httpsRedirect = builder.httpsRedirect;
+            this.httpToUserIp = builder.httpToUserIp;
+            this.loadBalancing = builder.loadBalancing;
+            this.region = builder.region;
+            this.rsType = builder.rsType;
+            this.sourceIps = builder.sourceIps;
         }
 
         @Override

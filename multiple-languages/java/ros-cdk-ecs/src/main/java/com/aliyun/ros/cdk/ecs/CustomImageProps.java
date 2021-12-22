@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.519Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(CustomImageProps.Jsii$Proxy.class)
 public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,15 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      * Property diskDeviceMapping:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskDeviceMapping() {
+        return null;
+    }
+
+    /**
+     * Property imageFamily: The name of the image family of the custom image.
+     * <p>
+     * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageFamily() {
         return null;
     }
 
@@ -78,6 +87,15 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property sourceRegionId: ID of the region to where the instance/snapshot belongs.
+     * <p>
+     * Default is current region ID.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceRegionId() {
+        return null;
+    }
+
+    /**
      * Property tag:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTag() {
@@ -94,15 +112,17 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CustomImageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomImageProps> {
-        private java.lang.Object architecture;
-        private java.lang.Object description;
-        private java.lang.Object diskDeviceMapping;
-        private java.lang.Object imageName;
-        private java.lang.Object instanceId;
-        private java.lang.Object platform;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object snapshotId;
-        private java.lang.Object tag;
+        java.lang.Object architecture;
+        java.lang.Object description;
+        java.lang.Object diskDeviceMapping;
+        java.lang.Object imageFamily;
+        java.lang.Object imageName;
+        java.lang.Object instanceId;
+        java.lang.Object platform;
+        java.lang.Object resourceGroupId;
+        java.lang.Object snapshotId;
+        java.lang.Object sourceRegionId;
+        java.lang.Object tag;
 
         /**
          * Sets the value of {@link CustomImageProps#getArchitecture}
@@ -173,6 +193,28 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder diskDeviceMapping(java.util.List<? extends java.lang.Object> diskDeviceMapping) {
             this.diskDeviceMapping = diskDeviceMapping;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getImageFamily}
+         * @param imageFamily Property imageFamily: The name of the image family of the custom image.
+         *                    The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+         * @return {@code this}
+         */
+        public Builder imageFamily(java.lang.String imageFamily) {
+            this.imageFamily = imageFamily;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getImageFamily}
+         * @param imageFamily Property imageFamily: The name of the image family of the custom image.
+         *                    The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+         * @return {@code this}
+         */
+        public Builder imageFamily(com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.imageFamily = imageFamily;
             return this;
         }
 
@@ -283,6 +325,28 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getSourceRegionId}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the instance/snapshot belongs.
+         *                       Default is current region ID.
+         * @return {@code this}
+         */
+        public Builder sourceRegionId(java.lang.String sourceRegionId) {
+            this.sourceRegionId = sourceRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomImageProps#getSourceRegionId}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the instance/snapshot belongs.
+         *                       Default is current region ID.
+         * @return {@code this}
+         */
+        public Builder sourceRegionId(com.aliyun.ros.cdk.core.IResolvable sourceRegionId) {
+            this.sourceRegionId = sourceRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getTag}
          * @param tag Property tag:.
          * @return {@code this}
@@ -309,7 +373,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public CustomImageProps build() {
-            return new Jsii$Proxy(architecture, description, diskDeviceMapping, imageName, instanceId, platform, resourceGroupId, snapshotId, tag);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -321,11 +385,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object architecture;
         private final java.lang.Object description;
         private final java.lang.Object diskDeviceMapping;
+        private final java.lang.Object imageFamily;
         private final java.lang.Object imageName;
         private final java.lang.Object instanceId;
         private final java.lang.Object platform;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object snapshotId;
+        private final java.lang.Object sourceRegionId;
         private final java.lang.Object tag;
 
         /**
@@ -337,28 +403,32 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskDeviceMapping = software.amazon.jsii.Kernel.get(this, "diskDeviceMapping", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceRegionId = software.amazon.jsii.Kernel.get(this, "sourceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object architecture, final java.lang.Object description, final java.lang.Object diskDeviceMapping, final java.lang.Object imageName, final java.lang.Object instanceId, final java.lang.Object platform, final java.lang.Object resourceGroupId, final java.lang.Object snapshotId, final java.lang.Object tag) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.architecture = architecture;
-            this.description = description;
-            this.diskDeviceMapping = diskDeviceMapping;
-            this.imageName = imageName;
-            this.instanceId = instanceId;
-            this.platform = platform;
-            this.resourceGroupId = resourceGroupId;
-            this.snapshotId = snapshotId;
-            this.tag = tag;
+            this.architecture = builder.architecture;
+            this.description = builder.description;
+            this.diskDeviceMapping = builder.diskDeviceMapping;
+            this.imageFamily = builder.imageFamily;
+            this.imageName = builder.imageName;
+            this.instanceId = builder.instanceId;
+            this.platform = builder.platform;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.snapshotId = builder.snapshotId;
+            this.sourceRegionId = builder.sourceRegionId;
+            this.tag = builder.tag;
         }
 
         @Override
@@ -374,6 +444,11 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDiskDeviceMapping() {
             return this.diskDeviceMapping;
+        }
+
+        @Override
+        public final java.lang.Object getImageFamily() {
+            return this.imageFamily;
         }
 
         @Override
@@ -402,6 +477,11 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getSourceRegionId() {
+            return this.sourceRegionId;
+        }
+
+        @Override
         public final java.lang.Object getTag() {
             return this.tag;
         }
@@ -421,6 +501,9 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getDiskDeviceMapping() != null) {
                 data.set("diskDeviceMapping", om.valueToTree(this.getDiskDeviceMapping()));
             }
+            if (this.getImageFamily() != null) {
+                data.set("imageFamily", om.valueToTree(this.getImageFamily()));
+            }
             if (this.getImageName() != null) {
                 data.set("imageName", om.valueToTree(this.getImageName()));
             }
@@ -435,6 +518,9 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getSnapshotId() != null) {
                 data.set("snapshotId", om.valueToTree(this.getSnapshotId()));
+            }
+            if (this.getSourceRegionId() != null) {
+                data.set("sourceRegionId", om.valueToTree(this.getSourceRegionId()));
             }
             if (this.getTag() != null) {
                 data.set("tag", om.valueToTree(this.getTag()));
@@ -460,11 +546,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             if (this.architecture != null ? !this.architecture.equals(that.architecture) : that.architecture != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.diskDeviceMapping != null ? !this.diskDeviceMapping.equals(that.diskDeviceMapping) : that.diskDeviceMapping != null) return false;
+            if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageName != null ? !this.imageName.equals(that.imageName) : that.imageName != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.snapshotId != null ? !this.snapshotId.equals(that.snapshotId) : that.snapshotId != null) return false;
+            if (this.sourceRegionId != null ? !this.sourceRegionId.equals(that.sourceRegionId) : that.sourceRegionId != null) return false;
             return this.tag != null ? this.tag.equals(that.tag) : that.tag == null;
         }
 
@@ -473,11 +561,13 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.architecture != null ? this.architecture.hashCode() : 0;
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.diskDeviceMapping != null ? this.diskDeviceMapping.hashCode() : 0);
+            result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageName != null ? this.imageName.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
+            result = 31 * result + (this.sourceRegionId != null ? this.sourceRegionId.hashCode() : 0);
             result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
             return result;
         }

@@ -51,9 +51,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
+        /// <remarks>
+        /// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenew
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.</summary>
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenewPeriod
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).</summary>
         /// <remarks>
-        /// Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+        /// Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -305,9 +330,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
+            /// <remarks>
+            /// Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1-9 When PeriodUnit = year, the value range is 1-3.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).</summary>
             /// <remarks>
-            /// Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+            /// Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

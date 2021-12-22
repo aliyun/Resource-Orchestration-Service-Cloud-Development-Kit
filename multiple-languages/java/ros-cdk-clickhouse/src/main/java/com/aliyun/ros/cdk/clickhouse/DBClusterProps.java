@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Properties for defining a `ALIYUN::ClickHouse::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.552Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,22 +120,22 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DBClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBClusterProps> {
-        private java.lang.Object category;
-        private java.lang.Object dbClusterNetworkType;
-        private java.lang.Object dbClusterType;
-        private java.lang.Object dbClusterVersion;
-        private java.lang.Object dbNodeCount;
-        private java.lang.Object dbNodeStorage;
-        private java.lang.Object dbNodeStorageType;
-        private java.lang.Object paymentType;
-        private java.lang.Object dbClusterDescription;
-        private java.lang.Object encryptionKey;
-        private java.lang.Object encryptionType;
-        private java.lang.Object period;
-        private java.lang.Object usedTime;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object category;
+        java.lang.Object dbClusterNetworkType;
+        java.lang.Object dbClusterType;
+        java.lang.Object dbClusterVersion;
+        java.lang.Object dbNodeCount;
+        java.lang.Object dbNodeStorage;
+        java.lang.Object dbNodeStorageType;
+        java.lang.Object paymentType;
+        java.lang.Object dbClusterDescription;
+        java.lang.Object encryptionKey;
+        java.lang.Object encryptionType;
+        java.lang.Object period;
+        java.lang.Object usedTime;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link DBClusterProps#getCategory}
@@ -470,7 +470,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DBClusterProps build() {
-            return new Jsii$Proxy(category, dbClusterNetworkType, dbClusterType, dbClusterVersion, dbNodeCount, dbNodeStorage, dbNodeStorageType, paymentType, dbClusterDescription, encryptionKey, encryptionType, period, usedTime, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -523,24 +523,24 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object category, final java.lang.Object dbClusterNetworkType, final java.lang.Object dbClusterType, final java.lang.Object dbClusterVersion, final java.lang.Object dbNodeCount, final java.lang.Object dbNodeStorage, final java.lang.Object dbNodeStorageType, final java.lang.Object paymentType, final java.lang.Object dbClusterDescription, final java.lang.Object encryptionKey, final java.lang.Object encryptionType, final java.lang.Object period, final java.lang.Object usedTime, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.category = java.util.Objects.requireNonNull(category, "category is required");
-            this.dbClusterNetworkType = java.util.Objects.requireNonNull(dbClusterNetworkType, "dbClusterNetworkType is required");
-            this.dbClusterType = java.util.Objects.requireNonNull(dbClusterType, "dbClusterType is required");
-            this.dbClusterVersion = java.util.Objects.requireNonNull(dbClusterVersion, "dbClusterVersion is required");
-            this.dbNodeCount = java.util.Objects.requireNonNull(dbNodeCount, "dbNodeCount is required");
-            this.dbNodeStorage = java.util.Objects.requireNonNull(dbNodeStorage, "dbNodeStorage is required");
-            this.dbNodeStorageType = java.util.Objects.requireNonNull(dbNodeStorageType, "dbNodeStorageType is required");
-            this.paymentType = java.util.Objects.requireNonNull(paymentType, "paymentType is required");
-            this.dbClusterDescription = dbClusterDescription;
-            this.encryptionKey = encryptionKey;
-            this.encryptionType = encryptionType;
-            this.period = period;
-            this.usedTime = usedTime;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.category = java.util.Objects.requireNonNull(builder.category, "category is required");
+            this.dbClusterNetworkType = java.util.Objects.requireNonNull(builder.dbClusterNetworkType, "dbClusterNetworkType is required");
+            this.dbClusterType = java.util.Objects.requireNonNull(builder.dbClusterType, "dbClusterType is required");
+            this.dbClusterVersion = java.util.Objects.requireNonNull(builder.dbClusterVersion, "dbClusterVersion is required");
+            this.dbNodeCount = java.util.Objects.requireNonNull(builder.dbNodeCount, "dbNodeCount is required");
+            this.dbNodeStorage = java.util.Objects.requireNonNull(builder.dbNodeStorage, "dbNodeStorage is required");
+            this.dbNodeStorageType = java.util.Objects.requireNonNull(builder.dbNodeStorageType, "dbNodeStorageType is required");
+            this.paymentType = java.util.Objects.requireNonNull(builder.paymentType, "paymentType is required");
+            this.dbClusterDescription = builder.dbClusterDescription;
+            this.encryptionKey = builder.encryptionKey;
+            this.encryptionType = builder.encryptionType;
+            this.period = builder.period;
+            this.usedTime = builder.usedTime;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

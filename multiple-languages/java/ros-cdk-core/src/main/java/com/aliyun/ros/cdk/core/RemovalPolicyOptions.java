@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RemovalPolicyOptions")
 @software.amazon.jsii.Jsii.Proxy(RemovalPolicyOptions.Jsii$Proxy.class)
 public interface RemovalPolicyOptions extends software.amazon.jsii.JsiiSerializable {
@@ -23,8 +23,8 @@ public interface RemovalPolicyOptions extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RemovalPolicyOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RemovalPolicyOptions> {
-        private java.lang.Boolean applyToUpdateReplacePolicy;
-        private com.aliyun.ros.cdk.core.RemovalPolicy defaultPolicy;
+        java.lang.Boolean applyToUpdateReplacePolicy;
+        com.aliyun.ros.cdk.core.RemovalPolicy defaultPolicy;
 
         /**
          * Sets the value of {@link RemovalPolicyOptions#getApplyToUpdateReplacePolicy}
@@ -53,7 +53,7 @@ public interface RemovalPolicyOptions extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RemovalPolicyOptions build() {
-            return new Jsii$Proxy(applyToUpdateReplacePolicy, defaultPolicy);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -78,10 +78,10 @@ public interface RemovalPolicyOptions extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Boolean applyToUpdateReplacePolicy, final com.aliyun.ros.cdk.core.RemovalPolicy defaultPolicy) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.applyToUpdateReplacePolicy = applyToUpdateReplacePolicy;
-            this.defaultPolicy = defaultPolicy;
+            this.applyToUpdateReplacePolicy = builder.applyToUpdateReplacePolicy;
+            this.defaultPolicy = builder.defaultPolicy;
         }
 
         @Override

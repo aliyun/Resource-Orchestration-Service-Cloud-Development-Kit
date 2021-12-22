@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Properties for defining a `ALIYUN::Config::CompliancePack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.626Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.CompliancePackProps")
 @software.amazon.jsii.Jsii.Proxy(CompliancePackProps.Jsii$Proxy.class)
 public interface CompliancePackProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,11 +47,11 @@ public interface CompliancePackProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link CompliancePackProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CompliancePackProps> {
-        private java.lang.Object compliancePackName;
-        private java.lang.Object description;
-        private java.lang.Object riskLevel;
-        private java.lang.Object compliancePackTemplateId;
-        private java.lang.Object configRules;
+        java.lang.Object compliancePackName;
+        java.lang.Object description;
+        java.lang.Object riskLevel;
+        java.lang.Object compliancePackTemplateId;
+        java.lang.Object configRules;
 
         /**
          * Sets the value of {@link CompliancePackProps#getCompliancePackName}
@@ -160,7 +160,7 @@ public interface CompliancePackProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public CompliancePackProps build() {
-            return new Jsii$Proxy(compliancePackName, description, riskLevel, compliancePackTemplateId, configRules);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -191,13 +191,13 @@ public interface CompliancePackProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object compliancePackName, final java.lang.Object description, final java.lang.Object riskLevel, final java.lang.Object compliancePackTemplateId, final java.lang.Object configRules) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.compliancePackName = java.util.Objects.requireNonNull(compliancePackName, "compliancePackName is required");
-            this.description = java.util.Objects.requireNonNull(description, "description is required");
-            this.riskLevel = java.util.Objects.requireNonNull(riskLevel, "riskLevel is required");
-            this.compliancePackTemplateId = compliancePackTemplateId;
-            this.configRules = configRules;
+            this.compliancePackName = java.util.Objects.requireNonNull(builder.compliancePackName, "compliancePackName is required");
+            this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
+            this.riskLevel = java.util.Objects.requireNonNull(builder.riskLevel, "riskLevel is required");
+            this.compliancePackTemplateId = builder.compliancePackTemplateId;
+            this.configRules = builder.configRules;
         }
 
         @Override

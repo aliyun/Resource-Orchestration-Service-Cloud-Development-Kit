@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.308Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.862Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -272,6 +272,48 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
+         * <p>
+         * @return {@code this}
+         * @param enableKibanaPrivate Property enableKibanaPrivate: Enables or disables intranet access to Kibana. This parameter is required.
+         */
+        public Builder enableKibanaPrivate(final java.lang.Boolean enableKibanaPrivate) {
+            this.props.enableKibanaPrivate(enableKibanaPrivate);
+            return this;
+        }
+        /**
+         * Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
+         * <p>
+         * @return {@code this}
+         * @param enableKibanaPrivate Property enableKibanaPrivate: Enables or disables intranet access to Kibana. This parameter is required.
+         */
+        public Builder enableKibanaPrivate(final com.aliyun.ros.cdk.core.IResolvable enableKibanaPrivate) {
+            this.props.enableKibanaPrivate(enableKibanaPrivate);
+            return this;
+        }
+
+        /**
+         * Property enableKibanaPublic: Enables or disables Internet access to Kibana.
+         * <p>
+         * @return {@code this}
+         * @param enableKibanaPublic Property enableKibanaPublic: Enables or disables Internet access to Kibana. This parameter is required.
+         */
+        public Builder enableKibanaPublic(final java.lang.Boolean enableKibanaPublic) {
+            this.props.enableKibanaPublic(enableKibanaPublic);
+            return this;
+        }
+        /**
+         * Property enableKibanaPublic: Enables or disables Internet access to Kibana.
+         * <p>
+         * @return {@code this}
+         * @param enableKibanaPublic Property enableKibanaPublic: Enables or disables Internet access to Kibana. This parameter is required.
+         */
+        public Builder enableKibanaPublic(final com.aliyun.ros.cdk.core.IResolvable enableKibanaPublic) {
+            this.props.enableKibanaPublic(enableKibanaPublic);
+            return this;
+        }
+
+        /**
          * Property enablePublic: Whether enable public access.
          * <p>
          * If properties is true, will allocate public address.Default: false.
@@ -465,6 +507,48 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property ymlConfig: In the YML Configuration section of the Cluster  Configuration page of your Alibaba Cloud Elasticsearch cluster,  you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+         * <p>
+         * @return {@code this}
+         * @param ymlConfig Property ymlConfig: In the YML Configuration section of the Cluster  Configuration page of your Alibaba Cloud Elasticsearch cluster,  you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature. This parameter is required.
+         */
+        public Builder ymlConfig(final com.aliyun.ros.cdk.core.IResolvable ymlConfig) {
+            this.props.ymlConfig(ymlConfig);
+            return this;
+        }
+        /**
+         * Property ymlConfig: In the YML Configuration section of the Cluster  Configuration page of your Alibaba Cloud Elasticsearch cluster,  you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+         * <p>
+         * @return {@code this}
+         * @param ymlConfig Property ymlConfig: In the YML Configuration section of the Cluster  Configuration page of your Alibaba Cloud Elasticsearch cluster,  you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature. This parameter is required.
+         */
+        public Builder ymlConfig(final com.aliyun.ros.cdk.elasticsearch.RosInstance.YMLConfigProperty ymlConfig) {
+            this.props.ymlConfig(ymlConfig);
+            return this;
+        }
+
+        /**
+         * Property zoneCount: undefined.
+         * <p>
+         * @return {@code this}
+         * @param zoneCount Property zoneCount: undefined. This parameter is required.
+         */
+        public Builder zoneCount(final java.lang.Number zoneCount) {
+            this.props.zoneCount(zoneCount);
+            return this;
+        }
+        /**
+         * Property zoneCount: undefined.
+         * <p>
+         * @return {@code this}
+         * @param zoneCount Property zoneCount: undefined. This parameter is required.
+         */
+        public Builder zoneCount(final com.aliyun.ros.cdk.core.IResolvable zoneCount) {
+            this.props.zoneCount(zoneCount);
             return this;
         }
 

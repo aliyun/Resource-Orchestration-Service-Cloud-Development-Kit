@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.903Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.493Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosImageCacheProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageCacheProps.Jsii$Proxy.class)
 public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,13 +52,13 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosImageCacheProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosImageCacheProps> {
-        private java.lang.Object image;
-        private java.lang.Object imageCacheName;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object eipInstanceId;
-        private java.lang.Object imageRegistryCredential;
-        private java.lang.Object resourceGroupId;
+        java.lang.Object image;
+        java.lang.Object imageCacheName;
+        java.lang.Object securityGroupId;
+        java.lang.Object vSwitchId;
+        java.lang.Object eipInstanceId;
+        java.lang.Object imageRegistryCredential;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosImageCacheProps#getImage}
@@ -207,7 +207,7 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosImageCacheProps build() {
-            return new Jsii$Proxy(image, imageCacheName, securityGroupId, vSwitchId, eipInstanceId, imageRegistryCredential, resourceGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -242,15 +242,15 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object image, final java.lang.Object imageCacheName, final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object eipInstanceId, final java.lang.Object imageRegistryCredential, final java.lang.Object resourceGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.image = java.util.Objects.requireNonNull(image, "image is required");
-            this.imageCacheName = java.util.Objects.requireNonNull(imageCacheName, "imageCacheName is required");
-            this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.eipInstanceId = eipInstanceId;
-            this.imageRegistryCredential = imageRegistryCredential;
-            this.resourceGroupId = resourceGroupId;
+            this.image = java.util.Objects.requireNonNull(builder.image, "image is required");
+            this.imageCacheName = java.util.Objects.requireNonNull(builder.imageCacheName, "imageCacheName is required");
+            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.eipInstanceId = builder.eipInstanceId;
+            this.imageRegistryCredential = builder.imageRegistryCredential;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override

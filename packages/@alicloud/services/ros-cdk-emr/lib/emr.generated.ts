@@ -234,9 +234,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('hostGroup', ros.requiredValidator)(properties.hostGroup));
     errors.collect(ros.propertyValidator('hostGroup', ros.listValidator(RosCluster_HostGroupPropertyValidator))(properties.hostGroup));
     errors.collect(ros.propertyValidator('userInfo', ros.listValidator(RosCluster_UserInfoPropertyValidator))(properties.userInfo));
-    errors.collect(ros.propertyValidator('highAvailabilityEnable', ros.validateBoolean)(properties.highAvailabilityEnable));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('highAvailabilityEnable', ros.validateBoolean)(properties.highAvailabilityEnable));
     errors.collect(ros.propertyValidator('optionSoftWareList', ros.listValidator(ros.validateString))(properties.optionSoftWareList));
     if(properties.masterPwd && (Array.isArray(properties.masterPwd) || (typeof properties.masterPwd) === 'string')) {
         errors.collect(ros.propertyValidator('masterPwd', ros.validateLength)({
@@ -251,9 +251,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('isOpenPublicIp', ros.validateBoolean)(properties.isOpenPublicIp));
     errors.collect(ros.propertyValidator('configurations', ros.validateString)(properties.configurations));
     errors.collect(ros.propertyValidator('authorizeContent', ros.validateString)(properties.authorizeContent));
+    errors.collect(ros.propertyValidator('userDefinedEmrEcsRole', ros.validateString)(properties.userDefinedEmrEcsRole));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
-    errors.collect(ros.propertyValidator('userDefinedEmrEcsRole', ros.validateString)(properties.userDefinedEmrEcsRole));
     errors.collect(ros.propertyValidator('useLocalMetaDb', ros.requiredValidator)(properties.useLocalMetaDb));
     errors.collect(ros.propertyValidator('useLocalMetaDb', ros.validateBoolean)(properties.useLocalMetaDb));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
@@ -264,7 +264,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('machineType', ros.validateString)(properties.machineType));
     errors.collect(ros.propertyValidator('depositType', ros.validateString)(properties.depositType));
-    errors.collect(ros.propertyValidator('metaStoreType', ros.validateString)(properties.metaStoreType));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -272,6 +271,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('metaStoreType', ros.validateString)(properties.metaStoreType));
     errors.collect(ros.propertyValidator('emrVer', ros.requiredValidator)(properties.emrVer));
     errors.collect(ros.propertyValidator('emrVer', ros.validateString)(properties.emrVer));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
@@ -855,13 +855,13 @@ export namespace RosCluster {
          */
         readonly clusterId?: string | ros.IResolvable;
         /**
-         * @Property autoRenew: Indicates whether the instance group is auto-renewed.
-         */
-        readonly autoRenew?: boolean | ros.IResolvable;
-        /**
          * @Property vSwitchId: The ID of the VSwitch. A value is required when NetType=vpc.
          */
         readonly vSwitchId?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Indicates whether the instance group is auto-renewed.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
         /**
          * @Property hostPassword: The password of the host. Currently, only gateways are supported.
          */
@@ -946,8 +946,8 @@ function RosCluster_HostGroupPropertyValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('sysDiskType', ros.requiredValidator)(properties.sysDiskType));
     errors.collect(ros.propertyValidator('sysDiskType', ros.validateString)(properties.sysDiskType));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('hostPassword', ros.validateString)(properties.hostPassword));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -998,8 +998,8 @@ function rosClusterHostGroupPropertyToRosTemplate(properties: any): any {
       NodeCount: ros.numberToRosTemplate(properties.nodeCount),
       SysDiskType: ros.stringToRosTemplate(properties.sysDiskType),
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
       HostPassword: ros.stringToRosTemplate(properties.hostPassword),
       Period: ros.numberToRosTemplate(properties.period),
       HostGroupName: ros.stringToRosTemplate(properties.hostGroupName),

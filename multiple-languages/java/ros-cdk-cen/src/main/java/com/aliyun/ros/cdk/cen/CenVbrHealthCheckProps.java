@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.438Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenVbrHealthCheckProps")
 @software.amazon.jsii.Jsii.Proxy(CenVbrHealthCheckProps.Jsii$Proxy.class)
 public interface CenVbrHealthCheckProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,14 +76,14 @@ public interface CenVbrHealthCheckProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link CenVbrHealthCheckProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenVbrHealthCheckProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object healthCheckTargetIp;
-        private java.lang.Object vbrInstanceId;
-        private java.lang.Object vbrInstanceRegionId;
-        private java.lang.Object healthCheckInterval;
-        private java.lang.Object healthCheckSourceIp;
-        private java.lang.Object healthyThreshold;
-        private java.lang.Object vbrInstanceOwnerId;
+        java.lang.Object cenId;
+        java.lang.Object healthCheckTargetIp;
+        java.lang.Object vbrInstanceId;
+        java.lang.Object vbrInstanceRegionId;
+        java.lang.Object healthCheckInterval;
+        java.lang.Object healthCheckSourceIp;
+        java.lang.Object healthyThreshold;
+        java.lang.Object vbrInstanceOwnerId;
 
         /**
          * Sets the value of {@link CenVbrHealthCheckProps#getCenId}
@@ -262,7 +262,7 @@ public interface CenVbrHealthCheckProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public CenVbrHealthCheckProps build() {
-            return new Jsii$Proxy(cenId, healthCheckTargetIp, vbrInstanceId, vbrInstanceRegionId, healthCheckInterval, healthCheckSourceIp, healthyThreshold, vbrInstanceOwnerId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -299,16 +299,16 @@ public interface CenVbrHealthCheckProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object healthCheckTargetIp, final java.lang.Object vbrInstanceId, final java.lang.Object vbrInstanceRegionId, final java.lang.Object healthCheckInterval, final java.lang.Object healthCheckSourceIp, final java.lang.Object healthyThreshold, final java.lang.Object vbrInstanceOwnerId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.healthCheckTargetIp = java.util.Objects.requireNonNull(healthCheckTargetIp, "healthCheckTargetIp is required");
-            this.vbrInstanceId = java.util.Objects.requireNonNull(vbrInstanceId, "vbrInstanceId is required");
-            this.vbrInstanceRegionId = java.util.Objects.requireNonNull(vbrInstanceRegionId, "vbrInstanceRegionId is required");
-            this.healthCheckInterval = healthCheckInterval;
-            this.healthCheckSourceIp = healthCheckSourceIp;
-            this.healthyThreshold = healthyThreshold;
-            this.vbrInstanceOwnerId = vbrInstanceOwnerId;
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.healthCheckTargetIp = java.util.Objects.requireNonNull(builder.healthCheckTargetIp, "healthCheckTargetIp is required");
+            this.vbrInstanceId = java.util.Objects.requireNonNull(builder.vbrInstanceId, "vbrInstanceId is required");
+            this.vbrInstanceRegionId = java.util.Objects.requireNonNull(builder.vbrInstanceRegionId, "vbrInstanceRegionId is required");
+            this.healthCheckInterval = builder.healthCheckInterval;
+            this.healthCheckSourceIp = builder.healthCheckSourceIp;
+            this.healthyThreshold = builder.healthyThreshold;
+            this.vbrInstanceOwnerId = builder.vbrInstanceOwnerId;
         }
 
         @Override

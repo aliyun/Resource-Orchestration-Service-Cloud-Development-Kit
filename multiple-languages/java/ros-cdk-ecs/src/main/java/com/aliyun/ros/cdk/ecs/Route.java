@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Route")
 public class Route extends com.aliyun.ros.cdk.core.Resource {
 
@@ -104,27 +104,6 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property routeId: RouteId of created route entry.
-         * <p>
-         * @return {@code this}
-         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
-         */
-        public Builder routeId(final java.lang.String routeId) {
-            this.props.routeId(routeId);
-            return this;
-        }
-        /**
-         * Property routeId: RouteId of created route entry.
-         * <p>
-         * @return {@code this}
-         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
-         */
-        public Builder routeId(final com.aliyun.ros.cdk.core.IResolvable routeId) {
-            this.props.routeId(routeId);
-            return this;
-        }
-
-        /**
          * Property routeTableId: RouteTableId of created route entry.
          * <p>
          * @return {@code this}
@@ -198,7 +177,7 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property nextHopType: The next hop type.
          * <p>
-         * Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
          * <p>
          * @return {@code this}
          * @param nextHopType Property nextHopType: The next hop type. This parameter is required.
@@ -210,7 +189,7 @@ public class Route extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property nextHopType: The next hop type.
          * <p>
-         * Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
          * <p>
          * @return {@code this}
          * @param nextHopType Property nextHopType: The next hop type. This parameter is required.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::SecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroup")
 public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -249,12 +249,12 @@ public class SecurityGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property tags: Tags to attach to instance.
+         * Property tags: Tags to attach to security group.
          * <p>
-         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * Max support 20 tags to add during create security group. Each tag with two properties Key and Value, and Key is required.
          * <p>
          * @return {@code this}
-         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         * @param tags Property tags: Tags to attach to security group. This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags) {
             this.props().tags(tags);

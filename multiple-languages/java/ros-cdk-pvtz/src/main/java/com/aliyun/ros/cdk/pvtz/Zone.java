@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS resource type:  `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.Zone")
 public class Zone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -60,6 +60,20 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneName() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ZoneTag: Zone label.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneTag() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneTag", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ZoneType: Zone type.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneType() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -166,6 +180,56 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
             this.props.remark(remark);
+            return this;
+        }
+
+        /**
+         * Property zoneTag: Zone label.
+         * <p>
+         * It will be ignored when ZoneType is AUTH_ZONE.
+         * <p>
+         * @return {@code this}
+         * @param zoneTag Property zoneTag: Zone label. This parameter is required.
+         */
+        public Builder zoneTag(final java.lang.String zoneTag) {
+            this.props.zoneTag(zoneTag);
+            return this;
+        }
+        /**
+         * Property zoneTag: Zone label.
+         * <p>
+         * It will be ignored when ZoneType is AUTH_ZONE.
+         * <p>
+         * @return {@code this}
+         * @param zoneTag Property zoneTag: Zone label. This parameter is required.
+         */
+        public Builder zoneTag(final com.aliyun.ros.cdk.core.IResolvable zoneTag) {
+            this.props.zoneTag(zoneTag);
+            return this;
+        }
+
+        /**
+         * Property zoneType: Zone type.
+         * <p>
+         * For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+         * <p>
+         * @return {@code this}
+         * @param zoneType Property zoneType: Zone type. This parameter is required.
+         */
+        public Builder zoneType(final java.lang.String zoneType) {
+            this.props.zoneType(zoneType);
+            return this;
+        }
+        /**
+         * Property zoneType: Zone type.
+         * <p>
+         * For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+         * <p>
+         * @return {@code this}
+         * @param zoneType Property zoneType: Zone type. This parameter is required.
+         */
+        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
+            this.props.zoneType(zoneType);
             return this;
         }
 

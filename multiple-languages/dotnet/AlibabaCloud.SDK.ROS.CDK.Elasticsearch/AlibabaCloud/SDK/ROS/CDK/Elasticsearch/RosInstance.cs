@@ -201,6 +201,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableKibanaPrivate: Enables or disables intranet access to Kibana.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableKibanaPrivate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EnableKibanaPrivate
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableKibanaPublic: Enables or disables Internet access to Kibana.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableKibanaPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EnableKibanaPublic
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
         /// </remarks>
         [JsiiOptional]
@@ -298,6 +320,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ymlConfig: In the YML Configuration section of the Cluster
+        /// Configuration page of your Alibaba Cloud Elasticsearch cluster,
+        /// you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ymlConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? YmlConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneCount: undefined
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ZoneCount
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
         [JsiiInterface(nativeType: typeof(IDataNodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty")]
         public interface IDataNodeProperty
         {
@@ -322,7 +368,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
+            /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency, cloud_essd
             /// </remarks>
             [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object DiskType
@@ -337,6 +383,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             object Spec
             {
                 get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: diskEncryption: Whether to enable cloud disk encryption.
+            /// </remarks>
+            [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DiskEncryption
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD. When the storage type is cloud_essd,
+            /// this parameter is required and supports PL1, PL2, and PL3.
+            /// </remarks>
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PerformanceLevel
+            {
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IDataNodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty")]
@@ -367,7 +440,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
+                /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency, cloud_essd
                 /// </remarks>
                 [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object DiskType
@@ -382,6 +455,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 public object Spec
                 {
                     get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: diskEncryption: Whether to enable cloud disk encryption.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DiskEncryption
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD. When the storage type is cloud_essd,
+                /// this parameter is required and supports PL1, PL2, and PL3.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PerformanceLevel
+                {
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -413,7 +507,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
+            /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency, cloud_essd
             /// </remarks>
             [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
             public object DiskType
@@ -427,6 +521,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// </remarks>
             [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
             public object Spec
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: diskEncryption: Whether to enable cloud disk encryption.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DiskEncryption
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: performanceLevel: The performance level of the ESSD. When the storage type is cloud_essd,
+            /// this parameter is required and supports PL1, PL2, and PL3.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PerformanceLevel
             {
                 get;
                 set;
@@ -651,6 +768,244 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             [JsiiOptional]
             [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? Value
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IYMLConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty")]
+        public interface IYMLConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: auditLog: If you enable Audit Log Indexing, the system generates audit logs
+            /// for the create, delete, modify, and search operations that are performed
+            /// in the Elasticsearch cluster. These logs consume disk space and affect
+            /// cluster performance. Therefore, we recommend that you disable Audit Log
+            /// Indexing and exercise caution when you configure this parameter.
+            /// This parameter is unavailable for Elasticsearch clusters of V7.0 or later.
+            /// </remarks>
+            [JsiiProperty(name: "auditLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AuditLog
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: createIndex: Specifies whether to automatically create an index when a new document
+            /// is uploaded to your Elasticsearch cluster but no index exists.
+            /// We recommend that you disable Auto Indexing because indexes created
+            /// by this feature may not meet your business requirements.
+            /// This parameter corresponds to the action.auto_create_index configuration
+            /// item in the YML file. The default value of this configuration item is false.
+            /// </remarks>
+            [JsiiProperty(name: "createIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CreateIndex
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destructiveRequiresName: Specifies whether to specify the index name when you delete an index.
+            /// If you set this parameter to Allow Wildcards, you can use wildcards to
+            /// delete multiple indexes at a time. Deleted indexes cannot be recovered.
+            /// Exercise caution when you configure this parameter.
+            /// This parameter corresponds to the action.destructive_requires_name configuration
+            /// item in the YML file. The default value of this configuration item is true.
+            /// </remarks>
+            [JsiiProperty(name: "destructiveRequiresName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DestructiveRequiresName
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: otherConfigs: Other Configurations.
+            /// </remarks>
+            [JsiiProperty(name: "otherConfigs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OtherConfigs
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: watcher: If you enable Watcher, you can use the X-Pack Watcher feature.
+            /// You must clear the .watcher-history* index on a regular basis to free up disk space.
+            /// This parameter corresponds to the xpack.watcher.enabled configuration item in the YML file.
+            /// The default value of this configuration item is false.
+            /// </remarks>
+            [JsiiProperty(name: "watcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Watcher
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IYMLConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.IYMLConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: auditLog: If you enable Audit Log Indexing, the system generates audit logs
+                /// for the create, delete, modify, and search operations that are performed
+                /// in the Elasticsearch cluster. These logs consume disk space and affect
+                /// cluster performance. Therefore, we recommend that you disable Audit Log
+                /// Indexing and exercise caution when you configure this parameter.
+                /// This parameter is unavailable for Elasticsearch clusters of V7.0 or later.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "auditLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AuditLog
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: createIndex: Specifies whether to automatically create an index when a new document
+                /// is uploaded to your Elasticsearch cluster but no index exists.
+                /// We recommend that you disable Auto Indexing because indexes created
+                /// by this feature may not meet your business requirements.
+                /// This parameter corresponds to the action.auto_create_index configuration
+                /// item in the YML file. The default value of this configuration item is false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "createIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CreateIndex
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: destructiveRequiresName: Specifies whether to specify the index name when you delete an index.
+                /// If you set this parameter to Allow Wildcards, you can use wildcards to
+                /// delete multiple indexes at a time. Deleted indexes cannot be recovered.
+                /// Exercise caution when you configure this parameter.
+                /// This parameter corresponds to the action.destructive_requires_name configuration
+                /// item in the YML file. The default value of this configuration item is true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "destructiveRequiresName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DestructiveRequiresName
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: otherConfigs: Other Configurations.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "otherConfigs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+                public object? OtherConfigs
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: watcher: If you enable Watcher, you can use the X-Pack Watcher feature.
+                /// You must clear the .watcher-history* index on a regular basis to free up disk space.
+                /// This parameter corresponds to the xpack.watcher.enabled configuration item in the YML file.
+                /// The default value of this configuration item is false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "watcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Watcher
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty")]
+        public class YMLConfigProperty : AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.IYMLConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: auditLog: If you enable Audit Log Indexing, the system generates audit logs
+            /// for the create, delete, modify, and search operations that are performed
+            /// in the Elasticsearch cluster. These logs consume disk space and affect
+            /// cluster performance. Therefore, we recommend that you disable Audit Log
+            /// Indexing and exercise caution when you configure this parameter.
+            /// This parameter is unavailable for Elasticsearch clusters of V7.0 or later.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "auditLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AuditLog
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: createIndex: Specifies whether to automatically create an index when a new document
+            /// is uploaded to your Elasticsearch cluster but no index exists.
+            /// We recommend that you disable Auto Indexing because indexes created
+            /// by this feature may not meet your business requirements.
+            /// This parameter corresponds to the action.auto_create_index configuration
+            /// item in the YML file. The default value of this configuration item is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "createIndex", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CreateIndex
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destructiveRequiresName: Specifies whether to specify the index name when you delete an index.
+            /// If you set this parameter to Allow Wildcards, you can use wildcards to
+            /// delete multiple indexes at a time. Deleted indexes cannot be recovered.
+            /// Exercise caution when you configure this parameter.
+            /// This parameter corresponds to the action.destructive_requires_name configuration
+            /// item in the YML file. The default value of this configuration item is true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "destructiveRequiresName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DestructiveRequiresName
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: otherConfigs: Other Configurations.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "otherConfigs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
+            public object? OtherConfigs
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: watcher: If you enable Watcher, you can use the X-Pack Watcher feature.
+            /// You must clear the .watcher-history* index on a regular basis to free up disk space.
+            /// This parameter corresponds to the xpack.watcher.enabled configuration item in the YML file.
+            /// The default value of this configuration item is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "watcher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Watcher
             {
                 get;
                 set;

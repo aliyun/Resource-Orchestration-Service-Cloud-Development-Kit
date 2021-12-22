@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionHandleProps")
 @software.amazon.jsii.Jsii.Proxy(WaitConditionHandleProps.Jsii$Proxy.class)
 public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,8 +42,8 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link WaitConditionHandleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<WaitConditionHandleProps> {
-        private java.lang.Object count;
-        private java.lang.Object mode;
+        java.lang.Object count;
+        java.lang.Object mode;
 
         /**
          * Sets the value of {@link WaitConditionHandleProps#getCount}
@@ -108,7 +108,7 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public WaitConditionHandleProps build() {
-            return new Jsii$Proxy(count, mode);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -133,10 +133,10 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object count, final java.lang.Object mode) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.count = count;
-            this.mode = mode;
+            this.count = builder.count;
+            this.mode = builder.mode;
         }
 
         @Override

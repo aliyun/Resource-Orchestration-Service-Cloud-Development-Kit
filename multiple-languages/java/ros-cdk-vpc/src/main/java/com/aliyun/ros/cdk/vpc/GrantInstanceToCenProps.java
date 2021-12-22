@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.179Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.911Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.GrantInstanceToCenProps")
 @software.amazon.jsii.Jsii.Proxy(GrantInstanceToCenProps.Jsii$Proxy.class)
 public interface GrantInstanceToCenProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,10 +43,10 @@ public interface GrantInstanceToCenProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link GrantInstanceToCenProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GrantInstanceToCenProps> {
-        private java.lang.Object cenId;
-        private java.lang.Object cenOwnerId;
-        private java.lang.Object instanceId;
-        private java.lang.Object instanceType;
+        java.lang.Object cenId;
+        java.lang.Object cenOwnerId;
+        java.lang.Object instanceId;
+        java.lang.Object instanceType;
 
         /**
          * Sets the value of {@link GrantInstanceToCenProps#getCenId}
@@ -143,7 +143,7 @@ public interface GrantInstanceToCenProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public GrantInstanceToCenProps build() {
-            return new Jsii$Proxy(cenId, cenOwnerId, instanceId, instanceType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -172,12 +172,12 @@ public interface GrantInstanceToCenProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenId, final java.lang.Object cenOwnerId, final java.lang.Object instanceId, final java.lang.Object instanceType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
-            this.cenOwnerId = java.util.Objects.requireNonNull(cenOwnerId, "cenOwnerId is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
+            this.cenOwnerId = java.util.Objects.requireNonNull(builder.cenOwnerId, "cenOwnerId is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
         }
 
         @Override

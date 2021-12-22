@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.800Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerAttachmentProps.Jsii$Proxy.class)
 public interface RosBackendServerAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,10 +40,10 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
      * A builder for {@link RosBackendServerAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosBackendServerAttachmentProps> {
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object backendServerList;
-        private java.lang.Object backendServers;
-        private java.lang.Object backendServerWeightList;
+        java.lang.Object loadBalancerId;
+        java.lang.Object backendServerList;
+        java.lang.Object backendServers;
+        java.lang.Object backendServerWeightList;
 
         /**
          * Sets the value of {@link RosBackendServerAttachmentProps#getLoadBalancerId}
@@ -132,7 +132,7 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
          */
         @Override
         public RosBackendServerAttachmentProps build() {
-            return new Jsii$Proxy(loadBalancerId, backendServerList, backendServers, backendServerWeightList);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -161,12 +161,12 @@ public interface RosBackendServerAttachmentProps extends software.amazon.jsii.Js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object backendServerList, final java.lang.Object backendServers, final java.lang.Object backendServerWeightList) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.backendServerList = backendServerList;
-            this.backendServers = backendServers;
-            this.backendServerWeightList = backendServerWeightList;
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.backendServerList = builder.backendServerList;
+            this.backendServers = builder.backendServers;
+            this.backendServerWeightList = builder.backendServerWeightList;
         }
 
         @Override

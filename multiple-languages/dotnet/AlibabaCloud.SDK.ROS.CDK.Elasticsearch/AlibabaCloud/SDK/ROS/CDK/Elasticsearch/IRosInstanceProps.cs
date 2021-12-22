@@ -60,6 +60,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: enableKibanaPrivate: Enables or disables intranet access to Kibana.
+        /// </remarks>
+        [JsiiProperty(name: "enableKibanaPrivate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableKibanaPrivate
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableKibanaPublic: Enables or disables Internet access to Kibana.
+        /// </remarks>
+        [JsiiProperty(name: "enableKibanaPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableKibanaPublic
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
         /// </remarks>
         [JsiiProperty(name: "enablePublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -176,6 +202,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: ymlConfig: In the YML Configuration section of the Cluster
+        /// Configuration page of your Alibaba Cloud Elasticsearch cluster,
+        /// you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+        /// </remarks>
+        [JsiiProperty(name: "ymlConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? YmlConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneCount: undefined
+        /// </remarks>
+        [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.IRosInstanceProps
@@ -228,6 +282,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableKibanaPrivate: Enables or disables intranet access to Kibana.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableKibanaPrivate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableKibanaPrivate
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableKibanaPublic: Enables or disables Internet access to Kibana.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableKibanaPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableKibanaPublic
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -320,6 +394,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             public AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ymlConfig: In the YML Configuration section of the Cluster
+            /// Configuration page of your Alibaba Cloud Elasticsearch cluster,
+            /// you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ymlConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty\"}]}}", isOptional: true)]
+            public object? YmlConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zoneCount: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneCount
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::RuleAction`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.244Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RuleActionProps")
 @software.amazon.jsii.Jsii.Proxy(RuleActionProps.Jsii$Proxy.class)
 public interface RuleActionProps extends software.amazon.jsii.JsiiSerializable {
@@ -81,11 +81,11 @@ public interface RuleActionProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RuleActionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RuleActionProps> {
-        private java.lang.Object configuration;
-        private java.lang.Object ruleId;
-        private java.lang.Object type;
-        private java.lang.Object errorActionFlag;
-        private java.lang.Object iotInstanceId;
+        java.lang.Object configuration;
+        java.lang.Object ruleId;
+        java.lang.Object type;
+        java.lang.Object errorActionFlag;
+        java.lang.Object iotInstanceId;
 
         /**
          * Sets the value of {@link RuleActionProps#getConfiguration}
@@ -252,7 +252,7 @@ public interface RuleActionProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RuleActionProps build() {
-            return new Jsii$Proxy(configuration, ruleId, type, errorActionFlag, iotInstanceId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -283,13 +283,13 @@ public interface RuleActionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object configuration, final java.lang.Object ruleId, final java.lang.Object type, final java.lang.Object errorActionFlag, final java.lang.Object iotInstanceId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.configuration = java.util.Objects.requireNonNull(configuration, "configuration is required");
-            this.ruleId = java.util.Objects.requireNonNull(ruleId, "ruleId is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.errorActionFlag = errorActionFlag;
-            this.iotInstanceId = iotInstanceId;
+            this.configuration = java.util.Objects.requireNonNull(builder.configuration, "configuration is required");
+            this.ruleId = java.util.Objects.requireNonNull(builder.ruleId, "ruleId is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.errorActionFlag = builder.errorActionFlag;
+            this.iotInstanceId = builder.iotInstanceId;
         }
 
         @Override

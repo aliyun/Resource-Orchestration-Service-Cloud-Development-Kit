@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.983Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps")
 @software.amazon.jsii.Jsii.Proxy(RosVirtualBorderRouterProps.Jsii$Proxy.class)
 public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,14 +56,14 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link RosVirtualBorderRouterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVirtualBorderRouterProps> {
-        private java.lang.Object localGatewayIp;
-        private java.lang.Object peerGatewayIp;
-        private java.lang.Object peeringSubnetMask;
-        private java.lang.Object physicalConnectionId;
-        private java.lang.Object vlanId;
-        private java.lang.Object circuitCode;
-        private java.lang.Object description;
-        private java.lang.Object name;
+        java.lang.Object localGatewayIp;
+        java.lang.Object peerGatewayIp;
+        java.lang.Object peeringSubnetMask;
+        java.lang.Object physicalConnectionId;
+        java.lang.Object vlanId;
+        java.lang.Object circuitCode;
+        java.lang.Object description;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link RosVirtualBorderRouterProps#getLocalGatewayIp}
@@ -232,7 +232,7 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
          */
         @Override
         public RosVirtualBorderRouterProps build() {
-            return new Jsii$Proxy(localGatewayIp, peerGatewayIp, peeringSubnetMask, physicalConnectionId, vlanId, circuitCode, description, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -269,16 +269,16 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object localGatewayIp, final java.lang.Object peerGatewayIp, final java.lang.Object peeringSubnetMask, final java.lang.Object physicalConnectionId, final java.lang.Object vlanId, final java.lang.Object circuitCode, final java.lang.Object description, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.localGatewayIp = java.util.Objects.requireNonNull(localGatewayIp, "localGatewayIp is required");
-            this.peerGatewayIp = java.util.Objects.requireNonNull(peerGatewayIp, "peerGatewayIp is required");
-            this.peeringSubnetMask = java.util.Objects.requireNonNull(peeringSubnetMask, "peeringSubnetMask is required");
-            this.physicalConnectionId = java.util.Objects.requireNonNull(physicalConnectionId, "physicalConnectionId is required");
-            this.vlanId = java.util.Objects.requireNonNull(vlanId, "vlanId is required");
-            this.circuitCode = circuitCode;
-            this.description = description;
-            this.name = name;
+            this.localGatewayIp = java.util.Objects.requireNonNull(builder.localGatewayIp, "localGatewayIp is required");
+            this.peerGatewayIp = java.util.Objects.requireNonNull(builder.peerGatewayIp, "peerGatewayIp is required");
+            this.peeringSubnetMask = java.util.Objects.requireNonNull(builder.peeringSubnetMask, "peeringSubnetMask is required");
+            this.physicalConnectionId = java.util.Objects.requireNonNull(builder.physicalConnectionId, "physicalConnectionId is required");
+            this.vlanId = java.util.Objects.requireNonNull(builder.vlanId, "vlanId is required");
+            this.circuitCode = builder.circuitCode;
+            this.description = builder.description;
+            this.name = builder.name;
         }
 
         @Override

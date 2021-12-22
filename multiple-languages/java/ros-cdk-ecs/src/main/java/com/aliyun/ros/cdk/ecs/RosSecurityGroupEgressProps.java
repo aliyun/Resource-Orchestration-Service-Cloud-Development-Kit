@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.733Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSecurityGroupEgressProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityGroupEgressProps.Jsii$Proxy.class)
 public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,17 +80,17 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link RosSecurityGroupEgressProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecurityGroupEgressProps> {
-        private java.lang.Object ipProtocol;
-        private java.lang.Object portRange;
-        private java.lang.Object description;
-        private java.lang.Object destCidrIp;
-        private java.lang.Object destGroupId;
-        private java.lang.Object destGroupOwnerId;
-        private java.lang.Object ipv6DestCidrIp;
-        private java.lang.Object nicType;
-        private java.lang.Object policy;
-        private java.lang.Object priority;
-        private java.lang.Object securityGroupId;
+        java.lang.Object ipProtocol;
+        java.lang.Object portRange;
+        java.lang.Object description;
+        java.lang.Object destCidrIp;
+        java.lang.Object destGroupId;
+        java.lang.Object destGroupOwnerId;
+        java.lang.Object ipv6DestCidrIp;
+        java.lang.Object nicType;
+        java.lang.Object policy;
+        java.lang.Object priority;
+        java.lang.Object securityGroupId;
 
         /**
          * Sets the value of {@link RosSecurityGroupEgressProps#getIpProtocol}
@@ -319,7 +319,7 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
          */
         @Override
         public RosSecurityGroupEgressProps build() {
-            return new Jsii$Proxy(ipProtocol, portRange, description, destCidrIp, destGroupId, destGroupOwnerId, ipv6DestCidrIp, nicType, policy, priority, securityGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -362,19 +362,19 @@ public interface RosSecurityGroupEgressProps extends software.amazon.jsii.JsiiSe
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ipProtocol, final java.lang.Object portRange, final java.lang.Object description, final java.lang.Object destCidrIp, final java.lang.Object destGroupId, final java.lang.Object destGroupOwnerId, final java.lang.Object ipv6DestCidrIp, final java.lang.Object nicType, final java.lang.Object policy, final java.lang.Object priority, final java.lang.Object securityGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ipProtocol = java.util.Objects.requireNonNull(ipProtocol, "ipProtocol is required");
-            this.portRange = java.util.Objects.requireNonNull(portRange, "portRange is required");
-            this.description = description;
-            this.destCidrIp = destCidrIp;
-            this.destGroupId = destGroupId;
-            this.destGroupOwnerId = destGroupOwnerId;
-            this.ipv6DestCidrIp = ipv6DestCidrIp;
-            this.nicType = nicType;
-            this.policy = policy;
-            this.priority = priority;
-            this.securityGroupId = securityGroupId;
+            this.ipProtocol = java.util.Objects.requireNonNull(builder.ipProtocol, "ipProtocol is required");
+            this.portRange = java.util.Objects.requireNonNull(builder.portRange, "portRange is required");
+            this.description = builder.description;
+            this.destCidrIp = builder.destCidrIp;
+            this.destGroupId = builder.destGroupId;
+            this.destGroupOwnerId = builder.destGroupOwnerId;
+            this.ipv6DestCidrIp = builder.ipv6DestCidrIp;
+            this.nicType = builder.nicType;
+            this.policy = builder.policy;
+            this.priority = builder.priority;
+            this.securityGroupId = builder.securityGroupId;
         }
 
         @Override

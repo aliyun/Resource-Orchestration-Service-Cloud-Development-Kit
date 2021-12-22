@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImage")
 public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
 
@@ -68,6 +68,13 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageId() {
         return software.amazon.jsii.Kernel.get(this, "attrImageId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute SourceRegionId: ID of the region to where the instance/snapshot belongs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceRegionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -183,6 +190,31 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property imageFamily: The name of the image family of the custom image.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family of the custom image. This parameter is required.
+         */
+        public Builder imageFamily(final java.lang.String imageFamily) {
+            this.props().imageFamily(imageFamily);
+            return this;
+        }
+        /**
+         * Property imageFamily: The name of the image family of the custom image.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+         * <p>
+         * @return {@code this}
+         * @param imageFamily Property imageFamily: The name of the image family of the custom image. This parameter is required.
+         */
+        public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.props().imageFamily(imageFamily);
+            return this;
+        }
+
+        /**
          * Property imageName: Image name.
          * <p>
          * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
@@ -294,6 +326,31 @@ public class CustomImage extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder snapshotId(final com.aliyun.ros.cdk.core.IResolvable snapshotId) {
             this.props().snapshotId(snapshotId);
+            return this;
+        }
+
+        /**
+         * Property sourceRegionId: ID of the region to where the instance/snapshot belongs.
+         * <p>
+         * Default is current region ID.
+         * <p>
+         * @return {@code this}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the instance/snapshot belongs. This parameter is required.
+         */
+        public Builder sourceRegionId(final java.lang.String sourceRegionId) {
+            this.props().sourceRegionId(sourceRegionId);
+            return this;
+        }
+        /**
+         * Property sourceRegionId: ID of the region to where the instance/snapshot belongs.
+         * <p>
+         * Default is current region ID.
+         * <p>
+         * @return {@code this}
+         * @param sourceRegionId Property sourceRegionId: ID of the region to where the instance/snapshot belongs. This parameter is required.
+         */
+        public Builder sourceRegionId(final com.aliyun.ros.cdk.core.IResolvable sourceRegionId) {
+            this.props().sourceRegionId(sourceRegionId);
             return this;
         }
 

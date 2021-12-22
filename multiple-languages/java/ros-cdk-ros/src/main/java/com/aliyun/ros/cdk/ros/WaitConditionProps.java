@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitCondition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.730Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionProps")
 @software.amazon.jsii.Jsii.Proxy(WaitConditionProps.Jsii$Proxy.class)
 public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,15 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property showProgressEvent: Whether to generate progress changed event.
+     * <p>
+     * Default to Disabled.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getShowProgressEvent() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link WaitConditionProps}
      */
     static Builder builder() {
@@ -35,9 +44,10 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link WaitConditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<WaitConditionProps> {
-        private java.lang.Object handle;
-        private java.lang.Object timeout;
-        private java.lang.Object count;
+        java.lang.Object handle;
+        java.lang.Object timeout;
+        java.lang.Object count;
+        java.lang.Object showProgressEvent;
 
         /**
          * Sets the value of {@link WaitConditionProps#getHandle}
@@ -100,13 +110,35 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link WaitConditionProps#getShowProgressEvent}
+         * @param showProgressEvent Property showProgressEvent: Whether to generate progress changed event.
+         *                          Default to Disabled.
+         * @return {@code this}
+         */
+        public Builder showProgressEvent(java.lang.String showProgressEvent) {
+            this.showProgressEvent = showProgressEvent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link WaitConditionProps#getShowProgressEvent}
+         * @param showProgressEvent Property showProgressEvent: Whether to generate progress changed event.
+         *                          Default to Disabled.
+         * @return {@code this}
+         */
+        public Builder showProgressEvent(com.aliyun.ros.cdk.core.IResolvable showProgressEvent) {
+            this.showProgressEvent = showProgressEvent;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link WaitConditionProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public WaitConditionProps build() {
-            return new Jsii$Proxy(handle, timeout, count);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -118,6 +150,7 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object handle;
         private final java.lang.Object timeout;
         private final java.lang.Object count;
+        private final java.lang.Object showProgressEvent;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,16 +161,18 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
             this.handle = software.amazon.jsii.Kernel.get(this, "handle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.showProgressEvent = software.amazon.jsii.Kernel.get(this, "showProgressEvent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object handle, final java.lang.Object timeout, final java.lang.Object count) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.handle = java.util.Objects.requireNonNull(handle, "handle is required");
-            this.timeout = java.util.Objects.requireNonNull(timeout, "timeout is required");
-            this.count = count;
+            this.handle = java.util.Objects.requireNonNull(builder.handle, "handle is required");
+            this.timeout = java.util.Objects.requireNonNull(builder.timeout, "timeout is required");
+            this.count = builder.count;
+            this.showProgressEvent = builder.showProgressEvent;
         }
 
         @Override
@@ -156,6 +191,11 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getShowProgressEvent() {
+            return this.showProgressEvent;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -165,6 +205,9 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
             data.set("timeout", om.valueToTree(this.getTimeout()));
             if (this.getCount() != null) {
                 data.set("count", om.valueToTree(this.getCount()));
+            }
+            if (this.getShowProgressEvent() != null) {
+                data.set("showProgressEvent", om.valueToTree(this.getShowProgressEvent()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -186,7 +229,8 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
 
             if (!handle.equals(that.handle)) return false;
             if (!timeout.equals(that.timeout)) return false;
-            return this.count != null ? this.count.equals(that.count) : that.count == null;
+            if (this.count != null ? !this.count.equals(that.count) : that.count != null) return false;
+            return this.showProgressEvent != null ? this.showProgressEvent.equals(that.showProgressEvent) : that.showProgressEvent == null;
         }
 
         @Override
@@ -194,6 +238,7 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.handle.hashCode();
             result = 31 * result + (this.timeout.hashCode());
             result = 31 * result + (this.count != null ? this.count.hashCode() : 0);
+            result = 31 * result + (this.showProgressEvent != null ? this.showProgressEvent.hashCode() : 0);
             return result;
         }
     }

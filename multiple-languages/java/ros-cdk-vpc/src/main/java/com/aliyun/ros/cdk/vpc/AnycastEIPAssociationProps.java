@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::AnycastEIPAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.155Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(AnycastEIPAssociationProps.Jsii$Proxy.class)
 public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,10 +40,10 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link AnycastEIPAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AnycastEIPAssociationProps> {
-        private java.lang.Object anycastId;
-        private java.lang.Object bindInstanceId;
-        private java.lang.Object bindInstanceRegionId;
-        private java.lang.Object bindInstanceType;
+        java.lang.Object anycastId;
+        java.lang.Object bindInstanceId;
+        java.lang.Object bindInstanceRegionId;
+        java.lang.Object bindInstanceType;
 
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getAnycastId}
@@ -134,7 +134,7 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public AnycastEIPAssociationProps build() {
-            return new Jsii$Proxy(anycastId, bindInstanceId, bindInstanceRegionId, bindInstanceType);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -163,12 +163,12 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object anycastId, final java.lang.Object bindInstanceId, final java.lang.Object bindInstanceRegionId, final java.lang.Object bindInstanceType) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.anycastId = java.util.Objects.requireNonNull(anycastId, "anycastId is required");
-            this.bindInstanceId = java.util.Objects.requireNonNull(bindInstanceId, "bindInstanceId is required");
-            this.bindInstanceRegionId = java.util.Objects.requireNonNull(bindInstanceRegionId, "bindInstanceRegionId is required");
-            this.bindInstanceType = java.util.Objects.requireNonNull(bindInstanceType, "bindInstanceType is required");
+            this.anycastId = java.util.Objects.requireNonNull(builder.anycastId, "anycastId is required");
+            this.bindInstanceId = java.util.Objects.requireNonNull(builder.bindInstanceId, "bindInstanceId is required");
+            this.bindInstanceRegionId = java.util.Objects.requireNonNull(builder.bindInstanceRegionId, "bindInstanceRegionId is required");
+            this.bindInstanceType = java.util.Objects.requireNonNull(builder.bindInstanceType, "bindInstanceType is required");
         }
 
         @Override

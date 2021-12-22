@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.737Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.403Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosSearchIndex")
 public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -239,14 +239,14 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FieldSchemasProperty> {
-            private java.lang.Object fieldName;
-            private java.lang.Object fieldType;
-            private java.lang.Object analyzer;
-            private java.lang.Object enableSortAndAgg;
-            private java.lang.Object index;
-            private java.lang.Object isArray;
-            private java.lang.Object store;
-            private java.lang.Object subFieldSchemas;
+            java.lang.Object fieldName;
+            java.lang.Object fieldType;
+            java.lang.Object analyzer;
+            java.lang.Object enableSortAndAgg;
+            java.lang.Object index;
+            java.lang.Object isArray;
+            java.lang.Object store;
+            java.lang.Object subFieldSchemas;
 
             /**
              * Sets the value of {@link FieldSchemasProperty#getFieldName}
@@ -432,7 +432,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public FieldSchemasProperty build() {
-                return new Jsii$Proxy(fieldName, fieldType, analyzer, enableSortAndAgg, index, isArray, store, subFieldSchemas);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -470,16 +470,16 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object fieldType, final java.lang.Object analyzer, final java.lang.Object enableSortAndAgg, final java.lang.Object index, final java.lang.Object isArray, final java.lang.Object store, final java.lang.Object subFieldSchemas) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
-                this.fieldType = java.util.Objects.requireNonNull(fieldType, "fieldType is required");
-                this.analyzer = analyzer;
-                this.enableSortAndAgg = enableSortAndAgg;
-                this.index = index;
-                this.isArray = isArray;
-                this.store = store;
-                this.subFieldSchemas = subFieldSchemas;
+                this.fieldName = java.util.Objects.requireNonNull(builder.fieldName, "fieldName is required");
+                this.fieldType = java.util.Objects.requireNonNull(builder.fieldType, "fieldType is required");
+                this.analyzer = builder.analyzer;
+                this.enableSortAndAgg = builder.enableSortAndAgg;
+                this.index = builder.index;
+                this.isArray = builder.isArray;
+                this.store = builder.store;
+                this.subFieldSchemas = builder.subFieldSchemas;
             }
 
             @Override
@@ -628,9 +628,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FieldSortProperty> {
-            private java.lang.Object fieldName;
-            private java.lang.Object sortMode;
-            private java.lang.Object sortOrder;
+            java.lang.Object fieldName;
+            java.lang.Object sortMode;
+            java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link FieldSortProperty#getFieldName}
@@ -706,7 +706,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public FieldSortProperty build() {
-                return new Jsii$Proxy(fieldName, sortMode, sortOrder);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -734,11 +734,11 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object sortMode, final java.lang.Object sortOrder) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
-                this.sortMode = sortMode;
-                this.sortOrder = sortOrder;
+                this.fieldName = java.util.Objects.requireNonNull(builder.fieldName, "fieldName is required");
+                this.sortMode = builder.sortMode;
+                this.sortOrder = builder.sortOrder;
             }
 
             @Override
@@ -844,10 +844,10 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<GeoDistanceSortProperty> {
-            private java.lang.Object fieldName;
-            private java.lang.Object points;
-            private java.lang.Object sortMode;
-            private java.lang.Object sortOrder;
+            java.lang.Object fieldName;
+            java.lang.Object points;
+            java.lang.Object sortMode;
+            java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link GeoDistanceSortProperty#getFieldName}
@@ -945,7 +945,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public GeoDistanceSortProperty build() {
-                return new Jsii$Proxy(fieldName, points, sortMode, sortOrder);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -975,12 +975,12 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object points, final java.lang.Object sortMode, final java.lang.Object sortOrder) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
-                this.points = java.util.Objects.requireNonNull(points, "points is required");
-                this.sortMode = sortMode;
-                this.sortOrder = sortOrder;
+                this.fieldName = java.util.Objects.requireNonNull(builder.fieldName, "fieldName is required");
+                this.points = java.util.Objects.requireNonNull(builder.points, "points is required");
+                this.sortMode = builder.sortMode;
+                this.sortOrder = builder.sortOrder;
             }
 
             @Override
@@ -1077,7 +1077,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IndexSettingProperty> {
-            private java.lang.Object routingFields;
+            java.lang.Object routingFields;
 
             /**
              * Sets the value of {@link IndexSettingProperty#getRoutingFields}
@@ -1109,7 +1109,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IndexSettingProperty build() {
-                return new Jsii$Proxy(routingFields);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1133,9 +1133,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object routingFields) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.routingFields = routingFields;
+                this.routingFields = builder.routingFields;
             }
 
             @Override
@@ -1204,7 +1204,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IndexSortProperty> {
-            private java.lang.Object sorters;
+            java.lang.Object sorters;
 
             /**
              * Sets the value of {@link IndexSortProperty#getSorters}
@@ -1236,7 +1236,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IndexSortProperty build() {
-                return new Jsii$Proxy(sorters);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1260,9 +1260,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object sorters) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.sorters = java.util.Objects.requireNonNull(sorters, "sorters is required");
+                this.sorters = java.util.Objects.requireNonNull(builder.sorters, "sorters is required");
             }
 
             @Override
@@ -1331,7 +1331,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrimaryKeySortProperty> {
-            private java.lang.Object sortOrder;
+            java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link PrimaryKeySortProperty#getSortOrder}
@@ -1363,7 +1363,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PrimaryKeySortProperty build() {
-                return new Jsii$Proxy(sortOrder);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1387,9 +1387,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object sortOrder) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.sortOrder = sortOrder;
+                this.sortOrder = builder.sortOrder;
             }
 
             @Override
@@ -1460,7 +1460,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ScoreSortProperty> {
-            private java.lang.Object sortOrder;
+            java.lang.Object sortOrder;
 
             /**
              * Sets the value of {@link ScoreSortProperty#getSortOrder}
@@ -1492,7 +1492,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ScoreSortProperty build() {
-                return new Jsii$Proxy(sortOrder);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1516,9 +1516,9 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object sortOrder) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.sortOrder = sortOrder;
+                this.sortOrder = builder.sortOrder;
             }
 
             @Override
@@ -1610,10 +1610,10 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SortersProperty> {
-            private java.lang.Object fieldSort;
-            private java.lang.Object geoDistanceSort;
-            private java.lang.Object primaryKeySort;
-            private java.lang.Object scoreSort;
+            java.lang.Object fieldSort;
+            java.lang.Object geoDistanceSort;
+            java.lang.Object primaryKeySort;
+            java.lang.Object scoreSort;
 
             /**
              * Sets the value of {@link SortersProperty#getFieldSort}
@@ -1711,7 +1711,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SortersProperty build() {
-                return new Jsii$Proxy(fieldSort, geoDistanceSort, primaryKeySort, scoreSort);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1741,12 +1741,12 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldSort, final java.lang.Object geoDistanceSort, final java.lang.Object primaryKeySort, final java.lang.Object scoreSort) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldSort = fieldSort;
-                this.geoDistanceSort = geoDistanceSort;
-                this.primaryKeySort = primaryKeySort;
-                this.scoreSort = scoreSort;
+                this.fieldSort = builder.fieldSort;
+                this.geoDistanceSort = builder.geoDistanceSort;
+                this.primaryKeySort = builder.primaryKeySort;
+                this.scoreSort = builder.scoreSort;
             }
 
             @Override
@@ -1885,13 +1885,13 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SubFieldSchemasProperty> {
-            private java.lang.Object fieldName;
-            private java.lang.Object fieldType;
-            private java.lang.Object analyzer;
-            private java.lang.Object enableSortAndAgg;
-            private java.lang.Object index;
-            private java.lang.Object isArray;
-            private java.lang.Object store;
+            java.lang.Object fieldName;
+            java.lang.Object fieldType;
+            java.lang.Object analyzer;
+            java.lang.Object enableSortAndAgg;
+            java.lang.Object index;
+            java.lang.Object isArray;
+            java.lang.Object store;
 
             /**
              * Sets the value of {@link SubFieldSchemasProperty#getFieldName}
@@ -2055,7 +2055,7 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SubFieldSchemasProperty build() {
-                return new Jsii$Proxy(fieldName, fieldType, analyzer, enableSortAndAgg, index, isArray, store);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2091,15 +2091,15 @@ public class RosSearchIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fieldName, final java.lang.Object fieldType, final java.lang.Object analyzer, final java.lang.Object enableSortAndAgg, final java.lang.Object index, final java.lang.Object isArray, final java.lang.Object store) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fieldName = java.util.Objects.requireNonNull(fieldName, "fieldName is required");
-                this.fieldType = java.util.Objects.requireNonNull(fieldType, "fieldType is required");
-                this.analyzer = analyzer;
-                this.enableSortAndAgg = enableSortAndAgg;
-                this.index = index;
-                this.isArray = isArray;
-                this.store = store;
+                this.fieldName = java.util.Objects.requireNonNull(builder.fieldName, "fieldName is required");
+                this.fieldType = java.util.Objects.requireNonNull(builder.fieldType, "fieldType is required");
+                this.analyzer = builder.analyzer;
+                this.enableSortAndAgg = builder.enableSortAndAgg;
+                this.index = builder.index;
+                this.isArray = builder.isArray;
+                this.store = builder.store;
             }
 
             @Override

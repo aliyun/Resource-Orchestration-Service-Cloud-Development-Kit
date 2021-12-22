@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.186Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NetworkAclAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkAclAssociationProps.Jsii$Proxy.class)
 public interface NetworkAclAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface NetworkAclAssociationProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link NetworkAclAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NetworkAclAssociationProps> {
-        private java.lang.Object networkAclId;
-        private java.lang.Object resources;
+        java.lang.Object networkAclId;
+        java.lang.Object resources;
 
         /**
          * Sets the value of {@link NetworkAclAssociationProps#getNetworkAclId}
@@ -78,7 +78,7 @@ public interface NetworkAclAssociationProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public NetworkAclAssociationProps build() {
-            return new Jsii$Proxy(networkAclId, resources);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface NetworkAclAssociationProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object networkAclId, final java.lang.Object resources) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.networkAclId = java.util.Objects.requireNonNull(networkAclId, "networkAclId is required");
-            this.resources = java.util.Objects.requireNonNull(resources, "resources is required");
+            this.networkAclId = java.util.Objects.requireNonNull(builder.networkAclId, "networkAclId is required");
+            this.resources = java.util.Objects.requireNonNull(builder.resources, "resources is required");
         }
 
         @Override

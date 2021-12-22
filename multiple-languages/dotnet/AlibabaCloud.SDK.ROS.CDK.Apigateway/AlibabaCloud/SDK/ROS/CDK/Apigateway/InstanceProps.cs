@@ -54,7 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
         /// <remarks>
-        /// Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+        /// Valid values:
+        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
+        /// true: Automatic payment is enabled. The payment is automatically made.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
@@ -71,6 +73,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? ChargeType
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property deletionForce: Whether force delete the instance even if its status is START_FAILED.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DeletionForce
         {
             get;
             set;

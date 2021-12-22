@@ -60,6 +60,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             set;
         }
 
+        /// <summary>Property enableKibanaPrivate: Enables or disables intranet access to Kibana.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableKibanaPrivate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EnableKibanaPrivate
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property enableKibanaPublic: Enables or disables Internet access to Kibana.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableKibanaPublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EnableKibanaPublic
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property enablePublic: Whether enable public access.</summary>
         /// <remarks>
         /// If properties is true, will allocate public address.Default: false.
@@ -151,6 +169,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         [JsiiOptional]
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
         public AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property ymlConfig: In the YML Configuration section of the Cluster  Configuration page of your Alibaba Cloud Elasticsearch cluster,  you can enable the Auto Indexing, Audit Log Indexing, or Watcher feature.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "ymlConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty\"}]}}", isOptional: true, isOverride: true)]
+        public object? YmlConfig
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property zoneCount: undefined.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneCount
         {
             get;
             set;

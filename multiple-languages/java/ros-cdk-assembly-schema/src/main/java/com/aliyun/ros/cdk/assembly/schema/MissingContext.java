@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Represents a missing piece of context.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.MissingContext")
 @software.amazon.jsii.Jsii.Proxy(MissingContext.Jsii$Proxy.class)
 public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
@@ -33,9 +33,9 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link MissingContext}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MissingContext> {
-        private java.lang.String key;
-        private java.lang.Object props;
-        private com.aliyun.ros.cdk.assembly.schema.ContextProvider provider;
+        java.lang.String key;
+        java.lang.Object props;
+        com.aliyun.ros.cdk.assembly.schema.ContextProvider provider;
 
         /**
          * Sets the value of {@link MissingContext#getKey}
@@ -124,7 +124,7 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public MissingContext build() {
-            return new Jsii$Proxy(key, props, provider);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -151,11 +151,11 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String key, final java.lang.Object props, final com.aliyun.ros.cdk.assembly.schema.ContextProvider provider) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.key = java.util.Objects.requireNonNull(key, "key is required");
-            this.props = java.util.Objects.requireNonNull(props, "props is required");
-            this.provider = java.util.Objects.requireNonNull(provider, "provider is required");
+            this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+            this.props = java.util.Objects.requireNonNull(builder.props, "props is required");
+            this.provider = java.util.Objects.requireNonNull(builder.provider, "provider is required");
         }
 
         @Override

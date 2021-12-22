@@ -32,6 +32,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: burstingEnabled: Whether enable bursting.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "burstingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? BurstingEnabled
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to false.
         /// </remarks>
         [JsiiOptional]
@@ -54,7 +65,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+        /// <strong>Property</strong>: diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "diskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
@@ -103,6 +114,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiOptional]
         [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? PerformanceLevel
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: provisionedIops: Provisioning IOPS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProvisionedIops
         {
             get;
             set;

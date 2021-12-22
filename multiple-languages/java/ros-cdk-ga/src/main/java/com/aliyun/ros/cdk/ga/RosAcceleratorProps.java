@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::Accelerator`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.508Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.108Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosAcceleratorProps")
 @software.amazon.jsii.Jsii.Proxy(RosAcceleratorProps.Jsii$Proxy.class)
 public interface RosAcceleratorProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosAcceleratorProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosAcceleratorProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAcceleratorProps> {
-        private java.lang.Object duration;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object spec;
-        private java.lang.Object acceleratorName;
-        private java.lang.Object autoPay;
-        private java.lang.Object autoUseCoupon;
+        java.lang.Object duration;
+        java.lang.Object pricingCycle;
+        java.lang.Object spec;
+        java.lang.Object acceleratorName;
+        java.lang.Object autoPay;
+        java.lang.Object autoUseCoupon;
 
         /**
          * Sets the value of {@link RosAcceleratorProps#getDuration}
@@ -182,7 +182,7 @@ public interface RosAcceleratorProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosAcceleratorProps build() {
-            return new Jsii$Proxy(duration, pricingCycle, spec, acceleratorName, autoPay, autoUseCoupon);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosAcceleratorProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object duration, final java.lang.Object pricingCycle, final java.lang.Object spec, final java.lang.Object acceleratorName, final java.lang.Object autoPay, final java.lang.Object autoUseCoupon) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.duration = java.util.Objects.requireNonNull(duration, "duration is required");
-            this.pricingCycle = java.util.Objects.requireNonNull(pricingCycle, "pricingCycle is required");
-            this.spec = java.util.Objects.requireNonNull(spec, "spec is required");
-            this.acceleratorName = acceleratorName;
-            this.autoPay = autoPay;
-            this.autoUseCoupon = autoUseCoupon;
+            this.duration = java.util.Objects.requireNonNull(builder.duration, "duration is required");
+            this.pricingCycle = java.util.Objects.requireNonNull(builder.pricingCycle, "pricingCycle is required");
+            this.spec = java.util.Objects.requireNonNull(builder.spec, "spec is required");
+            this.acceleratorName = builder.acceleratorName;
+            this.autoPay = builder.autoPay;
+            this.autoUseCoupon = builder.autoUseCoupon;
         }
 
         @Override

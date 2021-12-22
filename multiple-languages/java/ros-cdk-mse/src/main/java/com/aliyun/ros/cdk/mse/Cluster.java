@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS resource type:  `ALIYUN::MSE::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.687Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.356Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -447,20 +447,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property diskCapacity:.
+         * Property diskCapacity: disk capacity, unit: G.
          * <p>
          * @return {@code this}
-         * @param diskCapacity Property diskCapacity:. This parameter is required.
+         * @param diskCapacity Property diskCapacity: disk capacity, unit: G. This parameter is required.
          */
-        public Builder diskCapacity(final java.lang.String diskCapacity) {
+        public Builder diskCapacity(final java.lang.Number diskCapacity) {
             this.props.diskCapacity(diskCapacity);
             return this;
         }
         /**
-         * Property diskCapacity:.
+         * Property diskCapacity: disk capacity, unit: G.
          * <p>
          * @return {@code this}
-         * @param diskCapacity Property diskCapacity:. This parameter is required.
+         * @param diskCapacity Property diskCapacity: disk capacity, unit: G. This parameter is required.
          */
         public Builder diskCapacity(final com.aliyun.ros.cdk.core.IResolvable diskCapacity) {
             this.props.diskCapacity(diskCapacity);

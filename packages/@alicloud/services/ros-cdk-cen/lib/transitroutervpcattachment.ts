@@ -19,11 +19,6 @@ export interface TransitRouterVpcAttachmentProps {
     readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property autoCreateVpcRoute:
-     */
-    readonly autoCreateVpcRoute?: string | ros.IResolvable;
-
-    /**
      * Property cenId: CenId
      */
     readonly cenId?: string | ros.IResolvable;
@@ -32,21 +27,6 @@ export interface TransitRouterVpcAttachmentProps {
      * Property chargeType:
      */
     readonly chargeType?: string | ros.IResolvable;
-
-    /**
-     * Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
 
     /**
      * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
@@ -135,14 +115,10 @@ export class TransitRouterVpcAttachment extends ros.Resource {
         super(scope, id);
 
         const rosTransitRouterVpcAttachment = new RosTransitRouterVpcAttachment(this, id,  {
-            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
-            autoCreateVpcRoute: props.autoCreateVpcRoute,
             vpcId: props.vpcId,
             chargeType: props.chargeType,
-            routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,
-            resourceType: props.resourceType,
             zoneMappings: props.zoneMappings,
             vpcOwnerId: props.vpcOwnerId,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,

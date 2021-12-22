@@ -62,8 +62,8 @@ export class DeviceGroup extends ros.Resource {
 
         const rosDeviceGroup = new RosDeviceGroup(this, id,  {
             groupName: props.groupName,
-            iotInstanceId: props.iotInstanceId,
             superGroupId: props.superGroupId,
+            iotInstanceId: props.iotInstanceId,
             groupDesc: props.groupDesc,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDeviceGroup;

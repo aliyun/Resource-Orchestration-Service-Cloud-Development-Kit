@@ -42,5 +42,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             get;
             set;
         }
+
+        /// <summary>Property zoneTag: Zone label.</summary>
+        /// <remarks>
+        /// It will be ignored when ZoneType is AUTH_ZONE.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneTag
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property zoneType: Zone type.</summary>
+        /// <remarks>
+        /// For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneType
+        {
+            get;
+            set;
+        }
     }
 }

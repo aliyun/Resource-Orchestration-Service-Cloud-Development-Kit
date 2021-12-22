@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::DBInstanceParameterGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.633Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceParameterGroup")
 public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -143,8 +143,8 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ParametersProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link ParametersProperty#getKey}
@@ -198,7 +198,7 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ParametersProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -224,10 +224,10 @@ public class RosDBInstanceParameterGroup extends com.aliyun.ros.cdk.core.RosReso
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = java.util.Objects.requireNonNull(value, "value is required");
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.099Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.643Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -76,6 +76,12 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIp() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityGroupIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityGroupIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -603,6 +609,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupIds", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupIds", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -876,13 +900,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.Object size;
-            private java.lang.Object category;
-            private java.lang.Object description;
-            private java.lang.Object device;
-            private java.lang.Object diskName;
-            private java.lang.Object performanceLevel;
-            private java.lang.Object snapshotId;
+            java.lang.Object size;
+            java.lang.Object category;
+            java.lang.Object description;
+            java.lang.Object device;
+            java.lang.Object diskName;
+            java.lang.Object performanceLevel;
+            java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
@@ -1046,7 +1070,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DiskMappingsProperty build() {
-                return new Jsii$Proxy(size, category, description, device, diskName, performanceLevel, snapshotId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1082,15 +1106,15 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object size, final java.lang.Object category, final java.lang.Object description, final java.lang.Object device, final java.lang.Object diskName, final java.lang.Object performanceLevel, final java.lang.Object snapshotId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.size = java.util.Objects.requireNonNull(size, "size is required");
-                this.category = category;
-                this.description = description;
-                this.device = device;
-                this.diskName = diskName;
-                this.performanceLevel = performanceLevel;
-                this.snapshotId = snapshotId;
+                this.size = java.util.Objects.requireNonNull(builder.size, "size is required");
+                this.category = builder.category;
+                this.description = builder.description;
+                this.device = builder.device;
+                this.diskName = builder.diskName;
+                this.performanceLevel = builder.performanceLevel;
+                this.snapshotId = builder.snapshotId;
             }
 
             @Override
@@ -1224,8 +1248,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -1279,7 +1303,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1305,10 +1329,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1861,6 +1885,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityGroupIds This parameter is required.
+         */
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupIds This parameter is required.
+         */
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
             return this;
         }
 

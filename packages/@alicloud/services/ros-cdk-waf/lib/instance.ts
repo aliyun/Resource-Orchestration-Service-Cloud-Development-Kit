@@ -125,8 +125,8 @@ export class Instance extends ros.Resource {
         super(scope, id);
 
         const rosInstance = new RosInstance(this, id,  {
-            bigScreen: props.bigScreen,
             prefessionalService: props.prefessionalService,
+            bigScreen: props.bigScreen,
             extDomainPackage: props.extDomainPackage,
             logTime: props.logTime,
             renewalStatus: props.renewalStatus,

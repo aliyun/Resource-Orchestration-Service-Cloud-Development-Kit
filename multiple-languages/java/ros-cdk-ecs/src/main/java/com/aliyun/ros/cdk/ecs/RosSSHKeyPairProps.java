@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SSHKeyPair`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.174Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.727Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairProps")
 @software.amazon.jsii.Jsii.Proxy(RosSSHKeyPairProps.Jsii$Proxy.class)
 public interface RosSSHKeyPairProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,10 +40,10 @@ public interface RosSSHKeyPairProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosSSHKeyPairProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSSHKeyPairProps> {
-        private java.lang.Object keyPairName;
-        private java.lang.Object publicKeyBody;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosSSHKeyPair.TagsProperty> tags;
+        java.lang.Object keyPairName;
+        java.lang.Object publicKeyBody;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosSSHKeyPair.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosSSHKeyPairProps#getKeyPairName}
@@ -123,7 +123,7 @@ public interface RosSSHKeyPairProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosSSHKeyPairProps build() {
-            return new Jsii$Proxy(keyPairName, publicKeyBody, resourceGroupId, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -153,12 +153,12 @@ public interface RosSSHKeyPairProps extends software.amazon.jsii.JsiiSerializabl
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object keyPairName, final java.lang.Object publicKeyBody, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSSHKeyPair.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.keyPairName = java.util.Objects.requireNonNull(keyPairName, "keyPairName is required");
-            this.publicKeyBody = publicKeyBody;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSSHKeyPair.TagsProperty>)tags;
+            this.keyPairName = java.util.Objects.requireNonNull(builder.keyPairName, "keyPairName is required");
+            this.publicKeyBody = builder.publicKeyBody;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSSHKeyPair.TagsProperty>)builder.tags;
         }
 
         @Override

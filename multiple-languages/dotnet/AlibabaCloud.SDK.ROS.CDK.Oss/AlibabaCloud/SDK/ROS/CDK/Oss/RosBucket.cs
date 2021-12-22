@@ -545,19 +545,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: date: undefined
-            /// </remarks>
-            [JsiiProperty(name: "date", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? Date
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: days: undefined
             /// </remarks>
             [JsiiProperty(name: "days", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -588,16 +575,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: date: undefined
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "date", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? Date
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: days: undefined
                 /// </remarks>
                 [JsiiOptional]
@@ -617,17 +594,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             [JsiiOptional]
             [JsiiProperty(name: "createdBeforeDate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? CreatedBeforeDate
-            {
-                get;
-                set;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: date: undefined
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "date", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
-            public object? Date
             {
                 get;
                 set;

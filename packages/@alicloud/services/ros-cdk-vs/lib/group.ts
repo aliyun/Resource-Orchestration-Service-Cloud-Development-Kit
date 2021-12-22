@@ -115,8 +115,8 @@ export class Group extends ros.Resource {
             enabled: props.enabled,
             region: props.region,
             pushDomain: props.pushDomain,
-            lazyPull: props.lazyPull,
             outProtocol: props.outProtocol,
+            lazyPull: props.lazyPull,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;

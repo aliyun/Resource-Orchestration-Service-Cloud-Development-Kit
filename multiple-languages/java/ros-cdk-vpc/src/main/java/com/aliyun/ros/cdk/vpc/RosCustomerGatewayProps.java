@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CustomerGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.942Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCustomerGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomerGatewayProps.Jsii$Proxy.class)
 public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosCustomerGatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCustomerGatewayProps> {
-        private java.lang.Object ipAddress;
-        private java.lang.Object description;
-        private java.lang.Object name;
+        java.lang.Object ipAddress;
+        java.lang.Object description;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link RosCustomerGatewayProps#getIpAddress}
@@ -105,7 +105,7 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public RosCustomerGatewayProps build() {
-            return new Jsii$Proxy(ipAddress, description, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -132,11 +132,11 @@ public interface RosCustomerGatewayProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ipAddress, final java.lang.Object description, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ipAddress = java.util.Objects.requireNonNull(ipAddress, "ipAddress is required");
-            this.description = description;
-            this.name = name;
+            this.ipAddress = java.util.Objects.requireNonNull(builder.ipAddress, "ipAddress is required");
+            this.description = builder.description;
+            this.name = builder.name;
         }
 
         @Override

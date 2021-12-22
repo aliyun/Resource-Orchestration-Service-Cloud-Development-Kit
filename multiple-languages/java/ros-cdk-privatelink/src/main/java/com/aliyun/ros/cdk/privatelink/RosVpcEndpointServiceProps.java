@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.469Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcEndpointServiceProps.Jsii$Proxy.class)
 public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConnectBandwidth() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayer() {
         return null;
     }
 
@@ -39,6 +45,12 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneAffinityEnabled() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosVpcEndpointServiceProps}
      */
     static Builder builder() {
@@ -48,11 +60,13 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosVpcEndpointServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcEndpointServiceProps> {
-        private java.lang.Object autoAcceptEnabled;
-        private java.lang.Object connectBandwidth;
-        private java.lang.Object resource;
-        private java.lang.Object serviceDescription;
-        private java.lang.Object user;
+        java.lang.Object autoAcceptEnabled;
+        java.lang.Object connectBandwidth;
+        java.lang.Object payer;
+        java.lang.Object resource;
+        java.lang.Object serviceDescription;
+        java.lang.Object user;
+        java.lang.Object zoneAffinityEnabled;
 
         /**
          * Sets the value of {@link RosVpcEndpointServiceProps#getAutoAcceptEnabled}
@@ -91,6 +105,26 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
          */
         public Builder connectBandwidth(com.aliyun.ros.cdk.core.IResolvable connectBandwidth) {
             this.connectBandwidth = connectBandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getPayer}
+         * @param payer the value to be set.
+         * @return {@code this}
+         */
+        public Builder payer(java.lang.String payer) {
+            this.payer = payer;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getPayer}
+         * @param payer the value to be set.
+         * @return {@code this}
+         */
+        public Builder payer(com.aliyun.ros.cdk.core.IResolvable payer) {
+            this.payer = payer;
             return this;
         }
 
@@ -155,13 +189,33 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getZoneAffinityEnabled}
+         * @param zoneAffinityEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneAffinityEnabled(java.lang.Boolean zoneAffinityEnabled) {
+            this.zoneAffinityEnabled = zoneAffinityEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcEndpointServiceProps#getZoneAffinityEnabled}
+         * @param zoneAffinityEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneAffinityEnabled(com.aliyun.ros.cdk.core.IResolvable zoneAffinityEnabled) {
+            this.zoneAffinityEnabled = zoneAffinityEnabled;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpcEndpointServiceProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosVpcEndpointServiceProps build() {
-            return new Jsii$Proxy(autoAcceptEnabled, connectBandwidth, resource, serviceDescription, user);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -172,9 +226,11 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVpcEndpointServiceProps {
         private final java.lang.Object autoAcceptEnabled;
         private final java.lang.Object connectBandwidth;
+        private final java.lang.Object payer;
         private final java.lang.Object resource;
         private final java.lang.Object serviceDescription;
         private final java.lang.Object user;
+        private final java.lang.Object zoneAffinityEnabled;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -184,21 +240,25 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             super(objRef);
             this.autoAcceptEnabled = software.amazon.jsii.Kernel.get(this, "autoAcceptEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectBandwidth = software.amazon.jsii.Kernel.get(this, "connectBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payer = software.amazon.jsii.Kernel.get(this, "payer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceDescription = software.amazon.jsii.Kernel.get(this, "serviceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.user = software.amazon.jsii.Kernel.get(this, "user", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneAffinityEnabled = software.amazon.jsii.Kernel.get(this, "zoneAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object autoAcceptEnabled, final java.lang.Object connectBandwidth, final java.lang.Object resource, final java.lang.Object serviceDescription, final java.lang.Object user) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.autoAcceptEnabled = autoAcceptEnabled;
-            this.connectBandwidth = connectBandwidth;
-            this.resource = resource;
-            this.serviceDescription = serviceDescription;
-            this.user = user;
+            this.autoAcceptEnabled = builder.autoAcceptEnabled;
+            this.connectBandwidth = builder.connectBandwidth;
+            this.payer = builder.payer;
+            this.resource = builder.resource;
+            this.serviceDescription = builder.serviceDescription;
+            this.user = builder.user;
+            this.zoneAffinityEnabled = builder.zoneAffinityEnabled;
         }
 
         @Override
@@ -209,6 +269,11 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getConnectBandwidth() {
             return this.connectBandwidth;
+        }
+
+        @Override
+        public final java.lang.Object getPayer() {
+            return this.payer;
         }
 
         @Override
@@ -227,6 +292,11 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getZoneAffinityEnabled() {
+            return this.zoneAffinityEnabled;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -238,6 +308,9 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             if (this.getConnectBandwidth() != null) {
                 data.set("connectBandwidth", om.valueToTree(this.getConnectBandwidth()));
             }
+            if (this.getPayer() != null) {
+                data.set("payer", om.valueToTree(this.getPayer()));
+            }
             if (this.getResource() != null) {
                 data.set("resource", om.valueToTree(this.getResource()));
             }
@@ -246,6 +319,9 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
             }
             if (this.getUser() != null) {
                 data.set("user", om.valueToTree(this.getUser()));
+            }
+            if (this.getZoneAffinityEnabled() != null) {
+                data.set("zoneAffinityEnabled", om.valueToTree(this.getZoneAffinityEnabled()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -267,18 +343,22 @@ public interface RosVpcEndpointServiceProps extends software.amazon.jsii.JsiiSer
 
             if (this.autoAcceptEnabled != null ? !this.autoAcceptEnabled.equals(that.autoAcceptEnabled) : that.autoAcceptEnabled != null) return false;
             if (this.connectBandwidth != null ? !this.connectBandwidth.equals(that.connectBandwidth) : that.connectBandwidth != null) return false;
+            if (this.payer != null ? !this.payer.equals(that.payer) : that.payer != null) return false;
             if (this.resource != null ? !this.resource.equals(that.resource) : that.resource != null) return false;
             if (this.serviceDescription != null ? !this.serviceDescription.equals(that.serviceDescription) : that.serviceDescription != null) return false;
-            return this.user != null ? this.user.equals(that.user) : that.user == null;
+            if (this.user != null ? !this.user.equals(that.user) : that.user != null) return false;
+            return this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.equals(that.zoneAffinityEnabled) : that.zoneAffinityEnabled == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.autoAcceptEnabled != null ? this.autoAcceptEnabled.hashCode() : 0;
             result = 31 * result + (this.connectBandwidth != null ? this.connectBandwidth.hashCode() : 0);
+            result = 31 * result + (this.payer != null ? this.payer.hashCode() : 0);
             result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
             result = 31 * result + (this.serviceDescription != null ? this.serviceDescription.hashCode() : 0);
             result = 31 * result + (this.user != null ? this.user.hashCode() : 0);
+            result = 31 * result + (this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.hashCode() : 0);
             return result;
         }
     }

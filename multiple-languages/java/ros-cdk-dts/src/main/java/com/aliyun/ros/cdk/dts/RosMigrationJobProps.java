@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::MigrationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.852Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.424Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosMigrationJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosMigrationJobProps.Jsii$Proxy.class)
 public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,12 +52,12 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosMigrationJobProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMigrationJobProps> {
-        private java.lang.Object migrationJobClass;
-        private java.lang.Object destinationEndpoint;
-        private java.lang.Object migrationJobName;
-        private java.lang.Object migrationMode;
-        private java.lang.Object migrationObject;
-        private java.lang.Object sourceEndpoint;
+        java.lang.Object migrationJobClass;
+        java.lang.Object destinationEndpoint;
+        java.lang.Object migrationJobName;
+        java.lang.Object migrationMode;
+        java.lang.Object migrationObject;
+        java.lang.Object sourceEndpoint;
 
         /**
          * Sets the value of {@link RosMigrationJobProps#getMigrationJobClass}
@@ -186,7 +186,7 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosMigrationJobProps build() {
-            return new Jsii$Proxy(migrationJobClass, destinationEndpoint, migrationJobName, migrationMode, migrationObject, sourceEndpoint);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -219,14 +219,14 @@ public interface RosMigrationJobProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object migrationJobClass, final java.lang.Object destinationEndpoint, final java.lang.Object migrationJobName, final java.lang.Object migrationMode, final java.lang.Object migrationObject, final java.lang.Object sourceEndpoint) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.migrationJobClass = java.util.Objects.requireNonNull(migrationJobClass, "migrationJobClass is required");
-            this.destinationEndpoint = destinationEndpoint;
-            this.migrationJobName = migrationJobName;
-            this.migrationMode = migrationMode;
-            this.migrationObject = migrationObject;
-            this.sourceEndpoint = sourceEndpoint;
+            this.migrationJobClass = java.util.Objects.requireNonNull(builder.migrationJobClass, "migrationJobClass is required");
+            this.destinationEndpoint = builder.destinationEndpoint;
+            this.migrationJobName = builder.migrationJobName;
+            this.migrationMode = builder.migrationMode;
+            this.migrationObject = builder.migrationObject;
+            this.sourceEndpoint = builder.sourceEndpoint;
         }
 
         @Override

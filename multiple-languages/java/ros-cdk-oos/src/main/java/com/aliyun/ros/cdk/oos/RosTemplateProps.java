@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Template`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.376Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosTemplateProps.Jsii$Proxy.class)
 public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosTemplateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTemplateProps> {
-        private java.lang.Object content;
-        private java.lang.Object templateName;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object content;
+        java.lang.Object templateName;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
 
         /**
          * Sets the value of {@link RosTemplateProps#getContent}
@@ -94,7 +94,7 @@ public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosTemplateProps build() {
-            return new Jsii$Proxy(content, templateName, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -122,11 +122,11 @@ public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object content, final java.lang.Object templateName, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.content = java.util.Objects.requireNonNull(content, "content is required");
-            this.templateName = java.util.Objects.requireNonNull(templateName, "templateName is required");
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
+            this.content = java.util.Objects.requireNonNull(builder.content, "content is required");
+            this.templateName = java.util.Objects.requireNonNull(builder.templateName, "templateName is required");
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
         }
 
         @Override

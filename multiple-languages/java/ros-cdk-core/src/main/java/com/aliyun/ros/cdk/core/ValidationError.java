@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An error returned during the validation phase.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ValidationError")
 @software.amazon.jsii.Jsii.Proxy(ValidationError.Jsii$Proxy.class)
 public interface ValidationError extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface ValidationError extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ValidationError}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ValidationError> {
-        private java.lang.String message;
-        private com.aliyun.ros.cdk.core.Construct source;
+        java.lang.String message;
+        com.aliyun.ros.cdk.core.Construct source;
 
         /**
          * Sets the value of {@link ValidationError#getMessage}
@@ -58,7 +58,7 @@ public interface ValidationError extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ValidationError build() {
-            return new Jsii$Proxy(message, source);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -83,10 +83,10 @@ public interface ValidationError extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String message, final com.aliyun.ros.cdk.core.Construct source) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.message = java.util.Objects.requireNonNull(message, "message is required");
-            this.source = java.util.Objects.requireNonNull(source, "source is required");
+            this.message = java.util.Objects.requireNonNull(builder.message, "message is required");
+            this.source = java.util.Objects.requireNonNull(builder.source, "source is required");
         }
 
         @Override

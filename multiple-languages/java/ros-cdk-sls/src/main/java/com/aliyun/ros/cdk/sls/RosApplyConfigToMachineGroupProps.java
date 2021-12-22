@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.848Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosApplyConfigToMachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplyConfigToMachineGroupProps.Jsii$Proxy.class)
 public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,9 +36,9 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
      * A builder for {@link RosApplyConfigToMachineGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplyConfigToMachineGroupProps> {
-        private java.lang.Object configName;
-        private java.lang.Object groupName;
-        private java.lang.Object projectName;
+        java.lang.Object configName;
+        java.lang.Object groupName;
+        java.lang.Object projectName;
 
         /**
          * Sets the value of {@link RosApplyConfigToMachineGroupProps#getConfigName}
@@ -107,7 +107,7 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
          */
         @Override
         public RosApplyConfigToMachineGroupProps build() {
-            return new Jsii$Proxy(configName, groupName, projectName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -134,11 +134,11 @@ public interface RosApplyConfigToMachineGroupProps extends software.amazon.jsii.
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object configName, final java.lang.Object groupName, final java.lang.Object projectName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.configName = configName;
-            this.groupName = groupName;
-            this.projectName = projectName;
+            this.configName = builder.configName;
+            this.groupName = builder.groupName;
+            this.projectName = builder.projectName;
         }
 
         @Override

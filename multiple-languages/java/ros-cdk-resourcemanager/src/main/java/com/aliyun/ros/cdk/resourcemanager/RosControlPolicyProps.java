@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ControlPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.702Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosControlPolicyProps.Jsii$Proxy.class)
 public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,10 +36,10 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosControlPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosControlPolicyProps> {
-        private java.lang.Object controlPolicyName;
-        private java.lang.Object effectScope;
-        private java.lang.Object policyDocument;
-        private java.lang.Object description;
+        java.lang.Object controlPolicyName;
+        java.lang.Object effectScope;
+        java.lang.Object policyDocument;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link RosControlPolicyProps#getControlPolicyName}
@@ -128,7 +128,7 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosControlPolicyProps build() {
-            return new Jsii$Proxy(controlPolicyName, effectScope, policyDocument, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -157,12 +157,12 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object controlPolicyName, final java.lang.Object effectScope, final java.lang.Object policyDocument, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.controlPolicyName = java.util.Objects.requireNonNull(controlPolicyName, "controlPolicyName is required");
-            this.effectScope = java.util.Objects.requireNonNull(effectScope, "effectScope is required");
-            this.policyDocument = java.util.Objects.requireNonNull(policyDocument, "policyDocument is required");
-            this.description = description;
+            this.controlPolicyName = java.util.Objects.requireNonNull(builder.controlPolicyName, "controlPolicyName is required");
+            this.effectScope = java.util.Objects.requireNonNull(builder.effectScope, "effectScope is required");
+            this.policyDocument = java.util.Objects.requireNonNull(builder.policyDocument, "policyDocument is required");
+            this.description = builder.description;
         }
 
         @Override

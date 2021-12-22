@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::AclRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.036Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosAclRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosAclRuleProps.Jsii$Proxy.class)
 public interface RosAclRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosAclRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAclRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAclRuleProps> {
-        private java.lang.Object domain;
-        private java.lang.Object instanceId;
-        private java.lang.Object rules;
-        private java.lang.Object region;
-        private java.lang.Object ruleId;
+        java.lang.Object domain;
+        java.lang.Object instanceId;
+        java.lang.Object rules;
+        java.lang.Object region;
+        java.lang.Object ruleId;
 
         /**
          * Sets the value of {@link RosAclRuleProps#getDomain}
@@ -155,7 +155,7 @@ public interface RosAclRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosAclRuleProps build() {
-            return new Jsii$Proxy(domain, instanceId, rules, region, ruleId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -186,13 +186,13 @@ public interface RosAclRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object instanceId, final java.lang.Object rules, final java.lang.Object region, final java.lang.Object ruleId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.rules = java.util.Objects.requireNonNull(rules, "rules is required");
-            this.region = region;
-            this.ruleId = ruleId;
+            this.domain = java.util.Objects.requireNonNull(builder.domain, "domain is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.rules = java.util.Objects.requireNonNull(builder.rules, "rules is required");
+            this.region = builder.region;
+            this.ruleId = builder.ruleId;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupProps.Jsii$Proxy.class)
 public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -134,26 +134,26 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosScalingGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingGroupProps> {
-        private java.lang.Object maxSize;
-        private java.lang.Object minSize;
-        private java.lang.Object dbInstanceIds;
-        private java.lang.Object defaultCooldown;
-        private java.lang.Object desiredCapacity;
-        private java.lang.Object groupDeletionProtection;
-        private java.lang.Object healthCheckType;
-        private java.lang.Object instanceId;
-        private java.lang.Object launchTemplateId;
-        private java.lang.Object launchTemplateVersion;
-        private java.lang.Object loadBalancerIds;
-        private java.lang.Object multiAzPolicy;
-        private java.lang.Object notificationConfigurations;
-        private java.lang.Object protectedInstances;
-        private java.lang.Object removalPolicys;
-        private java.lang.Object scalingGroupName;
-        private java.lang.Object standbyInstances;
-        private java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object vSwitchIds;
+        java.lang.Object maxSize;
+        java.lang.Object minSize;
+        java.lang.Object dbInstanceIds;
+        java.lang.Object defaultCooldown;
+        java.lang.Object desiredCapacity;
+        java.lang.Object groupDeletionProtection;
+        java.lang.Object healthCheckType;
+        java.lang.Object instanceId;
+        java.lang.Object launchTemplateId;
+        java.lang.Object launchTemplateVersion;
+        java.lang.Object loadBalancerIds;
+        java.lang.Object multiAzPolicy;
+        java.lang.Object notificationConfigurations;
+        java.lang.Object protectedInstances;
+        java.lang.Object removalPolicys;
+        java.lang.Object scalingGroupName;
+        java.lang.Object standbyInstances;
+        java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
+        java.lang.Object vSwitchId;
+        java.lang.Object vSwitchIds;
 
         /**
          * Sets the value of {@link RosScalingGroupProps#getMaxSize}
@@ -553,7 +553,7 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosScalingGroupProps build() {
-            return new Jsii$Proxy(maxSize, minSize, dbInstanceIds, defaultCooldown, desiredCapacity, groupDeletionProtection, healthCheckType, instanceId, launchTemplateId, launchTemplateVersion, loadBalancerIds, multiAzPolicy, notificationConfigurations, protectedInstances, removalPolicys, scalingGroupName, standbyInstances, tags, vSwitchId, vSwitchIds);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -615,28 +615,28 @@ public interface RosScalingGroupProps extends software.amazon.jsii.JsiiSerializa
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object maxSize, final java.lang.Object minSize, final java.lang.Object dbInstanceIds, final java.lang.Object defaultCooldown, final java.lang.Object desiredCapacity, final java.lang.Object groupDeletionProtection, final java.lang.Object healthCheckType, final java.lang.Object instanceId, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateVersion, final java.lang.Object loadBalancerIds, final java.lang.Object multiAzPolicy, final java.lang.Object notificationConfigurations, final java.lang.Object protectedInstances, final java.lang.Object removalPolicys, final java.lang.Object scalingGroupName, final java.lang.Object standbyInstances, final java.util.List<? extends com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags, final java.lang.Object vSwitchId, final java.lang.Object vSwitchIds) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.maxSize = java.util.Objects.requireNonNull(maxSize, "maxSize is required");
-            this.minSize = java.util.Objects.requireNonNull(minSize, "minSize is required");
-            this.dbInstanceIds = dbInstanceIds;
-            this.defaultCooldown = defaultCooldown;
-            this.desiredCapacity = desiredCapacity;
-            this.groupDeletionProtection = groupDeletionProtection;
-            this.healthCheckType = healthCheckType;
-            this.instanceId = instanceId;
-            this.launchTemplateId = launchTemplateId;
-            this.launchTemplateVersion = launchTemplateVersion;
-            this.loadBalancerIds = loadBalancerIds;
-            this.multiAzPolicy = multiAzPolicy;
-            this.notificationConfigurations = notificationConfigurations;
-            this.protectedInstances = protectedInstances;
-            this.removalPolicys = removalPolicys;
-            this.scalingGroupName = scalingGroupName;
-            this.standbyInstances = standbyInstances;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)tags;
-            this.vSwitchId = vSwitchId;
-            this.vSwitchIds = vSwitchIds;
+            this.maxSize = java.util.Objects.requireNonNull(builder.maxSize, "maxSize is required");
+            this.minSize = java.util.Objects.requireNonNull(builder.minSize, "minSize is required");
+            this.dbInstanceIds = builder.dbInstanceIds;
+            this.defaultCooldown = builder.defaultCooldown;
+            this.desiredCapacity = builder.desiredCapacity;
+            this.groupDeletionProtection = builder.groupDeletionProtection;
+            this.healthCheckType = builder.healthCheckType;
+            this.instanceId = builder.instanceId;
+            this.launchTemplateId = builder.launchTemplateId;
+            this.launchTemplateVersion = builder.launchTemplateVersion;
+            this.loadBalancerIds = builder.loadBalancerIds;
+            this.multiAzPolicy = builder.multiAzPolicy;
+            this.notificationConfigurations = builder.notificationConfigurations;
+            this.protectedInstances = builder.protectedInstances;
+            this.removalPolicys = builder.removalPolicys;
+            this.scalingGroupName = builder.scalingGroupName;
+            this.standbyInstances = builder.standbyInstances;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)builder.tags;
+            this.vSwitchId = builder.vSwitchId;
+            this.vSwitchIds = builder.vSwitchIds;
         }
 
         @Override

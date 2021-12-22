@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Folder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.004Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.678Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.FolderProps")
 @software.amazon.jsii.Jsii.Proxy(FolderProps.Jsii$Proxy.class)
 public interface FolderProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,8 +32,8 @@ public interface FolderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link FolderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<FolderProps> {
-        private java.lang.Object folderName;
-        private java.lang.Object parentFolderId;
+        java.lang.Object folderName;
+        java.lang.Object parentFolderId;
 
         /**
          * Sets the value of {@link FolderProps#getFolderName}
@@ -84,7 +84,7 @@ public interface FolderProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public FolderProps build() {
-            return new Jsii$Proxy(folderName, parentFolderId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -109,10 +109,10 @@ public interface FolderProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object folderName, final java.lang.Object parentFolderId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.folderName = java.util.Objects.requireNonNull(folderName, "folderName is required");
-            this.parentFolderId = parentFolderId;
+            this.folderName = java.util.Objects.requireNonNull(builder.folderName, "folderName is required");
+            this.parentFolderId = builder.parentFolderId;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.brainindustrial;
 /**
  * Properties for defining a `ALIYUN::BrainIndustrial::PidProject`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.387Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.763Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.brainindustrial.$Module.class, fqn = "@alicloud/ros-cdk-brainindustrial.PidProjectProps")
 @software.amazon.jsii.Jsii.Proxy(PidProjectProps.Jsii$Proxy.class)
 public interface PidProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,9 +35,9 @@ public interface PidProjectProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link PidProjectProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PidProjectProps> {
-        private java.lang.Object pidOrganizationId;
-        private java.lang.Object pidProjectName;
-        private java.lang.Object pidProjectDesc;
+        java.lang.Object pidOrganizationId;
+        java.lang.Object pidProjectName;
+        java.lang.Object pidProjectDesc;
 
         /**
          * Sets the value of {@link PidProjectProps#getPidOrganizationId}
@@ -106,7 +106,7 @@ public interface PidProjectProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public PidProjectProps build() {
-            return new Jsii$Proxy(pidOrganizationId, pidProjectName, pidProjectDesc);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -133,11 +133,11 @@ public interface PidProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object pidOrganizationId, final java.lang.Object pidProjectName, final java.lang.Object pidProjectDesc) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.pidOrganizationId = java.util.Objects.requireNonNull(pidOrganizationId, "pidOrganizationId is required");
-            this.pidProjectName = java.util.Objects.requireNonNull(pidProjectName, "pidProjectName is required");
-            this.pidProjectDesc = pidProjectDesc;
+            this.pidOrganizationId = java.util.Objects.requireNonNull(builder.pidOrganizationId, "pidOrganizationId is required");
+            this.pidProjectName = java.util.Objects.requireNonNull(builder.pidProjectName, "pidProjectName is required");
+            this.pidProjectDesc = builder.pidProjectDesc;
         }
 
         @Override

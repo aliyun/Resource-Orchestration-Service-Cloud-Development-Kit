@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.909Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstanceProps.Jsii$Proxy.class)
 public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,10 +55,10 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CenInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenInstanceProps> {
-        private java.lang.Object description;
-        private java.lang.Object name;
-        private java.lang.Object protectionLevel;
-        private java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
+        java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object protectionLevel;
+        java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link CenInstanceProps#getDescription}
@@ -147,7 +147,7 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public CenInstanceProps build() {
-            return new Jsii$Proxy(description, name, protectionLevel, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -177,12 +177,12 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object name, final java.lang.Object protectionLevel, final java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.name = name;
-            this.protectionLevel = protectionLevel;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)tags;
+            this.description = builder.description;
+            this.name = builder.name;
+            this.protectionLevel = builder.protectionLevel;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty>)builder.tags;
         }
 
         @Override

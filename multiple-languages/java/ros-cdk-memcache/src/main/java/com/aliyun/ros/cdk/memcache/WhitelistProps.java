@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * Properties for defining a `ALIYUN::Memcache::Whitelist`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.634Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.WhitelistProps")
 @software.amazon.jsii.Jsii.Proxy(WhitelistProps.Jsii$Proxy.class)
 public interface WhitelistProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,10 +44,10 @@ public interface WhitelistProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link WhitelistProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<WhitelistProps> {
-        private java.lang.Object instanceId;
-        private java.lang.Object securityIps;
-        private java.lang.Object securityIpGroupAttribute;
-        private java.lang.Object securityIpGroupName;
+        java.lang.Object instanceId;
+        java.lang.Object securityIps;
+        java.lang.Object securityIpGroupAttribute;
+        java.lang.Object securityIpGroupName;
 
         /**
          * Sets the value of {@link WhitelistProps#getInstanceId}
@@ -138,7 +138,7 @@ public interface WhitelistProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public WhitelistProps build() {
-            return new Jsii$Proxy(instanceId, securityIps, securityIpGroupAttribute, securityIpGroupName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -167,12 +167,12 @@ public interface WhitelistProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object securityIps, final java.lang.Object securityIpGroupAttribute, final java.lang.Object securityIpGroupName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.securityIps = java.util.Objects.requireNonNull(securityIps, "securityIps is required");
-            this.securityIpGroupAttribute = securityIpGroupAttribute;
-            this.securityIpGroupName = securityIpGroupName;
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.securityIps = java.util.Objects.requireNonNull(builder.securityIps, "securityIps is required");
+            this.securityIpGroupAttribute = builder.securityIpGroupAttribute;
+            this.securityIpGroupName = builder.securityIpGroupName;
         }
 
         @Override

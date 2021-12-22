@@ -225,8 +225,8 @@ export class ScalingConfiguration extends ros.Resource {
 
         const rosScalingConfiguration = new RosScalingConfiguration(this, id,  {
             scalingConfigurationName: props.scalingConfigurationName,
-            resourceGroupId: props.resourceGroupId,
             diskMappings: props.diskMappings,
+            resourceGroupId: props.resourceGroupId,
             systemDiskSize: props.systemDiskSize,
             userData: props.userData,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
@@ -249,8 +249,8 @@ export class ScalingConfiguration extends ros.Resource {
             scalingGroupId: props.scalingGroupId,
             securityGroupId: props.securityGroupId,
             imageFamily: props.imageFamily,
-            systemDiskCategory: props.systemDiskCategory,
             internetChargeType: props.internetChargeType,
+            systemDiskCategory: props.systemDiskCategory,
             instanceName: props.instanceName,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,

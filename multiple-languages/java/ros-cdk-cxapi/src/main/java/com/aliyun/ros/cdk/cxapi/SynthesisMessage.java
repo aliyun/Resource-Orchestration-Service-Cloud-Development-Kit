@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.cxapi;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.624Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.478Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.SynthesisMessage")
 @software.amazon.jsii.Jsii.Proxy(SynthesisMessage.Jsii$Proxy.class)
 public interface SynthesisMessage extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,9 @@ public interface SynthesisMessage extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link SynthesisMessage}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SynthesisMessage> {
-        private com.aliyun.ros.cdk.assembly.schema.MetadataEntry entry;
-        private java.lang.String id;
-        private com.aliyun.ros.cdk.cxapi.SynthesisMessageLevel level;
+        com.aliyun.ros.cdk.assembly.schema.MetadataEntry entry;
+        java.lang.String id;
+        com.aliyun.ros.cdk.cxapi.SynthesisMessageLevel level;
 
         /**
          * Sets the value of {@link SynthesisMessage#getEntry}
@@ -62,7 +62,7 @@ public interface SynthesisMessage extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public SynthesisMessage build() {
-            return new Jsii$Proxy(entry, id, level);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -89,11 +89,11 @@ public interface SynthesisMessage extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.assembly.schema.MetadataEntry entry, final java.lang.String id, final com.aliyun.ros.cdk.cxapi.SynthesisMessageLevel level) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.entry = java.util.Objects.requireNonNull(entry, "entry is required");
-            this.id = java.util.Objects.requireNonNull(id, "id is required");
-            this.level = java.util.Objects.requireNonNull(level, "level is required");
+            this.entry = java.util.Objects.requireNonNull(builder.entry, "entry is required");
+            this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+            this.level = java.util.Objects.requireNonNull(builder.level, "level is required");
         }
 
         @Override

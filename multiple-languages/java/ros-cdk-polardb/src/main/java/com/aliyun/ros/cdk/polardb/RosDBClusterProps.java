@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -172,33 +172,33 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosDBClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBClusterProps> {
-        private java.lang.Object dbNodeClass;
-        private java.lang.Object dbType;
-        private java.lang.Object dbVersion;
-        private java.lang.Object payType;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object backupRetentionPolicyOnClusterDeletion;
-        private java.lang.Object cloneDataPoint;
-        private java.lang.Object clusterNetworkType;
-        private java.lang.Object creationCategory;
-        private java.lang.Object creationOption;
-        private java.lang.Object dbClusterDescription;
-        private java.lang.Object dbClusterParameters;
-        private java.lang.Object defaultTimeZone;
-        private java.lang.Object gdnId;
-        private java.lang.Object lowerCaseTableNames;
-        private java.lang.Object maintainTime;
-        private java.lang.Object period;
-        private java.lang.Object renewalStatus;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupIds;
-        private java.lang.Object securityIpList;
-        private java.lang.Object sourceResourceId;
-        private java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
-        private java.lang.Object tdeStatus;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object dbNodeClass;
+        java.lang.Object dbType;
+        java.lang.Object dbVersion;
+        java.lang.Object payType;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object backupRetentionPolicyOnClusterDeletion;
+        java.lang.Object cloneDataPoint;
+        java.lang.Object clusterNetworkType;
+        java.lang.Object creationCategory;
+        java.lang.Object creationOption;
+        java.lang.Object dbClusterDescription;
+        java.lang.Object dbClusterParameters;
+        java.lang.Object defaultTimeZone;
+        java.lang.Object gdnId;
+        java.lang.Object lowerCaseTableNames;
+        java.lang.Object maintainTime;
+        java.lang.Object period;
+        java.lang.Object renewalStatus;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupIds;
+        java.lang.Object securityIpList;
+        java.lang.Object sourceResourceId;
+        java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
+        java.lang.Object tdeStatus;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosDBClusterProps#getDbNodeClass}
@@ -738,7 +738,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosDBClusterProps build() {
-            return new Jsii$Proxy(dbNodeClass, dbType, dbVersion, payType, autoRenewPeriod, backupRetentionPolicyOnClusterDeletion, cloneDataPoint, clusterNetworkType, creationCategory, creationOption, dbClusterDescription, dbClusterParameters, defaultTimeZone, gdnId, lowerCaseTableNames, maintainTime, period, renewalStatus, resourceGroupId, securityGroupIds, securityIpList, sourceResourceId, tags, tdeStatus, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -814,35 +814,35 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dbNodeClass, final java.lang.Object dbType, final java.lang.Object dbVersion, final java.lang.Object payType, final java.lang.Object autoRenewPeriod, final java.lang.Object backupRetentionPolicyOnClusterDeletion, final java.lang.Object cloneDataPoint, final java.lang.Object clusterNetworkType, final java.lang.Object creationCategory, final java.lang.Object creationOption, final java.lang.Object dbClusterDescription, final java.lang.Object dbClusterParameters, final java.lang.Object defaultTimeZone, final java.lang.Object gdnId, final java.lang.Object lowerCaseTableNames, final java.lang.Object maintainTime, final java.lang.Object period, final java.lang.Object renewalStatus, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupIds, final java.lang.Object securityIpList, final java.lang.Object sourceResourceId, final java.util.List<? extends com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags, final java.lang.Object tdeStatus, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbNodeClass = java.util.Objects.requireNonNull(dbNodeClass, "dbNodeClass is required");
-            this.dbType = java.util.Objects.requireNonNull(dbType, "dbType is required");
-            this.dbVersion = java.util.Objects.requireNonNull(dbVersion, "dbVersion is required");
-            this.payType = java.util.Objects.requireNonNull(payType, "payType is required");
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
-            this.cloneDataPoint = cloneDataPoint;
-            this.clusterNetworkType = clusterNetworkType;
-            this.creationCategory = creationCategory;
-            this.creationOption = creationOption;
-            this.dbClusterDescription = dbClusterDescription;
-            this.dbClusterParameters = dbClusterParameters;
-            this.defaultTimeZone = defaultTimeZone;
-            this.gdnId = gdnId;
-            this.lowerCaseTableNames = lowerCaseTableNames;
-            this.maintainTime = maintainTime;
-            this.period = period;
-            this.renewalStatus = renewalStatus;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupIds = securityGroupIds;
-            this.securityIpList = securityIpList;
-            this.sourceResourceId = sourceResourceId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty>)tags;
-            this.tdeStatus = tdeStatus;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.dbNodeClass = java.util.Objects.requireNonNull(builder.dbNodeClass, "dbNodeClass is required");
+            this.dbType = java.util.Objects.requireNonNull(builder.dbType, "dbType is required");
+            this.dbVersion = java.util.Objects.requireNonNull(builder.dbVersion, "dbVersion is required");
+            this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.backupRetentionPolicyOnClusterDeletion = builder.backupRetentionPolicyOnClusterDeletion;
+            this.cloneDataPoint = builder.cloneDataPoint;
+            this.clusterNetworkType = builder.clusterNetworkType;
+            this.creationCategory = builder.creationCategory;
+            this.creationOption = builder.creationOption;
+            this.dbClusterDescription = builder.dbClusterDescription;
+            this.dbClusterParameters = builder.dbClusterParameters;
+            this.defaultTimeZone = builder.defaultTimeZone;
+            this.gdnId = builder.gdnId;
+            this.lowerCaseTableNames = builder.lowerCaseTableNames;
+            this.maintainTime = builder.maintainTime;
+            this.period = builder.period;
+            this.renewalStatus = builder.renewalStatus;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.securityIpList = builder.securityIpList;
+            this.sourceResourceId = builder.sourceResourceId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty>)builder.tags;
+            this.tdeStatus = builder.tdeStatus;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

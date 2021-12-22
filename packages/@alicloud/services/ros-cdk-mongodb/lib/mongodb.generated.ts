@@ -211,8 +211,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -1084,6 +1084,11 @@ export interface RosShardingInstanceProps {
     readonly protocolType?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
     readonly restoreTime?: string | ros.IResolvable;
@@ -1145,6 +1150,7 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -1251,6 +1257,7 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
       NetworkType: ros.stringToRosTemplate(properties.networkType),
       Period: ros.numberToRosTemplate(properties.period),
       ProtocolType: ros.stringToRosTemplate(properties.protocolType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
@@ -1351,6 +1358,11 @@ export class RosShardingInstance extends ros.RosResource {
     public protocolType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
     public restoreTime: string | ros.IResolvable | undefined;
@@ -1423,6 +1435,7 @@ export class RosShardingInstance extends ros.RosResource {
         this.networkType = props.networkType;
         this.period = props.period;
         this.protocolType = props.protocolType;
+        this.resourceGroupId = props.resourceGroupId;
         this.restoreTime = props.restoreTime;
         this.securityIpArray = props.securityIpArray;
         this.srcDbInstanceId = props.srcDbInstanceId;
@@ -1448,6 +1461,7 @@ export class RosShardingInstance extends ros.RosResource {
             networkType: this.networkType,
             period: this.period,
             protocolType: this.protocolType,
+            resourceGroupId: this.resourceGroupId,
             restoreTime: this.restoreTime,
             securityIpArray: this.securityIpArray,
             srcDbInstanceId: this.srcDbInstanceId,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.786Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBNodesProps")
 @software.amazon.jsii.Jsii.Proxy(DBNodesProps.Jsii$Proxy.class)
 public interface DBNodesProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface DBNodesProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DBNodesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBNodesProps> {
-        private java.lang.Object amount;
-        private java.lang.Object dbClusterId;
+        java.lang.Object amount;
+        java.lang.Object dbClusterId;
 
         /**
          * Sets the value of {@link DBNodesProps#getAmount}
@@ -78,7 +78,7 @@ public interface DBNodesProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DBNodesProps build() {
-            return new Jsii$Proxy(amount, dbClusterId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface DBNodesProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object amount, final java.lang.Object dbClusterId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.amount = java.util.Objects.requireNonNull(amount, "amount is required");
-            this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
+            this.amount = java.util.Objects.requireNonNull(builder.amount, "amount is required");
+            this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
         }
 
         @Override

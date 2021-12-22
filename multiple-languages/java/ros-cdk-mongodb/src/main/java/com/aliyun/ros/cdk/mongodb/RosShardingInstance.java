@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.675Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstance")
 public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -273,6 +273,24 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTime() {
         return software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -455,8 +473,8 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigServerProperty> {
-            private java.lang.Object classValue;
-            private java.lang.Object storage;
+            java.lang.Object classValue;
+            java.lang.Object storage;
 
             /**
              * Sets the value of {@link ConfigServerProperty#getClassValue}
@@ -510,7 +528,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigServerProperty build() {
-                return new Jsii$Proxy(classValue, storage);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -536,10 +554,10 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object classValue, final java.lang.Object storage) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.classValue = java.util.Objects.requireNonNull(classValue, "classValue is required");
-                this.storage = java.util.Objects.requireNonNull(storage, "storage is required");
+                this.classValue = java.util.Objects.requireNonNull(builder.classValue, "classValue is required");
+                this.storage = java.util.Objects.requireNonNull(builder.storage, "storage is required");
             }
 
             @Override
@@ -614,7 +632,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MongosProperty> {
-            private java.lang.Object classValue;
+            java.lang.Object classValue;
 
             /**
              * Sets the value of {@link MongosProperty#getClassValue}
@@ -646,7 +664,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MongosProperty build() {
-                return new Jsii$Proxy(classValue);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -670,9 +688,9 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object classValue) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.classValue = java.util.Objects.requireNonNull(classValue, "classValue is required");
+                this.classValue = java.util.Objects.requireNonNull(builder.classValue, "classValue is required");
             }
 
             @Override
@@ -744,8 +762,8 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReplicaSetProperty> {
-            private java.lang.Object classValue;
-            private java.lang.Object storage;
+            java.lang.Object classValue;
+            java.lang.Object storage;
 
             /**
              * Sets the value of {@link ReplicaSetProperty#getClassValue}
@@ -799,7 +817,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReplicaSetProperty build() {
-                return new Jsii$Proxy(classValue, storage);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -825,10 +843,10 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object classValue, final java.lang.Object storage) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.classValue = java.util.Objects.requireNonNull(classValue, "classValue is required");
-                this.storage = java.util.Objects.requireNonNull(storage, "storage is required");
+                this.classValue = java.util.Objects.requireNonNull(builder.classValue, "classValue is required");
+                this.storage = java.util.Objects.requireNonNull(builder.storage, "storage is required");
             }
 
             @Override
@@ -910,8 +928,8 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -965,7 +983,7 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -991,10 +1009,10 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1258,6 +1276,23 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder protocolType(final com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.props.protocolType(protocolType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

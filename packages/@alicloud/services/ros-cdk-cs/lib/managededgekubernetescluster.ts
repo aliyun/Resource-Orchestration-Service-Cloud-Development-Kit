@@ -167,6 +167,36 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -214,6 +244,12 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;
         this.attrClusterId = rosManagedEdgeKubernetesCluster.attrClusterId;
+        this.attrDefaultUserKubeConfig = rosManagedEdgeKubernetesCluster.attrDefaultUserKubeConfig;
+        this.attrNodes = rosManagedEdgeKubernetesCluster.attrNodes;
+        this.attrPrivateUserKubConfig = rosManagedEdgeKubernetesCluster.attrPrivateUserKubConfig;
+        this.attrScalingConfigurationId = rosManagedEdgeKubernetesCluster.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosManagedEdgeKubernetesCluster.attrScalingGroupId;
+        this.attrScalingRuleId = rosManagedEdgeKubernetesCluster.attrScalingRuleId;
         this.attrTaskId = rosManagedEdgeKubernetesCluster.attrTaskId;
         this.attrWorkerRamRoleName = rosManagedEdgeKubernetesCluster.attrWorkerRamRoleName;
     }

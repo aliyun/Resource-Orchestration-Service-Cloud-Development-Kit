@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to hosted zone context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.464Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.HostedZoneContextQuery")
 @software.amazon.jsii.Jsii.Proxy(HostedZoneContextQuery.Jsii$Proxy.class)
 public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -54,11 +54,11 @@ public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link HostedZoneContextQuery}
      */
     public static final class Builder implements software.amazon.jsii.Builder<HostedZoneContextQuery> {
-        private java.lang.String account;
-        private java.lang.String domainName;
-        private java.lang.String region;
-        private java.lang.Boolean privateZone;
-        private java.lang.String vpcId;
+        java.lang.String account;
+        java.lang.String domainName;
+        java.lang.String region;
+        java.lang.Boolean privateZone;
+        java.lang.String vpcId;
 
         /**
          * Sets the value of {@link HostedZoneContextQuery#getAccount}
@@ -119,7 +119,7 @@ public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public HostedZoneContextQuery build() {
-            return new Jsii$Proxy(account, domainName, region, privateZone, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -150,13 +150,13 @@ public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String account, final java.lang.String domainName, final java.lang.String region, final java.lang.Boolean privateZone, final java.lang.String vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.account = java.util.Objects.requireNonNull(account, "account is required");
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
-            this.privateZone = privateZone;
-            this.vpcId = vpcId;
+            this.account = java.util.Objects.requireNonNull(builder.account, "account is required");
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+            this.privateZone = builder.privateZone;
+            this.vpcId = builder.vpcId;
         }
 
         @Override

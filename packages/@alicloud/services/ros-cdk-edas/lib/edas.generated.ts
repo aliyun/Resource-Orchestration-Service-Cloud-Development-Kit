@@ -995,14 +995,13 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('intranetSlbProtocol', ros.validateString)(properties.intranetSlbProtocol));
-    errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
     errors.collect(ros.propertyValidator('webContainerConfig', RosK8sApplication_WebContainerConfigPropertyValidator)(properties.webContainerConfig));
+    errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     errors.collect(ros.propertyValidator('jdk', ros.validateString)(properties.jdk));
     errors.collect(ros.propertyValidator('internetSlbId', ros.validateString)(properties.internetSlbId));
     errors.collect(ros.propertyValidator('preStop', RosK8sApplication_PreStopPropertyValidator)(properties.preStop));
-    errors.collect(ros.propertyValidator('readiness', RosK8sApplication_ReadinessPropertyValidator)(properties.readiness));
     if(properties.internetSlbPort && (typeof properties.internetSlbPort) !== 'object') {
         errors.collect(ros.propertyValidator('internetSlbPort', ros.validateRange)({
             data: properties.internetSlbPort,
@@ -1011,6 +1010,7 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('internetSlbPort', ros.validateNumber)(properties.internetSlbPort));
+    errors.collect(ros.propertyValidator('readiness', RosK8sApplication_ReadinessPropertyValidator)(properties.readiness));
     errors.collect(ros.propertyValidator('deployAcrossNodes', ros.validateBoolean)(properties.deployAcrossNodes));
     if(properties.requestsMem && (typeof properties.requestsMem) !== 'object') {
         errors.collect(ros.propertyValidator('requestsMem', ros.validateRange)({
@@ -1070,6 +1070,7 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('intranetTargetPort', ros.validateNumber)(properties.intranetTargetPort));
     errors.collect(ros.propertyValidator('mountDescs', ros.listValidator(RosK8sApplication_MountDescsPropertyValidator))(properties.mountDescs));
     errors.collect(ros.propertyValidator('localVolume', ros.listValidator(RosK8sApplication_LocalVolumePropertyValidator))(properties.localVolume));
+    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
     errors.collect(ros.propertyValidator('runtimeClassName', ros.validateString)(properties.runtimeClassName));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     if(properties.internetSlbProtocol && (typeof properties.internetSlbProtocol) !== 'object') {
@@ -1079,7 +1080,6 @@ function RosK8sApplicationPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('internetSlbProtocol', ros.validateString)(properties.internetSlbProtocol));
-    errors.collect(ros.propertyValidator('edasContainerVersion', ros.validateString)(properties.edasContainerVersion));
     errors.collect(ros.propertyValidator('packageUrl', ros.validateString)(properties.packageUrl));
     if(properties.intranetSlbPort && (typeof properties.intranetSlbPort) !== 'object') {
         errors.collect(ros.propertyValidator('intranetSlbPort', ros.validateRange)({

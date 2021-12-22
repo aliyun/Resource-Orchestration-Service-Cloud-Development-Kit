@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.803Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -411,6 +411,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStartListener() {
+        return software.amazon.jsii.Kernel.get(this, "startListener", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStartListener(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "startListener", value);
+    }
+
+    /**
+     */
+    public void setStartListener(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "startListener", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getVServerGroupId() {
         return software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -515,16 +533,16 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HealthCheckProperty> {
-            private java.lang.Object domain;
-            private java.lang.Object healthCheckType;
-            private java.lang.Object healthyThreshold;
-            private java.lang.Object httpCode;
-            private java.lang.Object interval;
-            private java.lang.Object port;
-            private java.lang.Object switchValue;
-            private java.lang.Object timeout;
-            private java.lang.Object unhealthyThreshold;
-            private java.lang.Object uri;
+            java.lang.Object domain;
+            java.lang.Object healthCheckType;
+            java.lang.Object healthyThreshold;
+            java.lang.Object httpCode;
+            java.lang.Object interval;
+            java.lang.Object port;
+            java.lang.Object switchValue;
+            java.lang.Object timeout;
+            java.lang.Object unhealthyThreshold;
+            java.lang.Object uri;
 
             /**
              * Sets the value of {@link HealthCheckProperty#getDomain}
@@ -754,7 +772,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HealthCheckProperty build() {
-                return new Jsii$Proxy(domain, healthCheckType, healthyThreshold, httpCode, interval, port, switchValue, timeout, unhealthyThreshold, uri);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -796,18 +814,18 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object healthCheckType, final java.lang.Object healthyThreshold, final java.lang.Object httpCode, final java.lang.Object interval, final java.lang.Object port, final java.lang.Object switchValue, final java.lang.Object timeout, final java.lang.Object unhealthyThreshold, final java.lang.Object uri) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.domain = domain;
-                this.healthCheckType = healthCheckType;
-                this.healthyThreshold = healthyThreshold;
-                this.httpCode = httpCode;
-                this.interval = interval;
-                this.port = port;
-                this.switchValue = switchValue;
-                this.timeout = timeout;
-                this.unhealthyThreshold = unhealthyThreshold;
-                this.uri = uri;
+                this.domain = builder.domain;
+                this.healthCheckType = builder.healthCheckType;
+                this.healthyThreshold = builder.healthyThreshold;
+                this.httpCode = builder.httpCode;
+                this.interval = builder.interval;
+                this.port = builder.port;
+                this.switchValue = builder.switchValue;
+                this.timeout = builder.timeout;
+                this.unhealthyThreshold = builder.unhealthyThreshold;
+                this.uri = builder.uri;
             }
 
             @Override
@@ -975,8 +993,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HttpConfigProperty> {
-            private java.lang.Object forwardPort;
-            private java.lang.Object listenerForward;
+            java.lang.Object forwardPort;
+            java.lang.Object listenerForward;
 
             /**
              * Sets the value of {@link HttpConfigProperty#getForwardPort}
@@ -1030,7 +1048,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HttpConfigProperty build() {
-                return new Jsii$Proxy(forwardPort, listenerForward);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1056,10 +1074,10 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object forwardPort, final java.lang.Object listenerForward) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.forwardPort = forwardPort;
-                this.listenerForward = listenerForward;
+                this.forwardPort = builder.forwardPort;
+                this.listenerForward = builder.listenerForward;
             }
 
             @Override
@@ -1166,6 +1184,13 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForClientSrcPort() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForProto() {
             return null;
         }
@@ -1185,6 +1210,13 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForSlbport() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link PersistenceProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1196,15 +1228,17 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PersistenceProperty> {
-            private java.lang.Object cookie;
-            private java.lang.Object cookieTimeout;
-            private java.lang.Object persistenceTimeout;
-            private java.lang.Object stickySession;
-            private java.lang.Object stickySessionType;
-            private java.lang.Object xForwardedFor;
-            private java.lang.Object xForwardedForProto;
-            private java.lang.Object xForwardedForSlbid;
-            private java.lang.Object xForwardedForSlbip;
+            java.lang.Object cookie;
+            java.lang.Object cookieTimeout;
+            java.lang.Object persistenceTimeout;
+            java.lang.Object stickySession;
+            java.lang.Object stickySessionType;
+            java.lang.Object xForwardedFor;
+            java.lang.Object xForwardedForClientSrcPort;
+            java.lang.Object xForwardedForProto;
+            java.lang.Object xForwardedForSlbid;
+            java.lang.Object xForwardedForSlbip;
+            java.lang.Object xForwardedForSlbport;
 
             /**
              * Sets the value of {@link PersistenceProperty#getCookie}
@@ -1339,6 +1373,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PersistenceProperty#getXForwardedForClientSrcPort}
+             * @param xForwardedForClientSrcPort the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSrcPort(java.lang.String xForwardedForClientSrcPort) {
+                this.xForwardedForClientSrcPort = xForwardedForClientSrcPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PersistenceProperty#getXForwardedForClientSrcPort}
+             * @param xForwardedForClientSrcPort the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForClientSrcPort(com.aliyun.ros.cdk.core.IResolvable xForwardedForClientSrcPort) {
+                this.xForwardedForClientSrcPort = xForwardedForClientSrcPort;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PersistenceProperty#getXForwardedForProto}
              * @param xForwardedForProto the value to be set.
              * @return {@code this}
@@ -1405,6 +1461,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PersistenceProperty#getXForwardedForSlbport}
+             * @param xForwardedForSlbport the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForSlbport(java.lang.String xForwardedForSlbport) {
+                this.xForwardedForSlbport = xForwardedForSlbport;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PersistenceProperty#getXForwardedForSlbport}
+             * @param xForwardedForSlbport the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForSlbport(com.aliyun.ros.cdk.core.IResolvable xForwardedForSlbport) {
+                this.xForwardedForSlbport = xForwardedForSlbport;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link PersistenceProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1412,7 +1490,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PersistenceProperty build() {
-                return new Jsii$Proxy(cookie, cookieTimeout, persistenceTimeout, stickySession, stickySessionType, xForwardedFor, xForwardedForProto, xForwardedForSlbid, xForwardedForSlbip);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1428,9 +1506,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object stickySession;
             private final java.lang.Object stickySessionType;
             private final java.lang.Object xForwardedFor;
+            private final java.lang.Object xForwardedForClientSrcPort;
             private final java.lang.Object xForwardedForProto;
             private final java.lang.Object xForwardedForSlbid;
             private final java.lang.Object xForwardedForSlbip;
+            private final java.lang.Object xForwardedForSlbport;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1444,25 +1524,29 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 this.stickySession = software.amazon.jsii.Kernel.get(this, "stickySession", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.stickySessionType = software.amazon.jsii.Kernel.get(this, "stickySessionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedFor = software.amazon.jsii.Kernel.get(this, "xForwardedFor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForClientSrcPort = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSrcPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForProto = software.amazon.jsii.Kernel.get(this, "xForwardedForProto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForSlbid = software.amazon.jsii.Kernel.get(this, "xForwardedForSlbid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForSlbip = software.amazon.jsii.Kernel.get(this, "xForwardedForSlbip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForSlbport = software.amazon.jsii.Kernel.get(this, "xForwardedForSlbport", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object cookie, final java.lang.Object cookieTimeout, final java.lang.Object persistenceTimeout, final java.lang.Object stickySession, final java.lang.Object stickySessionType, final java.lang.Object xForwardedFor, final java.lang.Object xForwardedForProto, final java.lang.Object xForwardedForSlbid, final java.lang.Object xForwardedForSlbip) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.cookie = cookie;
-                this.cookieTimeout = cookieTimeout;
-                this.persistenceTimeout = persistenceTimeout;
-                this.stickySession = stickySession;
-                this.stickySessionType = stickySessionType;
-                this.xForwardedFor = xForwardedFor;
-                this.xForwardedForProto = xForwardedForProto;
-                this.xForwardedForSlbid = xForwardedForSlbid;
-                this.xForwardedForSlbip = xForwardedForSlbip;
+                this.cookie = builder.cookie;
+                this.cookieTimeout = builder.cookieTimeout;
+                this.persistenceTimeout = builder.persistenceTimeout;
+                this.stickySession = builder.stickySession;
+                this.stickySessionType = builder.stickySessionType;
+                this.xForwardedFor = builder.xForwardedFor;
+                this.xForwardedForClientSrcPort = builder.xForwardedForClientSrcPort;
+                this.xForwardedForProto = builder.xForwardedForProto;
+                this.xForwardedForSlbid = builder.xForwardedForSlbid;
+                this.xForwardedForSlbip = builder.xForwardedForSlbip;
+                this.xForwardedForSlbport = builder.xForwardedForSlbport;
             }
 
             @Override
@@ -1496,6 +1580,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getXForwardedForClientSrcPort() {
+                return this.xForwardedForClientSrcPort;
+            }
+
+            @Override
             public final java.lang.Object getXForwardedForProto() {
                 return this.xForwardedForProto;
             }
@@ -1508,6 +1597,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getXForwardedForSlbip() {
                 return this.xForwardedForSlbip;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForSlbport() {
+                return this.xForwardedForSlbport;
             }
 
             @Override
@@ -1534,6 +1628,9 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getXForwardedFor() != null) {
                     data.set("xForwardedFor", om.valueToTree(this.getXForwardedFor()));
                 }
+                if (this.getXForwardedForClientSrcPort() != null) {
+                    data.set("xForwardedForClientSrcPort", om.valueToTree(this.getXForwardedForClientSrcPort()));
+                }
                 if (this.getXForwardedForProto() != null) {
                     data.set("xForwardedForProto", om.valueToTree(this.getXForwardedForProto()));
                 }
@@ -1542,6 +1639,9 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getXForwardedForSlbip() != null) {
                     data.set("xForwardedForSlbip", om.valueToTree(this.getXForwardedForSlbip()));
+                }
+                if (this.getXForwardedForSlbport() != null) {
+                    data.set("xForwardedForSlbport", om.valueToTree(this.getXForwardedForSlbport()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1567,9 +1667,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.stickySession != null ? !this.stickySession.equals(that.stickySession) : that.stickySession != null) return false;
                 if (this.stickySessionType != null ? !this.stickySessionType.equals(that.stickySessionType) : that.stickySessionType != null) return false;
                 if (this.xForwardedFor != null ? !this.xForwardedFor.equals(that.xForwardedFor) : that.xForwardedFor != null) return false;
+                if (this.xForwardedForClientSrcPort != null ? !this.xForwardedForClientSrcPort.equals(that.xForwardedForClientSrcPort) : that.xForwardedForClientSrcPort != null) return false;
                 if (this.xForwardedForProto != null ? !this.xForwardedForProto.equals(that.xForwardedForProto) : that.xForwardedForProto != null) return false;
                 if (this.xForwardedForSlbid != null ? !this.xForwardedForSlbid.equals(that.xForwardedForSlbid) : that.xForwardedForSlbid != null) return false;
-                return this.xForwardedForSlbip != null ? this.xForwardedForSlbip.equals(that.xForwardedForSlbip) : that.xForwardedForSlbip == null;
+                if (this.xForwardedForSlbip != null ? !this.xForwardedForSlbip.equals(that.xForwardedForSlbip) : that.xForwardedForSlbip != null) return false;
+                return this.xForwardedForSlbport != null ? this.xForwardedForSlbport.equals(that.xForwardedForSlbport) : that.xForwardedForSlbport == null;
             }
 
             @Override
@@ -1580,9 +1682,11 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.stickySession != null ? this.stickySession.hashCode() : 0);
                 result = 31 * result + (this.stickySessionType != null ? this.stickySessionType.hashCode() : 0);
                 result = 31 * result + (this.xForwardedFor != null ? this.xForwardedFor.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForClientSrcPort != null ? this.xForwardedForClientSrcPort.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForProto != null ? this.xForwardedForProto.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForSlbid != null ? this.xForwardedForSlbid.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForSlbip != null ? this.xForwardedForSlbip.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForSlbport != null ? this.xForwardedForSlbport.hashCode() : 0);
                 return result;
             }
         }
@@ -1616,8 +1720,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PortRangeProperty> {
-            private java.lang.Object endPort;
-            private java.lang.Object startPort;
+            java.lang.Object endPort;
+            java.lang.Object startPort;
 
             /**
              * Sets the value of {@link PortRangeProperty#getEndPort}
@@ -1671,7 +1775,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PortRangeProperty build() {
-                return new Jsii$Proxy(endPort, startPort);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1697,10 +1801,10 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object endPort, final java.lang.Object startPort) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.endPort = java.util.Objects.requireNonNull(endPort, "endPort is required");
-                this.startPort = java.util.Objects.requireNonNull(startPort, "startPort is required");
+                this.endPort = java.util.Objects.requireNonNull(builder.endPort, "endPort is required");
+                this.startPort = java.util.Objects.requireNonNull(builder.startPort, "startPort is required");
             }
 
             @Override
@@ -2098,6 +2202,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serverCertificateId(final com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.props.serverCertificateId(serverCertificateId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param startListener This parameter is required.
+         */
+        public Builder startListener(final java.lang.Boolean startListener) {
+            this.props.startListener(startListener);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param startListener This parameter is required.
+         */
+        public Builder startListener(final com.aliyun.ros.cdk.core.IResolvable startListener) {
+            this.props.startListener(startListener);
             return this;
         }
 

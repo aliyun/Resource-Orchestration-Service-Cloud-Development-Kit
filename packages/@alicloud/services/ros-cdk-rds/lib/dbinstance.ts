@@ -333,7 +333,7 @@ export interface DBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -505,13 +505,13 @@ export class DBInstance extends ros.Resource {
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
             allocatePublicConnection: props.allocatePublicConnection,
-            securityGroupId: props.securityGroupId,
             preferredBackupTime: props.preferredBackupTime,
+            securityGroupId: props.securityGroupId,
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
-            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             logBackupFrequency: props.logBackupFrequency,
+            connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             enableBackupLog: props.enableBackupLog,
             sqlCollectorStatus: props.sqlCollectorStatus,

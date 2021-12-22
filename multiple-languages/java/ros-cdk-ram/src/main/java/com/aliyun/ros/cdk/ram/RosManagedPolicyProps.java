@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::ManagedPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.816Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.533Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedPolicyProps.Jsii$Proxy.class)
 public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,13 +58,13 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosManagedPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosManagedPolicyProps> {
-        private java.lang.Object policyName;
-        private java.lang.Object description;
-        private java.lang.Object groups;
-        private java.lang.Object policyDocument;
-        private java.lang.Object policyDocumentUnchecked;
-        private java.lang.Object roles;
-        private java.lang.Object users;
+        java.lang.Object policyName;
+        java.lang.Object description;
+        java.lang.Object groups;
+        java.lang.Object policyDocument;
+        java.lang.Object policyDocumentUnchecked;
+        java.lang.Object roles;
+        java.lang.Object users;
 
         /**
          * Sets the value of {@link RosManagedPolicyProps#getPolicyName}
@@ -213,7 +213,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosManagedPolicyProps build() {
-            return new Jsii$Proxy(policyName, description, groups, policyDocument, policyDocumentUnchecked, roles, users);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -248,15 +248,15 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object policyName, final java.lang.Object description, final java.lang.Object groups, final java.lang.Object policyDocument, final java.lang.Object policyDocumentUnchecked, final java.lang.Object roles, final java.lang.Object users) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
-            this.description = description;
-            this.groups = groups;
-            this.policyDocument = policyDocument;
-            this.policyDocumentUnchecked = policyDocumentUnchecked;
-            this.roles = roles;
-            this.users = users;
+            this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
+            this.description = builder.description;
+            this.groups = builder.groups;
+            this.policyDocument = builder.policyDocument;
+            this.policyDocumentUnchecked = builder.policyDocumentUnchecked;
+            this.roles = builder.roles;
+            this.users = builder.users;
         }
 
         @Override

@@ -21,8 +21,8 @@ export interface VpnGatewayProps {
 
     /**
      * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
-     * True: Automatically pays the bill for the VPN gateway.
-     * False (default): Does not automatically pay the bill for the VPN gateway.
+     * true: Automatically pays the bill for the VPN gateway.
+     * false (default): Does not automatically pay the bill for the VPN gateway.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 

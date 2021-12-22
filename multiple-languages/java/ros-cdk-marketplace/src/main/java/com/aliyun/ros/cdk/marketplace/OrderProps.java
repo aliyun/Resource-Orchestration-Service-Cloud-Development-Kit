@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * Properties for defining a `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.OrderProps")
 @software.amazon.jsii.Jsii.Proxy(OrderProps.Jsii$Proxy.class)
 public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
@@ -71,13 +71,13 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link OrderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<OrderProps> {
-        private java.lang.Object productCode;
-        private java.lang.Object skuCode;
-        private java.lang.Object chargeType;
-        private java.lang.Object duration;
-        private java.lang.Object preference;
-        private java.lang.Object pricingCycle;
-        private java.lang.Object quantity;
+        java.lang.Object productCode;
+        java.lang.Object skuCode;
+        java.lang.Object chargeType;
+        java.lang.Object duration;
+        java.lang.Object preference;
+        java.lang.Object pricingCycle;
+        java.lang.Object quantity;
 
         /**
          * Sets the value of {@link OrderProps#getProductCode}
@@ -234,7 +234,7 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public OrderProps build() {
-            return new Jsii$Proxy(productCode, skuCode, chargeType, duration, preference, pricingCycle, quantity);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -269,15 +269,15 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object productCode, final java.lang.Object skuCode, final java.lang.Object chargeType, final java.lang.Object duration, final java.lang.Object preference, final java.lang.Object pricingCycle, final java.lang.Object quantity) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.productCode = java.util.Objects.requireNonNull(productCode, "productCode is required");
-            this.skuCode = java.util.Objects.requireNonNull(skuCode, "skuCode is required");
-            this.chargeType = chargeType;
-            this.duration = duration;
-            this.preference = preference;
-            this.pricingCycle = pricingCycle;
-            this.quantity = quantity;
+            this.productCode = java.util.Objects.requireNonNull(builder.productCode, "productCode is required");
+            this.skuCode = java.util.Objects.requireNonNull(builder.skuCode, "skuCode is required");
+            this.chargeType = builder.chargeType;
+            this.duration = builder.duration;
+            this.preference = builder.preference;
+            this.pricingCycle = builder.pricingCycle;
+            this.quantity = builder.quantity;
         }
 
         @Override

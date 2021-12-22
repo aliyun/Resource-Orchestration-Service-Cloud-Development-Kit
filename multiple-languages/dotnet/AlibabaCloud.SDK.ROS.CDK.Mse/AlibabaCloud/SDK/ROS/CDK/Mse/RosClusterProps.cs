@@ -94,10 +94,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: diskCapacity:
+        /// <strong>Property</strong>: diskCapacity: disk capacity, unit: G
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
         public object? DiskCapacity
         {
             get;

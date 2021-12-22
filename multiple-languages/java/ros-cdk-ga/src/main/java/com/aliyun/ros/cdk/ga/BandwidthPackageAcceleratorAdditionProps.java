@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.082Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageAcceleratorAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageAcceleratorAdditionProps.Jsii$Proxy.class)
 public interface BandwidthPackageAcceleratorAdditionProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
      * A builder for {@link BandwidthPackageAcceleratorAdditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BandwidthPackageAcceleratorAdditionProps> {
-        private java.lang.Object acceleratorId;
-        private java.lang.Object bandwidthPackageId;
+        java.lang.Object acceleratorId;
+        java.lang.Object bandwidthPackageId;
 
         /**
          * Sets the value of {@link BandwidthPackageAcceleratorAdditionProps#getAcceleratorId}
@@ -78,7 +78,7 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
          */
         @Override
         public BandwidthPackageAcceleratorAdditionProps build() {
-            return new Jsii$Proxy(acceleratorId, bandwidthPackageId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object bandwidthPackageId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
-            this.bandwidthPackageId = java.util.Objects.requireNonNull(bandwidthPackageId, "bandwidthPackageId is required");
+            this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
+            this.bandwidthPackageId = java.util.Objects.requireNonNull(builder.bandwidthPackageId, "bandwidthPackageId is required");
         }
 
         @Override

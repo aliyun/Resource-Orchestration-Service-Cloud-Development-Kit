@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.590Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -365,9 +365,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskBurstingEnabled() {
+        return null;
+    }
+
+    /**
      * Property systemDiskCategory: Category of system disk.
      * <p>
-     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
@@ -391,6 +398,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
         return null;
     }
 
@@ -456,57 +470,59 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link InstanceGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceGroupProps> {
-        private java.lang.Object imageId;
-        private java.lang.Object instanceType;
-        private java.lang.Object maxAmount;
-        private java.lang.Object allocatePublicIp;
-        private java.lang.Object autoReleaseTime;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object dedicatedHostId;
-        private java.lang.Object deletionProtection;
-        private java.lang.Object deploymentSetId;
-        private java.lang.Object description;
-        private java.lang.Object diskMappings;
-        private java.lang.Object eniMappings;
-        private java.lang.Object hostName;
-        private java.lang.Object hpcClusterId;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object instanceName;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object ioOptimized;
-        private java.lang.Object ipv6AddressCount;
-        private java.lang.Object ipv6Addresses;
-        private java.lang.Object keyPairName;
-        private java.lang.Object launchTemplateId;
-        private java.lang.Object launchTemplateName;
-        private java.lang.Object launchTemplateVersion;
-        private java.lang.Object networkType;
-        private java.lang.Object password;
-        private java.lang.Object passwordInherit;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityEnhancementStrategy;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityGroupIds;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object systemDiskAutoSnapshotPolicyId;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskDescription;
-        private java.lang.Object systemDiskDiskName;
-        private java.lang.Object systemDiskPerformanceLevel;
-        private java.lang.Object systemDiskSize;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
-        private java.lang.Object userData;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object imageId;
+        java.lang.Object instanceType;
+        java.lang.Object maxAmount;
+        java.lang.Object allocatePublicIp;
+        java.lang.Object autoReleaseTime;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object dedicatedHostId;
+        java.lang.Object deletionProtection;
+        java.lang.Object deploymentSetId;
+        java.lang.Object description;
+        java.lang.Object diskMappings;
+        java.lang.Object eniMappings;
+        java.lang.Object hostName;
+        java.lang.Object hpcClusterId;
+        java.lang.Object instanceChargeType;
+        java.lang.Object instanceName;
+        java.lang.Object internetChargeType;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object ioOptimized;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object ipv6Addresses;
+        java.lang.Object keyPairName;
+        java.lang.Object launchTemplateId;
+        java.lang.Object launchTemplateName;
+        java.lang.Object launchTemplateVersion;
+        java.lang.Object networkType;
+        java.lang.Object password;
+        java.lang.Object passwordInherit;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object privateIpAddress;
+        java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityEnhancementStrategy;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupIds;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.lang.Object systemDiskAutoSnapshotPolicyId;
+        java.lang.Object systemDiskBurstingEnabled;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskDescription;
+        java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskPerformanceLevel;
+        java.lang.Object systemDiskProvisionedIops;
+        java.lang.Object systemDiskSize;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        java.lang.Object userData;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceGroupProps#getImageId}
@@ -1421,9 +1437,29 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskBurstingEnabled}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting.
+         * @return {@code this}
+         */
+        public Builder systemDiskBurstingEnabled(java.lang.Boolean systemDiskBurstingEnabled) {
+            this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskBurstingEnabled}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting.
+         * @return {@code this}
+         */
+        public Builder systemDiskBurstingEnabled(com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+            this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -1434,7 +1470,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * @return {@code this}
          */
         public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
@@ -1499,6 +1535,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
             this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskProvisionedIops}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS.
+         * @return {@code this}
+         */
+        public Builder systemDiskProvisionedIops(java.lang.Number systemDiskProvisionedIops) {
+            this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskProvisionedIops}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS.
+         * @return {@code this}
+         */
+        public Builder systemDiskProvisionedIops(com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+            this.systemDiskProvisionedIops = systemDiskProvisionedIops;
             return this;
         }
 
@@ -1631,7 +1687,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public InstanceGroupProps build() {
-            return new Jsii$Proxy(imageId, instanceType, maxAmount, allocatePublicIp, autoReleaseTime, autoRenew, autoRenewPeriod, dedicatedHostId, deletionProtection, deploymentSetId, description, diskMappings, eniMappings, hostName, hpcClusterId, instanceChargeType, instanceName, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, ipv6AddressCount, ipv6Addresses, keyPairName, launchTemplateId, launchTemplateName, launchTemplateVersion, networkType, password, passwordInherit, period, periodUnit, privateIpAddress, ramRoleName, resourceGroupId, securityEnhancementStrategy, securityGroupId, securityGroupIds, spotPriceLimit, spotStrategy, systemDiskAutoSnapshotPolicyId, systemDiskCategory, systemDiskDescription, systemDiskDiskName, systemDiskPerformanceLevel, systemDiskSize, tags, userData, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1681,10 +1737,12 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private final java.lang.Object systemDiskBurstingEnabled;
         private final java.lang.Object systemDiskCategory;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
         private final java.lang.Object systemDiskPerformanceLevel;
+        private final java.lang.Object systemDiskProvisionedIops;
         private final java.lang.Object systemDiskSize;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
         private final java.lang.Object userData;
@@ -1739,10 +1797,12 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskBurstingEnabled = software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1755,59 +1815,61 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object maxAmount, final java.lang.Object allocatePublicIp, final java.lang.Object autoReleaseTime, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object dedicatedHostId, final java.lang.Object deletionProtection, final java.lang.Object deploymentSetId, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object eniMappings, final java.lang.Object hostName, final java.lang.Object hpcClusterId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object ipv6AddressCount, final java.lang.Object ipv6Addresses, final java.lang.Object keyPairName, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateName, final java.lang.Object launchTemplateVersion, final java.lang.Object networkType, final java.lang.Object password, final java.lang.Object passwordInherit, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object privateIpAddress, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object securityGroupIds, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags, final java.lang.Object userData, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-            this.maxAmount = java.util.Objects.requireNonNull(maxAmount, "maxAmount is required");
-            this.allocatePublicIp = allocatePublicIp;
-            this.autoReleaseTime = autoReleaseTime;
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.dedicatedHostId = dedicatedHostId;
-            this.deletionProtection = deletionProtection;
-            this.deploymentSetId = deploymentSetId;
-            this.description = description;
-            this.diskMappings = diskMappings;
-            this.eniMappings = eniMappings;
-            this.hostName = hostName;
-            this.hpcClusterId = hpcClusterId;
-            this.instanceChargeType = instanceChargeType;
-            this.instanceName = instanceName;
-            this.internetChargeType = internetChargeType;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.ioOptimized = ioOptimized;
-            this.ipv6AddressCount = ipv6AddressCount;
-            this.ipv6Addresses = ipv6Addresses;
-            this.keyPairName = keyPairName;
-            this.launchTemplateId = launchTemplateId;
-            this.launchTemplateName = launchTemplateName;
-            this.launchTemplateVersion = launchTemplateVersion;
-            this.networkType = networkType;
-            this.password = password;
-            this.passwordInherit = passwordInherit;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.privateIpAddress = privateIpAddress;
-            this.ramRoleName = ramRoleName;
-            this.resourceGroupId = resourceGroupId;
-            this.securityEnhancementStrategy = securityEnhancementStrategy;
-            this.securityGroupId = securityGroupId;
-            this.securityGroupIds = securityGroupIds;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
-            this.systemDiskCategory = systemDiskCategory;
-            this.systemDiskDescription = systemDiskDescription;
-            this.systemDiskDiskName = systemDiskDiskName;
-            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
-            this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)tags;
-            this.userData = userData;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+            this.maxAmount = java.util.Objects.requireNonNull(builder.maxAmount, "maxAmount is required");
+            this.allocatePublicIp = builder.allocatePublicIp;
+            this.autoReleaseTime = builder.autoReleaseTime;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.dedicatedHostId = builder.dedicatedHostId;
+            this.deletionProtection = builder.deletionProtection;
+            this.deploymentSetId = builder.deploymentSetId;
+            this.description = builder.description;
+            this.diskMappings = builder.diskMappings;
+            this.eniMappings = builder.eniMappings;
+            this.hostName = builder.hostName;
+            this.hpcClusterId = builder.hpcClusterId;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.instanceName = builder.instanceName;
+            this.internetChargeType = builder.internetChargeType;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.ioOptimized = builder.ioOptimized;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.ipv6Addresses = builder.ipv6Addresses;
+            this.keyPairName = builder.keyPairName;
+            this.launchTemplateId = builder.launchTemplateId;
+            this.launchTemplateName = builder.launchTemplateName;
+            this.launchTemplateVersion = builder.launchTemplateVersion;
+            this.networkType = builder.networkType;
+            this.password = builder.password;
+            this.passwordInherit = builder.passwordInherit;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
+            this.systemDiskBurstingEnabled = builder.systemDiskBurstingEnabled;
+            this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskDescription = builder.systemDiskDescription;
+            this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+            this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
+            this.systemDiskSize = builder.systemDiskSize;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)builder.tags;
+            this.userData = builder.userData;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -2016,6 +2078,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSystemDiskBurstingEnabled() {
+            return this.systemDiskBurstingEnabled;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
@@ -2033,6 +2100,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getSystemDiskPerformanceLevel() {
             return this.systemDiskPerformanceLevel;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskProvisionedIops() {
+            return this.systemDiskProvisionedIops;
         }
 
         @Override
@@ -2188,6 +2260,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getSystemDiskAutoSnapshotPolicyId() != null) {
                 data.set("systemDiskAutoSnapshotPolicyId", om.valueToTree(this.getSystemDiskAutoSnapshotPolicyId()));
             }
+            if (this.getSystemDiskBurstingEnabled() != null) {
+                data.set("systemDiskBurstingEnabled", om.valueToTree(this.getSystemDiskBurstingEnabled()));
+            }
             if (this.getSystemDiskCategory() != null) {
                 data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
             }
@@ -2199,6 +2274,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getSystemDiskPerformanceLevel() != null) {
                 data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
+            }
+            if (this.getSystemDiskProvisionedIops() != null) {
+                data.set("systemDiskProvisionedIops", om.valueToTree(this.getSystemDiskProvisionedIops()));
             }
             if (this.getSystemDiskSize() != null) {
                 data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
@@ -2277,10 +2355,12 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskAutoSnapshotPolicyId != null ? !this.systemDiskAutoSnapshotPolicyId.equals(that.systemDiskAutoSnapshotPolicyId) : that.systemDiskAutoSnapshotPolicyId != null) return false;
+            if (this.systemDiskBurstingEnabled != null ? !this.systemDiskBurstingEnabled.equals(that.systemDiskBurstingEnabled) : that.systemDiskBurstingEnabled != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
             if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
+            if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
@@ -2332,10 +2412,12 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskAutoSnapshotPolicyId != null ? this.systemDiskAutoSnapshotPolicyId.hashCode() : 0);
+            result = 31 * result + (this.systemDiskBurstingEnabled != null ? this.systemDiskBurstingEnabled.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
             result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
+            result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);

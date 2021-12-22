@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceSecurityIpsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceSecurityIpsProps.Jsii$Proxy.class)
 public interface RosDBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosDBInstanceSecurityIpsProps extends software.amazon.jsii.Jsii
      * A builder for {@link RosDBInstanceSecurityIpsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBInstanceSecurityIpsProps> {
-        private java.lang.Object dbInstanceId;
-        private java.lang.Object dbInstanceIpArrayAttribute;
-        private java.lang.Object dbInstanceIpArrayName;
+        java.lang.Object dbInstanceId;
+        java.lang.Object dbInstanceIpArrayAttribute;
+        java.lang.Object dbInstanceIpArrayName;
 
         /**
          * Sets the value of {@link RosDBInstanceSecurityIpsProps#getDbInstanceId}
@@ -103,7 +103,7 @@ public interface RosDBInstanceSecurityIpsProps extends software.amazon.jsii.Jsii
          */
         @Override
         public RosDBInstanceSecurityIpsProps build() {
-            return new Jsii$Proxy(dbInstanceId, dbInstanceIpArrayAttribute, dbInstanceIpArrayName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface RosDBInstanceSecurityIpsProps extends software.amazon.jsii.Jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dbInstanceId, final java.lang.Object dbInstanceIpArrayAttribute, final java.lang.Object dbInstanceIpArrayName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.dbInstanceIpArrayAttribute = java.util.Objects.requireNonNull(dbInstanceIpArrayAttribute, "dbInstanceIpArrayAttribute is required");
-            this.dbInstanceIpArrayName = dbInstanceIpArrayName;
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.dbInstanceIpArrayAttribute = java.util.Objects.requireNonNull(builder.dbInstanceIpArrayAttribute, "dbInstanceIpArrayAttribute is required");
+            this.dbInstanceIpArrayName = builder.dbInstanceIpArrayName;
         }
 
         @Override

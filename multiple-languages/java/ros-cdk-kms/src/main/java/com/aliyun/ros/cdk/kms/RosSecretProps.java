@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.268Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosSecretProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecretProps.Jsii$Proxy.class)
 public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,15 +66,15 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosSecretProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSecretProps> {
-        private java.lang.Object secretData;
-        private java.lang.Object secretName;
-        private java.lang.Object versionId;
-        private java.lang.Object description;
-        private java.lang.Object encryptionKeyId;
-        private java.lang.Object forceDeleteWithoutRecovery;
-        private java.lang.Object recoveryWindowInDays;
-        private java.lang.Object secretDataType;
-        private java.lang.Object versionStages;
+        java.lang.Object secretData;
+        java.lang.Object secretName;
+        java.lang.Object versionId;
+        java.lang.Object description;
+        java.lang.Object encryptionKeyId;
+        java.lang.Object forceDeleteWithoutRecovery;
+        java.lang.Object recoveryWindowInDays;
+        java.lang.Object secretDataType;
+        java.lang.Object versionStages;
 
         /**
          * Sets the value of {@link RosSecretProps#getSecretData}
@@ -263,7 +263,7 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosSecretProps build() {
-            return new Jsii$Proxy(secretData, secretName, versionId, description, encryptionKeyId, forceDeleteWithoutRecovery, recoveryWindowInDays, secretDataType, versionStages);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -302,17 +302,17 @@ public interface RosSecretProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object secretData, final java.lang.Object secretName, final java.lang.Object versionId, final java.lang.Object description, final java.lang.Object encryptionKeyId, final java.lang.Object forceDeleteWithoutRecovery, final java.lang.Object recoveryWindowInDays, final java.lang.Object secretDataType, final java.lang.Object versionStages) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.secretData = java.util.Objects.requireNonNull(secretData, "secretData is required");
-            this.secretName = java.util.Objects.requireNonNull(secretName, "secretName is required");
-            this.versionId = java.util.Objects.requireNonNull(versionId, "versionId is required");
-            this.description = description;
-            this.encryptionKeyId = encryptionKeyId;
-            this.forceDeleteWithoutRecovery = forceDeleteWithoutRecovery;
-            this.recoveryWindowInDays = recoveryWindowInDays;
-            this.secretDataType = secretDataType;
-            this.versionStages = versionStages;
+            this.secretData = java.util.Objects.requireNonNull(builder.secretData, "secretData is required");
+            this.secretName = java.util.Objects.requireNonNull(builder.secretName, "secretName is required");
+            this.versionId = java.util.Objects.requireNonNull(builder.versionId, "versionId is required");
+            this.description = builder.description;
+            this.encryptionKeyId = builder.encryptionKeyId;
+            this.forceDeleteWithoutRecovery = builder.forceDeleteWithoutRecovery;
+            this.recoveryWindowInDays = builder.recoveryWindowInDays;
+            this.secretDataType = builder.secretDataType;
+            this.versionStages = builder.versionStages;
         }
 
         @Override

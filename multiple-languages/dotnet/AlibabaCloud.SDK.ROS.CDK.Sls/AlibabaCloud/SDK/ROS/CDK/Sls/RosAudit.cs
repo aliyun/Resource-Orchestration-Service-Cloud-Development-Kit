@@ -113,11 +113,76 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: actiontrailTtl: Actiontril action log TTL.
+            /// <strong>Property</strong>: actiontrailOpenapiCollectionPolicy: Actiontrail openapi collection policy
+            /// </remarks>
+            [JsiiProperty(name: "actiontrailOpenapiCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ActiontrailOpenapiCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailOpenapiPolicySetting: Actiontrail openapi policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "actiontrailOpenapiPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ActiontrailOpenapiPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailTiEnabled: Threat Intelligence of actiontrail.
+            /// </remarks>
+            [JsiiProperty(name: "actiontrailTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ActiontrailTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailTtl: Actiontrail action log TTL.
             /// </remarks>
             [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? ActiontrailTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: apigatewayAccessCollectionPolicy: Apigateway audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ApigatewayAccessCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: apigatewayAccessPolicySetting: Apigateway audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "apigatewayAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ApigatewayAccessPolicySetting
             {
                 get
                 {
@@ -139,11 +204,115 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: apigatewayTiEnabled: Threat Intelligence of Apigateway.
+            /// </remarks>
+            [JsiiProperty(name: "apigatewayTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ApigatewayTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: apigatewayTtl: API Gateway ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "apigatewayTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? ApigatewayTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectEnabled: Appconnect access log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "appconnectEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AppconnectEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectOpCollectionPolicy: Appconnect audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "appconnectOpCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AppconnectOpCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectOpPolicySetting: Appconnect audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "appconnectOpPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AppconnectOpPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectTiEnabled: Threat Intelligence of Appconnect.
+            /// </remarks>
+            [JsiiProperty(name: "appconnectTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AppconnectTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectTtl: Appconnect log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "appconnectTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AppconnectTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bastionAuditCollectionPolicy: Bastion audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "bastionAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? BastionAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bastionAuditPolicySetting: Bastion audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "bastionAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? BastionAuditPolicySetting
             {
                 get
                 {
@@ -165,6 +334,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: bastionTiEnabled: Threat Intelligence of Bastion.
+            /// </remarks>
+            [JsiiProperty(name: "bastionTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? BastionTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: bastionTtl: Fort machine centralized ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "bastionTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -178,11 +360,89 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall switch.Default true.
+            /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallAccessCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallAccessPolicySetting: Cloud firewall audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallAccessPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallEnabled: Cloud firewall log switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallTiEnabled: Threat Intelligence of Cloud firewall.
+            /// </remarks>
+            [JsiiProperty(name: "cloudfirewallTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CloudfirewallTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall log centralized ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? CloudfirewallTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpsCallbackCollectionPolicy: Mobile push collection policy
+            /// </remarks>
+            [JsiiProperty(name: "cpsCallbackCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CpsCallbackCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpsCallbackPolicySetting: Mobile push policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "cpsCallbackPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CpsCallbackPolicySetting
             {
                 get
                 {
@@ -204,11 +464,401 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: cpsTiEnabled: Threat Intelligence of mobile push.
+            /// </remarks>
+            [JsiiProperty(name: "cpsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CpsTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: cpsTtl: Mobile push ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "cpsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? CpsTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosCooAccessCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessEnabled: Ddos access log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "ddosCooAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosCooAccessEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessPolicySetting: Ddos audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "ddosCooAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosCooAccessPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessTiEnabled: Threat Intelligence of Ddos.
+            /// </remarks>
+            [JsiiProperty(name: "ddosCooAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosCooAccessTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessTtl: Ddos log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DdosCooAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditCollectionPolicy: DRDS audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "drdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditEnabled: DRDS audit log switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "drdsAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsAuditEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditPolicySetting: DRDS audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "drdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsAuditPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditTiEnabled: Threat Intelligence of DRDS.
+            /// </remarks>
+            [JsiiProperty(name: "drdsAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsAuditTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditTtl: DRDS log centralization ttl. Default 7.
+            /// </remarks>
+            [JsiiProperty(name: "drdsAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsAuditTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsSyncEnabled: DRDS sync to center switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "drdsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsSyncEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsSyncTtl: DRDS sync to center ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DrdsSyncTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditCollectionPolicy: K8s audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "k8SAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditEnabled: K8s access log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "k8SAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SAuditEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditPolicySetting: K8s audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "k8SAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SAuditPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditTiEnabled: Threat Intelligence of K8s.
+            /// </remarks>
+            [JsiiProperty(name: "k8SAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SAuditTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditTtl: K8s log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "k8SAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SAuditTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventCollectionPolicy: K8s event collection policy
+            /// </remarks>
+            [JsiiProperty(name: "k8SEventCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SEventCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventEnabled: K8s event log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "k8SEventEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SEventEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventPolicySetting: K8s event policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "k8SEventPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SEventPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventTiEnabled: Threat Intelligence of k8s event.
+            /// </remarks>
+            [JsiiProperty(name: "k8SEventTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SEventTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventTtl: K8s event log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "k8SEventTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SEventTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressCollectionPolicy: K8s Ingress collection policy
+            /// </remarks>
+            [JsiiProperty(name: "k8SIngressCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SIngressCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressEnabled: K8s Ingress log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "k8SIngressEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SIngressEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressPolicySetting: K8s Ingress policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "k8SIngressPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SIngressPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressTiEnabled: Threat Intelligence of k8s Ingress.
+            /// </remarks>
+            [JsiiProperty(name: "k8SIngressTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SIngressTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressTtl: K8s Ingress log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "k8SIngressTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? K8SIngressTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nasAuditCollectionPolicy: Nas audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "nasAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NasAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nasAuditPolicySetting: Nas audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "nasAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NasAuditPolicySetting
             {
                 get
                 {
@@ -230,11 +880,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: nasTiEnabled: Threat Intelligence of Nas.
+            /// </remarks>
+            [JsiiProperty(name: "nasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NasTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: nasTtl: Nas centralized ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "nasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? NasTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessCollectionPolicy: Oss access collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "ossAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssAccessCollectionPolicy
             {
                 get
                 {
@@ -256,11 +932,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ossAccessTtl: ccess log TTL of OSS. Default 180.
+            /// <strong>Property</strong>: ossAccessPolicySetting: Oss access policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "ossAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssAccessPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessTiEnabled: Threat Intelligence of oss.
+            /// </remarks>
+            [JsiiProperty(name: "ossAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssAccessTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessTtl: Access log TTL of OSS. Default 180.
             /// </remarks>
             [JsiiProperty(name: "ossAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? OssAccessTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringCollectionPolicy: Oss metering collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "ossMeteringCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssMeteringCollectionPolicy
             {
                 get
                 {
@@ -274,6 +989,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiProperty(name: "ossMeteringEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? OssMeteringEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringPolicySetting: Oss metering policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "ossMeteringPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssMeteringPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringTiEnabled: Threat Intelligence of oss metering.
+            /// </remarks>
+            [JsiiProperty(name: "ossMeteringTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? OssMeteringTiEnabled
             {
                 get
                 {
@@ -321,6 +1062,227 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: polardbAuditCollectionPolicy: POLARDB audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "polardbAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbAuditPolicySetting: POLARDB audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "polardbAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbAuditPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbEnabled: POLARDB audit log switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "polardbEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbPerfCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfEnabled: POLARDB perf log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "polardbPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbPerfEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfPolicySetting: POLARDB perf policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "polardbPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbPerfPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfTiEnabled: Threat Intelligence of POLARDB perf log.
+            /// </remarks>
+            [JsiiProperty(name: "polardbPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbPerfTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfTtl: POLARDB perf log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "polardbPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbPerfTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowCollectionPolicy: POLARDB slow collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "polardbSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbSlowCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowEnabled: POLARDB slow log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "polardbSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbSlowEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowPolicySetting: POLARDB slow policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "polardbSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbSlowPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowTiEnabled: Threat Intelligence of POLARDB slow log.
+            /// </remarks>
+            [JsiiProperty(name: "polardbSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbSlowTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowTtl: POLARDB slow log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "polardbSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbSlowTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbTiEnabled: Threat Intelligence of POLARDB.
+            /// </remarks>
+            [JsiiProperty(name: "polardbTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbTtl: POLARDB log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "polardbTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PolardbTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsAuditCollectionPolicy: Rds audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "rdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsAuditPolicySetting: Rds audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "rdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsAuditPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: rdsEnabled: RDS audit log switch. Default true.
             /// </remarks>
             [JsiiProperty(name: "rdsEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -334,11 +1296,245 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: rdsTtl: Dds log centralization ttl. Default 180.
+            /// <strong>Property</strong>: rdsPerfCollectionPolicy: Rds perf collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "rdsPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsPerfCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfEnabled: RDS perf log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "rdsPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsPerfEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfPolicySetting: Rds perf policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "rdsPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsPerfPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfTiEnabled: Threat Intelligence of rds perf log.
+            /// </remarks>
+            [JsiiProperty(name: "rdsPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsPerfTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfTtl: Rds perf log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "rdsPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsPerfTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowCollectionPolicy: Rds slow collection policy.
+            /// </remarks>
+            [JsiiProperty(name: "rdsSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsSlowCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowEnabled: RDS slow log switch. Default false.
+            /// </remarks>
+            [JsiiProperty(name: "rdsSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsSlowEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowPolicySetting: Rds slow policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "rdsSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsSlowPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowTiEnabled: Threat Intelligence of rds slow log.
+            /// </remarks>
+            [JsiiProperty(name: "rdsSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsSlowTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowTtl: Rds slow log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "rdsSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsSlowTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsTiEnabled: Threat Intelligence of rds.
+            /// </remarks>
+            [JsiiProperty(name: "rdsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RdsTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsTtl: Rds log centralization ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "rdsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? RdsTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditCollectionPolicy: Redis audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "redisAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisAuditCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditEnabled: Redis audit log switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "redisAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisAuditEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditPolicySetting: Redis audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "redisAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisAuditPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditTiEnabled: Threat Intelligence of Redis audit.
+            /// </remarks>
+            [JsiiProperty(name: "redisAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisAuditTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditTtl: Redis audit log centralization ttl. Default 7.
+            /// </remarks>
+            [JsiiProperty(name: "redisAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisAuditTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisSyncEnabled: Redis sync to center switch. Default true.
+            /// </remarks>
+            [JsiiProperty(name: "redisSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisSyncEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisSyncTtl: Redis sync to center switch. Default 180.
+            /// </remarks>
+            [JsiiProperty(name: "redisSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RedisSyncTtl
             {
                 get
                 {
@@ -529,11 +1725,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: sasTiEnabled: Threat Intelligence of Cloud Security Center.
+            /// </remarks>
+            [JsiiProperty(name: "sasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SasTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: sasTtl: Cloud Security Center centralized ttl. Default 180.
             /// </remarks>
             [JsiiProperty(name: "sasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? SasTtl
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessCollectionPolicy: SLB audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "slbAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SlbAccessCollectionPolicy
             {
                 get
                 {
@@ -555,7 +1777,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 180.
+            /// <strong>Property</strong>: slbAccessPolicySetting: SLB audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "slbAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SlbAccessPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessTiEnabled: Threat Intelligence of SLB.
+            /// </remarks>
+            [JsiiProperty(name: "slbAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SlbAccessTiEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 7.
             /// </remarks>
             [JsiiProperty(name: "slbAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -594,11 +1842,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: wafAccessCollectionPolicy: Waf audit collection policy
+            /// </remarks>
+            [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? WafAccessCollectionPolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: wafAccessPolicySetting: Waf audit policy setting.
+            /// </remarks>
+            [JsiiProperty(name: "wafAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? WafAccessPolicySetting
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: wafEnabled: Waf log switch. Default true.
             /// </remarks>
             [JsiiProperty(name: "wafEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? WafEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: wafTiEnabled: Threat Intelligence of Waf.
+            /// </remarks>
+            [JsiiProperty(name: "wafTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? WafTiEnabled
             {
                 get
                 {
@@ -637,11 +1924,61 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: actiontrailTtl: Actiontril action log TTL.
+                /// <strong>Property</strong>: actiontrailOpenapiCollectionPolicy: Actiontrail openapi collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "actiontrailOpenapiCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ActiontrailOpenapiCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: actiontrailOpenapiPolicySetting: Actiontrail openapi policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "actiontrailOpenapiPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ActiontrailOpenapiPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: actiontrailTiEnabled: Threat Intelligence of actiontrail.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "actiontrailTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ActiontrailTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: actiontrailTtl: Actiontrail action log TTL.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? ActiontrailTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: apigatewayAccessCollectionPolicy: Apigateway audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ApigatewayAccessCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: apigatewayAccessPolicySetting: Apigateway audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "apigatewayAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ApigatewayAccessPolicySetting
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -657,11 +1994,91 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: apigatewayTiEnabled: Threat Intelligence of Apigateway.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "apigatewayTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ApigatewayTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: apigatewayTtl: API Gateway ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "apigatewayTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? ApigatewayTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: appconnectEnabled: Appconnect access log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "appconnectEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AppconnectEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: appconnectOpCollectionPolicy: Appconnect audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "appconnectOpCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AppconnectOpCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: appconnectOpPolicySetting: Appconnect audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "appconnectOpPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AppconnectOpPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: appconnectTiEnabled: Threat Intelligence of Appconnect.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "appconnectTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AppconnectTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: appconnectTtl: Appconnect log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "appconnectTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AppconnectTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: bastionAuditCollectionPolicy: Bastion audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "bastionAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? BastionAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: bastionAuditPolicySetting: Bastion audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "bastionAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? BastionAuditPolicySetting
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -677,6 +2094,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: bastionTiEnabled: Threat Intelligence of Bastion.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "bastionTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? BastionTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: bastionTtl: Fort machine centralized ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
@@ -687,11 +2114,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall switch.Default true.
+                /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallAccessCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallAccessPolicySetting: Cloud firewall audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallAccessPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallEnabled: Cloud firewall log switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallTiEnabled: Threat Intelligence of Cloud firewall.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cloudfirewallTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CloudfirewallTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall log centralized ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? CloudfirewallTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cpsCallbackCollectionPolicy: Mobile push collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cpsCallbackCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CpsCallbackCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cpsCallbackPolicySetting: Mobile push policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cpsCallbackPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CpsCallbackPolicySetting
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -707,11 +2194,311 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: cpsTiEnabled: Threat Intelligence of mobile push.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "cpsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CpsTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: cpsTtl: Mobile push ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "cpsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? CpsTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosCooAccessCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosCooAccessEnabled: Ddos access log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosCooAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosCooAccessEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosCooAccessPolicySetting: Ddos audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosCooAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosCooAccessPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosCooAccessTiEnabled: Threat Intelligence of Ddos.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosCooAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosCooAccessTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ddosCooAccessTtl: Ddos log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DdosCooAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsAuditCollectionPolicy: DRDS audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsAuditEnabled: DRDS audit log switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsAuditEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsAuditPolicySetting: DRDS audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsAuditPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsAuditTiEnabled: Threat Intelligence of DRDS.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsAuditTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsAuditTtl: DRDS log centralization ttl. Default 7.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsAuditTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsSyncEnabled: DRDS sync to center switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsSyncEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: drdsSyncTtl: DRDS sync to center ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DrdsSyncTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SAuditCollectionPolicy: K8s audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SAuditEnabled: K8s access log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SAuditEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SAuditPolicySetting: K8s audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SAuditPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SAuditTiEnabled: Threat Intelligence of K8s.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SAuditTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SAuditTtl: K8s log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SAuditTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SEventCollectionPolicy: K8s event collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SEventCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SEventCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SEventEnabled: K8s event log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SEventEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SEventEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SEventPolicySetting: K8s event policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SEventPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SEventPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SEventTiEnabled: Threat Intelligence of k8s event.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SEventTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SEventTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SEventTtl: K8s event log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SEventTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SEventTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SIngressCollectionPolicy: K8s Ingress collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SIngressCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SIngressCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SIngressEnabled: K8s Ingress log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SIngressEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SIngressEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SIngressPolicySetting: K8s Ingress policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SIngressPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SIngressPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SIngressTiEnabled: Threat Intelligence of k8s Ingress.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SIngressTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SIngressTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: k8SIngressTtl: K8s Ingress log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "k8SIngressTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? K8SIngressTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: nasAuditCollectionPolicy: Nas audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "nasAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NasAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: nasAuditPolicySetting: Nas audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "nasAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NasAuditPolicySetting
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -727,11 +2514,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: nasTiEnabled: Threat Intelligence of Nas.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "nasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NasTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: nasTtl: Nas centralized ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "nasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? NasTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossAccessCollectionPolicy: Oss access collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssAccessCollectionPolicy
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -747,11 +2554,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: ossAccessTtl: ccess log TTL of OSS. Default 180.
+                /// <strong>Property</strong>: ossAccessPolicySetting: Oss access policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssAccessPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossAccessTiEnabled: Threat Intelligence of oss.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssAccessTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossAccessTtl: Access log TTL of OSS. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "ossAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? OssAccessTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossMeteringCollectionPolicy: Oss metering collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossMeteringCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssMeteringCollectionPolicy
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -762,6 +2599,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 [JsiiOptional]
                 [JsiiProperty(name: "ossMeteringEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? OssMeteringEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossMeteringPolicySetting: Oss metering policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossMeteringPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssMeteringPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ossMeteringTiEnabled: Threat Intelligence of oss metering.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ossMeteringTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? OssMeteringTiEnabled
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -797,6 +2654,176 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: polardbAuditCollectionPolicy: POLARDB audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbAuditPolicySetting: POLARDB audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbAuditPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbEnabled: POLARDB audit log switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbPerfCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbPerfEnabled: POLARDB perf log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbPerfEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbPerfPolicySetting: POLARDB perf policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbPerfPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbPerfTiEnabled: Threat Intelligence of POLARDB perf log.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbPerfTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbPerfTtl: POLARDB perf log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbPerfTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbSlowCollectionPolicy: POLARDB slow collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbSlowCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbSlowEnabled: POLARDB slow log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbSlowEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbSlowPolicySetting: POLARDB slow policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbSlowPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbSlowTiEnabled: Threat Intelligence of POLARDB slow log.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbSlowTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbSlowTtl: POLARDB slow log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbSlowTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbTiEnabled: Threat Intelligence of POLARDB.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: polardbTtl: POLARDB log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "polardbTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PolardbTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsAuditCollectionPolicy: Rds audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsAuditPolicySetting: Rds audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsAuditPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: rdsEnabled: RDS audit log switch. Default true.
                 /// </remarks>
                 [JsiiOptional]
@@ -807,11 +2834,191 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: rdsTtl: Dds log centralization ttl. Default 180.
+                /// <strong>Property</strong>: rdsPerfCollectionPolicy: Rds perf collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsPerfCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsPerfEnabled: RDS perf log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsPerfEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsPerfPolicySetting: Rds perf policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsPerfPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsPerfTiEnabled: Threat Intelligence of rds perf log.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsPerfTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsPerfTtl: Rds perf log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsPerfTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsSlowCollectionPolicy: Rds slow collection policy.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsSlowCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsSlowEnabled: RDS slow log switch. Default false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsSlowEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsSlowPolicySetting: Rds slow policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsSlowPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsSlowTiEnabled: Threat Intelligence of rds slow log.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsSlowTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsSlowTtl: Rds slow log centralization ttl. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsSlowTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsTiEnabled: Threat Intelligence of rds.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rdsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RdsTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rdsTtl: Rds log centralization ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "rdsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? RdsTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisAuditCollectionPolicy: Redis audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisAuditCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisAuditEnabled: Redis audit log switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisAuditEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisAuditPolicySetting: Redis audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisAuditPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisAuditTiEnabled: Threat Intelligence of Redis audit.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisAuditTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisAuditTtl: Redis audit log centralization ttl. Default 7.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisAuditTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisSyncEnabled: Redis sync to center switch. Default true.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisSyncEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: redisSyncTtl: Redis sync to center switch. Default 180.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "redisSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RedisSyncTtl
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -957,11 +3164,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: sasTiEnabled: Threat Intelligence of Cloud Security Center.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "sasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SasTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: sasTtl: Cloud Security Center centralized ttl. Default 180.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "sasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? SasTtl
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: slbAccessCollectionPolicy: SLB audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "slbAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SlbAccessCollectionPolicy
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -977,7 +3204,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 180.
+                /// <strong>Property</strong>: slbAccessPolicySetting: SLB audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "slbAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SlbAccessPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: slbAccessTiEnabled: Threat Intelligence of SLB.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "slbAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SlbAccessTiEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 7.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "slbAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1007,11 +3254,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: wafAccessCollectionPolicy: Waf audit collection policy
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? WafAccessCollectionPolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: wafAccessPolicySetting: Waf audit policy setting.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "wafAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? WafAccessPolicySetting
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: wafEnabled: Waf log switch. Default true.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "wafEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? WafEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: wafTiEnabled: Threat Intelligence of Waf.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "wafTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? WafTiEnabled
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1042,11 +3319,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: actiontrailTtl: Actiontril action log TTL.
+            /// <strong>Property</strong>: actiontrailOpenapiCollectionPolicy: Actiontrail openapi collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "actiontrailOpenapiCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ActiontrailOpenapiCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailOpenapiPolicySetting: Actiontrail openapi policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "actiontrailOpenapiPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ActiontrailOpenapiPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailTiEnabled: Threat Intelligence of actiontrail.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "actiontrailTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ActiontrailTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: actiontrailTtl: Actiontrail action log TTL.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "actiontrailTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? ActiontrailTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: apigatewayAccessCollectionPolicy: Apigateway audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "apigatewayAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ApigatewayAccessCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: apigatewayAccessPolicySetting: Apigateway audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "apigatewayAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ApigatewayAccessPolicySetting
             {
                 get;
                 set;
@@ -1064,11 +3396,99 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: apigatewayTiEnabled: Threat Intelligence of Apigateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "apigatewayTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ApigatewayTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: apigatewayTtl: API Gateway ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "apigatewayTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? ApigatewayTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectEnabled: Appconnect access log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appconnectEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AppconnectEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectOpCollectionPolicy: Appconnect audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appconnectOpCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AppconnectOpCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectOpPolicySetting: Appconnect audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appconnectOpPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AppconnectOpPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectTiEnabled: Threat Intelligence of Appconnect.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appconnectTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AppconnectTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appconnectTtl: Appconnect log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appconnectTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AppconnectTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bastionAuditCollectionPolicy: Bastion audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bastionAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? BastionAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bastionAuditPolicySetting: Bastion audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bastionAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? BastionAuditPolicySetting
             {
                 get;
                 set;
@@ -1086,6 +3506,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: bastionTiEnabled: Threat Intelligence of Bastion.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bastionTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? BastionTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: bastionTtl: Fort machine centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
@@ -1097,11 +3528,77 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall switch.Default true.
+            /// <strong>Property</strong>: cloudfirewallAccessCollectionPolicy: Cloud firewall audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CloudfirewallAccessCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallAccessPolicySetting: Cloud firewall audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CloudfirewallAccessPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallEnabled: Cloud firewall log switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CloudfirewallEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallTiEnabled: Threat Intelligence of Cloud firewall.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloudfirewallTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CloudfirewallTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cloudfirewallTtl: Cloud firewall log centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cloudfirewallTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? CloudfirewallTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpsCallbackCollectionPolicy: Mobile push collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpsCallbackCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CpsCallbackCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cpsCallbackPolicySetting: Mobile push policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpsCallbackPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CpsCallbackPolicySetting
             {
                 get;
                 set;
@@ -1119,11 +3616,341 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: cpsTiEnabled: Threat Intelligence of mobile push.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cpsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CpsTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: cpsTtl: Mobile push ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cpsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? CpsTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessCollectionPolicy: Ddos audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosCooAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DdosCooAccessCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessEnabled: Ddos access log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosCooAccessEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DdosCooAccessEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessPolicySetting: Ddos audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosCooAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DdosCooAccessPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessTiEnabled: Threat Intelligence of Ddos.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosCooAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DdosCooAccessTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ddosCooAccessTtl: Ddos log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ddosCooAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DdosCooAccessTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditCollectionPolicy: DRDS audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditEnabled: DRDS audit log switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsAuditEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditPolicySetting: DRDS audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsAuditPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditTiEnabled: Threat Intelligence of DRDS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsAuditTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsAuditTtl: DRDS log centralization ttl. Default 7.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsAuditTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsSyncEnabled: DRDS sync to center switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsSyncEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: drdsSyncTtl: DRDS sync to center ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "drdsSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DrdsSyncTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditCollectionPolicy: K8s audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditEnabled: K8s access log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SAuditEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditPolicySetting: K8s audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SAuditPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditTiEnabled: Threat Intelligence of K8s.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SAuditTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SAuditTtl: K8s log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SAuditTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventCollectionPolicy: K8s event collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SEventCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SEventCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventEnabled: K8s event log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SEventEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SEventEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventPolicySetting: K8s event policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SEventPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SEventPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventTiEnabled: Threat Intelligence of k8s event.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SEventTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SEventTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SEventTtl: K8s event log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SEventTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SEventTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressCollectionPolicy: K8s Ingress collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SIngressCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SIngressCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressEnabled: K8s Ingress log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SIngressEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SIngressEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressPolicySetting: K8s Ingress policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SIngressPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SIngressPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressTiEnabled: Threat Intelligence of k8s Ingress.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SIngressTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SIngressTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: k8SIngressTtl: K8s Ingress log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "k8SIngressTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? K8SIngressTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nasAuditCollectionPolicy: Nas audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nasAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NasAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: nasAuditPolicySetting: Nas audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nasAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NasAuditPolicySetting
             {
                 get;
                 set;
@@ -1141,11 +3968,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: nasTiEnabled: Threat Intelligence of Nas.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NasTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: nasTtl: Nas centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "nasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? NasTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessCollectionPolicy: Oss access collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssAccessCollectionPolicy
             {
                 get;
                 set;
@@ -1163,11 +4012,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ossAccessTtl: ccess log TTL of OSS. Default 180.
+            /// <strong>Property</strong>: ossAccessPolicySetting: Oss access policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssAccessPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessTiEnabled: Threat Intelligence of oss.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssAccessTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossAccessTtl: Access log TTL of OSS. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ossAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? OssAccessTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringCollectionPolicy: Oss metering collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossMeteringCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssMeteringCollectionPolicy
             {
                 get;
                 set;
@@ -1179,6 +4061,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiOptional]
             [JsiiProperty(name: "ossMeteringEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? OssMeteringEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringPolicySetting: Oss metering policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossMeteringPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssMeteringPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ossMeteringTiEnabled: Threat Intelligence of oss metering.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossMeteringTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? OssMeteringTiEnabled
             {
                 get;
                 set;
@@ -1218,6 +4122,193 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: polardbAuditCollectionPolicy: POLARDB audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbAuditPolicySetting: POLARDB audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbAuditPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbEnabled: POLARDB audit log switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfCollectionPolicy: POLARDB perf collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbPerfCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfEnabled: POLARDB perf log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbPerfEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfPolicySetting: POLARDB perf policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbPerfPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfTiEnabled: Threat Intelligence of POLARDB perf log.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbPerfTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbPerfTtl: POLARDB perf log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbPerfTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowCollectionPolicy: POLARDB slow collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbSlowCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowEnabled: POLARDB slow log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbSlowEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowPolicySetting: POLARDB slow policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbSlowPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowTiEnabled: Threat Intelligence of POLARDB slow log.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbSlowTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbSlowTtl: POLARDB slow log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbSlowTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbTiEnabled: Threat Intelligence of POLARDB.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: polardbTtl: POLARDB log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "polardbTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? PolardbTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsAuditCollectionPolicy: Rds audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsAuditPolicySetting: Rds audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsAuditPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: rdsEnabled: RDS audit log switch. Default true.
             /// </remarks>
             [JsiiOptional]
@@ -1229,11 +4320,209 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: rdsTtl: Dds log centralization ttl. Default 180.
+            /// <strong>Property</strong>: rdsPerfCollectionPolicy: Rds perf collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsPerfCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsPerfCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfEnabled: RDS perf log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsPerfEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsPerfEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfPolicySetting: Rds perf policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsPerfPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsPerfPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfTiEnabled: Threat Intelligence of rds perf log.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsPerfTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsPerfTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsPerfTtl: Rds perf log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsPerfTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsPerfTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowCollectionPolicy: Rds slow collection policy.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsSlowCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsSlowCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowEnabled: RDS slow log switch. Default false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsSlowEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsSlowEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowPolicySetting: Rds slow policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsSlowPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsSlowPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowTiEnabled: Threat Intelligence of rds slow log.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsSlowTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsSlowTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsSlowTtl: Rds slow log centralization ttl. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsSlowTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsSlowTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsTiEnabled: Threat Intelligence of rds.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rdsTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RdsTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rdsTtl: Rds log centralization ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "rdsTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? RdsTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditCollectionPolicy: Redis audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisAuditCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisAuditCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditEnabled: Redis audit log switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisAuditEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisAuditEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditPolicySetting: Redis audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisAuditPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisAuditPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditTiEnabled: Threat Intelligence of Redis audit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisAuditTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisAuditTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisAuditTtl: Redis audit log centralization ttl. Default 7.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisAuditTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisAuditTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisSyncEnabled: Redis sync to center switch. Default true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisSyncEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisSyncEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: redisSyncTtl: Redis sync to center switch. Default 180.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redisSyncTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? RedisSyncTtl
             {
                 get;
                 set;
@@ -1394,11 +4683,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: sasTiEnabled: Threat Intelligence of Cloud Security Center.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sasTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? SasTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: sasTtl: Cloud Security Center centralized ttl. Default 180.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sasTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? SasTtl
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessCollectionPolicy: SLB audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "slbAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? SlbAccessCollectionPolicy
             {
                 get;
                 set;
@@ -1416,7 +4727,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 180.
+            /// <strong>Property</strong>: slbAccessPolicySetting: SLB audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "slbAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? SlbAccessPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessTiEnabled: Threat Intelligence of SLB.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "slbAccessTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? SlbAccessTiEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: slbAccessTtl: Slb centralized ttl. Default 7.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "slbAccessTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
@@ -1449,11 +4782,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: wafAccessCollectionPolicy: Waf audit collection policy
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "wafAccessCollectionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? WafAccessCollectionPolicy
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: wafAccessPolicySetting: Waf audit policy setting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "wafAccessPolicySetting", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? WafAccessPolicySetting
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: wafEnabled: Waf log switch. Default true.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "wafEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
             public object? WafEnabled
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: wafTiEnabled: Threat Intelligence of Waf.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "wafTiEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? WafTiEnabled
             {
                 get;
                 set;

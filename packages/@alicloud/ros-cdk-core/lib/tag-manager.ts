@@ -53,9 +53,9 @@ class StandardFormatter implements ITagFormatter {
   public parseTags(rosPropertyTags: any, priority: number): Tag[] {
     if (!Array.isArray(rosPropertyTags)) {
       throw new Error(
-          `Invalid tag input expected array of {key, value} have ${JSON.stringify(
-              rosPropertyTags
-          )}`
+        `Invalid tag input expected array of {key, value} have ${JSON.stringify(
+          rosPropertyTags
+        )}`
       );
     }
 
@@ -63,7 +63,7 @@ class StandardFormatter implements ITagFormatter {
     for (const tag of rosPropertyTags) {
       if (tag.key === undefined || tag.value === undefined) {
         throw new Error(
-            `Invalid tag input expected {key, value} have ${JSON.stringify(tag)}`
+          `Invalid tag input expected {key, value} have ${JSON.stringify(tag)}`
         );
       }
 
@@ -97,22 +97,22 @@ class AsgFormatter implements ITagFormatter {
     const tags: Tag[] = [];
     if (!Array.isArray(rosPropertyTags)) {
       throw new Error(
-          `Invalid tag input expected array of {key, value, propagateAtLaunch} have ${JSON.stringify(
-              rosPropertyTags
-          )}`
+        `Invalid tag input expected array of {key, value, propagateAtLaunch} have ${JSON.stringify(
+          rosPropertyTags
+        )}`
       );
     }
 
     for (const tag of rosPropertyTags) {
       if (
-          tag.key === undefined ||
-          tag.value === undefined ||
-          tag.propagateAtLaunch === undefined
+        tag.key === undefined ||
+        tag.value === undefined ||
+        tag.propagateAtLaunch === undefined
       ) {
         throw new Error(
-            `Invalid tag input expected {key, value, propagateAtLaunch} have ${JSON.stringify(
-                tag
-            )}`
+          `Invalid tag input expected {key, value, propagateAtLaunch} have ${JSON.stringify(
+            tag
+          )}`
         );
       }
       // using interp to ensure Token is now string
@@ -148,9 +148,9 @@ class MapFormatter implements ITagFormatter {
     const tags: Tag[] = [];
     if (Array.isArray(rosPropertyTags) || typeof rosPropertyTags !== "object") {
       throw new Error(
-          `Invalid tag input expected map of {key: value} have ${JSON.stringify(
-              rosPropertyTags
-          )}`
+        `Invalid tag input expected map of {key: value} have ${JSON.stringify(
+          rosPropertyTags
+        )}`
       );
     }
 
@@ -271,16 +271,16 @@ export class TagManager {
   private readonly initialTagPriority = 50;
 
   constructor(
-      tagType: TagType,
-      resourceTypeName: string,
-      tagStructure?: any,
-      options: TagManagerOptions = {}
+    tagType: TagType,
+    resourceTypeName: string,
+    tagStructure?: any,
+    options: TagManagerOptions = {}
   ) {
     this.resourceTypeName = resourceTypeName;
     this.tagFormatter = TAG_FORMATTERS[tagType];
     if (tagStructure !== undefined) {
       this._setTag(
-          ...this.tagFormatter.parseTags(tagStructure, this.initialTagPriority)
+        ...this.tagFormatter.parseTags(tagStructure, this.initialTagPriority)
       );
     }
     this.tagPropertyName = options.tagPropertyName || "tags";
@@ -291,10 +291,10 @@ export class TagManager {
    *
    */
   public setTag(
-      key: string,
-      value: string,
-      priority = 0,
-      applyToLaunchedInstances = true
+    key: string,
+    value: string,
+    priority = 0,
+    applyToLaunchedInstances = true
   ): void {
     // This method mostly exists because we don't want to expose the 'Tag' type used (it will be confusing
     // to users).
@@ -340,16 +340,16 @@ export class TagManager {
    */
   public applyTagAspectHere(include?: string[], exclude?: string[]) {
     if (
-        exclude &&
-        exclude.length > 0 &&
-        exclude.indexOf(this.resourceTypeName) !== -1
+      exclude &&
+      exclude.length > 0 &&
+      exclude.indexOf(this.resourceTypeName) !== -1
     ) {
       return false;
     }
     if (
-        include &&
-        include.length > 0 &&
-        include.indexOf(this.resourceTypeName) === -1
+      include &&
+      include.length > 0 &&
+      include.indexOf(this.resourceTypeName) === -1
     ) {
       return false;
     }

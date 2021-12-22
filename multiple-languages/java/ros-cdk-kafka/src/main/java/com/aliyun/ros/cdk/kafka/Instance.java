@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  `ALIYUN::KAFKA::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.569Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.251Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -214,6 +214,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
+         * <p>
+         * Default is false
+         * <p>
+         * @return {@code this}
+         * @param deletionForce Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
          * Property deployOption: If you want to deploy instance after create at once, the VSwitchId and DeployModule parameters is required.
          * <p>
          * @return {@code this}
@@ -308,6 +333,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder ioMaxSpec(final com.aliyun.ros.cdk.core.IResolvable ioMaxSpec) {
             this.props.ioMaxSpec(ioMaxSpec);
+            return this;
+        }
+
+        /**
+         * Property openConnector: Whether open kafka connector or not.
+         * <p>
+         * @return {@code this}
+         * @param openConnector Property openConnector: Whether open kafka connector or not. This parameter is required.
+         */
+        public Builder openConnector(final java.lang.Boolean openConnector) {
+            this.props.openConnector(openConnector);
+            return this;
+        }
+        /**
+         * Property openConnector: Whether open kafka connector or not.
+         * <p>
+         * @return {@code this}
+         * @param openConnector Property openConnector: Whether open kafka connector or not. This parameter is required.
+         */
+        public Builder openConnector(final com.aliyun.ros.cdk.core.IResolvable openConnector) {
+            this.props.openConnector(openConnector);
             return this;
         }
 

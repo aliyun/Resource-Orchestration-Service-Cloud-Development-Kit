@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: InstanceId: The instance id of created ecs instance
+        /// <strong>Attribute</strong>: InstanceId: The instance ID of created ecs instance
         /// </remarks>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+        /// <strong>Attribute</strong>: PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrPrimaryNetworkInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryNetworkInterfaceId
@@ -99,7 +99,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: ZoneId: Zone id of created instance.
+        /// <strong>Attribute</strong>: SecurityGroupIds: Security group ID list of created instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrSecurityGroupIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityGroupIds
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ZoneId: Zone ID of created instance.
         /// </remarks>
         [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId

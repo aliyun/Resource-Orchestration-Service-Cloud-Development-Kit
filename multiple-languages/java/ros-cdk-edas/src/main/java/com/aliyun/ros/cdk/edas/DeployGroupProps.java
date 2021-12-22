@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::DeployGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.DeployGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeployGroupProps.Jsii$Proxy.class)
 public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link DeployGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeployGroupProps> {
-        private java.lang.Object appId;
-        private java.lang.Object groupName;
+        java.lang.Object appId;
+        java.lang.Object groupName;
 
         /**
          * Sets the value of {@link DeployGroupProps#getAppId}
@@ -78,7 +78,7 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public DeployGroupProps build() {
-            return new Jsii$Proxy(appId, groupName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object appId, final java.lang.Object groupName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.appId = java.util.Objects.requireNonNull(appId, "appId is required");
-            this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
+            this.appId = java.util.Objects.requireNonNull(builder.appId, "appId is required");
+            this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
         }
 
         @Override

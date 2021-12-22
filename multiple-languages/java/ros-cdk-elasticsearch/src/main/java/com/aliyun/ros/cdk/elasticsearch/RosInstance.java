@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS template type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.312Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.864Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -207,6 +207,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableKibanaPrivate() {
+        return software.amazon.jsii.Kernel.get(this, "enableKibanaPrivate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableKibanaPrivate(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableKibanaPrivate", value);
+    }
+
+    /**
+     */
+    public void setEnableKibanaPrivate(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableKibanaPrivate", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableKibanaPublic() {
+        return software.amazon.jsii.Kernel.get(this, "enableKibanaPublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableKibanaPublic(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableKibanaPublic", value);
+    }
+
+    /**
+     */
+    public void setEnableKibanaPublic(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableKibanaPublic", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnablePublic() {
         return software.amazon.jsii.Kernel.get(this, "enablePublic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -360,6 +396,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
     }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getYmlConfig() {
+        return software.amazon.jsii.Kernel.get(this, "ymlConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setYmlConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ymlConfig", value);
+    }
+
+    /**
+     */
+    public void setYmlConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.elasticsearch.RosInstance.YMLConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "ymlConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneCount() {
+        return software.amazon.jsii.Kernel.get(this, "zoneCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "zoneCount", value);
+    }
+
+    /**
+     */
+    public void setZoneCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneCount", value);
+    }
     /**
      */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty")
@@ -388,6 +460,20 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getSpec();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDiskEncryption() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link DataNodeProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -399,10 +485,12 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DataNodeProperty> {
-            private java.lang.Object amount;
-            private java.lang.Object diskSize;
-            private java.lang.Object diskType;
-            private java.lang.Object spec;
+            java.lang.Object amount;
+            java.lang.Object diskSize;
+            java.lang.Object diskType;
+            java.lang.Object spec;
+            java.lang.Object diskEncryption;
+            java.lang.Object performanceLevel;
 
             /**
              * Sets the value of {@link DataNodeProperty#getAmount}
@@ -493,6 +581,50 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DataNodeProperty#getDiskEncryption}
+             * @param diskEncryption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskEncryption(java.lang.Boolean diskEncryption) {
+                this.diskEncryption = diskEncryption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataNodeProperty#getDiskEncryption}
+             * @param diskEncryption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskEncryption(com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+                this.diskEncryption = diskEncryption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataNodeProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(java.lang.String performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataNodeProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link DataNodeProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -500,7 +632,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DataNodeProperty build() {
-                return new Jsii$Proxy(amount, diskSize, diskType, spec);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -514,6 +646,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object diskSize;
             private final java.lang.Object diskType;
             private final java.lang.Object spec;
+            private final java.lang.Object diskEncryption;
+            private final java.lang.Object performanceLevel;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -525,17 +659,21 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 this.diskSize = software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskEncryption = software.amazon.jsii.Kernel.get(this, "diskEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object amount, final java.lang.Object diskSize, final java.lang.Object diskType, final java.lang.Object spec) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.amount = java.util.Objects.requireNonNull(amount, "amount is required");
-                this.diskSize = java.util.Objects.requireNonNull(diskSize, "diskSize is required");
-                this.diskType = java.util.Objects.requireNonNull(diskType, "diskType is required");
-                this.spec = java.util.Objects.requireNonNull(spec, "spec is required");
+                this.amount = java.util.Objects.requireNonNull(builder.amount, "amount is required");
+                this.diskSize = java.util.Objects.requireNonNull(builder.diskSize, "diskSize is required");
+                this.diskType = java.util.Objects.requireNonNull(builder.diskType, "diskType is required");
+                this.spec = java.util.Objects.requireNonNull(builder.spec, "spec is required");
+                this.diskEncryption = builder.diskEncryption;
+                this.performanceLevel = builder.performanceLevel;
             }
 
             @Override
@@ -559,6 +697,16 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getDiskEncryption() {
+                return this.diskEncryption;
+            }
+
+            @Override
+            public final java.lang.Object getPerformanceLevel() {
+                return this.performanceLevel;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -568,6 +716,12 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("diskSize", om.valueToTree(this.getDiskSize()));
                 data.set("diskType", om.valueToTree(this.getDiskType()));
                 data.set("spec", om.valueToTree(this.getSpec()));
+                if (this.getDiskEncryption() != null) {
+                    data.set("diskEncryption", om.valueToTree(this.getDiskEncryption()));
+                }
+                if (this.getPerformanceLevel() != null) {
+                    data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty"));
@@ -589,7 +743,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 if (!amount.equals(that.amount)) return false;
                 if (!diskSize.equals(that.diskSize)) return false;
                 if (!diskType.equals(that.diskType)) return false;
-                return this.spec.equals(that.spec);
+                if (!spec.equals(that.spec)) return false;
+                if (this.diskEncryption != null ? !this.diskEncryption.equals(that.diskEncryption) : that.diskEncryption != null) return false;
+                return this.performanceLevel != null ? this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel == null;
             }
 
             @Override
@@ -598,6 +754,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.diskSize.hashCode());
                 result = 31 * result + (this.diskType.hashCode());
                 result = 31 * result + (this.spec.hashCode());
+                result = 31 * result + (this.diskEncryption != null ? this.diskEncryption.hashCode() : 0);
+                result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
                 return result;
             }
         }
@@ -647,10 +805,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MasterNodeProperty> {
-            private java.lang.Object spec;
-            private java.lang.Object amount;
-            private java.lang.Object diskSize;
-            private java.lang.Object diskType;
+            java.lang.Object spec;
+            java.lang.Object amount;
+            java.lang.Object diskSize;
+            java.lang.Object diskType;
 
             /**
              * Sets the value of {@link MasterNodeProperty#getSpec}
@@ -748,7 +906,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MasterNodeProperty build() {
-                return new Jsii$Proxy(spec, amount, diskSize, diskType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -778,12 +936,12 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object spec, final java.lang.Object amount, final java.lang.Object diskSize, final java.lang.Object diskType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.spec = java.util.Objects.requireNonNull(spec, "spec is required");
-                this.amount = amount;
-                this.diskSize = diskSize;
-                this.diskType = diskType;
+                this.spec = java.util.Objects.requireNonNull(builder.spec, "spec is required");
+                this.amount = builder.amount;
+                this.diskSize = builder.diskSize;
+                this.diskType = builder.diskType;
             }
 
             @Override
@@ -887,8 +1045,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -942,7 +1100,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -968,10 +1126,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1020,6 +1178,307 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.key.hashCode();
                 result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(YMLConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface YMLConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAuditLog() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCreateIndex() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDestructiveRequiresName() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getOtherConfigs() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWatcher() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link YMLConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link YMLConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<YMLConfigProperty> {
+            java.lang.Object auditLog;
+            java.lang.Object createIndex;
+            java.lang.Object destructiveRequiresName;
+            java.lang.Object otherConfigs;
+            java.lang.Object watcher;
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getAuditLog}
+             * @param auditLog the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditLog(java.lang.Boolean auditLog) {
+                this.auditLog = auditLog;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getAuditLog}
+             * @param auditLog the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditLog(com.aliyun.ros.cdk.core.IResolvable auditLog) {
+                this.auditLog = auditLog;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getCreateIndex}
+             * @param createIndex the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder createIndex(java.lang.String createIndex) {
+                this.createIndex = createIndex;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getCreateIndex}
+             * @param createIndex the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder createIndex(com.aliyun.ros.cdk.core.IResolvable createIndex) {
+                this.createIndex = createIndex;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getDestructiveRequiresName}
+             * @param destructiveRequiresName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destructiveRequiresName(java.lang.Boolean destructiveRequiresName) {
+                this.destructiveRequiresName = destructiveRequiresName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getDestructiveRequiresName}
+             * @param destructiveRequiresName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destructiveRequiresName(com.aliyun.ros.cdk.core.IResolvable destructiveRequiresName) {
+                this.destructiveRequiresName = destructiveRequiresName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getOtherConfigs}
+             * @param otherConfigs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder otherConfigs(com.aliyun.ros.cdk.core.IResolvable otherConfigs) {
+                this.otherConfigs = otherConfigs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getOtherConfigs}
+             * @param otherConfigs the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder otherConfigs(java.util.Map<java.lang.String, ? extends java.lang.Object> otherConfigs) {
+                this.otherConfigs = otherConfigs;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getWatcher}
+             * @param watcher the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder watcher(java.lang.Boolean watcher) {
+                this.watcher = watcher;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link YMLConfigProperty#getWatcher}
+             * @param watcher the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder watcher(com.aliyun.ros.cdk.core.IResolvable watcher) {
+                this.watcher = watcher;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link YMLConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public YMLConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link YMLConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements YMLConfigProperty {
+            private final java.lang.Object auditLog;
+            private final java.lang.Object createIndex;
+            private final java.lang.Object destructiveRequiresName;
+            private final java.lang.Object otherConfigs;
+            private final java.lang.Object watcher;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.auditLog = software.amazon.jsii.Kernel.get(this, "auditLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.createIndex = software.amazon.jsii.Kernel.get(this, "createIndex", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destructiveRequiresName = software.amazon.jsii.Kernel.get(this, "destructiveRequiresName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.otherConfigs = software.amazon.jsii.Kernel.get(this, "otherConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.watcher = software.amazon.jsii.Kernel.get(this, "watcher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.auditLog = builder.auditLog;
+                this.createIndex = builder.createIndex;
+                this.destructiveRequiresName = builder.destructiveRequiresName;
+                this.otherConfigs = builder.otherConfigs;
+                this.watcher = builder.watcher;
+            }
+
+            @Override
+            public final java.lang.Object getAuditLog() {
+                return this.auditLog;
+            }
+
+            @Override
+            public final java.lang.Object getCreateIndex() {
+                return this.createIndex;
+            }
+
+            @Override
+            public final java.lang.Object getDestructiveRequiresName() {
+                return this.destructiveRequiresName;
+            }
+
+            @Override
+            public final java.lang.Object getOtherConfigs() {
+                return this.otherConfigs;
+            }
+
+            @Override
+            public final java.lang.Object getWatcher() {
+                return this.watcher;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAuditLog() != null) {
+                    data.set("auditLog", om.valueToTree(this.getAuditLog()));
+                }
+                if (this.getCreateIndex() != null) {
+                    data.set("createIndex", om.valueToTree(this.getCreateIndex()));
+                }
+                if (this.getDestructiveRequiresName() != null) {
+                    data.set("destructiveRequiresName", om.valueToTree(this.getDestructiveRequiresName()));
+                }
+                if (this.getOtherConfigs() != null) {
+                    data.set("otherConfigs", om.valueToTree(this.getOtherConfigs()));
+                }
+                if (this.getWatcher() != null) {
+                    data.set("watcher", om.valueToTree(this.getWatcher()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-elasticsearch.RosInstance.YMLConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                YMLConfigProperty.Jsii$Proxy that = (YMLConfigProperty.Jsii$Proxy) o;
+
+                if (this.auditLog != null ? !this.auditLog.equals(that.auditLog) : that.auditLog != null) return false;
+                if (this.createIndex != null ? !this.createIndex.equals(that.createIndex) : that.createIndex != null) return false;
+                if (this.destructiveRequiresName != null ? !this.destructiveRequiresName.equals(that.destructiveRequiresName) : that.destructiveRequiresName != null) return false;
+                if (this.otherConfigs != null ? !this.otherConfigs.equals(that.otherConfigs) : that.otherConfigs != null) return false;
+                return this.watcher != null ? this.watcher.equals(that.watcher) : that.watcher == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.auditLog != null ? this.auditLog.hashCode() : 0;
+                result = 31 * result + (this.createIndex != null ? this.createIndex.hashCode() : 0);
+                result = 31 * result + (this.destructiveRequiresName != null ? this.destructiveRequiresName.hashCode() : 0);
+                result = 31 * result + (this.otherConfigs != null ? this.otherConfigs.hashCode() : 0);
+                result = 31 * result + (this.watcher != null ? this.watcher.hashCode() : 0);
                 return result;
             }
         }
@@ -1133,6 +1592,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableKibanaPrivate This parameter is required.
+         */
+        public Builder enableKibanaPrivate(final java.lang.Boolean enableKibanaPrivate) {
+            this.props.enableKibanaPrivate(enableKibanaPrivate);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableKibanaPrivate This parameter is required.
+         */
+        public Builder enableKibanaPrivate(final com.aliyun.ros.cdk.core.IResolvable enableKibanaPrivate) {
+            this.props.enableKibanaPrivate(enableKibanaPrivate);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableKibanaPublic This parameter is required.
+         */
+        public Builder enableKibanaPublic(final java.lang.Boolean enableKibanaPublic) {
+            this.props.enableKibanaPublic(enableKibanaPublic);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableKibanaPublic This parameter is required.
+         */
+        public Builder enableKibanaPublic(final com.aliyun.ros.cdk.core.IResolvable enableKibanaPublic) {
+            this.props.enableKibanaPublic(enableKibanaPublic);
             return this;
         }
 
@@ -1278,6 +1771,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ymlConfig This parameter is required.
+         */
+        public Builder ymlConfig(final com.aliyun.ros.cdk.core.IResolvable ymlConfig) {
+            this.props.ymlConfig(ymlConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ymlConfig This parameter is required.
+         */
+        public Builder ymlConfig(final com.aliyun.ros.cdk.elasticsearch.RosInstance.YMLConfigProperty ymlConfig) {
+            this.props.ymlConfig(ymlConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneCount This parameter is required.
+         */
+        public Builder zoneCount(final java.lang.Number zoneCount) {
+            this.props.zoneCount(zoneCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneCount This parameter is required.
+         */
+        public Builder zoneCount(final com.aliyun.ros.cdk.core.IResolvable zoneCount) {
+            this.props.zoneCount(zoneCount);
             return this;
         }
 

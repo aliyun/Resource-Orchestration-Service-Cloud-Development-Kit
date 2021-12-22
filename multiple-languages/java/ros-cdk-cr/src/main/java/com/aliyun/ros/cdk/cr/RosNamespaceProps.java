@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.645Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.214Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosNamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosNamespaceProps.Jsii$Proxy.class)
 public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosNamespaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosNamespaceProps> {
-        private java.lang.Object namespace;
-        private java.lang.Object autoCreate;
-        private java.lang.Object defaultVisibility;
+        java.lang.Object namespace;
+        java.lang.Object autoCreate;
+        java.lang.Object defaultVisibility;
 
         /**
          * Sets the value of {@link RosNamespaceProps#getNamespace}
@@ -105,7 +105,7 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosNamespaceProps build() {
-            return new Jsii$Proxy(namespace, autoCreate, defaultVisibility);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -132,11 +132,11 @@ public interface RosNamespaceProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object namespace, final java.lang.Object autoCreate, final java.lang.Object defaultVisibility) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.namespace = java.util.Objects.requireNonNull(namespace, "namespace is required");
-            this.autoCreate = autoCreate;
-            this.defaultVisibility = defaultVisibility;
+            this.namespace = java.util.Objects.requireNonNull(builder.namespace, "namespace is required");
+            this.autoCreate = builder.autoCreate;
+            this.defaultVisibility = builder.defaultVisibility;
         }
 
         @Override

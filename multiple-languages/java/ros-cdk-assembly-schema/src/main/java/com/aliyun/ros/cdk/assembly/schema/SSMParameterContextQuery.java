@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to SSM Parameter Context Provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.SSMParameterContextQuery")
 @software.amazon.jsii.Jsii.Proxy(SSMParameterContextQuery.Jsii$Proxy.class)
 public interface SSMParameterContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -33,9 +33,9 @@ public interface SSMParameterContextQuery extends software.amazon.jsii.JsiiSeria
      * A builder for {@link SSMParameterContextQuery}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SSMParameterContextQuery> {
-        private java.lang.String account;
-        private java.lang.String parameterName;
-        private java.lang.String region;
+        java.lang.String account;
+        java.lang.String parameterName;
+        java.lang.String region;
 
         /**
          * Sets the value of {@link SSMParameterContextQuery#getAccount}
@@ -74,7 +74,7 @@ public interface SSMParameterContextQuery extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public SSMParameterContextQuery build() {
-            return new Jsii$Proxy(account, parameterName, region);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,11 +101,11 @@ public interface SSMParameterContextQuery extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String account, final java.lang.String parameterName, final java.lang.String region) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.account = java.util.Objects.requireNonNull(account, "account is required");
-            this.parameterName = java.util.Objects.requireNonNull(parameterName, "parameterName is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
+            this.account = java.util.Objects.requireNonNull(builder.account, "account is required");
+            this.parameterName = java.util.Objects.requireNonNull(builder.parameterName, "parameterName is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
         }
 
         @Override

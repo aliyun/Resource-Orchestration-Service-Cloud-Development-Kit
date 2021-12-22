@@ -1208,6 +1208,11 @@ export interface RosListenerProps {
     readonly serverCertificateId?: string | ros.IResolvable;
 
     /**
+     * @Property startListener: Whether start listener after listener created. Default True.
+     */
+    readonly startListener?: boolean | ros.IResolvable;
+
+    /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     readonly vServerGroupId?: string | ros.IResolvable;
@@ -1305,6 +1310,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('masterSlaveServerGroupId', ros.validateString)(properties.masterSlaveServerGroupId));
     errors.collect(ros.propertyValidator('serverCertificateId', ros.validateString)(properties.serverCertificateId));
+    errors.collect(ros.propertyValidator('startListener', ros.validateBoolean)(properties.startListener));
     errors.collect(ros.propertyValidator('httpConfig', RosListener_HttpConfigPropertyValidator)(properties.httpConfig));
     if(properties.aclType && (typeof properties.aclType) !== 'object') {
         errors.collect(ros.propertyValidator('aclType', ros.validateAllowedValues)({
@@ -1357,6 +1363,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       RequestTimeout: ros.numberToRosTemplate(properties.requestTimeout),
       Scheduler: ros.stringToRosTemplate(properties.scheduler),
       ServerCertificateId: ros.stringToRosTemplate(properties.serverCertificateId),
+      StartListener: ros.booleanToRosTemplate(properties.startListener),
       VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
     };
 }
@@ -1500,6 +1507,11 @@ export class RosListener extends ros.RosResource {
     public serverCertificateId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property startListener: Whether start listener after listener created. Default True.
+     */
+    public startListener: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     public vServerGroupId: string | ros.IResolvable | undefined;
@@ -1536,6 +1548,7 @@ export class RosListener extends ros.RosResource {
         this.requestTimeout = props.requestTimeout;
         this.scheduler = props.scheduler;
         this.serverCertificateId = props.serverCertificateId;
+        this.startListener = props.startListener;
         this.vServerGroupId = props.vServerGroupId;
     }
 
@@ -1561,6 +1574,7 @@ export class RosListener extends ros.RosResource {
             requestTimeout: this.requestTimeout,
             scheduler: this.scheduler,
             serverCertificateId: this.serverCertificateId,
+            startListener: this.startListener,
             vServerGroupId: this.vServerGroupId,
         };
     }
@@ -1794,9 +1808,17 @@ export namespace RosListener {
          */
         readonly persistenceTimeout?: number | ros.IResolvable;
         /**
+         * @Property xForwardedForSlbport: Optional. Indicates whether to use the X-Forwarded-Port header field to retrieve the listening ports of the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
+         */
+        readonly xForwardedForSlbport?: string | ros.IResolvable;
+        /**
          * @Property xForwardedFor: Use 'X-Forwarded-For' to get real ip of accessor. On for open, off for close.
          */
         readonly xForwardedFor?: string | ros.IResolvable;
+        /**
+         * @Property xForwardedForClientSrcPort: Optional. Indicates whether to use the X-Forwarded-Client-srcport header field to retrieve the port used by a client to connect to the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
+         */
+        readonly xForwardedForClientSrcPort?: string | ros.IResolvable;
         /**
          * @Property xForwardedForProto: Optional. Indicates whether to use the X-Forwarded-Proto header field to obtainthe listening protocol used by the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
          */
@@ -1852,6 +1874,13 @@ function RosListener_PersistencePropertyValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('persistenceTimeout', ros.validateNumber)(properties.persistenceTimeout));
+    if(properties.xForwardedForSlbport && (typeof properties.xForwardedForSlbport) !== 'object') {
+        errors.collect(ros.propertyValidator('xForwardedForSlbport', ros.validateAllowedValues)({
+          data: properties.xForwardedForSlbport,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('xForwardedForSlbport', ros.validateString)(properties.xForwardedForSlbport));
     if(properties.xForwardedFor && (typeof properties.xForwardedFor) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedFor', ros.validateAllowedValues)({
           data: properties.xForwardedFor,
@@ -1859,6 +1888,13 @@ function RosListener_PersistencePropertyValidator(properties: any): ros.Validati
         }));
     }
     errors.collect(ros.propertyValidator('xForwardedFor', ros.validateString)(properties.xForwardedFor));
+    if(properties.xForwardedForClientSrcPort && (typeof properties.xForwardedForClientSrcPort) !== 'object') {
+        errors.collect(ros.propertyValidator('xForwardedForClientSrcPort', ros.validateAllowedValues)({
+          data: properties.xForwardedForClientSrcPort,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('xForwardedForClientSrcPort', ros.validateString)(properties.xForwardedForClientSrcPort));
     if(properties.xForwardedForProto && (typeof properties.xForwardedForProto) !== 'object') {
         errors.collect(ros.propertyValidator('xForwardedForProto', ros.validateAllowedValues)({
           data: properties.xForwardedForProto,
@@ -1900,7 +1936,9 @@ function rosListenerPersistencePropertyToRosTemplate(properties: any): any {
       Cookie: ros.stringToRosTemplate(properties.cookie),
       StickySession: ros.stringToRosTemplate(properties.stickySession),
       PersistenceTimeout: ros.numberToRosTemplate(properties.persistenceTimeout),
+      XForwardedFor_SLBPORT: ros.stringToRosTemplate(properties.xForwardedForSlbport),
       XForwardedFor: ros.stringToRosTemplate(properties.xForwardedFor),
+      XForwardedFor_ClientSrcPort: ros.stringToRosTemplate(properties.xForwardedForClientSrcPort),
       XForwardedFor_proto: ros.stringToRosTemplate(properties.xForwardedForProto),
       StickySessionType: ros.stringToRosTemplate(properties.stickySessionType),
       XForwardedFor_SLBIP: ros.stringToRosTemplate(properties.xForwardedForSlbip),
@@ -1992,7 +2030,19 @@ export interface RosLoadBalancerProps {
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+     * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
+     * When PricingCycle = month, the value range is 1-9
+     * When PeriodUnit = year, the value range is 1-3
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -2090,6 +2140,14 @@ export interface RosLoadBalancerProps {
 function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateRange)({
+            data: properties.autoRenewPeriod,
+            min: 1,
+            max: 9,
+          }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
         errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
@@ -2106,6 +2164,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
@@ -2114,7 +2173,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -2122,6 +2180,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
     if(properties.modificationProtectionStatus && (typeof properties.modificationProtectionStatus) !== 'object') {
         errors.collect(ros.propertyValidator('modificationProtectionStatus', ros.validateAllowedValues)({
@@ -2185,6 +2244,8 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
       AddressType: ros.stringToRosTemplate(properties.addressType),
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       Duration: ros.numberToRosTemplate(properties.duration),
@@ -2313,7 +2374,19 @@ export class RosLoadBalancer extends ros.RosResource {
     public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+     * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
+     * When PricingCycle = month, the value range is 1-9
+     * When PeriodUnit = year, the value range is 1-3
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
@@ -2429,6 +2502,8 @@ export class RosLoadBalancer extends ros.RosResource {
         this.addressIpVersion = props.addressIpVersion;
         this.addressType = props.addressType;
         this.autoPay = props.autoPay;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
         this.bandwidth = props.bandwidth;
         this.deletionProtection = props.deletionProtection;
         this.duration = props.duration;
@@ -2453,6 +2528,8 @@ export class RosLoadBalancer extends ros.RosResource {
             addressIpVersion: this.addressIpVersion,
             addressType: this.addressType,
             autoPay: this.autoPay,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
             bandwidth: this.bandwidth,
             deletionProtection: this.deletionProtection,
             duration: this.duration,

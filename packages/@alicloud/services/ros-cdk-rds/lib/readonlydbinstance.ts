@@ -38,6 +38,13 @@ export interface ReadOnlyDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property autoRenew: Specifies whether to enable auto-renewal. Valid values: true and false. Note
+     * :Monthly subscription: The auto-renewal cycle is one month.
+     * Annual subscription: The auto-renewal cycle is one year.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
      * Property category: The edition of the instance. Valid values:
      * - Basic
      * - HighAvailability
@@ -59,9 +66,19 @@ export interface ReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
-     * Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
+     * Property payType: The billing method. Valid value: Postpaid, Prepaid.
      */
     readonly payType?: string | ros.IResolvable;
+
+    /**
+     * Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodType: Charge period for created instances.
+     */
+    readonly periodType?: string | ros.IResolvable;
 
     /**
      * Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
@@ -137,6 +154,7 @@ export class ReadOnlyDBInstance extends ros.Resource {
         super(scope, id);
 
         const rosReadOnlyDBInstance = new RosReadOnlyDBInstance(this, id,  {
+            periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
             category: props.category,
             engineVersion: props.engineVersion,
             privateIpAddress: props.privateIpAddress,
@@ -145,6 +163,8 @@ export class ReadOnlyDBInstance extends ros.Resource {
             vpcId: props.vpcId,
             dbInstanceClass: props.dbInstanceClass,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceStorageType: props.dbInstanceStorageType,
             dbInstanceId: props.dbInstanceId,

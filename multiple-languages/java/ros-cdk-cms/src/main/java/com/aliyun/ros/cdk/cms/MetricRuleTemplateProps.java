@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MetricRuleTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.591Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(MetricRuleTemplateProps.Jsii$Proxy.class)
 public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,11 +55,11 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link MetricRuleTemplateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MetricRuleTemplateProps> {
-        private java.lang.Object name;
-        private java.lang.Object alertTemplates;
-        private java.lang.Object description;
-        private java.lang.Object restVersion;
-        private java.lang.Object templateId;
+        java.lang.Object name;
+        java.lang.Object alertTemplates;
+        java.lang.Object description;
+        java.lang.Object restVersion;
+        java.lang.Object templateId;
 
         /**
          * Sets the value of {@link MetricRuleTemplateProps#getName}
@@ -174,7 +174,7 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public MetricRuleTemplateProps build() {
-            return new Jsii$Proxy(name, alertTemplates, description, restVersion, templateId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -205,13 +205,13 @@ public interface MetricRuleTemplateProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object alertTemplates, final java.lang.Object description, final java.lang.Object restVersion, final java.lang.Object templateId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.alertTemplates = alertTemplates;
-            this.description = description;
-            this.restVersion = restVersion;
-            this.templateId = templateId;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.alertTemplates = builder.alertTemplates;
+            this.description = builder.description;
+            this.restVersion = builder.restVersion;
+            this.templateId = builder.templateId;
         }
 
         @Override

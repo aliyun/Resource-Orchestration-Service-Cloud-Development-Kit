@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::IpSets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.115Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosIpSets")
 public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -144,9 +144,9 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AccelerateRegionProperty> {
-            private java.lang.Object accelerateRegionId;
-            private java.lang.Object bandwidth;
-            private java.lang.Object ipVersion;
+            java.lang.Object accelerateRegionId;
+            java.lang.Object bandwidth;
+            java.lang.Object ipVersion;
 
             /**
              * Sets the value of {@link AccelerateRegionProperty#getAccelerateRegionId}
@@ -222,7 +222,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AccelerateRegionProperty build() {
-                return new Jsii$Proxy(accelerateRegionId, bandwidth, ipVersion);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -250,11 +250,11 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object accelerateRegionId, final java.lang.Object bandwidth, final java.lang.Object ipVersion) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.accelerateRegionId = java.util.Objects.requireNonNull(accelerateRegionId, "accelerateRegionId is required");
-                this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-                this.ipVersion = ipVersion;
+                this.accelerateRegionId = java.util.Objects.requireNonNull(builder.accelerateRegionId, "accelerateRegionId is required");
+                this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+                this.ipVersion = builder.ipVersion;
             }
 
             @Override

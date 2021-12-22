@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::TransitRouterVpcAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.010Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachment")
 public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,24 +147,6 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoCreateVpcRoute() {
-        return software.amazon.jsii.Kernel.get(this, "autoCreateVpcRoute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoCreateVpcRoute(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "autoCreateVpcRoute", value);
-    }
-
-    /**
-     */
-    public void setAutoCreateVpcRoute(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoCreateVpcRoute", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCenId() {
         return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -197,60 +179,6 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
      */
     public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "chargeType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
-        return software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setResourceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "resourceType", value);
-    }
-
-    /**
-     */
-    public void setResourceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "resourceType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
-        return software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
-    }
-
-    /**
-     */
-    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
-        return software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
-    }
-
-    /**
-     */
-    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
     }
 
     /**
@@ -353,8 +281,8 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ZoneMappingsProperty> {
-            private java.lang.Object vSwitchId;
-            private java.lang.Object zoneId;
+            java.lang.Object vSwitchId;
+            java.lang.Object zoneId;
 
             /**
              * Sets the value of {@link ZoneMappingsProperty#getVSwitchId}
@@ -408,7 +336,7 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ZoneMappingsProperty build() {
-                return new Jsii$Proxy(vSwitchId, zoneId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -434,10 +362,10 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-                this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             }
 
             @Override
@@ -551,23 +479,6 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
 
         /**
          * @return {@code this}
-         * @param autoCreateVpcRoute This parameter is required.
-         */
-        public Builder autoCreateVpcRoute(final java.lang.String autoCreateVpcRoute) {
-            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoCreateVpcRoute This parameter is required.
-         */
-        public Builder autoCreateVpcRoute(final com.aliyun.ros.cdk.core.IResolvable autoCreateVpcRoute) {
-            this.props.autoCreateVpcRoute(autoCreateVpcRoute);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param cenId This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
@@ -597,57 +508,6 @@ public class RosTransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param resourceType This parameter is required.
-         */
-        public Builder resourceType(final java.lang.String resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param resourceType This parameter is required.
-         */
-        public Builder resourceType(final com.aliyun.ros.cdk.core.IResolvable resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param routeTableAssociationEnabled This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final java.lang.String routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param routeTableAssociationEnabled This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param routeTablePropagationEnabled This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final java.lang.String routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param routeTablePropagationEnabled This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

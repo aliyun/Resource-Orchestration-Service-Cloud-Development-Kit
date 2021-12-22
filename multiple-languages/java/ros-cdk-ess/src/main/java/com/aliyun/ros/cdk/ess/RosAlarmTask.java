@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::AlarmTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.922Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTask")
 public class RosAlarmTask extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -323,8 +323,8 @@ public class RosAlarmTask extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DimensionsProperty> {
-            private java.lang.Object dimensionKey;
-            private java.lang.Object dimensionValue;
+            java.lang.Object dimensionKey;
+            java.lang.Object dimensionValue;
 
             /**
              * Sets the value of {@link DimensionsProperty#getDimensionKey}
@@ -378,7 +378,7 @@ public class RosAlarmTask extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DimensionsProperty build() {
-                return new Jsii$Proxy(dimensionKey, dimensionValue);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -404,10 +404,10 @@ public class RosAlarmTask extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dimensionKey, final java.lang.Object dimensionValue) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dimensionKey = java.util.Objects.requireNonNull(dimensionKey, "dimensionKey is required");
-                this.dimensionValue = java.util.Objects.requireNonNull(dimensionValue, "dimensionValue is required");
+                this.dimensionKey = java.util.Objects.requireNonNull(builder.dimensionKey, "dimensionKey is required");
+                this.dimensionValue = java.util.Objects.requireNonNull(builder.dimensionValue, "dimensionValue is required");
             }
 
             @Override

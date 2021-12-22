@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * Properties for defining a `ALIYUN::CAS::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.RosCertificateProps")
 @software.amazon.jsii.Jsii.Proxy(RosCertificateProps.Jsii$Proxy.class)
 public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosCertificateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCertificateProps> {
-        private java.lang.Object cert;
-        private java.lang.Object key;
-        private java.lang.Object name;
-        private java.lang.Object lang;
-        private java.lang.Object sourceIp;
+        java.lang.Object cert;
+        java.lang.Object key;
+        java.lang.Object name;
+        java.lang.Object lang;
+        java.lang.Object sourceIp;
 
         /**
          * Sets the value of {@link RosCertificateProps#getCert}
@@ -155,7 +155,7 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosCertificateProps build() {
-            return new Jsii$Proxy(cert, key, name, lang, sourceIp);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -186,13 +186,13 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cert, final java.lang.Object key, final java.lang.Object name, final java.lang.Object lang, final java.lang.Object sourceIp) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cert = java.util.Objects.requireNonNull(cert, "cert is required");
-            this.key = java.util.Objects.requireNonNull(key, "key is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.lang = lang;
-            this.sourceIp = sourceIp;
+            this.cert = java.util.Objects.requireNonNull(builder.cert, "cert is required");
+            this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.lang = builder.lang;
+            this.sourceIp = builder.sourceIp;
         }
 
         @Override

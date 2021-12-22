@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.105Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosMasterSlaveServerGroupProps.Jsii$Proxy.class)
 public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
      * A builder for {@link RosMasterSlaveServerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMasterSlaveServerGroupProps> {
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object masterSlaveBackendServers;
-        private java.lang.Object masterSlaveServerGroupName;
+        java.lang.Object loadBalancerId;
+        java.lang.Object masterSlaveBackendServers;
+        java.lang.Object masterSlaveServerGroupName;
 
         /**
          * Sets the value of {@link RosMasterSlaveServerGroupProps#getLoadBalancerId}
@@ -103,7 +103,7 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
          */
         @Override
         public RosMasterSlaveServerGroupProps build() {
-            return new Jsii$Proxy(loadBalancerId, masterSlaveBackendServers, masterSlaveServerGroupName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface RosMasterSlaveServerGroupProps extends software.amazon.jsii.Jsi
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object masterSlaveBackendServers, final java.lang.Object masterSlaveServerGroupName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.masterSlaveBackendServers = java.util.Objects.requireNonNull(masterSlaveBackendServers, "masterSlaveBackendServers is required");
-            this.masterSlaveServerGroupName = masterSlaveServerGroupName;
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.masterSlaveBackendServers = java.util.Objects.requireNonNull(builder.masterSlaveBackendServers, "masterSlaveBackendServers is required");
+            this.masterSlaveServerGroupName = builder.masterSlaveServerGroupName;
         }
 
         @Override

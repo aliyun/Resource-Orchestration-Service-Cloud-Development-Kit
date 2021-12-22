@@ -982,10 +982,6 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly resourceGroupId?: string | ros.IResolvable;
         /**
-         * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
-         */
-        readonly systemDiskDescription?: string | ros.IResolvable;
-        /**
          * @Property systemDiskSize: The size of the system disk. Unit: GiB. Valid values: 20 to 500.
          */
         readonly systemDiskSize?: number | ros.IResolvable;
@@ -993,6 +989,10 @@ export namespace RosAutoProvisioningGroup {
          * @Property userData: The user data of the instance.
          */
         readonly userData?: string | ros.IResolvable;
+        /**
+         * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+         */
+        readonly systemDiskDescription?: string | ros.IResolvable;
         /**
          * @Property securityGroupId: Security group ID.
          */
@@ -1096,9 +1096,9 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
@@ -1150,9 +1150,9 @@ function rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(proper
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       UserData: ros.stringToRosTemplate(properties.userData),
+      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -1551,215 +1551,6 @@ function rosAutoSnapshotPolicyTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::BandwidthPackage`
- */
-export interface RosBandwidthPackageProps {
-
-    /**
-     * @Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
-     */
-    readonly bandwidth: number | ros.IResolvable;
-
-    /**
-     * @Property ipCount: Total internet IPs of this Bandwidth package, [1-5]
-     */
-    readonly ipCount: number | ros.IResolvable;
-
-    /**
-     * @Property natGatewayId: Create bandwidth package for specified NAT gateway
-     */
-    readonly natGatewayId: string | ros.IResolvable;
-
-    /**
-     * @Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    readonly bandwidthPackageName?: string | ros.IResolvable;
-
-    /**
-     * @Property description: Description of the bandwidth package, [2, 256] characters. Do not fill or empty, the default is empty.
-     */
-    readonly description?: string | ros.IResolvable;
-
-    /**
-     * @Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
-     */
-    readonly internetChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property zoneId: The availability zone where the bandwidth package will be created.
-     */
-    readonly zoneId?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosBandwidthPackageProps`
- *
- * @param properties - the TypeScript properties of a `RosBandwidthPackageProps`
- *
- * @returns the result of the validation.
- */
-function RosBandwidthPackagePropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('bandwidthPackageName', ros.validateString)(properties.bandwidthPackageName));
-    errors.collect(ros.propertyValidator('ipCount', ros.requiredValidator)(properties.ipCount));
-    if(properties.ipCount && (typeof properties.ipCount) !== 'object') {
-        errors.collect(ros.propertyValidator('ipCount', ros.validateRange)({
-            data: properties.ipCount,
-            min: 1,
-            max: 5,
-          }));
-    }
-    errors.collect(ros.propertyValidator('ipCount', ros.validateNumber)(properties.ipCount));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
-    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
-        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
-            data: properties.bandwidth,
-            min: 5,
-            max: 5000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
-    errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
-    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["PayByBandwidth","PayByTraffic"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    return errors.wrap('supplied properties not correct for "RosBandwidthPackageProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::BandwidthPackage` resource
- *
- * @param properties - the TypeScript properties of a `RosBandwidthPackageProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::BandwidthPackage` resource.
- */
-// @ts-ignore TS6133
-function rosBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosBandwidthPackagePropsValidator(properties).assertSuccess();
-    }
-    return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      IpCount: ros.numberToRosTemplate(properties.ipCount),
-      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
-      BandwidthPackageName: ros.stringToRosTemplate(properties.bandwidthPackageName),
-      Description: ros.stringToRosTemplate(properties.description),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-    };
-}
-
-/**
- * A ROS template type:  `ALIYUN::ECS::BandwidthPackage`
- */
-export class RosBandwidthPackage extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::BandwidthPackage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
-     * @Attribute BandwidthPackageId: The bandwidth package id of created Bandwidth package.
-     */
-    public readonly attrBandwidthPackageId: ros.IResolvable;
-
-    /**
-     * @Attribute BandwidthPackageIps: The allocated public IPs.
-     */
-    public readonly attrBandwidthPackageIps: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
-     */
-    public bandwidth: number | ros.IResolvable;
-
-    /**
-     * @Property ipCount: Total internet IPs of this Bandwidth package, [1-5]
-     */
-    public ipCount: number | ros.IResolvable;
-
-    /**
-     * @Property natGatewayId: Create bandwidth package for specified NAT gateway
-     */
-    public natGatewayId: string | ros.IResolvable;
-
-    /**
-     * @Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    public bandwidthPackageName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property description: Description of the bandwidth package, [2, 256] characters. Do not fill or empty, the default is empty.
-     */
-    public description: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
-     */
-    public internetChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property zoneId: The availability zone where the bandwidth package will be created.
-     */
-    public zoneId: string | ros.IResolvable | undefined;
-
-    /**
-     * Create a new `ALIYUN::ECS::BandwidthPackage`.
-     *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
-        this.attrBandwidthPackageIps = this.getAtt('BandwidthPackageIps');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.bandwidth = props.bandwidth;
-        this.ipCount = props.ipCount;
-        this.natGatewayId = props.natGatewayId;
-        this.bandwidthPackageName = props.bandwidthPackageName;
-        this.description = props.description;
-        this.internetChargeType = props.internetChargeType;
-        this.zoneId = props.zoneId;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            bandwidth: this.bandwidth,
-            ipCount: this.ipCount,
-            natGatewayId: this.natGatewayId,
-            bandwidthPackageName: this.bandwidthPackageName,
-            description: this.description,
-            internetChargeType: this.internetChargeType,
-            zoneId: this.zoneId,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosBandwidthPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-/**
  * Properties for defining a `ALIYUN::ECS::Command`
  */
 export interface RosCommandProps {
@@ -1978,6 +1769,11 @@ export interface RosCopyImageProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * @Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
+     */
+    readonly sourceRegionId?: string | ros.IResolvable;
+
+    /**
      * @Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
@@ -1993,6 +1789,7 @@ export interface RosCopyImageProps {
 function RosCopyImagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.requiredValidator)(properties.destinationRegionId));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.validateString)(properties.destinationRegionId));
@@ -2025,6 +1822,7 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
       DestinationImageName: ros.stringToRosTemplate(properties.destinationImageName),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
       Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
     };
 }
@@ -2044,9 +1842,19 @@ export class RosCopyImage extends ros.RosResource {
      */
 
     /**
+     * @Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
+     */
+    public readonly attrDestinationRegionId: ros.IResolvable;
+
+    /**
      * @Attribute ImageId: ID of the source custom image.
      */
     public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute SourceRegionId: ID of the region to where the source image belongs.
+     */
+    public readonly attrSourceRegionId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2082,6 +1890,11 @@ export class RosCopyImage extends ros.RosResource {
     public kmsKeyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
+     */
+    public sourceRegionId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tag:
      */
     public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
@@ -2095,7 +1908,9 @@ export class RosCopyImage extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCopyImageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCopyImage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDestinationRegionId = this.getAtt('DestinationRegionId');
         this.attrImageId = this.getAtt('ImageId');
+        this.attrSourceRegionId = this.getAtt('SourceRegionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.destinationRegionId = props.destinationRegionId;
@@ -2104,6 +1919,7 @@ export class RosCopyImage extends ros.RosResource {
         this.destinationImageName = props.destinationImageName;
         this.encrypted = props.encrypted;
         this.kmsKeyId = props.kmsKeyId;
+        this.sourceRegionId = props.sourceRegionId;
         this.tag = props.tag;
     }
 
@@ -2116,6 +1932,7 @@ export class RosCopyImage extends ros.RosResource {
             destinationImageName: this.destinationImageName,
             encrypted: this.encrypted,
             kmsKeyId: this.kmsKeyId,
+            sourceRegionId: this.sourceRegionId,
             tag: this.tag,
         };
     }
@@ -2197,6 +2014,11 @@ export interface RosCustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
      * @Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
      * Cannot begin with http:// or https://.
@@ -2224,6 +2046,11 @@ export interface RosCustomImageProps {
     readonly snapshotId?: string | ros.IResolvable;
 
     /**
+     * @Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     */
+    readonly sourceRegionId?: string | ros.IResolvable;
+
+    /**
      * @Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
@@ -2240,12 +2067,14 @@ function RosCustomImagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
+    errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
     errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
     errors.collect(ros.propertyValidator('diskDeviceMapping', ros.listValidator(RosCustomImage_DiskDeviceMappingPropertyValidator))(properties.diskDeviceMapping));
     return errors.wrap('supplied properties not correct for "RosCustomImageProps"');
@@ -2268,11 +2097,13 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
       Architecture: ros.stringToRosTemplate(properties.architecture),
       Description: ros.stringToRosTemplate(properties.description),
       DiskDeviceMapping: ros.listMapper(rosCustomImageDiskDeviceMappingPropertyToRosTemplate)(properties.diskDeviceMapping),
+      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
       ImageName: ros.stringToRosTemplate(properties.imageName),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       Platform: ros.stringToRosTemplate(properties.platform),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
       Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
     };
 }
@@ -2296,6 +2127,11 @@ export class RosCustomImage extends ros.RosResource {
      */
     public readonly attrImageId: ros.IResolvable;
 
+    /**
+     * @Attribute SourceRegionId: ID of the region to where the instance/snapshot belongs.
+     */
+    public readonly attrSourceRegionId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -2318,6 +2154,11 @@ export class RosCustomImage extends ros.RosResource {
      * @Property diskDeviceMapping:
      */
     public diskDeviceMapping: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     */
+    public imageFamily: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageName: Image name.
@@ -2347,6 +2188,11 @@ export class RosCustomImage extends ros.RosResource {
     public snapshotId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     */
+    public sourceRegionId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tag:
      */
     public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
@@ -2361,16 +2207,19 @@ export class RosCustomImage extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosCustomImageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCustomImage.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrImageId = this.getAtt('ImageId');
+        this.attrSourceRegionId = this.getAtt('SourceRegionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.architecture = props.architecture;
         this.description = props.description;
         this.diskDeviceMapping = props.diskDeviceMapping;
+        this.imageFamily = props.imageFamily;
         this.imageName = props.imageName;
         this.instanceId = props.instanceId;
         this.platform = props.platform;
         this.resourceGroupId = props.resourceGroupId;
         this.snapshotId = props.snapshotId;
+        this.sourceRegionId = props.sourceRegionId;
         this.tag = props.tag;
     }
 
@@ -2380,11 +2229,13 @@ export class RosCustomImage extends ros.RosResource {
             architecture: this.architecture,
             description: this.description,
             diskDeviceMapping: this.diskDeviceMapping,
+            imageFamily: this.imageFamily,
             imageName: this.imageName,
             instanceId: this.instanceId,
             platform: this.platform,
             resourceGroupId: this.resourceGroupId,
             snapshotId: this.snapshotId,
+            sourceRegionId: this.sourceRegionId,
             tag: this.tag,
         };
     }
@@ -2654,6 +2505,13 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('autoPlacement', ros.validateString)(properties.autoPlacement));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.quantity && (typeof properties.quantity) !== 'object') {
         errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
             data: properties.quantity,
@@ -2662,13 +2520,6 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('quantity', ros.validateNumber)(properties.quantity));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('dedicatedHostType', ros.requiredValidator)(properties.dedicatedHostType));
     errors.collect(ros.propertyValidator('dedicatedHostType', ros.validateString)(properties.dedicatedHostType));
     errors.collect(ros.propertyValidator('dedicatedHostName', ros.validateString)(properties.dedicatedHostName));
@@ -3118,6 +2969,11 @@ export interface RosDiskProps {
     readonly autoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
+     * @Property burstingEnabled: Whether enable bursting.
+     */
+    readonly burstingEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to false.
      */
     readonly deleteAutoSnapshot?: boolean | ros.IResolvable;
@@ -3128,7 +2984,7 @@ export interface RosDiskProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
      */
     readonly diskCategory?: string | ros.IResolvable;
 
@@ -3151,6 +3007,11 @@ export interface RosDiskProps {
      * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property provisionedIops: Provisioning IOPS.
+     */
+    readonly provisionedIops?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -3193,6 +3054,7 @@ export interface RosDiskProps {
 function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
@@ -3212,13 +3074,14 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
           data: properties.diskCategory,
-          allowedValues: ["cloud","cloud_ssd","cloud_essd","cloud_efficiency","san_ssd","san_efficiency"],
+          allowedValues: ["cloud","cloud_ssd","cloud_essd","cloud_efficiency","san_ssd","san_efficiency","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
     errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('storageSetId', ros.validateString)(properties.storageSetId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -3248,6 +3111,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
     return {
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       DeleteAutoSnapshot: ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
       Description: ros.stringToRosTemplate(properties.description),
       DiskCategory: ros.stringToRosTemplate(properties.diskCategory),
@@ -3255,6 +3119,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
+      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Size: ros.numberToRosTemplate(properties.size),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
@@ -3302,6 +3167,11 @@ export class RosDisk extends ros.RosResource {
     public autoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property burstingEnabled: Whether enable bursting.
+     */
+    public burstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to false.
      */
     public deleteAutoSnapshot: boolean | ros.IResolvable | undefined;
@@ -3312,7 +3182,7 @@ export class RosDisk extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
+     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
      */
     public diskCategory: string | ros.IResolvable | undefined;
 
@@ -3335,6 +3205,11 @@ export class RosDisk extends ros.RosResource {
      * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     public performanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property provisionedIops: Provisioning IOPS.
+     */
+    public provisionedIops: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -3381,6 +3256,7 @@ export class RosDisk extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneId = props.zoneId;
         this.autoSnapshotPolicyId = props.autoSnapshotPolicyId;
+        this.burstingEnabled = props.burstingEnabled;
         this.deleteAutoSnapshot = props.deleteAutoSnapshot;
         this.description = props.description;
         this.diskCategory = props.diskCategory;
@@ -3388,6 +3264,7 @@ export class RosDisk extends ros.RosResource {
         this.encrypted = props.encrypted;
         this.kmsKeyId = props.kmsKeyId;
         this.performanceLevel = props.performanceLevel;
+        this.provisionedIops = props.provisionedIops;
         this.resourceGroupId = props.resourceGroupId;
         this.size = props.size;
         this.snapshotId = props.snapshotId;
@@ -3401,6 +3278,7 @@ export class RosDisk extends ros.RosResource {
         return {
             zoneId: this.zoneId,
             autoSnapshotPolicyId: this.autoSnapshotPolicyId,
+            burstingEnabled: this.burstingEnabled,
             deleteAutoSnapshot: this.deleteAutoSnapshot,
             description: this.description,
             diskCategory: this.diskCategory,
@@ -3408,6 +3286,7 @@ export class RosDisk extends ros.RosResource {
             encrypted: this.encrypted,
             kmsKeyId: this.kmsKeyId,
             performanceLevel: this.performanceLevel,
+            provisionedIops: this.provisionedIops,
             resourceGroupId: this.resourceGroupId,
             size: this.size,
             snapshotId: this.snapshotId,
@@ -3646,7 +3525,7 @@ export interface RosForwardEntryProps {
     readonly externalIp: string | ros.IResolvable;
 
     /**
-     * @Property externalPort: Source port, now support [1-65535]|Any
+     * @Property externalPort: Source port, now support [1-65535]|Any|x/y
      */
     readonly externalPort: string | ros.IResolvable;
 
@@ -3661,7 +3540,7 @@ export interface RosForwardEntryProps {
     readonly internalIp: string | ros.IResolvable;
 
     /**
-     * @Property internalPort: Destination port, now support [1-65535]|Any
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x/y
      */
     readonly internalPort: string | ros.IResolvable;
 
@@ -3669,6 +3548,16 @@ export interface RosForwardEntryProps {
      * @Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
      */
     readonly ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     */
+    readonly forwardEntryName?: string | ros.IResolvable;
+
+    /**
+     * @Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    readonly portBreak?: boolean | ros.IResolvable;
 }
 
 /**
@@ -3693,8 +3582,10 @@ function RosForwardEntryPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('portBreak', ros.validateBoolean)(properties.portBreak));
     errors.collect(ros.propertyValidator('internalPort', ros.requiredValidator)(properties.internalPort));
     errors.collect(ros.propertyValidator('internalPort', ros.validateString)(properties.internalPort));
+    errors.collect(ros.propertyValidator('forwardEntryName', ros.validateString)(properties.forwardEntryName));
     errors.collect(ros.propertyValidator('internalIp', ros.requiredValidator)(properties.internalIp));
     errors.collect(ros.propertyValidator('internalIp', ros.validateString)(properties.internalIp));
     errors.collect(ros.propertyValidator('forwardTableId', ros.requiredValidator)(properties.forwardTableId));
@@ -3722,6 +3613,8 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
       InternalIp: ros.stringToRosTemplate(properties.internalIp),
       InternalPort: ros.stringToRosTemplate(properties.internalPort),
       IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      ForwardEntryName: ros.stringToRosTemplate(properties.forwardEntryName),
+      PortBreak: ros.booleanToRosTemplate(properties.portBreak),
     };
 }
 
@@ -3753,7 +3646,7 @@ export class RosForwardEntry extends ros.RosResource {
     public externalIp: string | ros.IResolvable;
 
     /**
-     * @Property externalPort: Source port, now support [1-65535]|Any
+     * @Property externalPort: Source port, now support [1-65535]|Any|x/y
      */
     public externalPort: string | ros.IResolvable;
 
@@ -3768,7 +3661,7 @@ export class RosForwardEntry extends ros.RosResource {
     public internalIp: string | ros.IResolvable;
 
     /**
-     * @Property internalPort: Destination port, now support [1-65535]|Any
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x/y
      */
     public internalPort: string | ros.IResolvable;
 
@@ -3776,6 +3669,16 @@ export class RosForwardEntry extends ros.RosResource {
      * @Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
      */
     public ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     */
+    public forwardEntryName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    public portBreak: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ECS::ForwardEntry`.
@@ -3795,6 +3698,8 @@ export class RosForwardEntry extends ros.RosResource {
         this.internalIp = props.internalIp;
         this.internalPort = props.internalPort;
         this.ipProtocol = props.ipProtocol;
+        this.forwardEntryName = props.forwardEntryName;
+        this.portBreak = props.portBreak;
     }
 
 
@@ -3806,6 +3711,8 @@ export class RosForwardEntry extends ros.RosResource {
             internalIp: this.internalIp,
             internalPort: this.internalPort,
             ipProtocol: this.ipProtocol,
+            forwardEntryName: this.forwardEntryName,
+            portBreak: this.portBreak,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -4083,6 +3990,11 @@ export interface RosInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property securityGroupIds: The ID list of security group to which to assign the instance. The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     readonly spotPriceLimit?: string | ros.IResolvable;
@@ -4167,6 +4079,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosInstance_DiskMappingsPropertyValidator))(properties.diskMappings));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
             data: properties.systemDiskSize,
@@ -4175,7 +4088,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
-    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
     errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -4251,6 +4163,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: 1,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -4343,6 +4263,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -4383,12 +4304,12 @@ export class RosInstance extends ros.RosResource {
     public readonly attrInnerIp: ros.IResolvable;
 
     /**
-     * @Attribute InstanceId: The instance id of created ecs instance
+     * @Attribute InstanceId: The instance ID of created ecs instance
      */
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * @Attribute PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+     * @Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
     public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable;
 
@@ -4403,7 +4324,12 @@ export class RosInstance extends ros.RosResource {
     public readonly attrPublicIp: ros.IResolvable;
 
     /**
-     * @Attribute ZoneId: Zone id of created instance.
+     * @Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone ID of created instance.
      */
     public readonly attrZoneId: ros.IResolvable;
 
@@ -4552,6 +4478,11 @@ export class RosInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityGroupIds: The ID list of security group to which to assign the instance. The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
      */
     public spotPriceLimit: string | ros.IResolvable | undefined;
@@ -4628,6 +4559,7 @@ export class RosInstance extends ros.RosResource {
         this.attrPrimaryNetworkInterfaceId = this.getAtt('PrimaryNetworkInterfaceId');
         this.attrPrivateIp = this.getAtt('PrivateIp');
         this.attrPublicIp = this.getAtt('PublicIp');
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
         this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -4659,6 +4591,7 @@ export class RosInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
         this.securityGroupId = props.securityGroupId;
+        this.securityGroupIds = props.securityGroupIds;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskCategory = props.systemDiskCategory;
@@ -4704,6 +4637,7 @@ export class RosInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             securityEnhancementStrategy: this.securityEnhancementStrategy,
             securityGroupId: this.securityGroupId,
+            securityGroupIds: this.securityGroupIds,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskCategory: this.systemDiskCategory,
@@ -5112,12 +5046,12 @@ export class RosInstanceClone extends ros.RosResource {
     public readonly attrInnerIp: ros.IResolvable;
 
     /**
-     * @Attribute InstanceId: The instance id of created ecs instance
+     * @Attribute InstanceId: The instance ID of created ecs instance
      */
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * @Attribute PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+     * @Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
     public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable;
 
@@ -5132,7 +5066,12 @@ export class RosInstanceClone extends ros.RosResource {
     public readonly attrPublicIp: ros.IResolvable;
 
     /**
-     * @Attribute ZoneId: Zone id of created instance.
+     * @Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone ID of created instance.
      */
     public readonly attrZoneId: ros.IResolvable;
 
@@ -5257,6 +5196,7 @@ export class RosInstanceClone extends ros.RosResource {
         this.attrPrimaryNetworkInterfaceId = this.getAtt('PrimaryNetworkInterfaceId');
         this.attrPrivateIp = this.getAtt('PrivateIp');
         this.attrPublicIp = this.getAtt('PublicIp');
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
         this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -5680,7 +5620,12 @@ export interface RosInstanceGroupProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * @Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -5698,6 +5643,11 @@ export interface RosInstanceGroupProps {
      * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    readonly systemDiskProvisionedIops?: number | ros.IResolvable;
 
     /**
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
@@ -5752,6 +5702,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
@@ -5917,7 +5868,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
@@ -5929,6 +5880,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroup_EniMappingsPropertyValidator))(properties.eniMappings));
+    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
     if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
@@ -5995,10 +5947,12 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
+      SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       Tags: ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
       UserData: ros.stringToRosTemplate(properties.userData),
@@ -6023,19 +5977,29 @@ export class RosInstanceGroup extends ros.RosResource {
      */
 
     /**
-     * @Attribute HostNames: Host names of created instance.
+     * @Attribute HostNames: Host names of created instances.
      */
     public readonly attrHostNames: ros.IResolvable;
 
     /**
-     * @Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
+     * @Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
      */
     public readonly attrInnerIps: ros.IResolvable;
 
     /**
-     * @Attribute InstanceIds: The instance id list of created ecs instance
+     * @Attribute InstanceIds: The instance id list of created ecs instances
      */
     public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6AddressIds: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6Addresses: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The order id list of created instance.
@@ -6043,17 +6007,17 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * @Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
+     * @Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
      */
     public readonly attrPrivateIps: ros.IResolvable;
 
     /**
-     * @Attribute PublicIps: Public IP address list of created ecs instance.
+     * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute ZoneIds: Zone id of created instance.
+     * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
 
@@ -6291,7 +6255,12 @@ export class RosInstanceGroup extends ros.RosResource {
     public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * @Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    public systemDiskBurstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -6309,6 +6278,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    public systemDiskProvisionedIops: number | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
@@ -6354,6 +6328,8 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrHostNames = this.getAtt('HostNames');
         this.attrInnerIps = this.getAtt('InnerIps');
         this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrIpv6AddressIds = this.getAtt('Ipv6AddressIds');
+        this.attrIpv6Addresses = this.getAtt('Ipv6Addresses');
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
@@ -6401,10 +6377,12 @@ export class RosInstanceGroup extends ros.RosResource {
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
+        this.systemDiskBurstingEnabled = props.systemDiskBurstingEnabled;
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
         this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
+        this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.systemDiskSize = props.systemDiskSize;
         this.tags = props.tags;
         this.userData = props.userData;
@@ -6457,10 +6435,12 @@ export class RosInstanceGroup extends ros.RosResource {
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
+            systemDiskBurstingEnabled: this.systemDiskBurstingEnabled,
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
             systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
+            systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             systemDiskSize: this.systemDiskSize,
             tags: this.tags,
             userData: this.userData,
@@ -6480,11 +6460,15 @@ export namespace RosInstanceGroup {
      */
     export interface DiskMappingsProperty {
         /**
+         * @Property burstingEnabled: Whether enable bursting.
+         */
+        readonly burstingEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property snapshotId: ID of the snapshot to create the volume.
          */
         readonly snapshotId?: string | ros.IResolvable;
         /**
-         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd. Default is cloud_efficiency.
+         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto. Default is cloud_efficiency.
          */
         readonly category?: string | ros.IResolvable;
         /**
@@ -6522,6 +6506,10 @@ export namespace RosInstanceGroup {
          * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          */
         readonly diskName?: string | ros.IResolvable;
+        /**
+         * @Property provisionedIops: Provisioning IOPS.
+         */
+        readonly provisionedIops?: number | ros.IResolvable;
     }
 }
 /**
@@ -6534,11 +6522,12 @@ export namespace RosInstanceGroup {
 function RosInstanceGroup_DiskMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -6557,6 +6546,7 @@ function RosInstanceGroup_DiskMappingsPropertyValidator(properties: any): ros.Va
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
 }
 
@@ -6572,6 +6562,7 @@ function rosInstanceGroupDiskMappingsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
       Category: ros.stringToRosTemplate(properties.category),
       Description: ros.stringToRosTemplate(properties.description),
@@ -6582,6 +6573,7 @@ function rosInstanceGroupDiskMappingsPropertyToRosTemplate(properties: any): any
       Size: ros.stringToRosTemplate(properties.size),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
       DiskName: ros.stringToRosTemplate(properties.diskName),
+      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
     };
 }
 
@@ -6891,7 +6883,12 @@ export interface RosInstanceGroupCloneProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * @Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -6904,6 +6901,11 @@ export interface RosInstanceGroupCloneProps {
      * @Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
      */
     readonly systemDiskDiskName?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    readonly systemDiskProvisionedIops?: number | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -6929,7 +6931,6 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
         errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
             data: properties.diskMappings.length,
@@ -6938,7 +6939,9 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosInstanceGroupClone_DiskMappingsPropertyValidator))(properties.diskMappings));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
     if(properties.autoRenew && (typeof properties.autoRenew) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenew', ros.validateAllowedValues)({
           data: properties.autoRenew,
@@ -7035,10 +7038,11 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.eniMappings && (Array.isArray(properties.eniMappings) || (typeof properties.eniMappings) === 'string')) {
         errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
             data: properties.eniMappings.length,
@@ -7047,7 +7051,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroupClone_EniMappingsPropertyValidator))(properties.eniMappings));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
@@ -7131,9 +7135,11 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
+      SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
+      SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       Tags: ros.listMapper(rosInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
@@ -7154,19 +7160,29 @@ export class RosInstanceGroupClone extends ros.RosResource {
      */
 
     /**
-     * @Attribute HostNames: Host names of created instance.
+     * @Attribute HostNames: Host names of created instances.
      */
     public readonly attrHostNames: ros.IResolvable;
 
     /**
-     * @Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
+     * @Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
      */
     public readonly attrInnerIps: ros.IResolvable;
 
     /**
-     * @Attribute InstanceIds: The instance id list of created ecs instance
+     * @Attribute InstanceIds: The instance id list of created ecs instances
      */
     public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6AddressIds: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public readonly attrIpv6Addresses: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The order id list of created instance.
@@ -7174,17 +7190,17 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * @Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
+     * @Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
      */
     public readonly attrPrivateIps: ros.IResolvable;
 
     /**
-     * @Attribute PublicIps: Public IP address list of created ecs instance.
+     * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute ZoneIds: Zone id of created instance.
+     * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
 
@@ -7377,7 +7393,12 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * @Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    public systemDiskBurstingEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -7390,6 +7411,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
      * @Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
      */
     public systemDiskDiskName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    public systemDiskProvisionedIops: number | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -7415,6 +7441,8 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrHostNames = this.getAtt('HostNames');
         this.attrInnerIps = this.getAtt('InnerIps');
         this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrIpv6AddressIds = this.getAtt('Ipv6AddressIds');
+        this.attrIpv6Addresses = this.getAtt('Ipv6Addresses');
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
@@ -7455,9 +7483,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
+        this.systemDiskBurstingEnabled = props.systemDiskBurstingEnabled;
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
+        this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.tags = props.tags;
         this.zoneId = props.zoneId;
     }
@@ -7499,9 +7529,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
+            systemDiskBurstingEnabled: this.systemDiskBurstingEnabled,
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
+            systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             tags: this.tags,
             zoneId: this.zoneId,
         };
@@ -7517,11 +7549,15 @@ export namespace RosInstanceGroupClone {
      */
     export interface DiskMappingsProperty {
         /**
+         * @Property burstingEnabled: Whether enable bursting.
+         */
+        readonly burstingEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property snapshotId: ID of the snapshot to create the volume.
          */
         readonly snapshotId?: string | ros.IResolvable;
         /**
-         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd. Default is cloud_efficiency.
+         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto. Default is cloud_efficiency.
          */
         readonly category?: string | ros.IResolvable;
         /**
@@ -7559,6 +7595,10 @@ export namespace RosInstanceGroupClone {
          * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          */
         readonly diskName?: string | ros.IResolvable;
+        /**
+         * @Property provisionedIops: Provisioning IOPS.
+         */
+        readonly provisionedIops?: number | ros.IResolvable;
     }
 }
 /**
@@ -7571,11 +7611,12 @@ export namespace RosInstanceGroupClone {
 function RosInstanceGroupClone_DiskMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -7594,6 +7635,7 @@ function RosInstanceGroupClone_DiskMappingsPropertyValidator(properties: any): r
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
     errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
 }
 
@@ -7609,6 +7651,7 @@ function rosInstanceGroupCloneDiskMappingsPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
+      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
       Category: ros.stringToRosTemplate(properties.category),
       Description: ros.stringToRosTemplate(properties.description),
@@ -7619,6 +7662,7 @@ function rosInstanceGroupCloneDiskMappingsPropertyToRosTemplate(properties: any)
       Size: ros.stringToRosTemplate(properties.size),
       AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
       DiskName: ros.stringToRosTemplate(properties.diskName),
+      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
     };
 }
 
@@ -8286,13 +8330,6 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["PayByBandwidth","PayByTraffic"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -8300,6 +8337,13 @@ function RosLaunchTemplatePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
@@ -8927,6 +8971,11 @@ export interface RosNetworkInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+     */
+    readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
+
+    /**
      * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -8962,6 +9011,7 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('secondaryPrivateIpAddressCount', ros.validateNumber)(properties.secondaryPrivateIpAddressCount));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
@@ -9006,6 +9056,7 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
       PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
       PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecondaryPrivateIpAddressCount: ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       Tags: ros.listMapper(rosNetworkInterfaceTagsPropertyToRosTemplate)(properties.tags),
@@ -9080,6 +9131,11 @@ export class RosNetworkInterface extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+     */
+    public secondaryPrivateIpAddressCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
      */
     public securityGroupId: string | ros.IResolvable | undefined;
@@ -9115,6 +9171,7 @@ export class RosNetworkInterface extends ros.RosResource {
         this.primaryIpAddress = props.primaryIpAddress;
         this.privateIpAddresses = props.privateIpAddresses;
         this.resourceGroupId = props.resourceGroupId;
+        this.secondaryPrivateIpAddressCount = props.secondaryPrivateIpAddressCount;
         this.securityGroupId = props.securityGroupId;
         this.securityGroupIds = props.securityGroupIds;
         this.tags = props.tags;
@@ -9129,6 +9186,7 @@ export class RosNetworkInterface extends ros.RosResource {
             primaryIpAddress: this.primaryIpAddress,
             privateIpAddresses: this.privateIpAddresses,
             resourceGroupId: this.resourceGroupId,
+            secondaryPrivateIpAddressCount: this.secondaryPrivateIpAddressCount,
             securityGroupId: this.securityGroupId,
             securityGroupIds: this.securityGroupIds,
             tags: this.tags,
@@ -9261,6 +9319,11 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
      */
 
     /**
+     * @Attribute InstanceId: ID of ECS instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
      * @Attribute NetworkInterfaceId: ID of your Network Interface.
      */
     public readonly attrNetworkInterfaceId: ros.IResolvable;
@@ -9297,6 +9360,7 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNetworkInterfaceAttachmentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNetworkInterfaceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
         this.attrNetworkInterfaceId = this.getAtt('NetworkInterfaceId');
         this.attrTrunkNetworkInstanceId = this.getAtt('TrunkNetworkInstanceId');
 
@@ -9447,1819 +9511,6 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::PrepayInstance`
- */
-export interface RosPrepayInstanceProps {
-
-    /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    readonly imageId: string | ros.IResolvable;
-
-    /**
-     * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
-     */
-    readonly instanceType: string | ros.IResolvable;
-
-    /**
-     * @Property maxAmount: Max number of instances to create, should be smaller than 'MaxAmount' and smaller than 100.
-     */
-    readonly maxAmount: number | ros.IResolvable;
-
-    /**
-     * @Property minAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 100.
-     */
-    readonly minAmount: number | ros.IResolvable;
-
-    /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
-     */
-    readonly period: number | ros.IResolvable;
-
-    /**
-     * @Property periodType: Charge period for created instances.
-     */
-    readonly periodType: string | ros.IResolvable;
-
-    /**
-     * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
-     */
-    readonly allocatePublicIp?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenew: Auto renew the prepay instance. If the period type is by year, it will renew by year, else it will renew by month.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
-     */
-    readonly dedicatedHostId?: string | ros.IResolvable;
-
-    /**
-     * @Property deploymentSetId: Deployment set ID.
-     */
-    readonly deploymentSetId?: string | ros.IResolvable;
-
-    /**
-     * @Property description: Description of the instance, [2, 256] characters. Do not fill or empty, the default is empty.
-     */
-    readonly description?: string | ros.IResolvable;
-
-    /**
-     * @Property diskMappings: Disk mappings to attach to instance. Max support 16 disks.
-     * If the image contains a data disk, you can specify other parameters of the data disk via the same value of parameter "Device". If parameter "Category" is not specified, it will be cloud_efficiency instead of "Category" of data disk in the image.
-     */
-    readonly diskMappings?: Array<RosPrepayInstance.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
-     */
-    readonly hostName?: string | ros.IResolvable;
-
-    /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
-     */
-    readonly hpcClusterId?: string | ros.IResolvable;
-
-    /**
-     * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
-     */
-    readonly instanceChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    readonly instanceName?: string | ros.IResolvable;
-
-    /**
-     * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. For AfterPay instance, default is 'PayByBandwidth'.
-     */
-    readonly internetChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
-     */
-    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
-
-    /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support true or false, Default is true.
-     */
-    readonly ioOptimized?: boolean | ros.IResolvable;
-
-    /**
-     * @Property keyPairName: SSH key pair name.
-     */
-    readonly keyPairName?: string | ros.IResolvable;
-
-    /**
-     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
-     */
-    readonly password?: string | ros.IResolvable;
-
-    /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
-     */
-    readonly passwordInherit?: boolean | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
-
-    /**
-     * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
-     */
-    readonly privateIpAddress?: string | ros.IResolvable;
-
-    /**
-     * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
-     */
-    readonly ramRoleName?: string | ros.IResolvable;
-
-    /**
-     * @Property securityEnhancementStrategy:
-     */
-    readonly securityEnhancementStrategy?: string | ros.IResolvable;
-
-    /**
-     * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
-     */
-    readonly securityGroupId?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
-     */
-    readonly systemDiskCategory?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskDescription: Description of created system disk.
-     */
-    readonly systemDiskDescription?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskDiskName: Name of created system disk.
-     */
-    readonly systemDiskDiskName?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
-     */
-    readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
-     */
-    readonly systemDiskSize?: number | ros.IResolvable;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: RosPrepayInstance.TagsProperty[];
-
-    /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
-     */
-    readonly userData?: string | ros.IResolvable;
-
-    /**
-     * @Property vpcId: The VPC id to create ecs instance.
-     */
-    readonly vpcId?: string | ros.IResolvable;
-
-    /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
-     */
-    readonly vSwitchId?: string | ros.IResolvable;
-
-    /**
-     * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
-     * call the DescribeZones operation to query the most recent zone list. 
-     * Default value is empty, which means random selection.
-     */
-    readonly zoneId?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosPrepayInstanceProps`
- *
- * @param properties - the TypeScript properties of a `RosPrepayInstanceProps`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('periodType', ros.requiredValidator)(properties.periodType));
-    if(properties.periodType && (typeof properties.periodType) !== 'object') {
-        errors.collect(ros.propertyValidator('periodType', ros.validateAllowedValues)({
-          data: properties.periodType,
-          allowedValues: ["Monthly","Yearly"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
-    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
-            data: properties.diskMappings.length,
-            min: undefined,
-            max: 16,
-          }));
-    }
-    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosPrepayInstance_DiskMappingsPropertyValidator))(properties.diskMappings));
-    if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
-            data: properties.systemDiskSize,
-            min: 20,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
-    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
-    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
-    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
-          data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('maxAmount', ros.requiredValidator)(properties.maxAmount));
-    if(properties.maxAmount && (typeof properties.maxAmount) !== 'object') {
-        errors.collect(ros.propertyValidator('maxAmount', ros.validateRange)({
-            data: properties.maxAmount,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('maxAmount', ros.validateNumber)(properties.maxAmount));
-    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
-    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
-    errors.collect(ros.propertyValidator('minAmount', ros.requiredValidator)(properties.minAmount));
-    if(properties.minAmount && (typeof properties.minAmount) !== 'object') {
-        errors.collect(ros.propertyValidator('minAmount', ros.validateRange)({
-            data: properties.minAmount,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('minAmount', ros.validateNumber)(properties.minAmount));
-    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
-    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
-    errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('allocatePublicIp', ros.validateBoolean)(properties.allocatePublicIp));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
-    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
-    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
-    errors.collect(ros.propertyValidator('ioOptimized', ros.validateBoolean)(properties.ioOptimized));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["PayByBandwidth","PayByTraffic"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
-    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
-            data: properties.internetMaxBandwidthOut,
-            min: 0,
-            max: 200,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: 200,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
-    if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
-        errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
-          data: properties.securityEnhancementStrategy,
-          allowedValues: ["Active","Deactive"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    return errors.wrap('supplied properties not correct for "RosPrepayInstanceProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance` resource
- *
- * @param properties - the TypeScript properties of a `RosPrepayInstanceProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosPrepayInstancePropsValidator(properties).assertSuccess();
-    }
-    return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
-      MinAmount: ros.numberToRosTemplate(properties.minAmount),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosPrepayInstanceDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      IoOptimized: ros.booleanToRosTemplate(properties.ioOptimized),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      Password: ros.stringToRosTemplate(properties.password),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-    };
-}
-
-/**
- * A ROS template type:  `ALIYUN::ECS::PrepayInstance`
- */
-export class RosPrepayInstance extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::PrepayInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
-     * @Attribute HostNames: Host names of created instance.
-     */
-    public readonly attrHostNames: ros.IResolvable;
-
-    /**
-     * @Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
-     */
-    public readonly attrInnerIps: ros.IResolvable;
-
-    /**
-     * @Attribute InstanceIds: The instance id list of created ecs instance
-     */
-    public readonly attrInstanceIds: ros.IResolvable;
-
-    /**
-     * @Attribute OrderId: The order id list of created instance.
-     */
-    public readonly attrOrderId: ros.IResolvable;
-
-    /**
-     * @Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
-     */
-    public readonly attrPrivateIps: ros.IResolvable;
-
-    /**
-     * @Attribute PublicIps: Public IP address list of created ecs instance.
-     */
-    public readonly attrPublicIps: ros.IResolvable;
-
-    /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
-     * @Attribute ZoneIds: Zone id of created instance.
-     */
-    public readonly attrZoneIds: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    public imageId: string | ros.IResolvable;
-
-    /**
-     * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
-     */
-    public instanceType: string | ros.IResolvable;
-
-    /**
-     * @Property maxAmount: Max number of instances to create, should be smaller than 'MaxAmount' and smaller than 100.
-     */
-    public maxAmount: number | ros.IResolvable;
-
-    /**
-     * @Property minAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 100.
-     */
-    public minAmount: number | ros.IResolvable;
-
-    /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
-     */
-    public period: number | ros.IResolvable;
-
-    /**
-     * @Property periodType: Charge period for created instances.
-     */
-    public periodType: string | ros.IResolvable;
-
-    /**
-     * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
-     */
-    public allocatePublicIp: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenew: Auto renew the prepay instance. If the period type is by year, it will renew by year, else it will renew by month.
-     */
-    public autoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
-     */
-    public autoRenewPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property dedicatedHostId: which dedicated host will be deployed
-     */
-    public dedicatedHostId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property deploymentSetId: Deployment set ID.
-     */
-    public deploymentSetId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property description: Description of the instance, [2, 256] characters. Do not fill or empty, the default is empty.
-     */
-    public description: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property diskMappings: Disk mappings to attach to instance. Max support 16 disks.
-     * If the image contains a data disk, you can specify other parameters of the data disk via the same value of parameter "Device". If parameter "Category" is not specified, it will be cloud_efficiency instead of "Category" of data disk in the image.
-     */
-    public diskMappings: Array<RosPrepayInstance.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
-     */
-    public hostName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
-     */
-    public hpcClusterId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
-     */
-    public instanceChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    public instanceName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. For AfterPay instance, default is 'PayByBandwidth'.
-     */
-    public internetChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
-     */
-    public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property ioOptimized: The 'optimized' instance can provide better IO performance. Support true or false, Default is true.
-     */
-    public ioOptimized: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property keyPairName: SSH key pair name.
-     */
-    public keyPairName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
-     */
-    public password: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
-     */
-    public passwordInherit: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
-     */
-    public periodUnit: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
-     */
-    public privateIpAddress: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
-     */
-    public ramRoleName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityEnhancementStrategy:
-     */
-    public securityEnhancementStrategy: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
-     */
-    public securityGroupId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
-     */
-    public systemDiskCategory: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskDescription: Description of created system disk.
-     */
-    public systemDiskDescription: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskDiskName: Name of created system disk.
-     */
-    public systemDiskDiskName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
-     */
-    public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
-     */
-    public systemDiskSize: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public tags: RosPrepayInstance.TagsProperty[] | undefined;
-
-    /**
-     * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
-     */
-    public userData: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property vpcId: The VPC id to create ecs instance.
-     */
-    public vpcId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
-     */
-    public vSwitchId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
-     * call the DescribeZones operation to query the most recent zone list. 
-     * Default value is empty, which means random selection.
-     */
-    public zoneId: string | ros.IResolvable | undefined;
-
-    /**
-     * Create a new `ALIYUN::ECS::PrepayInstance`.
-     *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosPrepayInstanceProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosPrepayInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrHostNames = this.getAtt('HostNames');
-        this.attrInnerIps = this.getAtt('InnerIps');
-        this.attrInstanceIds = this.getAtt('InstanceIds');
-        this.attrOrderId = this.getAtt('OrderId');
-        this.attrPrivateIps = this.getAtt('PrivateIps');
-        this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
-        this.attrZoneIds = this.getAtt('ZoneIds');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.imageId = props.imageId;
-        this.instanceType = props.instanceType;
-        this.maxAmount = props.maxAmount;
-        this.minAmount = props.minAmount;
-        this.period = props.period;
-        this.periodType = props.periodType;
-        this.allocatePublicIp = props.allocatePublicIp;
-        this.autoRenew = props.autoRenew;
-        this.autoRenewPeriod = props.autoRenewPeriod;
-        this.dedicatedHostId = props.dedicatedHostId;
-        this.deploymentSetId = props.deploymentSetId;
-        this.description = props.description;
-        this.diskMappings = props.diskMappings;
-        this.hostName = props.hostName;
-        this.hpcClusterId = props.hpcClusterId;
-        this.instanceChargeType = props.instanceChargeType;
-        this.instanceName = props.instanceName;
-        this.internetChargeType = props.internetChargeType;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
-        this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
-        this.ioOptimized = props.ioOptimized;
-        this.keyPairName = props.keyPairName;
-        this.password = props.password;
-        this.passwordInherit = props.passwordInherit;
-        this.periodUnit = props.periodUnit;
-        this.privateIpAddress = props.privateIpAddress;
-        this.ramRoleName = props.ramRoleName;
-        this.securityEnhancementStrategy = props.securityEnhancementStrategy;
-        this.securityGroupId = props.securityGroupId;
-        this.systemDiskCategory = props.systemDiskCategory;
-        this.systemDiskDescription = props.systemDiskDescription;
-        this.systemDiskDiskName = props.systemDiskDiskName;
-        this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
-        this.systemDiskSize = props.systemDiskSize;
-        this.tags = props.tags;
-        this.userData = props.userData;
-        this.vpcId = props.vpcId;
-        this.vSwitchId = props.vSwitchId;
-        this.zoneId = props.zoneId;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            imageId: this.imageId,
-            instanceType: this.instanceType,
-            maxAmount: this.maxAmount,
-            minAmount: this.minAmount,
-            period: this.period,
-            periodType: this.periodType,
-            allocatePublicIp: this.allocatePublicIp,
-            autoRenew: this.autoRenew,
-            autoRenewPeriod: this.autoRenewPeriod,
-            dedicatedHostId: this.dedicatedHostId,
-            deploymentSetId: this.deploymentSetId,
-            description: this.description,
-            diskMappings: this.diskMappings,
-            hostName: this.hostName,
-            hpcClusterId: this.hpcClusterId,
-            instanceChargeType: this.instanceChargeType,
-            instanceName: this.instanceName,
-            internetChargeType: this.internetChargeType,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
-            internetMaxBandwidthOut: this.internetMaxBandwidthOut,
-            ioOptimized: this.ioOptimized,
-            keyPairName: this.keyPairName,
-            password: this.password,
-            passwordInherit: this.passwordInherit,
-            periodUnit: this.periodUnit,
-            privateIpAddress: this.privateIpAddress,
-            ramRoleName: this.ramRoleName,
-            securityEnhancementStrategy: this.securityEnhancementStrategy,
-            securityGroupId: this.securityGroupId,
-            systemDiskCategory: this.systemDiskCategory,
-            systemDiskDescription: this.systemDiskDescription,
-            systemDiskDiskName: this.systemDiskDiskName,
-            systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
-            systemDiskSize: this.systemDiskSize,
-            tags: this.tags,
-            userData: this.userData,
-            vpcId: this.vpcId,
-            vSwitchId: this.vSwitchId,
-            zoneId: this.zoneId,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosPrepayInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-export namespace RosPrepayInstance {
-    /**
-     * @stability external
-     */
-    export interface DiskMappingsProperty {
-        /**
-         * @Property snapshotId: ID of the snapshot to create the volume.
-         */
-        readonly snapshotId?: string | ros.IResolvable;
-        /**
-         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd. Default is cloud_efficiency.
-         */
-        readonly category?: string | ros.IResolvable;
-        /**
-         * @Property description: Description of the disk, [2, 256] characters. Do not fill or empty, the default is empty.
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
-         */
-        readonly device?: string | ros.IResolvable;
-        /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
-         */
-        readonly performanceLevel?: string | ros.IResolvable;
-        /**
-         * @Property size: The size of the volume, unit in GB.Value range: cloud: [5,2000], cloud_efficiency: [20,32768], cloud_ssd: [20,32768], cloud_essd: [20,32768], ephemeral_ssd: [5,800].The value should be equal to or greater than the specific snapshot.
-         */
-        readonly size: string | ros.IResolvable;
-        /**
-         * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
-         */
-        readonly diskName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `DiskMappingsProperty`
- *
- * @param properties - the TypeScript properties of a `DiskMappingsProperty`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstance_DiskMappingsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
-    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
-    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
-    errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
-    errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
-    return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance.DiskMappings` resource
- *
- * @param properties - the TypeScript properties of a `DiskMappingsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance.DiskMappings` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceDiskMappingsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstance_DiskMappingsPropertyValidator(properties).assertSuccess();
-    return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-    };
-}
-
-export namespace RosPrepayInstance {
-    /**
-     * @stability external
-     */
-    export interface TagsProperty {
-        /**
-         * @Property value: undefined
-         */
-        readonly value?: string | ros.IResolvable;
-        /**
-         * @Property key: undefined
-         */
-        readonly key: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TagsProperty`
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
-    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
-    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "TagsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance.Tags` resource
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstance.Tags` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceTagsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstance_TagsPropertyValidator(properties).assertSuccess();
-    return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-    };
-}
-
-/**
- * Properties for defining a `ALIYUN::ECS::PrepayInstanceGroupClone`
- */
-export interface RosPrepayInstanceGroupCloneProps {
-
-    /**
-     * @Property maxAmount: Max number of instances to create, should be smaller than 'MaxAmount' and smaller than 100.
-     */
-    readonly maxAmount: number | ros.IResolvable;
-
-    /**
-     * @Property minAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 100.
-     */
-    readonly minAmount: number | ros.IResolvable;
-
-    /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
-     */
-    readonly period: number | ros.IResolvable;
-
-    /**
-     * @Property periodType: Charge period for created instances.
-     */
-    readonly periodType: string | ros.IResolvable;
-
-    /**
-     * @Property sourceInstanceId: Source ecs instance used to copy properties to clone new ecs instance. It will copy the InstanceType, ImageId, InternetChargeType, InternetMaxBandwidthIn, InternetMaxBandwidthOut and the system disk and data disk configurations. If the instance network is VPC, it will also clone the relative properties. If specified instance with more than one security group, it will use the first security group to create instance. you can also specify the SecurityGroupId to override it.
-     */
-    readonly sourceInstanceId: string | ros.IResolvable;
-
-    /**
-     * @Property autoRenew: Whether renew the fee automatically? When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.Old instances will not be changed.
-     */
-    readonly autoRenew?: string | ros.IResolvable;
-
-    /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property deploymentSetId: Deployment set ID. The change of the property does not affect existing instances.
-     */
-    readonly deploymentSetId?: string | ros.IResolvable;
-
-    /**
-     * @Property description: Description of the instance, [2, 256] characters. Do not fill or empty, the default is empty. Old instances will not be changed.
-     */
-    readonly description?: string | ros.IResolvable;
-
-    /**
-     * @Property diskMappings: Disk mappings to attach to instance. Max support 16 disks.
-     * If the image contains a data disk, you can specify other parameters of the data disk via the same value of parameter "Device". If parameter "Category" is not specified, it will be cloud_efficiency instead of "Category" of data disk in the image.Old instances will not be changed.
-     */
-    readonly diskMappings?: Array<RosPrepayInstanceGroupClone.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property eniMappings: NetworkInterface to attach to instance. Max support 1 ENI.
-     */
-    readonly eniMappings?: Array<RosPrepayInstanceGroupClone.EniMappingsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
-     */
-    readonly hpcClusterId?: string | ros.IResolvable;
-
-    /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    readonly imageId?: string | ros.IResolvable;
-
-    /**
-     * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    readonly instanceName?: string | ros.IResolvable;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
-
-    /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
-     */
-    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
-
-    /**
-     * @Property keyPairName: SSH key pair name.Old instances will not be changed.
-     */
-    readonly keyPairName?: string | ros.IResolvable;
-
-    /**
-     * @Property launchTemplateId: ID of launch template. Launch template id or name must be specified to use launch template
-     */
-    readonly launchTemplateId?: string | ros.IResolvable;
-
-    /**
-     * @Property launchTemplateName: Name of launch template. Launch template id or name must be specified to use launch template
-     */
-    readonly launchTemplateName?: string | ros.IResolvable;
-
-    /**
-     * @Property launchTemplateVersion: Version of launch template. Default version is used if version is not specified.
-     */
-    readonly launchTemplateVersion?: string | ros.IResolvable;
-
-    /**
-     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
-     */
-    readonly password?: string | ros.IResolvable;
-
-    /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
-     */
-    readonly passwordInherit?: boolean | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
-
-    /**
-     * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
-     */
-    readonly ramRoleName?: string | ros.IResolvable;
-
-    /**
-     * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
-     */
-    readonly securityGroupId?: string | ros.IResolvable;
-
-    /**
-     * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
-     */
-    readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
-     */
-    readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
-     */
-    readonly systemDiskCategory?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskDescription: Description of created system disk.Old instances will not be changed.
-     */
-    readonly systemDiskDescription?: string | ros.IResolvable;
-
-    /**
-     * @Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
-     */
-    readonly systemDiskDiskName?: string | ros.IResolvable;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: RosPrepayInstanceGroupClone.TagsProperty[];
-
-    /**
-     * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
-     * call the DescribeZones operation to query the most recent zone list. 
-     * Default value is empty, which means random selection.
-     */
-    readonly zoneId?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosPrepayInstanceGroupCloneProps`
- *
- * @param properties - the TypeScript properties of a `RosPrepayInstanceGroupCloneProps`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstanceGroupClonePropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('periodType', ros.requiredValidator)(properties.periodType));
-    if(properties.periodType && (typeof properties.periodType) !== 'object') {
-        errors.collect(ros.propertyValidator('periodType', ros.validateAllowedValues)({
-          data: properties.periodType,
-          allowedValues: ["Monthly","Yearly"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
-            data: properties.diskMappings.length,
-            min: undefined,
-            max: 16,
-          }));
-    }
-    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosPrepayInstanceGroupClone_DiskMappingsPropertyValidator))(properties.diskMappings));
-    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
-    if(properties.autoRenew && (typeof properties.autoRenew) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenew', ros.validateAllowedValues)({
-          data: properties.autoRenew,
-          allowedValues: ["True","False"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('sourceInstanceId', ros.requiredValidator)(properties.sourceInstanceId));
-    errors.collect(ros.propertyValidator('sourceInstanceId', ros.validateString)(properties.sourceInstanceId));
-    errors.collect(ros.propertyValidator('maxAmount', ros.requiredValidator)(properties.maxAmount));
-    if(properties.maxAmount && (typeof properties.maxAmount) !== 'object') {
-        errors.collect(ros.propertyValidator('maxAmount', ros.validateRange)({
-            data: properties.maxAmount,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('maxAmount', ros.validateNumber)(properties.maxAmount));
-    errors.collect(ros.propertyValidator('systemDiskAutoSnapshotPolicyId', ros.validateString)(properties.systemDiskAutoSnapshotPolicyId));
-    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
-    errors.collect(ros.propertyValidator('minAmount', ros.requiredValidator)(properties.minAmount));
-    if(properties.minAmount && (typeof properties.minAmount) !== 'object') {
-        errors.collect(ros.propertyValidator('minAmount', ros.validateRange)({
-            data: properties.minAmount,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('minAmount', ros.validateNumber)(properties.minAmount));
-    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
-    errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstanceGroupClone_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
-    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
-    errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
-    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
-    if(properties.eniMappings && (Array.isArray(properties.eniMappings) || (typeof properties.eniMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
-            data: properties.eniMappings.length,
-            min: undefined,
-            max: 1,
-          }));
-    }
-    errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosPrepayInstanceGroupClone_EniMappingsPropertyValidator))(properties.eniMappings));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
-    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
-            data: properties.internetMaxBandwidthOut,
-            min: 0,
-            max: 200,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
-            data: properties.internetMaxBandwidthIn,
-            min: 1,
-            max: 200,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateNumber)(properties.internetMaxBandwidthIn));
-    if(properties.launchTemplateVersion && (typeof properties.launchTemplateVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('launchTemplateVersion', ros.validateAllowedPattern)({
-          data: properties.launchTemplateVersion,
-          reg: /^[1-9]\d*$/
-        }));
-    }
-    errors.collect(ros.propertyValidator('launchTemplateVersion', ros.validateString)(properties.launchTemplateVersion));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    return errors.wrap('supplied properties not correct for "RosPrepayInstanceGroupCloneProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone` resource
- *
- * @param properties - the TypeScript properties of a `RosPrepayInstanceGroupCloneProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceGroupClonePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosPrepayInstanceGroupClonePropsValidator(properties).assertSuccess();
-    }
-    return {
-      MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
-      MinAmount: ros.numberToRosTemplate(properties.minAmount),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      SourceInstanceId: ros.stringToRosTemplate(properties.sourceInstanceId),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosPrepayInstanceGroupCloneDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      EniMappings: ros.listMapper(rosPrepayInstanceGroupCloneEniMappingsPropertyToRosTemplate)(properties.eniMappings),
-      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
-      LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
-      LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
-      Password: ros.stringToRosTemplate(properties.password),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
-      SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      Tags: ros.listMapper(rosPrepayInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-    };
-}
-
-/**
- * A ROS template type:  `ALIYUN::ECS::PrepayInstanceGroupClone`
- */
-export class RosPrepayInstanceGroupClone extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::PrepayInstanceGroupClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
-     * @Attribute HostNames: Host names of created instance.
-     */
-    public readonly attrHostNames: ros.IResolvable;
-
-    /**
-     * @Attribute InnerIps: Inner IP address list of the specified instance. Only for classical instance.
-     */
-    public readonly attrInnerIps: ros.IResolvable;
-
-    /**
-     * @Attribute InstanceIds: The instance id list of created ecs instance
-     */
-    public readonly attrInstanceIds: ros.IResolvable;
-
-    /**
-     * @Attribute OrderId: The order id list of created instance.
-     */
-    public readonly attrOrderId: ros.IResolvable;
-
-    /**
-     * @Attribute PrivateIps: Private IP address list of created ecs instance. Only for VPC instance.
-     */
-    public readonly attrPrivateIps: ros.IResolvable;
-
-    /**
-     * @Attribute PublicIps: Public IP address list of created ecs instance.
-     */
-    public readonly attrPublicIps: ros.IResolvable;
-
-    /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
-     * @Attribute ZoneIds: Zone id of created instance.
-     */
-    public readonly attrZoneIds: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property maxAmount: Max number of instances to create, should be smaller than 'MaxAmount' and smaller than 100.
-     */
-    public maxAmount: number | ros.IResolvable;
-
-    /**
-     * @Property minAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 100.
-     */
-    public minAmount: number | ros.IResolvable;
-
-    /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
-     */
-    public period: number | ros.IResolvable;
-
-    /**
-     * @Property periodType: Charge period for created instances.
-     */
-    public periodType: string | ros.IResolvable;
-
-    /**
-     * @Property sourceInstanceId: Source ecs instance used to copy properties to clone new ecs instance. It will copy the InstanceType, ImageId, InternetChargeType, InternetMaxBandwidthIn, InternetMaxBandwidthOut and the system disk and data disk configurations. If the instance network is VPC, it will also clone the relative properties. If specified instance with more than one security group, it will use the first security group to create instance. you can also specify the SecurityGroupId to override it.
-     */
-    public sourceInstanceId: string | ros.IResolvable;
-
-    /**
-     * @Property autoRenew: Whether renew the fee automatically? When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.Old instances will not be changed.
-     */
-    public autoRenew: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenewPeriod: The time period of auto renew. When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.Old instances will not be changed.
-     */
-    public autoRenewPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property deploymentSetId: Deployment set ID. The change of the property does not affect existing instances.
-     */
-    public deploymentSetId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property description: Description of the instance, [2, 256] characters. Do not fill or empty, the default is empty. Old instances will not be changed.
-     */
-    public description: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property diskMappings: Disk mappings to attach to instance. Max support 16 disks.
-     * If the image contains a data disk, you can specify other parameters of the data disk via the same value of parameter "Device". If parameter "Category" is not specified, it will be cloud_efficiency instead of "Category" of data disk in the image.Old instances will not be changed.
-     */
-    public diskMappings: Array<RosPrepayInstanceGroupClone.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property eniMappings: NetworkInterface to attach to instance. Max support 1 ENI.
-     */
-    public eniMappings: Array<RosPrepayInstanceGroupClone.EniMappingsProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
-     */
-    public hpcClusterId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    public imageId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
-     */
-    public instanceName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
-     */
-    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
-     */
-    public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property keyPairName: SSH key pair name.Old instances will not be changed.
-     */
-    public keyPairName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property launchTemplateId: ID of launch template. Launch template id or name must be specified to use launch template
-     */
-    public launchTemplateId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property launchTemplateName: Name of launch template. Launch template id or name must be specified to use launch template
-     */
-    public launchTemplateName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property launchTemplateVersion: Version of launch template. Default version is used if version is not specified.
-     */
-    public launchTemplateVersion: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
-     */
-    public password: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
-     */
-    public passwordInherit: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month. Default value is Month.Old instances will not be changed.
-     */
-    public periodUnit: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
-     */
-    public ramRoleName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityGroupId: Security group to create ecs instance. For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
-     */
-    public securityGroupId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
-     */
-    public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
-     */
-    public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
-     */
-    public systemDiskCategory: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskDescription: Description of created system disk.Old instances will not be changed.
-     */
-    public systemDiskDescription: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
-     */
-    public systemDiskDiskName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public tags: RosPrepayInstanceGroupClone.TagsProperty[] | undefined;
-
-    /**
-     * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
-     * call the DescribeZones operation to query the most recent zone list. 
-     * Default value is empty, which means random selection.
-     */
-    public zoneId: string | ros.IResolvable | undefined;
-
-    /**
-     * Create a new `ALIYUN::ECS::PrepayInstanceGroupClone`.
-     *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosPrepayInstanceGroupCloneProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosPrepayInstanceGroupClone.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrHostNames = this.getAtt('HostNames');
-        this.attrInnerIps = this.getAtt('InnerIps');
-        this.attrInstanceIds = this.getAtt('InstanceIds');
-        this.attrOrderId = this.getAtt('OrderId');
-        this.attrPrivateIps = this.getAtt('PrivateIps');
-        this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
-        this.attrZoneIds = this.getAtt('ZoneIds');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.maxAmount = props.maxAmount;
-        this.minAmount = props.minAmount;
-        this.period = props.period;
-        this.periodType = props.periodType;
-        this.sourceInstanceId = props.sourceInstanceId;
-        this.autoRenew = props.autoRenew;
-        this.autoRenewPeriod = props.autoRenewPeriod;
-        this.deploymentSetId = props.deploymentSetId;
-        this.description = props.description;
-        this.diskMappings = props.diskMappings;
-        this.eniMappings = props.eniMappings;
-        this.hpcClusterId = props.hpcClusterId;
-        this.imageId = props.imageId;
-        this.instanceName = props.instanceName;
-        this.internetMaxBandwidthIn = props.internetMaxBandwidthIn;
-        this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
-        this.keyPairName = props.keyPairName;
-        this.launchTemplateId = props.launchTemplateId;
-        this.launchTemplateName = props.launchTemplateName;
-        this.launchTemplateVersion = props.launchTemplateVersion;
-        this.password = props.password;
-        this.passwordInherit = props.passwordInherit;
-        this.periodUnit = props.periodUnit;
-        this.ramRoleName = props.ramRoleName;
-        this.securityGroupId = props.securityGroupId;
-        this.securityGroupIds = props.securityGroupIds;
-        this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
-        this.systemDiskCategory = props.systemDiskCategory;
-        this.systemDiskDescription = props.systemDiskDescription;
-        this.systemDiskDiskName = props.systemDiskDiskName;
-        this.tags = props.tags;
-        this.zoneId = props.zoneId;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            maxAmount: this.maxAmount,
-            minAmount: this.minAmount,
-            period: this.period,
-            periodType: this.periodType,
-            sourceInstanceId: this.sourceInstanceId,
-            autoRenew: this.autoRenew,
-            autoRenewPeriod: this.autoRenewPeriod,
-            deploymentSetId: this.deploymentSetId,
-            description: this.description,
-            diskMappings: this.diskMappings,
-            eniMappings: this.eniMappings,
-            hpcClusterId: this.hpcClusterId,
-            imageId: this.imageId,
-            instanceName: this.instanceName,
-            internetMaxBandwidthIn: this.internetMaxBandwidthIn,
-            internetMaxBandwidthOut: this.internetMaxBandwidthOut,
-            keyPairName: this.keyPairName,
-            launchTemplateId: this.launchTemplateId,
-            launchTemplateName: this.launchTemplateName,
-            launchTemplateVersion: this.launchTemplateVersion,
-            password: this.password,
-            passwordInherit: this.passwordInherit,
-            periodUnit: this.periodUnit,
-            ramRoleName: this.ramRoleName,
-            securityGroupId: this.securityGroupId,
-            securityGroupIds: this.securityGroupIds,
-            systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
-            systemDiskCategory: this.systemDiskCategory,
-            systemDiskDescription: this.systemDiskDescription,
-            systemDiskDiskName: this.systemDiskDiskName,
-            tags: this.tags,
-            zoneId: this.zoneId,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosPrepayInstanceGroupClonePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-export namespace RosPrepayInstanceGroupClone {
-    /**
-     * @stability external
-     */
-    export interface DiskMappingsProperty {
-        /**
-         * @Property snapshotId: ID of the snapshot to create the volume.
-         */
-        readonly snapshotId?: string | ros.IResolvable;
-        /**
-         * @Property category: The volume type.Now support: cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd. Default is cloud_efficiency.
-         */
-        readonly category?: string | ros.IResolvable;
-        /**
-         * @Property description: Description of the disk, [2, 256] characters. Do not fill or empty, the default is empty.
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
-         * @Property kmsKeyId: The KMS key ID for the data disk.
-         */
-        readonly kmsKeyId?: string | ros.IResolvable;
-        /**
-         * @Property encrypted: Whether the data disk is encrypted or not. Options:
-     * true: Encrypted.
-     * false: Not encrypted.
-     * Default value: false.
-         */
-        readonly encrypted?: string | ros.IResolvable;
-        /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
-         */
-        readonly device?: string | ros.IResolvable;
-        /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
-         */
-        readonly performanceLevel?: string | ros.IResolvable;
-        /**
-         * @Property size: The size of the volume, unit in GB.Value range: cloud: [5,2000], cloud_efficiency: [20,32768], cloud_ssd: [20,32768], cloud_essd: [20,32768], ephemeral_ssd: [5,800].The value should be equal to or greater than the specific snapshot.
-         */
-        readonly size: string | ros.IResolvable;
-        /**
-         * @Property autoSnapshotPolicyId: Auto snapshot policy ID.
-         */
-        readonly autoSnapshotPolicyId?: string | ros.IResolvable;
-        /**
-         * @Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
-         */
-        readonly diskName?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `DiskMappingsProperty`
- *
- * @param properties - the TypeScript properties of a `DiskMappingsProperty`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstanceGroupClone_DiskMappingsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    if(properties.category && (typeof properties.category) !== 'object') {
-        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
-          data: properties.category,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
-    if(properties.encrypted && (typeof properties.encrypted) !== 'object') {
-        errors.collect(ros.propertyValidator('encrypted', ros.validateAllowedValues)({
-          data: properties.encrypted,
-          allowedValues: ["true","false"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('encrypted', ros.validateString)(properties.encrypted));
-    errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
-    errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
-    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
-    errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
-    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
-    errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
-    return errors.wrap('supplied properties not correct for "DiskMappingsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.DiskMappings` resource
- *
- * @param properties - the TypeScript properties of a `DiskMappingsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.DiskMappings` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceGroupCloneDiskMappingsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstanceGroupClone_DiskMappingsPropertyValidator(properties).assertSuccess();
-    return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      Encrypted: ros.stringToRosTemplate(properties.encrypted),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-    };
-}
-
-export namespace RosPrepayInstanceGroupClone {
-    /**
-     * @stability external
-     */
-    export interface EniMappingsProperty {
-        /**
-         * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
-         * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
-         */
-        readonly securityGroupId: string | ros.IResolvable;
-        /**
-         * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
-         */
-        readonly vSwitchId: string | ros.IResolvable;
-        /**
-         * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
-         */
-        readonly networkInterfaceName?: string | ros.IResolvable;
-        /**
-         * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
-         */
-        readonly primaryIpAddress?: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `EniMappingsProperty`
- *
- * @param properties - the TypeScript properties of a `EniMappingsProperty`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstanceGroupClone_EniMappingsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
-    errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
-    return errors.wrap('supplied properties not correct for "EniMappingsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.EniMappings` resource
- *
- * @param properties - the TypeScript properties of a `EniMappingsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.EniMappings` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceGroupCloneEniMappingsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstanceGroupClone_EniMappingsPropertyValidator(properties).assertSuccess();
-    return {
-      Description: ros.stringToRosTemplate(properties.description),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
-      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
-    };
-}
-
-export namespace RosPrepayInstanceGroupClone {
-    /**
-     * @stability external
-     */
-    export interface TagsProperty {
-        /**
-         * @Property value: undefined
-         */
-        readonly value?: string | ros.IResolvable;
-        /**
-         * @Property key: undefined
-         */
-        readonly key: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TagsProperty`
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the result of the validation.
- */
-function RosPrepayInstanceGroupClone_TagsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
-    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
-    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "TagsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.Tags` resource
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::PrepayInstanceGroupClone.Tags` resource.
- */
-// @ts-ignore TS6133
-function rosPrepayInstanceGroupCloneTagsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstanceGroupClone_TagsPropertyValidator(properties).assertSuccess();
-    return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-    };
-}
-
-/**
  * Properties for defining a `ALIYUN::ECS::Route`
  */
 export interface RosRouteProps {
@@ -11268,11 +9519,6 @@ export interface RosRouteProps {
      * @Property destinationCidrBlock: The RouteEntry's target network segment.
      */
     readonly destinationCidrBlock: string | ros.IResolvable;
-
-    /**
-     * @Property routeId: RouteId of created route entry.
-     */
-    readonly routeId: string | ros.IResolvable;
 
     /**
      * @Property routeTableId: RouteTableId of created route entry.
@@ -11290,7 +9536,7 @@ export interface RosRouteProps {
     readonly nextHopList?: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
     readonly nextHopType?: string | ros.IResolvable;
 }
@@ -11305,12 +9551,6 @@ export interface RosRouteProps {
 function RosRoutePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.nextHopType && (typeof properties.nextHopType) !== 'object') {
-        errors.collect(ros.propertyValidator('nextHopType', ros.validateAllowedValues)({
-          data: properties.nextHopType,
-          allowedValues: ["Instance","Tunnel","HaVip","RouterInterface"],
-        }));
-    }
     errors.collect(ros.propertyValidator('nextHopType', ros.validateString)(properties.nextHopType));
     errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
     errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
@@ -11318,8 +9558,6 @@ function RosRoutePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('nextHopList', ros.listValidator(RosRoute_NextHopListPropertyValidator))(properties.nextHopList));
     errors.collect(ros.propertyValidator('destinationCidrBlock', ros.requiredValidator)(properties.destinationCidrBlock));
     errors.collect(ros.propertyValidator('destinationCidrBlock', ros.validateString)(properties.destinationCidrBlock));
-    errors.collect(ros.propertyValidator('routeId', ros.requiredValidator)(properties.routeId));
-    errors.collect(ros.propertyValidator('routeId', ros.validateString)(properties.routeId));
     return errors.wrap('supplied properties not correct for "RosRouteProps"');
 }
 
@@ -11338,7 +9576,6 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
     }
     return {
       DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      RouteId: ros.stringToRosTemplate(properties.routeId),
       RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
       NextHopId: ros.stringToRosTemplate(properties.nextHopId),
       NextHopList: ros.listMapper(rosRouteNextHopListPropertyToRosTemplate)(properties.nextHopList),
@@ -11369,11 +9606,6 @@ export class RosRoute extends ros.RosResource {
     public destinationCidrBlock: string | ros.IResolvable;
 
     /**
-     * @Property routeId: RouteId of created route entry.
-     */
-    public routeId: string | ros.IResolvable;
-
-    /**
      * @Property routeTableId: RouteTableId of created route entry.
      */
     public routeTableId: string | ros.IResolvable;
@@ -11389,7 +9621,7 @@ export class RosRoute extends ros.RosResource {
     public nextHopList: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * @Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
     public nextHopType: string | ros.IResolvable | undefined;
 
@@ -11405,7 +9637,6 @@ export class RosRoute extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.destinationCidrBlock = props.destinationCidrBlock;
-        this.routeId = props.routeId;
         this.routeTableId = props.routeTableId;
         this.nextHopId = props.nextHopId;
         this.nextHopList = props.nextHopList;
@@ -11416,7 +9647,6 @@ export class RosRoute extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             destinationCidrBlock: this.destinationCidrBlock,
-            routeId: this.routeId,
             routeTableId: this.routeTableId,
             nextHopId: this.nextHopId,
             nextHopList: this.nextHopList,
@@ -11434,7 +9664,7 @@ export namespace RosRoute {
      */
     export interface NextHopListProperty {
         /**
-         * @Property nextHopType: Route entry next hop type. Now support 'Instance|Tunnel|HaVip|RouterInterface'.
+         * @Property nextHopType: Route entry next hop type. Now support 'RouterInterface'.
          */
         readonly nextHopType?: string | ros.IResolvable;
         /**
@@ -11453,12 +9683,6 @@ export namespace RosRoute {
 function RosRoute_NextHopListPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.nextHopType && (typeof properties.nextHopType) !== 'object') {
-        errors.collect(ros.propertyValidator('nextHopType', ros.validateAllowedValues)({
-          data: properties.nextHopType,
-          allowedValues: ["Instance","Tunnel","HaVip","RouterInterface"],
-        }));
-    }
     errors.collect(ros.propertyValidator('nextHopType', ros.validateString)(properties.nextHopType));
     errors.collect(ros.propertyValidator('nextHopId', ros.requiredValidator)(properties.nextHopId));
     errors.collect(ros.propertyValidator('nextHopId', ros.validateString)(properties.nextHopId));
@@ -12324,7 +10548,7 @@ export interface RosSecurityGroupProps {
     readonly securityGroupType?: string | ros.IResolvable;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: Tags to attach to security group. Max support 20 tags to add during create security group. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosSecurityGroup.TagsProperty[];
 
@@ -12453,7 +10677,7 @@ export class RosSecurityGroup extends ros.RosResource {
     public securityGroupType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * @Property tags: Tags to attach to security group. Max support 20 tags to add during create security group. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosSecurityGroup.TagsProperty[] | undefined;
 
@@ -12596,7 +10820,7 @@ function RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties: any):
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
           data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
@@ -12739,7 +10963,7 @@ function RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties: any)
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
           data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
@@ -13143,7 +11367,7 @@ function RosSecurityGroupEgressPropsValidator(properties: any): ros.ValidationRe
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
           data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
@@ -13417,7 +11641,7 @@ function RosSecurityGroupIngressPropsValidator(properties: any): ros.ValidationR
     if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
           data: properties.ipProtocol,
-          allowedValues: ["tcp","udp","icmp","gre","all"],
+          allowedValues: ["tcp","udp","icmp","gre","all","icmpv6"],
         }));
     }
     errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
@@ -13876,14 +12100,43 @@ export interface RosVPCProps {
     readonly ipv6CidrBlock?: string | ros.IResolvable;
 
     /**
+     * @Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC. Valid values:
+     * BGP(default): Alibaba Cloud BGP IPv6
+     * ChinaMobile: China Mobile (single line)
+     * ChinaUnicom: China Unicom (single line)
+     * ChinaTelecom: China Telecom (single line)
+     * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+     */
+    readonly ipv6Isp?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
+     * You can specify one of the following standard IPv4 CIDR blocks or their 
+     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
+     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
+     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
+     * the following rules: 
+     * 1. The CIDR block cannot start with 0. 
+     * 2. The subnet mask must be 8 to 24 bits in length.
+     * The secondary CIDR block cannot overlap with the primary 
+     * CIDR block or an existing secondary CIDR block.
+     */
+    readonly secondaryCidrBlock?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosVPC.TagsProperty[];
+
+    /**
+     * @Property userCidr: The user CIDR block. Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+     */
+    readonly userCidr?: string | ros.IResolvable;
 
     /**
      * @Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
@@ -13901,7 +12154,9 @@ export interface RosVPCProps {
 function RosVPCPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ipv6Isp', ros.validateString)(properties.ipv6Isp));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('secondaryCidrBlock', ros.validateString)(properties.secondaryCidrBlock));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('vpcName', ros.validateString)(properties.vpcName));
@@ -13922,6 +12177,7 @@ function RosVPCPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVPC_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('enableIpv6', ros.validateBoolean)(properties.enableIpv6));
+    errors.collect(ros.propertyValidator('userCidr', ros.validateString)(properties.userCidr));
     return errors.wrap('supplied properties not correct for "RosVPCProps"');
 }
 
@@ -13943,8 +12199,11 @@ function rosVPCPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       Description: ros.stringToRosTemplate(properties.description),
       EnableIpv6: ros.booleanToRosTemplate(properties.enableIpv6),
       Ipv6CidrBlock: ros.stringToRosTemplate(properties.ipv6CidrBlock),
+      Ipv6Isp: ros.stringToRosTemplate(properties.ipv6Isp),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecondaryCidrBlock: ros.stringToRosTemplate(properties.secondaryCidrBlock),
       Tags: ros.listMapper(rosVPCTagsPropertyToRosTemplate)(properties.tags),
+      UserCidr: ros.stringToRosTemplate(properties.userCidr),
       VpcName: ros.stringToRosTemplate(properties.vpcName),
     };
 }
@@ -14005,14 +12264,43 @@ export class RosVPC extends ros.RosResource {
     public ipv6CidrBlock: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC. Valid values:
+     * BGP(default): Alibaba Cloud BGP IPv6
+     * ChinaMobile: China Mobile (single line)
+     * ChinaUnicom: China Unicom (single line)
+     * ChinaTelecom: China Telecom (single line)
+     * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+     */
+    public ipv6Isp: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
+     * You can specify one of the following standard IPv4 CIDR blocks or their 
+     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
+     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
+     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
+     * the following rules: 
+     * 1. The CIDR block cannot start with 0. 
+     * 2. The subnet mask must be 8 to 24 bits in length.
+     * The secondary CIDR block cannot overlap with the primary 
+     * CIDR block or an existing secondary CIDR block.
+     */
+    public secondaryCidrBlock: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosVPC.TagsProperty[] | undefined;
+
+    /**
+     * @Property userCidr: The user CIDR block. Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+     */
+    public userCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
@@ -14037,8 +12325,11 @@ export class RosVPC extends ros.RosResource {
         this.description = props.description;
         this.enableIpv6 = props.enableIpv6;
         this.ipv6CidrBlock = props.ipv6CidrBlock;
+        this.ipv6Isp = props.ipv6Isp;
         this.resourceGroupId = props.resourceGroupId;
+        this.secondaryCidrBlock = props.secondaryCidrBlock;
         this.tags = props.tags;
+        this.userCidr = props.userCidr;
         this.vpcName = props.vpcName;
     }
 
@@ -14049,8 +12340,11 @@ export class RosVPC extends ros.RosResource {
             description: this.description,
             enableIpv6: this.enableIpv6,
             ipv6CidrBlock: this.ipv6CidrBlock,
+            ipv6Isp: this.ipv6Isp,
             resourceGroupId: this.resourceGroupId,
+            secondaryCidrBlock: this.secondaryCidrBlock,
             tags: this.tags,
+            userCidr: this.userCidr,
             vpcName: this.vpcName,
         };
     }
@@ -14144,6 +12438,11 @@ export interface RosVSwitchProps {
     readonly tags?: RosVSwitch.TagsProperty[];
 
     /**
+     * @Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+     */
+    readonly vpcIpv6CidrBlock?: string | ros.IResolvable;
+
+    /**
      * @Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly vSwitchName?: string | ros.IResolvable;
@@ -14167,6 +12466,7 @@ function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('cidrBlock', ros.requiredValidator)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('vSwitchName', ros.validateString)(properties.vSwitchName));
+    errors.collect(ros.propertyValidator('vpcIpv6CidrBlock', ros.validateString)(properties.vpcIpv6CidrBlock));
     if(properties.ipv6CidrBlock && (typeof properties.ipv6CidrBlock) !== 'object') {
         errors.collect(ros.propertyValidator('ipv6CidrBlock', ros.validateRange)({
             data: properties.ipv6CidrBlock,
@@ -14206,6 +12506,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
       Description: ros.stringToRosTemplate(properties.description),
       Ipv6CidrBlock: ros.numberToRosTemplate(properties.ipv6CidrBlock),
       Tags: ros.listMapper(rosVSwitchTagsPropertyToRosTemplate)(properties.tags),
+      VpcIpv6CidrBlock: ros.stringToRosTemplate(properties.vpcIpv6CidrBlock),
       VSwitchName: ros.stringToRosTemplate(properties.vSwitchName),
     };
 }
@@ -14274,6 +12575,11 @@ export class RosVSwitch extends ros.RosResource {
     public tags: RosVSwitch.TagsProperty[] | undefined;
 
     /**
+     * @Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+     */
+    public vpcIpv6CidrBlock: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     public vSwitchName: string | ros.IResolvable | undefined;
@@ -14298,6 +12604,7 @@ export class RosVSwitch extends ros.RosResource {
         this.description = props.description;
         this.ipv6CidrBlock = props.ipv6CidrBlock;
         this.tags = props.tags;
+        this.vpcIpv6CidrBlock = props.vpcIpv6CidrBlock;
         this.vSwitchName = props.vSwitchName;
     }
 
@@ -14310,6 +12617,7 @@ export class RosVSwitch extends ros.RosResource {
             description: this.description,
             ipv6CidrBlock: this.ipv6CidrBlock,
             tags: this.tags,
+            vpcIpv6CidrBlock: this.vpcIpv6CidrBlock,
             vSwitchName: this.vSwitchName,
         };
     }

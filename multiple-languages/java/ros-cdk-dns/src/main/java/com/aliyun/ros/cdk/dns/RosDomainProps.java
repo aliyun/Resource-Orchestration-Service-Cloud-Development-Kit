@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.401Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainProps.Jsii$Proxy.class)
 public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainProps> {
-        private java.lang.Object domainName;
-        private java.lang.Object groupId;
-        private java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
+        java.lang.Object domainName;
+        java.lang.Object groupId;
+        java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosDomainProps#getDomainName}
@@ -96,7 +96,7 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosDomainProps build() {
-            return new Jsii$Proxy(domainName, groupId, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -124,11 +124,11 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object groupId, final java.util.List<? extends com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
-            this.groupId = groupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty>)tags;
+            this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
+            this.groupId = builder.groupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty>)builder.tags;
         }
 
         @Override

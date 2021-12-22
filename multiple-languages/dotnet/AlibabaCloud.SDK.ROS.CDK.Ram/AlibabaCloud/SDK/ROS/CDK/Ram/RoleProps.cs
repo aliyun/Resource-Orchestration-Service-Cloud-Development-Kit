@@ -26,6 +26,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             set;
         }
 
+        /// <summary>Property deletionForce: Whether force detach the policies attached to the role.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DeletionForce
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property description: Remark information, up to 1024 characters or Chinese characters.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]

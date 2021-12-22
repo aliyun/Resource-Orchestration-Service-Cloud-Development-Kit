@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::LaunchTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.LaunchTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(LaunchTemplateProps.Jsii$Proxy.class)
 public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -254,36 +254,36 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link LaunchTemplateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LaunchTemplateProps> {
-        private java.lang.Object launchTemplateName;
-        private java.lang.Object autoReleaseTime;
-        private java.lang.Object description;
-        private java.lang.Object diskMappings;
-        private java.lang.Object hostName;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceName;
-        private java.lang.Object instanceType;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object ioOptimized;
-        private java.lang.Object keyPairName;
-        private java.lang.Object networkInterfaces;
-        private java.lang.Object networkType;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object securityEnhancementStrategy;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskDescription;
-        private java.lang.Object systemDiskDiskName;
-        private java.lang.Object systemDiskSize;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
-        private java.lang.Object templateTags;
-        private java.lang.Object userData;
-        private java.lang.Object versionDescription;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object launchTemplateName;
+        java.lang.Object autoReleaseTime;
+        java.lang.Object description;
+        java.lang.Object diskMappings;
+        java.lang.Object hostName;
+        java.lang.Object imageId;
+        java.lang.Object instanceName;
+        java.lang.Object instanceType;
+        java.lang.Object internetChargeType;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object ioOptimized;
+        java.lang.Object keyPairName;
+        java.lang.Object networkInterfaces;
+        java.lang.Object networkType;
+        java.lang.Object ramRoleName;
+        java.lang.Object securityEnhancementStrategy;
+        java.lang.Object securityGroupId;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskDescription;
+        java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskSize;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
+        java.lang.Object templateTags;
+        java.lang.Object userData;
+        java.lang.Object versionDescription;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getLaunchTemplateName}
@@ -911,7 +911,7 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public LaunchTemplateProps build() {
-            return new Jsii$Proxy(launchTemplateName, autoReleaseTime, description, diskMappings, hostName, imageId, instanceName, instanceType, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, keyPairName, networkInterfaces, networkType, ramRoleName, securityEnhancementStrategy, securityGroupId, spotPriceLimit, spotStrategy, systemDiskCategory, systemDiskDescription, systemDiskDiskName, systemDiskSize, tags, templateTags, userData, versionDescription, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -993,38 +993,38 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object launchTemplateName, final java.lang.Object autoReleaseTime, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object hostName, final java.lang.Object imageId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object networkInterfaces, final java.lang.Object networkType, final java.lang.Object ramRoleName, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags, final java.lang.Object templateTags, final java.lang.Object userData, final java.lang.Object versionDescription, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.launchTemplateName = java.util.Objects.requireNonNull(launchTemplateName, "launchTemplateName is required");
-            this.autoReleaseTime = autoReleaseTime;
-            this.description = description;
-            this.diskMappings = diskMappings;
-            this.hostName = hostName;
-            this.imageId = imageId;
-            this.instanceName = instanceName;
-            this.instanceType = instanceType;
-            this.internetChargeType = internetChargeType;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.ioOptimized = ioOptimized;
-            this.keyPairName = keyPairName;
-            this.networkInterfaces = networkInterfaces;
-            this.networkType = networkType;
-            this.ramRoleName = ramRoleName;
-            this.securityEnhancementStrategy = securityEnhancementStrategy;
-            this.securityGroupId = securityGroupId;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.systemDiskCategory = systemDiskCategory;
-            this.systemDiskDescription = systemDiskDescription;
-            this.systemDiskDiskName = systemDiskDiskName;
-            this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)tags;
-            this.templateTags = templateTags;
-            this.userData = userData;
-            this.versionDescription = versionDescription;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.launchTemplateName = java.util.Objects.requireNonNull(builder.launchTemplateName, "launchTemplateName is required");
+            this.autoReleaseTime = builder.autoReleaseTime;
+            this.description = builder.description;
+            this.diskMappings = builder.diskMappings;
+            this.hostName = builder.hostName;
+            this.imageId = builder.imageId;
+            this.instanceName = builder.instanceName;
+            this.instanceType = builder.instanceType;
+            this.internetChargeType = builder.internetChargeType;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.ioOptimized = builder.ioOptimized;
+            this.keyPairName = builder.keyPairName;
+            this.networkInterfaces = builder.networkInterfaces;
+            this.networkType = builder.networkType;
+            this.ramRoleName = builder.ramRoleName;
+            this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
+            this.securityGroupId = builder.securityGroupId;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskDescription = builder.systemDiskDescription;
+            this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskSize = builder.systemDiskSize;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)builder.tags;
+            this.templateTags = builder.templateTags;
+            this.userData = builder.userData;
+            this.versionDescription = builder.versionDescription;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

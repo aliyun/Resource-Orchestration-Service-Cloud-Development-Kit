@@ -33,6 +33,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: payer: The payer of the endpoint service. Valid values:
+        /// Endpoint: the service consumer.
+        /// EndpointService: the service provider.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "payer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Payer
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resource:
         /// </remarks>
         [JsiiOptional]
@@ -60,6 +73,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         [JsiiOptional]
         [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
         public object? User
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+        /// true: yes.
+        /// false (default): no
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneAffinityEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneAffinityEnabled
         {
             get;
             set;

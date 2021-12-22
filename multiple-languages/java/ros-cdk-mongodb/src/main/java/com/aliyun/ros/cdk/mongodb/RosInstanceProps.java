@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.328Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -176,33 +176,33 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.Object dbInstanceClass;
-        private java.lang.Object dbInstanceStorage;
-        private java.lang.Object accountPassword;
-        private java.lang.Object autoRenew;
-        private java.lang.Object backupId;
-        private java.lang.Object businessInfo;
-        private java.lang.Object chargeType;
-        private java.lang.Object couponNo;
-        private java.lang.Object databaseNames;
-        private java.lang.Object dbInstanceDescription;
-        private java.lang.Object engineVersion;
-        private java.lang.Object networkType;
-        private java.lang.Object period;
-        private java.lang.Object readonlyReplicas;
-        private java.lang.Object replicationFactor;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object restoreTime;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityIpArray;
-        private java.lang.Object srcDbInstanceId;
-        private java.lang.Object storageEngine;
-        private java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty> tags;
-        private java.lang.Object tdeStatus;
-        private java.lang.Object vpcId;
-        private java.lang.Object vpcPasswordFree;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object dbInstanceClass;
+        java.lang.Object dbInstanceStorage;
+        java.lang.Object accountPassword;
+        java.lang.Object autoRenew;
+        java.lang.Object backupId;
+        java.lang.Object businessInfo;
+        java.lang.Object chargeType;
+        java.lang.Object couponNo;
+        java.lang.Object databaseNames;
+        java.lang.Object dbInstanceDescription;
+        java.lang.Object engineVersion;
+        java.lang.Object networkType;
+        java.lang.Object period;
+        java.lang.Object readonlyReplicas;
+        java.lang.Object replicationFactor;
+        java.lang.Object resourceGroupId;
+        java.lang.Object restoreTime;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityIpArray;
+        java.lang.Object srcDbInstanceId;
+        java.lang.Object storageEngine;
+        java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty> tags;
+        java.lang.Object tdeStatus;
+        java.lang.Object vpcId;
+        java.lang.Object vpcPasswordFree;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getDbInstanceClass}
@@ -742,7 +742,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosInstanceProps build() {
-            return new Jsii$Proxy(dbInstanceClass, dbInstanceStorage, accountPassword, autoRenew, backupId, businessInfo, chargeType, couponNo, databaseNames, dbInstanceDescription, engineVersion, networkType, period, readonlyReplicas, replicationFactor, resourceGroupId, restoreTime, securityGroupId, securityIpArray, srcDbInstanceId, storageEngine, tags, tdeStatus, vpcId, vpcPasswordFree, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -818,35 +818,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceStorage, final java.lang.Object accountPassword, final java.lang.Object autoRenew, final java.lang.Object backupId, final java.lang.Object businessInfo, final java.lang.Object chargeType, final java.lang.Object couponNo, final java.lang.Object databaseNames, final java.lang.Object dbInstanceDescription, final java.lang.Object engineVersion, final java.lang.Object networkType, final java.lang.Object period, final java.lang.Object readonlyReplicas, final java.lang.Object replicationFactor, final java.lang.Object resourceGroupId, final java.lang.Object restoreTime, final java.lang.Object securityGroupId, final java.lang.Object securityIpArray, final java.lang.Object srcDbInstanceId, final java.lang.Object storageEngine, final java.util.List<? extends com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty> tags, final java.lang.Object tdeStatus, final java.lang.Object vpcId, final java.lang.Object vpcPasswordFree, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dbInstanceClass = java.util.Objects.requireNonNull(dbInstanceClass, "dbInstanceClass is required");
-            this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
-            this.accountPassword = accountPassword;
-            this.autoRenew = autoRenew;
-            this.backupId = backupId;
-            this.businessInfo = businessInfo;
-            this.chargeType = chargeType;
-            this.couponNo = couponNo;
-            this.databaseNames = databaseNames;
-            this.dbInstanceDescription = dbInstanceDescription;
-            this.engineVersion = engineVersion;
-            this.networkType = networkType;
-            this.period = period;
-            this.readonlyReplicas = readonlyReplicas;
-            this.replicationFactor = replicationFactor;
-            this.resourceGroupId = resourceGroupId;
-            this.restoreTime = restoreTime;
-            this.securityGroupId = securityGroupId;
-            this.securityIpArray = securityIpArray;
-            this.srcDbInstanceId = srcDbInstanceId;
-            this.storageEngine = storageEngine;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty>)tags;
-            this.tdeStatus = tdeStatus;
-            this.vpcId = vpcId;
-            this.vpcPasswordFree = vpcPasswordFree;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.dbInstanceClass = java.util.Objects.requireNonNull(builder.dbInstanceClass, "dbInstanceClass is required");
+            this.dbInstanceStorage = java.util.Objects.requireNonNull(builder.dbInstanceStorage, "dbInstanceStorage is required");
+            this.accountPassword = builder.accountPassword;
+            this.autoRenew = builder.autoRenew;
+            this.backupId = builder.backupId;
+            this.businessInfo = builder.businessInfo;
+            this.chargeType = builder.chargeType;
+            this.couponNo = builder.couponNo;
+            this.databaseNames = builder.databaseNames;
+            this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.engineVersion = builder.engineVersion;
+            this.networkType = builder.networkType;
+            this.period = builder.period;
+            this.readonlyReplicas = builder.readonlyReplicas;
+            this.replicationFactor = builder.replicationFactor;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.restoreTime = builder.restoreTime;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityIpArray = builder.securityIpArray;
+            this.srcDbInstanceId = builder.srcDbInstanceId;
+            this.storageEngine = builder.storageEngine;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty>)builder.tags;
+            this.tdeStatus = builder.tdeStatus;
+            this.vpcId = builder.vpcId;
+            this.vpcPasswordFree = builder.vpcPasswordFree;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

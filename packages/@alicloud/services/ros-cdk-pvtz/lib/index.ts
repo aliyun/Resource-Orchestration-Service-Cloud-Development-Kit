@@ -1,3 +1,4 @@
+export * from './uservpcauthorization';
 export * from './zone';
 export * from './zonerecord';
 export * from './zonevpcbinder';

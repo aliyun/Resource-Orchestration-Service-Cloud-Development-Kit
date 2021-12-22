@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.105Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -157,10 +157,10 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RuleListProperty> {
-            private java.lang.Object ruleName;
-            private java.lang.Object vServerGroupId;
-            private java.lang.Object domain;
-            private java.lang.Object url;
+            java.lang.Object ruleName;
+            java.lang.Object vServerGroupId;
+            java.lang.Object domain;
+            java.lang.Object url;
 
             /**
              * Sets the value of {@link RuleListProperty#getRuleName}
@@ -258,7 +258,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RuleListProperty build() {
-                return new Jsii$Proxy(ruleName, vServerGroupId, domain, url);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -288,12 +288,12 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ruleName, final java.lang.Object vServerGroupId, final java.lang.Object domain, final java.lang.Object url) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
-                this.vServerGroupId = java.util.Objects.requireNonNull(vServerGroupId, "vServerGroupId is required");
-                this.domain = domain;
-                this.url = url;
+                this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+                this.vServerGroupId = java.util.Objects.requireNonNull(builder.vServerGroupId, "vServerGroupId is required");
+                this.domain = builder.domain;
+                this.url = builder.url;
             }
 
             @Override

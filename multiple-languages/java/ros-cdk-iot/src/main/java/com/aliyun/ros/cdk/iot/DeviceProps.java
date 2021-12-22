@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Device`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.197Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceProps.Jsii$Proxy.class)
 public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
@@ -74,12 +74,12 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DeviceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeviceProps> {
-        private java.lang.Object productKey;
-        private java.lang.Object devEui;
-        private java.lang.Object deviceName;
-        private java.lang.Object iotInstanceId;
-        private java.lang.Object nickname;
-        private java.lang.Object pinCode;
+        java.lang.Object productKey;
+        java.lang.Object devEui;
+        java.lang.Object deviceName;
+        java.lang.Object iotInstanceId;
+        java.lang.Object nickname;
+        java.lang.Object pinCode;
 
         /**
          * Sets the value of {@link DeviceProps#getProductKey}
@@ -230,7 +230,7 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public DeviceProps build() {
-            return new Jsii$Proxy(productKey, devEui, deviceName, iotInstanceId, nickname, pinCode);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -263,14 +263,14 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object productKey, final java.lang.Object devEui, final java.lang.Object deviceName, final java.lang.Object iotInstanceId, final java.lang.Object nickname, final java.lang.Object pinCode) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.productKey = java.util.Objects.requireNonNull(productKey, "productKey is required");
-            this.devEui = devEui;
-            this.deviceName = deviceName;
-            this.iotInstanceId = iotInstanceId;
-            this.nickname = nickname;
-            this.pinCode = pinCode;
+            this.productKey = java.util.Objects.requireNonNull(builder.productKey, "productKey is required");
+            this.devEui = builder.devEui;
+            this.deviceName = builder.deviceName;
+            this.iotInstanceId = builder.iotInstanceId;
+            this.nickname = builder.nickname;
+            this.pinCode = builder.pinCode;
         }
 
         @Override

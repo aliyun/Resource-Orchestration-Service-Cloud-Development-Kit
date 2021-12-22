@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.567Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -163,18 +163,18 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RuleProps> {
-        private java.lang.Object name;
-        private java.lang.Object dataType;
-        private java.lang.Object iotInstanceId;
-        private java.lang.Object productKey;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object ruleAction;
-        private java.lang.Object ruleDesc;
-        private java.lang.Object select;
-        private java.lang.Object shortTopic;
-        private java.lang.Object startRule;
-        private java.lang.Object topicType;
-        private java.lang.Object where;
+        java.lang.Object name;
+        java.lang.Object dataType;
+        java.lang.Object iotInstanceId;
+        java.lang.Object productKey;
+        java.lang.Object resourceGroupId;
+        java.lang.Object ruleAction;
+        java.lang.Object ruleDesc;
+        java.lang.Object select;
+        java.lang.Object shortTopic;
+        java.lang.Object startRule;
+        java.lang.Object topicType;
+        java.lang.Object where;
 
         /**
          * Sets the value of {@link RuleProps#getName}
@@ -529,7 +529,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RuleProps build() {
-            return new Jsii$Proxy(name, dataType, iotInstanceId, productKey, resourceGroupId, ruleAction, ruleDesc, select, shortTopic, startRule, topicType, where);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -574,20 +574,20 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object dataType, final java.lang.Object iotInstanceId, final java.lang.Object productKey, final java.lang.Object resourceGroupId, final java.lang.Object ruleAction, final java.lang.Object ruleDesc, final java.lang.Object select, final java.lang.Object shortTopic, final java.lang.Object startRule, final java.lang.Object topicType, final java.lang.Object where) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.dataType = dataType;
-            this.iotInstanceId = iotInstanceId;
-            this.productKey = productKey;
-            this.resourceGroupId = resourceGroupId;
-            this.ruleAction = ruleAction;
-            this.ruleDesc = ruleDesc;
-            this.select = select;
-            this.shortTopic = shortTopic;
-            this.startRule = startRule;
-            this.topicType = topicType;
-            this.where = where;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.dataType = builder.dataType;
+            this.iotInstanceId = builder.iotInstanceId;
+            this.productKey = builder.productKey;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.ruleAction = builder.ruleAction;
+            this.ruleDesc = builder.ruleDesc;
+            this.select = builder.select;
+            this.shortTopic = builder.shortTopic;
+            this.startRule = builder.startRule;
+            this.topicType = builder.topicType;
+            this.where = builder.where;
         }
 
         @Override

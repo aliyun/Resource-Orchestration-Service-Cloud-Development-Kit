@@ -927,9 +927,35 @@ export interface RosSubscriptionInstanceProps {
     readonly configuration?: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable;
 
     /**
-     * @Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+     * @Property payType: Payment type. Valid value:
+     * PostPaid: Pay-as-you-go, which is default value.
+     * PrePaid: subscription.
+     */
+    readonly payType?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The unit of the subscription length. Valid values: Year and Month.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     */
+    readonly period?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
+     * PolarDB: PolarDB for MySQL cluster.
+     * polardb_o: PolarDB O Edition cluster.
+     * polardb_pg: PolarDB for PostgreSQL cluster.
+     * DRDS: PolarDB-X instance V1.0 or V2.0.
+     * PostgreSQL: self-managed PostgreSQL database.
+     * Oracle: self-managed Oracle database.
      */
     readonly sourceEndpointInstanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property usedTime: The subscription length.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     * You can set the Period parameter to specify the unit of the subscription length.
+     */
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
@@ -943,6 +969,21 @@ function RosSubscriptionInstancePropsValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('configuration', RosSubscriptionInstance_ConfigurationPropertyValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: ["Year","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('sourceEndpointInstanceType', ros.validateString)(properties.sourceEndpointInstanceType));
     return errors.wrap('supplied properties not correct for "RosSubscriptionInstanceProps"');
 }
@@ -962,7 +1003,10 @@ function rosSubscriptionInstancePropsToRosTemplate(properties: any, enableResour
     }
     return {
       Configuration: rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties.configuration),
+      PayType: ros.stringToRosTemplate(properties.payType),
+      Period: ros.stringToRosTemplate(properties.period),
       SourceEndpointInstanceType: ros.stringToRosTemplate(properties.sourceEndpointInstanceType),
+      UsedTime: ros.numberToRosTemplate(properties.usedTime),
     };
 }
 
@@ -1009,9 +1053,35 @@ export class RosSubscriptionInstance extends ros.RosResource {
     public configuration: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+     * @Property payType: Payment type. Valid value:
+     * PostPaid: Pay-as-you-go, which is default value.
+     * PrePaid: subscription.
+     */
+    public payType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The unit of the subscription length. Valid values: Year and Month.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     */
+    public period: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
+     * PolarDB: PolarDB for MySQL cluster.
+     * polardb_o: PolarDB O Edition cluster.
+     * polardb_pg: PolarDB for PostgreSQL cluster.
+     * DRDS: PolarDB-X instance V1.0 or V2.0.
+     * PostgreSQL: self-managed PostgreSQL database.
+     * Oracle: self-managed Oracle database.
      */
     public sourceEndpointInstanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property usedTime: The subscription length.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     * You can set the Period parameter to specify the unit of the subscription length.
+     */
+    public usedTime: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::DTS::SubscriptionInstance`.
@@ -1029,14 +1099,20 @@ export class RosSubscriptionInstance extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.configuration = props.configuration;
+        this.payType = props.payType;
+        this.period = props.period;
         this.sourceEndpointInstanceType = props.sourceEndpointInstanceType;
+        this.usedTime = props.usedTime;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             configuration: this.configuration,
+            payType: this.payType,
+            period: this.period,
             sourceEndpointInstanceType: this.sourceEndpointInstanceType,
+            usedTime: this.usedTime,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1552,7 +1628,7 @@ function RosSynchronizationJobPropsValidator(properties: any): ros.ValidationRes
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Postpaid","Prepaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1560,8 +1636,6 @@ function RosSynchronizationJobPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('sourceRegion', ros.requiredValidator)(properties.sourceRegion));
     errors.collect(ros.propertyValidator('sourceRegion', ros.validateString)(properties.sourceRegion));
     errors.collect(ros.propertyValidator('dataInitialization', ros.validateBoolean)(properties.dataInitialization));
-    errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
-    errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     if(properties.networkType && (typeof properties.networkType) !== 'object') {
         errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
           data: properties.networkType,
@@ -1569,6 +1643,8 @@ function RosSynchronizationJobPropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('destinationEndpoint', ros.requiredValidator)(properties.destinationEndpoint));
+    errors.collect(ros.propertyValidator('destinationEndpoint', RosSynchronizationJob_DestinationEndpointPropertyValidator)(properties.destinationEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('sourceEndpoint', RosSynchronizationJob_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
     errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));

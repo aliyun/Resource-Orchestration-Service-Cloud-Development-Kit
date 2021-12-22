@@ -45,5 +45,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
+
+        /// <summary>Attribute ZoneTag: Zone label.</summary>
+        [JsiiProperty(name: "attrZoneTag", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneTag
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute ZoneType: Zone type.</summary>
+        [JsiiProperty(name: "attrZoneType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
     }
 }

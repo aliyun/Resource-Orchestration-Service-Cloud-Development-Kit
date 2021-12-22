@@ -6,6 +6,8 @@
 @alicloud/ros-cdk-fc.FunctionInvoker=com.aliyun.ros.cdk.fc.FunctionInvoker
 @alicloud/ros-cdk-fc.FunctionInvokerProps=com.aliyun.ros.cdk.fc.FunctionInvokerProps
 @alicloud/ros-cdk-fc.FunctionProps=com.aliyun.ros.cdk.fc.FunctionProps
+@alicloud/ros-cdk-fc.Layer=com.aliyun.ros.cdk.fc.Layer
+@alicloud/ros-cdk-fc.LayerProps=com.aliyun.ros.cdk.fc.LayerProps
 @alicloud/ros-cdk-fc.ProvisionConfig=com.aliyun.ros.cdk.fc.ProvisionConfig
 @alicloud/ros-cdk-fc.ProvisionConfigProps=com.aliyun.ros.cdk.fc.ProvisionConfigProps
 @alicloud/ros-cdk-fc.RosAlias=com.aliyun.ros.cdk.fc.RosAlias
@@ -23,6 +25,9 @@
 @alicloud/ros-cdk-fc.RosFunctionInvoker=com.aliyun.ros.cdk.fc.RosFunctionInvoker
 @alicloud/ros-cdk-fc.RosFunctionInvokerProps=com.aliyun.ros.cdk.fc.RosFunctionInvokerProps
 @alicloud/ros-cdk-fc.RosFunctionProps=com.aliyun.ros.cdk.fc.RosFunctionProps
+@alicloud/ros-cdk-fc.RosLayer=com.aliyun.ros.cdk.fc.RosLayer
+@alicloud/ros-cdk-fc.RosLayer.CodeProperty=com.aliyun.ros.cdk.fc.RosLayer$CodeProperty
+@alicloud/ros-cdk-fc.RosLayerProps=com.aliyun.ros.cdk.fc.RosLayerProps
 @alicloud/ros-cdk-fc.RosProvisionConfig=com.aliyun.ros.cdk.fc.RosProvisionConfig
 @alicloud/ros-cdk-fc.RosProvisionConfigProps=com.aliyun.ros.cdk.fc.RosProvisionConfigProps
 @alicloud/ros-cdk-fc.RosService=com.aliyun.ros.cdk.fc.RosService

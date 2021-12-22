@@ -215,6 +215,14 @@ export class RosAccount extends ros.RosResource {
 export interface RosInstanceProps {
 
     /**
+     * @Property autoRenewDuration: The auto-renewal period. Valid values: 1 to 12. 
+     *  When the instance is about to expire, the instance is automatically renewed 
+     * based on the number of months specified by this parameter. 
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    readonly autoRenewDuration?: number | ros.IResolvable;
+
+    /**
      * @Property backupPolicy: Backup policy
      */
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
@@ -223,6 +231,24 @@ export interface RosInstanceProps {
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     readonly capacity?: number | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Default: PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property connections: Connection address
+     */
+    readonly connections?: RosInstance.ConnectionsProperty | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether destroy instance when it is in recycle. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
@@ -240,11 +266,6 @@ export interface RosInstanceProps {
     readonly instanceClass?: string | ros.IResolvable;
 
     /**
-     * @Property instanceConnection: Instance connection message.
-     */
-    readonly instanceConnection?: RosInstance.InstanceConnectionProperty | ros.IResolvable;
-
-    /**
      * @Property instanceMaintainTime: Instance maintain time.
      */
     readonly instanceMaintainTime?: RosInstance.InstanceMaintainTimeProperty | ros.IResolvable;
@@ -258,6 +279,11 @@ export interface RosInstanceProps {
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     readonly password?: string | ros.IResolvable;
+
+    /**
+     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
+     */
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -310,6 +336,7 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connections', RosInstance_ConnectionsPropertyValidator)(properties.connections));
     if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
         errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
           data: properties.engineVersion,
@@ -328,10 +355,25 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('instanceMaintainTime', RosInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
-    errors.collect(ros.propertyValidator('instanceConnection', RosInstance_InstanceConnectionPropertyValidator)(properties.instanceConnection));
+    if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
+            data: properties.autoRenewDuration,
+            min: 1,
+            max: 12,
+          }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
@@ -347,6 +389,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PostPaid","PrePaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -374,15 +423,19 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
+      AutoRenewDuration: ros.numberToRosTemplate(properties.autoRenewDuration),
       BackupPolicy: rosInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
       Capacity: ros.numberToRosTemplate(properties.capacity),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      Connections: rosInstanceConnectionsPropertyToRosTemplate(properties.connections),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
       EvictionPolicy: ros.stringToRosTemplate(properties.evictionPolicy),
       InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
-      InstanceConnection: rosInstanceInstanceConnectionPropertyToRosTemplate(properties.instanceConnection),
       InstanceMaintainTime: rosInstanceInstanceMaintainTimePropertyToRosTemplate(properties.instanceMaintainTime),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
+      Period: ros.numberToRosTemplate(properties.period),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
@@ -428,6 +481,16 @@ export class RosInstance extends ros.RosResource {
     public readonly attrChargeType: ros.IResolvable;
 
     /**
+     * @Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance
+     */
+    public readonly attrClassicInnerConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute ClassicInnerConnectionString: The classic inner connection string of the instance
+     */
+    public readonly attrClassicInnerConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
@@ -436,6 +499,16 @@ export class RosInstance extends ros.RosResource {
      * @Attribute Connections: The maximum number of connections supported by the instance.
      */
     public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute DirectConnectionPort: The direct connection port of the instance
+     */
+    public readonly attrDirectConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute DirectConnectionString: The direct connection string of the instance
+     */
+    public readonly attrDirectConnectionString: ros.IResolvable;
 
     /**
      * @Attribute EngineVersion: The engine version of the instance.
@@ -498,6 +571,16 @@ export class RosInstance extends ros.RosResource {
     public readonly attrPrivateIp: ros.IResolvable;
 
     /**
+     * @Attribute PublicConnectionPort: The public connection port of the instance
+     */
+    public readonly attrPublicConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute PublicConnectionString: The public connection string of the instance
+     */
+    public readonly attrPublicConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute QPS: The queries per second (QPS) supported by the instance.
      */
     public readonly attrQps: ros.IResolvable;
@@ -518,12 +601,30 @@ export class RosInstance extends ros.RosResource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
+     * @Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance
+     */
+    public readonly attrVpcPrivateConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute VpcPrivateConnectionString: The vpc private connection string of the instance
+     */
+    public readonly attrVpcPrivateConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute ZoneId: The ID of the zone.
      */
     public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
+
+    /**
+     * @Property autoRenewDuration: The auto-renewal period. Valid values: 1 to 12. 
+     *  When the instance is about to expire, the instance is automatically renewed 
+     * based on the number of months specified by this parameter. 
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    public autoRenewDuration: number | ros.IResolvable | undefined;
 
     /**
      * @Property backupPolicy: Backup policy
@@ -534,6 +635,24 @@ export class RosInstance extends ros.RosResource {
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     public capacity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: The billing method of the ApsaraDB for Redis instance. Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Default: PostPaid.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property connections: Connection address
+     */
+    public connections: RosInstance.ConnectionsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether destroy instance when it is in recycle. Default is false
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
@@ -551,11 +670,6 @@ export class RosInstance extends ros.RosResource {
     public instanceClass: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceConnection: Instance connection message.
-     */
-    public instanceConnection: RosInstance.InstanceConnectionProperty | ros.IResolvable | undefined;
-
-    /**
      * @Property instanceMaintainTime: Instance maintain time.
      */
     public instanceMaintainTime: RosInstance.InstanceMaintainTimeProperty | ros.IResolvable | undefined;
@@ -569,6 +683,11 @@ export class RosInstance extends ros.RosResource {
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     public password: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
+     */
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
@@ -623,8 +742,12 @@ export class RosInstance extends ros.RosResource {
         this.attrBandwidth = this.getAtt('Bandwidth');
         this.attrCapacity = this.getAtt('Capacity');
         this.attrChargeType = this.getAtt('ChargeType');
+        this.attrClassicInnerConnectionPort = this.getAtt('ClassicInnerConnectionPort');
+        this.attrClassicInnerConnectionString = this.getAtt('ClassicInnerConnectionString');
         this.attrConnectionDomain = this.getAtt('ConnectionDomain');
         this.attrConnections = this.getAtt('Connections');
+        this.attrDirectConnectionPort = this.getAtt('DirectConnectionPort');
+        this.attrDirectConnectionString = this.getAtt('DirectConnectionString');
         this.attrEngineVersion = this.getAtt('EngineVersion');
         this.attrHasRenewChangeOrder = this.getAtt('HasRenewChangeOrder');
         this.attrInstanceClass = this.getAtt('InstanceClass');
@@ -637,22 +760,30 @@ export class RosInstance extends ros.RosResource {
         this.attrPackageType = this.getAtt('PackageType');
         this.attrPort = this.getAtt('Port');
         this.attrPrivateIp = this.getAtt('PrivateIp');
+        this.attrPublicConnectionPort = this.getAtt('PublicConnectionPort');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
         this.attrQps = this.getAtt('QPS');
         this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrVSwitchId = this.getAtt('VSwitchId');
         this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcPrivateConnectionPort = this.getAtt('VpcPrivateConnectionPort');
+        this.attrVpcPrivateConnectionString = this.getAtt('VpcPrivateConnectionString');
         this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoRenewDuration = props.autoRenewDuration;
         this.backupPolicy = props.backupPolicy;
         this.capacity = props.capacity;
+        this.chargeType = props.chargeType;
+        this.connections = props.connections;
+        this.deletionForce = props.deletionForce;
         this.engineVersion = props.engineVersion;
         this.evictionPolicy = props.evictionPolicy;
         this.instanceClass = props.instanceClass;
-        this.instanceConnection = props.instanceConnection;
         this.instanceMaintainTime = props.instanceMaintainTime;
         this.instanceName = props.instanceName;
         this.password = props.password;
+        this.period = props.period;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
@@ -665,15 +796,19 @@ export class RosInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            autoRenewDuration: this.autoRenewDuration,
             backupPolicy: this.backupPolicy,
             capacity: this.capacity,
+            chargeType: this.chargeType,
+            connections: this.connections,
+            deletionForce: this.deletionForce,
             engineVersion: this.engineVersion,
             evictionPolicy: this.evictionPolicy,
             instanceClass: this.instanceClass,
-            instanceConnection: this.instanceConnection,
             instanceMaintainTime: this.instanceMaintainTime,
             instanceName: this.instanceName,
             password: this.password,
+            period: this.period,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
@@ -749,77 +884,189 @@ export namespace RosInstance {
     /**
      * @stability external
      */
-    export interface InstanceConnectionProperty {
+    export interface ClassicInnerConnectionProperty {
         /**
-         * @Property ipType: The network type of the new endpoint. Value values:
-     * - Private: internal network.
-     * - Public: public network.
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
          */
-        readonly ipType?: string | ros.IResolvable;
+        readonly connectionPort: number | ros.IResolvable;
         /**
-         * @Property port: The service port of the instance. 
-     * Valid values: 1024 to 65535.
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
          */
-        readonly port?: number | ros.IResolvable;
-        /**
-         * @Property newConnectionString: The prefix of the new endpoint. 
-     * The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
-     * The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
-     * The prefix can be 8 to 64 characters in length.
-         */
-        readonly newConnectionString?: string | ros.IResolvable;
+        readonly connectionString: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `InstanceConnectionProperty`
+ * Determine whether the given properties match those of a `ClassicInnerConnectionProperty`
  *
- * @param properties - the TypeScript properties of a `InstanceConnectionProperty`
+ * @param properties - the TypeScript properties of a `ClassicInnerConnectionProperty`
  *
  * @returns the result of the validation.
  */
-function RosInstance_InstanceConnectionPropertyValidator(properties: any): ros.ValidationResult {
+function RosInstance_ClassicInnerConnectionPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.ipType && (typeof properties.ipType) !== 'object') {
-        errors.collect(ros.propertyValidator('ipType', ros.validateAllowedValues)({
-          data: properties.ipType,
-          allowedValues: ["Private","Public","Inner"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ipType', ros.validateString)(properties.ipType));
-    if(properties.port && (typeof properties.port) !== 'object') {
-        errors.collect(ros.propertyValidator('port', ros.validateRange)({
-            data: properties.port,
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
             min: 1024,
             max: 65535,
           }));
     }
-    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    if(properties.newConnectionString && (typeof properties.newConnectionString) !== 'object') {
-        errors.collect(ros.propertyValidator('newConnectionString', ros.validateAllowedPattern)({
-          data: properties.newConnectionString,
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
           reg: /^[a-z][a-z0-9-]{7,63}/
         }));
     }
-    errors.collect(ros.propertyValidator('newConnectionString', ros.validateString)(properties.newConnectionString));
-    return errors.wrap('supplied properties not correct for "InstanceConnectionProperty"');
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "ClassicInnerConnectionProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.InstanceConnection` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.ClassicInnerConnection` resource
  *
- * @param properties - the TypeScript properties of a `InstanceConnectionProperty`
+ * @param properties - the TypeScript properties of a `ClassicInnerConnectionProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.InstanceConnection` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.ClassicInnerConnection` resource.
  */
 // @ts-ignore TS6133
-function rosInstanceInstanceConnectionPropertyToRosTemplate(properties: any): any {
+function rosInstanceClassicInnerConnectionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosInstance_InstanceConnectionPropertyValidator(properties).assertSuccess();
+    RosInstance_ClassicInnerConnectionPropertyValidator(properties).assertSuccess();
     return {
-      IPType: ros.stringToRosTemplate(properties.ipType),
-      Port: ros.numberToRosTemplate(properties.port),
-      NewConnectionString: ros.stringToRosTemplate(properties.newConnectionString),
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface ConnectionsProperty {
+        /**
+         * @Property vpcPrivateConnection: Vpc intranet address.
+         */
+        readonly vpcPrivateConnection?: RosInstance.VpcPrivateConnectionProperty | ros.IResolvable;
+        /**
+         * @Property publicConnection: Public address.
+         */
+        readonly publicConnection?: RosInstance.PublicConnectionProperty | ros.IResolvable;
+        /**
+         * @Property directConnection: Direct connection address. The instance is a cluster instance. 
+     * You can apply for a direct connection endpoint as required.
+         */
+        readonly directConnection?: RosInstance.DirectConnectionProperty | ros.IResolvable;
+        /**
+         * @Property classicInnerConnection: Classic intranet address.
+         */
+        readonly classicInnerConnection?: RosInstance.ClassicInnerConnectionProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConnectionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConnectionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_ConnectionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcPrivateConnection', RosInstance_VpcPrivateConnectionPropertyValidator)(properties.vpcPrivateConnection));
+    errors.collect(ros.propertyValidator('publicConnection', RosInstance_PublicConnectionPropertyValidator)(properties.publicConnection));
+    errors.collect(ros.propertyValidator('directConnection', RosInstance_DirectConnectionPropertyValidator)(properties.directConnection));
+    errors.collect(ros.propertyValidator('classicInnerConnection', RosInstance_ClassicInnerConnectionPropertyValidator)(properties.classicInnerConnection));
+    return errors.wrap('supplied properties not correct for "ConnectionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.Connections` resource
+ *
+ * @param properties - the TypeScript properties of a `ConnectionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.Connections` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceConnectionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_ConnectionsPropertyValidator(properties).assertSuccess();
+    return {
+      VpcPrivateConnection: rosInstanceVpcPrivateConnectionPropertyToRosTemplate(properties.vpcPrivateConnection),
+      PublicConnection: rosInstancePublicConnectionPropertyToRosTemplate(properties.publicConnection),
+      DirectConnection: rosInstanceDirectConnectionPropertyToRosTemplate(properties.directConnection),
+      ClassicInnerConnection: rosInstanceClassicInnerConnectionPropertyToRosTemplate(properties.classicInnerConnection),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface DirectConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DirectConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `DirectConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_DirectConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "DirectConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.DirectConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `DirectConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.DirectConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceDirectConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_DirectConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
     };
 }
 
@@ -892,6 +1139,71 @@ export namespace RosInstance {
     /**
      * @stability external
      */
+    export interface PublicConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PublicConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_PublicConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "PublicConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.PublicConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.PublicConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePublicConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_PublicConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
     export interface TagsProperty {
         /**
          * @Property value: undefined
@@ -936,10 +1248,91 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface VpcPrivateConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VpcPrivateConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `VpcPrivateConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_VpcPrivateConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "VpcPrivateConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.VpcPrivateConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `VpcPrivateConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.VpcPrivateConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceVpcPrivateConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_VpcPrivateConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::REDIS::PrepayInstance`
  */
 export interface RosPrepayInstanceProps {
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
+     * Default is False
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewDuration: The auto-renewal period. Valid values: 1 to 12. 
+     *  When the instance is about to expire, the instance is automatically renewed 
+     * based on the number of months specified by this parameter. 
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    readonly autoRenewDuration?: number | ros.IResolvable;
 
     /**
      * @Property backupPolicy: Backup policy
@@ -950,6 +1343,16 @@ export interface RosPrepayInstanceProps {
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     readonly capacity?: number | ros.IResolvable;
+
+    /**
+     * @Property connections: Connection address
+     */
+    readonly connections?: RosPrepayInstance.ConnectionsProperty | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether destroy instance when it is in recycle. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
@@ -967,11 +1370,6 @@ export interface RosPrepayInstanceProps {
     readonly instanceClass?: string | ros.IResolvable;
 
     /**
-     * @Property instanceConnection: Instance connection message.
-     */
-    readonly instanceConnection?: RosPrepayInstance.InstanceConnectionProperty | ros.IResolvable;
-
-    /**
      * @Property instanceMaintainTime: Instance maintain time.
      */
     readonly instanceMaintainTime?: RosPrepayInstance.InstanceMaintainTimeProperty | ros.IResolvable;
@@ -987,7 +1385,7 @@ export interface RosPrepayInstanceProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -1042,6 +1440,7 @@ export interface RosPrepayInstanceProps {
 function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connections', RosPrepayInstance_ConnectionsPropertyValidator)(properties.connections));
     if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
         errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
           data: properties.engineVersion,
@@ -1063,15 +1462,23 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,60],
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
-    errors.collect(ros.propertyValidator('instanceConnection', RosPrepayInstance_InstanceConnectionPropertyValidator)(properties.instanceConnection));
+    if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
+            data: properties.autoRenewDuration,
+            min: 1,
+            max: 12,
+          }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
           data: properties.sslEnabled,
@@ -1079,6 +1486,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.capacity && (typeof properties.capacity) !== 'object') {
         errors.collect(ros.propertyValidator('capacity', ros.validateAllowedValues)({
           data: properties.capacity,
@@ -1113,12 +1521,15 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
         RosPrepayInstancePropsValidator(properties).assertSuccess();
     }
     return {
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      AutoRenewDuration: ros.numberToRosTemplate(properties.autoRenewDuration),
       BackupPolicy: rosPrepayInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
       Capacity: ros.numberToRosTemplate(properties.capacity),
+      Connections: rosPrepayInstanceConnectionsPropertyToRosTemplate(properties.connections),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
       EvictionPolicy: ros.stringToRosTemplate(properties.evictionPolicy),
       InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
-      InstanceConnection: rosPrepayInstanceInstanceConnectionPropertyToRosTemplate(properties.instanceConnection),
       InstanceMaintainTime: rosPrepayInstanceInstanceMaintainTimePropertyToRosTemplate(properties.instanceMaintainTime),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Password: ros.stringToRosTemplate(properties.password),
@@ -1168,6 +1579,16 @@ export class RosPrepayInstance extends ros.RosResource {
     public readonly attrChargeType: ros.IResolvable;
 
     /**
+     * @Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance
+     */
+    public readonly attrClassicInnerConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute ClassicInnerConnectionString: The classic inner connection string of the instance
+     */
+    public readonly attrClassicInnerConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
@@ -1176,6 +1597,16 @@ export class RosPrepayInstance extends ros.RosResource {
      * @Attribute Connections: The maximum number of connections supported by the instance.
      */
     public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute DirectConnectionPort: The direct connection port of the instance
+     */
+    public readonly attrDirectConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute DirectConnectionString: The direct connection string of the instance
+     */
+    public readonly attrDirectConnectionString: ros.IResolvable;
 
     /**
      * @Attribute EngineVersion: The engine version of the instance.
@@ -1238,6 +1669,16 @@ export class RosPrepayInstance extends ros.RosResource {
     public readonly attrPrivateIp: ros.IResolvable;
 
     /**
+     * @Attribute PublicConnectionPort: The public connection port of the instance
+     */
+    public readonly attrPublicConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute PublicConnectionString: The public connection string of the instance
+     */
+    public readonly attrPublicConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute QPS: The queries per second (QPS) supported by the instance.
      */
     public readonly attrQps: ros.IResolvable;
@@ -1258,12 +1699,38 @@ export class RosPrepayInstance extends ros.RosResource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
+     * @Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance
+     */
+    public readonly attrVpcPrivateConnectionPort: ros.IResolvable;
+
+    /**
+     * @Attribute VpcPrivateConnectionString: The vpc private connection string of the instance
+     */
+    public readonly attrVpcPrivateConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute ZoneId: The ID of the zone.
      */
     public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
+     * Default is False
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewDuration: The auto-renewal period. Valid values: 1 to 12. 
+     *  When the instance is about to expire, the instance is automatically renewed 
+     * based on the number of months specified by this parameter. 
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    public autoRenewDuration: number | ros.IResolvable | undefined;
 
     /**
      * @Property backupPolicy: Backup policy
@@ -1274,6 +1741,16 @@ export class RosPrepayInstance extends ros.RosResource {
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     public capacity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property connections: Connection address
+     */
+    public connections: RosPrepayInstance.ConnectionsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether destroy instance when it is in recycle. Default is false
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
@@ -1291,11 +1768,6 @@ export class RosPrepayInstance extends ros.RosResource {
     public instanceClass: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceConnection: Instance connection message.
-     */
-    public instanceConnection: RosPrepayInstance.InstanceConnectionProperty | ros.IResolvable | undefined;
-
-    /**
      * @Property instanceMaintainTime: Instance maintain time.
      */
     public instanceMaintainTime: RosPrepayInstance.InstanceMaintainTimeProperty | ros.IResolvable | undefined;
@@ -1311,7 +1783,7 @@ export class RosPrepayInstance extends ros.RosResource {
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -1368,8 +1840,12 @@ export class RosPrepayInstance extends ros.RosResource {
         this.attrBandwidth = this.getAtt('Bandwidth');
         this.attrCapacity = this.getAtt('Capacity');
         this.attrChargeType = this.getAtt('ChargeType');
+        this.attrClassicInnerConnectionPort = this.getAtt('ClassicInnerConnectionPort');
+        this.attrClassicInnerConnectionString = this.getAtt('ClassicInnerConnectionString');
         this.attrConnectionDomain = this.getAtt('ConnectionDomain');
         this.attrConnections = this.getAtt('Connections');
+        this.attrDirectConnectionPort = this.getAtt('DirectConnectionPort');
+        this.attrDirectConnectionString = this.getAtt('DirectConnectionString');
         this.attrEngineVersion = this.getAtt('EngineVersion');
         this.attrHasRenewChangeOrder = this.getAtt('HasRenewChangeOrder');
         this.attrInstanceClass = this.getAtt('InstanceClass');
@@ -1382,19 +1858,26 @@ export class RosPrepayInstance extends ros.RosResource {
         this.attrPackageType = this.getAtt('PackageType');
         this.attrPort = this.getAtt('Port');
         this.attrPrivateIp = this.getAtt('PrivateIp');
+        this.attrPublicConnectionPort = this.getAtt('PublicConnectionPort');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
         this.attrQps = this.getAtt('QPS');
         this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrVSwitchId = this.getAtt('VSwitchId');
         this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcPrivateConnectionPort = this.getAtt('VpcPrivateConnectionPort');
+        this.attrVpcPrivateConnectionString = this.getAtt('VpcPrivateConnectionString');
         this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoPay = props.autoPay;
+        this.autoRenewDuration = props.autoRenewDuration;
         this.backupPolicy = props.backupPolicy;
         this.capacity = props.capacity;
+        this.connections = props.connections;
+        this.deletionForce = props.deletionForce;
         this.engineVersion = props.engineVersion;
         this.evictionPolicy = props.evictionPolicy;
         this.instanceClass = props.instanceClass;
-        this.instanceConnection = props.instanceConnection;
         this.instanceMaintainTime = props.instanceMaintainTime;
         this.instanceName = props.instanceName;
         this.password = props.password;
@@ -1411,12 +1894,15 @@ export class RosPrepayInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            autoPay: this.autoPay,
+            autoRenewDuration: this.autoRenewDuration,
             backupPolicy: this.backupPolicy,
             capacity: this.capacity,
+            connections: this.connections,
+            deletionForce: this.deletionForce,
             engineVersion: this.engineVersion,
             evictionPolicy: this.evictionPolicy,
             instanceClass: this.instanceClass,
-            instanceConnection: this.instanceConnection,
             instanceMaintainTime: this.instanceMaintainTime,
             instanceName: this.instanceName,
             password: this.password,
@@ -1496,77 +1982,189 @@ export namespace RosPrepayInstance {
     /**
      * @stability external
      */
-    export interface InstanceConnectionProperty {
+    export interface ClassicInnerConnectionProperty {
         /**
-         * @Property ipType: The network type of the new endpoint. Value values:
-     * - Private: internal network.
-     * - Public: public network.
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
          */
-        readonly ipType?: string | ros.IResolvable;
+        readonly connectionPort: number | ros.IResolvable;
         /**
-         * @Property port: The service port of the instance. 
-     * Valid values: 1024 to 65535.
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
          */
-        readonly port?: number | ros.IResolvable;
-        /**
-         * @Property newConnectionString: The prefix of the new endpoint. 
-     * The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
-     * The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
-     * The prefix can be 8 to 64 characters in length.
-         */
-        readonly newConnectionString?: string | ros.IResolvable;
+        readonly connectionString: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `InstanceConnectionProperty`
+ * Determine whether the given properties match those of a `ClassicInnerConnectionProperty`
  *
- * @param properties - the TypeScript properties of a `InstanceConnectionProperty`
+ * @param properties - the TypeScript properties of a `ClassicInnerConnectionProperty`
  *
  * @returns the result of the validation.
  */
-function RosPrepayInstance_InstanceConnectionPropertyValidator(properties: any): ros.ValidationResult {
+function RosPrepayInstance_ClassicInnerConnectionPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.ipType && (typeof properties.ipType) !== 'object') {
-        errors.collect(ros.propertyValidator('ipType', ros.validateAllowedValues)({
-          data: properties.ipType,
-          allowedValues: ["Private","Public","Inner"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ipType', ros.validateString)(properties.ipType));
-    if(properties.port && (typeof properties.port) !== 'object') {
-        errors.collect(ros.propertyValidator('port', ros.validateRange)({
-            data: properties.port,
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
             min: 1024,
             max: 65535,
           }));
     }
-    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    if(properties.newConnectionString && (typeof properties.newConnectionString) !== 'object') {
-        errors.collect(ros.propertyValidator('newConnectionString', ros.validateAllowedPattern)({
-          data: properties.newConnectionString,
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
           reg: /^[a-z][a-z0-9-]{7,63}/
         }));
     }
-    errors.collect(ros.propertyValidator('newConnectionString', ros.validateString)(properties.newConnectionString));
-    return errors.wrap('supplied properties not correct for "InstanceConnectionProperty"');
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "ClassicInnerConnectionProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.InstanceConnection` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.ClassicInnerConnection` resource
  *
- * @param properties - the TypeScript properties of a `InstanceConnectionProperty`
+ * @param properties - the TypeScript properties of a `ClassicInnerConnectionProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.InstanceConnection` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.ClassicInnerConnection` resource.
  */
 // @ts-ignore TS6133
-function rosPrepayInstanceInstanceConnectionPropertyToRosTemplate(properties: any): any {
+function rosPrepayInstanceClassicInnerConnectionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosPrepayInstance_InstanceConnectionPropertyValidator(properties).assertSuccess();
+    RosPrepayInstance_ClassicInnerConnectionPropertyValidator(properties).assertSuccess();
     return {
-      IPType: ros.stringToRosTemplate(properties.ipType),
-      Port: ros.numberToRosTemplate(properties.port),
-      NewConnectionString: ros.stringToRosTemplate(properties.newConnectionString),
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
+    };
+}
+
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
+    export interface ConnectionsProperty {
+        /**
+         * @Property vpcPrivateConnection: Vpc intranet address.
+         */
+        readonly vpcPrivateConnection?: RosPrepayInstance.VpcPrivateConnectionProperty | ros.IResolvable;
+        /**
+         * @Property publicConnection: Public address.
+         */
+        readonly publicConnection?: RosPrepayInstance.PublicConnectionProperty | ros.IResolvable;
+        /**
+         * @Property directConnection: Direct connection address. The instance is a cluster instance. 
+     * You can apply for a direct connection endpoint as required.
+         */
+        readonly directConnection?: RosPrepayInstance.DirectConnectionProperty | ros.IResolvable;
+        /**
+         * @Property classicInnerConnection: Classic intranet address.
+         */
+        readonly classicInnerConnection?: RosPrepayInstance.ClassicInnerConnectionProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConnectionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConnectionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_ConnectionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcPrivateConnection', RosPrepayInstance_VpcPrivateConnectionPropertyValidator)(properties.vpcPrivateConnection));
+    errors.collect(ros.propertyValidator('publicConnection', RosPrepayInstance_PublicConnectionPropertyValidator)(properties.publicConnection));
+    errors.collect(ros.propertyValidator('directConnection', RosPrepayInstance_DirectConnectionPropertyValidator)(properties.directConnection));
+    errors.collect(ros.propertyValidator('classicInnerConnection', RosPrepayInstance_ClassicInnerConnectionPropertyValidator)(properties.classicInnerConnection));
+    return errors.wrap('supplied properties not correct for "ConnectionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.Connections` resource
+ *
+ * @param properties - the TypeScript properties of a `ConnectionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.Connections` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstanceConnectionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_ConnectionsPropertyValidator(properties).assertSuccess();
+    return {
+      VpcPrivateConnection: rosPrepayInstanceVpcPrivateConnectionPropertyToRosTemplate(properties.vpcPrivateConnection),
+      PublicConnection: rosPrepayInstancePublicConnectionPropertyToRosTemplate(properties.publicConnection),
+      DirectConnection: rosPrepayInstanceDirectConnectionPropertyToRosTemplate(properties.directConnection),
+      ClassicInnerConnection: rosPrepayInstanceClassicInnerConnectionPropertyToRosTemplate(properties.classicInnerConnection),
+    };
+}
+
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
+    export interface DirectConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DirectConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `DirectConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_DirectConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "DirectConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.DirectConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `DirectConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.DirectConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstanceDirectConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_DirectConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
     };
 }
 
@@ -1639,6 +2237,71 @@ export namespace RosPrepayInstance {
     /**
      * @stability external
      */
+    export interface PublicConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PublicConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_PublicConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "PublicConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.PublicConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.PublicConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstancePublicConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_PublicConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
+    };
+}
+
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
     export interface TagsProperty {
         /**
          * @Property value: undefined
@@ -1680,6 +2343,71 @@ function rosPrepayInstanceTagsPropertyToRosTemplate(properties: any): any {
     return {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
+    export interface VpcPrivateConnectionProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VpcPrivateConnectionProperty`
+ *
+ * @param properties - the TypeScript properties of a `VpcPrivateConnectionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_VpcPrivateConnectionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "VpcPrivateConnectionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.VpcPrivateConnection` resource
+ *
+ * @param properties - the TypeScript properties of a `VpcPrivateConnectionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.VpcPrivateConnection` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstanceVpcPrivateConnectionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_VpcPrivateConnectionPropertyValidator(properties).assertSuccess();
+    return {
+      ConnectionPort: ros.numberToRosTemplate(properties.connectionPort),
+      ConnectionString: ros.stringToRosTemplate(properties.connectionString),
     };
 }
 

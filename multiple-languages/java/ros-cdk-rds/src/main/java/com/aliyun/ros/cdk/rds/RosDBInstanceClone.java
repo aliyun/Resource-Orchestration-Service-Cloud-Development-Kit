@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.945Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceClone")
 public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -846,9 +846,9 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DBMappingsProperty> {
-            private java.lang.Object characterSetName;
-            private java.lang.Object dbName;
-            private java.lang.Object dbDescription;
+            java.lang.Object characterSetName;
+            java.lang.Object dbName;
+            java.lang.Object dbDescription;
 
             /**
              * Sets the value of {@link DBMappingsProperty#getCharacterSetName}
@@ -924,7 +924,7 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DBMappingsProperty build() {
-                return new Jsii$Proxy(characterSetName, dbName, dbDescription);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -952,11 +952,11 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbName, final java.lang.Object dbDescription) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
-                this.dbName = java.util.Objects.requireNonNull(dbName, "dbName is required");
-                this.dbDescription = dbDescription;
+                this.characterSetName = java.util.Objects.requireNonNull(builder.characterSetName, "characterSetName is required");
+                this.dbName = java.util.Objects.requireNonNull(builder.dbName, "dbName is required");
+                this.dbDescription = builder.dbDescription;
             }
 
             @Override
@@ -1064,10 +1064,10 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableMetaProperty> {
-            private java.lang.Object name;
-            private java.lang.Object newName;
-            private java.lang.Object tables;
-            private java.lang.Object type;
+            java.lang.Object name;
+            java.lang.Object newName;
+            java.lang.Object tables;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link TableMetaProperty#getName}
@@ -1165,7 +1165,7 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableMetaProperty build() {
-                return new Jsii$Proxy(name, newName, tables, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1195,12 +1195,12 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object newName, final java.lang.Object tables, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.newName = newName;
-                this.tables = tables;
-                this.type = type;
+                this.name = builder.name;
+                this.newName = builder.newName;
+                this.tables = builder.tables;
+                this.type = builder.type;
             }
 
             @Override
@@ -1315,9 +1315,9 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TablesProperty> {
-            private java.lang.Object name;
-            private java.lang.Object newName;
-            private java.lang.Object type;
+            java.lang.Object name;
+            java.lang.Object newName;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link TablesProperty#getName}
@@ -1393,7 +1393,7 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TablesProperty build() {
-                return new Jsii$Proxy(name, newName, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1421,11 +1421,11 @@ public class RosDBInstanceClone extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object newName, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.newName = newName;
-                this.type = type;
+                this.name = builder.name;
+                this.newName = builder.newName;
+                this.type = builder.type;
             }
 
             @Override

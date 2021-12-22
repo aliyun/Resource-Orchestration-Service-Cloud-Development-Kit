@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a `ALIYUN::WAF::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.297Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -89,19 +89,19 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object bigScreen;
-        private java.lang.Object exclusiveIpPackage;
-        private java.lang.Object extBandwidth;
-        private java.lang.Object extDomainPackage;
-        private java.lang.Object logStorage;
-        private java.lang.Object logTime;
-        private java.lang.Object packageCode;
-        private java.lang.Object prefessionalService;
-        private java.lang.Object subscriptionType;
-        private java.lang.Object wafLog;
-        private java.lang.Object period;
-        private java.lang.Object renewalStatus;
-        private java.lang.Object renewPeriod;
+        java.lang.Object bigScreen;
+        java.lang.Object exclusiveIpPackage;
+        java.lang.Object extBandwidth;
+        java.lang.Object extDomainPackage;
+        java.lang.Object logStorage;
+        java.lang.Object logTime;
+        java.lang.Object packageCode;
+        java.lang.Object prefessionalService;
+        java.lang.Object subscriptionType;
+        java.lang.Object wafLog;
+        java.lang.Object period;
+        java.lang.Object renewalStatus;
+        java.lang.Object renewPeriod;
 
         /**
          * Sets the value of {@link InstanceProps#getBigScreen}
@@ -370,7 +370,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(bigScreen, exclusiveIpPackage, extBandwidth, extDomainPackage, logStorage, logTime, packageCode, prefessionalService, subscriptionType, wafLog, period, renewalStatus, renewPeriod);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -417,21 +417,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object bigScreen, final java.lang.Object exclusiveIpPackage, final java.lang.Object extBandwidth, final java.lang.Object extDomainPackage, final java.lang.Object logStorage, final java.lang.Object logTime, final java.lang.Object packageCode, final java.lang.Object prefessionalService, final java.lang.Object subscriptionType, final java.lang.Object wafLog, final java.lang.Object period, final java.lang.Object renewalStatus, final java.lang.Object renewPeriod) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bigScreen = java.util.Objects.requireNonNull(bigScreen, "bigScreen is required");
-            this.exclusiveIpPackage = java.util.Objects.requireNonNull(exclusiveIpPackage, "exclusiveIpPackage is required");
-            this.extBandwidth = java.util.Objects.requireNonNull(extBandwidth, "extBandwidth is required");
-            this.extDomainPackage = java.util.Objects.requireNonNull(extDomainPackage, "extDomainPackage is required");
-            this.logStorage = java.util.Objects.requireNonNull(logStorage, "logStorage is required");
-            this.logTime = java.util.Objects.requireNonNull(logTime, "logTime is required");
-            this.packageCode = java.util.Objects.requireNonNull(packageCode, "packageCode is required");
-            this.prefessionalService = java.util.Objects.requireNonNull(prefessionalService, "prefessionalService is required");
-            this.subscriptionType = java.util.Objects.requireNonNull(subscriptionType, "subscriptionType is required");
-            this.wafLog = java.util.Objects.requireNonNull(wafLog, "wafLog is required");
-            this.period = period;
-            this.renewalStatus = renewalStatus;
-            this.renewPeriod = renewPeriod;
+            this.bigScreen = java.util.Objects.requireNonNull(builder.bigScreen, "bigScreen is required");
+            this.exclusiveIpPackage = java.util.Objects.requireNonNull(builder.exclusiveIpPackage, "exclusiveIpPackage is required");
+            this.extBandwidth = java.util.Objects.requireNonNull(builder.extBandwidth, "extBandwidth is required");
+            this.extDomainPackage = java.util.Objects.requireNonNull(builder.extDomainPackage, "extDomainPackage is required");
+            this.logStorage = java.util.Objects.requireNonNull(builder.logStorage, "logStorage is required");
+            this.logTime = java.util.Objects.requireNonNull(builder.logTime, "logTime is required");
+            this.packageCode = java.util.Objects.requireNonNull(builder.packageCode, "packageCode is required");
+            this.prefessionalService = java.util.Objects.requireNonNull(builder.prefessionalService, "prefessionalService is required");
+            this.subscriptionType = java.util.Objects.requireNonNull(builder.subscriptionType, "subscriptionType is required");
+            this.wafLog = java.util.Objects.requireNonNull(builder.wafLog, "wafLog is required");
+            this.period = builder.period;
+            this.renewalStatus = builder.renewalStatus;
+            this.renewPeriod = builder.renewPeriod;
         }
 
         @Override

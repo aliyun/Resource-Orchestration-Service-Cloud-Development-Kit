@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.268Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.558Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLoggingProps")
 @software.amazon.jsii.Jsii.Proxy(TrailLoggingProps.Jsii$Proxy.class)
 public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link TrailLoggingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TrailLoggingProps> {
-        private java.lang.Object enable;
-        private java.lang.Object name;
+        java.lang.Object enable;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link TrailLoggingProps#getEnable}
@@ -78,7 +78,7 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public TrailLoggingProps build() {
-            return new Jsii$Proxy(enable, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object enable, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
+            this.enable = java.util.Objects.requireNonNull(builder.enable, "enable is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
         }
 
         @Override

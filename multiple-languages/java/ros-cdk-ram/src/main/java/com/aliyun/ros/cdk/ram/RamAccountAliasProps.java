@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::RamAccountAlias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.526Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RamAccountAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RamAccountAliasProps.Jsii$Proxy.class)
 public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,9 +11,10 @@ public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializa
     /**
      * Property accountAlias: The alias of the Alibaba Cloud account.
      * <p>
-     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-     * digits, and hyphens (-).
-     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+     * digits, hyphens (-), periods (.) and underscores (_).
+     * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
+     * hyphen (-) and cannot have two consecutive hyphens (-).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountAlias();
 
@@ -27,14 +28,15 @@ public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RamAccountAliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RamAccountAliasProps> {
-        private java.lang.Object accountAlias;
+        java.lang.Object accountAlias;
 
         /**
          * Sets the value of {@link RamAccountAliasProps#getAccountAlias}
          * @param accountAlias Property accountAlias: The alias of the Alibaba Cloud account. This parameter is required.
-         *                     The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-         *                     digits, and hyphens (-).
-         *                     Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+         *                     The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+         *                     digits, hyphens (-), periods (.) and underscores (_).
+         *                     Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
+         *                     hyphen (-) and cannot have two consecutive hyphens (-).
          * @return {@code this}
          */
         public Builder accountAlias(java.lang.String accountAlias) {
@@ -45,9 +47,10 @@ public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link RamAccountAliasProps#getAccountAlias}
          * @param accountAlias Property accountAlias: The alias of the Alibaba Cloud account. This parameter is required.
-         *                     The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-         *                     digits, and hyphens (-).
-         *                     Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+         *                     The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+         *                     digits, hyphens (-), periods (.) and underscores (_).
+         *                     Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a
+         *                     hyphen (-) and cannot have two consecutive hyphens (-).
          * @return {@code this}
          */
         public Builder accountAlias(com.aliyun.ros.cdk.core.IResolvable accountAlias) {
@@ -62,7 +65,7 @@ public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RamAccountAliasProps build() {
-            return new Jsii$Proxy(accountAlias);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -85,9 +88,9 @@ public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accountAlias) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accountAlias = java.util.Objects.requireNonNull(accountAlias, "accountAlias is required");
+            this.accountAlias = java.util.Objects.requireNonNull(builder.accountAlias, "accountAlias is required");
         }
 
         @Override

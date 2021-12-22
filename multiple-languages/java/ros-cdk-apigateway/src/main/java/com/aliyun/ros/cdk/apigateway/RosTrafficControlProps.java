@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::TrafficControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.327Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControlProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrafficControlProps.Jsii$Proxy.class)
 public interface RosTrafficControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,13 +54,13 @@ public interface RosTrafficControlProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosTrafficControlProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTrafficControlProps> {
-        private java.lang.Object apiDefault;
-        private java.lang.Object trafficControlName;
-        private java.lang.Object trafficControlUnit;
-        private java.lang.Object appDefault;
-        private java.lang.Object description;
-        private java.lang.Object special;
-        private java.lang.Object userDefault;
+        java.lang.Object apiDefault;
+        java.lang.Object trafficControlName;
+        java.lang.Object trafficControlUnit;
+        java.lang.Object appDefault;
+        java.lang.Object description;
+        java.lang.Object special;
+        java.lang.Object userDefault;
 
         /**
          * Sets the value of {@link RosTrafficControlProps#getApiDefault}
@@ -209,7 +209,7 @@ public interface RosTrafficControlProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosTrafficControlProps build() {
-            return new Jsii$Proxy(apiDefault, trafficControlName, trafficControlUnit, appDefault, description, special, userDefault);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -244,15 +244,15 @@ public interface RosTrafficControlProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiDefault, final java.lang.Object trafficControlName, final java.lang.Object trafficControlUnit, final java.lang.Object appDefault, final java.lang.Object description, final java.lang.Object special, final java.lang.Object userDefault) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.apiDefault = java.util.Objects.requireNonNull(apiDefault, "apiDefault is required");
-            this.trafficControlName = java.util.Objects.requireNonNull(trafficControlName, "trafficControlName is required");
-            this.trafficControlUnit = java.util.Objects.requireNonNull(trafficControlUnit, "trafficControlUnit is required");
-            this.appDefault = appDefault;
-            this.description = description;
-            this.special = special;
-            this.userDefault = userDefault;
+            this.apiDefault = java.util.Objects.requireNonNull(builder.apiDefault, "apiDefault is required");
+            this.trafficControlName = java.util.Objects.requireNonNull(builder.trafficControlName, "trafficControlName is required");
+            this.trafficControlUnit = java.util.Objects.requireNonNull(builder.trafficControlUnit, "trafficControlUnit is required");
+            this.appDefault = builder.appDefault;
+            this.description = builder.description;
+            this.special = builder.special;
+            this.userDefault = builder.userDefault;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::Api`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.306Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.632Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApi")
 public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -473,10 +473,10 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConstParametersProperty> {
-            private java.lang.Object constValue;
-            private java.lang.Object location;
-            private java.lang.Object serviceParameterName;
-            private java.lang.Object description;
+            java.lang.Object constValue;
+            java.lang.Object location;
+            java.lang.Object serviceParameterName;
+            java.lang.Object description;
 
             /**
              * Sets the value of {@link ConstParametersProperty#getConstValue}
@@ -574,7 +574,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConstParametersProperty build() {
-                return new Jsii$Proxy(constValue, location, serviceParameterName, description);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -604,12 +604,12 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object constValue, final java.lang.Object location, final java.lang.Object serviceParameterName, final java.lang.Object description) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.constValue = java.util.Objects.requireNonNull(constValue, "constValue is required");
-                this.location = java.util.Objects.requireNonNull(location, "location is required");
-                this.serviceParameterName = java.util.Objects.requireNonNull(serviceParameterName, "serviceParameterName is required");
-                this.description = description;
+                this.constValue = java.util.Objects.requireNonNull(builder.constValue, "constValue is required");
+                this.location = java.util.Objects.requireNonNull(builder.location, "location is required");
+                this.serviceParameterName = java.util.Objects.requireNonNull(builder.serviceParameterName, "serviceParameterName is required");
+                this.description = builder.description;
             }
 
             @Override
@@ -714,9 +714,9 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ErrorCodeSamplesProperty> {
-            private java.lang.Object code;
-            private java.lang.Object message;
-            private java.lang.Object description;
+            java.lang.Object code;
+            java.lang.Object message;
+            java.lang.Object description;
 
             /**
              * Sets the value of {@link ErrorCodeSamplesProperty#getCode}
@@ -792,7 +792,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ErrorCodeSamplesProperty build() {
-                return new Jsii$Proxy(code, message, description);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -820,11 +820,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object code, final java.lang.Object message, final java.lang.Object description) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.code = java.util.Objects.requireNonNull(code, "code is required");
-                this.message = java.util.Objects.requireNonNull(message, "message is required");
-                this.description = description;
+                this.code = java.util.Objects.requireNonNull(builder.code, "code is required");
+                this.message = java.util.Objects.requireNonNull(builder.message, "message is required");
+                this.description = builder.description;
             }
 
             @Override
@@ -988,18 +988,18 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FunctionComputeConfigProperty> {
-            private java.lang.Object contentTypeCatagory;
-            private java.lang.Object contentTypeValue;
-            private java.lang.Object fcBaseUrl;
-            private java.lang.Object fcRegionId;
-            private java.lang.Object fcType;
-            private java.lang.Object functionName;
-            private java.lang.Object method;
-            private java.lang.Object onlyBusinessPath;
-            private java.lang.Object path;
-            private java.lang.Object qualifier;
-            private java.lang.Object roleArn;
-            private java.lang.Object serviceName;
+            java.lang.Object contentTypeCatagory;
+            java.lang.Object contentTypeValue;
+            java.lang.Object fcBaseUrl;
+            java.lang.Object fcRegionId;
+            java.lang.Object fcType;
+            java.lang.Object functionName;
+            java.lang.Object method;
+            java.lang.Object onlyBusinessPath;
+            java.lang.Object path;
+            java.lang.Object qualifier;
+            java.lang.Object roleArn;
+            java.lang.Object serviceName;
 
             /**
              * Sets the value of {@link FunctionComputeConfigProperty#getContentTypeCatagory}
@@ -1273,7 +1273,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public FunctionComputeConfigProperty build() {
-                return new Jsii$Proxy(contentTypeCatagory, contentTypeValue, fcBaseUrl, fcRegionId, fcType, functionName, method, onlyBusinessPath, path, qualifier, roleArn, serviceName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1319,20 +1319,20 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object contentTypeCatagory, final java.lang.Object contentTypeValue, final java.lang.Object fcBaseUrl, final java.lang.Object fcRegionId, final java.lang.Object fcType, final java.lang.Object functionName, final java.lang.Object method, final java.lang.Object onlyBusinessPath, final java.lang.Object path, final java.lang.Object qualifier, final java.lang.Object roleArn, final java.lang.Object serviceName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.contentTypeCatagory = contentTypeCatagory;
-                this.contentTypeValue = contentTypeValue;
-                this.fcBaseUrl = fcBaseUrl;
-                this.fcRegionId = fcRegionId;
-                this.fcType = fcType;
-                this.functionName = functionName;
-                this.method = method;
-                this.onlyBusinessPath = onlyBusinessPath;
-                this.path = path;
-                this.qualifier = qualifier;
-                this.roleArn = roleArn;
-                this.serviceName = serviceName;
+                this.contentTypeCatagory = builder.contentTypeCatagory;
+                this.contentTypeValue = builder.contentTypeValue;
+                this.fcBaseUrl = builder.fcBaseUrl;
+                this.fcRegionId = builder.fcRegionId;
+                this.fcType = builder.fcType;
+                this.functionName = builder.functionName;
+                this.method = builder.method;
+                this.onlyBusinessPath = builder.onlyBusinessPath;
+                this.path = builder.path;
+                this.qualifier = builder.qualifier;
+                this.roleArn = builder.roleArn;
+                this.serviceName = builder.serviceName;
             }
 
             @Override
@@ -1516,8 +1516,8 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MockHeadersProperty> {
-            private java.lang.Object headerName;
-            private java.lang.Object headerValue;
+            java.lang.Object headerName;
+            java.lang.Object headerValue;
 
             /**
              * Sets the value of {@link MockHeadersProperty#getHeaderName}
@@ -1571,7 +1571,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MockHeadersProperty build() {
-                return new Jsii$Proxy(headerName, headerValue);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1597,10 +1597,10 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object headerName, final java.lang.Object headerValue) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.headerName = java.util.Objects.requireNonNull(headerName, "headerName is required");
-                this.headerValue = java.util.Objects.requireNonNull(headerValue, "headerValue is required");
+                this.headerName = java.util.Objects.requireNonNull(builder.headerName, "headerName is required");
+                this.headerValue = java.util.Objects.requireNonNull(builder.headerValue, "headerValue is required");
             }
 
             @Override
@@ -1696,10 +1696,10 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<OpenIdConnectConfigProperty> {
-            private java.lang.Object openIdApiType;
-            private java.lang.Object idTokenParamName;
-            private java.lang.Object publicKey;
-            private java.lang.Object publicKeyId;
+            java.lang.Object openIdApiType;
+            java.lang.Object idTokenParamName;
+            java.lang.Object publicKey;
+            java.lang.Object publicKeyId;
 
             /**
              * Sets the value of {@link OpenIdConnectConfigProperty#getOpenIdApiType}
@@ -1797,7 +1797,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public OpenIdConnectConfigProperty build() {
-                return new Jsii$Proxy(openIdApiType, idTokenParamName, publicKey, publicKeyId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1827,12 +1827,12 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object openIdApiType, final java.lang.Object idTokenParamName, final java.lang.Object publicKey, final java.lang.Object publicKeyId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.openIdApiType = java.util.Objects.requireNonNull(openIdApiType, "openIdApiType is required");
-                this.idTokenParamName = idTokenParamName;
-                this.publicKey = publicKey;
-                this.publicKeyId = publicKeyId;
+                this.openIdApiType = java.util.Objects.requireNonNull(builder.openIdApiType, "openIdApiType is required");
+                this.idTokenParamName = builder.idTokenParamName;
+                this.publicKey = builder.publicKey;
+                this.publicKeyId = builder.publicKeyId;
             }
 
             @Override
@@ -1958,12 +1958,12 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RequestConfigProperty> {
-            private java.lang.Object requestHttpMethod;
-            private java.lang.Object requestMode;
-            private java.lang.Object requestPath;
-            private java.lang.Object requestProtocol;
-            private java.lang.Object bodyFormat;
-            private java.lang.Object postBodyDescription;
+            java.lang.Object requestHttpMethod;
+            java.lang.Object requestMode;
+            java.lang.Object requestPath;
+            java.lang.Object requestProtocol;
+            java.lang.Object bodyFormat;
+            java.lang.Object postBodyDescription;
 
             /**
              * Sets the value of {@link RequestConfigProperty#getRequestHttpMethod}
@@ -2105,7 +2105,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RequestConfigProperty build() {
-                return new Jsii$Proxy(requestHttpMethod, requestMode, requestPath, requestProtocol, bodyFormat, postBodyDescription);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2139,14 +2139,14 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object requestHttpMethod, final java.lang.Object requestMode, final java.lang.Object requestPath, final java.lang.Object requestProtocol, final java.lang.Object bodyFormat, final java.lang.Object postBodyDescription) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.requestHttpMethod = java.util.Objects.requireNonNull(requestHttpMethod, "requestHttpMethod is required");
-                this.requestMode = java.util.Objects.requireNonNull(requestMode, "requestMode is required");
-                this.requestPath = java.util.Objects.requireNonNull(requestPath, "requestPath is required");
-                this.requestProtocol = java.util.Objects.requireNonNull(requestProtocol, "requestProtocol is required");
-                this.bodyFormat = bodyFormat;
-                this.postBodyDescription = postBodyDescription;
+                this.requestHttpMethod = java.util.Objects.requireNonNull(builder.requestHttpMethod, "requestHttpMethod is required");
+                this.requestMode = java.util.Objects.requireNonNull(builder.requestMode, "requestMode is required");
+                this.requestPath = java.util.Objects.requireNonNull(builder.requestPath, "requestPath is required");
+                this.requestProtocol = java.util.Objects.requireNonNull(builder.requestProtocol, "requestProtocol is required");
+                this.bodyFormat = builder.bodyFormat;
+                this.postBodyDescription = builder.postBodyDescription;
             }
 
             @Override
@@ -2356,22 +2356,22 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RequestParametersProperty> {
-            private java.lang.Object apiParameterName;
-            private java.lang.Object location;
-            private java.lang.Object parameterType;
-            private java.lang.Object required;
-            private java.lang.Object defaultValue;
-            private java.lang.Object demoValue;
-            private java.lang.Object description;
-            private java.lang.Object docOrder;
-            private java.lang.Object docShow;
-            private java.lang.Object enumValue;
-            private java.lang.Object jsonScheme;
-            private java.lang.Object maxLength;
-            private java.lang.Object maxValue;
-            private java.lang.Object minLength;
-            private java.lang.Object minValue;
-            private java.lang.Object regularExpression;
+            java.lang.Object apiParameterName;
+            java.lang.Object location;
+            java.lang.Object parameterType;
+            java.lang.Object required;
+            java.lang.Object defaultValue;
+            java.lang.Object demoValue;
+            java.lang.Object description;
+            java.lang.Object docOrder;
+            java.lang.Object docShow;
+            java.lang.Object enumValue;
+            java.lang.Object jsonScheme;
+            java.lang.Object maxLength;
+            java.lang.Object maxValue;
+            java.lang.Object minLength;
+            java.lang.Object minValue;
+            java.lang.Object regularExpression;
 
             /**
              * Sets the value of {@link RequestParametersProperty#getApiParameterName}
@@ -2733,7 +2733,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RequestParametersProperty build() {
-                return new Jsii$Proxy(apiParameterName, location, parameterType, required, defaultValue, demoValue, description, docOrder, docShow, enumValue, jsonScheme, maxLength, maxValue, minLength, minValue, regularExpression);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2787,24 +2787,24 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object apiParameterName, final java.lang.Object location, final java.lang.Object parameterType, final java.lang.Object required, final java.lang.Object defaultValue, final java.lang.Object demoValue, final java.lang.Object description, final java.lang.Object docOrder, final java.lang.Object docShow, final java.lang.Object enumValue, final java.lang.Object jsonScheme, final java.lang.Object maxLength, final java.lang.Object maxValue, final java.lang.Object minLength, final java.lang.Object minValue, final java.lang.Object regularExpression) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.apiParameterName = java.util.Objects.requireNonNull(apiParameterName, "apiParameterName is required");
-                this.location = java.util.Objects.requireNonNull(location, "location is required");
-                this.parameterType = java.util.Objects.requireNonNull(parameterType, "parameterType is required");
-                this.required = java.util.Objects.requireNonNull(required, "required is required");
-                this.defaultValue = defaultValue;
-                this.demoValue = demoValue;
-                this.description = description;
-                this.docOrder = docOrder;
-                this.docShow = docShow;
-                this.enumValue = enumValue;
-                this.jsonScheme = jsonScheme;
-                this.maxLength = maxLength;
-                this.maxValue = maxValue;
-                this.minLength = minLength;
-                this.minValue = minValue;
-                this.regularExpression = regularExpression;
+                this.apiParameterName = java.util.Objects.requireNonNull(builder.apiParameterName, "apiParameterName is required");
+                this.location = java.util.Objects.requireNonNull(builder.location, "location is required");
+                this.parameterType = java.util.Objects.requireNonNull(builder.parameterType, "parameterType is required");
+                this.required = java.util.Objects.requireNonNull(builder.required, "required is required");
+                this.defaultValue = builder.defaultValue;
+                this.demoValue = builder.demoValue;
+                this.description = builder.description;
+                this.docOrder = builder.docOrder;
+                this.docShow = builder.docShow;
+                this.enumValue = builder.enumValue;
+                this.jsonScheme = builder.jsonScheme;
+                this.maxLength = builder.maxLength;
+                this.maxValue = builder.maxValue;
+                this.minLength = builder.minLength;
+                this.minValue = builder.minValue;
+                this.regularExpression = builder.regularExpression;
             }
 
             @Override
@@ -3108,20 +3108,20 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServiceConfigProperty> {
-            private java.lang.Object contentTypeCatagory;
-            private java.lang.Object contentTypeValue;
-            private java.lang.Object functionComputeConfig;
-            private java.lang.Object mock;
-            private java.lang.Object mockHeaders;
-            private java.lang.Object mockResult;
-            private java.lang.Object mockStatusCode;
-            private java.lang.Object serviceAddress;
-            private java.lang.Object serviceHttpMethod;
-            private java.lang.Object servicePath;
-            private java.lang.Object serviceProtocol;
-            private java.lang.Object serviceTimeOut;
-            private java.lang.Object serviceVpcEnable;
-            private java.lang.Object vpcConfig;
+            java.lang.Object contentTypeCatagory;
+            java.lang.Object contentTypeValue;
+            java.lang.Object functionComputeConfig;
+            java.lang.Object mock;
+            java.lang.Object mockHeaders;
+            java.lang.Object mockResult;
+            java.lang.Object mockStatusCode;
+            java.lang.Object serviceAddress;
+            java.lang.Object serviceHttpMethod;
+            java.lang.Object servicePath;
+            java.lang.Object serviceProtocol;
+            java.lang.Object serviceTimeOut;
+            java.lang.Object serviceVpcEnable;
+            java.lang.Object vpcConfig;
 
             /**
              * Sets the value of {@link ServiceConfigProperty#getContentTypeCatagory}
@@ -3439,7 +3439,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ServiceConfigProperty build() {
-                return new Jsii$Proxy(contentTypeCatagory, contentTypeValue, functionComputeConfig, mock, mockHeaders, mockResult, mockStatusCode, serviceAddress, serviceHttpMethod, servicePath, serviceProtocol, serviceTimeOut, serviceVpcEnable, vpcConfig);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3489,22 +3489,22 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object contentTypeCatagory, final java.lang.Object contentTypeValue, final java.lang.Object functionComputeConfig, final java.lang.Object mock, final java.lang.Object mockHeaders, final java.lang.Object mockResult, final java.lang.Object mockStatusCode, final java.lang.Object serviceAddress, final java.lang.Object serviceHttpMethod, final java.lang.Object servicePath, final java.lang.Object serviceProtocol, final java.lang.Object serviceTimeOut, final java.lang.Object serviceVpcEnable, final java.lang.Object vpcConfig) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.contentTypeCatagory = contentTypeCatagory;
-                this.contentTypeValue = contentTypeValue;
-                this.functionComputeConfig = functionComputeConfig;
-                this.mock = mock;
-                this.mockHeaders = mockHeaders;
-                this.mockResult = mockResult;
-                this.mockStatusCode = mockStatusCode;
-                this.serviceAddress = serviceAddress;
-                this.serviceHttpMethod = serviceHttpMethod;
-                this.servicePath = servicePath;
-                this.serviceProtocol = serviceProtocol;
-                this.serviceTimeOut = serviceTimeOut;
-                this.serviceVpcEnable = serviceVpcEnable;
-                this.vpcConfig = vpcConfig;
+                this.contentTypeCatagory = builder.contentTypeCatagory;
+                this.contentTypeValue = builder.contentTypeValue;
+                this.functionComputeConfig = builder.functionComputeConfig;
+                this.mock = builder.mock;
+                this.mockHeaders = builder.mockHeaders;
+                this.mockResult = builder.mockResult;
+                this.mockStatusCode = builder.mockStatusCode;
+                this.serviceAddress = builder.serviceAddress;
+                this.serviceHttpMethod = builder.serviceHttpMethod;
+                this.servicePath = builder.servicePath;
+                this.serviceProtocol = builder.serviceProtocol;
+                this.serviceTimeOut = builder.serviceTimeOut;
+                this.serviceVpcEnable = builder.serviceVpcEnable;
+                this.vpcConfig = builder.vpcConfig;
             }
 
             @Override
@@ -3708,8 +3708,8 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServiceParametersMapProperty> {
-            private java.lang.Object requestParameterName;
-            private java.lang.Object serviceParameterName;
+            java.lang.Object requestParameterName;
+            java.lang.Object serviceParameterName;
 
             /**
              * Sets the value of {@link ServiceParametersMapProperty#getRequestParameterName}
@@ -3763,7 +3763,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ServiceParametersMapProperty build() {
-                return new Jsii$Proxy(requestParameterName, serviceParameterName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3789,10 +3789,10 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object requestParameterName, final java.lang.Object serviceParameterName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.requestParameterName = java.util.Objects.requireNonNull(requestParameterName, "requestParameterName is required");
-                this.serviceParameterName = java.util.Objects.requireNonNull(serviceParameterName, "serviceParameterName is required");
+                this.requestParameterName = java.util.Objects.requireNonNull(builder.requestParameterName, "requestParameterName is required");
+                this.serviceParameterName = java.util.Objects.requireNonNull(builder.serviceParameterName, "serviceParameterName is required");
             }
 
             @Override
@@ -3877,9 +3877,9 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServiceParametersProperty> {
-            private java.lang.Object location;
-            private java.lang.Object parameterType;
-            private java.lang.Object serviceParameterName;
+            java.lang.Object location;
+            java.lang.Object parameterType;
+            java.lang.Object serviceParameterName;
 
             /**
              * Sets the value of {@link ServiceParametersProperty#getLocation}
@@ -3955,7 +3955,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ServiceParametersProperty build() {
-                return new Jsii$Proxy(location, parameterType, serviceParameterName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3983,11 +3983,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object location, final java.lang.Object parameterType, final java.lang.Object serviceParameterName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.location = java.util.Objects.requireNonNull(location, "location is required");
-                this.parameterType = java.util.Objects.requireNonNull(parameterType, "parameterType is required");
-                this.serviceParameterName = java.util.Objects.requireNonNull(serviceParameterName, "serviceParameterName is required");
+                this.location = java.util.Objects.requireNonNull(builder.location, "location is required");
+                this.parameterType = java.util.Objects.requireNonNull(builder.parameterType, "parameterType is required");
+                this.serviceParameterName = java.util.Objects.requireNonNull(builder.serviceParameterName, "serviceParameterName is required");
             }
 
             @Override
@@ -4094,11 +4094,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SystemParametersProperty> {
-            private java.lang.Object location;
-            private java.lang.Object parameterName;
-            private java.lang.Object serviceParameterName;
-            private java.lang.Object demoValue;
-            private java.lang.Object description;
+            java.lang.Object location;
+            java.lang.Object parameterName;
+            java.lang.Object serviceParameterName;
+            java.lang.Object demoValue;
+            java.lang.Object description;
 
             /**
              * Sets the value of {@link SystemParametersProperty#getLocation}
@@ -4218,7 +4218,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SystemParametersProperty build() {
-                return new Jsii$Proxy(location, parameterName, serviceParameterName, demoValue, description);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4250,13 +4250,13 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object location, final java.lang.Object parameterName, final java.lang.Object serviceParameterName, final java.lang.Object demoValue, final java.lang.Object description) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.location = java.util.Objects.requireNonNull(location, "location is required");
-                this.parameterName = java.util.Objects.requireNonNull(parameterName, "parameterName is required");
-                this.serviceParameterName = java.util.Objects.requireNonNull(serviceParameterName, "serviceParameterName is required");
-                this.demoValue = demoValue;
-                this.description = description;
+                this.location = java.util.Objects.requireNonNull(builder.location, "location is required");
+                this.parameterName = java.util.Objects.requireNonNull(builder.parameterName, "parameterName is required");
+                this.serviceParameterName = java.util.Objects.requireNonNull(builder.serviceParameterName, "serviceParameterName is required");
+                this.demoValue = builder.demoValue;
+                this.description = builder.description;
             }
 
             @Override
@@ -4366,8 +4366,8 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -4421,7 +4421,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4447,10 +4447,10 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -4537,9 +4537,9 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcConfigProperty> {
-            private java.lang.Object instanceId;
-            private java.lang.Object port;
-            private java.lang.Object vpcId;
+            java.lang.Object instanceId;
+            java.lang.Object port;
+            java.lang.Object vpcId;
 
             /**
              * Sets the value of {@link VpcConfigProperty#getInstanceId}
@@ -4615,7 +4615,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public VpcConfigProperty build() {
-                return new Jsii$Proxy(instanceId, port, vpcId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4643,11 +4643,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object port, final java.lang.Object vpcId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-                this.port = java.util.Objects.requireNonNull(port, "port is required");
-                this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
+                this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+                this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+                this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             }
 
             @Override

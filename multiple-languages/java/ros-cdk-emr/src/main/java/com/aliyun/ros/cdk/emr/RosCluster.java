@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.347Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.880Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -802,9 +802,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BootstrapActionProperty> {
-            private java.lang.Object arg;
-            private java.lang.Object name;
-            private java.lang.Object path;
+            java.lang.Object arg;
+            java.lang.Object name;
+            java.lang.Object path;
 
             /**
              * Sets the value of {@link BootstrapActionProperty#getArg}
@@ -880,7 +880,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public BootstrapActionProperty build() {
-                return new Jsii$Proxy(arg, name, path);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -908,11 +908,11 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object arg, final java.lang.Object name, final java.lang.Object path) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.arg = arg;
-                this.name = name;
-                this.path = path;
+                this.arg = builder.arg;
+                this.name = builder.name;
+                this.path = builder.path;
             }
 
             @Override
@@ -1038,12 +1038,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConfigProperty> {
-            private java.lang.Object configKey;
-            private java.lang.Object configValue;
-            private java.lang.Object encrypt;
-            private java.lang.Object fileName;
-            private java.lang.Object replace;
-            private java.lang.Object serviceName;
+            java.lang.Object configKey;
+            java.lang.Object configValue;
+            java.lang.Object encrypt;
+            java.lang.Object fileName;
+            java.lang.Object replace;
+            java.lang.Object serviceName;
 
             /**
              * Sets the value of {@link ConfigProperty#getConfigKey}
@@ -1185,7 +1185,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConfigProperty build() {
-                return new Jsii$Proxy(configKey, configValue, encrypt, fileName, replace, serviceName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1219,14 +1219,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object configKey, final java.lang.Object configValue, final java.lang.Object encrypt, final java.lang.Object fileName, final java.lang.Object replace, final java.lang.Object serviceName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.configKey = configKey;
-                this.configValue = configValue;
-                this.encrypt = encrypt;
-                this.fileName = fileName;
-                this.replace = replace;
-                this.serviceName = serviceName;
+                this.configKey = builder.configKey;
+                this.configValue = builder.configValue;
+                this.encrypt = builder.encrypt;
+                this.fileName = builder.fileName;
+                this.replace = builder.replace;
+                this.serviceName = builder.serviceName;
             }
 
             @Override
@@ -1462,26 +1462,26 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HostGroupProperty> {
-            private java.lang.Object chargeType;
-            private java.lang.Object diskCapacity;
-            private java.lang.Object diskCount;
-            private java.lang.Object diskType;
-            private java.lang.Object hostGroupType;
-            private java.lang.Object instanceType;
-            private java.lang.Object nodeCount;
-            private java.lang.Object sysDiskCapacity;
-            private java.lang.Object sysDiskType;
-            private java.lang.Object autoRenew;
-            private java.lang.Object clusterId;
-            private java.lang.Object comment;
-            private java.lang.Object createType;
-            private java.lang.Object gpuDriver;
-            private java.lang.Object hostGroupId;
-            private java.lang.Object hostGroupName;
-            private java.lang.Object hostKeyPairName;
-            private java.lang.Object hostPassword;
-            private java.lang.Object period;
-            private java.lang.Object vSwitchId;
+            java.lang.Object chargeType;
+            java.lang.Object diskCapacity;
+            java.lang.Object diskCount;
+            java.lang.Object diskType;
+            java.lang.Object hostGroupType;
+            java.lang.Object instanceType;
+            java.lang.Object nodeCount;
+            java.lang.Object sysDiskCapacity;
+            java.lang.Object sysDiskType;
+            java.lang.Object autoRenew;
+            java.lang.Object clusterId;
+            java.lang.Object comment;
+            java.lang.Object createType;
+            java.lang.Object gpuDriver;
+            java.lang.Object hostGroupId;
+            java.lang.Object hostGroupName;
+            java.lang.Object hostKeyPairName;
+            java.lang.Object hostPassword;
+            java.lang.Object period;
+            java.lang.Object vSwitchId;
 
             /**
              * Sets the value of {@link HostGroupProperty#getChargeType}
@@ -1931,7 +1931,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HostGroupProperty build() {
-                return new Jsii$Proxy(chargeType, diskCapacity, diskCount, diskType, hostGroupType, instanceType, nodeCount, sysDiskCapacity, sysDiskType, autoRenew, clusterId, comment, createType, gpuDriver, hostGroupId, hostGroupName, hostKeyPairName, hostPassword, period, vSwitchId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1993,28 +1993,28 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object chargeType, final java.lang.Object diskCapacity, final java.lang.Object diskCount, final java.lang.Object diskType, final java.lang.Object hostGroupType, final java.lang.Object instanceType, final java.lang.Object nodeCount, final java.lang.Object sysDiskCapacity, final java.lang.Object sysDiskType, final java.lang.Object autoRenew, final java.lang.Object clusterId, final java.lang.Object comment, final java.lang.Object createType, final java.lang.Object gpuDriver, final java.lang.Object hostGroupId, final java.lang.Object hostGroupName, final java.lang.Object hostKeyPairName, final java.lang.Object hostPassword, final java.lang.Object period, final java.lang.Object vSwitchId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.chargeType = java.util.Objects.requireNonNull(chargeType, "chargeType is required");
-                this.diskCapacity = java.util.Objects.requireNonNull(diskCapacity, "diskCapacity is required");
-                this.diskCount = java.util.Objects.requireNonNull(diskCount, "diskCount is required");
-                this.diskType = java.util.Objects.requireNonNull(diskType, "diskType is required");
-                this.hostGroupType = java.util.Objects.requireNonNull(hostGroupType, "hostGroupType is required");
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.nodeCount = java.util.Objects.requireNonNull(nodeCount, "nodeCount is required");
-                this.sysDiskCapacity = java.util.Objects.requireNonNull(sysDiskCapacity, "sysDiskCapacity is required");
-                this.sysDiskType = java.util.Objects.requireNonNull(sysDiskType, "sysDiskType is required");
-                this.autoRenew = autoRenew;
-                this.clusterId = clusterId;
-                this.comment = comment;
-                this.createType = createType;
-                this.gpuDriver = gpuDriver;
-                this.hostGroupId = hostGroupId;
-                this.hostGroupName = hostGroupName;
-                this.hostKeyPairName = hostKeyPairName;
-                this.hostPassword = hostPassword;
-                this.period = period;
-                this.vSwitchId = vSwitchId;
+                this.chargeType = java.util.Objects.requireNonNull(builder.chargeType, "chargeType is required");
+                this.diskCapacity = java.util.Objects.requireNonNull(builder.diskCapacity, "diskCapacity is required");
+                this.diskCount = java.util.Objects.requireNonNull(builder.diskCount, "diskCount is required");
+                this.diskType = java.util.Objects.requireNonNull(builder.diskType, "diskType is required");
+                this.hostGroupType = java.util.Objects.requireNonNull(builder.hostGroupType, "hostGroupType is required");
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.nodeCount = java.util.Objects.requireNonNull(builder.nodeCount, "nodeCount is required");
+                this.sysDiskCapacity = java.util.Objects.requireNonNull(builder.sysDiskCapacity, "sysDiskCapacity is required");
+                this.sysDiskType = java.util.Objects.requireNonNull(builder.sysDiskType, "sysDiskType is required");
+                this.autoRenew = builder.autoRenew;
+                this.clusterId = builder.clusterId;
+                this.comment = builder.comment;
+                this.createType = builder.createType;
+                this.gpuDriver = builder.gpuDriver;
+                this.hostGroupId = builder.hostGroupId;
+                this.hostGroupName = builder.hostGroupName;
+                this.hostKeyPairName = builder.hostKeyPairName;
+                this.hostPassword = builder.hostPassword;
+                this.period = builder.period;
+                this.vSwitchId = builder.vSwitchId;
             }
 
             @Override
@@ -2271,9 +2271,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<UserInfoProperty> {
-            private java.lang.Object password;
-            private java.lang.Object userId;
-            private java.lang.Object userName;
+            java.lang.Object password;
+            java.lang.Object userId;
+            java.lang.Object userName;
 
             /**
              * Sets the value of {@link UserInfoProperty#getPassword}
@@ -2349,7 +2349,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public UserInfoProperty build() {
-                return new Jsii$Proxy(password, userId, userName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2377,11 +2377,11 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object password, final java.lang.Object userId, final java.lang.Object userName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.password = password;
-                this.userId = userId;
-                this.userName = userName;
+                this.password = builder.password;
+                this.userId = builder.userId;
+                this.userName = builder.userName;
             }
 
             @Override

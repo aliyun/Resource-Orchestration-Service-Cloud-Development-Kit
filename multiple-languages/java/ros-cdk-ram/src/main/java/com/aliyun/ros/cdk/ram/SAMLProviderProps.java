@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::SAMLProvider`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.844Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.545Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SAMLProviderProps")
 @software.amazon.jsii.Jsii.Proxy(SAMLProviderProps.Jsii$Proxy.class)
 public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,10 +50,10 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link SAMLProviderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SAMLProviderProps> {
-        private java.lang.Object samlProviderName;
-        private java.lang.Object description;
-        private java.lang.Object samlMetadataDocument;
-        private java.lang.Object samlMetadataDocumentUrl;
+        java.lang.Object samlProviderName;
+        java.lang.Object description;
+        java.lang.Object samlMetadataDocument;
+        java.lang.Object samlMetadataDocumentUrl;
 
         /**
          * Sets the value of {@link SAMLProviderProps#getSamlProviderName}
@@ -148,7 +148,7 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public SAMLProviderProps build() {
-            return new Jsii$Proxy(samlProviderName, description, samlMetadataDocument, samlMetadataDocumentUrl);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -177,12 +177,12 @@ public interface SAMLProviderProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object samlProviderName, final java.lang.Object description, final java.lang.Object samlMetadataDocument, final java.lang.Object samlMetadataDocumentUrl) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.samlProviderName = java.util.Objects.requireNonNull(samlProviderName, "samlProviderName is required");
-            this.description = description;
-            this.samlMetadataDocument = samlMetadataDocument;
-            this.samlMetadataDocumentUrl = samlMetadataDocumentUrl;
+            this.samlProviderName = java.util.Objects.requireNonNull(builder.samlProviderName, "samlProviderName is required");
+            this.description = builder.description;
+            this.samlMetadataDocument = builder.samlMetadataDocument;
+            this.samlMetadataDocumentUrl = builder.samlMetadataDocumentUrl;
         }
 
         @Override

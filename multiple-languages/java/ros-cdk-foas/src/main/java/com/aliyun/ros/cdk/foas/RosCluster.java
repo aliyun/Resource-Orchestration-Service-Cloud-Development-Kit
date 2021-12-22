@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * A ROS template type:  `ALIYUN::FOAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -267,12 +267,12 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<OrderProperty> {
-            private java.lang.Object masterSpec;
-            private java.lang.Object slaveSpec;
-            private java.lang.Object masterNumber;
-            private java.lang.Object payModel;
-            private java.lang.Object period;
-            private java.lang.Object slaveNumber;
+            java.lang.Object masterSpec;
+            java.lang.Object slaveSpec;
+            java.lang.Object masterNumber;
+            java.lang.Object payModel;
+            java.lang.Object period;
+            java.lang.Object slaveNumber;
 
             /**
              * Sets the value of {@link OrderProperty#getMasterSpec}
@@ -414,7 +414,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public OrderProperty build() {
-                return new Jsii$Proxy(masterSpec, slaveSpec, masterNumber, payModel, period, slaveNumber);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -448,14 +448,14 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object masterSpec, final java.lang.Object slaveSpec, final java.lang.Object masterNumber, final java.lang.Object payModel, final java.lang.Object period, final java.lang.Object slaveNumber) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.masterSpec = java.util.Objects.requireNonNull(masterSpec, "masterSpec is required");
-                this.slaveSpec = java.util.Objects.requireNonNull(slaveSpec, "slaveSpec is required");
-                this.masterNumber = masterNumber;
-                this.payModel = payModel;
-                this.period = period;
-                this.slaveNumber = slaveNumber;
+                this.masterSpec = java.util.Objects.requireNonNull(builder.masterSpec, "masterSpec is required");
+                this.slaveSpec = java.util.Objects.requireNonNull(builder.slaveSpec, "slaveSpec is required");
+                this.masterNumber = builder.masterNumber;
+                this.payModel = builder.payModel;
+                this.period = builder.period;
+                this.slaveNumber = builder.slaveNumber;
             }
 
             @Override

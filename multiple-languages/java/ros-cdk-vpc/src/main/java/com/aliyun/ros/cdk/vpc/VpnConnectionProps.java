@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(VpnConnectionProps.Jsii$Proxy.class)
 public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializable {
@@ -83,15 +83,15 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link VpnConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpnConnectionProps> {
-        private java.lang.Object customerGatewayId;
-        private java.lang.Object localSubnet;
-        private java.lang.Object remoteSubnet;
-        private java.lang.Object vpnGatewayId;
-        private java.lang.Object effectImmediately;
-        private java.lang.Object healthCheckConfig;
-        private java.lang.Object ikeConfig;
-        private java.lang.Object ipsecConfig;
-        private java.lang.Object name;
+        java.lang.Object customerGatewayId;
+        java.lang.Object localSubnet;
+        java.lang.Object remoteSubnet;
+        java.lang.Object vpnGatewayId;
+        java.lang.Object effectImmediately;
+        java.lang.Object healthCheckConfig;
+        java.lang.Object ikeConfig;
+        java.lang.Object ipsecConfig;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link VpnConnectionProps#getCustomerGatewayId}
@@ -292,7 +292,7 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public VpnConnectionProps build() {
-            return new Jsii$Proxy(customerGatewayId, localSubnet, remoteSubnet, vpnGatewayId, effectImmediately, healthCheckConfig, ikeConfig, ipsecConfig, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -331,17 +331,17 @@ public interface VpnConnectionProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object customerGatewayId, final java.lang.Object localSubnet, final java.lang.Object remoteSubnet, final java.lang.Object vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object healthCheckConfig, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.customerGatewayId = java.util.Objects.requireNonNull(customerGatewayId, "customerGatewayId is required");
-            this.localSubnet = java.util.Objects.requireNonNull(localSubnet, "localSubnet is required");
-            this.remoteSubnet = java.util.Objects.requireNonNull(remoteSubnet, "remoteSubnet is required");
-            this.vpnGatewayId = java.util.Objects.requireNonNull(vpnGatewayId, "vpnGatewayId is required");
-            this.effectImmediately = effectImmediately;
-            this.healthCheckConfig = healthCheckConfig;
-            this.ikeConfig = ikeConfig;
-            this.ipsecConfig = ipsecConfig;
-            this.name = name;
+            this.customerGatewayId = java.util.Objects.requireNonNull(builder.customerGatewayId, "customerGatewayId is required");
+            this.localSubnet = java.util.Objects.requireNonNull(builder.localSubnet, "localSubnet is required");
+            this.remoteSubnet = java.util.Objects.requireNonNull(builder.remoteSubnet, "remoteSubnet is required");
+            this.vpnGatewayId = java.util.Objects.requireNonNull(builder.vpnGatewayId, "vpnGatewayId is required");
+            this.effectImmediately = builder.effectImmediately;
+            this.healthCheckConfig = builder.healthCheckConfig;
+            this.ikeConfig = builder.ikeConfig;
+            this.ipsecConfig = builder.ipsecConfig;
+            this.name = builder.name;
         }
 
         @Override

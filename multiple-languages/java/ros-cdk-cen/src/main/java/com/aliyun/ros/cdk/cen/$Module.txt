@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-cen.CenInstanceProps=com.aliyun.ros.cdk.cen.CenInstanceProps
 @alicloud/ros-cdk-cen.CenRouteMap=com.aliyun.ros.cdk.cen.CenRouteMap
 @alicloud/ros-cdk-cen.CenRouteMapProps=com.aliyun.ros.cdk.cen.CenRouteMapProps
+@alicloud/ros-cdk-cen.CenRouteService=com.aliyun.ros.cdk.cen.CenRouteService
+@alicloud/ros-cdk-cen.CenRouteServiceProps=com.aliyun.ros.cdk.cen.CenRouteServiceProps
 @alicloud/ros-cdk-cen.CenVbrHealthCheck=com.aliyun.ros.cdk.cen.CenVbrHealthCheck
 @alicloud/ros-cdk-cen.CenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps
 @alicloud/ros-cdk-cen.RosCenBandwidthLimit=com.aliyun.ros.cdk.cen.RosCenBandwidthLimit
@@ -25,6 +27,8 @@
 @alicloud/ros-cdk-cen.RosCenInstanceProps=com.aliyun.ros.cdk.cen.RosCenInstanceProps
 @alicloud/ros-cdk-cen.RosCenRouteMap=com.aliyun.ros.cdk.cen.RosCenRouteMap
 @alicloud/ros-cdk-cen.RosCenRouteMapProps=com.aliyun.ros.cdk.cen.RosCenRouteMapProps
+@alicloud/ros-cdk-cen.RosCenRouteService=com.aliyun.ros.cdk.cen.RosCenRouteService
+@alicloud/ros-cdk-cen.RosCenRouteServiceProps=com.aliyun.ros.cdk.cen.RosCenRouteServiceProps
 @alicloud/ros-cdk-cen.RosCenVbrHealthCheck=com.aliyun.ros.cdk.cen.RosCenVbrHealthCheck
 @alicloud/ros-cdk-cen.RosCenVbrHealthCheckProps=com.aliyun.ros.cdk.cen.RosCenVbrHealthCheckProps
 @alicloud/ros-cdk-cen.RosRouteEntry=com.aliyun.ros.cdk.cen.RosRouteEntry

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm;
 /**
  * Properties for defining a `ALIYUN::ACM::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.236Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.544Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.NamespaceProps")
 @software.amazon.jsii.Jsii.Proxy(NamespaceProps.Jsii$Proxy.class)
 public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link NamespaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NamespaceProps> {
-        private java.lang.Object name;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link NamespaceProps#getName}
@@ -52,7 +52,7 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public NamespaceProps build() {
-            return new Jsii$Proxy(name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -75,9 +75,9 @@ public interface NamespaceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.849Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.550Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.UserProps")
 @software.amazon.jsii.Jsii.Proxy(UserProps.Jsii$Proxy.class)
 public interface UserProps extends software.amazon.jsii.JsiiSerializable {
@@ -72,14 +72,14 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link UserProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<UserProps> {
-        private java.lang.Object userName;
-        private java.lang.Object comments;
-        private java.lang.Object displayName;
-        private java.lang.Object email;
-        private java.lang.Object groups;
-        private java.lang.Object loginProfile;
-        private java.lang.Object mobilePhone;
-        private java.lang.Object policies;
+        java.lang.Object userName;
+        java.lang.Object comments;
+        java.lang.Object displayName;
+        java.lang.Object email;
+        java.lang.Object groups;
+        java.lang.Object loginProfile;
+        java.lang.Object mobilePhone;
+        java.lang.Object policies;
 
         /**
          * Sets the value of {@link UserProps#getUserName}
@@ -248,7 +248,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public UserProps build() {
-            return new Jsii$Proxy(userName, comments, displayName, email, groups, loginProfile, mobilePhone, policies);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -285,16 +285,16 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object userName, final java.lang.Object comments, final java.lang.Object displayName, final java.lang.Object email, final java.lang.Object groups, final java.lang.Object loginProfile, final java.lang.Object mobilePhone, final java.lang.Object policies) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
-            this.comments = comments;
-            this.displayName = displayName;
-            this.email = email;
-            this.groups = groups;
-            this.loginProfile = loginProfile;
-            this.mobilePhone = mobilePhone;
-            this.policies = policies;
+            this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
+            this.comments = builder.comments;
+            this.displayName = builder.displayName;
+            this.email = builder.email;
+            this.groups = builder.groups;
+            this.loginProfile = builder.loginProfile;
+            this.mobilePhone = builder.mobilePhone;
+            this.policies = builder.policies;
         }
 
         @Override

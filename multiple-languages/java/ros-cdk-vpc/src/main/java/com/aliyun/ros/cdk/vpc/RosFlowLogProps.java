@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::FlowLog`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosFlowLogProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowLogProps.Jsii$Proxy.class)
 public interface RosFlowLogProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,13 +50,13 @@ public interface RosFlowLogProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosFlowLogProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFlowLogProps> {
-        private java.lang.Object logStoreName;
-        private java.lang.Object projectName;
-        private java.lang.Object resourceId;
-        private java.lang.Object resourceType;
-        private java.lang.Object trafficType;
-        private java.lang.Object description;
-        private java.lang.Object flowLogName;
+        java.lang.Object logStoreName;
+        java.lang.Object projectName;
+        java.lang.Object resourceId;
+        java.lang.Object resourceType;
+        java.lang.Object trafficType;
+        java.lang.Object description;
+        java.lang.Object flowLogName;
 
         /**
          * Sets the value of {@link RosFlowLogProps#getLogStoreName}
@@ -205,7 +205,7 @@ public interface RosFlowLogProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosFlowLogProps build() {
-            return new Jsii$Proxy(logStoreName, projectName, resourceId, resourceType, trafficType, description, flowLogName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -240,15 +240,15 @@ public interface RosFlowLogProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object logStoreName, final java.lang.Object projectName, final java.lang.Object resourceId, final java.lang.Object resourceType, final java.lang.Object trafficType, final java.lang.Object description, final java.lang.Object flowLogName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.logStoreName = java.util.Objects.requireNonNull(logStoreName, "logStoreName is required");
-            this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
-            this.resourceId = java.util.Objects.requireNonNull(resourceId, "resourceId is required");
-            this.resourceType = java.util.Objects.requireNonNull(resourceType, "resourceType is required");
-            this.trafficType = java.util.Objects.requireNonNull(trafficType, "trafficType is required");
-            this.description = description;
-            this.flowLogName = flowLogName;
+            this.logStoreName = java.util.Objects.requireNonNull(builder.logStoreName, "logStoreName is required");
+            this.projectName = java.util.Objects.requireNonNull(builder.projectName, "projectName is required");
+            this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
+            this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
+            this.trafficType = java.util.Objects.requireNonNull(builder.trafficType, "trafficType is required");
+            this.description = builder.description;
+            this.flowLogName = builder.flowLogName;
         }
 
         @Override

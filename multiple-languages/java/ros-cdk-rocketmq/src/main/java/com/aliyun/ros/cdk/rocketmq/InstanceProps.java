@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,9 +39,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object instanceName;
-        private java.lang.Object remark;
-        private java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
+        java.lang.Object instanceName;
+        java.lang.Object remark;
+        java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags;
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
@@ -102,7 +102,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(instanceName, remark, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object remark, final java.util.List<? extends com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
-            this.remark = remark;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty>)tags;
+            this.instanceName = java.util.Objects.requireNonNull(builder.instanceName, "instanceName is required");
+            this.remark = builder.remark;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.rocketmq.RosInstance.TagsProperty>)builder.tags;
         }
 
         @Override

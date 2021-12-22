@@ -25,9 +25,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway.</summary>
+        /// <summary>Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.</summary>
         /// <remarks>
-        /// False (default): Does not automatically pay the bill for the VPN gateway.
+        /// false (default): Does not automatically pay the bill for the VPN gateway.
         /// </remarks>
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -186,9 +186,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: True: Automatically pays the bill for the VPN gateway.</summary>
+            /// <summary>Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.</summary>
             /// <remarks>
-            /// False (default): Does not automatically pay the bill for the VPN gateway.
+            /// false (default): Does not automatically pay the bill for the VPN gateway.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

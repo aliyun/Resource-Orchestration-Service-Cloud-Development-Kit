@@ -29,6 +29,11 @@ export interface CustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
      * Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
      * Cannot begin with http:// or https://.
@@ -56,6 +61,11 @@ export interface CustomImageProps {
     readonly snapshotId?: string | ros.IResolvable;
 
     /**
+     * Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     */
+    readonly sourceRegionId?: string | ros.IResolvable;
+
+    /**
      * Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
@@ -77,6 +87,11 @@ export class CustomImage extends ros.Resource {
     public readonly attrImageId: ros.IResolvable;
 
     /**
+     * Attribute SourceRegionId: ID of the region to where the instance/snapshot belongs.
+     */
+    public readonly attrSourceRegionId: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::CustomImage`.
      *
      * Param scope - scope in which this resource is defined
@@ -88,16 +103,19 @@ export class CustomImage extends ros.Resource {
 
         const rosCustomImage = new RosCustomImage(this, id,  {
             imageName: props.imageName,
+            sourceRegionId: props.sourceRegionId,
             snapshotId: props.snapshotId,
             description: props.description,
-            platform: props.platform,
             resourceGroupId: props.resourceGroupId,
+            platform: props.platform,
             architecture: props.architecture,
             instanceId: props.instanceId,
+            imageFamily: props.imageFamily,
             tag: props.tag,
             diskDeviceMapping: props.diskDeviceMapping,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomImage;
         this.attrImageId = rosCustomImage.attrImageId;
+        this.attrSourceRegionId = rosCustomImage.attrSourceRegionId;
     }
 }

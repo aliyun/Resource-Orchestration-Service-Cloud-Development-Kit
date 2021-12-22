@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.459Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.027Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.AliasProps")
 @software.amazon.jsii.Jsii.Proxy(AliasProps.Jsii$Proxy.class)
 public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,12 +58,12 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AliasProps> {
-        private java.lang.Object aliasName;
-        private java.lang.Object serviceName;
-        private java.lang.Object additionalVersion;
-        private java.lang.Object additionalWeight;
-        private java.lang.Object description;
-        private java.lang.Object versionId;
+        java.lang.Object aliasName;
+        java.lang.Object serviceName;
+        java.lang.Object additionalVersion;
+        java.lang.Object additionalWeight;
+        java.lang.Object description;
+        java.lang.Object versionId;
 
         /**
          * Sets the value of {@link AliasProps#getAliasName}
@@ -194,7 +194,7 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AliasProps build() {
-            return new Jsii$Proxy(aliasName, serviceName, additionalVersion, additionalWeight, description, versionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -227,14 +227,14 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aliasName, final java.lang.Object serviceName, final java.lang.Object additionalVersion, final java.lang.Object additionalWeight, final java.lang.Object description, final java.lang.Object versionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aliasName = java.util.Objects.requireNonNull(aliasName, "aliasName is required");
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.additionalVersion = additionalVersion;
-            this.additionalWeight = additionalWeight;
-            this.description = description;
-            this.versionId = versionId;
+            this.aliasName = java.util.Objects.requireNonNull(builder.aliasName, "aliasName is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.additionalVersion = builder.additionalVersion;
+            this.additionalWeight = builder.additionalWeight;
+            this.description = builder.description;
+            this.versionId = builder.versionId;
         }
 
         @Override

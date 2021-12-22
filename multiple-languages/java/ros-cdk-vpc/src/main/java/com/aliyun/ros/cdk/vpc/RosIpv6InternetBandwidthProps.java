@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::Ipv6InternetBandwidth`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.213Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidthProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpv6InternetBandwidthProps.Jsii$Proxy.class)
 public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,11 +42,11 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
      * A builder for {@link RosIpv6InternetBandwidthProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosIpv6InternetBandwidthProps> {
-        private java.lang.Object bandwidth;
-        private java.lang.Object ipv6AddressId;
-        private java.lang.Object ipv6GatewayId;
-        private java.lang.Object internetChargeType;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags;
+        java.lang.Object bandwidth;
+        java.lang.Object ipv6AddressId;
+        java.lang.Object ipv6GatewayId;
+        java.lang.Object internetChargeType;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosIpv6InternetBandwidthProps#getBandwidth}
@@ -146,7 +146,7 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
          */
         @Override
         public RosIpv6InternetBandwidthProps build() {
-            return new Jsii$Proxy(bandwidth, ipv6AddressId, ipv6GatewayId, internetChargeType, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -178,13 +178,13 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object ipv6AddressId, final java.lang.Object ipv6GatewayId, final java.lang.Object internetChargeType, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.ipv6AddressId = java.util.Objects.requireNonNull(ipv6AddressId, "ipv6AddressId is required");
-            this.ipv6GatewayId = java.util.Objects.requireNonNull(ipv6GatewayId, "ipv6GatewayId is required");
-            this.internetChargeType = internetChargeType;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty>)tags;
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.ipv6AddressId = java.util.Objects.requireNonNull(builder.ipv6AddressId, "ipv6AddressId is required");
+            this.ipv6GatewayId = java.util.Objects.requireNonNull(builder.ipv6GatewayId, "ipv6GatewayId is required");
+            this.internetChargeType = builder.internetChargeType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty>)builder.tags;
         }
 
         @Override

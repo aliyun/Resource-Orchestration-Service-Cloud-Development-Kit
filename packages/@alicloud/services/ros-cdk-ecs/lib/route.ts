@@ -14,11 +14,6 @@ export interface RouteProps {
     readonly destinationCidrBlock: string | ros.IResolvable;
 
     /**
-     * Property routeId: RouteId of created route entry.
-     */
-    readonly routeId: string | ros.IResolvable;
-
-    /**
      * Property routeTableId: RouteTableId of created route entry.
      */
     readonly routeTableId: string | ros.IResolvable;
@@ -34,7 +29,7 @@ export interface RouteProps {
     readonly nextHopList?: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * Property nextHopType: The next hop type. Now support 'Instance|HaVip|RouterInterface|NetworkInterface|VpnGateway|IPv6Gateway|NatGateway|Attachment'. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
     readonly nextHopType?: string | ros.IResolvable;
 }
@@ -65,7 +60,6 @@ export class Route extends ros.Resource {
             nextHopId: props.nextHopId,
             nextHopList: props.nextHopList,
             destinationCidrBlock: props.destinationCidrBlock,
-            routeId: props.routeId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRoute;
     }

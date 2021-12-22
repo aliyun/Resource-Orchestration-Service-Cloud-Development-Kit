@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::NetworkInterfacePermission`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfacePermissionProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfacePermissionProps.Jsii$Proxy.class)
 public interface RosNetworkInterfacePermissionProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,9 +30,9 @@ public interface RosNetworkInterfacePermissionProps extends software.amazon.jsii
      * A builder for {@link RosNetworkInterfacePermissionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosNetworkInterfacePermissionProps> {
-        private java.lang.Object accountId;
-        private java.lang.Object networkInterfaceId;
-        private java.lang.Object permission;
+        java.lang.Object accountId;
+        java.lang.Object networkInterfaceId;
+        java.lang.Object permission;
 
         /**
          * Sets the value of {@link RosNetworkInterfacePermissionProps#getAccountId}
@@ -101,7 +101,7 @@ public interface RosNetworkInterfacePermissionProps extends software.amazon.jsii
          */
         @Override
         public RosNetworkInterfacePermissionProps build() {
-            return new Jsii$Proxy(accountId, networkInterfaceId, permission);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -128,11 +128,11 @@ public interface RosNetworkInterfacePermissionProps extends software.amazon.jsii
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accountId, final java.lang.Object networkInterfaceId, final java.lang.Object permission) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accountId = java.util.Objects.requireNonNull(accountId, "accountId is required");
-            this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
-            this.permission = java.util.Objects.requireNonNull(permission, "permission is required");
+            this.accountId = java.util.Objects.requireNonNull(builder.accountId, "accountId is required");
+            this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.permission = java.util.Objects.requireNonNull(builder.permission, "permission is required");
         }
 
         @Override

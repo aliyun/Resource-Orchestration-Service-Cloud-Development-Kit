@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DedicatedHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.081Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(RosDedicatedHostProps.Jsii$Proxy.class)
 public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
@@ -118,23 +118,23 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosDedicatedHostProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDedicatedHostProps> {
-        private java.lang.Object dedicatedHostType;
-        private java.lang.Object actionOnMaintenance;
-        private java.lang.Object autoPlacement;
-        private java.lang.Object autoReleaseTime;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object chargeType;
-        private java.lang.Object dedicatedHostName;
-        private java.lang.Object description;
-        private java.lang.Object networkAttributesSlbUdpTimeout;
-        private java.lang.Object networkAttributesUdpTimeout;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object quantity;
-        private java.lang.Object resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags;
-        private java.lang.Object zoneId;
+        java.lang.Object dedicatedHostType;
+        java.lang.Object actionOnMaintenance;
+        java.lang.Object autoPlacement;
+        java.lang.Object autoReleaseTime;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object chargeType;
+        java.lang.Object dedicatedHostName;
+        java.lang.Object description;
+        java.lang.Object networkAttributesSlbUdpTimeout;
+        java.lang.Object networkAttributesUdpTimeout;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object quantity;
+        java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosDedicatedHostProps#getDedicatedHostType}
@@ -474,7 +474,7 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosDedicatedHostProps build() {
-            return new Jsii$Proxy(dedicatedHostType, actionOnMaintenance, autoPlacement, autoReleaseTime, autoRenew, autoRenewPeriod, chargeType, dedicatedHostName, description, networkAttributesSlbUdpTimeout, networkAttributesUdpTimeout, period, periodUnit, quantity, resourceGroupId, tags, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -530,25 +530,25 @@ public interface RosDedicatedHostProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object dedicatedHostType, final java.lang.Object actionOnMaintenance, final java.lang.Object autoPlacement, final java.lang.Object autoReleaseTime, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object chargeType, final java.lang.Object dedicatedHostName, final java.lang.Object description, final java.lang.Object networkAttributesSlbUdpTimeout, final java.lang.Object networkAttributesUdpTimeout, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object quantity, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty> tags, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dedicatedHostType = java.util.Objects.requireNonNull(dedicatedHostType, "dedicatedHostType is required");
-            this.actionOnMaintenance = actionOnMaintenance;
-            this.autoPlacement = autoPlacement;
-            this.autoReleaseTime = autoReleaseTime;
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.chargeType = chargeType;
-            this.dedicatedHostName = dedicatedHostName;
-            this.description = description;
-            this.networkAttributesSlbUdpTimeout = networkAttributesSlbUdpTimeout;
-            this.networkAttributesUdpTimeout = networkAttributesUdpTimeout;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.quantity = quantity;
-            this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty>)tags;
-            this.zoneId = zoneId;
+            this.dedicatedHostType = java.util.Objects.requireNonNull(builder.dedicatedHostType, "dedicatedHostType is required");
+            this.actionOnMaintenance = builder.actionOnMaintenance;
+            this.autoPlacement = builder.autoPlacement;
+            this.autoReleaseTime = builder.autoReleaseTime;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.chargeType = builder.chargeType;
+            this.dedicatedHostName = builder.dedicatedHostName;
+            this.description = builder.description;
+            this.networkAttributesSlbUdpTimeout = builder.networkAttributesSlbUdpTimeout;
+            this.networkAttributesUdpTimeout = builder.networkAttributesUdpTimeout;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.quantity = builder.quantity;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosDedicatedHost.TagsProperty>)builder.tags;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

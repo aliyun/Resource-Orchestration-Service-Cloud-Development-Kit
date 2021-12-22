@@ -14,7 +14,7 @@ export interface ForwardEntryProps {
     readonly externalIp: string | ros.IResolvable;
 
     /**
-     * Property externalPort: Source port, now support [1-65535]|Any
+     * Property externalPort: Source port, now support [1-65535]|Any|x/y
      */
     readonly externalPort: string | ros.IResolvable;
 
@@ -29,7 +29,7 @@ export interface ForwardEntryProps {
     readonly internalIp: string | ros.IResolvable;
 
     /**
-     * Property internalPort: Destination port, now support [1-65535]|Any
+     * Property internalPort: Destination port, now support [1-65535]|Any|x/y
      */
     readonly internalPort: string | ros.IResolvable;
 
@@ -37,6 +37,16 @@ export interface ForwardEntryProps {
      * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
      */
     readonly ipProtocol: string | ros.IResolvable;
+
+    /**
+     * Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     */
+    readonly forwardEntryName?: string | ros.IResolvable;
+
+    /**
+     * Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    readonly portBreak?: boolean | ros.IResolvable;
 }
 
 /**
@@ -68,7 +78,9 @@ export class ForwardEntry extends ros.Resource {
             externalPort: props.externalPort,
             externalIp: props.externalIp,
             ipProtocol: props.ipProtocol,
+            portBreak: props.portBreak,
             internalPort: props.internalPort,
+            forwardEntryName: props.forwardEntryName,
             internalIp: props.internalIp,
             forwardTableId: props.forwardTableId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

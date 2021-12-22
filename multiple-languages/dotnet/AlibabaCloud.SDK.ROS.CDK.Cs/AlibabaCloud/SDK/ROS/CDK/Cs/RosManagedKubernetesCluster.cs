@@ -54,6 +54,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+        /// </remarks>
+        [JsiiProperty(name: "attrDefaultUserKubeConfig", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDefaultUserKubeConfig
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Nodes: The list of cluster nodes.
+        /// </remarks>
+        [JsiiProperty(name: "attrNodes", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNodes
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrivateUserKubConfig", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateUserKubConfig
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ScalingConfigurationId: Scaling configuration id
+        /// </remarks>
+        [JsiiProperty(name: "attrScalingConfigurationId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingConfigurationId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ScalingGroupId: Scaling group id
+        /// </remarks>
+        [JsiiProperty(name: "attrScalingGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingGroupId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ScalingRuleId: Scaling rule id
+        /// </remarks>
+        [JsiiProperty(name: "attrScalingRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingRuleId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
         /// </remarks>
         [JsiiProperty(name: "attrTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -283,6 +337,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiOptional]
         [JsiiProperty(name: "proxyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? ProxyMode
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: runtime: The container runtime of the cluster. The default runtime is Docker.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty\"}]}}", isOptional: true)]
+        public virtual object? Runtime
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
@@ -616,6 +681,84 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: version: When the value is empty, the latest version is selected by default.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Version
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IRuntimeProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty")]
+        public interface IRuntimeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the container runtime. Supports containerd, Docker or Sandboxed-Container.
+            /// </remarks>
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Name
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: The version of the container runtime.
+            /// </remarks>
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Version
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IRuntimeProperty), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IRuntimeProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: name: The name of the container runtime. Supports containerd, Docker or Sandboxed-Container.
+                /// </remarks>
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Name
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: version: The version of the container runtime.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty")]
+        public class RuntimeProperty : AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IRuntimeProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: name: The name of the container runtime. Supports containerd, Docker or Sandboxed-Container.
+            /// </remarks>
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Name
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: version: The version of the container runtime.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]

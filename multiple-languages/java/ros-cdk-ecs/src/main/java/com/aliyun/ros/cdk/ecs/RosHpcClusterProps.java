@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::HpcCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.099Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.643Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosHpcClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosHpcClusterProps.Jsii$Proxy.class)
 public interface RosHpcClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface RosHpcClusterProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosHpcClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosHpcClusterProps> {
-        private java.lang.Object name;
-        private java.lang.Object description;
+        java.lang.Object name;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link RosHpcClusterProps#getName}
@@ -78,7 +78,7 @@ public interface RosHpcClusterProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosHpcClusterProps build() {
-            return new Jsii$Proxy(name, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface RosHpcClusterProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.description = description;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.description = builder.description;
         }
 
         @Override

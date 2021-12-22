@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::CustomResource`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosCustomResource")
 public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -172,9 +172,9 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HttpConfigProperty> {
-            private java.lang.Object contentType;
-            private java.lang.Object headers;
-            private java.lang.Object signKey;
+            java.lang.Object contentType;
+            java.lang.Object headers;
+            java.lang.Object signKey;
 
             /**
              * Sets the value of {@link HttpConfigProperty#getContentType}
@@ -250,7 +250,7 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HttpConfigProperty build() {
-                return new Jsii$Proxy(contentType, headers, signKey);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -278,11 +278,11 @@ public class RosCustomResource extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object contentType, final java.lang.Object headers, final java.lang.Object signKey) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.contentType = contentType;
-                this.headers = headers;
-                this.signKey = signKey;
+                this.contentType = builder.contentType;
+                this.headers = builder.headers;
+                this.signKey = builder.signKey;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::MountTarget`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.722Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.370Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(RosMountTargetProps.Jsii$Proxy.class)
 public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosMountTargetProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMountTargetProps> {
-        private java.lang.Object accessGroupName;
-        private java.lang.Object fileSystemId;
-        private java.lang.Object networkType;
-        private java.lang.Object status;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
+        java.lang.Object accessGroupName;
+        java.lang.Object fileSystemId;
+        java.lang.Object networkType;
+        java.lang.Object status;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosMountTargetProps#getAccessGroupName}
@@ -182,7 +182,7 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosMountTargetProps build() {
-            return new Jsii$Proxy(accessGroupName, fileSystemId, networkType, status, vpcId, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object fileSystemId, final java.lang.Object networkType, final java.lang.Object status, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
-            this.fileSystemId = java.util.Objects.requireNonNull(fileSystemId, "fileSystemId is required");
-            this.networkType = java.util.Objects.requireNonNull(networkType, "networkType is required");
-            this.status = status;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
+            this.accessGroupName = java.util.Objects.requireNonNull(builder.accessGroupName, "accessGroupName is required");
+            this.fileSystemId = java.util.Objects.requireNonNull(builder.fileSystemId, "fileSystemId is required");
+            this.networkType = java.util.Objects.requireNonNull(builder.networkType, "networkType is required");
+            this.status = builder.status;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

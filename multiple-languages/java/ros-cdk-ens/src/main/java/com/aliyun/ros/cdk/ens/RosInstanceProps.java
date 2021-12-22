@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * Properties for defining a `ALIYUN::ENS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -124,26 +124,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.Object dataDiskSize;
-        private java.lang.Object ensRegionId;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceType;
-        private java.lang.Object period;
-        private java.lang.Object quantity;
-        private java.lang.Object systemDiskSize;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object hostName;
-        private java.lang.Object instanceName;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object ipType;
-        private java.lang.Object keyPairName;
-        private java.lang.Object password;
-        private java.lang.Object paymentType;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object uniqueSuffix;
-        private java.lang.Object userData;
-        private java.lang.Object vSwitchId;
+        java.lang.Object dataDiskSize;
+        java.lang.Object ensRegionId;
+        java.lang.Object imageId;
+        java.lang.Object instanceType;
+        java.lang.Object period;
+        java.lang.Object quantity;
+        java.lang.Object systemDiskSize;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object hostName;
+        java.lang.Object instanceName;
+        java.lang.Object internetChargeType;
+        java.lang.Object ipType;
+        java.lang.Object keyPairName;
+        java.lang.Object password;
+        java.lang.Object paymentType;
+        java.lang.Object privateIpAddress;
+        java.lang.Object uniqueSuffix;
+        java.lang.Object userData;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getDataDiskSize}
@@ -552,7 +552,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosInstanceProps build() {
-            return new Jsii$Proxy(dataDiskSize, ensRegionId, imageId, instanceType, period, quantity, systemDiskSize, autoRenew, autoRenewPeriod, hostName, instanceName, internetChargeType, ipType, keyPairName, password, paymentType, privateIpAddress, uniqueSuffix, userData, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -613,28 +613,28 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object dataDiskSize, final java.lang.Object ensRegionId, final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object period, final java.lang.Object quantity, final java.lang.Object systemDiskSize, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object hostName, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object ipType, final java.lang.Object keyPairName, final java.lang.Object password, final java.lang.Object paymentType, final java.lang.Object privateIpAddress, final java.lang.Object uniqueSuffix, final java.lang.Object userData, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.dataDiskSize = java.util.Objects.requireNonNull(dataDiskSize, "dataDiskSize is required");
-            this.ensRegionId = java.util.Objects.requireNonNull(ensRegionId, "ensRegionId is required");
-            this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-            this.period = java.util.Objects.requireNonNull(period, "period is required");
-            this.quantity = java.util.Objects.requireNonNull(quantity, "quantity is required");
-            this.systemDiskSize = java.util.Objects.requireNonNull(systemDiskSize, "systemDiskSize is required");
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.hostName = hostName;
-            this.instanceName = instanceName;
-            this.internetChargeType = internetChargeType;
-            this.ipType = ipType;
-            this.keyPairName = keyPairName;
-            this.password = password;
-            this.paymentType = paymentType;
-            this.privateIpAddress = privateIpAddress;
-            this.uniqueSuffix = uniqueSuffix;
-            this.userData = userData;
-            this.vSwitchId = vSwitchId;
+            this.dataDiskSize = java.util.Objects.requireNonNull(builder.dataDiskSize, "dataDiskSize is required");
+            this.ensRegionId = java.util.Objects.requireNonNull(builder.ensRegionId, "ensRegionId is required");
+            this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+            this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
+            this.quantity = java.util.Objects.requireNonNull(builder.quantity, "quantity is required");
+            this.systemDiskSize = java.util.Objects.requireNonNull(builder.systemDiskSize, "systemDiskSize is required");
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.hostName = builder.hostName;
+            this.instanceName = builder.instanceName;
+            this.internetChargeType = builder.internetChargeType;
+            this.ipType = builder.ipType;
+            this.keyPairName = builder.keyPairName;
+            this.password = builder.password;
+            this.paymentType = builder.paymentType;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.uniqueSuffix = builder.uniqueSuffix;
+            this.userData = builder.userData;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

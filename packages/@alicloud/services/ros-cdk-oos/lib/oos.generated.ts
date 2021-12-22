@@ -401,8 +401,8 @@ function RosParameterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('constraints', ros.validateString)(properties.constraints));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('constraints', ros.validateString)(properties.constraints));
     errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
     errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));

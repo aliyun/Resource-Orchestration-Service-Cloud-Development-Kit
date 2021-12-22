@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Handshake`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.010Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.703Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosHandshakeProps")
 @software.amazon.jsii.Jsii.Proxy(RosHandshakeProps.Jsii$Proxy.class)
 public interface RosHandshakeProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,9 +32,9 @@ public interface RosHandshakeProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosHandshakeProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosHandshakeProps> {
-        private java.lang.Object targetEntity;
-        private java.lang.Object targetType;
-        private java.lang.Object note;
+        java.lang.Object targetEntity;
+        java.lang.Object targetType;
+        java.lang.Object note;
 
         /**
          * Sets the value of {@link RosHandshakeProps#getTargetEntity}
@@ -103,7 +103,7 @@ public interface RosHandshakeProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosHandshakeProps build() {
-            return new Jsii$Proxy(targetEntity, targetType, note);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface RosHandshakeProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object targetEntity, final java.lang.Object targetType, final java.lang.Object note) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.targetEntity = java.util.Objects.requireNonNull(targetEntity, "targetEntity is required");
-            this.targetType = java.util.Objects.requireNonNull(targetType, "targetType is required");
-            this.note = note;
+            this.targetEntity = java.util.Objects.requireNonNull(builder.targetEntity, "targetEntity is required");
+            this.targetType = java.util.Objects.requireNonNull(builder.targetType, "targetType is required");
+            this.note = builder.note;
         }
 
         @Override

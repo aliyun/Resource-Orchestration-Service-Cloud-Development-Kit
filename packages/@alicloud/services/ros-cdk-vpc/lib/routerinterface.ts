@@ -24,7 +24,9 @@ export interface RouterInterfaceProps {
     readonly accessPointId?: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -135,8 +137,8 @@ export class RouterInterface extends ros.Resource {
             description: props.description,
             oppositeRouterId: props.oppositeRouterId,
             oppositeRegionId: props.oppositeRegionId,
-            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             pricingCycle: props.pricingCycle,
+            instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             healthCheckSourceIp: props.healthCheckSourceIp,
             period: props.period,
             routerId: props.routerId,

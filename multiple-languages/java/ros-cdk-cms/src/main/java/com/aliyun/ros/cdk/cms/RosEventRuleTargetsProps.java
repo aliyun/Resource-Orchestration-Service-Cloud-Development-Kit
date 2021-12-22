@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.599Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosEventRuleTargetsProps.Jsii$Proxy.class)
 public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,12 +52,12 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosEventRuleTargetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEventRuleTargetsProps> {
-        private java.lang.Object ruleName;
-        private java.lang.Object contactParameters;
-        private java.lang.Object fcParameters;
-        private java.lang.Object mnsParameters;
-        private java.lang.Object slsParameters;
-        private java.lang.Object webhookParameters;
+        java.lang.Object ruleName;
+        java.lang.Object contactParameters;
+        java.lang.Object fcParameters;
+        java.lang.Object mnsParameters;
+        java.lang.Object slsParameters;
+        java.lang.Object webhookParameters;
 
         /**
          * Sets the value of {@link RosEventRuleTargetsProps#getRuleName}
@@ -186,7 +186,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public RosEventRuleTargetsProps build() {
-            return new Jsii$Proxy(ruleName, contactParameters, fcParameters, mnsParameters, slsParameters, webhookParameters);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -219,14 +219,14 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object ruleName, final java.lang.Object contactParameters, final java.lang.Object fcParameters, final java.lang.Object mnsParameters, final java.lang.Object slsParameters, final java.lang.Object webhookParameters) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
-            this.contactParameters = contactParameters;
-            this.fcParameters = fcParameters;
-            this.mnsParameters = mnsParameters;
-            this.slsParameters = slsParameters;
-            this.webhookParameters = webhookParameters;
+            this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+            this.contactParameters = builder.contactParameters;
+            this.fcParameters = builder.fcParameters;
+            this.mnsParameters = builder.mnsParameters;
+            this.slsParameters = builder.slsParameters;
+            this.webhookParameters = builder.webhookParameters;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.963Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.565Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,26 +49,44 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute HostNames: Host names of created instance.
+     * Attribute HostNames: Host names of created instances.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHostNames() {
         return software.amazon.jsii.Kernel.get(this, "attrHostNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute InnerIps: Inner IP address list of the specified instance.
+     * Attribute InnerIps: Inner IP address list of the specified instances.
      * <p>
-     * Only for classical instance.
+     * Only for classical instances.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInnerIps() {
         return software.amazon.jsii.Kernel.get(this, "attrInnerIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute InstanceIds: The instance id list of created ecs instance.
+     * Attribute InstanceIds: The instance id list of created ecs instances.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
         return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances.
+     * <p>
+     * Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6Addresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances.
+     * <p>
+     * Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6AddressIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -79,7 +97,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute PrivateIps: Private IP address list of created ecs instance.
+     * Attribute PrivateIps: Private IP address list of created ecs instances.
      * <p>
      * Only for VPC instance.
      */
@@ -88,14 +106,14 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute PublicIps: Public IP address list of created ecs instance.
+     * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIps() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute ZoneIds: Zone id of created instance.
+     * Attribute ZoneIds: Zone id of created instances.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneIds() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -962,9 +980,30 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property systemDiskBurstingEnabled: Whether enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting. This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final java.lang.Boolean systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+        /**
+         * Property systemDiskBurstingEnabled: Whether enable bursting.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting. This parameter is required.
+         */
+        public Builder systemDiskBurstingEnabled(final com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+            this.props.systemDiskBurstingEnabled(systemDiskBurstingEnabled);
+            return this;
+        }
+
+        /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.
@@ -976,7 +1015,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.
@@ -1025,6 +1064,27 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder systemDiskDiskName(final com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
             this.props.systemDiskDiskName(systemDiskDiskName);
+            return this;
+        }
+
+        /**
+         * Property systemDiskProvisionedIops: Provisioning IOPS.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS. This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final java.lang.Number systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
+            return this;
+        }
+        /**
+         * Property systemDiskProvisionedIops: Provisioning IOPS.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS. This parameter is required.
+         */
+        public Builder systemDiskProvisionedIops(final com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+            this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
             return this;
         }
 

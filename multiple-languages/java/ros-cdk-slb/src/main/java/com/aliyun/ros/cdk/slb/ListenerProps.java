@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -166,6 +166,15 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property startListener: Whether start listener after listener created.
+     * <p>
+     * Default True.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStartListener() {
+        return null;
+    }
+
+    /**
      * Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVServerGroupId() {
@@ -182,26 +191,27 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ListenerProps> {
-        private java.lang.Object backendServerPort;
-        private java.lang.Object bandwidth;
-        private java.lang.Object listenerPort;
-        private java.lang.Object loadBalancerId;
-        private java.lang.Object protocol;
-        private java.lang.Object aclId;
-        private java.lang.Object aclStatus;
-        private java.lang.Object aclType;
-        private java.lang.Object caCertificateId;
-        private java.lang.Object description;
-        private java.lang.Object healthCheck;
-        private java.lang.Object httpConfig;
-        private java.lang.Object idleTimeout;
-        private java.lang.Object masterSlaveServerGroupId;
-        private java.lang.Object persistence;
-        private java.lang.Object portRange;
-        private java.lang.Object requestTimeout;
-        private java.lang.Object scheduler;
-        private java.lang.Object serverCertificateId;
-        private java.lang.Object vServerGroupId;
+        java.lang.Object backendServerPort;
+        java.lang.Object bandwidth;
+        java.lang.Object listenerPort;
+        java.lang.Object loadBalancerId;
+        java.lang.Object protocol;
+        java.lang.Object aclId;
+        java.lang.Object aclStatus;
+        java.lang.Object aclType;
+        java.lang.Object caCertificateId;
+        java.lang.Object description;
+        java.lang.Object healthCheck;
+        java.lang.Object httpConfig;
+        java.lang.Object idleTimeout;
+        java.lang.Object masterSlaveServerGroupId;
+        java.lang.Object persistence;
+        java.lang.Object portRange;
+        java.lang.Object requestTimeout;
+        java.lang.Object scheduler;
+        java.lang.Object serverCertificateId;
+        java.lang.Object startListener;
+        java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link ListenerProps#getBackendServerPort}
@@ -634,6 +644,28 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getStartListener}
+         * @param startListener Property startListener: Whether start listener after listener created.
+         *                      Default True.
+         * @return {@code this}
+         */
+        public Builder startListener(java.lang.Boolean startListener) {
+            this.startListener = startListener;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getStartListener}
+         * @param startListener Property startListener: Whether start listener after listener created.
+         *                      Default True.
+         * @return {@code this}
+         */
+        public Builder startListener(com.aliyun.ros.cdk.core.IResolvable startListener) {
+            this.startListener = startListener;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getVServerGroupId}
          * @param vServerGroupId Property vServerGroupId: The id of the VServerGroup which use in listener.
          * @return {@code this}
@@ -660,7 +692,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ListenerProps build() {
-            return new Jsii$Proxy(backendServerPort, bandwidth, listenerPort, loadBalancerId, protocol, aclId, aclStatus, aclType, caCertificateId, description, healthCheck, httpConfig, idleTimeout, masterSlaveServerGroupId, persistence, portRange, requestTimeout, scheduler, serverCertificateId, vServerGroupId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -688,6 +720,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object requestTimeout;
         private final java.lang.Object scheduler;
         private final java.lang.Object serverCertificateId;
+        private final java.lang.Object startListener;
         private final java.lang.Object vServerGroupId;
 
         /**
@@ -715,34 +748,36 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.startListener = software.amazon.jsii.Kernel.get(this, "startListener", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object backendServerPort, final java.lang.Object bandwidth, final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object protocol, final java.lang.Object aclId, final java.lang.Object aclStatus, final java.lang.Object aclType, final java.lang.Object caCertificateId, final java.lang.Object description, final java.lang.Object healthCheck, final java.lang.Object httpConfig, final java.lang.Object idleTimeout, final java.lang.Object masterSlaveServerGroupId, final java.lang.Object persistence, final java.lang.Object portRange, final java.lang.Object requestTimeout, final java.lang.Object scheduler, final java.lang.Object serverCertificateId, final java.lang.Object vServerGroupId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backendServerPort = java.util.Objects.requireNonNull(backendServerPort, "backendServerPort is required");
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.listenerPort = java.util.Objects.requireNonNull(listenerPort, "listenerPort is required");
-            this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
-            this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
-            this.aclId = aclId;
-            this.aclStatus = aclStatus;
-            this.aclType = aclType;
-            this.caCertificateId = caCertificateId;
-            this.description = description;
-            this.healthCheck = healthCheck;
-            this.httpConfig = httpConfig;
-            this.idleTimeout = idleTimeout;
-            this.masterSlaveServerGroupId = masterSlaveServerGroupId;
-            this.persistence = persistence;
-            this.portRange = portRange;
-            this.requestTimeout = requestTimeout;
-            this.scheduler = scheduler;
-            this.serverCertificateId = serverCertificateId;
-            this.vServerGroupId = vServerGroupId;
+            this.backendServerPort = java.util.Objects.requireNonNull(builder.backendServerPort, "backendServerPort is required");
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
+            this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
+            this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+            this.aclId = builder.aclId;
+            this.aclStatus = builder.aclStatus;
+            this.aclType = builder.aclType;
+            this.caCertificateId = builder.caCertificateId;
+            this.description = builder.description;
+            this.healthCheck = builder.healthCheck;
+            this.httpConfig = builder.httpConfig;
+            this.idleTimeout = builder.idleTimeout;
+            this.masterSlaveServerGroupId = builder.masterSlaveServerGroupId;
+            this.persistence = builder.persistence;
+            this.portRange = builder.portRange;
+            this.requestTimeout = builder.requestTimeout;
+            this.scheduler = builder.scheduler;
+            this.serverCertificateId = builder.serverCertificateId;
+            this.startListener = builder.startListener;
+            this.vServerGroupId = builder.vServerGroupId;
         }
 
         @Override
@@ -841,6 +876,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getStartListener() {
+            return this.startListener;
+        }
+
+        @Override
         public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
@@ -898,6 +938,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getServerCertificateId() != null) {
                 data.set("serverCertificateId", om.valueToTree(this.getServerCertificateId()));
             }
+            if (this.getStartListener() != null) {
+                data.set("startListener", om.valueToTree(this.getStartListener()));
+            }
             if (this.getVServerGroupId() != null) {
                 data.set("vServerGroupId", om.valueToTree(this.getVServerGroupId()));
             }
@@ -938,6 +981,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverCertificateId != null ? !this.serverCertificateId.equals(that.serverCertificateId) : that.serverCertificateId != null) return false;
+            if (this.startListener != null ? !this.startListener.equals(that.startListener) : that.startListener != null) return false;
             return this.vServerGroupId != null ? this.vServerGroupId.equals(that.vServerGroupId) : that.vServerGroupId == null;
         }
 
@@ -962,6 +1006,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverCertificateId != null ? this.serverCertificateId.hashCode() : 0);
+            result = 31 * result + (this.startListener != null ? this.startListener.hashCode() : 0);
             result = 31 * result + (this.vServerGroupId != null ? this.vServerGroupId.hashCode() : 0);
             return result;
         }

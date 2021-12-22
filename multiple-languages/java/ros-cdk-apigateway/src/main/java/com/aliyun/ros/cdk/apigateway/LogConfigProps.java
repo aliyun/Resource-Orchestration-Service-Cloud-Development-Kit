@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::LogConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.626Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.LogConfigProps")
 @software.amazon.jsii.Jsii.Proxy(LogConfigProps.Jsii$Proxy.class)
 public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link LogConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogConfigProps> {
-        private java.lang.Object slsLogStore;
-        private java.lang.Object slsProject;
+        java.lang.Object slsLogStore;
+        java.lang.Object slsProject;
 
         /**
          * Sets the value of {@link LogConfigProps#getSlsLogStore}
@@ -78,7 +78,7 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public LogConfigProps build() {
-            return new Jsii$Proxy(slsLogStore, slsProject);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface LogConfigProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object slsLogStore, final java.lang.Object slsProject) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.slsLogStore = java.util.Objects.requireNonNull(slsLogStore, "slsLogStore is required");
-            this.slsProject = java.util.Objects.requireNonNull(slsProject, "slsProject is required");
+            this.slsLogStore = java.util.Objects.requireNonNull(builder.slsLogStore, "slsLogStore is required");
+            this.slsProject = java.util.Objects.requireNonNull(builder.slsProject, "slsProject is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.709Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,11 +44,11 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosInvocationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInvocationProps> {
-        private java.lang.Object commandId;
-        private java.lang.Object instanceIds;
-        private java.lang.Object frequency;
-        private java.lang.Object parameters;
-        private java.lang.Object timed;
+        java.lang.Object commandId;
+        java.lang.Object instanceIds;
+        java.lang.Object frequency;
+        java.lang.Object parameters;
+        java.lang.Object timed;
 
         /**
          * Sets the value of {@link RosInvocationProps#getCommandId}
@@ -157,7 +157,7 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosInvocationProps build() {
-            return new Jsii$Proxy(commandId, instanceIds, frequency, parameters, timed);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -188,13 +188,13 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object commandId, final java.lang.Object instanceIds, final java.lang.Object frequency, final java.lang.Object parameters, final java.lang.Object timed) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.commandId = java.util.Objects.requireNonNull(commandId, "commandId is required");
-            this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
-            this.frequency = frequency;
-            this.parameters = parameters;
-            this.timed = timed;
+            this.commandId = java.util.Objects.requireNonNull(builder.commandId, "commandId is required");
+            this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.frequency = builder.frequency;
+            this.parameters = builder.parameters;
+            this.timed = builder.timed;
         }
 
         @Override

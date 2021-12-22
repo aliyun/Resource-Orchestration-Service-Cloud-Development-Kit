@@ -68,6 +68,13 @@ export interface NatGatewayProps {
     readonly natType?: string | ros.IResolvable;
 
     /**
+     * Property networkType: The type of the created NAT gateway.
+     * Internet: public network NAT gateway.
+     * Intranet: VPC NAT gateway.
+     */
+    readonly networkType?: string | ros.IResolvable;
+
+    /**
      * Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     readonly pricingCycle?: string | ros.IResolvable;
@@ -131,6 +138,7 @@ export class NatGateway extends ros.Resource {
             internetChargeType: props.internetChargeType,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
+            networkType: props.networkType,
             spec: props.spec,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

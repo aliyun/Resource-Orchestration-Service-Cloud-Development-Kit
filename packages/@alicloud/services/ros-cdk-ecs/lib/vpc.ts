@@ -32,14 +32,43 @@ export interface VPCProps {
     readonly ipv6CidrBlock?: string | ros.IResolvable;
 
     /**
+     * Property ipv6Isp: The Internet service provider (ISP) for IPv6 addresses of the VPC. Valid values:
+     * BGP(default): Alibaba Cloud BGP IPv6
+     * ChinaMobile: China Mobile (single line)
+     * ChinaUnicom: China Unicom (single line)
+     * ChinaTelecom: China Telecom (single line)
+     * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set the parameter to ChinaTelecom, ChinaUnicom, and ChinaMobile.
+     */
+    readonly ipv6Isp?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
+     * You can specify one of the following standard IPv4 CIDR blocks or their 
+     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
+     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
+     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
+     * the following rules: 
+     * 1. The CIDR block cannot start with 0. 
+     * 2. The subnet mask must be 8 to 24 bits in length.
+     * The secondary CIDR block cannot overlap with the primary 
+     * CIDR block or an existing secondary CIDR block.
+     */
+    readonly secondaryCidrBlock?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosVPC.TagsProperty[];
+
+    /**
+     * Property userCidr: The user CIDR block. Separate multiple CIDR blocks with commas (,). At most three CIDR blocks are supported.
+     */
+    readonly userCidr?: string | ros.IResolvable;
 
     /**
      * Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
@@ -83,13 +112,16 @@ export class Vpc extends ros.Resource {
         super(scope, id);
 
         const rosVPC = new RosVPC(this, id,  {
+            ipv6Isp: props.ipv6Isp,
             description: props.description,
+            secondaryCidrBlock: props.secondaryCidrBlock,
             resourceGroupId: props.resourceGroupId,
             cidrBlock: props.cidrBlock,
             vpcName: props.vpcName,
             ipv6CidrBlock: props.ipv6CidrBlock,
             tags: props.tags,
             enableIpv6: props.enableIpv6 === undefined || props.enableIpv6 === null ? false : props.enableIpv6,
+            userCidr: props.userCidr,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVPC;
         this.attrRouteTableId = rosVPC.attrRouteTableId;

@@ -6,8 +6,6 @@
 @alicloud/ros-cdk-ecs.AutoProvisioningGroupProps=com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps
 @alicloud/ros-cdk-ecs.AutoSnapshotPolicy=com.aliyun.ros.cdk.ecs.AutoSnapshotPolicy
 @alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps=com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps
-@alicloud/ros-cdk-ecs.BandwidthPackage=com.aliyun.ros.cdk.ecs.BandwidthPackage
-@alicloud/ros-cdk-ecs.BandwidthPackageProps=com.aliyun.ros.cdk.ecs.BandwidthPackageProps
 @alicloud/ros-cdk-ecs.Command=com.aliyun.ros.cdk.ecs.Command
 @alicloud/ros-cdk-ecs.CommandProps=com.aliyun.ros.cdk.ecs.CommandProps
 @alicloud/ros-cdk-ecs.CopyImage=com.aliyun.ros.cdk.ecs.CopyImage
@@ -46,10 +44,6 @@
 @alicloud/ros-cdk-ecs.NetworkInterfacePermission=com.aliyun.ros.cdk.ecs.NetworkInterfacePermission
 @alicloud/ros-cdk-ecs.NetworkInterfacePermissionProps=com.aliyun.ros.cdk.ecs.NetworkInterfacePermissionProps
 @alicloud/ros-cdk-ecs.NetworkInterfaceProps=com.aliyun.ros.cdk.ecs.NetworkInterfaceProps
-@alicloud/ros-cdk-ecs.PrepayInstance=com.aliyun.ros.cdk.ecs.PrepayInstance
-@alicloud/ros-cdk-ecs.PrepayInstanceGroupClone=com.aliyun.ros.cdk.ecs.PrepayInstanceGroupClone
-@alicloud/ros-cdk-ecs.PrepayInstanceGroupCloneProps=com.aliyun.ros.cdk.ecs.PrepayInstanceGroupCloneProps
-@alicloud/ros-cdk-ecs.PrepayInstanceProps=com.aliyun.ros.cdk.ecs.PrepayInstanceProps
 @alicloud/ros-cdk-ecs.RosAssignIpv6Addresses=com.aliyun.ros.cdk.ecs.RosAssignIpv6Addresses
 @alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps=com.aliyun.ros.cdk.ecs.RosAssignIpv6AddressesProps
 @alicloud/ros-cdk-ecs.RosAssignPrivateIpAddresses=com.aliyun.ros.cdk.ecs.RosAssignPrivateIpAddresses
@@ -63,8 +57,6 @@
 @alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy=com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy
 @alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy.TagsProperty=com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy$TagsProperty
 @alicloud/ros-cdk-ecs.RosAutoSnapshotPolicyProps=com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicyProps
-@alicloud/ros-cdk-ecs.RosBandwidthPackage=com.aliyun.ros.cdk.ecs.RosBandwidthPackage
-@alicloud/ros-cdk-ecs.RosBandwidthPackageProps=com.aliyun.ros.cdk.ecs.RosBandwidthPackageProps
 @alicloud/ros-cdk-ecs.RosCommand=com.aliyun.ros.cdk.ecs.RosCommand
 @alicloud/ros-cdk-ecs.RosCommandProps=com.aliyun.ros.cdk.ecs.RosCommandProps
 @alicloud/ros-cdk-ecs.RosCopyImage=com.aliyun.ros.cdk.ecs.RosCopyImage
@@ -123,15 +115,6 @@
 @alicloud/ros-cdk-ecs.RosNetworkInterfacePermission=com.aliyun.ros.cdk.ecs.RosNetworkInterfacePermission
 @alicloud/ros-cdk-ecs.RosNetworkInterfacePermissionProps=com.aliyun.ros.cdk.ecs.RosNetworkInterfacePermissionProps
 @alicloud/ros-cdk-ecs.RosNetworkInterfaceProps=com.aliyun.ros.cdk.ecs.RosNetworkInterfaceProps
-@alicloud/ros-cdk-ecs.RosPrepayInstance=com.aliyun.ros.cdk.ecs.RosPrepayInstance
-@alicloud/ros-cdk-ecs.RosPrepayInstance.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosPrepayInstance$DiskMappingsProperty
-@alicloud/ros-cdk-ecs.RosPrepayInstance.TagsProperty=com.aliyun.ros.cdk.ecs.RosPrepayInstance$TagsProperty
-@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone=com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone
-@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone.DiskMappingsProperty=com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone$DiskMappingsProperty
-@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone.EniMappingsProperty=com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone$EniMappingsProperty
-@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone.TagsProperty=com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone$TagsProperty
-@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupCloneProps=com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupCloneProps
-@alicloud/ros-cdk-ecs.RosPrepayInstanceProps=com.aliyun.ros.cdk.ecs.RosPrepayInstanceProps
 @alicloud/ros-cdk-ecs.RosRoute=com.aliyun.ros.cdk.ecs.RosRoute
 @alicloud/ros-cdk-ecs.RosRoute.NextHopListProperty=com.aliyun.ros.cdk.ecs.RosRoute$NextHopListProperty
 @alicloud/ros-cdk-ecs.RosRouteProps=com.aliyun.ros.cdk.ecs.RosRouteProps

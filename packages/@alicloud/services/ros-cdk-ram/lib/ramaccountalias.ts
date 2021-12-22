@@ -10,9 +10,10 @@ export interface RamAccountAliasProps {
 
     /**
      * Property accountAlias: The alias of the Alibaba Cloud account.
-     * The alias must be 3 to 32 characters in length, and can contain lowercase letters,
-     * digits, and hyphens (-).
-     * Note It cannot start or end with a hyphen (-), and cannot contain consecutive hyphens (-).
+     * The alias must be 1 to 50 characters in length, and can contain lowercase letters,
+     * digits, hyphens (-), periods (.) and underscores (_).
+     * Note It cannot start or end with a hyphen (-).The default domain name cannot start or end with a 
+     * hyphen (-) and cannot have two consecutive hyphens (-).
      */
     readonly accountAlias: string | ros.IResolvable;
 }

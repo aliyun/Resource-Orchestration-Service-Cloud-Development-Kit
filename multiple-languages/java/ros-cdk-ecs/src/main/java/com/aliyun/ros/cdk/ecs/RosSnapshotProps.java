@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Snapshot`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.737Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSnapshotProps")
 @software.amazon.jsii.Jsii.Proxy(RosSnapshotProps.Jsii$Proxy.class)
 public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,13 +58,13 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosSnapshotProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSnapshotProps> {
-        private java.lang.Object diskId;
-        private java.lang.Object description;
-        private java.lang.Object instantAccess;
-        private java.lang.Object instantAccessRetentionDays;
-        private java.lang.Object snapshotName;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
-        private java.lang.Object timeout;
+        java.lang.Object diskId;
+        java.lang.Object description;
+        java.lang.Object instantAccess;
+        java.lang.Object instantAccessRetentionDays;
+        java.lang.Object snapshotName;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
+        java.lang.Object timeout;
 
         /**
          * Sets the value of {@link RosSnapshotProps#getDiskId}
@@ -204,7 +204,7 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosSnapshotProps build() {
-            return new Jsii$Proxy(diskId, description, instantAccess, instantAccessRetentionDays, snapshotName, tags, timeout);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -240,15 +240,15 @@ public interface RosSnapshotProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object diskId, final java.lang.Object description, final java.lang.Object instantAccess, final java.lang.Object instantAccessRetentionDays, final java.lang.Object snapshotName, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags, final java.lang.Object timeout) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.diskId = java.util.Objects.requireNonNull(diskId, "diskId is required");
-            this.description = description;
-            this.instantAccess = instantAccess;
-            this.instantAccessRetentionDays = instantAccessRetentionDays;
-            this.snapshotName = snapshotName;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty>)tags;
-            this.timeout = timeout;
+            this.diskId = java.util.Objects.requireNonNull(builder.diskId, "diskId is required");
+            this.description = builder.description;
+            this.instantAccess = builder.instantAccess;
+            this.instantAccessRetentionDays = builder.instantAccessRetentionDays;
+            this.snapshotName = builder.snapshotName;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty>)builder.tags;
+            this.timeout = builder.timeout;
         }
 
         @Override

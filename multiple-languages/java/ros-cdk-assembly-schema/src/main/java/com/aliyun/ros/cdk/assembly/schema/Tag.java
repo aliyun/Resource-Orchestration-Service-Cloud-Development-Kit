@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Metadata Entry spec for stack tag.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.612Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.Tag")
 @software.amazon.jsii.Jsii.Proxy(Tag.Jsii$Proxy.class)
 public interface Tag extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface Tag extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link Tag}
      */
     public static final class Builder implements software.amazon.jsii.Builder<Tag> {
-        private java.lang.String key;
-        private java.lang.String value;
+        java.lang.String key;
+        java.lang.String value;
 
         /**
          * Sets the value of {@link Tag#getKey}
@@ -58,7 +58,7 @@ public interface Tag extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public Tag build() {
-            return new Jsii$Proxy(key, value);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -83,10 +83,10 @@ public interface Tag extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String key, final java.lang.String value) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.key = java.util.Objects.requireNonNull(key, "key is required");
-            this.value = java.util.Objects.requireNonNull(value, "value is required");
+            this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+            this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
         }
 
         @Override

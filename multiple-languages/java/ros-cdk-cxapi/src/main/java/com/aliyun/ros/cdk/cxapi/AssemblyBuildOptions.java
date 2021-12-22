@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.cxapi;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.473Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.AssemblyBuildOptions")
 @software.amazon.jsii.Jsii.Proxy(AssemblyBuildOptions.Jsii$Proxy.class)
 public interface AssemblyBuildOptions extends software.amazon.jsii.JsiiSerializable {
@@ -24,7 +24,7 @@ public interface AssemblyBuildOptions extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link AssemblyBuildOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AssemblyBuildOptions> {
-        private com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo;
+        com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo;
 
         /**
          * Sets the value of {@link AssemblyBuildOptions#getRuntimeInfo}
@@ -43,7 +43,7 @@ public interface AssemblyBuildOptions extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public AssemblyBuildOptions build() {
-            return new Jsii$Proxy(runtimeInfo);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -66,9 +66,9 @@ public interface AssemblyBuildOptions extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.cxapi.RuntimeInfo runtimeInfo) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.runtimeInfo = runtimeInfo;
+            this.runtimeInfo = builder.runtimeInfo;
         }
 
         @Override

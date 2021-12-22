@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * A ROS resource type:  `ALIYUN::DMS::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.794Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.User")
 public class User extends com.aliyun.ros.cdk.core.Resource {
 

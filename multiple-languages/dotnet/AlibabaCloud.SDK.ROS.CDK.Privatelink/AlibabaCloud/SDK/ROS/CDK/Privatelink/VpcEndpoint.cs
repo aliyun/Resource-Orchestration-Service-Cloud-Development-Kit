@@ -80,5 +80,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
+
+        /// <summary>Attribute ZoneDomains: The zone domains.</summary>
+        [JsiiProperty(name: "attrZoneDomains", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneDomains
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
     }
 }

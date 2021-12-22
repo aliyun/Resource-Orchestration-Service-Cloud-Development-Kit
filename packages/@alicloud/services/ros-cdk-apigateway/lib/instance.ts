@@ -30,7 +30,9 @@ export interface InstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -38,6 +40,11 @@ export interface InstanceProps {
      * Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
      */
     readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * Property deletionForce: Whether force delete the instance even if its status is START_FAILED. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
@@ -112,6 +119,7 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             instanceSpec: props.instanceSpec,
             httpsPolicy: props.httpsPolicy,
             zoneId: props.zoneId,

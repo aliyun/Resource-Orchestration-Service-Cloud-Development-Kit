@@ -24,21 +24,6 @@ export interface TransitRouterVbrAttachmentProps {
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
-
-    /**
      * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
@@ -131,12 +116,9 @@ export class TransitRouterVbrAttachment extends ros.Resource {
 
         const rosTransitRouterVbrAttachment = new RosTransitRouterVbrAttachment(this, id,  {
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,
-            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
-            routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             vbrOwnerId: props.vbrOwnerId,
             cenId: props.cenId,
             transitRouterAttachmentName: props.transitRouterAttachmentName,
-            resourceType: props.resourceType,
             vbrId: props.vbrId,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,
             transitRouterId: props.transitRouterId,

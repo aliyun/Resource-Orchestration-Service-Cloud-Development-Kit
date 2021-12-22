@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::App`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.279Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.582Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,9 +39,9 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AppProps> {
-        private java.lang.Object appName;
-        private java.lang.Object description;
-        private java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
+        java.lang.Object appName;
+        java.lang.Object description;
+        java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
 
         /**
          * Sets the value of {@link AppProps#getAppName}
@@ -102,7 +102,7 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AppProps build() {
-            return new Jsii$Proxy(appName, description, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -130,11 +130,11 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object appName, final java.lang.Object description, final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.appName = java.util.Objects.requireNonNull(appName, "appName is required");
-            this.description = description;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty>)tags;
+            this.appName = java.util.Objects.requireNonNull(builder.appName, "appName is required");
+            this.description = builder.description;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty>)builder.tags;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS template type:  `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.857Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -786,7 +786,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ApplicationProperty> {
-            private java.lang.Object tag;
+            java.lang.Object tag;
 
             /**
              * Sets the value of {@link ApplicationProperty#getTag}
@@ -818,7 +818,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ApplicationProperty build() {
-                return new Jsii$Proxy(tag);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -842,9 +842,9 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tag) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tag = java.util.Objects.requireNonNull(tag, "tag is required");
+                this.tag = java.util.Objects.requireNonNull(builder.tag, "tag is required");
             }
 
             @Override
@@ -920,8 +920,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PostInstallScriptProperty> {
-            private java.lang.Object args;
-            private java.lang.Object url;
+            java.lang.Object args;
+            java.lang.Object url;
 
             /**
              * Sets the value of {@link PostInstallScriptProperty#getArgs}
@@ -975,7 +975,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PostInstallScriptProperty build() {
-                return new Jsii$Proxy(args, url);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1001,10 +1001,10 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object args, final java.lang.Object url) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.args = args;
-                this.url = url;
+                this.args = builder.args;
+                this.url = builder.url;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.641Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.211Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceEndpointAclPolicyProps.Jsii$Proxy.class)
 public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,12 +61,12 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
      * A builder for {@link InstanceEndpointAclPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceEndpointAclPolicyProps> {
-        private java.lang.Object entry;
-        private java.lang.Object instanceId;
-        private java.lang.Object comment;
-        private java.lang.Object endpointType;
-        private java.lang.Object moduleName;
-        private java.lang.Object regionId;
+        java.lang.Object entry;
+        java.lang.Object instanceId;
+        java.lang.Object comment;
+        java.lang.Object endpointType;
+        java.lang.Object moduleName;
+        java.lang.Object regionId;
 
         /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getEntry}
@@ -201,7 +201,7 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
          */
         @Override
         public InstanceEndpointAclPolicyProps build() {
-            return new Jsii$Proxy(entry, instanceId, comment, endpointType, moduleName, regionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -234,14 +234,14 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object entry, final java.lang.Object instanceId, final java.lang.Object comment, final java.lang.Object endpointType, final java.lang.Object moduleName, final java.lang.Object regionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.entry = java.util.Objects.requireNonNull(entry, "entry is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.comment = comment;
-            this.endpointType = endpointType;
-            this.moduleName = moduleName;
-            this.regionId = regionId;
+            this.entry = java.util.Objects.requireNonNull(builder.entry, "entry is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.comment = builder.comment;
+            this.endpointType = builder.endpointType;
+            this.moduleName = builder.moduleName;
+            this.regionId = builder.regionId;
         }
 
         @Override

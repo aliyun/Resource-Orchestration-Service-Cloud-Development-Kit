@@ -39,6 +39,11 @@ export interface CopyImageProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * Property sourceRegionId: ID of the region to where the source image belongs. Default is current region ID.
+     */
+    readonly sourceRegionId?: string | ros.IResolvable;
+
+    /**
      * Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
@@ -55,9 +60,19 @@ export class CopyImage extends ros.Resource {
      */
 
     /**
+     * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
+     */
+    public readonly attrDestinationRegionId: ros.IResolvable;
+
+    /**
      * Attribute ImageId: ID of the source custom image.
      */
     public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * Attribute SourceRegionId: ID of the region to where the source image belongs.
+     */
+    public readonly attrSourceRegionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::CopyImage`.
@@ -70,6 +85,7 @@ export class CopyImage extends ros.Resource {
         super(scope, id);
 
         const rosCopyImage = new RosCopyImage(this, id,  {
+            sourceRegionId: props.sourceRegionId,
             kmsKeyId: props.kmsKeyId,
             destinationRegionId: props.destinationRegionId,
             encrypted: props.encrypted,
@@ -79,6 +95,8 @@ export class CopyImage extends ros.Resource {
             destinationImageName: props.destinationImageName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCopyImage;
+        this.attrDestinationRegionId = rosCopyImage.attrDestinationRegionId;
         this.attrImageId = rosCopyImage.attrImageId;
+        this.attrSourceRegionId = rosCopyImage.attrSourceRegionId;
     }
 }

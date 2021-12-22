@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Properties for defining a `ALIYUN::Config::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -114,20 +114,20 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RuleProps> {
-        private java.lang.Object configRuleTriggerTypes;
-        private java.lang.Object resourceTypesScope;
-        private java.lang.Object riskLevel;
-        private java.lang.Object ruleName;
-        private java.lang.Object sourceIdentifier;
-        private java.lang.Object sourceOwner;
-        private java.lang.Object description;
-        private java.lang.Object excludeResourceIdsScope;
-        private java.lang.Object inputParameters;
-        private java.lang.Object maximumExecutionFrequency;
-        private java.lang.Object regionIdsScope;
-        private java.lang.Object resourceGroupIdsScope;
-        private java.lang.Object tagKeyScope;
-        private java.lang.Object tagValueScope;
+        java.lang.Object configRuleTriggerTypes;
+        java.lang.Object resourceTypesScope;
+        java.lang.Object riskLevel;
+        java.lang.Object ruleName;
+        java.lang.Object sourceIdentifier;
+        java.lang.Object sourceOwner;
+        java.lang.Object description;
+        java.lang.Object excludeResourceIdsScope;
+        java.lang.Object inputParameters;
+        java.lang.Object maximumExecutionFrequency;
+        java.lang.Object regionIdsScope;
+        java.lang.Object resourceGroupIdsScope;
+        java.lang.Object tagKeyScope;
+        java.lang.Object tagValueScope;
 
         /**
          * Sets the value of {@link RuleProps#getConfigRuleTriggerTypes}
@@ -426,7 +426,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RuleProps build() {
-            return new Jsii$Proxy(configRuleTriggerTypes, resourceTypesScope, riskLevel, ruleName, sourceIdentifier, sourceOwner, description, excludeResourceIdsScope, inputParameters, maximumExecutionFrequency, regionIdsScope, resourceGroupIdsScope, tagKeyScope, tagValueScope);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -475,22 +475,22 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object configRuleTriggerTypes, final java.lang.Object resourceTypesScope, final java.lang.Object riskLevel, final java.lang.Object ruleName, final java.lang.Object sourceIdentifier, final java.lang.Object sourceOwner, final java.lang.Object description, final java.lang.Object excludeResourceIdsScope, final java.lang.Object inputParameters, final java.lang.Object maximumExecutionFrequency, final java.lang.Object regionIdsScope, final java.lang.Object resourceGroupIdsScope, final java.lang.Object tagKeyScope, final java.lang.Object tagValueScope) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.configRuleTriggerTypes = java.util.Objects.requireNonNull(configRuleTriggerTypes, "configRuleTriggerTypes is required");
-            this.resourceTypesScope = java.util.Objects.requireNonNull(resourceTypesScope, "resourceTypesScope is required");
-            this.riskLevel = java.util.Objects.requireNonNull(riskLevel, "riskLevel is required");
-            this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
-            this.sourceIdentifier = java.util.Objects.requireNonNull(sourceIdentifier, "sourceIdentifier is required");
-            this.sourceOwner = java.util.Objects.requireNonNull(sourceOwner, "sourceOwner is required");
-            this.description = description;
-            this.excludeResourceIdsScope = excludeResourceIdsScope;
-            this.inputParameters = inputParameters;
-            this.maximumExecutionFrequency = maximumExecutionFrequency;
-            this.regionIdsScope = regionIdsScope;
-            this.resourceGroupIdsScope = resourceGroupIdsScope;
-            this.tagKeyScope = tagKeyScope;
-            this.tagValueScope = tagValueScope;
+            this.configRuleTriggerTypes = java.util.Objects.requireNonNull(builder.configRuleTriggerTypes, "configRuleTriggerTypes is required");
+            this.resourceTypesScope = java.util.Objects.requireNonNull(builder.resourceTypesScope, "resourceTypesScope is required");
+            this.riskLevel = java.util.Objects.requireNonNull(builder.riskLevel, "riskLevel is required");
+            this.ruleName = java.util.Objects.requireNonNull(builder.ruleName, "ruleName is required");
+            this.sourceIdentifier = java.util.Objects.requireNonNull(builder.sourceIdentifier, "sourceIdentifier is required");
+            this.sourceOwner = java.util.Objects.requireNonNull(builder.sourceOwner, "sourceOwner is required");
+            this.description = builder.description;
+            this.excludeResourceIdsScope = builder.excludeResourceIdsScope;
+            this.inputParameters = builder.inputParameters;
+            this.maximumExecutionFrequency = builder.maximumExecutionFrequency;
+            this.regionIdsScope = builder.regionIdsScope;
+            this.resourceGroupIdsScope = builder.resourceGroupIdsScope;
+            this.tagKeyScope = builder.tagKeyScope;
+            this.tagValueScope = builder.tagValueScope;
         }
 
         @Override

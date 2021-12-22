@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIPAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPAssociationProps.Jsii$Proxy.class)
 public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosEIPAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEIPAssociationProps> {
-        private java.lang.Object allocationId;
-        private java.lang.Object instanceId;
-        private java.lang.Object mode;
-        private java.lang.Object privateIpAddress;
+        java.lang.Object allocationId;
+        java.lang.Object instanceId;
+        java.lang.Object mode;
+        java.lang.Object privateIpAddress;
 
         /**
          * Sets the value of {@link RosEIPAssociationProps#getAllocationId}
@@ -130,7 +130,7 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosEIPAssociationProps build() {
-            return new Jsii$Proxy(allocationId, instanceId, mode, privateIpAddress);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosEIPAssociationProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object allocationId, final java.lang.Object instanceId, final java.lang.Object mode, final java.lang.Object privateIpAddress) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.allocationId = java.util.Objects.requireNonNull(allocationId, "allocationId is required");
-            this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
-            this.mode = mode;
-            this.privateIpAddress = privateIpAddress;
+            this.allocationId = java.util.Objects.requireNonNull(builder.allocationId, "allocationId is required");
+            this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
+            this.mode = builder.mode;
+            this.privateIpAddress = builder.privateIpAddress;
         }
 
         @Override

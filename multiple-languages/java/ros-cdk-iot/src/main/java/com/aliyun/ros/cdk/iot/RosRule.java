@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS template type:  `ALIYUN::IOT::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.562Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -318,9 +318,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RuleActionProperty> {
-            private java.lang.Object configuration;
-            private java.lang.Object type;
-            private java.lang.Object errorActionFlag;
+            java.lang.Object configuration;
+            java.lang.Object type;
+            java.lang.Object errorActionFlag;
 
             /**
              * Sets the value of {@link RuleActionProperty#getConfiguration}
@@ -396,7 +396,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RuleActionProperty build() {
-                return new Jsii$Proxy(configuration, type, errorActionFlag);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -424,11 +424,11 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object configuration, final java.lang.Object type, final java.lang.Object errorActionFlag) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.configuration = java.util.Objects.requireNonNull(configuration, "configuration is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.errorActionFlag = errorActionFlag;
+                this.configuration = java.util.Objects.requireNonNull(builder.configuration, "configuration is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.errorActionFlag = builder.errorActionFlag;
             }
 
             @Override

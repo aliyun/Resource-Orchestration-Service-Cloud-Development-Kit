@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.800Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointService")
 public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -193,6 +193,35 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property payer: The payer of the endpoint service.
+         * <p>
+         * Valid values:
+         * Endpoint: the service consumer.
+         * EndpointService: the service provider.
+         * <p>
+         * @return {@code this}
+         * @param payer Property payer: The payer of the endpoint service. This parameter is required.
+         */
+        public Builder payer(final java.lang.String payer) {
+            this.props().payer(payer);
+            return this;
+        }
+        /**
+         * Property payer: The payer of the endpoint service.
+         * <p>
+         * Valid values:
+         * Endpoint: the service consumer.
+         * EndpointService: the service provider.
+         * <p>
+         * @return {@code this}
+         * @param payer Property payer: The payer of the endpoint service. This parameter is required.
+         */
+        public Builder payer(final com.aliyun.ros.cdk.core.IResolvable payer) {
+            this.props().payer(payer);
+            return this;
+        }
+
+        /**
          * Property resource:.
          * <p>
          * @return {@code this}
@@ -252,6 +281,33 @@ public class VpcEndpointService extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder user(final java.util.List<? extends java.lang.Object> user) {
             this.props().user(user);
+            return this;
+        }
+
+        /**
+         * Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+         * <p>
+         * true: yes.
+         * false (default): no
+         * <p>
+         * @return {@code this}
+         * @param zoneAffinityEnabled Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone. This parameter is required.
+         */
+        public Builder zoneAffinityEnabled(final java.lang.Boolean zoneAffinityEnabled) {
+            this.props().zoneAffinityEnabled(zoneAffinityEnabled);
+            return this;
+        }
+        /**
+         * Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.
+         * <p>
+         * true: yes.
+         * false (default): no
+         * <p>
+         * @return {@code this}
+         * @param zoneAffinityEnabled Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone. This parameter is required.
+         */
+        public Builder zoneAffinityEnabled(final com.aliyun.ros.cdk.core.IResolvable zoneAffinityEnabled) {
+            this.props().zoneAffinityEnabled(zoneAffinityEnabled);
             return this;
         }
 

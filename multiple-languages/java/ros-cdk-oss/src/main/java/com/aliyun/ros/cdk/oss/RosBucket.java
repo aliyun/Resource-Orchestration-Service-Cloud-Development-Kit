@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS template type:  `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.732Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.397Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -315,8 +315,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<AbortMultipartUploadProperty> {
-            private java.lang.Object createdBeforeDate;
-            private java.lang.Object days;
+            java.lang.Object createdBeforeDate;
+            java.lang.Object days;
 
             /**
              * Sets the value of {@link AbortMultipartUploadProperty#getCreatedBeforeDate}
@@ -370,7 +370,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public AbortMultipartUploadProperty build() {
-                return new Jsii$Proxy(createdBeforeDate, days);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -396,10 +396,10 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object createdBeforeDate, final java.lang.Object days) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.createdBeforeDate = createdBeforeDate;
-                this.days = days;
+                this.createdBeforeDate = builder.createdBeforeDate;
+                this.days = builder.days;
             }
 
             @Override
@@ -480,7 +480,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CORSConfigurationProperty> {
-            private java.lang.Object corsRule;
+            java.lang.Object corsRule;
 
             /**
              * Sets the value of {@link CORSConfigurationProperty#getCorsRule}
@@ -512,7 +512,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CORSConfigurationProperty build() {
-                return new Jsii$Proxy(corsRule);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -536,9 +536,9 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object corsRule) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.corsRule = corsRule;
+                this.corsRule = builder.corsRule;
             }
 
             @Override
@@ -637,11 +637,11 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CORSRuleProperty> {
-            private java.lang.Object allowedHeader;
-            private java.lang.Object allowedMethod;
-            private java.lang.Object allowedOrigin;
-            private java.lang.Object exposeHeader;
-            private java.lang.Object maxAgeSeconds;
+            java.lang.Object allowedHeader;
+            java.lang.Object allowedMethod;
+            java.lang.Object allowedOrigin;
+            java.lang.Object exposeHeader;
+            java.lang.Object maxAgeSeconds;
 
             /**
              * Sets the value of {@link CORSRuleProperty#getAllowedHeader}
@@ -761,7 +761,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CORSRuleProperty build() {
-                return new Jsii$Proxy(allowedHeader, allowedMethod, allowedOrigin, exposeHeader, maxAgeSeconds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -793,13 +793,13 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object allowedHeader, final java.lang.Object allowedMethod, final java.lang.Object allowedOrigin, final java.lang.Object exposeHeader, final java.lang.Object maxAgeSeconds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.allowedHeader = allowedHeader;
-                this.allowedMethod = allowedMethod;
-                this.allowedOrigin = allowedOrigin;
-                this.exposeHeader = exposeHeader;
-                this.maxAgeSeconds = maxAgeSeconds;
+                this.allowedHeader = builder.allowedHeader;
+                this.allowedMethod = builder.allowedMethod;
+                this.allowedOrigin = builder.allowedOrigin;
+                this.exposeHeader = builder.exposeHeader;
+                this.maxAgeSeconds = builder.maxAgeSeconds;
             }
 
             @Override
@@ -901,13 +901,6 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getDate() {
-            return null;
-        }
-
-        /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDays() {
             return null;
         }
@@ -924,9 +917,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ExpirationProperty> {
-            private java.lang.Object createdBeforeDate;
-            private java.lang.Object date;
-            private java.lang.Object days;
+            java.lang.Object createdBeforeDate;
+            java.lang.Object days;
 
             /**
              * Sets the value of {@link ExpirationProperty#getCreatedBeforeDate}
@@ -947,28 +939,6 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder createdBeforeDate(com.aliyun.ros.cdk.core.IResolvable createdBeforeDate) {
                 this.createdBeforeDate = createdBeforeDate;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ExpirationProperty#getDate}
-             * @param date the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder date(java.lang.String date) {
-                this.date = date;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ExpirationProperty#getDate}
-             * @param date the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder date(com.aliyun.ros.cdk.core.IResolvable date) {
-                this.date = date;
                 return this;
             }
 
@@ -1002,7 +972,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ExpirationProperty build() {
-                return new Jsii$Proxy(createdBeforeDate, date, days);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1013,7 +983,6 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ExpirationProperty {
             private final java.lang.Object createdBeforeDate;
-            private final java.lang.Object date;
             private final java.lang.Object days;
 
             /**
@@ -1023,28 +992,21 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.createdBeforeDate = software.amazon.jsii.Kernel.get(this, "createdBeforeDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.date = software.amazon.jsii.Kernel.get(this, "date", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.days = software.amazon.jsii.Kernel.get(this, "days", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object createdBeforeDate, final java.lang.Object date, final java.lang.Object days) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.createdBeforeDate = createdBeforeDate;
-                this.date = date;
-                this.days = days;
+                this.createdBeforeDate = builder.createdBeforeDate;
+                this.days = builder.days;
             }
 
             @Override
             public final java.lang.Object getCreatedBeforeDate() {
                 return this.createdBeforeDate;
-            }
-
-            @Override
-            public final java.lang.Object getDate() {
-                return this.date;
             }
 
             @Override
@@ -1060,9 +1022,6 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (this.getCreatedBeforeDate() != null) {
                     data.set("createdBeforeDate", om.valueToTree(this.getCreatedBeforeDate()));
-                }
-                if (this.getDate() != null) {
-                    data.set("date", om.valueToTree(this.getDate()));
                 }
                 if (this.getDays() != null) {
                     data.set("days", om.valueToTree(this.getDays()));
@@ -1086,14 +1045,12 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
                 ExpirationProperty.Jsii$Proxy that = (ExpirationProperty.Jsii$Proxy) o;
 
                 if (this.createdBeforeDate != null ? !this.createdBeforeDate.equals(that.createdBeforeDate) : that.createdBeforeDate != null) return false;
-                if (this.date != null ? !this.date.equals(that.date) : that.date != null) return false;
                 return this.days != null ? this.days.equals(that.days) : that.days == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.createdBeforeDate != null ? this.createdBeforeDate.hashCode() : 0;
-                result = 31 * result + (this.date != null ? this.date.hashCode() : 0);
                 result = 31 * result + (this.days != null ? this.days.hashCode() : 0);
                 return result;
             }
@@ -1123,7 +1080,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LifecycleConfigurationProperty> {
-            private java.lang.Object rule;
+            java.lang.Object rule;
 
             /**
              * Sets the value of {@link LifecycleConfigurationProperty#getRule}
@@ -1155,7 +1112,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LifecycleConfigurationProperty build() {
-                return new Jsii$Proxy(rule);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1179,9 +1136,9 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object rule) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.rule = java.util.Objects.requireNonNull(rule, "rule is required");
+                this.rule = java.util.Objects.requireNonNull(builder.rule, "rule is required");
             }
 
             @Override
@@ -1257,8 +1214,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LoggingConfigurationProperty> {
-            private java.lang.Object targetBucket;
-            private java.lang.Object targetPrefix;
+            java.lang.Object targetBucket;
+            java.lang.Object targetPrefix;
 
             /**
              * Sets the value of {@link LoggingConfigurationProperty#getTargetBucket}
@@ -1312,7 +1269,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LoggingConfigurationProperty build() {
-                return new Jsii$Proxy(targetBucket, targetPrefix);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1338,10 +1295,10 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object targetBucket, final java.lang.Object targetPrefix) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.targetBucket = targetBucket;
-                this.targetPrefix = targetPrefix;
+                this.targetBucket = builder.targetBucket;
+                this.targetPrefix = builder.targetPrefix;
             }
 
             @Override
@@ -1429,8 +1386,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RefererConfigurationProperty> {
-            private java.lang.Object allowEmptyReferer;
-            private java.lang.Object refererList;
+            java.lang.Object allowEmptyReferer;
+            java.lang.Object refererList;
 
             /**
              * Sets the value of {@link RefererConfigurationProperty#getAllowEmptyReferer}
@@ -1484,7 +1441,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RefererConfigurationProperty build() {
-                return new Jsii$Proxy(allowEmptyReferer, refererList);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1510,10 +1467,10 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object allowEmptyReferer, final java.lang.Object refererList) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.allowEmptyReferer = allowEmptyReferer;
-                this.refererList = refererList;
+                this.allowEmptyReferer = builder.allowEmptyReferer;
+                this.refererList = builder.refererList;
             }
 
             @Override
@@ -1620,11 +1577,11 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RuleProperty> {
-            private java.lang.Object prefix;
-            private java.lang.Object abortMultipartUpload;
-            private java.lang.Object expiration;
-            private java.lang.Object id;
-            private java.lang.Object status;
+            java.lang.Object prefix;
+            java.lang.Object abortMultipartUpload;
+            java.lang.Object expiration;
+            java.lang.Object id;
+            java.lang.Object status;
 
             /**
              * Sets the value of {@link RuleProperty#getPrefix}
@@ -1744,7 +1701,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RuleProperty build() {
-                return new Jsii$Proxy(prefix, abortMultipartUpload, expiration, id, status);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1776,13 +1733,13 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object prefix, final java.lang.Object abortMultipartUpload, final java.lang.Object expiration, final java.lang.Object id, final java.lang.Object status) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.prefix = java.util.Objects.requireNonNull(prefix, "prefix is required");
-                this.abortMultipartUpload = abortMultipartUpload;
-                this.expiration = expiration;
-                this.id = id;
-                this.status = status;
+                this.prefix = java.util.Objects.requireNonNull(builder.prefix, "prefix is required");
+                this.abortMultipartUpload = builder.abortMultipartUpload;
+                this.expiration = builder.expiration;
+                this.id = builder.id;
+                this.status = builder.status;
             }
 
             @Override
@@ -1896,8 +1853,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ServerSideEncryptionConfigurationProperty> {
-            private java.lang.Object sseAlgorithm;
-            private java.lang.Object kmsMasterKeyId;
+            java.lang.Object sseAlgorithm;
+            java.lang.Object kmsMasterKeyId;
 
             /**
              * Sets the value of {@link ServerSideEncryptionConfigurationProperty#getSseAlgorithm}
@@ -1951,7 +1908,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ServerSideEncryptionConfigurationProperty build() {
-                return new Jsii$Proxy(sseAlgorithm, kmsMasterKeyId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1977,10 +1934,10 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object sseAlgorithm, final java.lang.Object kmsMasterKeyId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.sseAlgorithm = java.util.Objects.requireNonNull(sseAlgorithm, "sseAlgorithm is required");
-                this.kmsMasterKeyId = kmsMasterKeyId;
+                this.sseAlgorithm = java.util.Objects.requireNonNull(builder.sseAlgorithm, "sseAlgorithm is required");
+                this.kmsMasterKeyId = builder.kmsMasterKeyId;
             }
 
             @Override
@@ -2066,8 +2023,8 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WebsiteConfigurationProperty> {
-            private java.lang.Object errorDocument;
-            private java.lang.Object indexDocument;
+            java.lang.Object errorDocument;
+            java.lang.Object indexDocument;
 
             /**
              * Sets the value of {@link WebsiteConfigurationProperty#getErrorDocument}
@@ -2121,7 +2078,7 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public WebsiteConfigurationProperty build() {
-                return new Jsii$Proxy(errorDocument, indexDocument);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2147,10 +2104,10 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object errorDocument, final java.lang.Object indexDocument) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.errorDocument = errorDocument;
-                this.indexDocument = indexDocument;
+                this.errorDocument = builder.errorDocument;
+                this.indexDocument = builder.indexDocument;
             }
 
             @Override

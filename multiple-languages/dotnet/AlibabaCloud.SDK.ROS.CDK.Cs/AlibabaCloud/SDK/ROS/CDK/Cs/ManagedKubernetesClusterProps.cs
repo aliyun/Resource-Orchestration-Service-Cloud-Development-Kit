@@ -210,6 +210,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             set;
         }
 
+        /// <summary>Property runtime: The container runtime of the cluster.</summary>
+        /// <remarks>
+        /// The default runtime is Docker.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty\"}]}}", isOptional: true, isOverride: true)]
+        public object? Runtime
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]

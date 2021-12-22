@@ -230,6 +230,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property runtime: The container runtime of the cluster.</summary>
+        /// <remarks>
+        /// The default runtime is Docker.
+        /// </remarks>
+        [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Runtime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
         [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -640,6 +654,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "proxyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ProxyMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property runtime: The container runtime of the cluster.</summary>
+            /// <remarks>
+            /// The default runtime is Docker.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty\"}]}}", isOptional: true)]
+            public object? Runtime
             {
                 get => GetInstanceProperty<object?>();
             }

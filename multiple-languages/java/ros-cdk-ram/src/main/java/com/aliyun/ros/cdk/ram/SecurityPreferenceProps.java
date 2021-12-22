@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::SecurityPreference`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.548Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SecurityPreferenceProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityPreferenceProps.Jsii$Proxy.class)
 public interface SecurityPreferenceProps extends software.amazon.jsii.JsiiSerializable {
@@ -103,13 +103,13 @@ public interface SecurityPreferenceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link SecurityPreferenceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityPreferenceProps> {
-        private java.lang.Object allowUserToChangePassword;
-        private java.lang.Object allowUserToManageAccessKeys;
-        private java.lang.Object allowUserToManageMfaDevices;
-        private java.lang.Object allowUserToManagePublicKeys;
-        private java.lang.Object enableSaveMfaTicket;
-        private java.lang.Object loginNetworkMasks;
-        private java.lang.Object loginSessionDuration;
+        java.lang.Object allowUserToChangePassword;
+        java.lang.Object allowUserToManageAccessKeys;
+        java.lang.Object allowUserToManageMfaDevices;
+        java.lang.Object allowUserToManagePublicKeys;
+        java.lang.Object enableSaveMfaTicket;
+        java.lang.Object loginNetworkMasks;
+        java.lang.Object loginSessionDuration;
 
         /**
          * Sets the value of {@link SecurityPreferenceProps#getAllowUserToChangePassword}
@@ -316,7 +316,7 @@ public interface SecurityPreferenceProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public SecurityPreferenceProps build() {
-            return new Jsii$Proxy(allowUserToChangePassword, allowUserToManageAccessKeys, allowUserToManageMfaDevices, allowUserToManagePublicKeys, enableSaveMfaTicket, loginNetworkMasks, loginSessionDuration);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -351,15 +351,15 @@ public interface SecurityPreferenceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object allowUserToChangePassword, final java.lang.Object allowUserToManageAccessKeys, final java.lang.Object allowUserToManageMfaDevices, final java.lang.Object allowUserToManagePublicKeys, final java.lang.Object enableSaveMfaTicket, final java.lang.Object loginNetworkMasks, final java.lang.Object loginSessionDuration) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.allowUserToChangePassword = allowUserToChangePassword;
-            this.allowUserToManageAccessKeys = allowUserToManageAccessKeys;
-            this.allowUserToManageMfaDevices = allowUserToManageMfaDevices;
-            this.allowUserToManagePublicKeys = allowUserToManagePublicKeys;
-            this.enableSaveMfaTicket = enableSaveMfaTicket;
-            this.loginNetworkMasks = loginNetworkMasks;
-            this.loginSessionDuration = loginSessionDuration;
+            this.allowUserToChangePassword = builder.allowUserToChangePassword;
+            this.allowUserToManageAccessKeys = builder.allowUserToManageAccessKeys;
+            this.allowUserToManageMfaDevices = builder.allowUserToManageMfaDevices;
+            this.allowUserToManagePublicKeys = builder.allowUserToManagePublicKeys;
+            this.enableSaveMfaTicket = builder.enableSaveMfaTicket;
+            this.loginNetworkMasks = builder.loginNetworkMasks;
+            this.loginSessionDuration = builder.loginSessionDuration;
         }
 
         @Override

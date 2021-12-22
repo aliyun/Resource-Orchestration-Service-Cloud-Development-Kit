@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosTable")
 public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -251,8 +251,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnsProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
+            java.lang.Object name;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link ColumnsProperty#getName}
@@ -306,7 +306,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnsProperty build() {
-                return new Jsii$Proxy(name, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -332,10 +332,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
             }
 
             @Override
@@ -415,8 +415,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrimaryKeyProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
+            java.lang.Object name;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link PrimaryKeyProperty#getName}
@@ -470,7 +470,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PrimaryKeyProperty build() {
-                return new Jsii$Proxy(name, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -496,10 +496,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
             }
 
             @Override
@@ -579,8 +579,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReservedThroughputProperty> {
-            private java.lang.Object read;
-            private java.lang.Object write;
+            java.lang.Object read;
+            java.lang.Object write;
 
             /**
              * Sets the value of {@link ReservedThroughputProperty#getRead}
@@ -634,7 +634,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReservedThroughputProperty build() {
-                return new Jsii$Proxy(read, write);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -660,10 +660,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object read, final java.lang.Object write) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.read = java.util.Objects.requireNonNull(read, "read is required");
-                this.write = java.util.Objects.requireNonNull(write, "write is required");
+                this.read = java.util.Objects.requireNonNull(builder.read, "read is required");
+                this.write = java.util.Objects.requireNonNull(builder.write, "write is required");
             }
 
             @Override
@@ -755,10 +755,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SecondaryIndicesProperty> {
-            private java.lang.Object columns;
-            private java.lang.Object indexName;
-            private java.lang.Object primaryKeys;
-            private java.lang.Object indexType;
+            java.lang.Object columns;
+            java.lang.Object indexName;
+            java.lang.Object primaryKeys;
+            java.lang.Object indexType;
 
             /**
              * Sets the value of {@link SecondaryIndicesProperty#getColumns}
@@ -856,7 +856,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SecondaryIndicesProperty build() {
-                return new Jsii$Proxy(columns, indexName, primaryKeys, indexType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -886,12 +886,12 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columns, final java.lang.Object indexName, final java.lang.Object primaryKeys, final java.lang.Object indexType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columns = java.util.Objects.requireNonNull(columns, "columns is required");
-                this.indexName = java.util.Objects.requireNonNull(indexName, "indexName is required");
-                this.primaryKeys = java.util.Objects.requireNonNull(primaryKeys, "primaryKeys is required");
-                this.indexType = indexType;
+                this.columns = java.util.Objects.requireNonNull(builder.columns, "columns is required");
+                this.indexName = java.util.Objects.requireNonNull(builder.indexName, "indexName is required");
+                this.primaryKeys = java.util.Objects.requireNonNull(builder.primaryKeys, "primaryKeys is required");
+                this.indexType = builder.indexType;
             }
 
             @Override

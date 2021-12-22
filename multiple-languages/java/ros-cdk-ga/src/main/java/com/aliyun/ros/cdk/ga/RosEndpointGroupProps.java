@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::EndpointGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.114Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosEndpointGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosEndpointGroupProps.Jsii$Proxy.class)
 public interface RosEndpointGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,18 +82,18 @@ public interface RosEndpointGroupProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosEndpointGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEndpointGroupProps> {
-        private java.lang.Object acceleratorId;
-        private java.lang.Object endpointConfigurations;
-        private java.lang.Object endpointGroupRegion;
-        private java.lang.Object listenerId;
-        private java.lang.Object description;
-        private java.lang.Object healthCheckIntervalSeconds;
-        private java.lang.Object healthCheckPath;
-        private java.lang.Object healthCheckPort;
-        private java.lang.Object healthCheckProtocol;
-        private java.lang.Object name;
-        private java.lang.Object thresholdCount;
-        private java.lang.Object trafficPercentage;
+        java.lang.Object acceleratorId;
+        java.lang.Object endpointConfigurations;
+        java.lang.Object endpointGroupRegion;
+        java.lang.Object listenerId;
+        java.lang.Object description;
+        java.lang.Object healthCheckIntervalSeconds;
+        java.lang.Object healthCheckPath;
+        java.lang.Object healthCheckPort;
+        java.lang.Object healthCheckProtocol;
+        java.lang.Object name;
+        java.lang.Object thresholdCount;
+        java.lang.Object trafficPercentage;
 
         /**
          * Sets the value of {@link RosEndpointGroupProps#getAcceleratorId}
@@ -342,7 +342,7 @@ public interface RosEndpointGroupProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosEndpointGroupProps build() {
-            return new Jsii$Proxy(acceleratorId, endpointConfigurations, endpointGroupRegion, listenerId, description, healthCheckIntervalSeconds, healthCheckPath, healthCheckPort, healthCheckProtocol, name, thresholdCount, trafficPercentage);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -387,20 +387,20 @@ public interface RosEndpointGroupProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object endpointConfigurations, final java.lang.Object endpointGroupRegion, final java.lang.Object listenerId, final java.lang.Object description, final java.lang.Object healthCheckIntervalSeconds, final java.lang.Object healthCheckPath, final java.lang.Object healthCheckPort, final java.lang.Object healthCheckProtocol, final java.lang.Object name, final java.lang.Object thresholdCount, final java.lang.Object trafficPercentage) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
-            this.endpointConfigurations = java.util.Objects.requireNonNull(endpointConfigurations, "endpointConfigurations is required");
-            this.endpointGroupRegion = java.util.Objects.requireNonNull(endpointGroupRegion, "endpointGroupRegion is required");
-            this.listenerId = java.util.Objects.requireNonNull(listenerId, "listenerId is required");
-            this.description = description;
-            this.healthCheckIntervalSeconds = healthCheckIntervalSeconds;
-            this.healthCheckPath = healthCheckPath;
-            this.healthCheckPort = healthCheckPort;
-            this.healthCheckProtocol = healthCheckProtocol;
-            this.name = name;
-            this.thresholdCount = thresholdCount;
-            this.trafficPercentage = trafficPercentage;
+            this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
+            this.endpointConfigurations = java.util.Objects.requireNonNull(builder.endpointConfigurations, "endpointConfigurations is required");
+            this.endpointGroupRegion = java.util.Objects.requireNonNull(builder.endpointGroupRegion, "endpointGroupRegion is required");
+            this.listenerId = java.util.Objects.requireNonNull(builder.listenerId, "listenerId is required");
+            this.description = builder.description;
+            this.healthCheckIntervalSeconds = builder.healthCheckIntervalSeconds;
+            this.healthCheckPath = builder.healthCheckPath;
+            this.healthCheckPort = builder.healthCheckPort;
+            this.healthCheckProtocol = builder.healthCheckProtocol;
+            this.name = builder.name;
+            this.thresholdCount = builder.thresholdCount;
+            this.trafficPercentage = builder.trafficPercentage;
         }
 
         @Override

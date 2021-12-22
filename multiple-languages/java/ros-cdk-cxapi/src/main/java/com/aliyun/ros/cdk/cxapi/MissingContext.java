@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.cxapi;
  * @see core.Stack.reportMissingContext
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.623Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.MissingContext")
 @software.amazon.jsii.Jsii.Proxy(MissingContext.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -56,9 +56,9 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
     @Deprecated
     public static final class Builder implements software.amazon.jsii.Builder<MissingContext> {
-        private java.lang.String key;
-        private java.util.Map<java.lang.String, java.lang.Object> props;
-        private java.lang.String provider;
+        java.lang.String key;
+        java.util.Map<java.lang.String, java.lang.Object> props;
+        java.lang.String provider;
 
         /**
          * Sets the value of {@link MissingContext#getKey}
@@ -110,7 +110,7 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
         @Deprecated
         @Override
         public MissingContext build() {
-            return new Jsii$Proxy(key, props, provider);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -140,11 +140,11 @@ public interface MissingContext extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String key, final java.util.Map<java.lang.String, ? extends java.lang.Object> props, final java.lang.String provider) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.key = java.util.Objects.requireNonNull(key, "key is required");
-            this.props = (java.util.Map<java.lang.String, java.lang.Object>)java.util.Objects.requireNonNull(props, "props is required");
-            this.provider = java.util.Objects.requireNonNull(provider, "provider is required");
+            this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+            this.props = (java.util.Map<java.lang.String, java.lang.Object>)java.util.Objects.requireNonNull(builder.props, "props is required");
+            this.provider = java.util.Objects.requireNonNull(builder.provider, "provider is required");
         }
 
         @Override

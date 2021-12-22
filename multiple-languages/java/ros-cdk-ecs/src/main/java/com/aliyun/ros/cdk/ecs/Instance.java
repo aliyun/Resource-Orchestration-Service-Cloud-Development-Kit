@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -65,14 +65,14 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute InstanceId: The instance id of created ecs instance.
+     * Attribute InstanceId: The instance ID of created ecs instance.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
         return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute PrimaryNetworkInterfaceId: Primary network interface id of created instance.
+     * Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrimaryNetworkInterfaceId() {
         return software.amazon.jsii.Kernel.get(this, "attrPrimaryNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -95,7 +95,14 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute ZoneId: Zone id of created instance.
+     * Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityGroupIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityGroupIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ZoneId: Zone ID of created instance.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneId() {
         return software.amazon.jsii.Kernel.get(this, "attrZoneId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -790,6 +797,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property securityGroupIds: The ID list of security group to which to assign the instance.
+         * <p>
+         * The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: The ID list of security group to which to assign the instance. This parameter is required.
+         */
+        public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
+            return this;
+        }
+        /**
+         * Property securityGroupIds: The ID list of security group to which to assign the instance.
+         * <p>
+         * The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupIds Property securityGroupIds: The ID list of security group to which to assign the instance. This parameter is required.
+         */
+        public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.props.securityGroupIds(securityGroupIds);
             return this;
         }
 

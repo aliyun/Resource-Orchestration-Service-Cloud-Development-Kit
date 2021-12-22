@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for the Construct Tree Artifact.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.TreeArtifactProperties")
 @software.amazon.jsii.Jsii.Proxy(TreeArtifactProperties.Jsii$Proxy.class)
 public interface TreeArtifactProperties extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface TreeArtifactProperties extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link TreeArtifactProperties}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TreeArtifactProperties> {
-        private java.lang.String file;
+        java.lang.String file;
 
         /**
          * Sets the value of {@link TreeArtifactProperties#getFile}
@@ -42,7 +42,7 @@ public interface TreeArtifactProperties extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public TreeArtifactProperties build() {
-            return new Jsii$Proxy(file);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -65,9 +65,9 @@ public interface TreeArtifactProperties extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String file) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.file = java.util.Objects.requireNonNull(file, "file is required");
+            this.file = java.util.Objects.requireNonNull(builder.file, "file is required");
         }
 
         @Override

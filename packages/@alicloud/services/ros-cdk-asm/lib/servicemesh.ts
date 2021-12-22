@@ -133,8 +133,8 @@ export class ServiceMesh extends ros.Resource {
         super(scope, id);
 
         const rosServiceMesh = new RosServiceMesh(this, id,  {
-            enableAudit: props.enableAudit,
             opa: props.opa,
+            enableAudit: props.enableAudit,
             istioVersion: props.istioVersion,
             apiServerPublicEip: props.apiServerPublicEip,
             localityLoadBalancing: props.localityLoadBalancing,

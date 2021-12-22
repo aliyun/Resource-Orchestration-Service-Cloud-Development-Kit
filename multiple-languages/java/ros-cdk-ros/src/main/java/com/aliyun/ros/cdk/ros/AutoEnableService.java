@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -117,6 +117,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * RocketMQ: RocketMQ
          * SAE: Serverless App Engine
          * SLS: Log Service
+         * TrafficMirror: VPC Traffic Mirroring
          * VS: Video Surveillance
          * Xtrace: Tracing Anlaysis
          * <p>
@@ -162,6 +163,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * RocketMQ: RocketMQ
          * SAE: Serverless App Engine
          * SLS: Log Service
+         * TrafficMirror: VPC Traffic Mirroring
          * VS: Video Surveillance
          * Xtrace: Tracing Anlaysis
          * <p>

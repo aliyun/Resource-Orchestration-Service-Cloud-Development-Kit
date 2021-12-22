@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.044Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionProps.Jsii$Proxy.class)
 public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -136,22 +136,22 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link FunctionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<FunctionProps> {
-        private java.lang.Object functionName;
-        private java.lang.Object handler;
-        private java.lang.Object runtime;
-        private java.lang.Object serviceName;
-        private java.lang.Object asyncConfiguration;
-        private java.lang.Object caPort;
-        private java.lang.Object code;
-        private java.lang.Object customContainerConfig;
-        private java.lang.Object description;
-        private java.lang.Object environmentVariables;
-        private java.lang.Object initializationTimeout;
-        private java.lang.Object initializer;
-        private java.lang.Object instanceConcurrency;
-        private java.lang.Object instanceType;
-        private java.lang.Object memorySize;
-        private java.lang.Object timeout;
+        java.lang.Object functionName;
+        java.lang.Object handler;
+        java.lang.Object runtime;
+        java.lang.Object serviceName;
+        java.lang.Object asyncConfiguration;
+        java.lang.Object caPort;
+        java.lang.Object code;
+        java.lang.Object customContainerConfig;
+        java.lang.Object description;
+        java.lang.Object environmentVariables;
+        java.lang.Object initializationTimeout;
+        java.lang.Object initializer;
+        java.lang.Object instanceConcurrency;
+        java.lang.Object instanceType;
+        java.lang.Object memorySize;
+        java.lang.Object timeout;
 
         /**
          * Sets the value of {@link FunctionProps#getFunctionName}
@@ -494,7 +494,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public FunctionProps build() {
-            return new Jsii$Proxy(functionName, handler, runtime, serviceName, asyncConfiguration, caPort, code, customContainerConfig, description, environmentVariables, initializationTimeout, initializer, instanceConcurrency, instanceType, memorySize, timeout);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -547,24 +547,24 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object handler, final java.lang.Object runtime, final java.lang.Object serviceName, final java.lang.Object asyncConfiguration, final java.lang.Object caPort, final java.lang.Object code, final java.lang.Object customContainerConfig, final java.lang.Object description, final java.lang.Object environmentVariables, final java.lang.Object initializationTimeout, final java.lang.Object initializer, final java.lang.Object instanceConcurrency, final java.lang.Object instanceType, final java.lang.Object memorySize, final java.lang.Object timeout) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
-            this.handler = java.util.Objects.requireNonNull(handler, "handler is required");
-            this.runtime = java.util.Objects.requireNonNull(runtime, "runtime is required");
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.asyncConfiguration = asyncConfiguration;
-            this.caPort = caPort;
-            this.code = code;
-            this.customContainerConfig = customContainerConfig;
-            this.description = description;
-            this.environmentVariables = environmentVariables;
-            this.initializationTimeout = initializationTimeout;
-            this.initializer = initializer;
-            this.instanceConcurrency = instanceConcurrency;
-            this.instanceType = instanceType;
-            this.memorySize = memorySize;
-            this.timeout = timeout;
+            this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
+            this.handler = java.util.Objects.requireNonNull(builder.handler, "handler is required");
+            this.runtime = java.util.Objects.requireNonNull(builder.runtime, "runtime is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.asyncConfiguration = builder.asyncConfiguration;
+            this.caPort = builder.caPort;
+            this.code = builder.code;
+            this.customContainerConfig = builder.customContainerConfig;
+            this.description = builder.description;
+            this.environmentVariables = builder.environmentVariables;
+            this.initializationTimeout = builder.initializationTimeout;
+            this.initializer = builder.initializer;
+            this.instanceConcurrency = builder.instanceConcurrency;
+            this.instanceType = builder.instanceType;
+            this.memorySize = builder.memorySize;
+            this.timeout = builder.timeout;
         }
 
         @Override

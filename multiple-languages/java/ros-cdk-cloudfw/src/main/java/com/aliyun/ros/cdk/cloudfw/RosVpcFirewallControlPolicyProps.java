@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.565Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.118Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcFirewallControlPolicyProps.Jsii$Proxy.class)
 public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -88,21 +88,21 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
      * A builder for {@link RosVpcFirewallControlPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcFirewallControlPolicyProps> {
-        private java.lang.Object aclAction;
-        private java.lang.Object applicationName;
-        private java.lang.Object description;
-        private java.lang.Object destination;
-        private java.lang.Object destinationType;
-        private java.lang.Object newOrder;
-        private java.lang.Object proto;
-        private java.lang.Object source;
-        private java.lang.Object sourceType;
-        private java.lang.Object vpcFirewallId;
-        private java.lang.Object destPort;
-        private java.lang.Object destPortGroup;
-        private java.lang.Object destPortType;
-        private java.lang.Object lang;
-        private java.lang.Object regionId;
+        java.lang.Object aclAction;
+        java.lang.Object applicationName;
+        java.lang.Object description;
+        java.lang.Object destination;
+        java.lang.Object destinationType;
+        java.lang.Object newOrder;
+        java.lang.Object proto;
+        java.lang.Object source;
+        java.lang.Object sourceType;
+        java.lang.Object vpcFirewallId;
+        java.lang.Object destPort;
+        java.lang.Object destPortGroup;
+        java.lang.Object destPortType;
+        java.lang.Object lang;
+        java.lang.Object regionId;
 
         /**
          * Sets the value of {@link RosVpcFirewallControlPolicyProps#getAclAction}
@@ -411,7 +411,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
          */
         @Override
         public RosVpcFirewallControlPolicyProps build() {
-            return new Jsii$Proxy(aclAction, applicationName, description, destination, destinationType, newOrder, proto, source, sourceType, vpcFirewallId, destPort, destPortGroup, destPortType, lang, regionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -462,23 +462,23 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aclAction, final java.lang.Object applicationName, final java.lang.Object description, final java.lang.Object destination, final java.lang.Object destinationType, final java.lang.Object newOrder, final java.lang.Object proto, final java.lang.Object source, final java.lang.Object sourceType, final java.lang.Object vpcFirewallId, final java.lang.Object destPort, final java.lang.Object destPortGroup, final java.lang.Object destPortType, final java.lang.Object lang, final java.lang.Object regionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aclAction = java.util.Objects.requireNonNull(aclAction, "aclAction is required");
-            this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
-            this.description = java.util.Objects.requireNonNull(description, "description is required");
-            this.destination = java.util.Objects.requireNonNull(destination, "destination is required");
-            this.destinationType = java.util.Objects.requireNonNull(destinationType, "destinationType is required");
-            this.newOrder = java.util.Objects.requireNonNull(newOrder, "newOrder is required");
-            this.proto = java.util.Objects.requireNonNull(proto, "proto is required");
-            this.source = java.util.Objects.requireNonNull(source, "source is required");
-            this.sourceType = java.util.Objects.requireNonNull(sourceType, "sourceType is required");
-            this.vpcFirewallId = java.util.Objects.requireNonNull(vpcFirewallId, "vpcFirewallId is required");
-            this.destPort = destPort;
-            this.destPortGroup = destPortGroup;
-            this.destPortType = destPortType;
-            this.lang = lang;
-            this.regionId = regionId;
+            this.aclAction = java.util.Objects.requireNonNull(builder.aclAction, "aclAction is required");
+            this.applicationName = java.util.Objects.requireNonNull(builder.applicationName, "applicationName is required");
+            this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
+            this.destination = java.util.Objects.requireNonNull(builder.destination, "destination is required");
+            this.destinationType = java.util.Objects.requireNonNull(builder.destinationType, "destinationType is required");
+            this.newOrder = java.util.Objects.requireNonNull(builder.newOrder, "newOrder is required");
+            this.proto = java.util.Objects.requireNonNull(builder.proto, "proto is required");
+            this.source = java.util.Objects.requireNonNull(builder.source, "source is required");
+            this.sourceType = java.util.Objects.requireNonNull(builder.sourceType, "sourceType is required");
+            this.vpcFirewallId = java.util.Objects.requireNonNull(builder.vpcFirewallId, "vpcFirewallId is required");
+            this.destPort = builder.destPort;
+            this.destPortGroup = builder.destPortGroup;
+            this.destPortType = builder.destPortType;
+            this.lang = builder.lang;
+            this.regionId = builder.regionId;
         }
 
         @Override

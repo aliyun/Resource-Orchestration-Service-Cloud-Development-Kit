@@ -152,9 +152,9 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resultType', ros.validateString)(properties.resultType));
     errors.collect(ros.propertyValidator('failResultSample', ros.validateString)(properties.failResultSample));
     errors.collect(ros.propertyValidator('errorCodeSamples', ros.listValidator(RosApi_ErrorCodeSamplesPropertyValidator))(properties.errorCodeSamples));
-    errors.collect(ros.propertyValidator('serviceParametersMap', ros.listValidator(RosApi_ServiceParametersMapPropertyValidator))(properties.serviceParametersMap));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
+    errors.collect(ros.propertyValidator('serviceParametersMap', ros.listValidator(RosApi_ServiceParametersMapPropertyValidator))(properties.serviceParametersMap));
     errors.collect(ros.propertyValidator('requestParameters', ros.listValidator(RosApi_RequestParametersPropertyValidator))(properties.requestParameters));
     if(properties.appCodeAuthType && (typeof properties.appCodeAuthType) !== 'object') {
         errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateAllowedValues)({
@@ -590,13 +590,13 @@ export namespace RosApi {
          */
         readonly qualifier?: string | ros.IResolvable;
         /**
-         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
-         */
-        readonly onlyBusinessPath?: boolean | ros.IResolvable;
-        /**
          * @Property method: The HTTP method of the function. Default is GET.
          */
         readonly method?: string | ros.IResolvable;
+        /**
+         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+         */
+        readonly onlyBusinessPath?: boolean | ros.IResolvable;
         /**
          * @Property fcRegionId: The region id of function compute.
          */
@@ -637,7 +637,6 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('fcType', ros.validateString)(properties.fcType));
     errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
-    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
     if(properties.method && (typeof properties.method) !== 'object') {
         errors.collect(ros.propertyValidator('method', ros.validateAllowedValues)({
           data: properties.method,
@@ -645,6 +644,7 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
         }));
     }
     errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
+    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
     errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
     if(properties.contentTypeCatagory && (typeof properties.contentTypeCatagory) !== 'object') {
         errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateAllowedValues)({
@@ -676,8 +676,8 @@ function rosApiFunctionComputeConfigPropertyToRosTemplate(properties: any): any 
       ServiceName: ros.stringToRosTemplate(properties.serviceName),
       FcType: ros.stringToRosTemplate(properties.fcType),
       Qualifier: ros.stringToRosTemplate(properties.qualifier),
-      OnlyBusinessPath: ros.booleanToRosTemplate(properties.onlyBusinessPath),
       Method: ros.stringToRosTemplate(properties.method),
+      OnlyBusinessPath: ros.booleanToRosTemplate(properties.onlyBusinessPath),
       FcRegionId: ros.stringToRosTemplate(properties.fcRegionId),
       ContentTypeCatagory: ros.stringToRosTemplate(properties.contentTypeCatagory),
       RoleArn: ros.stringToRosTemplate(properties.roleArn),
@@ -2237,9 +2237,9 @@ export interface RosGroupProps {
 function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
-    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('vpcIntranetEnable', ros.validateBoolean)(properties.vpcIntranetEnable));
@@ -2462,7 +2462,9 @@ export interface RosInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -2470,6 +2472,11 @@ export interface RosInstanceProps {
      * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
      */
     readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether force delete the instance even if its status is START_FAILED. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
@@ -2494,6 +2501,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('instanceSpec', ros.requiredValidator)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('httpsPolicy', ros.requiredValidator)(properties.httpsPolicy));
@@ -2545,6 +2553,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Duration: ros.numberToRosTemplate(properties.duration),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
     };
@@ -2629,7 +2638,9 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -2637,6 +2648,11 @@ export class RosInstance extends ros.RosResource {
      * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
      */
     public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether force delete the instance even if its status is START_FAILED. Default value is false.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
@@ -2673,6 +2689,7 @@ export class RosInstance extends ros.RosResource {
         this.zoneId = props.zoneId;
         this.autoPay = props.autoPay;
         this.chargeType = props.chargeType;
+        this.deletionForce = props.deletionForce;
         this.duration = props.duration;
         this.pricingCycle = props.pricingCycle;
     }
@@ -2686,6 +2703,7 @@ export class RosInstance extends ros.RosResource {
             zoneId: this.zoneId,
             autoPay: this.autoPay,
             chargeType: this.chargeType,
+            deletionForce: this.deletionForce,
             duration: this.duration,
             pricingCycle: this.pricingCycle,
         };

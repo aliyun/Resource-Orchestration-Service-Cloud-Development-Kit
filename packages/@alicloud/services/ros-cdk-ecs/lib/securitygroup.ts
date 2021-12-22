@@ -41,7 +41,7 @@ export interface SecurityGroupProps {
     readonly securityGroupType?: string | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to security group. Max support 20 tags to add during create security group. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosSecurityGroup.TagsProperty[];
 

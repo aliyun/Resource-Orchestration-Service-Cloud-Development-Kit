@@ -9,6 +9,22 @@ export { RosPrepayInstance as PrepayInstanceProperty };
 export interface PrepayInstanceProps {
 
     /**
+     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
+     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
+     * true: Automatic payment is enabled. The payment is automatically made.
+     * Default is False
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * Property autoRenewDuration: The auto-renewal period. Valid values: 1 to 12. 
+     *  When the instance is about to expire, the instance is automatically renewed 
+     * based on the number of months specified by this parameter. 
+     * Note This parameter is valid only when ChargeType is set to PrePaid.
+     */
+    readonly autoRenewDuration?: number | ros.IResolvable;
+
+    /**
      * Property backupPolicy: Backup policy
      */
     readonly backupPolicy?: RosPrepayInstance.BackupPolicyProperty | ros.IResolvable;
@@ -17,6 +33,16 @@ export interface PrepayInstanceProps {
      * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     readonly capacity?: number | ros.IResolvable;
+
+    /**
+     * Property connections: Connection address
+     */
+    readonly connections?: RosPrepayInstance.ConnectionsProperty | ros.IResolvable;
+
+    /**
+     * Property deletionForce: Whether destroy instance when it is in recycle. Default is false
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
      * Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
@@ -34,11 +60,6 @@ export interface PrepayInstanceProps {
     readonly instanceClass?: string | ros.IResolvable;
 
     /**
-     * Property instanceConnection: Instance connection message.
-     */
-    readonly instanceConnection?: RosPrepayInstance.InstanceConnectionProperty | ros.IResolvable;
-
-    /**
      * Property instanceMaintainTime: Instance maintain time.
      */
     readonly instanceMaintainTime?: RosPrepayInstance.InstanceMaintainTimeProperty | ros.IResolvable;
@@ -54,7 +75,7 @@ export interface PrepayInstanceProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+     * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, 60 Unit in month.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -130,6 +151,16 @@ export class PrepayInstance extends ros.Resource {
     public readonly attrChargeType: ros.IResolvable;
 
     /**
+     * Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance
+     */
+    public readonly attrClassicInnerConnectionPort: ros.IResolvable;
+
+    /**
+     * Attribute ClassicInnerConnectionString: The classic inner connection string of the instance
+     */
+    public readonly attrClassicInnerConnectionString: ros.IResolvable;
+
+    /**
      * Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: ros.IResolvable;
@@ -138,6 +169,16 @@ export class PrepayInstance extends ros.Resource {
      * Attribute Connections: The maximum number of connections supported by the instance.
      */
     public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * Attribute DirectConnectionPort: The direct connection port of the instance
+     */
+    public readonly attrDirectConnectionPort: ros.IResolvable;
+
+    /**
+     * Attribute DirectConnectionString: The direct connection string of the instance
+     */
+    public readonly attrDirectConnectionString: ros.IResolvable;
 
     /**
      * Attribute EngineVersion: The engine version of the instance.
@@ -200,6 +241,16 @@ export class PrepayInstance extends ros.Resource {
     public readonly attrPrivateIp: ros.IResolvable;
 
     /**
+     * Attribute PublicConnectionPort: The public connection port of the instance
+     */
+    public readonly attrPublicConnectionPort: ros.IResolvable;
+
+    /**
+     * Attribute PublicConnectionString: The public connection string of the instance
+     */
+    public readonly attrPublicConnectionString: ros.IResolvable;
+
+    /**
      * Attribute QPS: The queries per second (QPS) supported by the instance.
      */
     public readonly attrQps: ros.IResolvable;
@@ -220,6 +271,16 @@ export class PrepayInstance extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
+     * Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance
+     */
+    public readonly attrVpcPrivateConnectionPort: ros.IResolvable;
+
+    /**
+     * Attribute VpcPrivateConnectionString: The vpc private connection string of the instance
+     */
+    public readonly attrVpcPrivateConnectionString: ros.IResolvable;
+
+    /**
      * Attribute ZoneId: The ID of the zone.
      */
     public readonly attrZoneId: ros.IResolvable;
@@ -235,6 +296,7 @@ export class PrepayInstance extends ros.Resource {
         super(scope, id);
 
         const rosPrepayInstance = new RosPrepayInstance(this, id,  {
+            connections: props.connections,
             engineVersion: props.engineVersion,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
@@ -243,11 +305,13 @@ export class PrepayInstance extends ros.Resource {
             instanceMaintainTime: props.instanceMaintainTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             instanceClass: props.instanceClass,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             vpcPasswordFree: props.vpcPasswordFree,
-            instanceConnection: props.instanceConnection,
+            autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
-            vpcId: props.vpcId,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             sslEnabled: props.sslEnabled,
+            vpcId: props.vpcId,
             capacity: props.capacity,
             tags: props.tags,
             backupPolicy: props.backupPolicy,
@@ -258,8 +322,12 @@ export class PrepayInstance extends ros.Resource {
         this.attrBandwidth = rosPrepayInstance.attrBandwidth;
         this.attrCapacity = rosPrepayInstance.attrCapacity;
         this.attrChargeType = rosPrepayInstance.attrChargeType;
+        this.attrClassicInnerConnectionPort = rosPrepayInstance.attrClassicInnerConnectionPort;
+        this.attrClassicInnerConnectionString = rosPrepayInstance.attrClassicInnerConnectionString;
         this.attrConnectionDomain = rosPrepayInstance.attrConnectionDomain;
         this.attrConnections = rosPrepayInstance.attrConnections;
+        this.attrDirectConnectionPort = rosPrepayInstance.attrDirectConnectionPort;
+        this.attrDirectConnectionString = rosPrepayInstance.attrDirectConnectionString;
         this.attrEngineVersion = rosPrepayInstance.attrEngineVersion;
         this.attrHasRenewChangeOrder = rosPrepayInstance.attrHasRenewChangeOrder;
         this.attrInstanceClass = rosPrepayInstance.attrInstanceClass;
@@ -272,10 +340,14 @@ export class PrepayInstance extends ros.Resource {
         this.attrPackageType = rosPrepayInstance.attrPackageType;
         this.attrPort = rosPrepayInstance.attrPort;
         this.attrPrivateIp = rosPrepayInstance.attrPrivateIp;
+        this.attrPublicConnectionPort = rosPrepayInstance.attrPublicConnectionPort;
+        this.attrPublicConnectionString = rosPrepayInstance.attrPublicConnectionString;
         this.attrQps = rosPrepayInstance.attrQps;
         this.attrResourceGroupId = rosPrepayInstance.attrResourceGroupId;
         this.attrVSwitchId = rosPrepayInstance.attrVSwitchId;
         this.attrVpcId = rosPrepayInstance.attrVpcId;
+        this.attrVpcPrivateConnectionPort = rosPrepayInstance.attrVpcPrivateConnectionPort;
+        this.attrVpcPrivateConnectionString = rosPrepayInstance.attrVpcPrivateConnectionString;
         this.attrZoneId = rosPrepayInstance.attrZoneId;
     }
 }

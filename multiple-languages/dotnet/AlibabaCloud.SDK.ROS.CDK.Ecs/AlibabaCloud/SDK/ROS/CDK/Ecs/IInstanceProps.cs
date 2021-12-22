@@ -360,6 +360,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property securityGroupIds: The ID list of security group to which to assign the instance.</summary>
+        /// <remarks>
+        /// The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+        /// </remarks>
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityGroupIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.</summary>
         /// <remarks>
         /// Three decimals is allowed at most.
@@ -793,6 +807,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityGroupIds: The ID list of security group to which to assign the instance.</summary>
+            /// <remarks>
+            /// The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecurityGroupIds
             {
                 get => GetInstanceProperty<object?>();
             }

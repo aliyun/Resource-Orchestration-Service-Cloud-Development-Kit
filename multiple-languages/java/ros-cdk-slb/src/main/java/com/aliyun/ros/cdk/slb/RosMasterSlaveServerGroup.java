@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::MasterSlaveServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.809Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup")
 public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -155,10 +155,10 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MasterSlaveBackendServersProperty> {
-            private java.lang.Object port;
-            private java.lang.Object serverId;
-            private java.lang.Object weight;
-            private java.lang.Object serverType;
+            java.lang.Object port;
+            java.lang.Object serverId;
+            java.lang.Object weight;
+            java.lang.Object serverType;
 
             /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getPort}
@@ -256,7 +256,7 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MasterSlaveBackendServersProperty build() {
-                return new Jsii$Proxy(port, serverId, weight, serverType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -286,12 +286,12 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object serverId, final java.lang.Object weight, final java.lang.Object serverType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.port = java.util.Objects.requireNonNull(port, "port is required");
-                this.serverId = java.util.Objects.requireNonNull(serverId, "serverId is required");
-                this.weight = java.util.Objects.requireNonNull(weight, "weight is required");
-                this.serverType = serverType;
+                this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+                this.serverId = java.util.Objects.requireNonNull(builder.serverId, "serverId is required");
+                this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
+                this.serverType = builder.serverType;
             }
 
             @Override

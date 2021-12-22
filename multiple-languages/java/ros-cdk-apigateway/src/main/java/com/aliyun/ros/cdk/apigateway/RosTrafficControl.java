@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::TrafficControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.325Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.666Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControl")
 public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -220,9 +220,9 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SpecialProperty> {
-            private java.lang.Object specialKey;
-            private java.lang.Object specialType;
-            private java.lang.Object trafficValue;
+            java.lang.Object specialKey;
+            java.lang.Object specialType;
+            java.lang.Object trafficValue;
 
             /**
              * Sets the value of {@link SpecialProperty#getSpecialKey}
@@ -298,7 +298,7 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SpecialProperty build() {
-                return new Jsii$Proxy(specialKey, specialType, trafficValue);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -326,11 +326,11 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object specialKey, final java.lang.Object specialType, final java.lang.Object trafficValue) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.specialKey = java.util.Objects.requireNonNull(specialKey, "specialKey is required");
-                this.specialType = java.util.Objects.requireNonNull(specialType, "specialType is required");
-                this.trafficValue = java.util.Objects.requireNonNull(trafficValue, "trafficValue is required");
+                this.specialKey = java.util.Objects.requireNonNull(builder.specialKey, "specialKey is required");
+                this.specialType = java.util.Objects.requireNonNull(builder.specialType, "specialType is required");
+                this.trafficValue = java.util.Objects.requireNonNull(builder.trafficValue, "trafficValue is required");
             }
 
             @Override

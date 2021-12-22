@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.cxapi;
  * @see core.ConstructNode.synth
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.624Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.478Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.RuntimeInfo")
 @software.amazon.jsii.Jsii.Proxy(RuntimeInfo.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -29,7 +29,7 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable, com.
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
     @Deprecated
     public static final class Builder implements software.amazon.jsii.Builder<RuntimeInfo> {
-        private java.util.Map<java.lang.String, java.lang.String> libraries;
+        java.util.Map<java.lang.String, java.lang.String> libraries;
 
         /**
          * Sets the value of {@link RuntimeInfo#getLibraries}
@@ -50,7 +50,7 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable, com.
         @Deprecated
         @Override
         public RuntimeInfo build() {
-            return new Jsii$Proxy(libraries);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -75,9 +75,9 @@ public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable, com.
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.Map<java.lang.String, java.lang.String> libraries) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.libraries = java.util.Objects.requireNonNull(libraries, "libraries is required");
+            this.libraries = java.util.Objects.requireNonNull(builder.libraries, "libraries is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a `ALIYUN::MNS::Subscription`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.641Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.318Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscriptionProps")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionProps.Jsii$Proxy.class)
 public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosSubscriptionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSubscriptionProps> {
-        private java.lang.Object endpoint;
-        private java.lang.Object subscriptionName;
-        private java.lang.Object topicName;
-        private java.lang.Object filterTag;
-        private java.lang.Object notifyContentFormat;
-        private java.lang.Object notifyStrategy;
+        java.lang.Object endpoint;
+        java.lang.Object subscriptionName;
+        java.lang.Object topicName;
+        java.lang.Object filterTag;
+        java.lang.Object notifyContentFormat;
+        java.lang.Object notifyStrategy;
 
         /**
          * Sets the value of {@link RosSubscriptionProps#getEndpoint}
@@ -182,7 +182,7 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public RosSubscriptionProps build() {
-            return new Jsii$Proxy(endpoint, subscriptionName, topicName, filterTag, notifyContentFormat, notifyStrategy);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosSubscriptionProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object endpoint, final java.lang.Object subscriptionName, final java.lang.Object topicName, final java.lang.Object filterTag, final java.lang.Object notifyContentFormat, final java.lang.Object notifyStrategy) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.endpoint = java.util.Objects.requireNonNull(endpoint, "endpoint is required");
-            this.subscriptionName = java.util.Objects.requireNonNull(subscriptionName, "subscriptionName is required");
-            this.topicName = java.util.Objects.requireNonNull(topicName, "topicName is required");
-            this.filterTag = filterTag;
-            this.notifyContentFormat = notifyContentFormat;
-            this.notifyStrategy = notifyStrategy;
+            this.endpoint = java.util.Objects.requireNonNull(builder.endpoint, "endpoint is required");
+            this.subscriptionName = java.util.Objects.requireNonNull(builder.subscriptionName, "subscriptionName is required");
+            this.topicName = java.util.Objects.requireNonNull(builder.topicName, "topicName is required");
+            this.filterTag = builder.filterTag;
+            this.notifyContentFormat = builder.notifyContentFormat;
+            this.notifyStrategy = builder.notifyStrategy;
         }
 
         @Override

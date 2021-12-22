@@ -59,6 +59,6 @@ export interface NestedCloudAssemblyProperties {
  * Properties for manifest artifacts
  */
 export type ArtifactProperties =
-    | AliyunRosStackProperties
-    | TreeArtifactProperties
-    | NestedCloudAssemblyProperties;
+  | AliyunRosStackProperties
+  | TreeArtifactProperties
+  | NestedCloudAssemblyProperties;

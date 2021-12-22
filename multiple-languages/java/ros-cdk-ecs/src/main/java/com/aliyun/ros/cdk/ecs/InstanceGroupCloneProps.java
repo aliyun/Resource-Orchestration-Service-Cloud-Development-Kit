@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.968Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -299,9 +299,16 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property systemDiskBurstingEnabled: Whether enable bursting.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskBurstingEnabled() {
+        return null;
+    }
+
+    /**
      * Property systemDiskCategory: Category of system disk.
      * <p>
-     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
@@ -318,6 +325,13 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
      * Property systemDiskDiskName: Name of created system disk.Old instances will not be changed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDiskName() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskProvisionedIops: Provisioning IOPS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
         return null;
     }
 
@@ -351,45 +365,47 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link InstanceGroupCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceGroupCloneProps> {
-        private java.lang.Object maxAmount;
-        private java.lang.Object sourceInstanceId;
-        private java.lang.Object autoReleaseTime;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object backendServerWeight;
-        private java.lang.Object deletionProtection;
-        private java.lang.Object deploymentSetId;
-        private java.lang.Object description;
-        private java.lang.Object diskMappings;
-        private java.lang.Object eniMappings;
-        private java.lang.Object hpcClusterId;
-        private java.lang.Object imageId;
-        private java.lang.Object instanceName;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object ipv6AddressCount;
-        private java.lang.Object ipv6Addresses;
-        private java.lang.Object keyPairName;
-        private java.lang.Object launchTemplateId;
-        private java.lang.Object launchTemplateName;
-        private java.lang.Object launchTemplateVersion;
-        private java.lang.Object loadBalancerIdToAttach;
-        private java.lang.Object password;
-        private java.lang.Object passwordInherit;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityGroupIds;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object systemDiskAutoSnapshotPolicyId;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskDescription;
-        private java.lang.Object systemDiskDiskName;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
-        private java.lang.Object zoneId;
+        java.lang.Object maxAmount;
+        java.lang.Object sourceInstanceId;
+        java.lang.Object autoReleaseTime;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object backendServerWeight;
+        java.lang.Object deletionProtection;
+        java.lang.Object deploymentSetId;
+        java.lang.Object description;
+        java.lang.Object diskMappings;
+        java.lang.Object eniMappings;
+        java.lang.Object hpcClusterId;
+        java.lang.Object imageId;
+        java.lang.Object instanceName;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object ipv6Addresses;
+        java.lang.Object keyPairName;
+        java.lang.Object launchTemplateId;
+        java.lang.Object launchTemplateName;
+        java.lang.Object launchTemplateVersion;
+        java.lang.Object loadBalancerIdToAttach;
+        java.lang.Object password;
+        java.lang.Object passwordInherit;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupIds;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.lang.Object systemDiskAutoSnapshotPolicyId;
+        java.lang.Object systemDiskBurstingEnabled;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskDescription;
+        java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskProvisionedIops;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getMaxAmount}
@@ -1132,9 +1148,29 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskBurstingEnabled}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting.
+         * @return {@code this}
+         */
+        public Builder systemDiskBurstingEnabled(java.lang.Boolean systemDiskBurstingEnabled) {
+            this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskBurstingEnabled}
+         * @param systemDiskBurstingEnabled Property systemDiskBurstingEnabled: Whether enable bursting.
+         * @return {@code this}
+         */
+        public Builder systemDiskBurstingEnabled(com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+            this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -1145,7 +1181,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd.Old instances will not be changed.
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
          * @return {@code this}
          */
         public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
@@ -1194,6 +1230,26 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskProvisionedIops}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS.
+         * @return {@code this}
+         */
+        public Builder systemDiskProvisionedIops(java.lang.Number systemDiskProvisionedIops) {
+            this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getSystemDiskProvisionedIops}
+         * @param systemDiskProvisionedIops Property systemDiskProvisionedIops: Provisioning IOPS.
+         * @return {@code this}
+         */
+        public Builder systemDiskProvisionedIops(com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+            this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -1238,7 +1294,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public InstanceGroupCloneProps build() {
-            return new Jsii$Proxy(maxAmount, sourceInstanceId, autoReleaseTime, autoRenew, autoRenewPeriod, backendServerWeight, deletionProtection, deploymentSetId, description, diskMappings, eniMappings, hpcClusterId, imageId, instanceName, internetMaxBandwidthIn, internetMaxBandwidthOut, ipv6AddressCount, ipv6Addresses, keyPairName, launchTemplateId, launchTemplateName, launchTemplateVersion, loadBalancerIdToAttach, password, passwordInherit, period, periodUnit, ramRoleName, resourceGroupId, securityGroupId, securityGroupIds, spotPriceLimit, spotStrategy, systemDiskAutoSnapshotPolicyId, systemDiskCategory, systemDiskDescription, systemDiskDiskName, tags, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1281,9 +1337,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskAutoSnapshotPolicyId;
+        private final java.lang.Object systemDiskBurstingEnabled;
         private final java.lang.Object systemDiskCategory;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskProvisionedIops;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
         private final java.lang.Object zoneId;
 
@@ -1327,9 +1385,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskAutoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskBurstingEnabled = software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class)));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1338,47 +1398,49 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object maxAmount, final java.lang.Object sourceInstanceId, final java.lang.Object autoReleaseTime, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object backendServerWeight, final java.lang.Object deletionProtection, final java.lang.Object deploymentSetId, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object eniMappings, final java.lang.Object hpcClusterId, final java.lang.Object imageId, final java.lang.Object instanceName, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ipv6AddressCount, final java.lang.Object ipv6Addresses, final java.lang.Object keyPairName, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateName, final java.lang.Object launchTemplateVersion, final java.lang.Object loadBalancerIdToAttach, final java.lang.Object password, final java.lang.Object passwordInherit, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupId, final java.lang.Object securityGroupIds, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskAutoSnapshotPolicyId, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.maxAmount = java.util.Objects.requireNonNull(maxAmount, "maxAmount is required");
-            this.sourceInstanceId = java.util.Objects.requireNonNull(sourceInstanceId, "sourceInstanceId is required");
-            this.autoReleaseTime = autoReleaseTime;
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.backendServerWeight = backendServerWeight;
-            this.deletionProtection = deletionProtection;
-            this.deploymentSetId = deploymentSetId;
-            this.description = description;
-            this.diskMappings = diskMappings;
-            this.eniMappings = eniMappings;
-            this.hpcClusterId = hpcClusterId;
-            this.imageId = imageId;
-            this.instanceName = instanceName;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.ipv6AddressCount = ipv6AddressCount;
-            this.ipv6Addresses = ipv6Addresses;
-            this.keyPairName = keyPairName;
-            this.launchTemplateId = launchTemplateId;
-            this.launchTemplateName = launchTemplateName;
-            this.launchTemplateVersion = launchTemplateVersion;
-            this.loadBalancerIdToAttach = loadBalancerIdToAttach;
-            this.password = password;
-            this.passwordInherit = passwordInherit;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.ramRoleName = ramRoleName;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupId = securityGroupId;
-            this.securityGroupIds = securityGroupIds;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.systemDiskAutoSnapshotPolicyId = systemDiskAutoSnapshotPolicyId;
-            this.systemDiskCategory = systemDiskCategory;
-            this.systemDiskDescription = systemDiskDescription;
-            this.systemDiskDiskName = systemDiskDiskName;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)tags;
-            this.zoneId = zoneId;
+            this.maxAmount = java.util.Objects.requireNonNull(builder.maxAmount, "maxAmount is required");
+            this.sourceInstanceId = java.util.Objects.requireNonNull(builder.sourceInstanceId, "sourceInstanceId is required");
+            this.autoReleaseTime = builder.autoReleaseTime;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.backendServerWeight = builder.backendServerWeight;
+            this.deletionProtection = builder.deletionProtection;
+            this.deploymentSetId = builder.deploymentSetId;
+            this.description = builder.description;
+            this.diskMappings = builder.diskMappings;
+            this.eniMappings = builder.eniMappings;
+            this.hpcClusterId = builder.hpcClusterId;
+            this.imageId = builder.imageId;
+            this.instanceName = builder.instanceName;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.ipv6Addresses = builder.ipv6Addresses;
+            this.keyPairName = builder.keyPairName;
+            this.launchTemplateId = builder.launchTemplateId;
+            this.launchTemplateName = builder.launchTemplateName;
+            this.launchTemplateVersion = builder.launchTemplateVersion;
+            this.loadBalancerIdToAttach = builder.loadBalancerIdToAttach;
+            this.password = builder.password;
+            this.passwordInherit = builder.passwordInherit;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.systemDiskAutoSnapshotPolicyId = builder.systemDiskAutoSnapshotPolicyId;
+            this.systemDiskBurstingEnabled = builder.systemDiskBurstingEnabled;
+            this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskDescription = builder.systemDiskDescription;
+            this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)builder.tags;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -1552,6 +1614,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getSystemDiskBurstingEnabled() {
+            return this.systemDiskBurstingEnabled;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
@@ -1564,6 +1631,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getSystemDiskDiskName() {
             return this.systemDiskDiskName;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskProvisionedIops() {
+            return this.systemDiskProvisionedIops;
         }
 
         @Override
@@ -1680,6 +1752,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getSystemDiskAutoSnapshotPolicyId() != null) {
                 data.set("systemDiskAutoSnapshotPolicyId", om.valueToTree(this.getSystemDiskAutoSnapshotPolicyId()));
             }
+            if (this.getSystemDiskBurstingEnabled() != null) {
+                data.set("systemDiskBurstingEnabled", om.valueToTree(this.getSystemDiskBurstingEnabled()));
+            }
             if (this.getSystemDiskCategory() != null) {
                 data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
             }
@@ -1688,6 +1763,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getSystemDiskDiskName() != null) {
                 data.set("systemDiskDiskName", om.valueToTree(this.getSystemDiskDiskName()));
+            }
+            if (this.getSystemDiskProvisionedIops() != null) {
+                data.set("systemDiskProvisionedIops", om.valueToTree(this.getSystemDiskProvisionedIops()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -1747,9 +1825,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskAutoSnapshotPolicyId != null ? !this.systemDiskAutoSnapshotPolicyId.equals(that.systemDiskAutoSnapshotPolicyId) : that.systemDiskAutoSnapshotPolicyId != null) return false;
+            if (this.systemDiskBurstingEnabled != null ? !this.systemDiskBurstingEnabled.equals(that.systemDiskBurstingEnabled) : that.systemDiskBurstingEnabled != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
+            if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
@@ -1790,9 +1870,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskAutoSnapshotPolicyId != null ? this.systemDiskAutoSnapshotPolicyId.hashCode() : 0);
+            result = 31 * result + (this.systemDiskBurstingEnabled != null ? this.systemDiskBurstingEnabled.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
+            result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;

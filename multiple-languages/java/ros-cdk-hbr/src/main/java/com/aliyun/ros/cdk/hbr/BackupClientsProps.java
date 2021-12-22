@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::BackupClients`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.535Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.BackupClientsProps")
 @software.amazon.jsii.Jsii.Proxy(BackupClientsProps.Jsii$Proxy.class)
 public interface BackupClientsProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,7 @@ public interface BackupClientsProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link BackupClientsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BackupClientsProps> {
-        private java.lang.Object instanceIds;
+        java.lang.Object instanceIds;
 
         /**
          * Sets the value of {@link BackupClientsProps#getInstanceIds}
@@ -52,7 +52,7 @@ public interface BackupClientsProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public BackupClientsProps build() {
-            return new Jsii$Proxy(instanceIds);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -75,9 +75,9 @@ public interface BackupClientsProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceIds) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
+            this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
         }
 
         @Override

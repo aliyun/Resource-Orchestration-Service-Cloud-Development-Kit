@@ -38,6 +38,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
+        /// <summary>Property payer: The payer of the endpoint service.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Endpoint: the service consumer.
+        /// EndpointService: the service provider.
+        /// </remarks>
+        [JsiiProperty(name: "payer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Payer
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property resource:.</summary>
         [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -64,6 +80,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? User
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.</summary>
+        /// <remarks>
+        /// true: yes.
+        /// false (default): no
+        /// </remarks>
+        [JsiiProperty(name: "zoneAffinityEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneAffinityEnabled
         {
             get
             {
@@ -103,6 +134,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property payer: The payer of the endpoint service.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Endpoint: the service consumer.
+            /// EndpointService: the service provider.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "payer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Payer
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property resource:.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "resource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpointService.ResourceProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -123,6 +167,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             [JsiiOptional]
             [JsiiProperty(name: "user", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? User
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneAffinityEnabled: Specifies whether to resolve domain names to IP addresses in the nearest zone.</summary>
+            /// <remarks>
+            /// true: yes.
+            /// false (default): no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneAffinityEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneAffinityEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

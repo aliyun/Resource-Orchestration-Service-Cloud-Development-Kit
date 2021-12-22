@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.925Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(AutoSnapshotPolicyProps.Jsii$Proxy.class)
 public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,12 +76,12 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link AutoSnapshotPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AutoSnapshotPolicyProps> {
-        private java.lang.Object repeatWeekdays;
-        private java.lang.Object retentionDays;
-        private java.lang.Object timePoints;
-        private java.lang.Object autoSnapshotPolicyName;
-        private java.lang.Object diskIds;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
+        java.lang.Object repeatWeekdays;
+        java.lang.Object retentionDays;
+        java.lang.Object timePoints;
+        java.lang.Object autoSnapshotPolicyName;
+        java.lang.Object diskIds;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags;
 
         /**
          * Sets the value of {@link AutoSnapshotPolicyProps#getRepeatWeekdays}
@@ -232,7 +232,7 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public AutoSnapshotPolicyProps build() {
-            return new Jsii$Proxy(repeatWeekdays, retentionDays, timePoints, autoSnapshotPolicyName, diskIds, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -266,14 +266,14 @@ public interface AutoSnapshotPolicyProps extends software.amazon.jsii.JsiiSerial
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object repeatWeekdays, final java.lang.Object retentionDays, final java.lang.Object timePoints, final java.lang.Object autoSnapshotPolicyName, final java.lang.Object diskIds, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.repeatWeekdays = java.util.Objects.requireNonNull(repeatWeekdays, "repeatWeekdays is required");
-            this.retentionDays = java.util.Objects.requireNonNull(retentionDays, "retentionDays is required");
-            this.timePoints = java.util.Objects.requireNonNull(timePoints, "timePoints is required");
-            this.autoSnapshotPolicyName = autoSnapshotPolicyName;
-            this.diskIds = diskIds;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)tags;
+            this.repeatWeekdays = java.util.Objects.requireNonNull(builder.repeatWeekdays, "repeatWeekdays is required");
+            this.retentionDays = java.util.Objects.requireNonNull(builder.retentionDays, "retentionDays is required");
+            this.timePoints = java.util.Objects.requireNonNull(builder.timePoints, "timePoints is required");
+            this.autoSnapshotPolicyName = builder.autoSnapshotPolicyName;
+            this.diskIds = builder.diskIds;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty>)builder.tags;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::AccessGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.692Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.362Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AccessGroupProps.Jsii$Proxy.class)
 public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,9 +37,9 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link AccessGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccessGroupProps> {
-        private java.lang.Object accessGroupName;
-        private java.lang.Object accessGroupType;
-        private java.lang.Object description;
+        java.lang.Object accessGroupName;
+        java.lang.Object accessGroupType;
+        java.lang.Object description;
 
         /**
          * Sets the value of {@link AccessGroupProps#getAccessGroupName}
@@ -110,7 +110,7 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public AccessGroupProps build() {
-            return new Jsii$Proxy(accessGroupName, accessGroupType, description);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -137,11 +137,11 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object accessGroupType, final java.lang.Object description) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
-            this.accessGroupType = java.util.Objects.requireNonNull(accessGroupType, "accessGroupType is required");
-            this.description = description;
+            this.accessGroupName = java.util.Objects.requireNonNull(builder.accessGroupName, "accessGroupName is required");
+            this.accessGroupType = java.util.Objects.requireNonNull(builder.accessGroupType, "accessGroupType is required");
+            this.description = builder.description;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.214Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.784Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitch")
 public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
 
@@ -228,6 +228,27 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+         * <p>
+         * @return {@code this}
+         * @param vpcIpv6CidrBlock Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC. This parameter is required.
+         */
+        public Builder vpcIpv6CidrBlock(final java.lang.String vpcIpv6CidrBlock) {
+            this.props.vpcIpv6CidrBlock(vpcIpv6CidrBlock);
+            return this;
+        }
+        /**
+         * Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC.
+         * <p>
+         * @return {@code this}
+         * @param vpcIpv6CidrBlock Property vpcIpv6CidrBlock: The IPv6 CIDR block of the VPC. This parameter is required.
+         */
+        public Builder vpcIpv6CidrBlock(final com.aliyun.ros.cdk.core.IResolvable vpcIpv6CidrBlock) {
+            this.props.vpcIpv6CidrBlock(vpcIpv6CidrBlock);
             return this;
         }
 

@@ -240,6 +240,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property startListener: Whether start listener after listener created.</summary>
+        /// <remarks>
+        /// Default True.
+        /// </remarks>
+        [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StartListener
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vServerGroupId: The id of the VServerGroup which use in listener.</summary>
         [JsiiProperty(name: "vServerGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -445,6 +459,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServerCertificateId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property startListener: Whether start listener after listener created.</summary>
+            /// <remarks>
+            /// Default True.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StartListener
             {
                 get => GetInstanceProperty<object?>();
             }

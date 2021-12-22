@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-gpdb.DBInstance=com.aliyun.ros.cdk.gpdb.DBInstance
+@alicloud/ros-cdk-gpdb.DBInstanceProps=com.aliyun.ros.cdk.gpdb.DBInstanceProps
+@alicloud/ros-cdk-gpdb.ElasticDBInstance=com.aliyun.ros.cdk.gpdb.ElasticDBInstance
+@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps=com.aliyun.ros.cdk.gpdb.ElasticDBInstanceProps
+@alicloud/ros-cdk-gpdb.InstancePublicConnection=com.aliyun.ros.cdk.gpdb.InstancePublicConnection
+@alicloud/ros-cdk-gpdb.InstancePublicConnectionProps=com.aliyun.ros.cdk.gpdb.InstancePublicConnectionProps
+@alicloud/ros-cdk-gpdb.RosDBInstance=com.aliyun.ros.cdk.gpdb.RosDBInstance
+@alicloud/ros-cdk-gpdb.RosDBInstanceProps=com.aliyun.ros.cdk.gpdb.RosDBInstanceProps
+@alicloud/ros-cdk-gpdb.RosElasticDBInstance=com.aliyun.ros.cdk.gpdb.RosElasticDBInstance
+@alicloud/ros-cdk-gpdb.RosElasticDBInstanceProps=com.aliyun.ros.cdk.gpdb.RosElasticDBInstanceProps
+@alicloud/ros-cdk-gpdb.RosInstancePublicConnection=com.aliyun.ros.cdk.gpdb.RosInstancePublicConnection
+@alicloud/ros-cdk-gpdb.RosInstancePublicConnectionProps=com.aliyun.ros.cdk.gpdb.RosInstancePublicConnectionProps

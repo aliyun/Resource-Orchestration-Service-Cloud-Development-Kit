@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Trigger`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.056Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosTriggerProps")
 @software.amazon.jsii.Jsii.Proxy(RosTriggerProps.Jsii$Proxy.class)
 public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,14 +56,14 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTriggerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTriggerProps> {
-        private java.lang.Object functionName;
-        private java.lang.Object serviceName;
-        private java.lang.Object triggerConfig;
-        private java.lang.Object triggerName;
-        private java.lang.Object triggerType;
-        private java.lang.Object invocationRole;
-        private java.lang.Object qualifier;
-        private java.lang.Object sourceArn;
+        java.lang.Object functionName;
+        java.lang.Object serviceName;
+        java.lang.Object triggerConfig;
+        java.lang.Object triggerName;
+        java.lang.Object triggerType;
+        java.lang.Object invocationRole;
+        java.lang.Object qualifier;
+        java.lang.Object sourceArn;
 
         /**
          * Sets the value of {@link RosTriggerProps#getFunctionName}
@@ -232,7 +232,7 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosTriggerProps build() {
-            return new Jsii$Proxy(functionName, serviceName, triggerConfig, triggerName, triggerType, invocationRole, qualifier, sourceArn);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -269,16 +269,16 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object serviceName, final java.lang.Object triggerConfig, final java.lang.Object triggerName, final java.lang.Object triggerType, final java.lang.Object invocationRole, final java.lang.Object qualifier, final java.lang.Object sourceArn) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.triggerConfig = java.util.Objects.requireNonNull(triggerConfig, "triggerConfig is required");
-            this.triggerName = java.util.Objects.requireNonNull(triggerName, "triggerName is required");
-            this.triggerType = java.util.Objects.requireNonNull(triggerType, "triggerType is required");
-            this.invocationRole = invocationRole;
-            this.qualifier = qualifier;
-            this.sourceArn = sourceArn;
+            this.functionName = java.util.Objects.requireNonNull(builder.functionName, "functionName is required");
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.triggerConfig = java.util.Objects.requireNonNull(builder.triggerConfig, "triggerConfig is required");
+            this.triggerName = java.util.Objects.requireNonNull(builder.triggerName, "triggerName is required");
+            this.triggerType = java.util.Objects.requireNonNull(builder.triggerType, "triggerType is required");
+            this.invocationRole = builder.invocationRole;
+            this.qualifier = builder.qualifier;
+            this.sourceArn = builder.sourceArn;
         }
 
         @Override

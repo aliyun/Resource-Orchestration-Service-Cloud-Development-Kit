@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.721Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRoute")
 public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -77,24 +77,6 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getRouteId() {
-        return software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setRouteId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "routeId", java.util.Objects.requireNonNull(value, "routeId is required"));
-    }
-
-    /**
-     */
-    public void setRouteId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "routeId", java.util.Objects.requireNonNull(value, "routeId is required"));
     }
 
     /**
@@ -199,8 +181,8 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NextHopListProperty> {
-            private java.lang.Object nextHopId;
-            private java.lang.Object nextHopType;
+            java.lang.Object nextHopId;
+            java.lang.Object nextHopType;
 
             /**
              * Sets the value of {@link NextHopListProperty#getNextHopId}
@@ -254,7 +236,7 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NextHopListProperty build() {
-                return new Jsii$Proxy(nextHopId, nextHopType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -280,10 +262,10 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object nextHopId, final java.lang.Object nextHopType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.nextHopId = java.util.Objects.requireNonNull(nextHopId, "nextHopId is required");
-                this.nextHopType = nextHopType;
+                this.nextHopId = java.util.Objects.requireNonNull(builder.nextHopId, "nextHopId is required");
+                this.nextHopType = builder.nextHopType;
             }
 
             @Override
@@ -377,23 +359,6 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder destinationCidrBlock(final com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
             this.props.destinationCidrBlock(destinationCidrBlock);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param routeId This parameter is required.
-         */
-        public Builder routeId(final java.lang.String routeId) {
-            this.props.routeId(routeId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param routeId This parameter is required.
-         */
-        public Builder routeId(final com.aliyun.ros.cdk.core.IResolvable routeId) {
-            this.props.routeId(routeId);
             return this;
         }
 

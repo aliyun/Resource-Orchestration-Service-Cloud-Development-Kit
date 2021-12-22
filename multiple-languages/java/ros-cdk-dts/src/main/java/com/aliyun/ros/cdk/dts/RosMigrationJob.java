@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS template type:  `ALIYUN::DTS::MigrationJob`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.420Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosMigrationJob")
 public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -194,7 +194,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnExcludesProperty> {
-            private java.lang.Object columnName;
+            java.lang.Object columnName;
 
             /**
              * Sets the value of {@link ColumnExcludesProperty#getColumnName}
@@ -226,7 +226,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnExcludesProperty build() {
-                return new Jsii$Proxy(columnName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -250,9 +250,9 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnName = columnName;
+                this.columnName = builder.columnName;
             }
 
             @Override
@@ -330,8 +330,8 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnIncludesProperty> {
-            private java.lang.Object columnName;
-            private java.lang.Object newColumnName;
+            java.lang.Object columnName;
+            java.lang.Object newColumnName;
 
             /**
              * Sets the value of {@link ColumnIncludesProperty#getColumnName}
@@ -385,7 +385,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnIncludesProperty build() {
-                return new Jsii$Proxy(columnName, newColumnName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -411,10 +411,10 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnName, final java.lang.Object newColumnName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnName = columnName;
-                this.newColumnName = newColumnName;
+                this.columnName = builder.columnName;
+                this.newColumnName = builder.newColumnName;
             }
 
             @Override
@@ -550,16 +550,16 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DestinationEndpointProperty> {
-            private java.lang.Object instanceType;
-            private java.lang.Object password;
-            private java.lang.Object region;
-            private java.lang.Object userName;
-            private java.lang.Object databaseName;
-            private java.lang.Object engineName;
-            private java.lang.Object instanceId;
-            private java.lang.Object ip;
-            private java.lang.Object port;
-            private java.lang.Object role;
+            java.lang.Object instanceType;
+            java.lang.Object password;
+            java.lang.Object region;
+            java.lang.Object userName;
+            java.lang.Object databaseName;
+            java.lang.Object engineName;
+            java.lang.Object instanceId;
+            java.lang.Object ip;
+            java.lang.Object port;
+            java.lang.Object role;
 
             /**
              * Sets the value of {@link DestinationEndpointProperty#getInstanceType}
@@ -789,7 +789,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public DestinationEndpointProperty build() {
-                return new Jsii$Proxy(instanceType, password, region, userName, databaseName, engineName, instanceId, ip, port, role);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -831,18 +831,18 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object password, final java.lang.Object region, final java.lang.Object userName, final java.lang.Object databaseName, final java.lang.Object engineName, final java.lang.Object instanceId, final java.lang.Object ip, final java.lang.Object port, final java.lang.Object role) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.password = java.util.Objects.requireNonNull(password, "password is required");
-                this.region = java.util.Objects.requireNonNull(region, "region is required");
-                this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
-                this.databaseName = databaseName;
-                this.engineName = engineName;
-                this.instanceId = instanceId;
-                this.ip = ip;
-                this.port = port;
-                this.role = role;
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+                this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+                this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
+                this.databaseName = builder.databaseName;
+                this.engineName = builder.engineName;
+                this.instanceId = builder.instanceId;
+                this.ip = builder.ip;
+                this.port = builder.port;
+                this.role = builder.role;
             }
 
             @Override
@@ -1009,9 +1009,9 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MigrationModeProperty> {
-            private java.lang.Object dataIntialization;
-            private java.lang.Object dataSynchronization;
-            private java.lang.Object structureIntialization;
+            java.lang.Object dataIntialization;
+            java.lang.Object dataSynchronization;
+            java.lang.Object structureIntialization;
 
             /**
              * Sets the value of {@link MigrationModeProperty#getDataIntialization}
@@ -1087,7 +1087,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MigrationModeProperty build() {
-                return new Jsii$Proxy(dataIntialization, dataSynchronization, structureIntialization);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1115,11 +1115,11 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dataIntialization, final java.lang.Object dataSynchronization, final java.lang.Object structureIntialization) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dataIntialization = dataIntialization;
-                this.dataSynchronization = dataSynchronization;
-                this.structureIntialization = structureIntialization;
+                this.dataIntialization = builder.dataIntialization;
+                this.dataSynchronization = builder.dataSynchronization;
+                this.structureIntialization = builder.structureIntialization;
             }
 
             @Override
@@ -1245,12 +1245,12 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MigrationObjectProperty> {
-            private java.lang.Object dbName;
-            private java.lang.Object newDbName;
-            private java.lang.Object newSchemaName;
-            private java.lang.Object schemaName;
-            private java.lang.Object tableExcludes;
-            private java.lang.Object tableIncludes;
+            java.lang.Object dbName;
+            java.lang.Object newDbName;
+            java.lang.Object newSchemaName;
+            java.lang.Object schemaName;
+            java.lang.Object tableExcludes;
+            java.lang.Object tableIncludes;
 
             /**
              * Sets the value of {@link MigrationObjectProperty#getDbName}
@@ -1392,7 +1392,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MigrationObjectProperty build() {
-                return new Jsii$Proxy(dbName, newDbName, newSchemaName, schemaName, tableExcludes, tableIncludes);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1426,14 +1426,14 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dbName, final java.lang.Object newDbName, final java.lang.Object newSchemaName, final java.lang.Object schemaName, final java.lang.Object tableExcludes, final java.lang.Object tableIncludes) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dbName = dbName;
-                this.newDbName = newDbName;
-                this.newSchemaName = newSchemaName;
-                this.schemaName = schemaName;
-                this.tableExcludes = tableExcludes;
-                this.tableIncludes = tableIncludes;
+                this.dbName = builder.dbName;
+                this.newDbName = builder.newDbName;
+                this.newSchemaName = builder.newSchemaName;
+                this.schemaName = builder.schemaName;
+                this.tableExcludes = builder.tableExcludes;
+                this.tableIncludes = builder.tableIncludes;
             }
 
             @Override
@@ -1623,18 +1623,18 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SourceEndpointProperty> {
-            private java.lang.Object instanceType;
-            private java.lang.Object password;
-            private java.lang.Object region;
-            private java.lang.Object userName;
-            private java.lang.Object databaseName;
-            private java.lang.Object engineName;
-            private java.lang.Object instanceId;
-            private java.lang.Object ip;
-            private java.lang.Object oracleSid;
-            private java.lang.Object ownerId;
-            private java.lang.Object port;
-            private java.lang.Object role;
+            java.lang.Object instanceType;
+            java.lang.Object password;
+            java.lang.Object region;
+            java.lang.Object userName;
+            java.lang.Object databaseName;
+            java.lang.Object engineName;
+            java.lang.Object instanceId;
+            java.lang.Object ip;
+            java.lang.Object oracleSid;
+            java.lang.Object ownerId;
+            java.lang.Object port;
+            java.lang.Object role;
 
             /**
              * Sets the value of {@link SourceEndpointProperty#getInstanceType}
@@ -1908,7 +1908,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SourceEndpointProperty build() {
-                return new Jsii$Proxy(instanceType, password, region, userName, databaseName, engineName, instanceId, ip, oracleSid, ownerId, port, role);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1954,20 +1954,20 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object instanceType, final java.lang.Object password, final java.lang.Object region, final java.lang.Object userName, final java.lang.Object databaseName, final java.lang.Object engineName, final java.lang.Object instanceId, final java.lang.Object ip, final java.lang.Object oracleSid, final java.lang.Object ownerId, final java.lang.Object port, final java.lang.Object role) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-                this.password = java.util.Objects.requireNonNull(password, "password is required");
-                this.region = java.util.Objects.requireNonNull(region, "region is required");
-                this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
-                this.databaseName = databaseName;
-                this.engineName = engineName;
-                this.instanceId = instanceId;
-                this.ip = ip;
-                this.oracleSid = oracleSid;
-                this.ownerId = ownerId;
-                this.port = port;
-                this.role = role;
+                this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+                this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+                this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+                this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
+                this.databaseName = builder.databaseName;
+                this.engineName = builder.engineName;
+                this.instanceId = builder.instanceId;
+                this.ip = builder.ip;
+                this.oracleSid = builder.oracleSid;
+                this.ownerId = builder.ownerId;
+                this.port = builder.port;
+                this.role = builder.role;
             }
 
             @Override
@@ -2140,7 +2140,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableExcludesProperty> {
-            private java.lang.Object tableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableExcludesProperty#getTableName}
@@ -2172,7 +2172,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableExcludesProperty build() {
-                return new Jsii$Proxy(tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2196,9 +2196,9 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tableName = tableName;
+                this.tableName = builder.tableName;
             }
 
             @Override
@@ -2297,11 +2297,11 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TableIncludesProperty> {
-            private java.lang.Object columnExcludes;
-            private java.lang.Object columnIncludes;
-            private java.lang.Object filterCondition;
-            private java.lang.Object newTableName;
-            private java.lang.Object tableName;
+            java.lang.Object columnExcludes;
+            java.lang.Object columnIncludes;
+            java.lang.Object filterCondition;
+            java.lang.Object newTableName;
+            java.lang.Object tableName;
 
             /**
              * Sets the value of {@link TableIncludesProperty#getColumnExcludes}
@@ -2421,7 +2421,7 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TableIncludesProperty build() {
-                return new Jsii$Proxy(columnExcludes, columnIncludes, filterCondition, newTableName, tableName);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2453,13 +2453,13 @@ public class RosMigrationJob extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columnExcludes, final java.lang.Object columnIncludes, final java.lang.Object filterCondition, final java.lang.Object newTableName, final java.lang.Object tableName) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columnExcludes = columnExcludes;
-                this.columnIncludes = columnIncludes;
-                this.filterCondition = filterCondition;
-                this.newTableName = newTableName;
-                this.tableName = tableName;
+                this.columnExcludes = builder.columnExcludes;
+                this.columnIncludes = builder.columnIncludes;
+                this.filterCondition = builder.filterCondition;
+                this.newTableName = builder.newTableName;
+                this.tableName = builder.tableName;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnRouteEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:59.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(VpnRouteEntryProps.Jsii$Proxy.class)
 public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -63,13 +63,13 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link VpnRouteEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpnRouteEntryProps> {
-        private java.lang.Object nextHop;
-        private java.lang.Object publishVpc;
-        private java.lang.Object routeDest;
-        private java.lang.Object vpnGatewayId;
-        private java.lang.Object weight;
-        private java.lang.Object description;
-        private java.lang.Object overlayMode;
+        java.lang.Object nextHop;
+        java.lang.Object publishVpc;
+        java.lang.Object routeDest;
+        java.lang.Object vpnGatewayId;
+        java.lang.Object weight;
+        java.lang.Object description;
+        java.lang.Object overlayMode;
 
         /**
          * Sets the value of {@link VpnRouteEntryProps#getNextHop}
@@ -226,7 +226,7 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public VpnRouteEntryProps build() {
-            return new Jsii$Proxy(nextHop, publishVpc, routeDest, vpnGatewayId, weight, description, overlayMode);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -261,15 +261,15 @@ public interface VpnRouteEntryProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object nextHop, final java.lang.Object publishVpc, final java.lang.Object routeDest, final java.lang.Object vpnGatewayId, final java.lang.Object weight, final java.lang.Object description, final java.lang.Object overlayMode) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.nextHop = java.util.Objects.requireNonNull(nextHop, "nextHop is required");
-            this.publishVpc = java.util.Objects.requireNonNull(publishVpc, "publishVpc is required");
-            this.routeDest = java.util.Objects.requireNonNull(routeDest, "routeDest is required");
-            this.vpnGatewayId = java.util.Objects.requireNonNull(vpnGatewayId, "vpnGatewayId is required");
-            this.weight = java.util.Objects.requireNonNull(weight, "weight is required");
-            this.description = description;
-            this.overlayMode = overlayMode;
+            this.nextHop = java.util.Objects.requireNonNull(builder.nextHop, "nextHop is required");
+            this.publishVpc = java.util.Objects.requireNonNull(builder.publishVpc, "publishVpc is required");
+            this.routeDest = java.util.Objects.requireNonNull(builder.routeDest, "routeDest is required");
+            this.vpnGatewayId = java.util.Objects.requireNonNull(builder.vpnGatewayId, "vpnGatewayId is required");
+            this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
+            this.description = builder.description;
+            this.overlayMode = builder.overlayMode;
         }
 
         @Override

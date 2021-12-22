@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query input for looking up a VPC.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.VpcContextQuery")
 @software.amazon.jsii.Jsii.Proxy(VpcContextQuery.Jsii$Proxy.class)
 public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -57,11 +57,11 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VpcContextQuery}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpcContextQuery> {
-        private java.lang.String account;
-        private java.util.Map<java.lang.String, java.lang.String> filter;
-        private java.lang.String region;
-        private java.lang.Boolean returnAsymmetricSubnets;
-        private java.lang.String subnetGroupNameTag;
+        java.lang.String account;
+        java.util.Map<java.lang.String, java.lang.String> filter;
+        java.lang.String region;
+        java.lang.Boolean returnAsymmetricSubnets;
+        java.lang.String subnetGroupNameTag;
 
         /**
          * Sets the value of {@link VpcContextQuery#getAccount}
@@ -124,7 +124,7 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public VpcContextQuery build() {
-            return new Jsii$Proxy(account, filter, region, returnAsymmetricSubnets, subnetGroupNameTag);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -155,13 +155,13 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String account, final java.util.Map<java.lang.String, java.lang.String> filter, final java.lang.String region, final java.lang.Boolean returnAsymmetricSubnets, final java.lang.String subnetGroupNameTag) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.account = java.util.Objects.requireNonNull(account, "account is required");
-            this.filter = java.util.Objects.requireNonNull(filter, "filter is required");
-            this.region = java.util.Objects.requireNonNull(region, "region is required");
-            this.returnAsymmetricSubnets = returnAsymmetricSubnets;
-            this.subnetGroupNameTag = subnetGroupNameTag;
+            this.account = java.util.Objects.requireNonNull(builder.account, "account is required");
+            this.filter = java.util.Objects.requireNonNull(builder.filter, "filter is required");
+            this.region = java.util.Objects.requireNonNull(builder.region, "region is required");
+            this.returnAsymmetricSubnets = builder.returnAsymmetricSubnets;
+            this.subnetGroupNameTag = builder.subnetGroupNameTag;
         }
 
         @Override

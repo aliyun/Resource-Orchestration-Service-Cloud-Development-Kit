@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS template type:  `ALIYUN::EDAS::K8sApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.256Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.825Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sApplication")
 public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -974,7 +974,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CommandArgsProperty> {
-            private java.lang.Object argument;
+            java.lang.Object argument;
 
             /**
              * Sets the value of {@link CommandArgsProperty#getArgument}
@@ -1006,7 +1006,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CommandArgsProperty build() {
-                return new Jsii$Proxy(argument);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1030,9 +1030,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object argument) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.argument = argument;
+                this.argument = builder.argument;
             }
 
             @Override
@@ -1110,8 +1110,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConcGCThreadsProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link ConcGCThreadsProperty#getOriginal}
@@ -1165,7 +1165,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ConcGCThreadsProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1191,10 +1191,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -1282,8 +1282,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CustomParamsProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link CustomParamsProperty#getOriginal}
@@ -1337,7 +1337,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public CustomParamsProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1363,10 +1363,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -1454,8 +1454,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EnvsProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link EnvsProperty#getName}
@@ -1509,7 +1509,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EnvsProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1535,10 +1535,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -1619,7 +1619,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ExecProperty> {
-            private java.lang.Object command;
+            java.lang.Object command;
 
             /**
              * Sets the value of {@link ExecProperty#getCommand}
@@ -1651,7 +1651,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ExecProperty build() {
-                return new Jsii$Proxy(command);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1675,9 +1675,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object command) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.command = command;
+                this.command = builder.command;
             }
 
             @Override
@@ -1755,8 +1755,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<G1HeapRegionSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link G1HeapRegionSizeProperty#getOriginal}
@@ -1810,7 +1810,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public G1HeapRegionSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1836,10 +1836,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -1927,8 +1927,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<GCLogFilePathProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link GCLogFilePathProperty#getOriginal}
@@ -1982,7 +1982,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public GCLogFilePathProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2008,10 +2008,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -2099,8 +2099,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<GCLogFileSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link GCLogFileSizeProperty#getOriginal}
@@ -2154,7 +2154,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public GCLogFileSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2180,10 +2180,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -2271,8 +2271,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HeapDumpOnOutOfMemoryErrorProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link HeapDumpOnOutOfMemoryErrorProperty#getOriginal}
@@ -2326,7 +2326,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HeapDumpOnOutOfMemoryErrorProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2352,10 +2352,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -2443,8 +2443,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HeapDumpPathProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link HeapDumpPathProperty#getOriginal}
@@ -2498,7 +2498,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HeapDumpPathProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2524,10 +2524,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -2615,8 +2615,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HttpGetHttpHeadersProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link HttpGetHttpHeadersProperty#getName}
@@ -2670,7 +2670,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HttpGetHttpHeadersProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2696,10 +2696,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -2808,11 +2808,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HttpGetProperty> {
-            private java.lang.Object host;
-            private java.lang.Object httpHeaders;
-            private java.lang.Object path;
-            private java.lang.Object port;
-            private java.lang.Object scheme;
+            java.lang.Object host;
+            java.lang.Object httpHeaders;
+            java.lang.Object path;
+            java.lang.Object port;
+            java.lang.Object scheme;
 
             /**
              * Sets the value of {@link HttpGetProperty#getHost}
@@ -2932,7 +2932,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HttpGetProperty build() {
-                return new Jsii$Proxy(host, httpHeaders, path, port, scheme);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -2964,13 +2964,13 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object httpHeaders, final java.lang.Object path, final java.lang.Object port, final java.lang.Object scheme) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.httpHeaders = httpHeaders;
-                this.path = path;
-                this.port = port;
-                this.scheme = scheme;
+                this.host = builder.host;
+                this.httpHeaders = builder.httpHeaders;
+                this.path = builder.path;
+                this.port = builder.port;
+                this.scheme = builder.scheme;
             }
 
             @Override
@@ -3088,8 +3088,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HttpHeadersProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link HttpHeadersProperty#getName}
@@ -3143,7 +3143,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HttpHeadersProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3169,10 +3169,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -3260,8 +3260,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InitialHeapSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link InitialHeapSizeProperty#getOriginal}
@@ -3315,7 +3315,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InitialHeapSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -3341,10 +3341,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -3593,31 +3593,31 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<JavaStartUpConfigProperty> {
-            private java.lang.Object concGcThreads;
-            private java.lang.Object customParams;
-            private java.lang.Object g1HeapRegionSize;
-            private java.lang.Object gcLogFilePath;
-            private java.lang.Object gcLogFileSize;
-            private java.lang.Object heapDumpOnOutOfMemoryError;
-            private java.lang.Object heapDumpPath;
-            private java.lang.Object initialHeapSize;
-            private java.lang.Object maxDirectMemorySize;
-            private java.lang.Object maxHeapSize;
-            private java.lang.Object maxNewSize;
-            private java.lang.Object maxPermSize;
-            private java.lang.Object nacosUseCloudNamespaceParsing;
-            private java.lang.Object nacosUseEndpointParsingRule;
-            private java.lang.Object newRatio;
-            private java.lang.Object newSize;
-            private java.lang.Object oldGarbageCollector;
-            private java.lang.Object parallelGcThreads;
-            private java.lang.Object permSize;
-            private java.lang.Object printGc;
-            private java.lang.Object printGcDateStamps;
-            private java.lang.Object survivorRatio;
-            private java.lang.Object threadStackSize;
-            private java.lang.Object useGcLogFileRotation;
-            private java.lang.Object youngGarbageCollector;
+            java.lang.Object concGcThreads;
+            java.lang.Object customParams;
+            java.lang.Object g1HeapRegionSize;
+            java.lang.Object gcLogFilePath;
+            java.lang.Object gcLogFileSize;
+            java.lang.Object heapDumpOnOutOfMemoryError;
+            java.lang.Object heapDumpPath;
+            java.lang.Object initialHeapSize;
+            java.lang.Object maxDirectMemorySize;
+            java.lang.Object maxHeapSize;
+            java.lang.Object maxNewSize;
+            java.lang.Object maxPermSize;
+            java.lang.Object nacosUseCloudNamespaceParsing;
+            java.lang.Object nacosUseEndpointParsingRule;
+            java.lang.Object newRatio;
+            java.lang.Object newSize;
+            java.lang.Object oldGarbageCollector;
+            java.lang.Object parallelGcThreads;
+            java.lang.Object permSize;
+            java.lang.Object printGc;
+            java.lang.Object printGcDateStamps;
+            java.lang.Object survivorRatio;
+            java.lang.Object threadStackSize;
+            java.lang.Object useGcLogFileRotation;
+            java.lang.Object youngGarbageCollector;
 
             /**
              * Sets the value of {@link JavaStartUpConfigProperty#getConcGcThreads}
@@ -4177,7 +4177,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public JavaStartUpConfigProperty build() {
-                return new Jsii$Proxy(concGcThreads, customParams, g1HeapRegionSize, gcLogFilePath, gcLogFileSize, heapDumpOnOutOfMemoryError, heapDumpPath, initialHeapSize, maxDirectMemorySize, maxHeapSize, maxNewSize, maxPermSize, nacosUseCloudNamespaceParsing, nacosUseEndpointParsingRule, newRatio, newSize, oldGarbageCollector, parallelGcThreads, permSize, printGc, printGcDateStamps, survivorRatio, threadStackSize, useGcLogFileRotation, youngGarbageCollector);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4249,33 +4249,33 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object concGcThreads, final java.lang.Object customParams, final java.lang.Object g1HeapRegionSize, final java.lang.Object gcLogFilePath, final java.lang.Object gcLogFileSize, final java.lang.Object heapDumpOnOutOfMemoryError, final java.lang.Object heapDumpPath, final java.lang.Object initialHeapSize, final java.lang.Object maxDirectMemorySize, final java.lang.Object maxHeapSize, final java.lang.Object maxNewSize, final java.lang.Object maxPermSize, final java.lang.Object nacosUseCloudNamespaceParsing, final java.lang.Object nacosUseEndpointParsingRule, final java.lang.Object newRatio, final java.lang.Object newSize, final java.lang.Object oldGarbageCollector, final java.lang.Object parallelGcThreads, final java.lang.Object permSize, final java.lang.Object printGc, final java.lang.Object printGcDateStamps, final java.lang.Object survivorRatio, final java.lang.Object threadStackSize, final java.lang.Object useGcLogFileRotation, final java.lang.Object youngGarbageCollector) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.concGcThreads = concGcThreads;
-                this.customParams = customParams;
-                this.g1HeapRegionSize = g1HeapRegionSize;
-                this.gcLogFilePath = gcLogFilePath;
-                this.gcLogFileSize = gcLogFileSize;
-                this.heapDumpOnOutOfMemoryError = heapDumpOnOutOfMemoryError;
-                this.heapDumpPath = heapDumpPath;
-                this.initialHeapSize = initialHeapSize;
-                this.maxDirectMemorySize = maxDirectMemorySize;
-                this.maxHeapSize = maxHeapSize;
-                this.maxNewSize = maxNewSize;
-                this.maxPermSize = maxPermSize;
-                this.nacosUseCloudNamespaceParsing = nacosUseCloudNamespaceParsing;
-                this.nacosUseEndpointParsingRule = nacosUseEndpointParsingRule;
-                this.newRatio = newRatio;
-                this.newSize = newSize;
-                this.oldGarbageCollector = oldGarbageCollector;
-                this.parallelGcThreads = parallelGcThreads;
-                this.permSize = permSize;
-                this.printGc = printGc;
-                this.printGcDateStamps = printGcDateStamps;
-                this.survivorRatio = survivorRatio;
-                this.threadStackSize = threadStackSize;
-                this.useGcLogFileRotation = useGcLogFileRotation;
-                this.youngGarbageCollector = youngGarbageCollector;
+                this.concGcThreads = builder.concGcThreads;
+                this.customParams = builder.customParams;
+                this.g1HeapRegionSize = builder.g1HeapRegionSize;
+                this.gcLogFilePath = builder.gcLogFilePath;
+                this.gcLogFileSize = builder.gcLogFileSize;
+                this.heapDumpOnOutOfMemoryError = builder.heapDumpOnOutOfMemoryError;
+                this.heapDumpPath = builder.heapDumpPath;
+                this.initialHeapSize = builder.initialHeapSize;
+                this.maxDirectMemorySize = builder.maxDirectMemorySize;
+                this.maxHeapSize = builder.maxHeapSize;
+                this.maxNewSize = builder.maxNewSize;
+                this.maxPermSize = builder.maxPermSize;
+                this.nacosUseCloudNamespaceParsing = builder.nacosUseCloudNamespaceParsing;
+                this.nacosUseEndpointParsingRule = builder.nacosUseEndpointParsingRule;
+                this.newRatio = builder.newRatio;
+                this.newSize = builder.newSize;
+                this.oldGarbageCollector = builder.oldGarbageCollector;
+                this.parallelGcThreads = builder.parallelGcThreads;
+                this.permSize = builder.permSize;
+                this.printGc = builder.printGc;
+                this.printGcDateStamps = builder.printGcDateStamps;
+                this.survivorRatio = builder.survivorRatio;
+                this.threadStackSize = builder.threadStackSize;
+                this.useGcLogFileRotation = builder.useGcLogFileRotation;
+                this.youngGarbageCollector = builder.youngGarbageCollector;
             }
 
             @Override
@@ -4635,14 +4635,14 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LivenessProperty> {
-            private java.lang.Object exec;
-            private java.lang.Object failureThreshold;
-            private java.lang.Object httpGet;
-            private java.lang.Object initialDelaySeconds;
-            private java.lang.Object periodSeconds;
-            private java.lang.Object successThreshold;
-            private java.lang.Object tcpSocket;
-            private java.lang.Object timeoutSeconds;
+            java.lang.Object exec;
+            java.lang.Object failureThreshold;
+            java.lang.Object httpGet;
+            java.lang.Object initialDelaySeconds;
+            java.lang.Object periodSeconds;
+            java.lang.Object successThreshold;
+            java.lang.Object tcpSocket;
+            java.lang.Object timeoutSeconds;
 
             /**
              * Sets the value of {@link LivenessProperty#getExec}
@@ -4828,7 +4828,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LivenessProperty build() {
-                return new Jsii$Proxy(exec, failureThreshold, httpGet, initialDelaySeconds, periodSeconds, successThreshold, tcpSocket, timeoutSeconds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -4866,16 +4866,16 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object exec, final java.lang.Object failureThreshold, final java.lang.Object httpGet, final java.lang.Object initialDelaySeconds, final java.lang.Object periodSeconds, final java.lang.Object successThreshold, final java.lang.Object tcpSocket, final java.lang.Object timeoutSeconds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.exec = exec;
-                this.failureThreshold = failureThreshold;
-                this.httpGet = httpGet;
-                this.initialDelaySeconds = initialDelaySeconds;
-                this.periodSeconds = periodSeconds;
-                this.successThreshold = successThreshold;
-                this.tcpSocket = tcpSocket;
-                this.timeoutSeconds = timeoutSeconds;
+                this.exec = builder.exec;
+                this.failureThreshold = builder.failureThreshold;
+                this.httpGet = builder.httpGet;
+                this.initialDelaySeconds = builder.initialDelaySeconds;
+                this.periodSeconds = builder.periodSeconds;
+                this.successThreshold = builder.successThreshold;
+                this.tcpSocket = builder.tcpSocket;
+                this.timeoutSeconds = builder.timeoutSeconds;
             }
 
             @Override
@@ -5030,9 +5030,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LocalVolumeProperty> {
-            private java.lang.Object mountPath;
-            private java.lang.Object nodePath;
-            private java.lang.Object type;
+            java.lang.Object mountPath;
+            java.lang.Object nodePath;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link LocalVolumeProperty#getMountPath}
@@ -5108,7 +5108,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public LocalVolumeProperty build() {
-                return new Jsii$Proxy(mountPath, nodePath, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5136,11 +5136,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mountPath, final java.lang.Object nodePath, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mountPath = mountPath;
-                this.nodePath = nodePath;
-                this.type = type;
+                this.mountPath = builder.mountPath;
+                this.nodePath = builder.nodePath;
+                this.type = builder.type;
             }
 
             @Override
@@ -5238,8 +5238,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MaxDirectMemorySizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link MaxDirectMemorySizeProperty#getOriginal}
@@ -5293,7 +5293,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MaxDirectMemorySizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5319,10 +5319,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -5410,8 +5410,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MaxHeapSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link MaxHeapSizeProperty#getOriginal}
@@ -5465,7 +5465,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MaxHeapSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5491,10 +5491,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -5582,8 +5582,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MaxNewSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link MaxNewSizeProperty#getOriginal}
@@ -5637,7 +5637,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MaxNewSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5663,10 +5663,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -5754,8 +5754,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MaxPermSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link MaxPermSizeProperty#getOriginal}
@@ -5809,7 +5809,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MaxPermSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -5835,10 +5835,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -5926,8 +5926,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MountDescsProperty> {
-            private java.lang.Object mountPath;
-            private java.lang.Object nasPath;
+            java.lang.Object mountPath;
+            java.lang.Object nasPath;
 
             /**
              * Sets the value of {@link MountDescsProperty#getMountPath}
@@ -5981,7 +5981,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MountDescsProperty build() {
-                return new Jsii$Proxy(mountPath, nasPath);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6007,10 +6007,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object mountPath, final java.lang.Object nasPath) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.mountPath = mountPath;
-                this.nasPath = nasPath;
+                this.mountPath = builder.mountPath;
+                this.nasPath = builder.nasPath;
             }
 
             @Override
@@ -6098,8 +6098,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NacosUseCloudNamespaceParsingProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link NacosUseCloudNamespaceParsingProperty#getOriginal}
@@ -6153,7 +6153,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NacosUseCloudNamespaceParsingProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6179,10 +6179,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -6270,8 +6270,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NacosUseEndpointParsingRuleProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link NacosUseEndpointParsingRuleProperty#getOriginal}
@@ -6325,7 +6325,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NacosUseEndpointParsingRuleProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6351,10 +6351,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -6442,8 +6442,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NewRatioProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link NewRatioProperty#getOriginal}
@@ -6497,7 +6497,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NewRatioProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6523,10 +6523,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -6614,8 +6614,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NewSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link NewSizeProperty#getOriginal}
@@ -6669,7 +6669,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public NewSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6695,10 +6695,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -6786,8 +6786,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<OldGarbageCollectorProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link OldGarbageCollectorProperty#getOriginal}
@@ -6841,7 +6841,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public OldGarbageCollectorProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -6867,10 +6867,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -6958,8 +6958,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ParallelGCThreadsProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link ParallelGCThreadsProperty#getOriginal}
@@ -7013,7 +7013,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ParallelGCThreadsProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7039,10 +7039,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -7130,8 +7130,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PermSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link PermSizeProperty#getOriginal}
@@ -7185,7 +7185,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PermSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7211,10 +7211,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -7295,7 +7295,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PostStartExecProperty> {
-            private java.lang.Object command;
+            java.lang.Object command;
 
             /**
              * Sets the value of {@link PostStartExecProperty#getCommand}
@@ -7327,7 +7327,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PostStartExecProperty build() {
-                return new Jsii$Proxy(command);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7351,9 +7351,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object command) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.command = command;
+                this.command = builder.command;
             }
 
             @Override
@@ -7452,11 +7452,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PostStartHttpGetProperty> {
-            private java.lang.Object host;
-            private java.lang.Object httpHeaders;
-            private java.lang.Object path;
-            private java.lang.Object port;
-            private java.lang.Object scheme;
+            java.lang.Object host;
+            java.lang.Object httpHeaders;
+            java.lang.Object path;
+            java.lang.Object port;
+            java.lang.Object scheme;
 
             /**
              * Sets the value of {@link PostStartHttpGetProperty#getHost}
@@ -7576,7 +7576,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PostStartHttpGetProperty build() {
-                return new Jsii$Proxy(host, httpHeaders, path, port, scheme);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7608,13 +7608,13 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object httpHeaders, final java.lang.Object path, final java.lang.Object port, final java.lang.Object scheme) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.httpHeaders = httpHeaders;
-                this.path = path;
-                this.port = port;
-                this.scheme = scheme;
+                this.host = builder.host;
+                this.httpHeaders = builder.httpHeaders;
+                this.path = builder.path;
+                this.port = builder.port;
+                this.scheme = builder.scheme;
             }
 
             @Override
@@ -7732,8 +7732,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PostStartProperty> {
-            private java.lang.Object exec;
-            private java.lang.Object httpGet;
+            java.lang.Object exec;
+            java.lang.Object httpGet;
 
             /**
              * Sets the value of {@link PostStartProperty#getExec}
@@ -7787,7 +7787,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PostStartProperty build() {
-                return new Jsii$Proxy(exec, httpGet);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7813,10 +7813,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object exec, final java.lang.Object httpGet) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.exec = exec;
-                this.httpGet = httpGet;
+                this.exec = builder.exec;
+                this.httpGet = builder.httpGet;
             }
 
             @Override
@@ -7897,7 +7897,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PreStopExecProperty> {
-            private java.lang.Object command;
+            java.lang.Object command;
 
             /**
              * Sets the value of {@link PreStopExecProperty#getCommand}
@@ -7929,7 +7929,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PreStopExecProperty build() {
-                return new Jsii$Proxy(command);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -7953,9 +7953,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object command) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.command = command;
+                this.command = builder.command;
             }
 
             @Override
@@ -8033,8 +8033,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PreStopHttpGetHttpHeadersProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link PreStopHttpGetHttpHeadersProperty#getName}
@@ -8088,7 +8088,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PreStopHttpGetHttpHeadersProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -8114,10 +8114,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -8226,11 +8226,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PreStopHttpGetProperty> {
-            private java.lang.Object host;
-            private java.lang.Object httpHeaders;
-            private java.lang.Object path;
-            private java.lang.Object port;
-            private java.lang.Object scheme;
+            java.lang.Object host;
+            java.lang.Object httpHeaders;
+            java.lang.Object path;
+            java.lang.Object port;
+            java.lang.Object scheme;
 
             /**
              * Sets the value of {@link PreStopHttpGetProperty#getHost}
@@ -8350,7 +8350,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PreStopHttpGetProperty build() {
-                return new Jsii$Proxy(host, httpHeaders, path, port, scheme);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -8382,13 +8382,13 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object httpHeaders, final java.lang.Object path, final java.lang.Object port, final java.lang.Object scheme) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.httpHeaders = httpHeaders;
-                this.path = path;
-                this.port = port;
-                this.scheme = scheme;
+                this.host = builder.host;
+                this.httpHeaders = builder.httpHeaders;
+                this.path = builder.path;
+                this.port = builder.port;
+                this.scheme = builder.scheme;
             }
 
             @Override
@@ -8506,8 +8506,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PreStopProperty> {
-            private java.lang.Object exec;
-            private java.lang.Object httpGet;
+            java.lang.Object exec;
+            java.lang.Object httpGet;
 
             /**
              * Sets the value of {@link PreStopProperty#getExec}
@@ -8561,7 +8561,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PreStopProperty build() {
-                return new Jsii$Proxy(exec, httpGet);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -8587,10 +8587,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object exec, final java.lang.Object httpGet) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.exec = exec;
-                this.httpGet = httpGet;
+                this.exec = builder.exec;
+                this.httpGet = builder.httpGet;
             }
 
             @Override
@@ -8678,8 +8678,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrintGCDateStampsProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link PrintGCDateStampsProperty#getOriginal}
@@ -8733,7 +8733,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PrintGCDateStampsProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -8759,10 +8759,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -8850,8 +8850,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrintGCProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link PrintGCProperty#getOriginal}
@@ -8905,7 +8905,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PrintGCProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -8931,10 +8931,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -9015,7 +9015,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessExecProperty> {
-            private java.lang.Object command;
+            java.lang.Object command;
 
             /**
              * Sets the value of {@link ReadinessExecProperty#getCommand}
@@ -9047,7 +9047,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessExecProperty build() {
-                return new Jsii$Proxy(command);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -9071,9 +9071,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object command) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.command = command;
+                this.command = builder.command;
             }
 
             @Override
@@ -9151,8 +9151,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessHttpGetHttpHeadersProperty> {
-            private java.lang.Object name;
-            private java.lang.Object value;
+            java.lang.Object name;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link ReadinessHttpGetHttpHeadersProperty#getName}
@@ -9206,7 +9206,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessHttpGetHttpHeadersProperty build() {
-                return new Jsii$Proxy(name, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -9232,10 +9232,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = name;
-                this.value = value;
+                this.name = builder.name;
+                this.value = builder.value;
             }
 
             @Override
@@ -9344,11 +9344,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessHttpGetProperty> {
-            private java.lang.Object host;
-            private java.lang.Object httpHeaders;
-            private java.lang.Object path;
-            private java.lang.Object port;
-            private java.lang.Object scheme;
+            java.lang.Object host;
+            java.lang.Object httpHeaders;
+            java.lang.Object path;
+            java.lang.Object port;
+            java.lang.Object scheme;
 
             /**
              * Sets the value of {@link ReadinessHttpGetProperty#getHost}
@@ -9468,7 +9468,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessHttpGetProperty build() {
-                return new Jsii$Proxy(host, httpHeaders, path, port, scheme);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -9500,13 +9500,13 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object httpHeaders, final java.lang.Object path, final java.lang.Object port, final java.lang.Object scheme) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.httpHeaders = httpHeaders;
-                this.path = path;
-                this.port = port;
-                this.scheme = scheme;
+                this.host = builder.host;
+                this.httpHeaders = builder.httpHeaders;
+                this.path = builder.path;
+                this.port = builder.port;
+                this.scheme = builder.scheme;
             }
 
             @Override
@@ -9666,14 +9666,14 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessProperty> {
-            private java.lang.Object exec;
-            private java.lang.Object failureThreshold;
-            private java.lang.Object httpGet;
-            private java.lang.Object initialDelaySeconds;
-            private java.lang.Object periodSeconds;
-            private java.lang.Object successThreshold;
-            private java.lang.Object tcpSocket;
-            private java.lang.Object timeoutSeconds;
+            java.lang.Object exec;
+            java.lang.Object failureThreshold;
+            java.lang.Object httpGet;
+            java.lang.Object initialDelaySeconds;
+            java.lang.Object periodSeconds;
+            java.lang.Object successThreshold;
+            java.lang.Object tcpSocket;
+            java.lang.Object timeoutSeconds;
 
             /**
              * Sets the value of {@link ReadinessProperty#getExec}
@@ -9859,7 +9859,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessProperty build() {
-                return new Jsii$Proxy(exec, failureThreshold, httpGet, initialDelaySeconds, periodSeconds, successThreshold, tcpSocket, timeoutSeconds);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -9897,16 +9897,16 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object exec, final java.lang.Object failureThreshold, final java.lang.Object httpGet, final java.lang.Object initialDelaySeconds, final java.lang.Object periodSeconds, final java.lang.Object successThreshold, final java.lang.Object tcpSocket, final java.lang.Object timeoutSeconds) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.exec = exec;
-                this.failureThreshold = failureThreshold;
-                this.httpGet = httpGet;
-                this.initialDelaySeconds = initialDelaySeconds;
-                this.periodSeconds = periodSeconds;
-                this.successThreshold = successThreshold;
-                this.tcpSocket = tcpSocket;
-                this.timeoutSeconds = timeoutSeconds;
+                this.exec = builder.exec;
+                this.failureThreshold = builder.failureThreshold;
+                this.httpGet = builder.httpGet;
+                this.initialDelaySeconds = builder.initialDelaySeconds;
+                this.periodSeconds = builder.periodSeconds;
+                this.successThreshold = builder.successThreshold;
+                this.tcpSocket = builder.tcpSocket;
+                this.timeoutSeconds = builder.timeoutSeconds;
             }
 
             @Override
@@ -10054,8 +10054,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReadinessTcpSocketProperty> {
-            private java.lang.Object host;
-            private java.lang.Object port;
+            java.lang.Object host;
+            java.lang.Object port;
 
             /**
              * Sets the value of {@link ReadinessTcpSocketProperty#getHost}
@@ -10109,7 +10109,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ReadinessTcpSocketProperty build() {
-                return new Jsii$Proxy(host, port);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -10135,10 +10135,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object port) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.port = port;
+                this.host = builder.host;
+                this.port = builder.port;
             }
 
             @Override
@@ -10233,9 +10233,9 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SlsConfigsProperty> {
-            private java.lang.Object logDir;
-            private java.lang.Object logstore;
-            private java.lang.Object type;
+            java.lang.Object logDir;
+            java.lang.Object logstore;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link SlsConfigsProperty#getLogDir}
@@ -10311,7 +10311,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SlsConfigsProperty build() {
-                return new Jsii$Proxy(logDir, logstore, type);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -10339,11 +10339,11 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object logDir, final java.lang.Object logstore, final java.lang.Object type) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.logDir = logDir;
-                this.logstore = logstore;
-                this.type = type;
+                this.logDir = builder.logDir;
+                this.logstore = builder.logstore;
+                this.type = builder.type;
             }
 
             @Override
@@ -10441,8 +10441,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SurvivorRatioProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link SurvivorRatioProperty#getOriginal}
@@ -10496,7 +10496,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SurvivorRatioProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -10522,10 +10522,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -10613,8 +10613,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TcpSocketProperty> {
-            private java.lang.Object host;
-            private java.lang.Object port;
+            java.lang.Object host;
+            java.lang.Object port;
 
             /**
              * Sets the value of {@link TcpSocketProperty#getHost}
@@ -10668,7 +10668,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TcpSocketProperty build() {
-                return new Jsii$Proxy(host, port);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -10694,10 +10694,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object host, final java.lang.Object port) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.host = host;
-                this.port = port;
+                this.host = builder.host;
+                this.port = builder.port;
             }
 
             @Override
@@ -10785,8 +10785,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ThreadStackSizeProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link ThreadStackSizeProperty#getOriginal}
@@ -10840,7 +10840,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ThreadStackSizeProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -10866,10 +10866,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -10957,8 +10957,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<UseGCLogFileRotationProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link UseGCLogFileRotationProperty#getOriginal}
@@ -11012,7 +11012,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public UseGCLogFileRotationProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -11038,10 +11038,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override
@@ -11178,15 +11178,15 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WebContainerConfigProperty> {
-            private java.lang.Object contextInputType;
-            private java.lang.Object contextPath;
-            private java.lang.Object httpPort;
-            private java.lang.Object maxThreads;
-            private java.lang.Object serverXml;
-            private java.lang.Object uriEncoding;
-            private java.lang.Object useAdvancedServerXml;
-            private java.lang.Object useBodyEncoding;
-            private java.lang.Object useDefaultConfig;
+            java.lang.Object contextInputType;
+            java.lang.Object contextPath;
+            java.lang.Object httpPort;
+            java.lang.Object maxThreads;
+            java.lang.Object serverXml;
+            java.lang.Object uriEncoding;
+            java.lang.Object useAdvancedServerXml;
+            java.lang.Object useBodyEncoding;
+            java.lang.Object useDefaultConfig;
 
             /**
              * Sets the value of {@link WebContainerConfigProperty#getContextInputType}
@@ -11394,7 +11394,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public WebContainerConfigProperty build() {
-                return new Jsii$Proxy(contextInputType, contextPath, httpPort, maxThreads, serverXml, uriEncoding, useAdvancedServerXml, useBodyEncoding, useDefaultConfig);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -11434,17 +11434,17 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object contextInputType, final java.lang.Object contextPath, final java.lang.Object httpPort, final java.lang.Object maxThreads, final java.lang.Object serverXml, final java.lang.Object uriEncoding, final java.lang.Object useAdvancedServerXml, final java.lang.Object useBodyEncoding, final java.lang.Object useDefaultConfig) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.contextInputType = contextInputType;
-                this.contextPath = contextPath;
-                this.httpPort = httpPort;
-                this.maxThreads = maxThreads;
-                this.serverXml = serverXml;
-                this.uriEncoding = uriEncoding;
-                this.useAdvancedServerXml = useAdvancedServerXml;
-                this.useBodyEncoding = useBodyEncoding;
-                this.useDefaultConfig = useDefaultConfig;
+                this.contextInputType = builder.contextInputType;
+                this.contextPath = builder.contextPath;
+                this.httpPort = builder.httpPort;
+                this.maxThreads = builder.maxThreads;
+                this.serverXml = builder.serverXml;
+                this.uriEncoding = builder.uriEncoding;
+                this.useAdvancedServerXml = builder.useAdvancedServerXml;
+                this.useBodyEncoding = builder.useBodyEncoding;
+                this.useDefaultConfig = builder.useDefaultConfig;
             }
 
             @Override
@@ -11602,8 +11602,8 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<YoungGarbageCollectorProperty> {
-            private java.lang.Object original;
-            private java.lang.Object startup;
+            java.lang.Object original;
+            java.lang.Object startup;
 
             /**
              * Sets the value of {@link YoungGarbageCollectorProperty#getOriginal}
@@ -11657,7 +11657,7 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public YoungGarbageCollectorProperty build() {
-                return new Jsii$Proxy(original, startup);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -11683,10 +11683,10 @@ public class RosK8sApplication extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object original, final java.lang.Object startup) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.original = original;
-                this.startup = startup;
+                this.original = builder.original;
+                this.startup = builder.startup;
             }
 
             @Override

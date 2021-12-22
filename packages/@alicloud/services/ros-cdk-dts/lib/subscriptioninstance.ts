@@ -14,9 +14,35 @@ export interface SubscriptionInstanceProps {
     readonly configuration?: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable;
 
     /**
-     * Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+     * Property payType: Payment type. Valid value:
+     * PostPaid: Pay-as-you-go, which is default value.
+     * PrePaid: subscription.
+     */
+    readonly payType?: string | ros.IResolvable;
+
+    /**
+     * Property period: The unit of the subscription length. Valid values: Year and Month.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     */
+    readonly period?: string | ros.IResolvable;
+
+    /**
+     * Property sourceEndpointInstanceType: Data subscription instance type, value is:MySQL: ApsaraDB RDS for MySQL instance or self-managed MySQL database.
+     * PolarDB: PolarDB for MySQL cluster.
+     * polardb_o: PolarDB O Edition cluster.
+     * polardb_pg: PolarDB for PostgreSQL cluster.
+     * DRDS: PolarDB-X instance V1.0 or V2.0.
+     * PostgreSQL: self-managed PostgreSQL database.
+     * Oracle: self-managed Oracle database.
      */
     readonly sourceEndpointInstanceType?: string | ros.IResolvable;
+
+    /**
+     * Property usedTime: The subscription length.
+     * Note: You must specify this parameter only if you set the PayType parameter to PrePaid.
+     * You can set the Period parameter to specify the unit of the subscription length.
+     */
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
@@ -61,6 +87,9 @@ export class SubscriptionInstance extends ros.Resource {
 
         const rosSubscriptionInstance = new RosSubscriptionInstance(this, id,  {
             configuration: props.configuration,
+            usedTime: props.usedTime,
+            period: props.period,
+            payType: props.payType,
             sourceEndpointInstanceType: props.sourceEndpointInstanceType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscriptionInstance;

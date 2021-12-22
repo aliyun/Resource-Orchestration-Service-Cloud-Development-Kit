@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.926Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.597Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -484,7 +484,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     /**
      * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
      * <p>
-     * Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+     * Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlaveZoneIds() {
         return null;
@@ -590,68 +590,68 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link PrepayDBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PrepayDBInstanceProps> {
-        private java.lang.Object commodityCode;
-        private java.lang.Object dbInstanceClass;
-        private java.lang.Object dbInstanceStorage;
-        private java.lang.Object engine;
-        private java.lang.Object engineVersion;
-        private java.lang.Object period;
-        private java.lang.Object periodType;
-        private java.lang.Object allocatePublicConnection;
-        private java.lang.Object archiveBackupKeepCount;
-        private java.lang.Object archiveBackupKeepPolicy;
-        private java.lang.Object archiveBackupRetentionPeriod;
-        private java.lang.Object autoPay;
-        private java.lang.Object autoRenew;
-        private java.lang.Object backUpCategory;
-        private java.lang.Object backupPolicyMode;
-        private java.lang.Object backupRetentionPeriod;
-        private java.lang.Object category;
-        private java.lang.Object compressType;
-        private java.lang.Object connectionMode;
-        private java.lang.Object connectionStringPrefix;
-        private java.lang.Object connectionStringType;
-        private java.lang.Object couponCode;
-        private java.lang.Object dbInstanceDescription;
-        private java.lang.Object dbInstanceNetType;
-        private java.lang.Object dbInstanceStorageType;
-        private java.lang.Object dbIsIgnoreCase;
-        private java.lang.Object dbMappings;
-        private java.lang.Object dbParamGroupId;
-        private java.lang.Object dbTimeZone;
-        private java.lang.Object dedicatedHostGroupId;
-        private java.lang.Object enableBackupLog;
-        private java.lang.Object encryptionKey;
-        private java.lang.Object highSpaceUsageProtection;
-        private java.lang.Object localLogRetentionHours;
-        private java.lang.Object localLogRetentionSpace;
-        private java.lang.Object logBackupFrequency;
-        private java.lang.Object logBackupLocalRetentionNumber;
-        private java.lang.Object logBackupRetentionPeriod;
-        private java.lang.Object maintainTime;
-        private java.lang.Object masterUsername;
-        private java.lang.Object masterUserPassword;
-        private java.lang.Object masterUserType;
-        private java.lang.Object multiAz;
-        private java.lang.Object port;
-        private java.lang.Object preferredBackupPeriod;
-        private java.lang.Object preferredBackupTime;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object quantity;
-        private java.lang.Object releasedKeepPolicy;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object roleArn;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object slaveZoneIds;
-        private java.lang.Object sqlCollectorStatus;
-        private java.lang.Object sslSetting;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
-        private java.lang.Object targetDedicatedHostIdForLog;
-        private java.lang.Object targetDedicatedHostIdForMaster;
-        private java.lang.Object targetDedicatedHostIdForSlave;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object commodityCode;
+        java.lang.Object dbInstanceClass;
+        java.lang.Object dbInstanceStorage;
+        java.lang.Object engine;
+        java.lang.Object engineVersion;
+        java.lang.Object period;
+        java.lang.Object periodType;
+        java.lang.Object allocatePublicConnection;
+        java.lang.Object archiveBackupKeepCount;
+        java.lang.Object archiveBackupKeepPolicy;
+        java.lang.Object archiveBackupRetentionPeriod;
+        java.lang.Object autoPay;
+        java.lang.Object autoRenew;
+        java.lang.Object backUpCategory;
+        java.lang.Object backupPolicyMode;
+        java.lang.Object backupRetentionPeriod;
+        java.lang.Object category;
+        java.lang.Object compressType;
+        java.lang.Object connectionMode;
+        java.lang.Object connectionStringPrefix;
+        java.lang.Object connectionStringType;
+        java.lang.Object couponCode;
+        java.lang.Object dbInstanceDescription;
+        java.lang.Object dbInstanceNetType;
+        java.lang.Object dbInstanceStorageType;
+        java.lang.Object dbIsIgnoreCase;
+        java.lang.Object dbMappings;
+        java.lang.Object dbParamGroupId;
+        java.lang.Object dbTimeZone;
+        java.lang.Object dedicatedHostGroupId;
+        java.lang.Object enableBackupLog;
+        java.lang.Object encryptionKey;
+        java.lang.Object highSpaceUsageProtection;
+        java.lang.Object localLogRetentionHours;
+        java.lang.Object localLogRetentionSpace;
+        java.lang.Object logBackupFrequency;
+        java.lang.Object logBackupLocalRetentionNumber;
+        java.lang.Object logBackupRetentionPeriod;
+        java.lang.Object maintainTime;
+        java.lang.Object masterUsername;
+        java.lang.Object masterUserPassword;
+        java.lang.Object masterUserType;
+        java.lang.Object multiAz;
+        java.lang.Object port;
+        java.lang.Object preferredBackupPeriod;
+        java.lang.Object preferredBackupTime;
+        java.lang.Object privateIpAddress;
+        java.lang.Object quantity;
+        java.lang.Object releasedKeepPolicy;
+        java.lang.Object resourceGroupId;
+        java.lang.Object roleArn;
+        java.lang.Object securityGroupId;
+        java.lang.Object slaveZoneIds;
+        java.lang.Object sqlCollectorStatus;
+        java.lang.Object sslSetting;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object targetDedicatedHostIdForLog;
+        java.lang.Object targetDedicatedHostIdForMaster;
+        java.lang.Object targetDedicatedHostIdForSlave;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getCommodityCode}
@@ -1876,7 +1876,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getSlaveZoneIds}
          * @param slaveZoneIds Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
-         *                     Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+         *                     Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
          * @return {@code this}
          */
         public Builder slaveZoneIds(com.aliyun.ros.cdk.core.IResolvable slaveZoneIds) {
@@ -1887,7 +1887,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getSlaveZoneIds}
          * @param slaveZoneIds Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
-         *                     Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+         *                     Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
          * @return {@code this}
          */
         public Builder slaveZoneIds(java.util.List<? extends java.lang.Object> slaveZoneIds) {
@@ -2103,7 +2103,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public PrepayDBInstanceProps build() {
-            return new Jsii$Proxy(commodityCode, dbInstanceClass, dbInstanceStorage, engine, engineVersion, period, periodType, allocatePublicConnection, archiveBackupKeepCount, archiveBackupKeepPolicy, archiveBackupRetentionPeriod, autoPay, autoRenew, backUpCategory, backupPolicyMode, backupRetentionPeriod, category, compressType, connectionMode, connectionStringPrefix, connectionStringType, couponCode, dbInstanceDescription, dbInstanceNetType, dbInstanceStorageType, dbIsIgnoreCase, dbMappings, dbParamGroupId, dbTimeZone, dedicatedHostGroupId, enableBackupLog, encryptionKey, highSpaceUsageProtection, localLogRetentionHours, localLogRetentionSpace, logBackupFrequency, logBackupLocalRetentionNumber, logBackupRetentionPeriod, maintainTime, masterUsername, masterUserPassword, masterUserType, multiAz, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, quantity, releasedKeepPolicy, resourceGroupId, roleArn, securityGroupId, slaveZoneIds, sqlCollectorStatus, sslSetting, tags, targetDedicatedHostIdForLog, targetDedicatedHostIdForMaster, targetDedicatedHostIdForSlave, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -2249,70 +2249,70 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object commodityCode, final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceStorage, final java.lang.Object engine, final java.lang.Object engineVersion, final java.lang.Object period, final java.lang.Object periodType, final java.lang.Object allocatePublicConnection, final java.lang.Object archiveBackupKeepCount, final java.lang.Object archiveBackupKeepPolicy, final java.lang.Object archiveBackupRetentionPeriod, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Object backUpCategory, final java.lang.Object backupPolicyMode, final java.lang.Object backupRetentionPeriod, final java.lang.Object category, final java.lang.Object compressType, final java.lang.Object connectionMode, final java.lang.Object connectionStringPrefix, final java.lang.Object connectionStringType, final java.lang.Object couponCode, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceNetType, final java.lang.Object dbInstanceStorageType, final java.lang.Object dbIsIgnoreCase, final java.lang.Object dbMappings, final java.lang.Object dbParamGroupId, final java.lang.Object dbTimeZone, final java.lang.Object dedicatedHostGroupId, final java.lang.Object enableBackupLog, final java.lang.Object encryptionKey, final java.lang.Object highSpaceUsageProtection, final java.lang.Object localLogRetentionHours, final java.lang.Object localLogRetentionSpace, final java.lang.Object logBackupFrequency, final java.lang.Object logBackupLocalRetentionNumber, final java.lang.Object logBackupRetentionPeriod, final java.lang.Object maintainTime, final java.lang.Object masterUsername, final java.lang.Object masterUserPassword, final java.lang.Object masterUserType, final java.lang.Object multiAz, final java.lang.Object port, final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object privateIpAddress, final java.lang.Object quantity, final java.lang.Object releasedKeepPolicy, final java.lang.Object resourceGroupId, final java.lang.Object roleArn, final java.lang.Object securityGroupId, final java.lang.Object slaveZoneIds, final java.lang.Object sqlCollectorStatus, final java.lang.Object sslSetting, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object targetDedicatedHostIdForLog, final java.lang.Object targetDedicatedHostIdForMaster, final java.lang.Object targetDedicatedHostIdForSlave, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.commodityCode = java.util.Objects.requireNonNull(commodityCode, "commodityCode is required");
-            this.dbInstanceClass = java.util.Objects.requireNonNull(dbInstanceClass, "dbInstanceClass is required");
-            this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
-            this.engine = java.util.Objects.requireNonNull(engine, "engine is required");
-            this.engineVersion = java.util.Objects.requireNonNull(engineVersion, "engineVersion is required");
-            this.period = java.util.Objects.requireNonNull(period, "period is required");
-            this.periodType = java.util.Objects.requireNonNull(periodType, "periodType is required");
-            this.allocatePublicConnection = allocatePublicConnection;
-            this.archiveBackupKeepCount = archiveBackupKeepCount;
-            this.archiveBackupKeepPolicy = archiveBackupKeepPolicy;
-            this.archiveBackupRetentionPeriod = archiveBackupRetentionPeriod;
-            this.autoPay = autoPay;
-            this.autoRenew = autoRenew;
-            this.backUpCategory = backUpCategory;
-            this.backupPolicyMode = backupPolicyMode;
-            this.backupRetentionPeriod = backupRetentionPeriod;
-            this.category = category;
-            this.compressType = compressType;
-            this.connectionMode = connectionMode;
-            this.connectionStringPrefix = connectionStringPrefix;
-            this.connectionStringType = connectionStringType;
-            this.couponCode = couponCode;
-            this.dbInstanceDescription = dbInstanceDescription;
-            this.dbInstanceNetType = dbInstanceNetType;
-            this.dbInstanceStorageType = dbInstanceStorageType;
-            this.dbIsIgnoreCase = dbIsIgnoreCase;
-            this.dbMappings = dbMappings;
-            this.dbParamGroupId = dbParamGroupId;
-            this.dbTimeZone = dbTimeZone;
-            this.dedicatedHostGroupId = dedicatedHostGroupId;
-            this.enableBackupLog = enableBackupLog;
-            this.encryptionKey = encryptionKey;
-            this.highSpaceUsageProtection = highSpaceUsageProtection;
-            this.localLogRetentionHours = localLogRetentionHours;
-            this.localLogRetentionSpace = localLogRetentionSpace;
-            this.logBackupFrequency = logBackupFrequency;
-            this.logBackupLocalRetentionNumber = logBackupLocalRetentionNumber;
-            this.logBackupRetentionPeriod = logBackupRetentionPeriod;
-            this.maintainTime = maintainTime;
-            this.masterUsername = masterUsername;
-            this.masterUserPassword = masterUserPassword;
-            this.masterUserType = masterUserType;
-            this.multiAz = multiAz;
-            this.port = port;
-            this.preferredBackupPeriod = preferredBackupPeriod;
-            this.preferredBackupTime = preferredBackupTime;
-            this.privateIpAddress = privateIpAddress;
-            this.quantity = quantity;
-            this.releasedKeepPolicy = releasedKeepPolicy;
-            this.resourceGroupId = resourceGroupId;
-            this.roleArn = roleArn;
-            this.securityGroupId = securityGroupId;
-            this.slaveZoneIds = slaveZoneIds;
-            this.sqlCollectorStatus = sqlCollectorStatus;
-            this.sslSetting = sslSetting;
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
-            this.targetDedicatedHostIdForLog = targetDedicatedHostIdForLog;
-            this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
-            this.targetDedicatedHostIdForSlave = targetDedicatedHostIdForSlave;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.commodityCode = java.util.Objects.requireNonNull(builder.commodityCode, "commodityCode is required");
+            this.dbInstanceClass = java.util.Objects.requireNonNull(builder.dbInstanceClass, "dbInstanceClass is required");
+            this.dbInstanceStorage = java.util.Objects.requireNonNull(builder.dbInstanceStorage, "dbInstanceStorage is required");
+            this.engine = java.util.Objects.requireNonNull(builder.engine, "engine is required");
+            this.engineVersion = java.util.Objects.requireNonNull(builder.engineVersion, "engineVersion is required");
+            this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
+            this.periodType = java.util.Objects.requireNonNull(builder.periodType, "periodType is required");
+            this.allocatePublicConnection = builder.allocatePublicConnection;
+            this.archiveBackupKeepCount = builder.archiveBackupKeepCount;
+            this.archiveBackupKeepPolicy = builder.archiveBackupKeepPolicy;
+            this.archiveBackupRetentionPeriod = builder.archiveBackupRetentionPeriod;
+            this.autoPay = builder.autoPay;
+            this.autoRenew = builder.autoRenew;
+            this.backUpCategory = builder.backUpCategory;
+            this.backupPolicyMode = builder.backupPolicyMode;
+            this.backupRetentionPeriod = builder.backupRetentionPeriod;
+            this.category = builder.category;
+            this.compressType = builder.compressType;
+            this.connectionMode = builder.connectionMode;
+            this.connectionStringPrefix = builder.connectionStringPrefix;
+            this.connectionStringType = builder.connectionStringType;
+            this.couponCode = builder.couponCode;
+            this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.dbInstanceNetType = builder.dbInstanceNetType;
+            this.dbInstanceStorageType = builder.dbInstanceStorageType;
+            this.dbIsIgnoreCase = builder.dbIsIgnoreCase;
+            this.dbMappings = builder.dbMappings;
+            this.dbParamGroupId = builder.dbParamGroupId;
+            this.dbTimeZone = builder.dbTimeZone;
+            this.dedicatedHostGroupId = builder.dedicatedHostGroupId;
+            this.enableBackupLog = builder.enableBackupLog;
+            this.encryptionKey = builder.encryptionKey;
+            this.highSpaceUsageProtection = builder.highSpaceUsageProtection;
+            this.localLogRetentionHours = builder.localLogRetentionHours;
+            this.localLogRetentionSpace = builder.localLogRetentionSpace;
+            this.logBackupFrequency = builder.logBackupFrequency;
+            this.logBackupLocalRetentionNumber = builder.logBackupLocalRetentionNumber;
+            this.logBackupRetentionPeriod = builder.logBackupRetentionPeriod;
+            this.maintainTime = builder.maintainTime;
+            this.masterUsername = builder.masterUsername;
+            this.masterUserPassword = builder.masterUserPassword;
+            this.masterUserType = builder.masterUserType;
+            this.multiAz = builder.multiAz;
+            this.port = builder.port;
+            this.preferredBackupPeriod = builder.preferredBackupPeriod;
+            this.preferredBackupTime = builder.preferredBackupTime;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.quantity = builder.quantity;
+            this.releasedKeepPolicy = builder.releasedKeepPolicy;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.roleArn = builder.roleArn;
+            this.securityGroupId = builder.securityGroupId;
+            this.slaveZoneIds = builder.slaveZoneIds;
+            this.sqlCollectorStatus = builder.sqlCollectorStatus;
+            this.sslSetting = builder.sslSetting;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.targetDedicatedHostIdForLog = builder.targetDedicatedHostIdForLog;
+            this.targetDedicatedHostIdForMaster = builder.targetDedicatedHostIdForMaster;
+            this.targetDedicatedHostIdForSlave = builder.targetDedicatedHostIdForSlave;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

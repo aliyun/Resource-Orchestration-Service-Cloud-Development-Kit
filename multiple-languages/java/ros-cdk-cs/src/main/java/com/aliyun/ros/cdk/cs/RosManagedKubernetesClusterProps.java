@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.717Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.295Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -99,6 +99,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProxyMode() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRuntime() {
         return null;
     }
 
@@ -202,38 +208,39 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
      * A builder for {@link RosManagedKubernetesClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosManagedKubernetesClusterProps> {
-        private java.lang.Object name;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchIds;
-        private java.lang.Object workerInstanceTypes;
-        private java.lang.Object addons;
-        private java.lang.Object cloudMonitorFlags;
-        private java.lang.Object clusterSpec;
-        private java.lang.Object containerCidr;
-        private java.lang.Object disableRollback;
-        private java.lang.Object encryptionProviderKey;
-        private java.lang.Object endpointPublicAccess;
-        private java.lang.Object keyPair;
-        private java.lang.Object kubernetesVersion;
-        private java.lang.Object loginPassword;
-        private java.lang.Object numOfNodes;
-        private java.lang.Object podVswitchIds;
-        private java.lang.Object proxyMode;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object serviceCidr;
-        private java.lang.Object snatEntry;
-        private java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
-        private java.lang.Object taint;
-        private java.lang.Object timeoutMins;
-        private java.lang.Object workerAutoRenew;
-        private java.lang.Object workerAutoRenewPeriod;
-        private java.lang.Object workerDataDisk;
-        private java.lang.Object workerDataDisks;
-        private java.lang.Object workerInstanceChargeType;
-        private java.lang.Object workerPeriod;
-        private java.lang.Object workerPeriodUnit;
-        private java.lang.Object workerSystemDiskCategory;
-        private java.lang.Object workerSystemDiskSize;
+        java.lang.Object name;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchIds;
+        java.lang.Object workerInstanceTypes;
+        java.lang.Object addons;
+        java.lang.Object cloudMonitorFlags;
+        java.lang.Object clusterSpec;
+        java.lang.Object containerCidr;
+        java.lang.Object disableRollback;
+        java.lang.Object encryptionProviderKey;
+        java.lang.Object endpointPublicAccess;
+        java.lang.Object keyPair;
+        java.lang.Object kubernetesVersion;
+        java.lang.Object loginPassword;
+        java.lang.Object numOfNodes;
+        java.lang.Object podVswitchIds;
+        java.lang.Object proxyMode;
+        java.lang.Object runtime;
+        java.lang.Object securityGroupId;
+        java.lang.Object serviceCidr;
+        java.lang.Object snatEntry;
+        java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags;
+        java.lang.Object taint;
+        java.lang.Object timeoutMins;
+        java.lang.Object workerAutoRenew;
+        java.lang.Object workerAutoRenewPeriod;
+        java.lang.Object workerDataDisk;
+        java.lang.Object workerDataDisks;
+        java.lang.Object workerInstanceChargeType;
+        java.lang.Object workerPeriod;
+        java.lang.Object workerPeriodUnit;
+        java.lang.Object workerSystemDiskCategory;
+        java.lang.Object workerSystemDiskSize;
 
         /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getName}
@@ -576,6 +583,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getRuntime}
+         * @param runtime the value to be set.
+         * @return {@code this}
+         */
+        public Builder runtime(com.aliyun.ros.cdk.core.IResolvable runtime) {
+            this.runtime = runtime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getRuntime}
+         * @param runtime the value to be set.
+         * @return {@code this}
+         */
+        public Builder runtime(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.RuntimeProperty runtime) {
+            this.runtime = runtime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getSecurityGroupId}
          * @param securityGroupId the value to be set.
          * @return {@code this}
@@ -873,7 +900,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          */
         @Override
         public RosManagedKubernetesClusterProps build() {
-            return new Jsii$Proxy(name, vpcId, vSwitchIds, workerInstanceTypes, addons, cloudMonitorFlags, clusterSpec, containerCidr, disableRollback, encryptionProviderKey, endpointPublicAccess, keyPair, kubernetesVersion, loginPassword, numOfNodes, podVswitchIds, proxyMode, securityGroupId, serviceCidr, snatEntry, tags, taint, timeoutMins, workerAutoRenew, workerAutoRenewPeriod, workerDataDisk, workerDataDisks, workerInstanceChargeType, workerPeriod, workerPeriodUnit, workerSystemDiskCategory, workerSystemDiskSize);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -899,6 +926,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object numOfNodes;
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
+        private final java.lang.Object runtime;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceCidr;
         private final java.lang.Object snatEntry;
@@ -938,6 +966,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.runtime = software.amazon.jsii.Kernel.get(this, "runtime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntry = software.amazon.jsii.Kernel.get(this, "snatEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -959,40 +988,41 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object vpcId, final java.lang.Object vSwitchIds, final java.lang.Object workerInstanceTypes, final java.lang.Object addons, final java.lang.Object cloudMonitorFlags, final java.lang.Object clusterSpec, final java.lang.Object containerCidr, final java.lang.Object disableRollback, final java.lang.Object encryptionProviderKey, final java.lang.Object endpointPublicAccess, final java.lang.Object keyPair, final java.lang.Object kubernetesVersion, final java.lang.Object loginPassword, final java.lang.Object numOfNodes, final java.lang.Object podVswitchIds, final java.lang.Object proxyMode, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.lang.Object snatEntry, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty> tags, final java.lang.Object taint, final java.lang.Object timeoutMins, final java.lang.Object workerAutoRenew, final java.lang.Object workerAutoRenewPeriod, final java.lang.Object workerDataDisk, final java.lang.Object workerDataDisks, final java.lang.Object workerInstanceChargeType, final java.lang.Object workerPeriod, final java.lang.Object workerPeriodUnit, final java.lang.Object workerSystemDiskCategory, final java.lang.Object workerSystemDiskSize) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.vSwitchIds = java.util.Objects.requireNonNull(vSwitchIds, "vSwitchIds is required");
-            this.workerInstanceTypes = java.util.Objects.requireNonNull(workerInstanceTypes, "workerInstanceTypes is required");
-            this.addons = addons;
-            this.cloudMonitorFlags = cloudMonitorFlags;
-            this.clusterSpec = clusterSpec;
-            this.containerCidr = containerCidr;
-            this.disableRollback = disableRollback;
-            this.encryptionProviderKey = encryptionProviderKey;
-            this.endpointPublicAccess = endpointPublicAccess;
-            this.keyPair = keyPair;
-            this.kubernetesVersion = kubernetesVersion;
-            this.loginPassword = loginPassword;
-            this.numOfNodes = numOfNodes;
-            this.podVswitchIds = podVswitchIds;
-            this.proxyMode = proxyMode;
-            this.securityGroupId = securityGroupId;
-            this.serviceCidr = serviceCidr;
-            this.snatEntry = snatEntry;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty>)tags;
-            this.taint = taint;
-            this.timeoutMins = timeoutMins;
-            this.workerAutoRenew = workerAutoRenew;
-            this.workerAutoRenewPeriod = workerAutoRenewPeriod;
-            this.workerDataDisk = workerDataDisk;
-            this.workerDataDisks = workerDataDisks;
-            this.workerInstanceChargeType = workerInstanceChargeType;
-            this.workerPeriod = workerPeriod;
-            this.workerPeriodUnit = workerPeriodUnit;
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            this.workerSystemDiskSize = workerSystemDiskSize;
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
+            this.workerInstanceTypes = java.util.Objects.requireNonNull(builder.workerInstanceTypes, "workerInstanceTypes is required");
+            this.addons = builder.addons;
+            this.cloudMonitorFlags = builder.cloudMonitorFlags;
+            this.clusterSpec = builder.clusterSpec;
+            this.containerCidr = builder.containerCidr;
+            this.disableRollback = builder.disableRollback;
+            this.encryptionProviderKey = builder.encryptionProviderKey;
+            this.endpointPublicAccess = builder.endpointPublicAccess;
+            this.keyPair = builder.keyPair;
+            this.kubernetesVersion = builder.kubernetesVersion;
+            this.loginPassword = builder.loginPassword;
+            this.numOfNodes = builder.numOfNodes;
+            this.podVswitchIds = builder.podVswitchIds;
+            this.proxyMode = builder.proxyMode;
+            this.runtime = builder.runtime;
+            this.securityGroupId = builder.securityGroupId;
+            this.serviceCidr = builder.serviceCidr;
+            this.snatEntry = builder.snatEntry;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.TagsProperty>)builder.tags;
+            this.taint = builder.taint;
+            this.timeoutMins = builder.timeoutMins;
+            this.workerAutoRenew = builder.workerAutoRenew;
+            this.workerAutoRenewPeriod = builder.workerAutoRenewPeriod;
+            this.workerDataDisk = builder.workerDataDisk;
+            this.workerDataDisks = builder.workerDataDisks;
+            this.workerInstanceChargeType = builder.workerInstanceChargeType;
+            this.workerPeriod = builder.workerPeriod;
+            this.workerPeriodUnit = builder.workerPeriodUnit;
+            this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
+            this.workerSystemDiskSize = builder.workerSystemDiskSize;
         }
 
         @Override
@@ -1078,6 +1108,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getProxyMode() {
             return this.proxyMode;
+        }
+
+        @Override
+        public final java.lang.Object getRuntime() {
+            return this.runtime;
         }
 
         @Override
@@ -1204,6 +1239,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getProxyMode() != null) {
                 data.set("proxyMode", om.valueToTree(this.getProxyMode()));
             }
+            if (this.getRuntime() != null) {
+                data.set("runtime", om.valueToTree(this.getRuntime()));
+            }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
@@ -1284,6 +1322,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.numOfNodes != null ? !this.numOfNodes.equals(that.numOfNodes) : that.numOfNodes != null) return false;
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
+            if (this.runtime != null ? !this.runtime.equals(that.runtime) : that.runtime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceCidr != null ? !this.serviceCidr.equals(that.serviceCidr) : that.serviceCidr != null) return false;
             if (this.snatEntry != null ? !this.snatEntry.equals(that.snatEntry) : that.snatEntry != null) return false;
@@ -1320,6 +1359,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.numOfNodes != null ? this.numOfNodes.hashCode() : 0);
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);
+            result = 31 * result + (this.runtime != null ? this.runtime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceCidr != null ? this.serviceCidr.hashCode() : 0);
             result = 31 * result + (this.snatEntry != null ? this.snatEntry.hashCode() : 0);

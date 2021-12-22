@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsDB`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.411Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.RosDrdsDBProps")
 @software.amazon.jsii.Jsii.Proxy(RosDrdsDBProps.Jsii$Proxy.class)
 public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,16 +76,16 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDrdsDBProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDrdsDBProps> {
-        private java.lang.Object drdsInstanceId;
-        private java.lang.Object accountName;
-        private java.lang.Object dbInstanceIsCreating;
-        private java.lang.Object dbInstType;
-        private java.lang.Object dbName;
-        private java.lang.Object encode;
-        private java.lang.Object instDbName;
-        private java.lang.Object password;
-        private java.lang.Object rdsInstance;
-        private java.lang.Object type;
+        java.lang.Object drdsInstanceId;
+        java.lang.Object accountName;
+        java.lang.Object dbInstanceIsCreating;
+        java.lang.Object dbInstType;
+        java.lang.Object dbName;
+        java.lang.Object encode;
+        java.lang.Object instDbName;
+        java.lang.Object password;
+        java.lang.Object rdsInstance;
+        java.lang.Object type;
 
         /**
          * Sets the value of {@link RosDrdsDBProps#getDrdsInstanceId}
@@ -294,7 +294,7 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosDrdsDBProps build() {
-            return new Jsii$Proxy(drdsInstanceId, accountName, dbInstanceIsCreating, dbInstType, dbName, encode, instDbName, password, rdsInstance, type);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -335,18 +335,18 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object drdsInstanceId, final java.lang.Object accountName, final java.lang.Object dbInstanceIsCreating, final java.lang.Object dbInstType, final java.lang.Object dbName, final java.lang.Object encode, final java.lang.Object instDbName, final java.lang.Object password, final java.lang.Object rdsInstance, final java.lang.Object type) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.drdsInstanceId = java.util.Objects.requireNonNull(drdsInstanceId, "drdsInstanceId is required");
-            this.accountName = accountName;
-            this.dbInstanceIsCreating = dbInstanceIsCreating;
-            this.dbInstType = dbInstType;
-            this.dbName = dbName;
-            this.encode = encode;
-            this.instDbName = instDbName;
-            this.password = password;
-            this.rdsInstance = rdsInstance;
-            this.type = type;
+            this.drdsInstanceId = java.util.Objects.requireNonNull(builder.drdsInstanceId, "drdsInstanceId is required");
+            this.accountName = builder.accountName;
+            this.dbInstanceIsCreating = builder.dbInstanceIsCreating;
+            this.dbInstType = builder.dbInstType;
+            this.dbName = builder.dbName;
+            this.encode = builder.encode;
+            this.instDbName = builder.instDbName;
+            this.password = builder.password;
+            this.rdsInstance = builder.rdsInstance;
+            this.type = builder.type;
         }
 
         @Override

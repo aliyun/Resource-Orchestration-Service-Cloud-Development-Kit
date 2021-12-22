@@ -74,6 +74,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
+        /// <summary>Property encryptConf: Data encryption config.</summary>
+        [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EncryptConf
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property maxSplitShard: The maximum number of shards when splitting automatically.</summary>
         /// <remarks>
         /// Must be specified if AutoSplit is set to true.
@@ -193,6 +204,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             [JsiiOptional]
             [JsiiProperty(name: "enableTracking", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableTracking
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property encryptConf: Data encryption config.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true)]
+            public object? EncryptConf
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::WaitCondition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitCondition")
 public class RosWaitCondition extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -128,6 +128,24 @@ public class RosWaitCondition extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getShowProgressEvent() {
+        return software.amazon.jsii.Kernel.get(this, "showProgressEvent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setShowProgressEvent(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "showProgressEvent", value);
+    }
+
+    /**
+     */
+    public void setShowProgressEvent(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "showProgressEvent", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ros.RosWaitCondition}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ros.RosWaitCondition> {
@@ -201,6 +219,23 @@ public class RosWaitCondition extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder count(final com.aliyun.ros.cdk.core.IResolvable count) {
             this.props.count(count);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param showProgressEvent This parameter is required.
+         */
+        public Builder showProgressEvent(final java.lang.String showProgressEvent) {
+            this.props.showProgressEvent(showProgressEvent);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param showProgressEvent This parameter is required.
+         */
+        public Builder showProgressEvent(final com.aliyun.ros.cdk.core.IResolvable showProgressEvent) {
+            this.props.showProgressEvent(showProgressEvent);
             return this;
         }
 

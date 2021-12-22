@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.064Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(CloudConnectNetworkProps.Jsii$Proxy.class)
 public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,10 +52,10 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link CloudConnectNetworkProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CloudConnectNetworkProps> {
-        private java.lang.Object description;
-        private java.lang.Object isDefault;
-        private java.lang.Object name;
-        private java.util.List<com.aliyun.ros.cdk.sag.RosCloudConnectNetwork.TagsProperty> tags;
+        java.lang.Object description;
+        java.lang.Object isDefault;
+        java.lang.Object name;
+        java.util.List<com.aliyun.ros.cdk.sag.RosCloudConnectNetwork.TagsProperty> tags;
 
         /**
          * Sets the value of {@link CloudConnectNetworkProps#getDescription}
@@ -140,7 +140,7 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
          */
         @Override
         public CloudConnectNetworkProps build() {
-            return new Jsii$Proxy(description, isDefault, name, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -170,12 +170,12 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object isDefault, final java.lang.Object name, final java.util.List<? extends com.aliyun.ros.cdk.sag.RosCloudConnectNetwork.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = description;
-            this.isDefault = isDefault;
-            this.name = name;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.sag.RosCloudConnectNetwork.TagsProperty>)tags;
+            this.description = builder.description;
+            this.isDefault = builder.isDefault;
+            this.name = builder.name;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.sag.RosCloudConnectNetwork.TagsProperty>)builder.tags;
         }
 
         @Override

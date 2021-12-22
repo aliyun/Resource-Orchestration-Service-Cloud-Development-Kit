@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for apps.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.631Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,12 +82,12 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AppProps> {
-        private java.lang.Boolean autoSynth;
-        private java.util.Map<java.lang.String, java.lang.String> context;
-        private java.lang.String outdir;
-        private java.lang.Boolean runtimeInfo;
-        private java.lang.Boolean stackTraces;
-        private java.lang.Boolean treeMetadata;
+        java.lang.Boolean autoSynth;
+        java.util.Map<java.lang.String, java.lang.String> context;
+        java.lang.String outdir;
+        java.lang.Boolean runtimeInfo;
+        java.lang.Boolean stackTraces;
+        java.lang.Boolean treeMetadata;
 
         /**
          * Sets the value of {@link AppProps#getAutoSynth}
@@ -167,7 +167,7 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public AppProps build() {
-            return new Jsii$Proxy(autoSynth, context, outdir, runtimeInfo, stackTraces, treeMetadata);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -200,14 +200,14 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Boolean autoSynth, final java.util.Map<java.lang.String, java.lang.String> context, final java.lang.String outdir, final java.lang.Boolean runtimeInfo, final java.lang.Boolean stackTraces, final java.lang.Boolean treeMetadata) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.autoSynth = autoSynth;
-            this.context = context;
-            this.outdir = outdir;
-            this.runtimeInfo = runtimeInfo;
-            this.stackTraces = stackTraces;
-            this.treeMetadata = treeMetadata;
+            this.autoSynth = builder.autoSynth;
+            this.context = builder.context;
+            this.outdir = builder.outdir;
+            this.runtimeInfo = builder.runtimeInfo;
+            this.stackTraces = builder.stackTraces;
+            this.treeMetadata = builder.treeMetadata;
         }
 
         @Override

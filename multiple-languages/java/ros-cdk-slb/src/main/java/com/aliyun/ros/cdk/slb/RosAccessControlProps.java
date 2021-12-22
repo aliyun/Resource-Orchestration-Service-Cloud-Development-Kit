@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessControlProps.Jsii$Proxy.class)
 public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,10 +40,10 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosAccessControlProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccessControlProps> {
-        private java.lang.Object aclName;
-        private java.lang.Object aclEntrys;
-        private java.lang.Object addressIpVersion;
-        private java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
+        java.lang.Object aclName;
+        java.lang.Object aclEntrys;
+        java.lang.Object addressIpVersion;
+        java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosAccessControlProps#getAclName}
@@ -123,7 +123,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosAccessControlProps build() {
-            return new Jsii$Proxy(aclName, aclEntrys, addressIpVersion, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -153,12 +153,12 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object aclName, final java.lang.Object aclEntrys, final java.lang.Object addressIpVersion, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aclName = java.util.Objects.requireNonNull(aclName, "aclName is required");
-            this.aclEntrys = aclEntrys;
-            this.addressIpVersion = addressIpVersion;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)tags;
+            this.aclName = java.util.Objects.requireNonNull(builder.aclName, "aclName is required");
+            this.aclEntrys = builder.aclEntrys;
+            this.addressIpVersion = builder.addressIpVersion;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)builder.tags;
         }
 
         @Override

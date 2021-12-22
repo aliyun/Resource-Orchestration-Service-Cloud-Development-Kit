@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.057Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceProps.Jsii$Proxy.class)
 public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -100,16 +100,16 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServiceProps> {
-        private java.lang.Object serviceName;
-        private java.lang.Object deletionForce;
-        private java.lang.Object description;
-        private java.lang.Object internetAccess;
-        private java.lang.Object logConfig;
-        private java.lang.Object nasConfig;
-        private java.lang.Object role;
-        private java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
-        private java.lang.Object tracingConfig;
-        private java.lang.Object vpcConfig;
+        java.lang.Object serviceName;
+        java.lang.Object deletionForce;
+        java.lang.Object description;
+        java.lang.Object internetAccess;
+        java.lang.Object logConfig;
+        java.lang.Object nasConfig;
+        java.lang.Object role;
+        java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
+        java.lang.Object tracingConfig;
+        java.lang.Object vpcConfig;
 
         /**
          * Sets the value of {@link ServiceProps#getServiceName}
@@ -322,7 +322,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ServiceProps build() {
-            return new Jsii$Proxy(serviceName, deletionForce, description, internetAccess, logConfig, nasConfig, role, tags, tracingConfig, vpcConfig);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -364,18 +364,18 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object serviceName, final java.lang.Object deletionForce, final java.lang.Object description, final java.lang.Object internetAccess, final java.lang.Object logConfig, final java.lang.Object nasConfig, final java.lang.Object role, final java.util.List<? extends com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags, final java.lang.Object tracingConfig, final java.lang.Object vpcConfig) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
-            this.deletionForce = deletionForce;
-            this.description = description;
-            this.internetAccess = internetAccess;
-            this.logConfig = logConfig;
-            this.nasConfig = nasConfig;
-            this.role = role;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)tags;
-            this.tracingConfig = tracingConfig;
-            this.vpcConfig = vpcConfig;
+            this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.deletionForce = builder.deletionForce;
+            this.description = builder.description;
+            this.internetAccess = builder.internetAccess;
+            this.logConfig = builder.logConfig;
+            this.nasConfig = builder.nasConfig;
+            this.role = builder.role;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)builder.tags;
+            this.tracingConfig = builder.tracingConfig;
+            this.vpcConfig = builder.vpcConfig;
         }
 
         @Override

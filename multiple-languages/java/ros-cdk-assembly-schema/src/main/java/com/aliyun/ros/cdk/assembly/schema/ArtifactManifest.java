@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * A manifest for a single artifact within the cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.462Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.ArtifactManifest")
 @software.amazon.jsii.Jsii.Proxy(ArtifactManifest.Jsii$Proxy.class)
 public interface ArtifactManifest extends software.amazon.jsii.JsiiSerializable {
@@ -50,10 +50,10 @@ public interface ArtifactManifest extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link ArtifactManifest}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ArtifactManifest> {
-        private com.aliyun.ros.cdk.assembly.schema.ArtifactType type;
-        private java.util.List<java.lang.String> dependencies;
-        private java.util.Map<java.lang.String, java.util.List<com.aliyun.ros.cdk.assembly.schema.MetadataEntry>> metadata;
-        private java.lang.Object properties;
+        com.aliyun.ros.cdk.assembly.schema.ArtifactType type;
+        java.util.List<java.lang.String> dependencies;
+        java.util.Map<java.lang.String, java.util.List<com.aliyun.ros.cdk.assembly.schema.MetadataEntry>> metadata;
+        java.lang.Object properties;
 
         /**
          * Sets the value of {@link ArtifactManifest#getType}
@@ -123,7 +123,7 @@ public interface ArtifactManifest extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public ArtifactManifest build() {
-            return new Jsii$Proxy(type, dependencies, metadata, properties);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -153,12 +153,12 @@ public interface ArtifactManifest extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final com.aliyun.ros.cdk.assembly.schema.ArtifactType type, final java.util.List<java.lang.String> dependencies, final java.util.Map<java.lang.String, ? extends java.util.List<? extends com.aliyun.ros.cdk.assembly.schema.MetadataEntry>> metadata, final java.lang.Object properties) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.dependencies = dependencies;
-            this.metadata = (java.util.Map<java.lang.String, java.util.List<com.aliyun.ros.cdk.assembly.schema.MetadataEntry>>)metadata;
-            this.properties = properties;
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.dependencies = builder.dependencies;
+            this.metadata = (java.util.Map<java.lang.String, java.util.List<com.aliyun.ros.cdk.assembly.schema.MetadataEntry>>)builder.metadata;
+            this.properties = builder.properties;
         }
 
         @Override

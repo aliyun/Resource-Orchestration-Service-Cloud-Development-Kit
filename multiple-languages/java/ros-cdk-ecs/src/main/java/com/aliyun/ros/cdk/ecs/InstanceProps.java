@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -236,6 +236,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property securityGroupIds: The ID list of security group to which to assign the instance.
+     * <p>
+     * The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return null;
+    }
+
+    /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
      * <p>
      * Three decimals is allowed at most.
@@ -345,46 +354,47 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object imageId;
-        private java.lang.Object instanceType;
-        private java.lang.Object allocatePublicIp;
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object dedicatedHostId;
-        private java.lang.Object deletionProtection;
-        private java.lang.Object deploymentSetId;
-        private java.lang.Object description;
-        private java.lang.Object diskMappings;
-        private java.lang.Object hostName;
-        private java.lang.Object hpcClusterId;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object instanceName;
-        private java.lang.Object internetChargeType;
-        private java.lang.Object internetMaxBandwidthIn;
-        private java.lang.Object internetMaxBandwidthOut;
-        private java.lang.Object ioOptimized;
-        private java.lang.Object keyPairName;
-        private java.lang.Object password;
-        private java.lang.Object passwordInherit;
-        private java.lang.Object period;
-        private java.lang.Object periodUnit;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object ramRoleName;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityEnhancementStrategy;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object spotPriceLimit;
-        private java.lang.Object spotStrategy;
-        private java.lang.Object systemDiskCategory;
-        private java.lang.Object systemDiskDescription;
-        private java.lang.Object systemDiskDiskName;
-        private java.lang.Object systemDiskPerformanceLevel;
-        private java.lang.Object systemDiskSize;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty> tags;
-        private java.lang.Object userData;
-        private java.lang.Object vpcId;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object imageId;
+        java.lang.Object instanceType;
+        java.lang.Object allocatePublicIp;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object dedicatedHostId;
+        java.lang.Object deletionProtection;
+        java.lang.Object deploymentSetId;
+        java.lang.Object description;
+        java.lang.Object diskMappings;
+        java.lang.Object hostName;
+        java.lang.Object hpcClusterId;
+        java.lang.Object instanceChargeType;
+        java.lang.Object instanceName;
+        java.lang.Object internetChargeType;
+        java.lang.Object internetMaxBandwidthIn;
+        java.lang.Object internetMaxBandwidthOut;
+        java.lang.Object ioOptimized;
+        java.lang.Object keyPairName;
+        java.lang.Object password;
+        java.lang.Object passwordInherit;
+        java.lang.Object period;
+        java.lang.Object periodUnit;
+        java.lang.Object privateIpAddress;
+        java.lang.Object ramRoleName;
+        java.lang.Object resourceGroupId;
+        java.lang.Object securityEnhancementStrategy;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupIds;
+        java.lang.Object spotPriceLimit;
+        java.lang.Object spotStrategy;
+        java.lang.Object systemDiskCategory;
+        java.lang.Object systemDiskDescription;
+        java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskPerformanceLevel;
+        java.lang.Object systemDiskSize;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty> tags;
+        java.lang.Object userData;
+        java.lang.Object vpcId;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceProps#getImageId}
@@ -983,6 +993,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: The ID list of security group to which to assign the instance.
+         *                         The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: The ID list of security group to which to assign the instance.
+         *                         The max length is based on the maximum number of security groups to which an instance can belong. For more information, see the "Security group limits" section in Limits.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getSpotPriceLimit}
          * @param spotPriceLimit Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
          *                       Three decimals is allowed at most.
@@ -1237,7 +1269,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(imageId, instanceType, allocatePublicIp, autoRenew, autoRenewPeriod, dedicatedHostId, deletionProtection, deploymentSetId, description, diskMappings, hostName, hpcClusterId, instanceChargeType, instanceName, internetChargeType, internetMaxBandwidthIn, internetMaxBandwidthOut, ioOptimized, keyPairName, password, passwordInherit, period, periodUnit, privateIpAddress, ramRoleName, resourceGroupId, securityEnhancementStrategy, securityGroupId, spotPriceLimit, spotStrategy, systemDiskCategory, systemDiskDescription, systemDiskDiskName, systemDiskPerformanceLevel, systemDiskSize, tags, userData, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -1274,6 +1306,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityEnhancementStrategy;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityGroupIds;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object systemDiskCategory;
@@ -1321,6 +1354,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1339,48 +1373,49 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object imageId, final java.lang.Object instanceType, final java.lang.Object allocatePublicIp, final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object dedicatedHostId, final java.lang.Object deletionProtection, final java.lang.Object deploymentSetId, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object hostName, final java.lang.Object hpcClusterId, final java.lang.Object instanceChargeType, final java.lang.Object instanceName, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object password, final java.lang.Object passwordInherit, final java.lang.Object period, final java.lang.Object periodUnit, final java.lang.Object privateIpAddress, final java.lang.Object ramRoleName, final java.lang.Object resourceGroupId, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskPerformanceLevel, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty> tags, final java.lang.Object userData, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.imageId = java.util.Objects.requireNonNull(imageId, "imageId is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-            this.allocatePublicIp = allocatePublicIp;
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.dedicatedHostId = dedicatedHostId;
-            this.deletionProtection = deletionProtection;
-            this.deploymentSetId = deploymentSetId;
-            this.description = description;
-            this.diskMappings = diskMappings;
-            this.hostName = hostName;
-            this.hpcClusterId = hpcClusterId;
-            this.instanceChargeType = instanceChargeType;
-            this.instanceName = instanceName;
-            this.internetChargeType = internetChargeType;
-            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
-            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
-            this.ioOptimized = ioOptimized;
-            this.keyPairName = keyPairName;
-            this.password = password;
-            this.passwordInherit = passwordInherit;
-            this.period = period;
-            this.periodUnit = periodUnit;
-            this.privateIpAddress = privateIpAddress;
-            this.ramRoleName = ramRoleName;
-            this.resourceGroupId = resourceGroupId;
-            this.securityEnhancementStrategy = securityEnhancementStrategy;
-            this.securityGroupId = securityGroupId;
-            this.spotPriceLimit = spotPriceLimit;
-            this.spotStrategy = spotStrategy;
-            this.systemDiskCategory = systemDiskCategory;
-            this.systemDiskDescription = systemDiskDescription;
-            this.systemDiskDiskName = systemDiskDiskName;
-            this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
-            this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty>)tags;
-            this.userData = userData;
-            this.vpcId = vpcId;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+            this.allocatePublicIp = builder.allocatePublicIp;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.dedicatedHostId = builder.dedicatedHostId;
+            this.deletionProtection = builder.deletionProtection;
+            this.deploymentSetId = builder.deploymentSetId;
+            this.description = builder.description;
+            this.diskMappings = builder.diskMappings;
+            this.hostName = builder.hostName;
+            this.hpcClusterId = builder.hpcClusterId;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.instanceName = builder.instanceName;
+            this.internetChargeType = builder.internetChargeType;
+            this.internetMaxBandwidthIn = builder.internetMaxBandwidthIn;
+            this.internetMaxBandwidthOut = builder.internetMaxBandwidthOut;
+            this.ioOptimized = builder.ioOptimized;
+            this.keyPairName = builder.keyPairName;
+            this.password = builder.password;
+            this.passwordInherit = builder.passwordInherit;
+            this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.ramRoleName = builder.ramRoleName;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.spotPriceLimit = builder.spotPriceLimit;
+            this.spotStrategy = builder.spotStrategy;
+            this.systemDiskCategory = builder.systemDiskCategory;
+            this.systemDiskDescription = builder.systemDiskDescription;
+            this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+            this.systemDiskSize = builder.systemDiskSize;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty>)builder.tags;
+            this.userData = builder.userData;
+            this.vpcId = builder.vpcId;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override
@@ -1521,6 +1556,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupIds() {
+            return this.securityGroupIds;
         }
 
         @Override
@@ -1669,6 +1709,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
+            if (this.getSecurityGroupIds() != null) {
+                data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+            }
             if (this.getSpotPriceLimit() != null) {
                 data.set("spotPriceLimit", om.valueToTree(this.getSpotPriceLimit()));
             }
@@ -1751,6 +1794,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityEnhancementStrategy != null ? !this.securityEnhancementStrategy.equals(that.securityEnhancementStrategy) : that.securityEnhancementStrategy != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
@@ -1795,6 +1839,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityEnhancementStrategy != null ? this.securityEnhancementStrategy.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);

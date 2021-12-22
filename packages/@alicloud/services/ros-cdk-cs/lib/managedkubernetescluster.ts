@@ -115,6 +115,11 @@ export interface ManagedKubernetesClusterProps {
     readonly proxyMode?: string | ros.IResolvable;
 
     /**
+     * Property runtime: The container runtime of the cluster. The default runtime is Docker.
+     */
+    readonly runtime?: RosManagedKubernetesCluster.RuntimeProperty | ros.IResolvable;
+
+    /**
      * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
     readonly securityGroupId?: string | ros.IResolvable;
@@ -233,6 +238,36 @@ export class ManagedKubernetesCluster extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -261,6 +296,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             name: props.name,
             taint: props.taint,
+            runtime: props.runtime,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
@@ -272,8 +308,8 @@ export class ManagedKubernetesCluster extends ros.Resource {
             loginPassword: props.loginPassword,
             kubernetesVersion: props.kubernetesVersion,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             keyPair: props.keyPair,
+            workerInstanceChargeType: props.workerInstanceChargeType === undefined || props.workerInstanceChargeType === null ? 'PostPaid' : props.workerInstanceChargeType,
             vSwitchIds: props.vSwitchIds,
             workerDataDisks: props.workerDataDisks,
             securityGroupId: props.securityGroupId,
@@ -288,6 +324,12 @@ export class ManagedKubernetesCluster extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrClusterId = rosManagedKubernetesCluster.attrClusterId;
+        this.attrDefaultUserKubeConfig = rosManagedKubernetesCluster.attrDefaultUserKubeConfig;
+        this.attrNodes = rosManagedKubernetesCluster.attrNodes;
+        this.attrPrivateUserKubConfig = rosManagedKubernetesCluster.attrPrivateUserKubConfig;
+        this.attrScalingConfigurationId = rosManagedKubernetesCluster.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosManagedKubernetesCluster.attrScalingGroupId;
+        this.attrScalingRuleId = rosManagedKubernetesCluster.attrScalingRuleId;
         this.attrTaskId = rosManagedKubernetesCluster.attrTaskId;
         this.attrWorkerRamRoleName = rosManagedKubernetesCluster.attrWorkerRamRoleName;
     }

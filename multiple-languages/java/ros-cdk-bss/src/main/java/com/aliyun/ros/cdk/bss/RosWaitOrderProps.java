@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * Properties for defining a `ALIYUN::BSS::WaitOrder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.RosWaitOrderProps")
 @software.amazon.jsii.Jsii.Proxy(RosWaitOrderProps.Jsii$Proxy.class)
 public interface RosWaitOrderProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,9 +34,9 @@ public interface RosWaitOrderProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosWaitOrderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosWaitOrderProps> {
-        private java.lang.Object orderIds;
-        private java.lang.Object cancelOnDelete;
-        private java.lang.Object waitForOrderProduced;
+        java.lang.Object orderIds;
+        java.lang.Object cancelOnDelete;
+        java.lang.Object waitForOrderProduced;
 
         /**
          * Sets the value of {@link RosWaitOrderProps#getOrderIds}
@@ -105,7 +105,7 @@ public interface RosWaitOrderProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosWaitOrderProps build() {
-            return new Jsii$Proxy(orderIds, cancelOnDelete, waitForOrderProduced);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -132,11 +132,11 @@ public interface RosWaitOrderProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object orderIds, final java.lang.Object cancelOnDelete, final java.lang.Object waitForOrderProduced) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.orderIds = java.util.Objects.requireNonNull(orderIds, "orderIds is required");
-            this.cancelOnDelete = cancelOnDelete;
-            this.waitForOrderProduced = waitForOrderProduced;
+            this.orderIds = java.util.Objects.requireNonNull(builder.orderIds, "orderIds is required");
+            this.cancelOnDelete = builder.cancelOnDelete;
+            this.waitForOrderProduced = builder.waitForOrderProduced;
         }
 
         @Override

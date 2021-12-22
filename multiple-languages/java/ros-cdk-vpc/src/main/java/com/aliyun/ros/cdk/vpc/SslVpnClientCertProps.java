@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.261Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnClientCertProps")
 @software.amazon.jsii.Jsii.Proxy(SslVpnClientCertProps.Jsii$Proxy.class)
 public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,8 +32,8 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link SslVpnClientCertProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SslVpnClientCertProps> {
-        private java.lang.Object sslVpnServerId;
-        private java.lang.Object name;
+        java.lang.Object sslVpnServerId;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link SslVpnClientCertProps#getSslVpnServerId}
@@ -84,7 +84,7 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public SslVpnClientCertProps build() {
-            return new Jsii$Proxy(sslVpnServerId, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -109,10 +109,10 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object sslVpnServerId, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.sslVpnServerId = java.util.Objects.requireNonNull(sslVpnServerId, "sslVpnServerId is required");
-            this.name = name;
+            this.sslVpnServerId = java.util.Objects.requireNonNull(builder.sslVpnServerId, "sslVpnServerId is required");
+            this.name = builder.name;
         }
 
         @Override

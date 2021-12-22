@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a `ALIYUN::DMS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.791Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.366Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -116,27 +116,27 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
-        private java.lang.Object databasePassword;
-        private java.lang.Object databaseUser;
-        private java.lang.Object dbaUid;
-        private java.lang.Object envType;
-        private java.lang.Object exportTimeout;
-        private java.lang.Object host;
-        private java.lang.Object instanceAlias;
-        private java.lang.Object instanceSource;
-        private java.lang.Object instanceType;
-        private java.lang.Object networkType;
-        private java.lang.Object port;
-        private java.lang.Object queryTimeout;
-        private java.lang.Object safeRule;
-        private java.lang.Object tid;
-        private java.lang.Object dataLinkName;
-        private java.lang.Object ddlOnline;
-        private java.lang.Object ecsInstanceId;
-        private java.lang.Object ecsRegion;
-        private java.lang.Object sid;
-        private java.lang.Object useDsql;
-        private java.lang.Object vpcId;
+        java.lang.Object databasePassword;
+        java.lang.Object databaseUser;
+        java.lang.Object dbaUid;
+        java.lang.Object envType;
+        java.lang.Object exportTimeout;
+        java.lang.Object host;
+        java.lang.Object instanceAlias;
+        java.lang.Object instanceSource;
+        java.lang.Object instanceType;
+        java.lang.Object networkType;
+        java.lang.Object port;
+        java.lang.Object queryTimeout;
+        java.lang.Object safeRule;
+        java.lang.Object tid;
+        java.lang.Object dataLinkName;
+        java.lang.Object ddlOnline;
+        java.lang.Object ecsInstanceId;
+        java.lang.Object ecsRegion;
+        java.lang.Object sid;
+        java.lang.Object useDsql;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getDatabasePassword}
@@ -565,7 +565,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosInstanceProps build() {
-            return new Jsii$Proxy(databasePassword, databaseUser, dbaUid, envType, exportTimeout, host, instanceAlias, instanceSource, instanceType, networkType, port, queryTimeout, safeRule, tid, dataLinkName, ddlOnline, ecsInstanceId, ecsRegion, sid, useDsql, vpcId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -628,29 +628,29 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object databasePassword, final java.lang.Object databaseUser, final java.lang.Object dbaUid, final java.lang.Object envType, final java.lang.Object exportTimeout, final java.lang.Object host, final java.lang.Object instanceAlias, final java.lang.Object instanceSource, final java.lang.Object instanceType, final java.lang.Object networkType, final java.lang.Object port, final java.lang.Object queryTimeout, final java.lang.Object safeRule, final java.lang.Object tid, final java.lang.Object dataLinkName, final java.lang.Object ddlOnline, final java.lang.Object ecsInstanceId, final java.lang.Object ecsRegion, final java.lang.Object sid, final java.lang.Object useDsql, final java.lang.Object vpcId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.databasePassword = java.util.Objects.requireNonNull(databasePassword, "databasePassword is required");
-            this.databaseUser = java.util.Objects.requireNonNull(databaseUser, "databaseUser is required");
-            this.dbaUid = java.util.Objects.requireNonNull(dbaUid, "dbaUid is required");
-            this.envType = java.util.Objects.requireNonNull(envType, "envType is required");
-            this.exportTimeout = java.util.Objects.requireNonNull(exportTimeout, "exportTimeout is required");
-            this.host = java.util.Objects.requireNonNull(host, "host is required");
-            this.instanceAlias = java.util.Objects.requireNonNull(instanceAlias, "instanceAlias is required");
-            this.instanceSource = java.util.Objects.requireNonNull(instanceSource, "instanceSource is required");
-            this.instanceType = java.util.Objects.requireNonNull(instanceType, "instanceType is required");
-            this.networkType = java.util.Objects.requireNonNull(networkType, "networkType is required");
-            this.port = java.util.Objects.requireNonNull(port, "port is required");
-            this.queryTimeout = java.util.Objects.requireNonNull(queryTimeout, "queryTimeout is required");
-            this.safeRule = java.util.Objects.requireNonNull(safeRule, "safeRule is required");
-            this.tid = java.util.Objects.requireNonNull(tid, "tid is required");
-            this.dataLinkName = dataLinkName;
-            this.ddlOnline = ddlOnline;
-            this.ecsInstanceId = ecsInstanceId;
-            this.ecsRegion = ecsRegion;
-            this.sid = sid;
-            this.useDsql = useDsql;
-            this.vpcId = vpcId;
+            this.databasePassword = java.util.Objects.requireNonNull(builder.databasePassword, "databasePassword is required");
+            this.databaseUser = java.util.Objects.requireNonNull(builder.databaseUser, "databaseUser is required");
+            this.dbaUid = java.util.Objects.requireNonNull(builder.dbaUid, "dbaUid is required");
+            this.envType = java.util.Objects.requireNonNull(builder.envType, "envType is required");
+            this.exportTimeout = java.util.Objects.requireNonNull(builder.exportTimeout, "exportTimeout is required");
+            this.host = java.util.Objects.requireNonNull(builder.host, "host is required");
+            this.instanceAlias = java.util.Objects.requireNonNull(builder.instanceAlias, "instanceAlias is required");
+            this.instanceSource = java.util.Objects.requireNonNull(builder.instanceSource, "instanceSource is required");
+            this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
+            this.networkType = java.util.Objects.requireNonNull(builder.networkType, "networkType is required");
+            this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
+            this.queryTimeout = java.util.Objects.requireNonNull(builder.queryTimeout, "queryTimeout is required");
+            this.safeRule = java.util.Objects.requireNonNull(builder.safeRule, "safeRule is required");
+            this.tid = java.util.Objects.requireNonNull(builder.tid, "tid is required");
+            this.dataLinkName = builder.dataLinkName;
+            this.ddlOnline = builder.ddlOnline;
+            this.ecsInstanceId = builder.ecsInstanceId;
+            this.ecsRegion = builder.ecsRegion;
+            this.sid = builder.sid;
+            this.useDsql = builder.useDsql;
+            this.vpcId = builder.vpcId;
         }
 
         @Override

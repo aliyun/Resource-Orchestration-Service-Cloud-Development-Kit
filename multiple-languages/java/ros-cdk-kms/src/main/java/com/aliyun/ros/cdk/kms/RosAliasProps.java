@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.266Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RosAliasProps.Jsii$Proxy.class)
 public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAliasProps> {
-        private java.lang.Object aliasName;
-        private java.lang.Object keyId;
+        java.lang.Object aliasName;
+        java.lang.Object keyId;
 
         /**
          * Sets the value of {@link RosAliasProps#getAliasName}
@@ -76,7 +76,7 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosAliasProps build() {
-            return new Jsii$Proxy(aliasName, keyId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosAliasProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aliasName, final java.lang.Object keyId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aliasName = java.util.Objects.requireNonNull(aliasName, "aliasName is required");
-            this.keyId = java.util.Objects.requireNonNull(keyId, "keyId is required");
+            this.aliasName = java.util.Objects.requireNonNull(builder.aliasName, "aliasName is required");
+            this.keyId = java.util.Objects.requireNonNull(builder.keyId, "keyId is required");
         }
 
         @Override

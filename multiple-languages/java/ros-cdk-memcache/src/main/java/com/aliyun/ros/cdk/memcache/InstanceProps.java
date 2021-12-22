@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * Properties for defining a `ALIYUN::Memcache::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.625Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.309Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -219,25 +219,25 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.Object autoRenew;
-        private java.lang.Object autoRenewPeriod;
-        private java.lang.Object autoUseCoupon;
-        private java.lang.Object backupPolicy;
-        private java.lang.Object capacity;
-        private java.lang.Object chargeType;
-        private java.lang.Object config;
-        private java.lang.Object couponNo;
-        private java.lang.Object instanceClass;
-        private java.lang.Object instanceName;
-        private java.lang.Object networkType;
-        private java.lang.Object password;
-        private java.lang.Object period;
-        private java.lang.Object privateIpAddress;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object vpcId;
-        private java.lang.Object vpcPasswordFree;
-        private java.lang.Object vSwitchId;
-        private java.lang.Object zoneId;
+        java.lang.Object autoRenew;
+        java.lang.Object autoRenewPeriod;
+        java.lang.Object autoUseCoupon;
+        java.lang.Object backupPolicy;
+        java.lang.Object capacity;
+        java.lang.Object chargeType;
+        java.lang.Object config;
+        java.lang.Object couponNo;
+        java.lang.Object instanceClass;
+        java.lang.Object instanceName;
+        java.lang.Object networkType;
+        java.lang.Object password;
+        java.lang.Object period;
+        java.lang.Object privateIpAddress;
+        java.lang.Object resourceGroupId;
+        java.lang.Object vpcId;
+        java.lang.Object vpcPasswordFree;
+        java.lang.Object vSwitchId;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceProps#getAutoRenew}
@@ -732,7 +732,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public InstanceProps build() {
-            return new Jsii$Proxy(autoRenew, autoRenewPeriod, autoUseCoupon, backupPolicy, capacity, chargeType, config, couponNo, instanceClass, instanceName, networkType, password, period, privateIpAddress, resourceGroupId, vpcId, vpcPasswordFree, vSwitchId, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -791,27 +791,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object autoUseCoupon, final java.lang.Object backupPolicy, final java.lang.Object capacity, final java.lang.Object chargeType, final java.lang.Object config, final java.lang.Object couponNo, final java.lang.Object instanceClass, final java.lang.Object instanceName, final java.lang.Object networkType, final java.lang.Object password, final java.lang.Object period, final java.lang.Object privateIpAddress, final java.lang.Object resourceGroupId, final java.lang.Object vpcId, final java.lang.Object vpcPasswordFree, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.autoRenew = autoRenew;
-            this.autoRenewPeriod = autoRenewPeriod;
-            this.autoUseCoupon = autoUseCoupon;
-            this.backupPolicy = backupPolicy;
-            this.capacity = capacity;
-            this.chargeType = chargeType;
-            this.config = config;
-            this.couponNo = couponNo;
-            this.instanceClass = instanceClass;
-            this.instanceName = instanceName;
-            this.networkType = networkType;
-            this.password = password;
-            this.period = period;
-            this.privateIpAddress = privateIpAddress;
-            this.resourceGroupId = resourceGroupId;
-            this.vpcId = vpcId;
-            this.vpcPasswordFree = vpcPasswordFree;
-            this.vSwitchId = vSwitchId;
-            this.zoneId = zoneId;
+            this.autoRenew = builder.autoRenew;
+            this.autoRenewPeriod = builder.autoRenewPeriod;
+            this.autoUseCoupon = builder.autoUseCoupon;
+            this.backupPolicy = builder.backupPolicy;
+            this.capacity = builder.capacity;
+            this.chargeType = builder.chargeType;
+            this.config = builder.config;
+            this.couponNo = builder.couponNo;
+            this.instanceClass = builder.instanceClass;
+            this.instanceName = builder.instanceName;
+            this.networkType = builder.networkType;
+            this.password = builder.password;
+            this.period = builder.period;
+            this.privateIpAddress = builder.privateIpAddress;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.vpcId = builder.vpcId;
+            this.vpcPasswordFree = builder.vpcPasswordFree;
+            this.vSwitchId = builder.vSwitchId;
+            this.zoneId = builder.zoneId;
         }
 
         @Override

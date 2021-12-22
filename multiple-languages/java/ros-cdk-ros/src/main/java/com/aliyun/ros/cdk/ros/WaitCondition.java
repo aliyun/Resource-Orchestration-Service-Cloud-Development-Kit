@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::WaitCondition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.728Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitCondition")
 public class WaitCondition extends com.aliyun.ros.cdk.core.Resource {
 
@@ -163,6 +163,31 @@ public class WaitCondition extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder count(final com.aliyun.ros.cdk.core.IResolvable count) {
             this.props.count(count);
+            return this;
+        }
+
+        /**
+         * Property showProgressEvent: Whether to generate progress changed event.
+         * <p>
+         * Default to Disabled.
+         * <p>
+         * @return {@code this}
+         * @param showProgressEvent Property showProgressEvent: Whether to generate progress changed event. This parameter is required.
+         */
+        public Builder showProgressEvent(final java.lang.String showProgressEvent) {
+            this.props.showProgressEvent(showProgressEvent);
+            return this;
+        }
+        /**
+         * Property showProgressEvent: Whether to generate progress changed event.
+         * <p>
+         * Default to Disabled.
+         * <p>
+         * @return {@code this}
+         * @param showProgressEvent Property showProgressEvent: Whether to generate progress changed event. This parameter is required.
+         */
+        public Builder showProgressEvent(final com.aliyun.ros.cdk.core.IResolvable showProgressEvent) {
+            this.props.showProgressEvent(showProgressEvent);
             return this;
         }
 

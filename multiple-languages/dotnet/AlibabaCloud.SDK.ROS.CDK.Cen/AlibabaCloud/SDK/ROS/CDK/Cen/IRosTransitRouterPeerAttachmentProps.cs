@@ -83,45 +83,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: resourceType: ResourceType
-        /// </remarks>
-        [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? ResourceType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: routeTableAssociationEnabled:
-        /// </remarks>
-        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? RouteTableAssociationEnabled
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: routeTablePropagationEnabled:
-        /// </remarks>
-        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? RouteTablePropagationEnabled
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: transitRouterAttachmentDescription: TransitRouterAttachmentDescription
         /// </remarks>
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -223,36 +184,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             [JsiiOptional]
             [JsiiProperty(name: "peerTransitRouterRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeerTransitRouterRegionId
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: resourceType: ResourceType
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? ResourceType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: routeTableAssociationEnabled:
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? RouteTableAssociationEnabled
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: routeTablePropagationEnabled:
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? RouteTablePropagationEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

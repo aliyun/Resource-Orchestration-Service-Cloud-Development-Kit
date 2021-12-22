@@ -1454,6 +1454,181 @@ export class RosCenRouteMap extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CEN::CenRouteService`
+ */
+export interface RosCenRouteServiceProps {
+
+    /**
+     * @Property accessRegionId: The region where the cloud service is deployed.
+     */
+    readonly accessRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property host: The domain or IP address of the cloud service.
+     */
+    readonly host: string | ros.IResolvable;
+
+    /**
+     * @Property hostRegionId: The region where the cloud service is deployed.
+     * You can call the DescribeRegions operation to query region IDs.
+     * Note The HostRegionId and AccessRegionIds.N must be set to the same value.
+     */
+    readonly hostRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property hostVpcId: The virtual private cloud (VPC) that is associated with the cloud service.
+     */
+    readonly hostVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the cloud service.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCenRouteServiceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCenRouteServiceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCenRouteServicePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('hostRegionId', ros.requiredValidator)(properties.hostRegionId));
+    errors.collect(ros.propertyValidator('hostRegionId', ros.validateString)(properties.hostRegionId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('accessRegionId', ros.requiredValidator)(properties.accessRegionId));
+    errors.collect(ros.propertyValidator('accessRegionId', ros.validateString)(properties.accessRegionId));
+    errors.collect(ros.propertyValidator('host', ros.requiredValidator)(properties.host));
+    errors.collect(ros.propertyValidator('host', ros.validateString)(properties.host));
+    errors.collect(ros.propertyValidator('hostVpcId', ros.requiredValidator)(properties.hostVpcId));
+    errors.collect(ros.propertyValidator('hostVpcId', ros.validateString)(properties.hostVpcId));
+    return errors.wrap('supplied properties not correct for "RosCenRouteServiceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::CenRouteService` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCenRouteServiceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::CenRouteService` resource.
+ */
+// @ts-ignore TS6133
+function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCenRouteServicePropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccessRegionId: ros.stringToRosTemplate(properties.accessRegionId),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      Host: ros.stringToRosTemplate(properties.host),
+      HostRegionId: ros.stringToRosTemplate(properties.hostRegionId),
+      HostVpcId: ros.stringToRosTemplate(properties.hostVpcId),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::CenRouteService`
+ */
+export class RosCenRouteService extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenRouteService";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
+     */
+    public readonly attrId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessRegionId: The region where the cloud service is deployed.
+     */
+    public accessRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property host: The domain or IP address of the cloud service.
+     */
+    public host: string | ros.IResolvable;
+
+    /**
+     * @Property hostRegionId: The region where the cloud service is deployed.
+     * You can call the DescribeRegions operation to query region IDs.
+     * Note The HostRegionId and AccessRegionIds.N must be set to the same value.
+     */
+    public hostRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property hostVpcId: The virtual private cloud (VPC) that is associated with the cloud service.
+     */
+    public hostVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the cloud service.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::CenRouteService`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCenRouteServiceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCenRouteService.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrId = this.getAtt('Id');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessRegionId = props.accessRegionId;
+        this.cenId = props.cenId;
+        this.host = props.host;
+        this.hostRegionId = props.hostRegionId;
+        this.hostVpcId = props.hostVpcId;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessRegionId: this.accessRegionId,
+            cenId: this.cenId,
+            host: this.host,
+            hostRegionId: this.hostRegionId,
+            hostVpcId: this.hostVpcId,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCenRouteServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`
  */
 export interface RosCenVbrHealthCheckProps {
@@ -1898,8 +2073,8 @@ function RosTransitRouterPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
-    errors.collect(ros.propertyValidator('transitRouterDescription', ros.validateString)(properties.transitRouterDescription));
     errors.collect(ros.propertyValidator('transitRouterName', ros.validateString)(properties.transitRouterName));
+    errors.collect(ros.propertyValidator('transitRouterDescription', ros.validateString)(properties.transitRouterDescription));
     return errors.wrap('supplied properties not correct for "RosTransitRouterProps"');
 }
 
@@ -2056,21 +2231,6 @@ export interface RosTransitRouterPeerAttachmentProps {
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
-
-    /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
@@ -2097,12 +2257,9 @@ function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.Vali
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
-    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
-    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
-    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.requiredValidator)(properties.peerTransitRouterId));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.validateString)(properties.peerTransitRouterId));
     errors.collect(ros.propertyValidator('cenBandwidthPackageId', ros.validateString)(properties.cenBandwidthPackageId));
@@ -2132,9 +2289,6 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
       CenBandwidthPackageId: ros.stringToRosTemplate(properties.cenBandwidthPackageId),
       CenId: ros.stringToRosTemplate(properties.cenId),
       PeerTransitRouterRegionId: ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
-      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
       TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
@@ -2259,21 +2413,6 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
     public peerTransitRouterRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceType: ResourceType
-     */
-    public resourceType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
-
-    /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
@@ -2319,9 +2458,6 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
         this.cenBandwidthPackageId = props.cenBandwidthPackageId;
         this.cenId = props.cenId;
         this.peerTransitRouterRegionId = props.peerTransitRouterRegionId;
-        this.resourceType = props.resourceType;
-        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
-        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
@@ -2336,9 +2472,6 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
             cenBandwidthPackageId: this.cenBandwidthPackageId,
             cenId: this.cenId,
             peerTransitRouterRegionId: this.peerTransitRouterRegionId,
-            resourceType: this.resourceType,
-            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
-            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,
@@ -2996,21 +3129,6 @@ export interface RosTransitRouterVbrAttachmentProps {
     readonly cenId?: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
-
-    /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
@@ -3042,12 +3160,9 @@ function RosTransitRouterVbrAttachmentPropsValidator(properties: any): ros.Valid
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
-    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
-    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('vbrOwnerId', ros.validateNumber)(properties.vbrOwnerId));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
-    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('vbrId', ros.requiredValidator)(properties.vbrId));
     errors.collect(ros.propertyValidator('vbrId', ros.validateString)(properties.vbrId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
@@ -3072,9 +3187,6 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
       VbrId: ros.stringToRosTemplate(properties.vbrId),
       AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
       CenId: ros.stringToRosTemplate(properties.cenId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
-      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
       TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
@@ -3165,21 +3277,6 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
     public cenId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceType: ResourceType
-     */
-    public resourceType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
-
-    /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
@@ -3223,9 +3320,6 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
         this.vbrId = props.vbrId;
         this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
         this.cenId = props.cenId;
-        this.resourceType = props.resourceType;
-        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
-        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
@@ -3238,9 +3332,6 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
             vbrId: this.vbrId,
             autoPublishRouteEnabled: this.autoPublishRouteEnabled,
             cenId: this.cenId,
-            resourceType: this.resourceType,
-            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
-            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,
@@ -3268,11 +3359,6 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property autoCreateVpcRoute:
-     */
-    readonly autoCreateVpcRoute?: string | ros.IResolvable;
-
-    /**
      * @Property cenId: CenId
      */
     readonly cenId?: string | ros.IResolvable;
@@ -3281,21 +3367,6 @@ export interface RosTransitRouterVpcAttachmentProps {
      * @Property chargeType:
      */
     readonly chargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property resourceType: ResourceType
-     */
-    readonly resourceType?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    readonly routeTableAssociationEnabled?: string | ros.IResolvable;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    readonly routeTablePropagationEnabled?: string | ros.IResolvable;
 
     /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
@@ -3328,15 +3399,11 @@ export interface RosTransitRouterVpcAttachmentProps {
 function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateString)(properties.routeTableAssociationEnabled));
-    errors.collect(ros.propertyValidator('autoCreateVpcRoute', ros.validateString)(properties.autoCreateVpcRoute));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateString)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
-    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
     if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
         errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
@@ -3368,12 +3435,8 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
     return {
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       ZoneMappings: ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
-      AutoCreateVpcRoute: ros.stringToRosTemplate(properties.autoCreateVpcRoute),
       CenId: ros.stringToRosTemplate(properties.cenId),
       ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      RouteTableAssociationEnabled: ros.stringToRosTemplate(properties.routeTableAssociationEnabled),
-      RouteTablePropagationEnabled: ros.stringToRosTemplate(properties.routeTablePropagationEnabled),
       TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
@@ -3454,11 +3517,6 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property autoCreateVpcRoute:
-     */
-    public autoCreateVpcRoute: string | ros.IResolvable | undefined;
-
-    /**
      * @Property cenId: CenId
      */
     public cenId: string | ros.IResolvable | undefined;
@@ -3467,21 +3525,6 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
      * @Property chargeType:
      */
     public chargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property resourceType: ResourceType
-     */
-    public resourceType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTableAssociationEnabled:
-     */
-    public routeTableAssociationEnabled: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property routeTablePropagationEnabled:
-     */
-    public routeTablePropagationEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
@@ -3525,12 +3568,8 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
         this.zoneMappings = props.zoneMappings;
-        this.autoCreateVpcRoute = props.autoCreateVpcRoute;
         this.cenId = props.cenId;
         this.chargeType = props.chargeType;
-        this.resourceType = props.resourceType;
-        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
-        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
@@ -3542,12 +3581,8 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         return {
             vpcId: this.vpcId,
             zoneMappings: this.zoneMappings,
-            autoCreateVpcRoute: this.autoCreateVpcRoute,
             cenId: this.cenId,
             chargeType: this.chargeType,
-            resourceType: this.resourceType,
-            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
-            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,

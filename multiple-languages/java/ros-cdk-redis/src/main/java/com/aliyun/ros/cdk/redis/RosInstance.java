@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS template type:  `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.666Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -68,6 +68,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClassicInnerConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrClassicInnerConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClassicInnerConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrClassicInnerConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionDomain() {
         return software.amazon.jsii.Kernel.get(this, "attrConnectionDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
@@ -76,6 +88,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnections() {
         return software.amazon.jsii.Kernel.get(this, "attrConnections", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDirectConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrDirectConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDirectConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrDirectConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -152,6 +176,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrQps() {
         return software.amazon.jsii.Kernel.get(this, "attrQps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
@@ -166,6 +202,18 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
         return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcPrivateConnectionPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcPrivateConnectionPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcPrivateConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcPrivateConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -191,6 +239,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewDuration() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoRenewDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewDuration", value);
+    }
+
+    /**
+     */
+    public void setAutoRenewDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewDuration", value);
     }
 
     /**
@@ -227,6 +293,60 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "capacity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setChargeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", value);
+    }
+
+    /**
+     */
+    public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConnections() {
+        return software.amazon.jsii.Kernel.get(this, "connections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConnections(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "connections", value);
+    }
+
+    /**
+     */
+    public void setConnections(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.redis.RosInstance.ConnectionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "connections", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
+    public void setDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionForce", value);
     }
 
     /**
@@ -285,24 +405,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConnection() {
-        return software.amazon.jsii.Kernel.get(this, "instanceConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInstanceConnection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "instanceConnection", value);
-    }
-
-    /**
-     */
-    public void setInstanceConnection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.redis.RosInstance.InstanceConnectionProperty value) {
-        software.amazon.jsii.Kernel.set(this, "instanceConnection", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceMaintainTime() {
         return software.amazon.jsii.Kernel.get(this, "instanceMaintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -353,6 +455,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "password", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", value);
     }
 
     /**
@@ -510,9 +630,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BackupPolicyProperty> {
-            private java.lang.Object preferredBackupPeriod;
-            private java.lang.Object preferredBackupTime;
-            private java.lang.Object enableBackupLog;
+            java.lang.Object preferredBackupPeriod;
+            java.lang.Object preferredBackupTime;
+            java.lang.Object enableBackupLog;
 
             /**
              * Sets the value of {@link BackupPolicyProperty#getPreferredBackupPeriod}
@@ -588,7 +708,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public BackupPolicyProperty build() {
-                return new Jsii$Proxy(preferredBackupPeriod, preferredBackupTime, enableBackupLog);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -616,11 +736,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object enableBackupLog) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.preferredBackupPeriod = java.util.Objects.requireNonNull(preferredBackupPeriod, "preferredBackupPeriod is required");
-                this.preferredBackupTime = java.util.Objects.requireNonNull(preferredBackupTime, "preferredBackupTime is required");
-                this.enableBackupLog = enableBackupLog;
+                this.preferredBackupPeriod = java.util.Objects.requireNonNull(builder.preferredBackupPeriod, "preferredBackupPeriod is required");
+                this.preferredBackupTime = java.util.Objects.requireNonNull(builder.preferredBackupTime, "preferredBackupTime is required");
+                this.enableBackupLog = builder.enableBackupLog;
             }
 
             @Override
@@ -683,135 +803,100 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.InstanceConnectionProperty")
-    @software.amazon.jsii.Jsii.Proxy(InstanceConnectionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.ClassicInnerConnectionProperty")
+    @software.amazon.jsii.Jsii.Proxy(ClassicInnerConnectionProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface InstanceConnectionProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface ClassicInnerConnectionProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getIpType() {
-            return null;
-        }
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getNewConnectionString() {
-            return null;
-        }
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
 
         /**
-         */
-        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
-            return null;
-        }
-
-        /**
-         * @return a {@link Builder} of {@link InstanceConnectionProperty}
+         * @return a {@link Builder} of {@link ClassicInnerConnectionProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link InstanceConnectionProperty}
+         * A builder for {@link ClassicInnerConnectionProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<InstanceConnectionProperty> {
-            private java.lang.Object ipType;
-            private java.lang.Object newConnectionString;
-            private java.lang.Object port;
+        public static final class Builder implements software.amazon.jsii.Builder<ClassicInnerConnectionProperty> {
+            java.lang.Object connectionPort;
+            java.lang.Object connectionString;
 
             /**
-             * Sets the value of {@link InstanceConnectionProperty#getIpType}
-             * @param ipType the value to be set.
+             * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder ipType(java.lang.String ipType) {
-                this.ipType = ipType;
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
                 return this;
             }
 
             /**
-             * Sets the value of {@link InstanceConnectionProperty#getIpType}
-             * @param ipType the value to be set.
+             * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder ipType(com.aliyun.ros.cdk.core.IResolvable ipType) {
-                this.ipType = ipType;
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
                 return this;
             }
 
             /**
-             * Sets the value of {@link InstanceConnectionProperty#getNewConnectionString}
-             * @param newConnectionString the value to be set.
+             * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder newConnectionString(java.lang.String newConnectionString) {
-                this.newConnectionString = newConnectionString;
+            public Builder connectionString(java.lang.String connectionString) {
+                this.connectionString = connectionString;
                 return this;
             }
 
             /**
-             * Sets the value of {@link InstanceConnectionProperty#getNewConnectionString}
-             * @param newConnectionString the value to be set.
+             * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder newConnectionString(com.aliyun.ros.cdk.core.IResolvable newConnectionString) {
-                this.newConnectionString = newConnectionString;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link InstanceConnectionProperty#getPort}
-             * @param port the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder port(java.lang.Number port) {
-                this.port = port;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link InstanceConnectionProperty#getPort}
-             * @param port the value to be set.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
-                this.port = port;
+            public Builder connectionString(com.aliyun.ros.cdk.core.IResolvable connectionString) {
+                this.connectionString = connectionString;
                 return this;
             }
 
             /**
              * Builds the configured instance.
-             * @return a new instance of {@link InstanceConnectionProperty}
+             * @return a new instance of {@link ClassicInnerConnectionProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public InstanceConnectionProperty build() {
-                return new Jsii$Proxy(ipType, newConnectionString, port);
+            public ClassicInnerConnectionProperty build() {
+                return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link InstanceConnectionProperty}
+         * An implementation for {@link ClassicInnerConnectionProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceConnectionProperty {
-            private final java.lang.Object ipType;
-            private final java.lang.Object newConnectionString;
-            private final java.lang.Object port;
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ClassicInnerConnectionProperty {
+            private final java.lang.Object connectionPort;
+            private final java.lang.Object connectionString;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -819,34 +904,27 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.ipType = software.amazon.jsii.Kernel.get(this, "ipType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.newConnectionString = software.amazon.jsii.Kernel.get(this, "newConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ipType, final java.lang.Object newConnectionString, final java.lang.Object port) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ipType = ipType;
-                this.newConnectionString = newConnectionString;
-                this.port = port;
+                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
+                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
             }
 
             @Override
-            public final java.lang.Object getIpType() {
-                return this.ipType;
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
             }
 
             @Override
-            public final java.lang.Object getNewConnectionString() {
-                return this.newConnectionString;
-            }
-
-            @Override
-            public final java.lang.Object getPort() {
-                return this.port;
+            public final java.lang.Object getConnectionString() {
+                return this.connectionString;
             }
 
             @Override
@@ -855,18 +933,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                if (this.getIpType() != null) {
-                    data.set("ipType", om.valueToTree(this.getIpType()));
-                }
-                if (this.getNewConnectionString() != null) {
-                    data.set("newConnectionString", om.valueToTree(this.getNewConnectionString()));
-                }
-                if (this.getPort() != null) {
-                    data.set("port", om.valueToTree(this.getPort()));
-                }
+                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                data.set("connectionString", om.valueToTree(this.getConnectionString()));
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.InstanceConnectionProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.ClassicInnerConnectionProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -880,18 +951,438 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                InstanceConnectionProperty.Jsii$Proxy that = (InstanceConnectionProperty.Jsii$Proxy) o;
+                ClassicInnerConnectionProperty.Jsii$Proxy that = (ClassicInnerConnectionProperty.Jsii$Proxy) o;
 
-                if (this.ipType != null ? !this.ipType.equals(that.ipType) : that.ipType != null) return false;
-                if (this.newConnectionString != null ? !this.newConnectionString.equals(that.newConnectionString) : that.newConnectionString != null) return false;
-                return this.port != null ? this.port.equals(that.port) : that.port == null;
+                if (!connectionPort.equals(that.connectionPort)) return false;
+                return this.connectionString.equals(that.connectionString);
             }
 
             @Override
             public final int hashCode() {
-                int result = this.ipType != null ? this.ipType.hashCode() : 0;
-                result = 31 * result + (this.newConnectionString != null ? this.newConnectionString.hashCode() : 0);
-                result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
+                int result = this.connectionPort.hashCode();
+                result = 31 * result + (this.connectionString.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.ConnectionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ConnectionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ConnectionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getClassicInnerConnection() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDirectConnection() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPublicConnection() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVpcPrivateConnection() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ConnectionsProperty> {
+            java.lang.Object classicInnerConnection;
+            java.lang.Object directConnection;
+            java.lang.Object publicConnection;
+            java.lang.Object vpcPrivateConnection;
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getClassicInnerConnection}
+             * @param classicInnerConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder classicInnerConnection(com.aliyun.ros.cdk.core.IResolvable classicInnerConnection) {
+                this.classicInnerConnection = classicInnerConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getClassicInnerConnection}
+             * @param classicInnerConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder classicInnerConnection(com.aliyun.ros.cdk.redis.RosInstance.ClassicInnerConnectionProperty classicInnerConnection) {
+                this.classicInnerConnection = classicInnerConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getDirectConnection}
+             * @param directConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder directConnection(com.aliyun.ros.cdk.core.IResolvable directConnection) {
+                this.directConnection = directConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getDirectConnection}
+             * @param directConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder directConnection(com.aliyun.ros.cdk.redis.RosInstance.DirectConnectionProperty directConnection) {
+                this.directConnection = directConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getPublicConnection}
+             * @param publicConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder publicConnection(com.aliyun.ros.cdk.core.IResolvable publicConnection) {
+                this.publicConnection = publicConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getPublicConnection}
+             * @param publicConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder publicConnection(com.aliyun.ros.cdk.redis.RosInstance.PublicConnectionProperty publicConnection) {
+                this.publicConnection = publicConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getVpcPrivateConnection}
+             * @param vpcPrivateConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcPrivateConnection(com.aliyun.ros.cdk.core.IResolvable vpcPrivateConnection) {
+                this.vpcPrivateConnection = vpcPrivateConnection;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionsProperty#getVpcPrivateConnection}
+             * @param vpcPrivateConnection the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcPrivateConnection(com.aliyun.ros.cdk.redis.RosInstance.VpcPrivateConnectionProperty vpcPrivateConnection) {
+                this.vpcPrivateConnection = vpcPrivateConnection;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ConnectionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ConnectionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConnectionsProperty {
+            private final java.lang.Object classicInnerConnection;
+            private final java.lang.Object directConnection;
+            private final java.lang.Object publicConnection;
+            private final java.lang.Object vpcPrivateConnection;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.classicInnerConnection = software.amazon.jsii.Kernel.get(this, "classicInnerConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.directConnection = software.amazon.jsii.Kernel.get(this, "directConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.publicConnection = software.amazon.jsii.Kernel.get(this, "publicConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcPrivateConnection = software.amazon.jsii.Kernel.get(this, "vpcPrivateConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.classicInnerConnection = builder.classicInnerConnection;
+                this.directConnection = builder.directConnection;
+                this.publicConnection = builder.publicConnection;
+                this.vpcPrivateConnection = builder.vpcPrivateConnection;
+            }
+
+            @Override
+            public final java.lang.Object getClassicInnerConnection() {
+                return this.classicInnerConnection;
+            }
+
+            @Override
+            public final java.lang.Object getDirectConnection() {
+                return this.directConnection;
+            }
+
+            @Override
+            public final java.lang.Object getPublicConnection() {
+                return this.publicConnection;
+            }
+
+            @Override
+            public final java.lang.Object getVpcPrivateConnection() {
+                return this.vpcPrivateConnection;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getClassicInnerConnection() != null) {
+                    data.set("classicInnerConnection", om.valueToTree(this.getClassicInnerConnection()));
+                }
+                if (this.getDirectConnection() != null) {
+                    data.set("directConnection", om.valueToTree(this.getDirectConnection()));
+                }
+                if (this.getPublicConnection() != null) {
+                    data.set("publicConnection", om.valueToTree(this.getPublicConnection()));
+                }
+                if (this.getVpcPrivateConnection() != null) {
+                    data.set("vpcPrivateConnection", om.valueToTree(this.getVpcPrivateConnection()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.ConnectionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ConnectionsProperty.Jsii$Proxy that = (ConnectionsProperty.Jsii$Proxy) o;
+
+                if (this.classicInnerConnection != null ? !this.classicInnerConnection.equals(that.classicInnerConnection) : that.classicInnerConnection != null) return false;
+                if (this.directConnection != null ? !this.directConnection.equals(that.directConnection) : that.directConnection != null) return false;
+                if (this.publicConnection != null ? !this.publicConnection.equals(that.publicConnection) : that.publicConnection != null) return false;
+                return this.vpcPrivateConnection != null ? this.vpcPrivateConnection.equals(that.vpcPrivateConnection) : that.vpcPrivateConnection == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.classicInnerConnection != null ? this.classicInnerConnection.hashCode() : 0;
+                result = 31 * result + (this.directConnection != null ? this.directConnection.hashCode() : 0);
+                result = 31 * result + (this.publicConnection != null ? this.publicConnection.hashCode() : 0);
+                result = 31 * result + (this.vpcPrivateConnection != null ? this.vpcPrivateConnection.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.DirectConnectionProperty")
+    @software.amazon.jsii.Jsii.Proxy(DirectConnectionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DirectConnectionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+
+        /**
+         * @return a {@link Builder} of {@link DirectConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DirectConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DirectConnectionProperty> {
+            java.lang.Object connectionPort;
+            java.lang.Object connectionString;
+
+            /**
+             * Sets the value of {@link DirectConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DirectConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DirectConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(java.lang.String connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DirectConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(com.aliyun.ros.cdk.core.IResolvable connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DirectConnectionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DirectConnectionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DirectConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DirectConnectionProperty {
+            private final java.lang.Object connectionPort;
+            private final java.lang.Object connectionString;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
+                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+            }
+
+            @Override
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionString() {
+                return this.connectionString;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.DirectConnectionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DirectConnectionProperty.Jsii$Proxy that = (DirectConnectionProperty.Jsii$Proxy) o;
+
+                if (!connectionPort.equals(that.connectionPort)) return false;
+                return this.connectionString.equals(that.connectionString);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.connectionPort.hashCode();
+                result = 31 * result + (this.connectionString.hashCode());
                 return result;
             }
         }
@@ -929,8 +1420,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<InstanceMaintainTimeProperty> {
-            private java.lang.Object maintainEndTime;
-            private java.lang.Object maintainStartTime;
+            java.lang.Object maintainEndTime;
+            java.lang.Object maintainStartTime;
 
             /**
              * Sets the value of {@link InstanceMaintainTimeProperty#getMaintainEndTime}
@@ -984,7 +1475,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public InstanceMaintainTimeProperty build() {
-                return new Jsii$Proxy(maintainEndTime, maintainStartTime);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1010,10 +1501,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object maintainEndTime, final java.lang.Object maintainStartTime) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.maintainEndTime = maintainEndTime;
-                this.maintainStartTime = maintainStartTime;
+                this.maintainEndTime = builder.maintainEndTime;
+                this.maintainStartTime = builder.maintainStartTime;
             }
 
             @Override
@@ -1070,6 +1561,170 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.PublicConnectionProperty")
+    @software.amazon.jsii.Jsii.Proxy(PublicConnectionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PublicConnectionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+
+        /**
+         * @return a {@link Builder} of {@link PublicConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PublicConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PublicConnectionProperty> {
+            java.lang.Object connectionPort;
+            java.lang.Object connectionString;
+
+            /**
+             * Sets the value of {@link PublicConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PublicConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PublicConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(java.lang.String connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PublicConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(com.aliyun.ros.cdk.core.IResolvable connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PublicConnectionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PublicConnectionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PublicConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PublicConnectionProperty {
+            private final java.lang.Object connectionPort;
+            private final java.lang.Object connectionString;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
+                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+            }
+
+            @Override
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionString() {
+                return this.connectionString;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.PublicConnectionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PublicConnectionProperty.Jsii$Proxy that = (PublicConnectionProperty.Jsii$Proxy) o;
+
+                if (!connectionPort.equals(that.connectionPort)) return false;
+                return this.connectionString.equals(that.connectionString);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.connectionPort.hashCode();
+                result = 31 * result + (this.connectionString.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1099,8 +1754,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
-            private java.lang.Object key;
-            private java.lang.Object value;
+            java.lang.Object key;
+            java.lang.Object value;
 
             /**
              * Sets the value of {@link TagsProperty#getKey}
@@ -1154,7 +1809,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TagsProperty build() {
-                return new Jsii$Proxy(key, value);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1180,10 +1835,10 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.key = java.util.Objects.requireNonNull(key, "key is required");
-                this.value = value;
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
             }
 
             @Override
@@ -1236,6 +1891,170 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance.VpcPrivateConnectionProperty")
+    @software.amazon.jsii.Jsii.Proxy(VpcPrivateConnectionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface VpcPrivateConnectionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+
+        /**
+         * @return a {@link Builder} of {@link VpcPrivateConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link VpcPrivateConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<VpcPrivateConnectionProperty> {
+            java.lang.Object connectionPort;
+            java.lang.Object connectionString;
+
+            /**
+             * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(java.lang.String connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(com.aliyun.ros.cdk.core.IResolvable connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link VpcPrivateConnectionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public VpcPrivateConnectionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link VpcPrivateConnectionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcPrivateConnectionProperty {
+            private final java.lang.Object connectionPort;
+            private final java.lang.Object connectionString;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
+                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+            }
+
+            @Override
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionString() {
+                return this.connectionString;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosInstance.VpcPrivateConnectionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                VpcPrivateConnectionProperty.Jsii$Proxy that = (VpcPrivateConnectionProperty.Jsii$Proxy) o;
+
+                if (!connectionPort.equals(that.connectionPort)) return false;
+                return this.connectionString.equals(that.connectionString);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.connectionPort.hashCode();
+                result = 31 * result + (this.connectionString.hashCode());
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.redis.RosInstance}.
@@ -1261,6 +2080,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.redis.RosInstanceProps.Builder();
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoRenewDuration This parameter is required.
+         */
+        public Builder autoRenewDuration(final java.lang.Number autoRenewDuration) {
+            this.props.autoRenewDuration(autoRenewDuration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoRenewDuration This parameter is required.
+         */
+        public Builder autoRenewDuration(final com.aliyun.ros.cdk.core.IResolvable autoRenewDuration) {
+            this.props.autoRenewDuration(autoRenewDuration);
+            return this;
         }
 
         /**
@@ -1294,6 +2130,57 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder capacity(final com.aliyun.ros.cdk.core.IResolvable capacity) {
             this.props.capacity(capacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final java.lang.String chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param connections This parameter is required.
+         */
+        public Builder connections(final com.aliyun.ros.cdk.core.IResolvable connections) {
+            this.props.connections(connections);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param connections This parameter is required.
+         */
+        public Builder connections(final com.aliyun.ros.cdk.redis.RosInstance.ConnectionsProperty connections) {
+            this.props.connections(connections);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final java.lang.Boolean deletionForce) {
+            this.props.deletionForce(deletionForce);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionForce This parameter is required.
+         */
+        public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.props.deletionForce(deletionForce);
             return this;
         }
 
@@ -1350,23 +2237,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param instanceConnection This parameter is required.
-         */
-        public Builder instanceConnection(final com.aliyun.ros.cdk.core.IResolvable instanceConnection) {
-            this.props.instanceConnection(instanceConnection);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param instanceConnection This parameter is required.
-         */
-        public Builder instanceConnection(final com.aliyun.ros.cdk.redis.RosInstance.InstanceConnectionProperty instanceConnection) {
-            this.props.instanceConnection(instanceConnection);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param instanceMaintainTime This parameter is required.
          */
         public Builder instanceMaintainTime(final com.aliyun.ros.cdk.core.IResolvable instanceMaintainTime) {
@@ -1413,6 +2283,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final java.lang.Number period) {
+            this.props.period(period);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
             return this;
         }
 

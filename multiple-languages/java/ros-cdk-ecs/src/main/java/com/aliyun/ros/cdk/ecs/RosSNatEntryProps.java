@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SNatEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.172Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSNatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosSNatEntryProps.Jsii$Proxy.class)
 public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,11 +44,11 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosSNatEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSNatEntryProps> {
-        private java.lang.Object sNatIp;
-        private java.lang.Object sNatTableId;
-        private java.lang.Object snatEntryName;
-        private java.lang.Object sourceCidr;
-        private java.lang.Object sourceVSwitchId;
+        java.lang.Object sNatIp;
+        java.lang.Object sNatTableId;
+        java.lang.Object snatEntryName;
+        java.lang.Object sourceCidr;
+        java.lang.Object sourceVSwitchId;
 
         /**
          * Sets the value of {@link RosSNatEntryProps#getSNatIp}
@@ -157,7 +157,7 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosSNatEntryProps build() {
-            return new Jsii$Proxy(sNatIp, sNatTableId, snatEntryName, sourceCidr, sourceVSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -188,13 +188,13 @@ public interface RosSNatEntryProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object sNatIp, final java.lang.Object sNatTableId, final java.lang.Object snatEntryName, final java.lang.Object sourceCidr, final java.lang.Object sourceVSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.sNatIp = java.util.Objects.requireNonNull(sNatIp, "sNatIp is required");
-            this.sNatTableId = java.util.Objects.requireNonNull(sNatTableId, "sNatTableId is required");
-            this.snatEntryName = snatEntryName;
-            this.sourceCidr = sourceCidr;
-            this.sourceVSwitchId = sourceVSwitchId;
+            this.sNatIp = java.util.Objects.requireNonNull(builder.sNatIp, "sNatIp is required");
+            this.sNatTableId = java.util.Objects.requireNonNull(builder.sNatTableId, "sNatTableId is required");
+            this.snatEntryName = builder.snatEntryName;
+            this.sourceCidr = builder.sourceCidr;
+            this.sourceVSwitchId = builder.sourceVSwitchId;
         }
 
         @Override

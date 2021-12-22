@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.481Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneVpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneVpcBinderProps.Jsii$Proxy.class)
 public interface RosZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosZoneVpcBinderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosZoneVpcBinderProps> {
-        private java.lang.Object vpcs;
-        private java.lang.Object zoneId;
+        java.lang.Object vpcs;
+        java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosZoneVpcBinderProps#getVpcs}
@@ -76,7 +76,7 @@ public interface RosZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosZoneVpcBinderProps build() {
-            return new Jsii$Proxy(vpcs, zoneId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object vpcs, final java.lang.Object zoneId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vpcs = java.util.Objects.requireNonNull(vpcs, "vpcs is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
+            this.vpcs = java.util.Objects.requireNonNull(builder.vpcs, "vpcs is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS template type:  `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.645Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosRepository")
 public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -217,12 +217,12 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RepoSourceProperty> {
-            private java.lang.Object isAutoBuild;
-            private java.lang.Object isDisableCache;
-            private java.lang.Object isOversea;
-            private java.lang.Object sourceRepoName;
-            private java.lang.Object sourceRepoNamespace;
-            private java.lang.Object sourceRepoType;
+            java.lang.Object isAutoBuild;
+            java.lang.Object isDisableCache;
+            java.lang.Object isOversea;
+            java.lang.Object sourceRepoName;
+            java.lang.Object sourceRepoNamespace;
+            java.lang.Object sourceRepoType;
 
             /**
              * Sets the value of {@link RepoSourceProperty#getIsAutoBuild}
@@ -364,7 +364,7 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public RepoSourceProperty build() {
-                return new Jsii$Proxy(isAutoBuild, isDisableCache, isOversea, sourceRepoName, sourceRepoNamespace, sourceRepoType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -398,14 +398,14 @@ public class RosRepository extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object isAutoBuild, final java.lang.Object isDisableCache, final java.lang.Object isOversea, final java.lang.Object sourceRepoName, final java.lang.Object sourceRepoNamespace, final java.lang.Object sourceRepoType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.isAutoBuild = java.util.Objects.requireNonNull(isAutoBuild, "isAutoBuild is required");
-                this.isDisableCache = java.util.Objects.requireNonNull(isDisableCache, "isDisableCache is required");
-                this.isOversea = java.util.Objects.requireNonNull(isOversea, "isOversea is required");
-                this.sourceRepoName = java.util.Objects.requireNonNull(sourceRepoName, "sourceRepoName is required");
-                this.sourceRepoNamespace = java.util.Objects.requireNonNull(sourceRepoNamespace, "sourceRepoNamespace is required");
-                this.sourceRepoType = java.util.Objects.requireNonNull(sourceRepoType, "sourceRepoType is required");
+                this.isAutoBuild = java.util.Objects.requireNonNull(builder.isAutoBuild, "isAutoBuild is required");
+                this.isDisableCache = java.util.Objects.requireNonNull(builder.isDisableCache, "isDisableCache is required");
+                this.isOversea = java.util.Objects.requireNonNull(builder.isOversea, "isOversea is required");
+                this.sourceRepoName = java.util.Objects.requireNonNull(builder.sourceRepoName, "sourceRepoName is required");
+                this.sourceRepoNamespace = java.util.Objects.requireNonNull(builder.sourceRepoNamespace, "sourceRepoNamespace is required");
+                this.sourceRepoType = java.util.Objects.requireNonNull(builder.sourceRepoType, "sourceRepoType is required");
             }
 
             @Override

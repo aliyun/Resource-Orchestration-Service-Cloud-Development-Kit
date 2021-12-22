@@ -22,6 +22,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get;
         }
 
+        /// <summary>Property deletionForce: Whether force detach the policies attached to the role.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Remark information, up to 1024 characters or Chinese characters.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -79,6 +93,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             public object RoleName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property deletionForce: Whether force detach the policies attached to the role.</summary>
+            /// <remarks>
+            /// Default value is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: Remark information, up to 1024 characters or Chinese characters.</summary>

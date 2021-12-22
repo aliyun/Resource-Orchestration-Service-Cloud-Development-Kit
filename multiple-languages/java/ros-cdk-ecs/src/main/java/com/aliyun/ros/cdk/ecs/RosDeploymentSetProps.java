@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DeploymentSet`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDeploymentSetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeploymentSetProps.Jsii$Proxy.class)
 public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,9 +36,9 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosDeploymentSetProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeploymentSetProps> {
-        private java.lang.Object deploymentSetName;
-        private java.lang.Object description;
-        private java.lang.Object onUnableToRedeployFailedInstance;
+        java.lang.Object deploymentSetName;
+        java.lang.Object description;
+        java.lang.Object onUnableToRedeployFailedInstance;
 
         /**
          * Sets the value of {@link RosDeploymentSetProps#getDeploymentSetName}
@@ -107,7 +107,7 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosDeploymentSetProps build() {
-            return new Jsii$Proxy(deploymentSetName, description, onUnableToRedeployFailedInstance);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -134,11 +134,11 @@ public interface RosDeploymentSetProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object deploymentSetName, final java.lang.Object description, final java.lang.Object onUnableToRedeployFailedInstance) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.deploymentSetName = deploymentSetName;
-            this.description = description;
-            this.onUnableToRedeployFailedInstance = onUnableToRedeployFailedInstance;
+            this.deploymentSetName = builder.deploymentSetName;
+            this.description = builder.description;
+            this.onUnableToRedeployFailedInstance = builder.onUnableToRedeployFailedInstance;
         }
 
         @Override

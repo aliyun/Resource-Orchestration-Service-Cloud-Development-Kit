@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.408Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageAssociationProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
      * A builder for {@link CenBandwidthPackageAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenBandwidthPackageAssociationProps> {
-        private java.lang.Object cenBandwidthPackageId;
-        private java.lang.Object cenId;
+        java.lang.Object cenBandwidthPackageId;
+        java.lang.Object cenId;
 
         /**
          * Sets the value of {@link CenBandwidthPackageAssociationProps#getCenBandwidthPackageId}
@@ -78,7 +78,7 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
          */
         @Override
         public CenBandwidthPackageAssociationProps build() {
-            return new Jsii$Proxy(cenBandwidthPackageId, cenId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object cenBandwidthPackageId, final java.lang.Object cenId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.cenBandwidthPackageId = java.util.Objects.requireNonNull(cenBandwidthPackageId, "cenBandwidthPackageId is required");
-            this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
+            this.cenBandwidthPackageId = java.util.Objects.requireNonNull(builder.cenBandwidthPackageId, "cenBandwidthPackageId is required");
+            this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
         }
 
         @Override

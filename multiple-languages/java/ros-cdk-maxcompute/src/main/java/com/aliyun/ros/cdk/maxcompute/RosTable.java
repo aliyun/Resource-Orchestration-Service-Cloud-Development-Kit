@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * A ROS template type:  `ALIYUN::MaxCompute::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.277Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.RosTable")
 public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -228,9 +228,9 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnsProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
-            private java.lang.Object comment;
+            java.lang.Object name;
+            java.lang.Object type;
+            java.lang.Object comment;
 
             /**
              * Sets the value of {@link ColumnsProperty#getName}
@@ -306,7 +306,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ColumnsProperty build() {
-                return new Jsii$Proxy(name, type, comment);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -334,11 +334,11 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object comment) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.comment = comment;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.comment = builder.comment;
             }
 
             @Override
@@ -435,9 +435,9 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PartitionsProperty> {
-            private java.lang.Object name;
-            private java.lang.Object type;
-            private java.lang.Object comment;
+            java.lang.Object name;
+            java.lang.Object type;
+            java.lang.Object comment;
 
             /**
              * Sets the value of {@link PartitionsProperty#getName}
@@ -513,7 +513,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PartitionsProperty build() {
-                return new Jsii$Proxy(name, type, comment);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -541,11 +541,11 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object comment) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.name = java.util.Objects.requireNonNull(name, "name is required");
-                this.type = java.util.Objects.requireNonNull(type, "type is required");
-                this.comment = comment;
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.comment = builder.comment;
             }
 
             @Override
@@ -637,8 +637,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SchemaProperty> {
-            private java.lang.Object columns;
-            private java.lang.Object partitions;
+            java.lang.Object columns;
+            java.lang.Object partitions;
 
             /**
              * Sets the value of {@link SchemaProperty#getColumns}
@@ -692,7 +692,7 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public SchemaProperty build() {
-                return new Jsii$Proxy(columns, partitions);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -718,10 +718,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object columns, final java.lang.Object partitions) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.columns = java.util.Objects.requireNonNull(columns, "columns is required");
-                this.partitions = partitions;
+                this.columns = java.util.Objects.requireNonNull(builder.columns, "columns is required");
+                this.partitions = builder.partitions;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for assemly synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:31.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.535Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StageSynthesisOptions")
 @software.amazon.jsii.Jsii.Proxy(StageSynthesisOptions.Jsii$Proxy.class)
 public interface StageSynthesisOptions extends software.amazon.jsii.JsiiSerializable {
@@ -27,7 +27,7 @@ public interface StageSynthesisOptions extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link StageSynthesisOptions}
      */
     public static final class Builder implements software.amazon.jsii.Builder<StageSynthesisOptions> {
-        private java.lang.Boolean skipValidation;
+        java.lang.Boolean skipValidation;
 
         /**
          * Sets the value of {@link StageSynthesisOptions#getSkipValidation}
@@ -46,7 +46,7 @@ public interface StageSynthesisOptions extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public StageSynthesisOptions build() {
-            return new Jsii$Proxy(skipValidation);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -69,9 +69,9 @@ public interface StageSynthesisOptions extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Boolean skipValidation) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.skipValidation = skipValidation;
+            this.skipValidation = builder.skipValidation;
         }
 
         @Override

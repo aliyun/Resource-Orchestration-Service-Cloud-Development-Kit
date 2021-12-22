@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * Properties for defining a `ALIYUN::DBS::RestoreTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.747Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.333Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RestoreTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreTaskProps.Jsii$Proxy.class)
 public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -187,25 +187,25 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RestoreTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RestoreTaskProps> {
-        private java.lang.Object backupPlanId;
-        private java.lang.Object destinationEndpointInstanceType;
-        private java.lang.Object restoreTaskName;
-        private java.lang.Object backupGatewayId;
-        private java.lang.Object backupSetId;
-        private java.lang.Object destinationEndpointDatabaseName;
-        private java.lang.Object destinationEndpointInstanceId;
-        private java.lang.Object destinationEndpointIp;
-        private java.lang.Object destinationEndpointOracleSid;
-        private java.lang.Object destinationEndpointPassword;
-        private java.lang.Object destinationEndpointPort;
-        private java.lang.Object destinationEndpointRegion;
-        private java.lang.Object destinationEndpointUserName;
-        private java.lang.Object duplicateConflict;
-        private java.lang.Object restoreDir;
-        private java.lang.Object restoreHome;
-        private java.lang.Object restoreObjects;
-        private java.lang.Object restoreTime;
-        private java.lang.Object startTask;
+        java.lang.Object backupPlanId;
+        java.lang.Object destinationEndpointInstanceType;
+        java.lang.Object restoreTaskName;
+        java.lang.Object backupGatewayId;
+        java.lang.Object backupSetId;
+        java.lang.Object destinationEndpointDatabaseName;
+        java.lang.Object destinationEndpointInstanceId;
+        java.lang.Object destinationEndpointIp;
+        java.lang.Object destinationEndpointOracleSid;
+        java.lang.Object destinationEndpointPassword;
+        java.lang.Object destinationEndpointPort;
+        java.lang.Object destinationEndpointRegion;
+        java.lang.Object destinationEndpointUserName;
+        java.lang.Object duplicateConflict;
+        java.lang.Object restoreDir;
+        java.lang.Object restoreHome;
+        java.lang.Object restoreObjects;
+        java.lang.Object restoreTime;
+        java.lang.Object startTask;
 
         /**
          * Sets the value of {@link RestoreTaskProps#getBackupPlanId}
@@ -652,7 +652,7 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RestoreTaskProps build() {
-            return new Jsii$Proxy(backupPlanId, destinationEndpointInstanceType, restoreTaskName, backupGatewayId, backupSetId, destinationEndpointDatabaseName, destinationEndpointInstanceId, destinationEndpointIp, destinationEndpointOracleSid, destinationEndpointPassword, destinationEndpointPort, destinationEndpointRegion, destinationEndpointUserName, duplicateConflict, restoreDir, restoreHome, restoreObjects, restoreTime, startTask);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -711,27 +711,27 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object backupPlanId, final java.lang.Object destinationEndpointInstanceType, final java.lang.Object restoreTaskName, final java.lang.Object backupGatewayId, final java.lang.Object backupSetId, final java.lang.Object destinationEndpointDatabaseName, final java.lang.Object destinationEndpointInstanceId, final java.lang.Object destinationEndpointIp, final java.lang.Object destinationEndpointOracleSid, final java.lang.Object destinationEndpointPassword, final java.lang.Object destinationEndpointPort, final java.lang.Object destinationEndpointRegion, final java.lang.Object destinationEndpointUserName, final java.lang.Object duplicateConflict, final java.lang.Object restoreDir, final java.lang.Object restoreHome, final java.lang.Object restoreObjects, final java.lang.Object restoreTime, final java.lang.Object startTask) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backupPlanId = java.util.Objects.requireNonNull(backupPlanId, "backupPlanId is required");
-            this.destinationEndpointInstanceType = java.util.Objects.requireNonNull(destinationEndpointInstanceType, "destinationEndpointInstanceType is required");
-            this.restoreTaskName = java.util.Objects.requireNonNull(restoreTaskName, "restoreTaskName is required");
-            this.backupGatewayId = backupGatewayId;
-            this.backupSetId = backupSetId;
-            this.destinationEndpointDatabaseName = destinationEndpointDatabaseName;
-            this.destinationEndpointInstanceId = destinationEndpointInstanceId;
-            this.destinationEndpointIp = destinationEndpointIp;
-            this.destinationEndpointOracleSid = destinationEndpointOracleSid;
-            this.destinationEndpointPassword = destinationEndpointPassword;
-            this.destinationEndpointPort = destinationEndpointPort;
-            this.destinationEndpointRegion = destinationEndpointRegion;
-            this.destinationEndpointUserName = destinationEndpointUserName;
-            this.duplicateConflict = duplicateConflict;
-            this.restoreDir = restoreDir;
-            this.restoreHome = restoreHome;
-            this.restoreObjects = restoreObjects;
-            this.restoreTime = restoreTime;
-            this.startTask = startTask;
+            this.backupPlanId = java.util.Objects.requireNonNull(builder.backupPlanId, "backupPlanId is required");
+            this.destinationEndpointInstanceType = java.util.Objects.requireNonNull(builder.destinationEndpointInstanceType, "destinationEndpointInstanceType is required");
+            this.restoreTaskName = java.util.Objects.requireNonNull(builder.restoreTaskName, "restoreTaskName is required");
+            this.backupGatewayId = builder.backupGatewayId;
+            this.backupSetId = builder.backupSetId;
+            this.destinationEndpointDatabaseName = builder.destinationEndpointDatabaseName;
+            this.destinationEndpointInstanceId = builder.destinationEndpointInstanceId;
+            this.destinationEndpointIp = builder.destinationEndpointIp;
+            this.destinationEndpointOracleSid = builder.destinationEndpointOracleSid;
+            this.destinationEndpointPassword = builder.destinationEndpointPassword;
+            this.destinationEndpointPort = builder.destinationEndpointPort;
+            this.destinationEndpointRegion = builder.destinationEndpointRegion;
+            this.destinationEndpointUserName = builder.destinationEndpointUserName;
+            this.duplicateConflict = builder.duplicateConflict;
+            this.restoreDir = builder.restoreDir;
+            this.restoreHome = builder.restoreHome;
+            this.restoreObjects = builder.restoreObjects;
+            this.restoreTime = builder.restoreTime;
+            this.startTask = builder.startTask;
         }
 
         @Override

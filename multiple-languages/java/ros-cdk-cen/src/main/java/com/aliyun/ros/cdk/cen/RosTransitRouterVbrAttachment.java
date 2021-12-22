@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::TransitRouterVbrAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.484Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.004Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVbrAttachment")
 public class RosTransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -171,60 +171,6 @@ public class RosTransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
-        return software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setResourceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "resourceType", value);
-    }
-
-    /**
-     */
-    public void setResourceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "resourceType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
-        return software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
-    }
-
-    /**
-     */
-    public void setRouteTableAssociationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "routeTableAssociationEnabled", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
-        return software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
-    }
-
-    /**
-     */
-    public void setRouteTablePropagationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "routeTablePropagationEnabled", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentDescription() {
         return software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -369,57 +315,6 @@ public class RosTransitRouterVbrAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.props.cenId(cenId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param resourceType This parameter is required.
-         */
-        public Builder resourceType(final java.lang.String resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param resourceType This parameter is required.
-         */
-        public Builder resourceType(final com.aliyun.ros.cdk.core.IResolvable resourceType) {
-            this.props.resourceType(resourceType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param routeTableAssociationEnabled This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final java.lang.String routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param routeTableAssociationEnabled This parameter is required.
-         */
-        public Builder routeTableAssociationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
-            this.props.routeTableAssociationEnabled(routeTableAssociationEnabled);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param routeTablePropagationEnabled This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final java.lang.String routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param routeTablePropagationEnabled This parameter is required.
-         */
-        public Builder routeTablePropagationEnabled(final com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
-            this.props.routeTablePropagationEnabled(routeTablePropagationEnabled);
             return this;
         }
 

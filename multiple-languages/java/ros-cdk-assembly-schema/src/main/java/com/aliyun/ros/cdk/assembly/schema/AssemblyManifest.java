@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * A manifest which describes the cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.608Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.463Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AssemblyManifest")
 @software.amazon.jsii.Jsii.Proxy(AssemblyManifest.Jsii$Proxy.class)
 public interface AssemblyManifest extends software.amazon.jsii.JsiiSerializable {
@@ -53,10 +53,10 @@ public interface AssemblyManifest extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link AssemblyManifest}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AssemblyManifest> {
-        private java.lang.String version;
-        private java.util.Map<java.lang.String, com.aliyun.ros.cdk.assembly.schema.ArtifactManifest> artifacts;
-        private java.util.List<com.aliyun.ros.cdk.assembly.schema.MissingContext> missing;
-        private com.aliyun.ros.cdk.assembly.schema.RuntimeInfo runtime;
+        java.lang.String version;
+        java.util.Map<java.lang.String, com.aliyun.ros.cdk.assembly.schema.ArtifactManifest> artifacts;
+        java.util.List<com.aliyun.ros.cdk.assembly.schema.MissingContext> missing;
+        com.aliyun.ros.cdk.assembly.schema.RuntimeInfo runtime;
 
         /**
          * Sets the value of {@link AssemblyManifest#getVersion}
@@ -109,7 +109,7 @@ public interface AssemblyManifest extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public AssemblyManifest build() {
-            return new Jsii$Proxy(version, artifacts, missing, runtime);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -139,12 +139,12 @@ public interface AssemblyManifest extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String version, final java.util.Map<java.lang.String, ? extends com.aliyun.ros.cdk.assembly.schema.ArtifactManifest> artifacts, final java.util.List<? extends com.aliyun.ros.cdk.assembly.schema.MissingContext> missing, final com.aliyun.ros.cdk.assembly.schema.RuntimeInfo runtime) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.version = java.util.Objects.requireNonNull(version, "version is required");
-            this.artifacts = (java.util.Map<java.lang.String, com.aliyun.ros.cdk.assembly.schema.ArtifactManifest>)artifacts;
-            this.missing = (java.util.List<com.aliyun.ros.cdk.assembly.schema.MissingContext>)missing;
-            this.runtime = runtime;
+            this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
+            this.artifacts = (java.util.Map<java.lang.String, com.aliyun.ros.cdk.assembly.schema.ArtifactManifest>)builder.artifacts;
+            this.missing = (java.util.List<com.aliyun.ros.cdk.assembly.schema.MissingContext>)builder.missing;
+            this.runtime = builder.runtime;
         }
 
         @Override

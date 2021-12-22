@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnableProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupEnableProps.Jsii$Proxy.class)
 public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,12 +52,12 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosScalingGroupEnableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingGroupEnableProps> {
-        private java.lang.Object scalingGroupId;
-        private java.lang.Object instanceIds;
-        private java.lang.Object removeInstanceIds;
-        private java.lang.Object scalingConfigurationId;
-        private java.lang.Object scalingRuleAris;
-        private java.lang.Object scalingRuleArisExecuteVersion;
+        java.lang.Object scalingGroupId;
+        java.lang.Object instanceIds;
+        java.lang.Object removeInstanceIds;
+        java.lang.Object scalingConfigurationId;
+        java.lang.Object scalingRuleAris;
+        java.lang.Object scalingRuleArisExecuteVersion;
 
         /**
          * Sets the value of {@link RosScalingGroupEnableProps#getScalingGroupId}
@@ -186,7 +186,7 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
          */
         @Override
         public RosScalingGroupEnableProps build() {
-            return new Jsii$Proxy(scalingGroupId, instanceIds, removeInstanceIds, scalingConfigurationId, scalingRuleAris, scalingRuleArisExecuteVersion);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -219,14 +219,14 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object instanceIds, final java.lang.Object removeInstanceIds, final java.lang.Object scalingConfigurationId, final java.lang.Object scalingRuleAris, final java.lang.Object scalingRuleArisExecuteVersion) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
-            this.instanceIds = instanceIds;
-            this.removeInstanceIds = removeInstanceIds;
-            this.scalingConfigurationId = scalingConfigurationId;
-            this.scalingRuleAris = scalingRuleAris;
-            this.scalingRuleArisExecuteVersion = scalingRuleArisExecuteVersion;
+            this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.instanceIds = builder.instanceIds;
+            this.removeInstanceIds = builder.removeInstanceIds;
+            this.scalingConfigurationId = builder.scalingConfigurationId;
+            this.scalingRuleAris = builder.scalingRuleAris;
+            this.scalingRuleArisExecuteVersion = builder.scalingRuleArisExecuteVersion;
         }
 
         @Override

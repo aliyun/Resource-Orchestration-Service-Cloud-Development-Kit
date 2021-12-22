@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vlanId: The VLAN ID of the VBR. Valid values: 1 to 2999.
+        /// <strong>Property</strong>: vlanId: The VLAN ID of the VBR. Valid values: 0 to 2999.
         /// Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
         /// two VBRs of the same physical connection must be different.
         /// </remarks>

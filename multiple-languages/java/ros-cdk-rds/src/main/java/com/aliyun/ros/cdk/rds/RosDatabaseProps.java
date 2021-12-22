@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Database`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.967Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatabaseProps.Jsii$Proxy.class)
 public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,10 +36,10 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosDatabaseProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDatabaseProps> {
-        private java.lang.Object characterSetName;
-        private java.lang.Object dbInstanceId;
-        private java.lang.Object dbName;
-        private java.lang.Object dbDescription;
+        java.lang.Object characterSetName;
+        java.lang.Object dbInstanceId;
+        java.lang.Object dbName;
+        java.lang.Object dbDescription;
 
         /**
          * Sets the value of {@link RosDatabaseProps#getCharacterSetName}
@@ -128,7 +128,7 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosDatabaseProps build() {
-            return new Jsii$Proxy(characterSetName, dbInstanceId, dbName, dbDescription);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -157,12 +157,12 @@ public interface RosDatabaseProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbInstanceId, final java.lang.Object dbName, final java.lang.Object dbDescription) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
-            this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.dbName = java.util.Objects.requireNonNull(dbName, "dbName is required");
-            this.dbDescription = dbDescription;
+            this.characterSetName = java.util.Objects.requireNonNull(builder.characterSetName, "characterSetName is required");
+            this.dbInstanceId = java.util.Objects.requireNonNull(builder.dbInstanceId, "dbInstanceId is required");
+            this.dbName = java.util.Objects.requireNonNull(builder.dbName, "dbName is required");
+            this.dbDescription = builder.dbDescription;
         }
 
         @Override

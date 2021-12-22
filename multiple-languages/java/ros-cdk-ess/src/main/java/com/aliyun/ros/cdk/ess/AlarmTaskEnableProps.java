@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::AlarmTaskEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.370Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.918Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTaskEnableProps")
 @software.amazon.jsii.Jsii.Proxy(AlarmTaskEnableProps.Jsii$Proxy.class)
 public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,8 +28,8 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link AlarmTaskEnableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlarmTaskEnableProps> {
-        private java.lang.Object alarmTaskId;
-        private java.lang.Object enable;
+        java.lang.Object alarmTaskId;
+        java.lang.Object enable;
 
         /**
          * Sets the value of {@link AlarmTaskEnableProps#getAlarmTaskId}
@@ -78,7 +78,7 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
          */
         @Override
         public AlarmTaskEnableProps build() {
-            return new Jsii$Proxy(alarmTaskId, enable);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -103,10 +103,10 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object alarmTaskId, final java.lang.Object enable) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.alarmTaskId = java.util.Objects.requireNonNull(alarmTaskId, "alarmTaskId is required");
-            this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
+            this.alarmTaskId = java.util.Objects.requireNonNull(builder.alarmTaskId, "alarmTaskId is required");
+            this.enable = java.util.Objects.requireNonNull(builder.enable, "enable is required");
         }
 
         @Override

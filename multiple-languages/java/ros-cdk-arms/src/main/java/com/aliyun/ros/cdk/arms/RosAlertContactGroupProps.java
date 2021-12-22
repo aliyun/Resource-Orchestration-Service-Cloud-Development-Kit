@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::AlertContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.349Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.733Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosAlertContactGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlertContactGroupProps.Jsii$Proxy.class)
 public interface RosAlertContactGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,10 +38,10 @@ public interface RosAlertContactGroupProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosAlertContactGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAlertContactGroupProps> {
-        private java.lang.Object contactGroupName;
-        private java.lang.Object contactIds;
-        private java.lang.Object proxyUserId;
-        private java.lang.Object regionId;
+        java.lang.Object contactGroupName;
+        java.lang.Object contactIds;
+        java.lang.Object proxyUserId;
+        java.lang.Object regionId;
 
         /**
          * Sets the value of {@link RosAlertContactGroupProps#getContactGroupName}
@@ -130,7 +130,7 @@ public interface RosAlertContactGroupProps extends software.amazon.jsii.JsiiSeri
          */
         @Override
         public RosAlertContactGroupProps build() {
-            return new Jsii$Proxy(contactGroupName, contactIds, proxyUserId, regionId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -159,12 +159,12 @@ public interface RosAlertContactGroupProps extends software.amazon.jsii.JsiiSeri
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object contactGroupName, final java.lang.Object contactIds, final java.lang.Object proxyUserId, final java.lang.Object regionId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.contactGroupName = java.util.Objects.requireNonNull(contactGroupName, "contactGroupName is required");
-            this.contactIds = java.util.Objects.requireNonNull(contactIds, "contactIds is required");
-            this.proxyUserId = proxyUserId;
-            this.regionId = regionId;
+            this.contactGroupName = java.util.Objects.requireNonNull(builder.contactGroupName, "contactGroupName is required");
+            this.contactIds = java.util.Objects.requireNonNull(builder.contactIds, "contactIds is required");
+            this.proxyUserId = builder.proxyUserId;
+            this.regionId = builder.regionId;
         }
 
         @Override

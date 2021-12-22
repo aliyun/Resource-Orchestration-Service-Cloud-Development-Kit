@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::LifecycleHook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosLifecycleHookProps")
 @software.amazon.jsii.Jsii.Proxy(RosLifecycleHookProps.Jsii$Proxy.class)
 public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,13 +56,13 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosLifecycleHookProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosLifecycleHookProps> {
-        private java.lang.Object lifecycleTransition;
-        private java.lang.Object scalingGroupId;
-        private java.lang.Object defaultResult;
-        private java.lang.Object heartbeatTimeout;
-        private java.lang.Object lifecycleHookName;
-        private java.lang.Object notificationArn;
-        private java.lang.Object notificationMetadata;
+        java.lang.Object lifecycleTransition;
+        java.lang.Object scalingGroupId;
+        java.lang.Object defaultResult;
+        java.lang.Object heartbeatTimeout;
+        java.lang.Object lifecycleHookName;
+        java.lang.Object notificationArn;
+        java.lang.Object notificationMetadata;
 
         /**
          * Sets the value of {@link RosLifecycleHookProps#getLifecycleTransition}
@@ -211,7 +211,7 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public RosLifecycleHookProps build() {
-            return new Jsii$Proxy(lifecycleTransition, scalingGroupId, defaultResult, heartbeatTimeout, lifecycleHookName, notificationArn, notificationMetadata);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -246,15 +246,15 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object lifecycleTransition, final java.lang.Object scalingGroupId, final java.lang.Object defaultResult, final java.lang.Object heartbeatTimeout, final java.lang.Object lifecycleHookName, final java.lang.Object notificationArn, final java.lang.Object notificationMetadata) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.lifecycleTransition = java.util.Objects.requireNonNull(lifecycleTransition, "lifecycleTransition is required");
-            this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
-            this.defaultResult = defaultResult;
-            this.heartbeatTimeout = heartbeatTimeout;
-            this.lifecycleHookName = lifecycleHookName;
-            this.notificationArn = notificationArn;
-            this.notificationMetadata = notificationMetadata;
+            this.lifecycleTransition = java.util.Objects.requireNonNull(builder.lifecycleTransition, "lifecycleTransition is required");
+            this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.defaultResult = builder.defaultResult;
+            this.heartbeatTimeout = builder.heartbeatTimeout;
+            this.lifecycleHookName = builder.lifecycleHookName;
+            this.notificationArn = builder.notificationArn;
+            this.notificationMetadata = builder.notificationMetadata;
         }
 
         @Override

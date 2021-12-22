@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.525Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -197,8 +197,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PortRangesProperty> {
-            private java.lang.Object fromPort;
-            private java.lang.Object toPort;
+            java.lang.Object fromPort;
+            java.lang.Object toPort;
 
             /**
              * Sets the value of {@link PortRangesProperty#getFromPort}
@@ -252,7 +252,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public PortRangesProperty build() {
-                return new Jsii$Proxy(fromPort, toPort);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -278,10 +278,10 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object fromPort, final java.lang.Object toPort) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.fromPort = java.util.Objects.requireNonNull(fromPort, "fromPort is required");
-                this.toPort = java.util.Objects.requireNonNull(toPort, "toPort is required");
+                this.fromPort = java.util.Objects.requireNonNull(builder.fromPort, "fromPort is required");
+                this.toPort = java.util.Objects.requireNonNull(builder.toPort, "toPort is required");
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::Stack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.727Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.StackProps")
 @software.amazon.jsii.Jsii.Proxy(StackProps.Jsii$Proxy.class)
 public interface StackProps extends software.amazon.jsii.JsiiSerializable {
@@ -75,13 +75,13 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link StackProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<StackProps> {
-        private java.lang.Object parameters;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object templateBody;
-        private java.lang.Object templateId;
-        private java.lang.Object templateUrl;
-        private java.lang.Object templateVersion;
-        private java.lang.Object timeoutMins;
+        java.lang.Object parameters;
+        java.lang.Object resourceGroupId;
+        java.lang.Object templateBody;
+        java.lang.Object templateId;
+        java.lang.Object templateUrl;
+        java.lang.Object templateVersion;
+        java.lang.Object timeoutMins;
 
         /**
          * Sets the value of {@link StackProps#getParameters}
@@ -240,7 +240,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public StackProps build() {
-            return new Jsii$Proxy(parameters, resourceGroupId, templateBody, templateId, templateUrl, templateVersion, timeoutMins);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -275,15 +275,15 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object parameters, final java.lang.Object resourceGroupId, final java.lang.Object templateBody, final java.lang.Object templateId, final java.lang.Object templateUrl, final java.lang.Object templateVersion, final java.lang.Object timeoutMins) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.parameters = parameters;
-            this.resourceGroupId = resourceGroupId;
-            this.templateBody = templateBody;
-            this.templateId = templateId;
-            this.templateUrl = templateUrl;
-            this.templateVersion = templateVersion;
-            this.timeoutMins = timeoutMins;
+            this.parameters = builder.parameters;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.templateBody = builder.templateBody;
+            this.templateId = builder.templateId;
+            this.templateUrl = builder.templateUrl;
+            this.templateVersion = builder.templateVersion;
+            this.timeoutMins = builder.timeoutMins;
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Properties for defining a `ALIYUN::FNF::Flow`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.492Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.064Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.FlowProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProps.Jsii$Proxy.class)
 public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,11 +53,11 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link FlowProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<FlowProps> {
-        private java.lang.Object definition;
-        private java.lang.Object name;
-        private java.lang.Object description;
-        private java.lang.Object requestId;
-        private java.lang.Object roleArn;
+        java.lang.Object definition;
+        java.lang.Object name;
+        java.lang.Object description;
+        java.lang.Object requestId;
+        java.lang.Object roleArn;
 
         /**
          * Sets the value of {@link FlowProps#getDefinition}
@@ -170,7 +170,7 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public FlowProps build() {
-            return new Jsii$Proxy(definition, name, description, requestId, roleArn);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -201,13 +201,13 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object definition, final java.lang.Object name, final java.lang.Object description, final java.lang.Object requestId, final java.lang.Object roleArn) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.definition = java.util.Objects.requireNonNull(definition, "definition is required");
-            this.name = java.util.Objects.requireNonNull(name, "name is required");
-            this.description = description;
-            this.requestId = requestId;
-            this.roleArn = roleArn;
+            this.definition = java.util.Objects.requireNonNull(builder.definition, "definition is required");
+            this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.description = builder.description;
+            this.requestId = builder.requestId;
+            this.roleArn = builder.roleArn;
         }
 
         @Override

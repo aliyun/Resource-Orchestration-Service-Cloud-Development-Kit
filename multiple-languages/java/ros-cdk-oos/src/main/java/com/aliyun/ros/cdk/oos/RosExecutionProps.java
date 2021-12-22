@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Execution`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.727Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.375Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(RosExecutionProps.Jsii$Proxy.class)
 public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,14 +64,14 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosExecutionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosExecutionProps> {
-        private java.lang.Object templateName;
-        private java.lang.Object mode;
-        private java.lang.Object parameters;
-        private java.lang.Object parentExecutionId;
-        private java.lang.Object resourceOptions;
-        private java.lang.Object safetyCheck;
-        private java.util.Map<java.lang.String, java.lang.Object> tags;
-        private java.lang.Object templateVersion;
+        java.lang.Object templateName;
+        java.lang.Object mode;
+        java.lang.Object parameters;
+        java.lang.Object parentExecutionId;
+        java.lang.Object resourceOptions;
+        java.lang.Object safetyCheck;
+        java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object templateVersion;
 
         /**
          * Sets the value of {@link RosExecutionProps#getTemplateName}
@@ -231,7 +231,7 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public RosExecutionProps build() {
-            return new Jsii$Proxy(templateName, mode, parameters, parentExecutionId, resourceOptions, safetyCheck, tags, templateVersion);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -269,16 +269,16 @@ public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object templateName, final java.lang.Object mode, final java.lang.Object parameters, final java.lang.Object parentExecutionId, final java.lang.Object resourceOptions, final java.lang.Object safetyCheck, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object templateVersion) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.templateName = java.util.Objects.requireNonNull(templateName, "templateName is required");
-            this.mode = mode;
-            this.parameters = parameters;
-            this.parentExecutionId = parentExecutionId;
-            this.resourceOptions = resourceOptions;
-            this.safetyCheck = safetyCheck;
-            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
-            this.templateVersion = templateVersion;
+            this.templateName = java.util.Objects.requireNonNull(builder.templateName, "templateName is required");
+            this.mode = builder.mode;
+            this.parameters = builder.parameters;
+            this.parentExecutionId = builder.parentExecutionId;
+            this.resourceOptions = builder.resourceOptions;
+            this.safetyCheck = builder.safetyCheck;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.templateVersion = builder.templateVersion;
         }
 
         @Override

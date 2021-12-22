@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::NetworkInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.008Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.611Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfaceProps.Jsii$Proxy.class)
 public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -59,6 +59,13 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryPrivateIpAddressCount() {
+        return null;
+    }
+
+    /**
      * Property securityGroupId: The ID of the security group that the ENI joins.
      * <p>
      * The security group and the ENI must be in a same VPC.
@@ -95,15 +102,16 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link NetworkInterfaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<NetworkInterfaceProps> {
-        private java.lang.Object vSwitchId;
-        private java.lang.Object description;
-        private java.lang.Object networkInterfaceName;
-        private java.lang.Object primaryIpAddress;
-        private java.lang.Object privateIpAddresses;
-        private java.lang.Object resourceGroupId;
-        private java.lang.Object securityGroupId;
-        private java.lang.Object securityGroupIds;
-        private java.util.List<com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty> tags;
+        java.lang.Object vSwitchId;
+        java.lang.Object description;
+        java.lang.Object networkInterfaceName;
+        java.lang.Object primaryIpAddress;
+        java.lang.Object privateIpAddresses;
+        java.lang.Object resourceGroupId;
+        java.lang.Object secondaryPrivateIpAddressCount;
+        java.lang.Object securityGroupId;
+        java.lang.Object securityGroupIds;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty> tags;
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getVSwitchId}
@@ -236,6 +244,26 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link NetworkInterfaceProps#getSecondaryPrivateIpAddressCount}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+         * @return {@code this}
+         */
+        public Builder secondaryPrivateIpAddressCount(java.lang.Number secondaryPrivateIpAddressCount) {
+            this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkInterfaceProps#getSecondaryPrivateIpAddressCount}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The number of private IP addresses that can be created automatically by ECS.
+         * @return {@code this}
+         */
+        public Builder secondaryPrivateIpAddressCount(com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
+            this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NetworkInterfaceProps#getSecurityGroupId}
          * @param securityGroupId Property securityGroupId: The ID of the security group that the ENI joins.
          *                        The security group and the ENI must be in a same VPC.
@@ -298,7 +326,7 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
          */
         @Override
         public NetworkInterfaceProps build() {
-            return new Jsii$Proxy(vSwitchId, description, networkInterfaceName, primaryIpAddress, privateIpAddresses, resourceGroupId, securityGroupId, securityGroupIds, tags);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -313,6 +341,7 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object primaryIpAddress;
         private final java.lang.Object privateIpAddresses;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object secondaryPrivateIpAddressCount;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityGroupIds;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty> tags;
@@ -329,6 +358,7 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
             this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty.class)));
@@ -338,17 +368,18 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object vSwitchId, final java.lang.Object description, final java.lang.Object networkInterfaceName, final java.lang.Object primaryIpAddress, final java.lang.Object privateIpAddresses, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupId, final java.lang.Object securityGroupIds, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty> tags) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
-            this.description = description;
-            this.networkInterfaceName = networkInterfaceName;
-            this.primaryIpAddress = primaryIpAddress;
-            this.privateIpAddresses = privateIpAddresses;
-            this.resourceGroupId = resourceGroupId;
-            this.securityGroupId = securityGroupId;
-            this.securityGroupIds = securityGroupIds;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty>)tags;
+            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.description = builder.description;
+            this.networkInterfaceName = builder.networkInterfaceName;
+            this.primaryIpAddress = builder.primaryIpAddress;
+            this.privateIpAddresses = builder.privateIpAddresses;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.secondaryPrivateIpAddressCount = builder.secondaryPrivateIpAddressCount;
+            this.securityGroupId = builder.securityGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosNetworkInterface.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -379,6 +410,11 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecondaryPrivateIpAddressCount() {
+            return this.secondaryPrivateIpAddressCount;
         }
 
         @Override
@@ -418,6 +454,9 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getSecondaryPrivateIpAddressCount() != null) {
+                data.set("secondaryPrivateIpAddressCount", om.valueToTree(this.getSecondaryPrivateIpAddressCount()));
+            }
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
@@ -451,6 +490,7 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
             if (this.primaryIpAddress != null ? !this.primaryIpAddress.equals(that.primaryIpAddress) : that.primaryIpAddress != null) return false;
             if (this.privateIpAddresses != null ? !this.privateIpAddresses.equals(that.privateIpAddresses) : that.privateIpAddresses != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.secondaryPrivateIpAddressCount != null ? !this.secondaryPrivateIpAddressCount.equals(that.secondaryPrivateIpAddressCount) : that.secondaryPrivateIpAddressCount != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
@@ -464,6 +504,7 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.primaryIpAddress != null ? this.primaryIpAddress.hashCode() : 0);
             result = 31 * result + (this.privateIpAddresses != null ? this.privateIpAddresses.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.secondaryPrivateIpAddressCount != null ? this.secondaryPrivateIpAddressCount.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

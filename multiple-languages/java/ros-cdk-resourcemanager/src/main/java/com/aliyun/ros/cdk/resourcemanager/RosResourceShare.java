@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS template type:  `ALIYUN::ResourceManager::ResourceShare`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.705Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceShare")
 public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -143,8 +143,8 @@ public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ResourcesProperty> {
-            private java.lang.Object resourceId;
-            private java.lang.Object resourceType;
+            java.lang.Object resourceId;
+            java.lang.Object resourceType;
 
             /**
              * Sets the value of {@link ResourcesProperty#getResourceId}
@@ -198,7 +198,7 @@ public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public ResourcesProperty build() {
-                return new Jsii$Proxy(resourceId, resourceType);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -224,10 +224,10 @@ public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object resourceId, final java.lang.Object resourceType) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.resourceId = java.util.Objects.requireNonNull(resourceId, "resourceId is required");
-                this.resourceType = java.util.Objects.requireNonNull(resourceType, "resourceType is required");
+                this.resourceId = java.util.Objects.requireNonNull(builder.resourceId, "resourceId is required");
+                this.resourceType = java.util.Objects.requireNonNull(builder.resourceType, "resourceType is required");
             }
 
             @Override

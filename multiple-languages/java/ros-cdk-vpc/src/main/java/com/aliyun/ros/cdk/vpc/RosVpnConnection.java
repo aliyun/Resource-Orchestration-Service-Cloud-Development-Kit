@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::VpnConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.983Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnConnection")
 public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -288,11 +288,11 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<HealthCheckConfigProperty> {
-            private java.lang.Object dip;
-            private java.lang.Object enable;
-            private java.lang.Object interval;
-            private java.lang.Object retry;
-            private java.lang.Object sip;
+            java.lang.Object dip;
+            java.lang.Object enable;
+            java.lang.Object interval;
+            java.lang.Object retry;
+            java.lang.Object sip;
 
             /**
              * Sets the value of {@link HealthCheckConfigProperty#getDip}
@@ -412,7 +412,7 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public HealthCheckConfigProperty build() {
-                return new Jsii$Proxy(dip, enable, interval, retry, sip);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -444,13 +444,13 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object dip, final java.lang.Object enable, final java.lang.Object interval, final java.lang.Object retry, final java.lang.Object sip) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.dip = dip;
-                this.enable = enable;
-                this.interval = interval;
-                this.retry = retry;
-                this.sip = sip;
+                this.dip = builder.dip;
+                this.enable = builder.enable;
+                this.interval = builder.interval;
+                this.retry = builder.retry;
+                this.sip = builder.sip;
             }
 
             @Override
@@ -617,15 +617,15 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IkeConfigProperty> {
-            private java.lang.Object ikeAuthAlg;
-            private java.lang.Object ikeEncAlg;
-            private java.lang.Object ikeLifetime;
-            private java.lang.Object ikeMode;
-            private java.lang.Object ikePfs;
-            private java.lang.Object ikeVersion;
-            private java.lang.Object localIdIPsec;
-            private java.lang.Object psk;
-            private java.lang.Object remoteId;
+            java.lang.Object ikeAuthAlg;
+            java.lang.Object ikeEncAlg;
+            java.lang.Object ikeLifetime;
+            java.lang.Object ikeMode;
+            java.lang.Object ikePfs;
+            java.lang.Object ikeVersion;
+            java.lang.Object localIdIPsec;
+            java.lang.Object psk;
+            java.lang.Object remoteId;
 
             /**
              * Sets the value of {@link IkeConfigProperty#getIkeAuthAlg}
@@ -833,7 +833,7 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IkeConfigProperty build() {
-                return new Jsii$Proxy(ikeAuthAlg, ikeEncAlg, ikeLifetime, ikeMode, ikePfs, ikeVersion, localIdIPsec, psk, remoteId);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -873,17 +873,17 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ikeAuthAlg, final java.lang.Object ikeEncAlg, final java.lang.Object ikeLifetime, final java.lang.Object ikeMode, final java.lang.Object ikePfs, final java.lang.Object ikeVersion, final java.lang.Object localIdIPsec, final java.lang.Object psk, final java.lang.Object remoteId) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ikeAuthAlg = ikeAuthAlg;
-                this.ikeEncAlg = ikeEncAlg;
-                this.ikeLifetime = ikeLifetime;
-                this.ikeMode = ikeMode;
-                this.ikePfs = ikePfs;
-                this.ikeVersion = ikeVersion;
-                this.localIdIPsec = localIdIPsec;
-                this.psk = psk;
-                this.remoteId = remoteId;
+                this.ikeAuthAlg = builder.ikeAuthAlg;
+                this.ikeEncAlg = builder.ikeEncAlg;
+                this.ikeLifetime = builder.ikeLifetime;
+                this.ikeMode = builder.ikeMode;
+                this.ikePfs = builder.ikePfs;
+                this.ikeVersion = builder.ikeVersion;
+                this.localIdIPsec = builder.localIdIPsec;
+                this.psk = builder.psk;
+                this.remoteId = builder.remoteId;
             }
 
             @Override
@@ -1055,10 +1055,10 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<IpsecConfigProperty> {
-            private java.lang.Object ipsecAuthAlg;
-            private java.lang.Object ipsecEncAlg;
-            private java.lang.Object ipsecLifetime;
-            private java.lang.Object ipsecPfs;
+            java.lang.Object ipsecAuthAlg;
+            java.lang.Object ipsecEncAlg;
+            java.lang.Object ipsecLifetime;
+            java.lang.Object ipsecPfs;
 
             /**
              * Sets the value of {@link IpsecConfigProperty#getIpsecAuthAlg}
@@ -1156,7 +1156,7 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public IpsecConfigProperty build() {
-                return new Jsii$Proxy(ipsecAuthAlg, ipsecEncAlg, ipsecLifetime, ipsecPfs);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -1186,12 +1186,12 @@ public class RosVpnConnection extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object ipsecAuthAlg, final java.lang.Object ipsecEncAlg, final java.lang.Object ipsecLifetime, final java.lang.Object ipsecPfs) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.ipsecAuthAlg = ipsecAuthAlg;
-                this.ipsecEncAlg = ipsecEncAlg;
-                this.ipsecLifetime = ipsecLifetime;
-                this.ipsecPfs = ipsecPfs;
+                this.ipsecAuthAlg = builder.ipsecAuthAlg;
+                this.ipsecEncAlg = builder.ipsecEncAlg;
+                this.ipsecLifetime = builder.ipsecLifetime;
+                this.ipsecPfs = builder.ipsecPfs;
             }
 
             @Override

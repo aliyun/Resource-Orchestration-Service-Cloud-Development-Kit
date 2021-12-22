@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.595Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroup")
 public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -221,8 +221,8 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MatchExpressProperty> {
-            private java.lang.Object tagValue;
-            private java.lang.Object tagValueMatchFunction;
+            java.lang.Object tagValue;
+            java.lang.Object tagValueMatchFunction;
 
             /**
              * Sets the value of {@link MatchExpressProperty#getTagValue}
@@ -276,7 +276,7 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public MatchExpressProperty build() {
-                return new Jsii$Proxy(tagValue, tagValueMatchFunction);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -302,10 +302,10 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object tagValue, final java.lang.Object tagValueMatchFunction) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.tagValue = java.util.Objects.requireNonNull(tagValue, "tagValue is required");
-                this.tagValueMatchFunction = java.util.Objects.requireNonNull(tagValueMatchFunction, "tagValueMatchFunction is required");
+                this.tagValue = java.util.Objects.requireNonNull(builder.tagValue, "tagValue is required");
+                this.tagValueMatchFunction = java.util.Objects.requireNonNull(builder.tagValueMatchFunction, "tagValueMatchFunction is required");
             }
 
             @Override

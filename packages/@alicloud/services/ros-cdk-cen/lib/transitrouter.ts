@@ -76,8 +76,8 @@ export class TransitRouter extends ros.Resource {
 
         const rosTransitRouter = new RosTransitRouter(this, id,  {
             cenId: props.cenId,
-            transitRouterDescription: props.transitRouterDescription,
             transitRouterName: props.transitRouterName,
+            transitRouterDescription: props.transitRouterDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTransitRouter;
         this.attrAliUid = rosTransitRouter.attrAliUid;

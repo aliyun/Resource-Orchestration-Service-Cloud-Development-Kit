@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::ACLAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.066Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.764Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLAssociationProps.Jsii$Proxy.class)
 public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,8 +26,8 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
      * A builder for {@link RosACLAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosACLAssociationProps> {
-        private java.lang.Object aclId;
-        private java.lang.Object smartAgId;
+        java.lang.Object aclId;
+        java.lang.Object smartAgId;
 
         /**
          * Sets the value of {@link RosACLAssociationProps#getAclId}
@@ -76,7 +76,7 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
          */
         @Override
         public RosACLAssociationProps build() {
-            return new Jsii$Proxy(aclId, smartAgId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -101,10 +101,10 @@ public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object aclId, final java.lang.Object smartAgId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.aclId = java.util.Objects.requireNonNull(aclId, "aclId is required");
-            this.smartAgId = java.util.Objects.requireNonNull(smartAgId, "smartAgId is required");
+            this.aclId = java.util.Objects.requireNonNull(builder.aclId, "aclId is required");
+            this.smartAgId = java.util.Objects.requireNonNull(builder.smartAgId, "smartAgId is required");
         }
 
         @Override

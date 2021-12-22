@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceProps.Jsii$Proxy.class)
 public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,8 +29,8 @@ public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosResourceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosResourceProps> {
-        private java.lang.String type;
-        private java.util.Map<java.lang.String, java.lang.Object> properties;
+        java.lang.String type;
+        java.util.Map<java.lang.String, java.lang.Object> properties;
 
         /**
          * Sets the value of {@link RosResourceProps#getType}
@@ -60,7 +60,7 @@ public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosResourceProps build() {
-            return new Jsii$Proxy(type, properties);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -86,10 +86,10 @@ public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable 
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String type, final java.util.Map<java.lang.String, ? extends java.lang.Object> properties) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.properties = (java.util.Map<java.lang.String, java.lang.Object>)properties;
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.properties = (java.util.Map<java.lang.String, java.lang.Object>)builder.properties;
         }
 
         @Override

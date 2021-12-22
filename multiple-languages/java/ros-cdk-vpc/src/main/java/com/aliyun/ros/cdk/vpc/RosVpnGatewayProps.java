@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.986Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnGatewayProps.Jsii$Proxy.class)
 public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -86,18 +86,18 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosVpnGatewayProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpnGatewayProps> {
-        private java.lang.Object bandwidth;
-        private java.lang.Object vpcId;
-        private java.lang.Object autoPay;
-        private java.lang.Object description;
-        private java.lang.Object enableIpsec;
-        private java.lang.Object enableSsl;
-        private java.lang.Object instanceChargeType;
-        private java.lang.Object name;
-        private java.lang.Object period;
-        private java.lang.Object sslConnections;
-        private java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
-        private java.lang.Object vSwitchId;
+        java.lang.Object bandwidth;
+        java.lang.Object vpcId;
+        java.lang.Object autoPay;
+        java.lang.Object description;
+        java.lang.Object enableIpsec;
+        java.lang.Object enableSsl;
+        java.lang.Object instanceChargeType;
+        java.lang.Object name;
+        java.lang.Object period;
+        java.lang.Object sslConnections;
+        java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
+        java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosVpnGatewayProps#getBandwidth}
@@ -337,7 +337,7 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
          */
         @Override
         public RosVpnGatewayProps build() {
-            return new Jsii$Proxy(bandwidth, vpcId, autoPay, description, enableIpsec, enableSsl, instanceChargeType, name, period, sslConnections, tags, vSwitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -383,20 +383,20 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object vpcId, final java.lang.Object autoPay, final java.lang.Object description, final java.lang.Object enableIpsec, final java.lang.Object enableSsl, final java.lang.Object instanceChargeType, final java.lang.Object name, final java.lang.Object period, final java.lang.Object sslConnections, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags, final java.lang.Object vSwitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
-            this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
-            this.autoPay = autoPay;
-            this.description = description;
-            this.enableIpsec = enableIpsec;
-            this.enableSsl = enableSsl;
-            this.instanceChargeType = instanceChargeType;
-            this.name = name;
-            this.period = period;
-            this.sslConnections = sslConnections;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty>)tags;
-            this.vSwitchId = vSwitchId;
+            this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
+            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.autoPay = builder.autoPay;
+            this.description = builder.description;
+            this.enableIpsec = builder.enableIpsec;
+            this.enableSsl = builder.enableSsl;
+            this.instanceChargeType = builder.instanceChargeType;
+            this.name = builder.name;
+            this.period = builder.period;
+            this.sslConnections = builder.sslConnections;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty>)builder.tags;
+            this.vSwitchId = builder.vSwitchId;
         }
 
         @Override

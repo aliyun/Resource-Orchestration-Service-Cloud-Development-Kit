@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::CommonBandwidthPackageIp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIp")
 public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -133,8 +133,8 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EipsProperty> {
-            private java.lang.Object allocationId;
-            private java.lang.Object bandwidth;
+            java.lang.Object allocationId;
+            java.lang.Object bandwidth;
 
             /**
              * Sets the value of {@link EipsProperty#getAllocationId}
@@ -188,7 +188,7 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public EipsProperty build() {
-                return new Jsii$Proxy(allocationId, bandwidth);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -214,10 +214,10 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object allocationId, final java.lang.Object bandwidth) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.allocationId = java.util.Objects.requireNonNull(allocationId, "allocationId is required");
-                this.bandwidth = bandwidth;
+                this.allocationId = java.util.Objects.requireNonNull(builder.allocationId, "allocationId is required");
+                this.bandwidth = builder.bandwidth;
             }
 
             @Override

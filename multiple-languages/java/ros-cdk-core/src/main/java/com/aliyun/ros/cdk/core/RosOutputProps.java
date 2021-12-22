@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.42.0 (build 5f6b62c)", date = "2021-11-30T01:57:30.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:56.524Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosOutputProps")
 @software.amazon.jsii.Jsii.Proxy(RosOutputProps.Jsii$Proxy.class)
 public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,10 +57,10 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosOutputProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosOutputProps> {
-        private java.lang.Object value;
-        private com.aliyun.ros.cdk.core.RosCondition condition;
-        private java.lang.String description;
-        private java.lang.String exportName;
+        java.lang.Object value;
+        com.aliyun.ros.cdk.core.RosCondition condition;
+        java.lang.String description;
+        java.lang.String exportName;
 
         /**
          * Sets the value of {@link RosOutputProps#getValue}
@@ -115,7 +115,7 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public RosOutputProps build() {
-            return new Jsii$Proxy(value, condition, description, exportName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -144,12 +144,12 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object value, final com.aliyun.ros.cdk.core.RosCondition condition, final java.lang.String description, final java.lang.String exportName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.value = java.util.Objects.requireNonNull(value, "value is required");
-            this.condition = condition;
-            this.description = description;
-            this.exportName = exportName;
+            this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            this.condition = builder.condition;
+            this.description = builder.description;
+            this.exportName = builder.exportName;
         }
 
         @Override

@@ -129,6 +129,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: encryptConf: Data encryption config
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "encryptConf", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty\"}]}}", isOptional: true)]
+        public virtual object? EncryptConf
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: maxSplitShard: The maximum number of shards when splitting automatically. Must be specified if AutoSplit is set to true.
         /// Allowed Values: 1-64.
         /// </remarks>
@@ -175,6 +186,227 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         {
             get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
+        }
+        [JsiiInterface(nativeType: typeof(IEncryptConfProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty")]
+        public interface IEncryptConfProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: enable: Specifies whether data encryption is enabled.
+            /// </remarks>
+            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Enable
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encryptType: The encryption algorithm. The encrypt_type
+            /// parameter can be set to only default or m4.
+            /// </remarks>
+            [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object EncryptType
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: userCmkInfo: If this parameter is specified, the BYOK key is used.
+            /// Otherwise, the service key is used.
+            /// </remarks>
+            [JsiiProperty(name: "userCmkInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? UserCmkInfo
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IEncryptConfProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosLogstore.IEncryptConfProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enable: Specifies whether data encryption is enabled.
+                /// </remarks>
+                [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Enable
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: encryptType: The encryption algorithm. The encrypt_type
+                /// parameter can be set to only default or m4.
+                /// </remarks>
+                [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object EncryptType
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: userCmkInfo: If this parameter is specified, the BYOK key is used.
+                /// Otherwise, the service key is used.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "userCmkInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty\"}]}}", isOptional: true)]
+                public object? UserCmkInfo
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty")]
+        public class EncryptConfProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosLogstore.IEncryptConfProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: enable: Specifies whether data encryption is enabled.
+            /// </remarks>
+            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Enable
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encryptType: The encryption algorithm. The encrypt_type
+            /// parameter can be set to only default or m4.
+            /// </remarks>
+            [JsiiProperty(name: "encryptType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object EncryptType
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: userCmkInfo: If this parameter is specified, the BYOK key is used.
+            /// Otherwise, the service key is used.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "userCmkInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty\"}]}}", isOptional: true, isOverride: true)]
+            public object? UserCmkInfo
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IUserCmkInfoProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty")]
+        public interface IUserCmkInfoProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: arn: The ARN of the RAM role. For more information
+            /// about how to obtain the ARN of a RAM role,
+            /// see Ship log data from Log Service to OSS.
+            /// </remarks>
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Arn
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cmkKeyId: The ID of the CMK to which the BYOK key belongs,
+            /// for example, f5136b95-2420-ab31-xxxxxxxxx.
+            /// </remarks>
+            [JsiiProperty(name: "cmkKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object CmkKeyId
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: regionId: The ID of the region where the CMK resides.
+            /// </remarks>
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object RegionId
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IUserCmkInfoProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.RosLogstore.IUserCmkInfoProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: arn: The ARN of the RAM role. For more information
+                /// about how to obtain the ARN of a RAM role,
+                /// see Ship log data from Log Service to OSS.
+                /// </remarks>
+                [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Arn
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: cmkKeyId: The ID of the CMK to which the BYOK key belongs,
+                /// for example, f5136b95-2420-ab31-xxxxxxxxx.
+                /// </remarks>
+                [JsiiProperty(name: "cmkKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object CmkKeyId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: regionId: The ID of the region where the CMK resides.
+                /// </remarks>
+                [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object RegionId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty")]
+        public class UserCmkInfoProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosLogstore.IUserCmkInfoProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: arn: The ARN of the RAM role. For more information
+            /// about how to obtain the ARN of a RAM role,
+            /// see Ship log data from Log Service to OSS.
+            /// </remarks>
+            [JsiiProperty(name: "arn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Arn
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: cmkKeyId: The ID of the CMK to which the BYOK key belongs,
+            /// for example, f5136b95-2420-ab31-xxxxxxxxx.
+            /// </remarks>
+            [JsiiProperty(name: "cmkKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object CmkKeyId
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: regionId: The ID of the region where the CMK resides.
+            /// </remarks>
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object RegionId
+            {
+                get;
+                set;
+            }
         }
     }
 }

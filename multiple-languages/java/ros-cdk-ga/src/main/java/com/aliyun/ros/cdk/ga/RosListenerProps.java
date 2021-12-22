@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.117Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosListenerProps> {
-        private java.lang.Object acceleratorId;
-        private java.lang.Object portRanges;
-        private java.lang.Object protocol;
-        private java.lang.Object clientAffinity;
-        private java.lang.Object description;
-        private java.lang.Object name;
+        java.lang.Object acceleratorId;
+        java.lang.Object portRanges;
+        java.lang.Object protocol;
+        java.lang.Object clientAffinity;
+        java.lang.Object description;
+        java.lang.Object name;
 
         /**
          * Sets the value of {@link RosListenerProps#getAcceleratorId}
@@ -182,7 +182,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         @Override
         public RosListenerProps build() {
-            return new Jsii$Proxy(acceleratorId, portRanges, protocol, clientAffinity, description, name);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object portRanges, final java.lang.Object protocol, final java.lang.Object clientAffinity, final java.lang.Object description, final java.lang.Object name) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
-            this.portRanges = java.util.Objects.requireNonNull(portRanges, "portRanges is required");
-            this.protocol = java.util.Objects.requireNonNull(protocol, "protocol is required");
-            this.clientAffinity = clientAffinity;
-            this.description = description;
-            this.name = name;
+            this.acceleratorId = java.util.Objects.requireNonNull(builder.acceleratorId, "acceleratorId is required");
+            this.portRanges = java.util.Objects.requireNonNull(builder.portRanges, "portRanges is required");
+            this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
+            this.clientAffinity = builder.clientAffinity;
+            this.description = builder.description;
+            this.name = builder.name;
         }
 
         @Override

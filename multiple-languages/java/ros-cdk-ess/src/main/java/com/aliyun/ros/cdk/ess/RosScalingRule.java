@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.407Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRule")
 public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -412,9 +412,9 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<StepAdjustmentProperty> {
-            private java.lang.Object metricIntervalLowerBound;
-            private java.lang.Object metricIntervalUpperBound;
-            private java.lang.Object scalingAdjustment;
+            java.lang.Object metricIntervalLowerBound;
+            java.lang.Object metricIntervalUpperBound;
+            java.lang.Object scalingAdjustment;
 
             /**
              * Sets the value of {@link StepAdjustmentProperty#getMetricIntervalLowerBound}
@@ -490,7 +490,7 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public StepAdjustmentProperty build() {
-                return new Jsii$Proxy(metricIntervalLowerBound, metricIntervalUpperBound, scalingAdjustment);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -518,11 +518,11 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object metricIntervalLowerBound, final java.lang.Object metricIntervalUpperBound, final java.lang.Object scalingAdjustment) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.metricIntervalLowerBound = metricIntervalLowerBound;
-                this.metricIntervalUpperBound = metricIntervalUpperBound;
-                this.scalingAdjustment = scalingAdjustment;
+                this.metricIntervalLowerBound = builder.metricIntervalLowerBound;
+                this.metricIntervalUpperBound = builder.metricIntervalUpperBound;
+                this.scalingAdjustment = builder.scalingAdjustment;
             }
 
             @Override

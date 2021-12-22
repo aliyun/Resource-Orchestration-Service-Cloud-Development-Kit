@@ -273,8 +273,8 @@ function RosDeviceGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
-    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('superGroupId', ros.validateString)(properties.superGroupId));
+    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('groupDesc', ros.validateString)(properties.groupDesc));
     return errors.wrap('supplied properties not correct for "RosDeviceGroupProps"');
 }
@@ -1492,9 +1492,9 @@ function RosRuleActionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
     errors.collect(ros.propertyValidator('configuration', ros.validateString)(properties.configuration));
+    errors.collect(ros.propertyValidator('iotInstanceId', ros.validateString)(properties.iotInstanceId));
     errors.collect(ros.propertyValidator('ruleId', ros.requiredValidator)(properties.ruleId));
     errors.collect(ros.propertyValidator('ruleId', ros.validateNumber)(properties.ruleId));
     return errors.wrap('supplied properties not correct for "RosRuleActionProps"');

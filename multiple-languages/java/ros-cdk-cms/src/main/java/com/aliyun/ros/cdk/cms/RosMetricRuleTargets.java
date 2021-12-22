@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.602Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargets")
 public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -138,9 +138,9 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TargetsProperty> {
-            private java.lang.Object arn;
-            private java.lang.Object id;
-            private java.lang.Object level;
+            java.lang.Object arn;
+            java.lang.Object id;
+            java.lang.Object level;
 
             /**
              * Sets the value of {@link TargetsProperty#getArn}
@@ -216,7 +216,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
             public TargetsProperty build() {
-                return new Jsii$Proxy(arn, id, level);
+                return new Jsii$Proxy(this);
             }
         }
 
@@ -244,11 +244,11 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object arn, final java.lang.Object id, final java.lang.Object level) {
+            protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.arn = java.util.Objects.requireNonNull(arn, "arn is required");
-                this.id = java.util.Objects.requireNonNull(id, "id is required");
-                this.level = level;
+                this.arn = java.util.Objects.requireNonNull(builder.arn, "arn is required");
+                this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+                this.level = builder.level;
             }
 
             @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.809Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DrdsInstanceProps.Jsii$Proxy.class)
 public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -112,20 +112,20 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link DrdsInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DrdsInstanceProps> {
-        private java.lang.Object description;
-        private java.lang.Object instanceSeries;
-        private java.lang.Object payType;
-        private java.lang.Object quantity;
-        private java.lang.Object specification;
-        private java.lang.Object type;
-        private java.lang.Object zoneId;
-        private java.lang.Object duration;
-        private java.lang.Object isAutoRenew;
-        private java.lang.Object mySqlVersion;
-        private java.lang.Object pricingCycle;
-        private java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
-        private java.lang.Object vpcId;
-        private java.lang.Object vswitchId;
+        java.lang.Object description;
+        java.lang.Object instanceSeries;
+        java.lang.Object payType;
+        java.lang.Object quantity;
+        java.lang.Object specification;
+        java.lang.Object type;
+        java.lang.Object zoneId;
+        java.lang.Object duration;
+        java.lang.Object isAutoRenew;
+        java.lang.Object mySqlVersion;
+        java.lang.Object pricingCycle;
+        java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags;
+        java.lang.Object vpcId;
+        java.lang.Object vswitchId;
 
         /**
          * Sets the value of {@link DrdsInstanceProps#getDescription}
@@ -414,7 +414,7 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public DrdsInstanceProps build() {
-            return new Jsii$Proxy(description, instanceSeries, payType, quantity, specification, type, zoneId, duration, isAutoRenew, mySqlVersion, pricingCycle, tags, vpcId, vswitchId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -464,22 +464,22 @@ public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object instanceSeries, final java.lang.Object payType, final java.lang.Object quantity, final java.lang.Object specification, final java.lang.Object type, final java.lang.Object zoneId, final java.lang.Object duration, final java.lang.Object isAutoRenew, final java.lang.Object mySqlVersion, final java.lang.Object pricingCycle, final java.util.List<? extends com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vswitchId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.description = java.util.Objects.requireNonNull(description, "description is required");
-            this.instanceSeries = java.util.Objects.requireNonNull(instanceSeries, "instanceSeries is required");
-            this.payType = java.util.Objects.requireNonNull(payType, "payType is required");
-            this.quantity = java.util.Objects.requireNonNull(quantity, "quantity is required");
-            this.specification = java.util.Objects.requireNonNull(specification, "specification is required");
-            this.type = java.util.Objects.requireNonNull(type, "type is required");
-            this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
-            this.duration = duration;
-            this.isAutoRenew = isAutoRenew;
-            this.mySqlVersion = mySqlVersion;
-            this.pricingCycle = pricingCycle;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty>)tags;
-            this.vpcId = vpcId;
-            this.vswitchId = vswitchId;
+            this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
+            this.instanceSeries = java.util.Objects.requireNonNull(builder.instanceSeries, "instanceSeries is required");
+            this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
+            this.quantity = java.util.Objects.requireNonNull(builder.quantity, "quantity is required");
+            this.specification = java.util.Objects.requireNonNull(builder.specification, "specification is required");
+            this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+            this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.duration = builder.duration;
+            this.isAutoRenew = builder.isAutoRenew;
+            this.mySqlVersion = builder.mySqlVersion;
+            this.pricingCycle = builder.pricingCycle;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.drds.RosDrdsInstance.TagsProperty>)builder.tags;
+            this.vpcId = builder.vpcId;
+            this.vswitchId = builder.vswitchId;
         }
 
         @Override

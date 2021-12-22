@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::AttachPolicyToRole`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:43.809Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AttachPolicyToRoleProps")
 @software.amazon.jsii.Jsii.Proxy(AttachPolicyToRoleProps.Jsii$Proxy.class)
 public interface AttachPolicyToRoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,9 +35,9 @@ public interface AttachPolicyToRoleProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link AttachPolicyToRoleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AttachPolicyToRoleProps> {
-        private java.lang.Object policyName;
-        private java.lang.Object policyType;
-        private java.lang.Object roleName;
+        java.lang.Object policyName;
+        java.lang.Object policyType;
+        java.lang.Object roleName;
 
         /**
          * Sets the value of {@link AttachPolicyToRoleProps#getPolicyName}
@@ -108,7 +108,7 @@ public interface AttachPolicyToRoleProps extends software.amazon.jsii.JsiiSerial
          */
         @Override
         public AttachPolicyToRoleProps build() {
-            return new Jsii$Proxy(policyName, policyType, roleName);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -135,11 +135,11 @@ public interface AttachPolicyToRoleProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object policyName, final java.lang.Object policyType, final java.lang.Object roleName) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
-            this.policyType = java.util.Objects.requireNonNull(policyType, "policyType is required");
-            this.roleName = java.util.Objects.requireNonNull(roleName, "roleName is required");
+            this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
+            this.policyType = java.util.Objects.requireNonNull(builder.policyType, "policyType is required");
+            this.roleName = java.util.Objects.requireNonNull(builder.roleName, "roleName is required");
         }
 
         @Override

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Logstore`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:44.137Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:58.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogstore")
 public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -153,6 +153,24 @@ public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptConf() {
+        return software.amazon.jsii.Kernel.get(this, "encryptConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncryptConf(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encryptConf", value);
+    }
+
+    /**
+     */
+    public void setEncryptConf(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sls.RosLogstore.EncryptConfProperty value) {
+        software.amazon.jsii.Kernel.set(this, "encryptConf", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getMaxSplitShard() {
         return software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -221,6 +239,416 @@ public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTtl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ttl", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty")
+    @software.amazon.jsii.Jsii.Proxy(EncryptConfProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface EncryptConfProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEnable();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEncryptType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUserCmkInfo() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link EncryptConfProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link EncryptConfProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<EncryptConfProperty> {
+            java.lang.Object enable;
+            java.lang.Object encryptType;
+            java.lang.Object userCmkInfo;
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getEnable}
+             * @param enable the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(java.lang.Boolean enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getEnable}
+             * @param enable the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getEncryptType}
+             * @param encryptType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encryptType(java.lang.String encryptType) {
+                this.encryptType = encryptType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getEncryptType}
+             * @param encryptType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encryptType(com.aliyun.ros.cdk.core.IResolvable encryptType) {
+                this.encryptType = encryptType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getUserCmkInfo}
+             * @param userCmkInfo the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userCmkInfo(com.aliyun.ros.cdk.core.IResolvable userCmkInfo) {
+                this.userCmkInfo = userCmkInfo;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EncryptConfProperty#getUserCmkInfo}
+             * @param userCmkInfo the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userCmkInfo(com.aliyun.ros.cdk.sls.RosLogstore.UserCmkInfoProperty userCmkInfo) {
+                this.userCmkInfo = userCmkInfo;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link EncryptConfProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public EncryptConfProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link EncryptConfProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EncryptConfProperty {
+            private final java.lang.Object enable;
+            private final java.lang.Object encryptType;
+            private final java.lang.Object userCmkInfo;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.encryptType = software.amazon.jsii.Kernel.get(this, "encryptType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userCmkInfo = software.amazon.jsii.Kernel.get(this, "userCmkInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enable = java.util.Objects.requireNonNull(builder.enable, "enable is required");
+                this.encryptType = java.util.Objects.requireNonNull(builder.encryptType, "encryptType is required");
+                this.userCmkInfo = builder.userCmkInfo;
+            }
+
+            @Override
+            public final java.lang.Object getEnable() {
+                return this.enable;
+            }
+
+            @Override
+            public final java.lang.Object getEncryptType() {
+                return this.encryptType;
+            }
+
+            @Override
+            public final java.lang.Object getUserCmkInfo() {
+                return this.userCmkInfo;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("enable", om.valueToTree(this.getEnable()));
+                data.set("encryptType", om.valueToTree(this.getEncryptType()));
+                if (this.getUserCmkInfo() != null) {
+                    data.set("userCmkInfo", om.valueToTree(this.getUserCmkInfo()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosLogstore.EncryptConfProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                EncryptConfProperty.Jsii$Proxy that = (EncryptConfProperty.Jsii$Proxy) o;
+
+                if (!enable.equals(that.enable)) return false;
+                if (!encryptType.equals(that.encryptType)) return false;
+                return this.userCmkInfo != null ? this.userCmkInfo.equals(that.userCmkInfo) : that.userCmkInfo == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enable.hashCode();
+                result = 31 * result + (this.encryptType.hashCode());
+                result = 31 * result + (this.userCmkInfo != null ? this.userCmkInfo.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty")
+    @software.amazon.jsii.Jsii.Proxy(UserCmkInfoProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface UserCmkInfoProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getArn();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getCmkKeyId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
+
+        /**
+         * @return a {@link Builder} of {@link UserCmkInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link UserCmkInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<UserCmkInfoProperty> {
+            java.lang.Object arn;
+            java.lang.Object cmkKeyId;
+            java.lang.Object regionId;
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getArn}
+             * @param arn the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(java.lang.String arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getArn}
+             * @param arn the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(com.aliyun.ros.cdk.core.IResolvable arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getCmkKeyId}
+             * @param cmkKeyId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cmkKeyId(java.lang.String cmkKeyId) {
+                this.cmkKeyId = cmkKeyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getCmkKeyId}
+             * @param cmkKeyId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cmkKeyId(com.aliyun.ros.cdk.core.IResolvable cmkKeyId) {
+                this.cmkKeyId = cmkKeyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(java.lang.String regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UserCmkInfoProperty#getRegionId}
+             * @param regionId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+                this.regionId = regionId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link UserCmkInfoProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public UserCmkInfoProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link UserCmkInfoProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UserCmkInfoProperty {
+            private final java.lang.Object arn;
+            private final java.lang.Object cmkKeyId;
+            private final java.lang.Object regionId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cmkKeyId = software.amazon.jsii.Kernel.get(this, "cmkKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.arn = java.util.Objects.requireNonNull(builder.arn, "arn is required");
+                this.cmkKeyId = java.util.Objects.requireNonNull(builder.cmkKeyId, "cmkKeyId is required");
+                this.regionId = java.util.Objects.requireNonNull(builder.regionId, "regionId is required");
+            }
+
+            @Override
+            public final java.lang.Object getArn() {
+                return this.arn;
+            }
+
+            @Override
+            public final java.lang.Object getCmkKeyId() {
+                return this.cmkKeyId;
+            }
+
+            @Override
+            public final java.lang.Object getRegionId() {
+                return this.regionId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("arn", om.valueToTree(this.getArn()));
+                data.set("cmkKeyId", om.valueToTree(this.getCmkKeyId()));
+                data.set("regionId", om.valueToTree(this.getRegionId()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-sls.RosLogstore.UserCmkInfoProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                UserCmkInfoProperty.Jsii$Proxy that = (UserCmkInfoProperty.Jsii$Proxy) o;
+
+                if (!arn.equals(that.arn)) return false;
+                if (!cmkKeyId.equals(that.cmkKeyId)) return false;
+                return this.regionId.equals(that.regionId);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.arn.hashCode();
+                result = 31 * result + (this.cmkKeyId.hashCode());
+                result = 31 * result + (this.regionId.hashCode());
+                return result;
+            }
+        }
     }
 
     /**
@@ -331,6 +759,23 @@ public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder enableTracking(final com.aliyun.ros.cdk.core.IResolvable enableTracking) {
             this.props.enableTracking(enableTracking);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encryptConf This parameter is required.
+         */
+        public Builder encryptConf(final com.aliyun.ros.cdk.core.IResolvable encryptConf) {
+            this.props.encryptConf(encryptConf);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptConf This parameter is required.
+         */
+        public Builder encryptConf(final com.aliyun.ros.cdk.sls.RosLogstore.EncryptConfProperty encryptConf) {
+            this.props.encryptConf(encryptConf);
             return this;
         }
 

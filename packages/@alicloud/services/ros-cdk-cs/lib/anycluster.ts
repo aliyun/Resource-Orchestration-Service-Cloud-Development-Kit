@@ -30,6 +30,36 @@ export class AnyCluster extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: ros.IResolvable;
@@ -54,6 +84,12 @@ export class AnyCluster extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAnyCluster;
         this.attrClusterId = rosAnyCluster.attrClusterId;
+        this.attrDefaultUserKubeConfig = rosAnyCluster.attrDefaultUserKubeConfig;
+        this.attrNodes = rosAnyCluster.attrNodes;
+        this.attrPrivateUserKubConfig = rosAnyCluster.attrPrivateUserKubConfig;
+        this.attrScalingConfigurationId = rosAnyCluster.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosAnyCluster.attrScalingGroupId;
+        this.attrScalingRuleId = rosAnyCluster.attrScalingRuleId;
         this.attrTaskId = rosAnyCluster.attrTaskId;
         this.attrWorkerRamRoleName = rosAnyCluster.attrWorkerRamRoleName;
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::TransitRouterRouteEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.30.0 (build adae23f)", date = "2021-06-21T09:47:42.472Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.49.0 (build e322d87)", date = "2021-12-21T15:12:57.000Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterRouteEntryProps.Jsii$Proxy.class)
 public interface RosTransitRouterRouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,12 +48,12 @@ public interface RosTransitRouterRouteEntryProps extends software.amazon.jsii.Js
      * A builder for {@link RosTransitRouterRouteEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTransitRouterRouteEntryProps> {
-        private java.lang.Object transitRouterRouteEntryDestinationCidrBlock;
-        private java.lang.Object transitRouterRouteEntryNextHopType;
-        private java.lang.Object transitRouterRouteTableId;
-        private java.lang.Object transitRouterRouteEntryDescription;
-        private java.lang.Object transitRouterRouteEntryName;
-        private java.lang.Object transitRouterRouteEntryNextHopId;
+        java.lang.Object transitRouterRouteEntryDestinationCidrBlock;
+        java.lang.Object transitRouterRouteEntryNextHopType;
+        java.lang.Object transitRouterRouteTableId;
+        java.lang.Object transitRouterRouteEntryDescription;
+        java.lang.Object transitRouterRouteEntryName;
+        java.lang.Object transitRouterRouteEntryNextHopId;
 
         /**
          * Sets the value of {@link RosTransitRouterRouteEntryProps#getTransitRouterRouteEntryDestinationCidrBlock}
@@ -182,7 +182,7 @@ public interface RosTransitRouterRouteEntryProps extends software.amazon.jsii.Js
          */
         @Override
         public RosTransitRouterRouteEntryProps build() {
-            return new Jsii$Proxy(transitRouterRouteEntryDestinationCidrBlock, transitRouterRouteEntryNextHopType, transitRouterRouteTableId, transitRouterRouteEntryDescription, transitRouterRouteEntryName, transitRouterRouteEntryNextHopId);
+            return new Jsii$Proxy(this);
         }
     }
 
@@ -215,14 +215,14 @@ public interface RosTransitRouterRouteEntryProps extends software.amazon.jsii.Js
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object transitRouterRouteEntryDestinationCidrBlock, final java.lang.Object transitRouterRouteEntryNextHopType, final java.lang.Object transitRouterRouteTableId, final java.lang.Object transitRouterRouteEntryDescription, final java.lang.Object transitRouterRouteEntryName, final java.lang.Object transitRouterRouteEntryNextHopId) {
+        protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.transitRouterRouteEntryDestinationCidrBlock = java.util.Objects.requireNonNull(transitRouterRouteEntryDestinationCidrBlock, "transitRouterRouteEntryDestinationCidrBlock is required");
-            this.transitRouterRouteEntryNextHopType = java.util.Objects.requireNonNull(transitRouterRouteEntryNextHopType, "transitRouterRouteEntryNextHopType is required");
-            this.transitRouterRouteTableId = java.util.Objects.requireNonNull(transitRouterRouteTableId, "transitRouterRouteTableId is required");
-            this.transitRouterRouteEntryDescription = transitRouterRouteEntryDescription;
-            this.transitRouterRouteEntryName = transitRouterRouteEntryName;
-            this.transitRouterRouteEntryNextHopId = transitRouterRouteEntryNextHopId;
+            this.transitRouterRouteEntryDestinationCidrBlock = java.util.Objects.requireNonNull(builder.transitRouterRouteEntryDestinationCidrBlock, "transitRouterRouteEntryDestinationCidrBlock is required");
+            this.transitRouterRouteEntryNextHopType = java.util.Objects.requireNonNull(builder.transitRouterRouteEntryNextHopType, "transitRouterRouteEntryNextHopType is required");
+            this.transitRouterRouteTableId = java.util.Objects.requireNonNull(builder.transitRouterRouteTableId, "transitRouterRouteTableId is required");
+            this.transitRouterRouteEntryDescription = builder.transitRouterRouteEntryDescription;
+            this.transitRouterRouteEntryName = builder.transitRouterRouteEntryName;
+            this.transitRouterRouteEntryNextHopId = builder.transitRouterRouteEntryNextHopId;
         }
 
         @Override
